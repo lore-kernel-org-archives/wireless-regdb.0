@@ -1,27 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-iw0-f177.google.com ([209.85.214.177])
-	by canuck.infradead.org with esmtp (Exim 4.72 #1 (Red Hat Linux))
-	id 1PAVwp-0001l1-KZ
-	for wireless-regdb@lists.infradead.org; Mon, 25 Oct 2010 22:55:27 +0000
-Received: by iwn8 with SMTP id 8so5341254iwn.36
-	for <wireless-regdb@lists.infradead.org>;
-	Mon, 25 Oct 2010 15:55:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=gamma;
-	h=domainkey-signature:received:mime-version:received:in-reply-to
-	:references:from:date:message-id:subject:to:cc:content-type
-	:content-transfer-encoding;
-	bh=CkCP9+WTW/R/VWjwsYM6gAA2U5yfqdLOjy/9mW83EAo=;
-	b=jDScq4IDnvTn56icVPz9IQ45Rf3s5PAJc60sK+xveyHgFEJYenu7sB2VxuqcerLbHR
-	u6HNcrgq0SlhuLNdsYXFMg6gPbzYfRoOKPYsI25x3FU+m2/uAIB/seiwcQ25gn2Ivg6k
-	NqoOQeAeWzEcEW9sjgk4yk0hqcAavhHDeXLpg=
-MIME-Version: 1.0
-In-Reply-To: <7de8d1c9fd95f3b714597b4cd15f7a29@post.subsys.no>
-References: <7de8d1c9fd95f3b714597b4cd15f7a29@post.subsys.no>
-From: "Luis R. Rodriguez" <mcgrof@gmail.com>
-Date: Mon, 25 Oct 2010 15:55:00 -0700
-Message-ID: <AANLkTim9g63UYZaxow8SO7EZLihCbiukQyTqSbL6XkX=@mail.gmail.com>
-Subject: Re: [wireless-regdb] Changes to NO (Norway) in wireless-regdb
+Received: from charlotte.tuxdriver.com ([70.61.120.58]
+ helo=smtp.tuxdriver.com) by canuck.infradead.org with esmtps (Exim 4.72 #1
+ (Red Hat Linux)) id 1PIpod-00061b-8Q for
+ wireless-regdb@lists.infradead.org; Wed, 17 Nov 2010 21:45:26 +0000
+From: "John W. Linville" <linville@tuxdriver.com>
+Date: Wed, 17 Nov 2010 16:36:57 -0500
+Message-Id: <1290029817-711-1-git-send-email-linville@tuxdriver.com>
+In-Reply-To: <20100525151429.GC6342@tpkurt2.garloff.de>
+References: <20100525151429.GC6342@tpkurt2.garloff.de>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update rules for DE
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,146 +19,74 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: =?UTF-8?Q?Robert_Gr=C3=B8nning?= <slimg@iggu.org>, Michael Green <Michael.Green@atheros.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
+Cc: Johannes Berg <johannes@sipsolutions.net>, "Luis R. Rodriguez" <mcgrof@gmail.com>, linux-wireless@vger.kernel.org, Kurt Garloff <garloff@suse.de>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Adding Michael and the wireless-regdb list. Please use that list for
-further reviews.
+From: Kurt Garloff <garloff@suse.de>
 
- Luis
+http://marc.info/?l=linux-wireless&m=127480075306482&w=2
 
-On Mon, Oct 25, 2010 at 2:37 PM, Robert Grønning <slimg@iggu.org> wrote:
-> It seems like NO is wrong according to Norwegian rules
->
-> This is how NO currently looks like in wireless-regdb-2009.11.25.tar.bz2
-> -------------------START-------------------
-> country NO:
->        (2402 - 2482 @ 40), (N/A, 20)
->        (5170 - 5250 @ 40), (N/A, 20)
->        (5250 - 5330 @ 40), (N/A, 20), DFS
->        (5490 - 5710 @ 40), (N/A, 27), DFS
-> --------------------END--------------------
->
-> This is what the Norwegian rules say about general usage of frequencies
-> for wi-fi:
-> Note: The following text is a translation from a subsection of the
-> following document written in Norwegian:
-> http://www.lovdata.no/for/sf/sd/xd-20090602-0580.html#7
-> -------------------------------------START--------------------------------------
-> (3) the frequency band 5150-5350 MHz is authorized for indoor data
-> transfer
-> including radio-based local area networks (WAS / RLAN) with a maximum
-> radiated
-> power of 200 mW eirp the frequency use defined in the standard EN 301 893
-> If any
-> other use than indoor use, the average spectral density in the frequency
-> band
-> 5150-5350 MHz is limited to 10 mW / MHz eirp in any 1 MHz range.
->
-> (4) the frequency band 5470-5725 MHz may be used for data transfer with
-> maximum
-> radiated power of 1 W eirp Maximum average spectral density shall not
-> exceed
-> 50 mW / MHz eirp in any 1 MHz band. The radio equipment shall implement
-> transmit
-> power control (TPC) which provides an average attenuation of at least 3
-> dB. If
-> TPC is not in use, the maximum allowed radiated power and power density is
-> 3 dB
-> lower than that following the first and second sentence. The radio
-> equipment will
-> use Dynamic Frequency Selection (DFS) as specified in the standard EN 301
-> 893
->
-> (5) The frequency bands 5725-5795 MHz and 5815-5850 MHz for data transfer
-> with
-> maximum radiated power of 4 W eirp Maximum average spectral density shall
-> not
-> exceed 200 mW / MHz eirp in any 1 MHz band. The radio equipment shall
-> implement
-> Dynamic Frequency Selection (DFS) as specified in the standard EN 302 502
-> Radio
-> equipment shall transmit power control (TPC) which provides an average
-> attenuation of at least 3 dB. If TPC is not in use, the maximum allowed
-> radiated
-> power and power density is 3 dB lower than that following the first and
-> second
-> sentence. On the border between Norway and neighboring power density shall
-> not
-> exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
-> unless
-> otherwise stated in the coordination agreement.
->
-> (6) The frequency bands 5725-5795 and 5815-5850 MHz for point-to-point
-> radio
-> links with maximum radiated power of 200 W eirp Maximum permitted power
-> supplied
-> antenna is 1 W. The maximum average spectral density shall not exceed 10 W
-> / MHz
-> eirp in any 1 MHz band. The concept of point-to-point radio links exclude
-> all
-> forms of point-to-multipoint, omnidirectional systems and transmitters
-> send the
-> same information located in the same place (sector antennas). The radio
-> equipment
-> shall implement Dynamic Frequency Selection (DFS) as specified in the
-> standard
-> EN 302 502 On the border between Norway and neighboring power density
-> shall not
-> exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
-> unless
-> otherwise stated in the coordination agreement.
-> --------------------------------------END---------------------------------------
->
-> Here is the link to google english-translated section mentioned above:
-> http://translate.googleusercontent.com/translate_c?hl=no&sl=no&tl=en&u=http://www.lovdata.no/for/sf/sd/xd-20090602-0580.html&rurl=translate.google.com&usg=ALkJrhhGbQPtCjONnilyHdAgh1NwIZhFVA#7
->
-> According to that documentation, NO should probably look like this
-> instead:
-> -------------------START-------------------
-> country NO:
->        (2400 - 2483.5 @ 40), (N/A, 20)
->        (5150 - 5350 @ 40), (N/A, 23)
->        (5470 - 5725 @ 40), (N/A, 27), DFS
-> --------------------END--------------------
->
-> Question 1:
-> The norwegian laws also says that if TPC is available, then the maximum
-> allowed TX power
-> of the 5470 -> 5725 MHz frequency range changes from 27 dBm to 30 dBm, I
-> don't know how to write that in wireless-regdb.
->
-> Question 2:
-> The norwegian laws for the 5470 -> 5725 MHz frequency range seem to exceed
-> the European restrictions in 802.11n-2009, I'm guessing that the upper 5725
-> MHz frequency needs to be decreased to comply with the European
-> restrictions? if so, I'm not sure what frequency it should be decreased to.
->
-> Question 3:
-> The norwegian documentation also mentions these radio frequencies for
-> wireless data transfer:
->  * 5725 -> 5795 MHz and 5815-5850 MHz: point-to-point radio links
->  * 17,1 -> 17,3 GHz:
->  * 57 -> 66 GHz:
-> Does these belong in the wireless-regdb as well?
->
-> I hope my limited knowlege doesn't cause anyone unreasonable much work,
-> I'm really trying to get better at this.
->
-> -Robert Grønning (Norway)
-> --
-> To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
-> the body of a message to majordomo@vger.kernel.org
-> More majordomo info at  http://vger.kernel.org/majordomo-info.html
->
+Cc: "Luis R. Rodriguez" <mcgrof@gmail.com>
+Acked-by: Johannes Berg <johannes@sipsolutions.net>
+Signed-off-by: John W. Linville <linville@tuxdriver.com>
+---
+Time to clear the logjam...
+
+ db.txt |   24 +++++++++++++++++-------
+ 1 files changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index e63a43e..40a8bbc 100644
+--- a/db.txt
++++ b/db.txt
+@@ -176,17 +176,27 @@ country CZ:
+ 	(5250 - 5350 @ 40), (N/A, 200 mW), NO-OUTDOOR, DFS
+ 	(5470 - 5725 @ 40), (N/A, 1000 mW), DFS
+ 
+-# Data from "Frequenznutzungsplan" (as published in April 2008),
+-# downloaded from http://www.bundesnetzagentur.de/media/archive/13358.pdf
+-# Also applicable is http://www.bundesnetzagentur.de/media/archive/5009.pdf
+-# On the 5 GHz ranges TX power can be doubled if TPC is implemented.
++# Data from "Frequenznutzungsplan" (as published in April 2008), downloaded from
++# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38448/publicationFile/2659/Frequenznutzungsplan2008_Id17448pdf.pdf
++# For the 5GHz range also see
++# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38216/publicationFile/6579/WLAN5GHzVfg7_2010_28042010pdf.pdf
++# The values have been reduced by a factor of 2 (3db) for non TPC devices
++# (in other words: devices with TPC can use twice the tx power of this table).
++# Note that the docs do not require TPC for 5150--5250; the reduction to
++# 100mW thus is not strictly required -- however the conservative 100mW
++# limit is used here as the non-interference with radar and satellite
++# apps relies on the attenuation by the building walls only in the
++# absence of DFS; the neighbour countries have 100mW limit here as well.
++
+ country DE:
+ 	# entries 279004 and 280006
+ 	(2400 - 2483.5 @ 40), (N/A, 100 mW)
+-	# entries 303005, 304002 and 305002
+-	(5150 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
++	# entry 303005
++	(5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
++	# entries 304002 and 305002
++	(5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
+ 	# entries 308002, 309001 and 310003
+-	(5470 - 5725 @ 40), (N/A, 500 mW), NO-OUTDOOR, DFS
++	(5470 - 5725 @ 40), (N/A, 500 mW), DFS
+ 
+ country DK:
+ 	(2402 - 2482 @ 40), (N/A, 20)
+-- 
+1.7.3.2
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
