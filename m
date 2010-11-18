@@ -1,27 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-iw0-f177.google.com ([209.85.214.177])
+Received: from mail.atheros.com ([12.19.149.2])
 	by canuck.infradead.org with esmtp (Exim 4.72 #1 (Red Hat Linux))
-	id 1PJ9ES-0005Vj-QO
-	for wireless-regdb@lists.infradead.org; Thu, 18 Nov 2010 18:29:17 +0000
-Received: by iwn8 with SMTP id 8so3781570iwn.36
+	id 1PJBy3-0002e3-OI
+	for wireless-regdb@lists.infradead.org; Thu, 18 Nov 2010 21:24:32 +0000
+Received: from mail.atheros.com ([10.10.20.105]) by sidewinder.atheros.com
 	for <wireless-regdb@lists.infradead.org>;
-	Thu, 18 Nov 2010 10:29:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=gamma;
-	h=domainkey-signature:received:mime-version:received:in-reply-to
-	:references:from:date:message-id:subject:to:cc:content-type
-	:content-transfer-encoding;
-	bh=yCD+t3Vjia3YoP7b9K5n2JmUtvSMCLAx6stmiOx/Qng=;
-	b=fkT+RW6ED+kJAa/zzEACvm6Y4b2ErI1Kia2JI/WSfMbQiT3tMCN5Vhjy9T0sZLwZZH
-	RZBgxxlvkw9LvygbNnCTax1AvHxmVJ8bLZU8KisvDQPopdc2ThxBHKQi50dt+vBmwCN0
-	XEtNt8RSkw9kMy5OZtnPpi+cjmjSDhyjSNLtw=
-MIME-Version: 1.0
-In-Reply-To: <1290029817-711-1-git-send-email-linville@tuxdriver.com>
+	Thu, 18 Nov 2010 13:24:18 -0800
+From: Michael Green <Michael.Green@Atheros.com>
+Date: Thu, 18 Nov 2010 13:23:42 -0800
+Message-ID: <93781E992CBA7843962D8B0E7D683F3C163340D5AE@SC1EXMB-MBCL.global.atheros.com>
 References: <20100525151429.GC6342@tpkurt2.garloff.de>
 	<1290029817-711-1-git-send-email-linville@tuxdriver.com>
-From: "Luis R. Rodriguez" <mcgrof@gmail.com>
-Date: Thu, 18 Nov 2010 10:28:48 -0800
-Message-ID: <AANLkTimDkoqNbkFWDsU2HgFK3926gRpcBbokX_GL5sSc@mail.gmail.com>
+	<AANLkTimDkoqNbkFWDsU2HgFK3926gRpcBbokX_GL5sSc@mail.gmail.com>
+In-Reply-To: <AANLkTimDkoqNbkFWDsU2HgFK3926gRpcBbokX_GL5sSc@mail.gmail.com>
+Content-Language: en-US
+MIME-Version: 1.0
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update rules for DE
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -37,9 +31,25 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>, Michael Green <Michael.Green@atheros.com>
-Cc: linux-wireless@vger.kernel.org, Johannes Berg <johannes@sipsolutions.net>, wireless-regdb@lists.infradead.org, Kurt Garloff <garloff@suse.de>
+To: "Luis R. Rodriguez" <mcgrof@gmail.com>, "John W. Linville" <linville@tuxdriver.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, Johannes Berg <johannes@sipsolutions.net>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Kurt Garloff <garloff@suse.de>
 List-ID: <wireless-regdb@lists.infradead.org>
+
+Hi guys,
+
+I am on PTO until Monday. Do I need to read this now and respond or can it wait?  I am not asking you to hold anything up due to me. But if you want me to give feedback on something, pls let me know if it can wait until Mon.
+
+Michael Green
+Atheros Communications, Inc.
+mgreen@atheros.com
+Desk:   +1-781-400-1491
+Mobile: +1-508-380-4921
+-----Original Message-----
+From: Luis R. Rodriguez [mailto:mcgrof@gmail.com] 
+Sent: Thursday, November 18, 2010 1:29 PM
+To: John W. Linville; Michael Green
+Cc: wireless-regdb@lists.infradead.org; Johannes Berg; Kurt Garloff; linux-wireless@vger.kernel.org
+Subject: Re: [PATCH] wireless-regdb: update rules for DE
 
 On Wed, Nov 17, 2010 at 1:36 PM, John W. Linville
 <linville@tuxdriver.com> wrote:
@@ -103,7 +113,6 @@ Michael, are you subscribed to wireless-regdb now? Did you get this e-mail? ACK?
 > 1.7.3.2
 >
 >
-
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
