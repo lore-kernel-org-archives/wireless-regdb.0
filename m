@@ -1,29 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-gx0-f177.google.com ([209.85.161.177])
+Received: from mail-iy0-f177.google.com ([209.85.210.177])
 	by canuck.infradead.org with esmtp (Exim 4.72 #1 (Red Hat Linux))
-	id 1PJ9F0-0005Ws-VF
-	for wireless-regdb@lists.infradead.org; Thu, 18 Nov 2010 18:29:52 +0000
-Received: by gxk25 with SMTP id 25so2213311gxk.36
+	id 1PSZmg-0001Et-An
+	for wireless-regdb@lists.infradead.org; Tue, 14 Dec 2010 18:39:34 +0000
+Received: by iyj21 with SMTP id 21so458815iyj.36
 	for <wireless-regdb@lists.infradead.org>;
-	Thu, 18 Nov 2010 10:29:49 -0800 (PST)
+	Tue, 14 Dec 2010 10:39:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=gamma;
-	h=domainkey-signature:received:mime-version:received:in-reply-to
-	:references:from:date:message-id:subject:to:cc:content-type
-	:content-transfer-encoding;
-	bh=a+z7qEC/wKWfrLDBe7h92hn+rRCs6Iimkz2MQDY7i1w=;
-	b=spCz3Du/7S0H4k38dfA3y3Hya28vA9kBBvMzMdwT24I4qLhTOjWgxysPBRTfXa2Xm6
-	aerc6fO0LfIe8cOy5aQzUoEW+WWF+Ng/bVYTNFxG7HKrpFOAY0Bw+ItjZ8Hprqrxd59N
-	kmvQHhDsxVjwefurEZpcwCxSxf5NUm1GnPSWA=
+	h=domainkey-signature:received:mime-version:received:from:date
+	:message-id:subject:to:cc:content-type;
+	bh=Tbn5YmEcS+bR66jpzxx1rGRiX17A5wnnDfwkLfjS1So=;
+	b=PxbXN55NIiCfagWfPLmX7JOff6PNUfOFxom6apUy1nE4DrH52KroP4Gtzb/0BLwmbv
+	x0lt/noijB6SVQYaCdeN82aQEOHopM6kf+nqbsFdUMOAK2iT+/Ao5BzvE2QIgVxXbv1T
+	f19pHVflH9WSRmeVDgk/SHBigCcFFPmKhWwRA=
 MIME-Version: 1.0
-In-Reply-To: <20101117220303.GB2380@tuxdriver.com>
-References: <7de8d1c9fd95f3b714597b4cd15f7a29@post.subsys.no>
-	<AANLkTim9g63UYZaxow8SO7EZLihCbiukQyTqSbL6XkX=@mail.gmail.com>
-	<20101117220303.GB2380@tuxdriver.com>
 From: "Luis R. Rodriguez" <mcgrof@gmail.com>
-Date: Thu, 18 Nov 2010 10:29:27 -0800
-Message-ID: <AANLkTinh3wxa2+3rmVKEhB41ypBajjOw7P-jKxPHVF_7@mail.gmail.com>
-Subject: Re: [wireless-regdb] Changes to NO (Norway) in wireless-regdb
+Date: Tue, 14 Dec 2010 10:39:12 -0800
+Message-ID: <AANLkTikP+jMHvDgkGTXfq58M7TEBthzuvEFoENXvxyqJ@mail.gmail.com>
+Subject: [wireless-regdb] DFS development roadmap 2010-12-14
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,165 +28,79 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: linux-wireless@vger.kernel.org, Michael Green <Michael.Green@atheros.com>, =?UTF-8?Q?Robert_Gr=C3=B8nning?= <slimg@iggu.org>, wireless-regdb@lists.infradead.org
+To: linux-wireless <linux-wireless@vger.kernel.org>
+Cc: Gery Kahn <geryk@ti.com>, wireless-regdb@lists.infradead.org, Michael Green <Michael.Green@atheros.com>, Sundar Sankaran <Sundar.Sankaran@atheros.com>, linux-kernel@vger.kernel.org, Vipin Mehta <Vipin.Mehta@atheros.com>, Mahboob Alem <Mahboob.Alem@atheros.com>, Rich Mosko <Rich.Mosko@atheros.com>, Tevfik Yucek <Tevfik.Yucek@atheros.com>, Madhan Jaganathan <Madhan.Jaganathan@atheros.com>, Susinder Gulasekaran <Susinder.Gulasekaran@atheros.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Nov 17, 2010 at 2:03 PM, John W. Linville
-<linville@tuxdriver.com> wrote:
-> Ping?
+Note: this is a public e-mail
 
-Michael?
+We had a good IRC session, and were able to at least come up with a
+development roadmap to focus on:
+
+http://wireless.kernel.org/en/developers/DFS#Development_roadmap
+
+Some good news is we have a raise in hands by TI to participate in the
+development. Things we need to iron out for each development step:
+
+1) Map countries to a DFS region bit
+
+The plan is to map each country in db.txt from wireless-regdb to a DFS
+region. There are only 3 known DFS regions:
+
+  * FCC
+  * ETSI
+  * JP/Telco
+
+Michael, David, do you guys expect this to change any time soon (say
+10 years or so)? Anyone else know?
+
+I can work on this.
+
+2) Get DFS region to the driver through cfg80211
+
+This is pretty straight forward once we have 1) done, and I can work on it.
+
+3) Where do we stuff DFS parameters for each region
+
+One idea is to use the request_firmware() API as it is expected these
+parameters will be region and chipset specific. This requires a good
+review of all chipsets and with priority on the ones who have vendors
+or we have documentation for that we want to support in existing
+drivers. Today this means Atheros hardware and TI hardware.
+
+Vipin, I am curios how you intend on programming DFS with ath6kl (if
+this gets added, we should if TI is doing it ;) ), do you stuff all
+DFS parameters in firmware?
+
+Gery, how does TI do it?Most of the work here will involve hooking
+things up for mac80211 / cfg80211 / nl80211. This will consists of
+receiving DFS events from the driver for radar detection, keeping the
+NOL list, sending it to hostapd, choosing a random channel, and
+sending CSA to STAs.
+
+4) Program hw DFS parameters
+
+ath9k_hw already has some knobs for this, Felix already submitted some
+of these changes upstream. Most of the work required here will take
+place on ath9k.
+
+5) DFS events
+
+Most of the work here will involve hooking things up for mac80211 /
+cfg80211 / nl80211. This will consists of receiving DFS events from
+the driver for radar detection, keeping the NOL list, sending it to
+hostapd, choosing a random channel, and sending CSA to STAs. We can
+worry about this eventually, once we get the above 4 steps done.
 
   Luis
-
-> On Mon, Oct 25, 2010 at 03:55:00PM -0700, Luis R. Rodriguez wrote:
->> Adding Michael and the wireless-regdb list. Please use that list for
->> further reviews.
->>
->>  Luis
->>
->> On Mon, Oct 25, 2010 at 2:37 PM, Robert Grønning <slimg@iggu.org> wrote:
->> > It seems like NO is wrong according to Norwegian rules
->> >
->> > This is how NO currently looks like in wireless-regdb-2009.11.25.tar.bz2
->> > -------------------START-------------------
->> > country NO:
->> >        (2402 - 2482 @ 40), (N/A, 20)
->> >        (5170 - 5250 @ 40), (N/A, 20)
->> >        (5250 - 5330 @ 40), (N/A, 20), DFS
->> >        (5490 - 5710 @ 40), (N/A, 27), DFS
->> > --------------------END--------------------
->> >
->> > This is what the Norwegian rules say about general usage of frequencies
->> > for wi-fi:
->> > Note: The following text is a translation from a subsection of the
->> > following document written in Norwegian:
->> > http://www.lovdata.no/for/sf/sd/xd-20090602-0580.html#7
->> > -------------------------------------START--------------------------------------
->> > (3) the frequency band 5150-5350 MHz is authorized for indoor data
->> > transfer
->> > including radio-based local area networks (WAS / RLAN) with a maximum
->> > radiated
->> > power of 200 mW eirp the frequency use defined in the standard EN 301 893
->> > If any
->> > other use than indoor use, the average spectral density in the frequency
->> > band
->> > 5150-5350 MHz is limited to 10 mW / MHz eirp in any 1 MHz range.
->> >
->> > (4) the frequency band 5470-5725 MHz may be used for data transfer with
->> > maximum
->> > radiated power of 1 W eirp Maximum average spectral density shall not
->> > exceed
->> > 50 mW / MHz eirp in any 1 MHz band. The radio equipment shall implement
->> > transmit
->> > power control (TPC) which provides an average attenuation of at least 3
->> > dB. If
->> > TPC is not in use, the maximum allowed radiated power and power density is
->> > 3 dB
->> > lower than that following the first and second sentence. The radio
->> > equipment will
->> > use Dynamic Frequency Selection (DFS) as specified in the standard EN 301
->> > 893
->> >
->> > (5) The frequency bands 5725-5795 MHz and 5815-5850 MHz for data transfer
->> > with
->> > maximum radiated power of 4 W eirp Maximum average spectral density shall
->> > not
->> > exceed 200 mW / MHz eirp in any 1 MHz band. The radio equipment shall
->> > implement
->> > Dynamic Frequency Selection (DFS) as specified in the standard EN 302 502
->> > Radio
->> > equipment shall transmit power control (TPC) which provides an average
->> > attenuation of at least 3 dB. If TPC is not in use, the maximum allowed
->> > radiated
->> > power and power density is 3 dB lower than that following the first and
->> > second
->> > sentence. On the border between Norway and neighboring power density shall
->> > not
->> > exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
->> > unless
->> > otherwise stated in the coordination agreement.
->> >
->> > (6) The frequency bands 5725-5795 and 5815-5850 MHz for point-to-point
->> > radio
->> > links with maximum radiated power of 200 W eirp Maximum permitted power
->> > supplied
->> > antenna is 1 W. The maximum average spectral density shall not exceed 10 W
->> > / MHz
->> > eirp in any 1 MHz band. The concept of point-to-point radio links exclude
->> > all
->> > forms of point-to-multipoint, omnidirectional systems and transmitters
->> > send the
->> > same information located in the same place (sector antennas). The radio
->> > equipment
->> > shall implement Dynamic Frequency Selection (DFS) as specified in the
->> > standard
->> > EN 302 502 On the border between Norway and neighboring power density
->> > shall not
->> > exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
->> > unless
->> > otherwise stated in the coordination agreement.
->> > --------------------------------------END---------------------------------------
->> >
->> > Here is the link to google english-translated section mentioned above:
->> > http://translate.googleusercontent.com/translate_c?hl=no&sl=no&tl=en&u=http://www.lovdata.no/for/sf/sd/xd-20090602-0580.html&rurl=translate.google.com&usg=ALkJrhhGbQPtCjONnilyHdAgh1NwIZhFVA#7
->> >
->> > According to that documentation, NO should probably look like this
->> > instead:
->> > -------------------START-------------------
->> > country NO:
->> >        (2400 - 2483.5 @ 40), (N/A, 20)
->> >        (5150 - 5350 @ 40), (N/A, 23)
->> >        (5470 - 5725 @ 40), (N/A, 27), DFS
->> > --------------------END--------------------
->> >
->> > Question 1:
->> > The norwegian laws also says that if TPC is available, then the maximum
->> > allowed TX power
->> > of the 5470 -> 5725 MHz frequency range changes from 27 dBm to 30 dBm, I
->> > don't know how to write that in wireless-regdb.
->> >
->> > Question 2:
->> > The norwegian laws for the 5470 -> 5725 MHz frequency range seem to exceed
->> > the European restrictions in 802.11n-2009, I'm guessing that the upper 5725
->> > MHz frequency needs to be decreased to comply with the European
->> > restrictions? if so, I'm not sure what frequency it should be decreased to.
->> >
->> > Question 3:
->> > The norwegian documentation also mentions these radio frequencies for
->> > wireless data transfer:
->> >  * 5725 -> 5795 MHz and 5815-5850 MHz: point-to-point radio links
->> >  * 17,1 -> 17,3 GHz:
->> >  * 57 -> 66 GHz:
->> > Does these belong in the wireless-regdb as well?
->> >
->> > I hope my limited knowlege doesn't cause anyone unreasonable much work,
->> > I'm really trying to get better at this.
->> >
->> > -Robert Grønning (Norway)
->> > --
->> > To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
->> > the body of a message to majordomo@vger.kernel.org
->> > More majordomo info at  http://vger.kernel.org/majordomo-info.html
->> >
->> --
->> To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
->> the body of a message to majordomo@vger.kernel.org
->> More majordomo info at  http://vger.kernel.org/majordomo-info.html
->>
->
-> --
-> John W. Linville                Someday the world will need a hero, and you
-> linville@tuxdriver.com                  might be all we have.  Be ready.
->
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
