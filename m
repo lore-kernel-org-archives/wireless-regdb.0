@@ -1,20 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
+Received: from mail-iy0-f177.google.com ([209.85.210.177])
 	by canuck.infradead.org with esmtps (Exim 4.72 #1 (Red Hat Linux))
-	id 1Pk1eb-0003X2-Ip
-	for wireless-regdb@lists.infradead.org; Mon, 31 Jan 2011 21:51:22 +0000
-From: Johannes Berg <johannes@sipsolutions.net>
-In-Reply-To: <93781E992CBA7843962D8B0E7D683F3C16FE767CC6@SC1EXMB-MBCL.global.atheros.com>
-References: <AANLkTim3CG+aN9QGhGOfBD9+BSYsgQW_ACC0o+k9H-rt@mail.gmail.com>
-	<AANLkTinuFzBMMLd08Zpkf8iGBO-YdM2Ni-KtNCNxuUbT@mail.gmail.com>
-	<AANLkTi=b-Tm7r1eODgAQqpQJuimD0+dQkHFB4YV06kES@mail.gmail.com>
-	<1296510225.3812.50.camel@jlt3.sipsolutions.net>
-	<93781E992CBA7843962D8B0E7D683F3C16FE767CC6@SC1EXMB-MBCL.global.atheros.com>
-Date: Mon, 31 Jan 2011 22:51:20 +0100
-Message-ID: <1296510680.3812.51.camel@jlt3.sipsolutions.net>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] Review of EN 301 893 1.5.1 and 1.6.1 changes
+	id 1Pur4U-0007eG-Qx
+	for wireless-regdb@lists.infradead.org; Wed, 02 Mar 2011 18:46:51 +0000
+Received: by iyf40 with SMTP id 40so221152iyf.36
+	for <wireless-regdb@lists.infradead.org>;
+	Wed, 02 Mar 2011 10:46:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=gamma;
+	h=domainkey-signature:mime-version:from:date:message-id:subject:to:cc
+	:content-type; bh=MIOnsFzJ18BI0mbTmCSuHlrfgp6F+kWa0osVsovoql8=;
+	b=b1d607AG5pPFjJ6IO14c1vNcXZ9JtyrktmEHiYYRcQiBVKOFCzLqvAzq5l9A06WSjI
+	BD3R/Qric7aqfplWR/6/q12YdjzixP1YkI74+LNAit5E5bZI7um3rWAGCVwJZucuZDhL
+	DFfWyOn1sPMMLRjl8ne9r4KiZ5aZXoiaO7od4=
+MIME-Version: 1.0
+From: "Luis R. Rodriguez" <mcgrof@gmail.com>
+Date: Wed, 2 Mar 2011 10:46:29 -0800
+Message-ID: <AANLkTinzfBmpJ6-O=o-zi+oh9miLRo-UZUM=MhcnQmk=@mail.gmail.com>
+Subject: [wireless-regdb] Regulatory database improvements
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,28 +32,23 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Michael Green <Michael.Green@Atheros.com>
-Cc: "Luis R. Rodriguez" <mcgrof@gmail.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, David Quan <David.Quan@Atheros.com>, linux-wireless <linux-wireless@vger.kernel.org>, "John W.
-	Linville" <linville@tuxdriver.com>, Kathy Giori <Kathy.Giori@Atheros.com>
+To: Johannes Berg <johannes@sipsolutions.net>, Kathy Giori <Kathy.Giori@atheros.com>, Adrian Chadd <adrian.chadd@gmail.com>, Prem Kumar <Prem.Kumar@atheros.com>, Kevin Hayes <kevin@atheros.com>
+Cc: Senthil Balasubramanian <senthilkumar@atheros.com>, wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2011-01-31 at 13:49 -0800, Michael Green wrote:
-> Luckily, the "harmonized standard" is by law, one and only one for DFS
-> conformance across all European Community countries. 
-> 
-> There are no differences in pulse patterns, non occupancy, channel
-> close time, etc etc. across EU countries.  I have not gotten any
-> indication from anywhere that there will be deviation on a country by
-> country basis in Europe affecting DFS rules.
-> 
-> BTW, as of June 30, 2010, EN301 893 V1.5.1 became mandatory.  All
-> devices placed on the EC market must meet those latest pulse patterns
-> per V1.5.1.
+Just FYI, I'll be working on this when I get back from my vacation,
+I'll start reviewing this Monday March 14.
 
-I realise that. I'm just not convinced we'll have 1.9.1 in 2012.
+http://wireless.kernel.org/en/developers/todo-list#Regulatory_database_improvements
 
-johannes
+If anyone has any input on this definition or would like some please
+start thinking about it and we can start talking about it. For details
+as to *why* we are doing this you can lok at the wiki page above or
+also the thread:
 
+http://marc.info/?t=123771257500005&r=1&w=2
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
