@@ -1,26 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from server6.subsys.no ([85.19.71.170])
-	by canuck.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
-	id 1QYyVH-0002Nd-JK
-	for wireless-regdb@lists.infradead.org; Tue, 21 Jun 2011 10:48:24 +0000
-Received: from localhost (localhost [127.0.0.1])
-	by server6.subsys.no (Postfix) with ESMTP id 19629402E2
-	for <wireless-regdb@lists.infradead.org>;
-	Tue, 21 Jun 2011 12:37:31 +0200 (CEST)
-Received: from server6.subsys.no ([127.0.0.1])
-	by localhost (server6.subsys.no [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id i5VJDUO06RPD for <wireless-regdb@lists.infradead.org>;
-	Tue, 21 Jun 2011 12:37:30 +0200 (CEST)
-Received: from [10.0.11.3] (14.62-50-170.enivest.net [62.50.170.14])
-	by server6.subsys.no (Postfix) with ESMTPSA id 3E3DF402E0
-	for <wireless-regdb@lists.infradead.org>;
-	Tue, 21 Jun 2011 12:37:30 +0200 (CEST)
-From: Robert =?ISO-8859-1?Q?Gr=F8nning?= <slimg@iggu.org>
-Date: Tue, 21 Jun 2011 12:38:12 +0200
-Message-ID: <1308652692.31392.27.camel@torgerde>
-Mime-Version: 1.0
-Subject: [wireless-regdb] NO should be less restrictive
+Received: from smtp.iopen.co.nz ([202.6.116.226] helo=mail.iopen.co.nz)
+	by canuck.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
+	id 1R4jya-0007rl-5J
+	for wireless-regdb@lists.infradead.org; Sat, 17 Sep 2011 01:45:53 +0000
+Message-ID: <4E73F3FA.502@iopen.net>
+Date: Sat, 17 Sep 2011 13:12:26 +1200
+From: Linux Wireless Stuff for IOPEN <linwir-list@iopen.net>
+MIME-Version: 1.0
+Subject: [wireless-regdb] Update regulatory rules for New Zealand (NZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,136 +18,59 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: linville@tuxdriver.com
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-It seems like NO is wrong according to Norwegian rules
+From Fedora 14 :
+==============
 
-This is how NO currently looks like in wireless-regdb-2011.04.28.tar.bz2
--------------------START-------------------
-country NO:
-        (2402 - 2482 @ 40), (N/A, 20)
-        (5170 - 5250 @ 40), (N/A, 20)
-        (5250 - 5330 @ 40), (N/A, 20), DFS
-        (5490 - 5710 @ 40), (N/A, 27), DFS
---------------------END--------------------
+> country NZ:
+>         (2402 - 2482 @ 40), (N/A, 30)
+>         (5170 - 5250 @ 20), (3, 23)
+>         (5250 - 5330 @ 20), (3, 23), DFS
+>         (5735 - 5835 @ 20), (3, 30)
 
-This is what the Norwegian rules say about general usage of frequencies
-for wi-fi:
-Note: The following text is a translation from a subsection of the
-following document written in Norwegian:
-http://www.lovdata.no/for/sf/sd/xd-20090602-0580.html#7
--------------------------------------START--------------------------------------
-(3) the frequency band 5150-5350 MHz is authorized for indoor data
-transfer
-including radio-based local area networks (WAS / RLAN) with a maximum
-radiated
-power of 200 mW eirp the frequency use defined in the standard EN 301
-893 If any
-other use than indoor use, the average spectral density in the frequency
-band
-5150-5350 MHz is limited to 10 mW / MHz eirp in any 1 MHz range.
+Updates for 2.4 GHz :
+===================
 
-(4) the frequency band 5470-5725 MHz may be used for data transfer with
-maximum
-radiated power of 1 W eirp Maximum average spectral density shall not
-exceed
-50 mW / MHz eirp in any 1 MHz band. The radio equipment shall implement
-transmit
-power control (TPC) which provides an average attenuation of at least 3
-dB. If
-TPC is not in use, the maximum allowed radiated power and power density
-is 3 dB
-lower than that following the first and second sentence. The radio
-equipment will
-use Dynamic Frequency Selection (DFS) as specified in the standard EN
-301 893
+  Frequency range is 2400 to 2483.5 (Ref 1)
+  Maximum EIRP is 36 dBm (4 W)      (Ref 1)
 
-(5) The frequency bands 5725-5795 MHz and 5815-5850 MHz for data
-transfer with
-maximum radiated power of 4 W eirp Maximum average spectral density
-shall not
-exceed 200 mW / MHz eirp in any 1 MHz band. The radio equipment shall
-implement
-Dynamic Frequency Selection (DFS) as specified in the standard EN 302
-502 Radio
-equipment shall transmit power control (TPC) which provides an average
-attenuation of at least 3 dB. If TPC is not in use, the maximum allowed
-radiated
-power and power density is 3 dB lower than that following the first and
-second
-sentence. On the border between Norway and neighboring power density
-shall not
-exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
-unless
-otherwise stated in the coordination agreement.
+Updates for 5 GHz :
+=================
 
-(6) The frequency bands 5725-5795 and 5815-5850 MHz for point-to-point
-radio
-links with maximum radiated power of 200 W eirp Maximum permitted power
-supplied
-antenna is 1 W. The maximum average spectral density shall not exceed 10
-W / MHz
-eirp in any 1 MHz band. The concept of point-to-point radio links
-exclude all
-forms of point-to-multipoint, omnidirectional systems and transmitters
-send the
-same information located in the same place (sector antennas). The radio
-equipment
-shall implement Dynamic Frequency Selection (DFS) as specified in the
-standard
-EN 302 502 On the border between Norway and neighboring power density
-shall not
-exceed -122.5 dBW / m 2 measured with a reference bandwidth of 1 MHz
-unless
-otherwise stated in the coordination agreement.
---------------------------------------END---------------------------------------
+  5150 - 5250  23 dBm (200 mW) indoor only            (Ref 1,3)
+  5250 - 5350  23 dBm (200 mW) indoor/outdoor,DFS+TPC (Ref 1,3)
+  5725 - 5875  36 dBm (  4  W) PtMP/PtP               (Ref 1,3)
+  5725 - 5825  53 dBm (200  W) PtP fixed              (Ref 1,2,3)
 
-Here is the link to google english-translated section mentioned above:
-http://translate.googleusercontent.com/ … NwIZhFVA#7
+  And possibly this via the Spread Spectrum Device provision
 
-According to that documentation, NO should probably look like this
-instead:
--------------------START-------------------
-country NO:
-        (2400 - 2483.5 @ 40), (N/A, 20)
-        (5150 - 5350 @ 40), (N/A, 23)
-        (5470 - 5725 @ 40), (N/A, 27), DFS
---------------------END--------------------
+  5470 - 5725  30 dBm (  1  W) requires DFS+TPC       (Ref 3)
 
-Question 1:
-The norwegian laws also says that if TPC is available, then the maximum
-allowed TX power
-of the 5470 -> 5725 MHz frequency range changes from 27 dBm to 30 dBm, I
-don't know how to write that in wireless-regdb.
+  Maximum power density is specified for some chunks.
 
-Question 2:
-The norwegian laws for the 5470 -> 5725 MHz frequency range seem to
-exceed the European restrictions in 802.11n-2009, I'm guessing that the
-upper 5725 MHz frequency needs to be decreased to comply with the
-European restrictions? if so, I'm not sure what frequency it should be
-decreased to.
+References :
+==========
+1 :
+> http://www.rsm.govt.nz/cms/licensees/types-of-licence/general-user-licences/fixed-radio-link-devices/information-on-the-operation-of-wireless-lan-and-related-systems-in-the-2-ghz-and-5-ghz-bands
+2 :
+> http://www.rsm.govt.nz/cms/licensees/types-of-licence/general-user-licences/fixed-radio-link-devices
+3 :
+> http://www.rsm.govt.nz/cms/licensees/types-of-licence/general-user-licences/short-range-devices
 
-Question 3:
-The norwegian documentation also mentions these radio frequencies for
-wireless data transfer:
-* 5725 -> 5795 MHz and 5815-5850 MHz: point-to-point radio links
-* 17,1 -> 17,3 GHz:
-* 57 -> 66 GHz:
-Does these belong in the wireless-regdb as well?
-
-I hope my limited knowlege doesn't cause anyone unreasonable much work,
-I'm really trying to get better at this.
-
--Robert Grønning (Norway)
+Cheers
+The IOPEN wireless deployers
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
