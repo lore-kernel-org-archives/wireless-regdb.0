@@ -2,13 +2,16 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from mail022-1.exch022.serverdata.net ([64.78.22.98])
  by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
- id 1S1iBt-0002sT-2i
- for wireless-regdb@lists.infradead.org; Sun, 26 Feb 2012 17:47:21 +0000
-MIME-Version: 1.0
-Date: Sun, 26 Feb 2012 23:17:18 +0530
+ id 1RzOgF-0007KT-Ot
+ for wireless-regdb@lists.infradead.org; Mon, 20 Feb 2012 08:33:08 +0000
+Received: from [192.168.1.57] (unknown [122.183.20.86]) by
+ mail022-1.exch022.serverdata.net (Postfix) with ESMTPSA id 45B889C1C for
+ <wireless-regdb@lists.infradead.org>; Mon, 20 Feb 2012 00:33:05 -0800 (PST)
+Message-ID: <4F42053E.6090904@posedge.com>
+Date: Mon, 20 Feb 2012 14:03:02 +0530
 From: Mahesh <maheshp@posedge.com>
-Message-ID: <d0843a47e46fa9c3e843369001befa15@posedge.com>
-Subject: [wireless-regdb] wireless-regdb: 80Mhz Bandwidth in 5Gig band
+MIME-Version: 1.0
+Subject: [wireless-regdb] 80MHz Bandwidth in 5Gig for 11ac
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -23,22 +26,19 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
-
 
 Hi,
 
-For upcoming 11ac, just wondering how we can get approval for 80Mhz 
-bandwidth in 5Gig band to incorporate into our regulatory database?
-Do we need to contact respective country government authorities?
-Appreciate if you can share any info.
+Do we have any country allowing for 80Mhz bandwidth in 5Gig band?
+If there is, current regulatory database reflects this?
+Appreciate your response.
 
 -- 
+
 Thanks,
 Mahesh
-
 
 
 _______________________________________________
