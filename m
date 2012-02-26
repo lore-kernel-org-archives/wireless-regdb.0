@@ -1,19 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
- ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
- by bombadil.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1RSyON-0005Qd-1R
- for wireless-regdb@lists.infradead.org; Tue, 22 Nov 2011 22:00:39 +0000
-Date: Tue, 22 Nov 2011 16:51:21 -0500
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20111122215120.GA17861@tuxdriver.com>
-References: <87y5v8xqek.fsf@nemi.mork.no>
-	 <20111122130637.GA8452@tuxdriver.com>
+Received: from mail022-1.exch022.serverdata.net ([64.78.22.98])
+ by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
+ id 1S1iBt-0002sT-2i
+ for wireless-regdb@lists.infradead.org; Sun, 26 Feb 2012 17:47:21 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20111122130637.GA8452@tuxdriver.com>
-Subject: Re: [wireless-regdb] where did the wireless-regdb repository go?
+Date: Sun, 26 Feb 2012 23:17:18 +0530
+From: Mahesh <maheshp@posedge.com>
+Message-ID: <d0843a47e46fa9c3e843369001befa15@posedge.com>
+Subject: [wireless-regdb] wireless-regdb: 80Mhz Bandwidth in 5Gig band
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -23,41 +18,28 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-To: =?iso-8859-1?Q?Bj=F8rn?= Mork <bjorn@mork.no>
-Cc: wireless-regdb@lists.infradead.org
+Content-Transfer-Encoding: 8bit
+To: linville@tuxdriver.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Nov 22, 2011 at 08:06:37AM -0500, John W. Linville wrote:
-> On Tue, Nov 22, 2011 at 02:01:07PM +0100, Bj=F8rn Mork wrote:
-> > I see that John W. Linville's other repositories, like e.g.
-> > git://git.kernel.org/pub/scm/linux/kernel/git/linville/wireless.git have
-> > been restored.  But I can't find wireless-regdb.  Did it move somewhere
-> > else? If so, then the wiki at
-> > http://linuxwireless.org/en/developers/Regulatory#The_regulatory_databa=
-se
-> > should be updated to reflect that...
->=20
-> For now, it is here:
->=20
-> 	git://git.infradead.org/users/linville/wireless-regdb.git
->=20
-> I haven't moved it back to kernel.org yet simply because I haven't
-> figured-out how to create an empty repository there (as opposed to
-> one based off Linus' tree).  I mean to figure that out soon.
 
-I figured-out how to push it... :-)
+Hi,
 
-The tree is now available on kernel.or again.
+For upcoming 11ac, just wondering how we can get approval for 80Mhz 
+bandwidth in 5Gig band to incorporate into our regulatory database?
+Do we need to contact respective country government authorities?
+Appreciate if you can share any info.
 
-John
---=20
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+-- 
+Thanks,
+Mahesh
+
+
 
 _______________________________________________
 wireless-regdb mailing list
