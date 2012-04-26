@@ -1,22 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine02.qualcomm.com ([199.106.114.251])
+Received: from mail-ob0-f177.google.com ([209.85.214.177])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1SNMGJ-0001oT-Ox
- for wireless-regdb@lists.infradead.org; Thu, 26 Apr 2012 10:49:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=qca.qualcomm.com; i=rmanohar@qca.qualcomm.com;
- q=dns/txt; s=qcdkim; t=1335437363; x=1366973363;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=gyRJI9BvQgBMCIOZBLDf6tT267RKGpWNNFHB/E6H1iw=;
- b=KJvHl/TBZh8vu+PostK32rwbe1l95Wxf6Yue0+V2GVbHxQfLDWjr10UN
- Q33xlsRuhS+BO4uSXi0vyJGUv7ukpNXgu+KdJa8ZfH97piAo42jD9kVOu
- r3CyUsgwzgizPq9ColLR9DXXZW8TjUJuTcBuOsuXqaZWowd0MT17dfbhE 4=;
-From: Rajkumar Manoharan <rmanohar@qca.qualcomm.com>
-Date: Thu, 26 Apr 2012 16:20:14 +0530
-Message-ID: <1335437414-3421-1-git-send-email-rmanohar@qca.qualcomm.com>
+ id 1SNN00-0005Wu-CB
+ for wireless-regdb@lists.infradead.org; Thu, 26 Apr 2012 11:36:37 +0000
+Received: by obqv19 with SMTP id v19so1766473obq.36 for
+ <wireless-regdb@lists.infradead.org>; Thu, 26 Apr 2012 04:36:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=mime-version:sender:in-reply-to:references:from:date
+ :x-google-sender-auth:message-id:subject:to:cc:content-type;
+ bh=GC9acCNBQEgVoTI3JDBICOteEYFJro+7SD3aE+iJH68=;
+ b=hztxlu8YI/L1AAa/Pe88Idv3DJVhJl6CiNh8XD418xssoLser03zFzajPHr+Gv3tJd
+ ljxiXhslz0K0iu5BKWj2y/Qp9qvjlkWHfl7+0JsJ4QD3swKv1AvR/wxfqr5PT3kEuKLH
+ rtwYOIirZws6qkkyj8arI5RDVYFfFw50C80gG7GqZ1kTOlDAFomnhAJjTCTx1eZV4lsq
+ t+GXN/53sjXePtbg/WLMyw3cR8pTCNMkgLRAObFyEXmyhxPdCQrO9OZhdrpajrD84L4U
+ /yAXkysp3uTec/X8u76IPxPiIlzzG+uAnifwcWxaMaw4JYhOlZVtCoBQn5bAnVvhIg0g sdFA==
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: add Rwanda (RW)
+In-Reply-To: <1335437414-3421-1-git-send-email-rmanohar@qca.qualcomm.com>
+References: <1335437414-3421-1-git-send-email-rmanohar@qca.qualcomm.com>
+From: "Luis R. Rodriguez" <mcgrof@frijolero.org>
+Date: Thu, 26 Apr 2012 04:36:14 -0700
+Message-ID: <CAB=NE6WSaoR+n3JUrZ+XRimHxLQa2ZU3nwKO+gcGFX-=k2o1zw@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add Rwanda (RW)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,35 +36,25 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: wireless-regdb@lists.infradead.org, Rajkumar Manoharan <rmanohar@qca.qualcomm.com>
+To: Rajkumar Manoharan <rmanohar@qca.qualcomm.com>
+Cc: wireless-regdb@lists.infradead.org, linville@tuxdriver.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Add support to country Rwanda with APL1_WORLD.
+On Thu, Apr 26, 2012 at 3:50 AM, Rajkumar Manoharan
+<rmanohar@qca.qualcomm.com> wrote:
+> Add support to country Rwanda with APL1_WORLD.
+>
+> Signed-off-by: Rajkumar Manoharan <rmanohar@qca.qualcomm.com>
 
-Signed-off-by: Rajkumar Manoharan <rmanohar@qca.qualcomm.com>
----
- db.txt |    4 ++++
- 1 file changed, 4 insertions(+)
+We had decided a while ago the requirements of new patches to wireless-regdb:
 
-diff --git a/db.txt b/db.txt
-index 23b85a3..4c54543 100644
---- a/db.txt
-+++ b/db.txt
-@@ -580,6 +580,10 @@ country RU:
- 	(2402 - 2482 @ 40), (N/A, 20)
- 	(5735 - 5835 @ 20), (N/A, 30)
- 
-+country RW:
-+	(2402 - 2482 @ 40), (N/A, 20)
-+	(5735 - 5835 @ 40), (N/A, 30)
-+
- country SA:
- 	(2402 - 2482 @ 40), (N/A, 20)
- 	(5170 - 5250 @ 20), (3, 23)
--- 
-1.7.10
+http://marc.info/?l=linux-wireless&m=128414096127554&w=2
 
+This patch does not provide any regulatory data. The APL1_WORLD name
+is only an Atheros reference and provides no data for anyone to
+review.
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
