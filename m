@@ -1,31 +1,34 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-f177.google.com ([209.85.217.177])
- by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1Tdyqx-0000gu-6N
- for wireless-regdb@lists.infradead.org; Thu, 29 Nov 2012 07:48:12 +0000
-Received: by mail-lb0-f177.google.com with SMTP id n10so8883194lbo.36 for
- <wireless-regdb@lists.infradead.org>; Wed, 28 Nov 2012 23:48:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc:content-type; bh=JQGB2uQXZNVXP6KF6jy7KppeYS0WIXsuuiGiw5nOda0=;
- b=TWPUvPT5TbuHy3h9q/HIPCom0CIEnMHE9P3dWVyWM0Ix2BLv+vu/4ItanTPUULduai
- fuXJLGUhtsK7c7V8QyGHY3/X+KB8/vsNIp6QZCm+QSR6FU89MZcyKLOOWVGv2C+isEW+
- XOjmFI8JejfpQQ3caJkBfZXgtmM2tMgJr9nSnZwi9tS8mWFe64UD6BA6bt99K5Y6wBkW
- Cp7hmH+jJw1TeYNjlUO6xgRYRTI+2HO7gj90Ei6bkNsLDKjLzm7vD7O9jYnzRDV1hvVU
- WcAMDr32lvlKexBPQbrMT2mYRcF7Fjw4Aee5xGNy2VbjhbrAMJhfYR7cuYggMuqx1Rs7 JnAg==
+Received: from forward20.mail.yandex.net ([2a02:6b8:0:1402::5])
+ by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
+ id 1Scyn7-0002Qw-Pz
+ for wireless-regdb@lists.infradead.org; Fri, 08 Jun 2012 12:59:52 +0000
+Received: from web1g.yandex.ru (web1g.yandex.ru [95.108.252.101]) by
+ forward20.mail.yandex.net (Yandex) with ESMTP id 9F59010422A9 for
+ <wireless-regdb@lists.infradead.org>; Fri,  8 Jun 2012 16:59:45 +0400 (MSK)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1339160385; bh=YIEY5J1hMj/hQ0DxbwDy8oOXwGFzCWlI6NU88XFxHGI=;
+ h=From:To:In-Reply-To:References:Subject:MIME-Version:Message-Id:
+ Date:Content-Transfer-Encoding:Content-Type;
+ b=epVqHIrAG3OeVy/P8zessAm0tKzCDTY8A3QlXLD3U7IBFrGVbu5sIVyNXjE8z9zZE
+ knlGEuN+o3IQ6TYGEhofuCgOaFKxu+XaGbpH/g+waKk+TJ6YHb82xw9CYB760M5Wk5
+ cgJIuZ97Js69gMSdBsg67ZLUOXrup8qSP64ulOl4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.ru; s=mail;
+ t=1339160385; bh=YIEY5J1hMj/hQ0DxbwDy8oOXwGFzCWlI6NU88XFxHGI=;
+ h=From:To:In-Reply-To:References:Subject:MIME-Version:Message-Id:
+ Date:Content-Transfer-Encoding:Content-Type;
+ b=epVqHIrAG3OeVy/P8zessAm0tKzCDTY8A3QlXLD3U7IBFrGVbu5sIVyNXjE8z9zZE
+ knlGEuN+o3IQ6TYGEhofuCgOaFKxu+XaGbpH/g+waKk+TJ6YHb82xw9CYB760M5Wk5
+ cgJIuZ97Js69gMSdBsg67ZLUOXrup8qSP64ulOl4=
+From: =?koi8-r?B?8s/Nwc4g4S4gYWthIEJhc2ljWFA=?= <x12ozmouse@ya.ru>
+In-Reply-To: <6F6BB55A-0E6F-4067-A1CE-4B7A77FD51BD@ya.ru>
+References: <6F6BB55A-0E6F-4067-A1CE-4B7A77FD51BD@ya.ru>
 MIME-Version: 1.0
-In-Reply-To: <A16247DB21CEBB409D0827EB13D43B451696F72F@NASANEXD02E.na.qualcomm.com>
-References: <A16247DB21CEBB409D0827EB13D43B4501F6200E@NASANEXD02E.na.qualcomm.com>
- <9DB666D2CF7F704E84559F1AEF4EBA97193ECF5C@aphydexd01a>
- <906BB7F9E7542D408351AC9D2A8FDABA03DC4DE0@nasanexd02f.na.qualcomm.com>
- <50B6EFC4.4070505@qca.qualcomm.com>
- <A16247DB21CEBB409D0827EB13D43B451696F72F@NASANEXD02E.na.qualcomm.com>
-From: "Luis R. Rodriguez" <mcgrof@gmail.com>
-Date: Wed, 28 Nov 2012 23:47:47 -0800
-Message-ID: <CAB=NE6Wf4WSzej2v+1QM3NEkhoDv28aWahUxD+bPr4erDqsp7g@mail.gmail.com>
-Subject: Re: [wireless-regdb] [patch] add K3 and PS to db.txt
+Message-Id: <26561339160385@web1g.yandex.ru>
+Date: Fri, 08 Jun 2012 16:59:45 +0400
+Subject: Re: [wireless-regdb] Update regulatory rules for Russia (RU) on
+ 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,86 +38,45 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: multipart/mixed; boundary="===============4727114271694380086=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: "Bu, Jinsong" <jinsong@qca.qualcomm.com>
-Cc: "Jin, Navy" <nhjin@qca.qualcomm.com>, "Thiagarajan, Vasanthakumar" <vthiagar@qca.qualcomm.com>, wireless-regdb@lists.infradead.org, "Yuan, Ye" <yeyuan@qca.qualcomm.com>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "linville@tuxdriver.com" <linville@tuxdriver.com>, "Mani, Raja" <rmani@qca.qualcomm.com>, "Sundar,
- Mohan Kumar" <msundar@qca.qualcomm.com>, Michael Green <green@qca.qualcomm.com>, "Balasubramanian, Senthil Kumar" <senthilb@qca.qualcomm.com>
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Nov 28, 2012 at 11:38 PM, Bu, Jinsong <jinsong@qca.qualcomm.com> wrote:
-> Hi John,
->
-> I created a patch to add K3 and PS country string to db.txt, please review the patch.
->
-> Note that I copied KP's rules for K3 since they are all APL9_WORLD.
->
-> -------------------------------------------------------------------------------------------------------------------------------------
-> From a006587d846cd91a07d3e232421947bc3f96e235 Mon Sep 17 00:00:00 2001
-> From: jinsong <jinsong@qca.qualcomm.com>
-> Date: Thu, 29 Nov 2012 15:15:21 +0800
-> Subject: [PATCH] add K3 and PS
->
->
-> Signed-off-by: jinsong <jinsong@qca.qualcomm.com>
-> ---
->  db.txt |   13 +++++++++++++
->  1 file changed, 13 insertions(+)
->
-> diff --git a/db.txt b/db.txt
-> index 4c54543..a7ff207 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -391,6 +391,13 @@ country JO:
->         (2402 - 2482 @ 40), (N/A, 20)
->         (5170 - 5250 @ 40), (N/A, 18)
->
-> +country K3:
-> +       (2402 - 2482 @ 40), (N/A, 20)
-> +       (5170 - 5330 @ 40), (3, 20)
-> +       (5160 - 5250 @ 40), (3, 20), DFS
-> +       (5490 - 5630 @ 40), (3, 30), DFS
-> +       (5735 - 5815 @ 40), (3, 30)
-> +
+--===============4727114271694380086==
+Content-Type: text/html; charset="koi8-r"
+Content-Transfer-Encoding: base64
 
-What is K3? Please note that I removed all variations of different
-regulatory domains for a country when I converted the HAL reg code out
-to db.txt format for CRDA. The intent was to provide a unified up to
-date regulatory solution only. All variations that are "preferred"
-should simply just rely on the old rules if these need to be
-productized for whatever OEM/parnoid/stupid reasons. Please let me
-know if you find a good reason to actually add these and if so please
-consider adding them as custom regulatory domains which we do support
--- see the custom world regulatory domains on the ath module.
+PGRpdj5QbGVhc2UgYWJvcnQsIHRoZSBpbmZvIHNlZW1zIHRvIGJlIG91dGRhdGVkLjwvZGl2Pjxk
+aXY+mjwvZGl2PjxibG9ja3F1b3RlIHR5cGU9ImNpdGUiPjxkaXY+mjwvZGl2PjxzcGFuPlBsZWFz
+ZSB1cGRhdGUgdGhlIHJlZ3VsYXRvcnkgcnVsZXMgZm9yIFJ1c3NpYSAoUlUpIG9uIDVHSHogdG8g
+YmUgdGhlIGZvbGxvd2luZzo8L3NwYW4+PGJyIC8+PGJyIC8+PHNwYW4+miCaICg8YSBocmVmPSJ0
+ZWw6NTE3MCUyMC0lMjA1MzUwIj41MTcwIC0gNTM1MDwvYT6aQCA0MCksIChOL0EsIDIwKTwvc3Bh
+bj48YnIgLz48c3Bhbj6aIJogKDxhIGhyZWY9InRlbDo1NjUwJTIwLSUyMDU4MzUiPjU2NTAgLSA1
+ODM1PC9hPppAIDQwKSwgKE4vQSwgMzApPC9zcGFuPjxiciAvPjxiciAvPmkuZS4gY2hhbm5lbHMg
+MzQtNjQgY2FuIGJlIHVzZWQgaW4gZWl0aGVyIDIwTUh6IG9yIDQwTUh6IG1vZGVzIHdpdGggbWF4
+aW11bSBwb3dlciBvZiAyMGRCbSAoLTEwIGRCVyksIGFuZCBjaGFubmVscyAxMzItMTY1IGNhbiBi
+ZSB1c2VkIGluIGVpdGhlciAyME1IeiBvciA0ME1IeiBtb2RlcyB3aXRoIG1heGltdW0gcG93ZXIg
+b2YgMzBkQm0gKDAgZEJXKS48YnIgLz48YnIgLz48c3Bhbj5JbmZvcm1hdGlvbiBpcyB0YWtlbiBm
+cm9tIHRoZSBvZmZpY2lhbCBkb2N1bWVudCBhdmFpbGFibGUgaGVyZTqaPGEgaHJlZj0iaHR0cDov
+L3d3dy5yZnMtcmYucnUvaWRjL2dyb3Vwcy9wdWJsaWMvZG9jdW1lbnRzL2dyaGNfbmF0aXZlX2Zp
+bGVzLzAwNTU3MS5kb2MiPmh0dHA6Ly93d3cucmZzLXJmLnJ1L2lkYy9ncm91cHMvcHVibGljL2Rv
+Y3VtZW50cy9ncmhjX25hdGl2ZV9maWxlcy8wMDU1NzEuZG9jPC9hPjwvc3Bhbj48YnIgLz48c3Bh
+bj5SdWxlcyBmb3IgMi40IEdIeiBhcmUgbm90IGNoYW5nZWQuPC9zcGFuPjwvYmxvY2txdW90ZT4N
+Cg0K
 
->  country KE:
->         (2402 - 2482 @ 40), (N/A, 20)
->         (5735 - 5835 @ 40), (N/A, 30)
-> @@ -554,6 +561,12 @@ country PL: DFS-ETSI
->         (5250 - 5330 @ 40), (N/A, 20), DFS
->         (5490 - 5710 @ 40), (N/A, 27), DFS
->
-> +country PS:
-> +       (2402 - 2472 @ 40), (3, 27)
-> +       (5170 - 5250 @ 40), (3, 17)
-> +       (5250 - 5330 @ 40), (3, 23), DFS
-> +       (5735 - 5835 @ 40), (3, 30)
-> +
-
-What is PS? Historically the Atheros HAL has used "PS" for Public
-Safety but not that technically it is the ISO3166-alpha2 country code
-for Palestine, did you intend to define that or Public Safety? If your
-intent was to try to add Public Safety then consider using the custom
-regulatory domains but then also try to figure out with marketing /
-etc if we ever want to sell products to Palestine.
-
-  Luis
+--===============4727114271694380086==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============4727114271694380086==--
 
