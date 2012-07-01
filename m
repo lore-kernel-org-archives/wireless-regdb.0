@@ -1,17 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from canardo.mork.no ([2001:4620:9::1])
- by casper.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1SlHho-0002W8-V2
- for wireless-regdb@lists.infradead.org; Sun, 01 Jul 2012 10:48:42 +0000
-From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
-References: <4FEFB364.7050403@gmail.com>
-Date: Sun, 01 Jul 2012 12:48:24 +0200
-In-Reply-To: <4FEFB364.7050403@gmail.com> (Xose Vazquez Perez's message of
- "Sun, 01 Jul 2012 04:18:12 +0200")
-Message-ID: <87d34f4v0n.fsf@nemi.mork.no>
+Received: from mail-wg0-f49.google.com ([74.125.82.49])
+ by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
+ id 1SlIKR-0005eY-Be
+ for wireless-regdb@lists.infradead.org; Sun, 01 Jul 2012 11:28:38 +0000
+Received: by wgbds1 with SMTP id ds1so3028802wgb.18 for
+ <wireless-regdb@lists.infradead.org>; Sun, 01 Jul 2012 04:28:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=message-id:date:from:reply-to:user-agent:mime-version:to:subject
+ :references:in-reply-to:content-type:content-transfer-encoding;
+ bh=07KIqKfJ99iW7x3jrnH6D8JkMzmC7rDEFh9sf5J5yA8=;
+ b=BtyenTQ16irfRMLf0JCZT3HeUGYw5nRY39NqSUTQQbi9GpEyI7ww4w4SnBLuoFHR4s
+ 8m6UMOu0oEWtao9rRxN26a5aPGa7GVILN6qghsJRTNP2w409eo2BxEUC32jV/AYzL7n+
+ JUMu6BRfthPlFtQjoySqtEkSbhlNKonvei34NcGTlS8fZ/NsEZfXWaINTxMXj5hfETUo
+ 2HYx/bcbNE37i+GESiF2s7XWooTKddSjr6+fxg/flhZB6q21+0BZ9ho6w/uerAP7Gtjs
+ wMBQMsnNld12UdHxGkzcybFf7k2haZlK2ui37Uc+0OsGIYiBdNIBU/1jzuCVh498/fpl P3yQ==
+Message-ID: <4FF0345C.6020208@gmail.com>
+Date: Sun, 01 Jul 2012 13:28:28 +0200
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
+References: <4FEFB364.7050403@gmail.com> <87d34f4v0n.fsf@nemi.mork.no>
+In-Reply-To: <87d34f4v0n.fsf@nemi.mork.no>
 Subject: Re: [wireless-regdb] EU rules: 2.4 GHz bands
+Reply-To: xose.vazquez@gmail.com, wireless-regdb@lists.infradead.org
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -21,61 +33,25 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="utf-8"; format="flowed"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: xose.vazquez@gmail.com
+To: =?UTF-8?B?QmrDuHJuIE1vcms=?= <bjorn@mork.no>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Xose Vazquez Perez <xose.vazquez@gmail.com> writes:
+On 07/01/2012 12:48 PM, Bjørn Mork wrote:
 
-> * Implementation by country:
->
-> - Limited implementation (see ERC/REC 70-03 http://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf
->   National Restrictions Page 41 "Annex 3 Band A Wideband Data Transmission systems 2400.0-2483.5 MHz"
->   Table Page 25 "Annex 3 - Wideband Data Transmission Systems"
->   Table Page 28 "Annex 3 - Wideband Data Transmission Systems"):
->
->   France (Full implementation planned 2012)
->   Russian Federation: Limited implementation
->   Ukraine: Limited implementation
->   NO in Ny-Ålesund(Norway)
->   Azerbaijan-AZE: no info
->   Belarus-BLR: no info
->
->
->
-> All EU countries, except those listed above, 
+> Xose Vazquez Perez <xose.vazquez@gmail.com> writes:
 
-I fail to see what this has to do with EU.  A question for you: How many
-of the above listed countries are in fact EU members?
+>> All EU countries, except those listed above,
 
-> and for 2.4 GHz
-> bands, should be clones of the current DE configuration:
->
-> (2400 - 2483.5 @ 40), (N/A, 100 mW)
+> I fail to see what this has to do with EU.  A question for you: How many
+> of the above listed countries are in fact EU members?
 
-Yes, sure.  I've never really understood where the assymetric guard
-bands came from.  So by all means, fix the 2.4GHz band limits for all
-CEPT countries.  But you might as well do a global update based on the
-ITU Radio Regulations.
-
-As a side noe, I believe the above quoted Ny-Ålesund restriction
-illustrates how futile any of these detailed automatic licensing
-restrictions are.  At least until they are coupled with geolocation
-instead of administrative domain. For those not knowing the details: The
-exception cover an area with a radius of only 20km where laptops are
-likely to come from a dozen different regulatory domains.  And that's
-not because there are many persons in this area.  The population is
-peeking at about 180 people in the summer...  Ref
-http://www.kingsbay.no/index.php?option=com_content&view=article&id=70&Itemid=29
-
-
-
-Bjørn
+You are right, s/EU/Europe. Anyway, affected countries are listed
+on the pdf.
 
 _______________________________________________
 wireless-regdb mailing list
