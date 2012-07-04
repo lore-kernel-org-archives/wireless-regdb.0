@@ -1,19 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mms1.broadcom.com ([216.31.210.17])
- by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
- id 1SmIew-0002cT-EJ
- for wireless-regdb@lists.infradead.org; Wed, 04 Jul 2012 06:01:55 +0000
-Message-ID: <4FF3DC31.2030004@broadcom.com>
-Date: Wed, 4 Jul 2012 08:01:21 +0200
-From: "Arend van Spriel" <arend@broadcom.com>
+Received: from mail-wg0-f49.google.com ([74.125.82.49])
+ by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
+ id 1SmXZF-0001T5-Lk
+ for wireless-regdb@lists.infradead.org; Wed, 04 Jul 2012 21:57:02 +0000
+Received: by wgbds1 with SMTP id ds1so5348296wgb.18 for
+ <wireless-regdb@lists.infradead.org>; Wed, 04 Jul 2012 14:56:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=message-id:date:from:user-agent:mime-version:to:subject
+ :content-type:content-transfer-encoding;
+ bh=acYcCnqqP0vt4R7L3pAOIzsSACu4ajkav29xA6hLoH8=;
+ b=OqRNUFv2uIoKR8H4/5EaYwBChz2mj0vHVzPP9kqTS6rSaQBKIRYr7d4OHQgldOvb5/
+ JNH9lbP2nsW3GnmRkgfbOuUsPltezp+zF/oVKzDPFyT08/ARpijdY825ALHXLzm+xrst
+ cnbvsgBdO6dsWe55i3FWskWjYFu0/4XCvE/XnK02k9R0UQp8y1OEs4QI51Dn4ud34qQn
+ eQYdIDiZpEaFd41R5BMDB97aIgKiRuCCXb+Uq/tvapBjbKj+Ks2V9aJ8QwTMS3XpUYxQ
+ n3lYNJj2M4C9Gx48Fc4MR8K9bmsEKKaoTjxNUe5FUAt1ckSiOWjxAflsUT0tQJZhi4LR 3kPg==
+Message-ID: <4FF4BC24.4070904@gmail.com>
+Date: Wed, 04 Jul 2012 23:56:52 +0200
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
-References: <1341362473-18747-1-git-send-email-xose.vazquez@gmail.com>
- <CAB=NE6U=bk6RSXHouuHvJd0=GErYJp82jkgeNWGnPDooZ_SONQ@mail.gmail.com>
- <4FF396DD.7060408@gmail.com>
-In-Reply-To: <4FF396DD.7060408@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
- rules for ES (Spain) on 5GHz and 2.4GHz
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for ES
+ (Spain) on 5GHz and 2.4GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -23,48 +30,39 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Cc: "Luis R. Rodriguez" <mcgrof@frijolero.org>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, linville@tuxdriver.com
+To: wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <mcgrof@frijolero.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 07/04/2012 03:05 AM, Xose Vazquez Perez wrote:
-> On 07/04/2012 02:49 AM, Luis R. Rodriguez wrote:
->> On Tue, Jul 3, 2012 at 5:41 PM, Xose Vazquez Perez
->> <xose.vazquez@gmail.com> wrote:
-> 
->>>   country ES: DFS-ETSI
->>> -       (2402 - 2482 @ 40), (N/A, 20)
->>> -       (5170 - 5250 @ 40), (N/A, 20)
->>> -       (5250 - 5330 @ 40), (N/A, 20), DFS
->>> -       (5490 - 5710 @ 40), (N/A, 27), DFS
->>> +       (2400 - 2483.5 @ 40), (N/A, 100 mW)
->>> +       (5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
->>> +       (5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
->>> +       (5470 - 5725 @ 40), (N/A, 500 mW), DFS
-> 
->> You are changing from dBm to mW directly... please do the unit change
->> in one patch and *then* the actual change. This would make it easier
->> to review....
-> 
-> I did copy & paste from DE to ES. These are basic CEPT rules.
-> 
-> 10 log(100) = 20
-> 10 log(500) ~ 27
-> 
-> Anyway tomorrow, I will send a new patch.
+hi,
 
-Just a general remark not specific to this patch. The commit message
-often contains a source reference. I think it would be useful to have
-this reference in the database a well so people validating it do not
-need to do the digging using 'git blame'. Does that make sense?
+As I said before:
+http://lists.infradead.org/pipermail/wireless-regdb/2012-June/000058.html
+http://lists.infradead.org/pipermail/wireless-regdb/2012-June/000059.html
 
-Gr. AvS
+All CEPT countries, except those listed above, should be clones
+of the current DE configuration. These are the CEPT _basic rules_ :
 
+(2400 - 2483.5 @ 40), (N/A, 100 mW)
+(5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
+(5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
+(5470 - 5725 @ 40), (N/A, 500 mW), DFS
+
+*Furthermore their own local rules*
+
+
+When "spectral power limits" and "transmitter power control"(TPC) will be
+implemented [1], some values _should be revised_ .
+
+
+I did it only for ES - Spain .
+
+
+[1] http://linuxwireless.org/en/developers/todo-list#Regulatory_database_improvements
 
 _______________________________________________
 wireless-regdb mailing list
