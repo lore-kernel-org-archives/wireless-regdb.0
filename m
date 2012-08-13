@@ -1,29 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wg0-f49.google.com ([74.125.82.49])
- by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1SlIKR-0005eY-Be
- for wireless-regdb@lists.infradead.org; Sun, 01 Jul 2012 11:28:38 +0000
-Received: by wgbds1 with SMTP id ds1so3028802wgb.18 for
- <wireless-regdb@lists.infradead.org>; Sun, 01 Jul 2012 04:28:30 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=message-id:date:from:reply-to:user-agent:mime-version:to:subject
- :references:in-reply-to:content-type:content-transfer-encoding;
- bh=07KIqKfJ99iW7x3jrnH6D8JkMzmC7rDEFh9sf5J5yA8=;
- b=BtyenTQ16irfRMLf0JCZT3HeUGYw5nRY39NqSUTQQbi9GpEyI7ww4w4SnBLuoFHR4s
- 8m6UMOu0oEWtao9rRxN26a5aPGa7GVILN6qghsJRTNP2w409eo2BxEUC32jV/AYzL7n+
- JUMu6BRfthPlFtQjoySqtEkSbhlNKonvei34NcGTlS8fZ/NsEZfXWaINTxMXj5hfETUo
- 2HYx/bcbNE37i+GESiF2s7XWooTKddSjr6+fxg/flhZB6q21+0BZ9ho6w/uerAP7Gtjs
- wMBQMsnNld12UdHxGkzcybFf7k2haZlK2ui37Uc+0OsGIYiBdNIBU/1jzuCVh498/fpl P3yQ==
-Message-ID: <4FF0345C.6020208@gmail.com>
-Date: Sun, 01 Jul 2012 13:28:28 +0200
-From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Received: from mms2.broadcom.com ([216.31.210.18])
+ by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
+ id 1T0vCz-0000kK-RX
+ for wireless-regdb@lists.infradead.org; Mon, 13 Aug 2012 14:01:30 +0000
+Message-ID: <502908A9.2010803@broadcom.com>
+Date: Mon, 13 Aug 2012 16:01:13 +0200
+From: "Arend van Spriel" <arend@broadcom.com>
 MIME-Version: 1.0
-References: <4FEFB364.7050403@gmail.com> <87d34f4v0n.fsf@nemi.mork.no>
-In-Reply-To: <87d34f4v0n.fsf@nemi.mork.no>
-Subject: Re: [wireless-regdb] EU rules: 2.4 GHz bands
-Reply-To: xose.vazquez@gmail.com, wireless-regdb@lists.infradead.org
+References: <1341362473-18747-1-git-send-email-xose.vazquez@gmail.com>
+ <CAB=NE6U=bk6RSXHouuHvJd0=GErYJp82jkgeNWGnPDooZ_SONQ@mail.gmail.com>
+ <4FF396DD.7060408@gmail.com> <4FF3DC31.2030004@broadcom.com>
+ <87pq852i0l.fsf@purkki.adurom.net>
+In-Reply-To: <87pq852i0l.fsf@purkki.adurom.net>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
+ rules for ES (Spain) on 5GHz and 2.4GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,27 +24,37 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"; format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: =?UTF-8?B?QmrDuHJuIE1vcms=?= <bjorn@mork.no>, wireless-regdb@lists.infradead.org
+To: Kalle Valo <kvalo@adurom.com>
+Cc: "Luis R. Rodriguez" <mcgrof@frijolero.org>, wireless-regdb@lists.infradead.org, Xose Vazquez Perez <xose.vazquez@gmail.com>, linville@tuxdriver.com, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 07/01/2012 12:48 PM, Bjørn Mork wrote:
+On 07/09/2012 03:14 PM, Kalle Valo wrote:
+> "Arend van Spriel" <arend@broadcom.com> writes:
+> 
+>> Just a general remark not specific to this patch. The commit message
+>> often contains a source reference. I think it would be useful to have
+>> this reference in the database as well so people validating it do not
+>> need to do the digging using 'git blame'. Does that make sense?
+> 
+> Yes :)
+> 
+> IMHO makes a lot easier to validate the entries.
+> 
 
-> Xose Vazquez Perez <xose.vazquez@gmail.com> writes:
+Luis, John,
 
->> All EU countries, except those listed above,
+What are your thoughts on my remark above?
 
-> I fail to see what this has to do with EU.  A question for you: How many
-> of the above listed countries are in fact EU members?
+Gr. AvS
 
-You are right, s/EU/Europe. Anyway, affected countries are listed
-on the pdf.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
