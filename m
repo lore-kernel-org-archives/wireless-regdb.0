@@ -1,22 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
- ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
- by bombadil.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1T0vQR-0000xk-It
- for wireless-regdb@lists.infradead.org; Mon, 13 Aug 2012 14:15:24 +0000
-Date: Mon, 13 Aug 2012 10:04:41 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20120813140441.GA10529@tuxdriver.com>
-References: <1341362473-18747-1-git-send-email-xose.vazquez@gmail.com>
- <CAB=NE6U=bk6RSXHouuHvJd0=GErYJp82jkgeNWGnPDooZ_SONQ@mail.gmail.com>
- <4FF396DD.7060408@gmail.com> <4FF3DC31.2030004@broadcom.com>
- <87pq852i0l.fsf@purkki.adurom.net> <502908A9.2010803@broadcom.com>
+Received: from mail-ie0-f177.google.com ([209.85.223.177])
+ by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
+ id 1TL9dG-00063N-Cz
+ for wireless-regdb@lists.infradead.org; Mon, 08 Oct 2012 09:28:16 +0000
+Received: by mail-ie0-f177.google.com with SMTP id e14so108614iej.36 for
+ <wireless-regdb@lists.infradead.org>; Mon, 08 Oct 2012 02:28:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=mime-version:date:message-id:subject:from:to:cc:content-type
+ :content-transfer-encoding;
+ bh=SVjjP6SkaO7OTWlMpQUOekf1/EDlB/xFc7vAkSLQyzw=;
+ b=bnuT9VWpQsOVz4b/LNbO5bpYnQ8H7+9PH0W/q6U/aSZuxUS2NNNW2LNd5dUz8sEoWR
+ tnt+ZA14cPzy2CepejOzE4/v3W26+DooJqWbZyE+5BZV5159cTLBSCgU61QA0sE2r0t7
+ j0yt4RtbWXRkTTNgnmwvD7/wgVYMyK3ML1N7ailbA6CH7ormXguzK5OfZz1rrstdJz7v
+ qiUBRKFgp+gVZ4iVETjOHkRnMKXra68GawgDqNyDquqRQblKsDQalstiUS6C/awGTMpd
+ lSb9ngu92PnGXP8j8QEbRvpX8UoI02lhm/pCpnJGO2dGnCcgdCwrTGgzLoyba49dVY2Z Fi6w==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <502908A9.2010803@broadcom.com>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
- rules for ES (Spain) on 5GHz and 2.4GHz
+Date: Mon, 8 Oct 2012 11:28:06 +0200
+Message-ID: <CAHc5FiXv=aeKKwpz2RP3ho+d-eggxfGuECk1deyNWNdkT8r8gg@mail.gmail.com>
+From: Mykyta Iziumtsev <mykyta.iziumtsev@gmail.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulations for
+	Ukraine
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,43 +30,48 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="koi8-u"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: Arend van Spriel <arend@broadcom.com>
-Cc: "Luis R. Rodriguez" <mcgrof@frijolero.org>, wireless-regdb@lists.infradead.org, Kalle Valo <kvalo@adurom.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, linux-wireless@vger.kernel.org
+Content-Transfer-Encoding: base64
+To: linville@tuxdriver.com
+Cc: Andrew Bordunov <andrew.bordunov@gmail.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Pavel Chernyshev <pchernyshev@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Aug 13, 2012 at 04:01:13PM +0200, Arend van Spriel wrote:
-> On 07/09/2012 03:14 PM, Kalle Valo wrote:
-> > "Arend van Spriel" <arend@broadcom.com> writes:
-> > 
-> >> Just a general remark not specific to this patch. The commit message
-> >> often contains a source reference. I think it would be useful to have
-> >> this reference in the database as well so people validating it do not
-> >> need to do the digging using 'git blame'. Does that make sense?
-> > 
-> > Yes :)
-> > 
-> > IMHO makes a lot easier to validate the entries.
-> > 
-> 
-> Luis, John,
-> 
-> What are your thoughts on my remark above?
-
-It seems reasonable to me.  OTOH, it could lead to a lot of clutter
-in the database file...?  I guess it is a matter of judgment.
-
-John
--- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
-
-_______________________________________________
-wireless-regdb mailing list
-wireless-regdb@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
+QWRkIDVHSHogYmFuZCBhbmQgbWFyayAyLjRHSHogYW5kIDVHSHogYXMgTk8tT1VURE9PUiBhY2Nv
+cmRpbmcgdG8KIvKm28XOztEg0NLPINrB1NfF0sTWxc7O0SDwxdLFzKbL1SDSwcSmz8XMxcvU0s/O
+zsnIINrB08/CptcK1MEg18nQ0s/Nps7A18HM2M7JyCDQ0snT1NLPp9csIMTM0SDFy9PQzNXB1MHD
+pqcg0cvJyCDOxSDQz9TSpsLOpgrEz9rXz8zJIM7BIMXL09DM1cHUwcOmwCIgZnJvbSAyNyBNYXkg
+MjAxMC4KClJlZjogaHR0cDovL3d3dy51Y3JmLmdvdi51YS91ay9kb2Mvbmtyei8xMTk2MDY4ODc0
+CgpVcGRhdGUgcnVsZXMgYXMgZm9sbG93cyBhcyBsb3dlc3QgY29tbW9uIGRlbm9taW5hdG9yOgog
+ICAgICAgICgyNDAwIC0gMjQ4My41IEAgNDApLCAoTi9BLCAyMCksIE5PLU9VVERPT1IKICAgICAg
+ICAoNTE1MCAtIDUzNTAgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9PUgoKQWxsIFdpRmkgZXF1
+aXBtZW50IGNhbiBiZSBjbGFzc2lmaWVkIGFzIGVpdGhlciBDbGllbnQsIE1hc3RlciwKb3IgQWNj
+ZXNzIFRlcm1pbmFsLiBDbGllbnQgbWFwcyB0byBTVEEgb3IgUDJQLUNsaWVudCwKTWFzdGVyIC0t
+IHRvIEFQLCBJQlNTL01lc2ggbm9kZSBvciBQMlAtR08sIGFuZCBBY2Nlc3MgVGVybWluYWwKY2Fu
+IGJlIGVpdGhlciBDbGllbnQgb3IgTWFzdGVyLCBidXQgdGhlcmUgaXMgYWRkaXRpb25hbCByZXF1
+aXJlbWVudAp0aGF0IGl0IHNob3VsZCBiZSBkZWFjdGl2YXRlZCBvbiByZXF1ZXN0IGZyb20gYXV0
+aG9yaXRpZXMuCkJ1dCBhdCB0aGUgc2FtZSB0aW1lIEFjY2VzcyBUZXJtaW5hbCBjYW4gYmUgdXNl
+ZCBvdXRkb29yLgpGb3IgTWFzdGVyIGRldmljZSB0aGVyZSBpcyByZXF1aXJlbWVudCBmb3IgaW5k
+b29yLW9ubHkgdXNhZ2UuCkZ1cnRoZXIsIFdpRmkgZXF1aXBtZW50IGlzIGRpdmlkZWQgYnkgODAy
+LjExbiBjYXBhYmlsaXR5IGNyaXRlcmlhLgoKODAyLjExYmcvODAyLjExYSBDbGllbnQgYW5kIE1h
+c3RlcgoyNDAwLTI0ODMsNSAxMDAgbVcgZm9yIERTU1MvT0ZETSBhbmQgNTAwIG1XIGZvciBGSFNT
+CjUxNTAtNTM1MCAyMDAgbVcKCjgwMi4xMWJnLzgwMjExYSBBY2Nlc3MgVGVybWluYWwKMjQwMC0y
+NDgzLDUgMTAwIG1XCjUxNTAtNTM1MCAyMDAgbVcKNTQ3MC01NjcwIDEgVwo1NzI1LTU4NTAgMiBX
+Cgo4MDIuMTFiZ24vODAyLjExYW4gQ2xpZW50LCBNYXN0ZXIgb3IgQWNjZXNzIFRlcm1pbmFsCjI0
+MDAtMjQ4Myw1IDEwMCBtVwo1MTUwLTUzNTAgMTAwIG1XCjU0NzAtNTY3MCAxMDAgbVcKNTcyNS01
+ODUwIDEwMCBtVwoKU2lnbmVkLW9mZi1ieTogTXlreXRhIEl6aXVtdHNldiA8bXlreXRhLml6aXVt
+dHNldkBnbWFpbC5jb20+ClNpZ25lZC1vZmYtYnk6IFBhdmVsIENoZXJueXNoZXYgPHBjaGVybnlz
+aGV2QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogQW5kcmV3IEJvcmR1bm92IDxhbmRyZXcuYm9y
+ZHVub3ZAZ21haWwuY29tPgotLS0KIGRiLnR4dCB8ICAgIDMgKystCiAxIGZpbGUgY2hhbmdlZCwg
+MiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIu
+dHh0CmluZGV4IDRjNTQ1NDMuLjA4YzZjODkgMTAwNjQ0Ci0tLSBhL2RiLnR4dAorKysgYi9kYi50
+eHQKQEAgLTY1Myw3ICs2NTMsOCBAQCBjb3VudHJ5IFRSOiBERlMtRVRTSQogCSg1MjUwIC0gNTMz
+MCBAIDIwKSwgKE4vQSwgMjApLCBERlMKCiBjb3VudHJ5IFVBOgotCSgyNDAyIC0gMjQ4MiBAIDQw
+KSwgKE4vQSwgMjApCisJKDI0MDAgLSAyNDgzLjUgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9P
+UgorCSg1MTUwIC0gNTM1MCBAIDQwKSwgKE4vQSwgMjApLCBOTy1PVVRET09SCgogY291bnRyeSBV
+UzogREZTLUZDQwogCSgyNDAyIC0gMjQ3MiBAIDQwKSwgKDMsIDI3KQotLSAKMS43LjEwCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwp3aXJlbGVzcy1yZWdk
+YiBtYWlsaW5nIGxpc3QKd2lyZWxlc3MtcmVnZGJAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL3dpcmVsZXNzLXJlZ2RiCg==
