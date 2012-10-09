@@ -1,26 +1,18 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ie0-f177.google.com ([209.85.223.177])
- by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TL9dG-00063N-Cz
- for wireless-regdb@lists.infradead.org; Mon, 08 Oct 2012 09:28:16 +0000
-Received: by mail-ie0-f177.google.com with SMTP id e14so108614iej.36 for
- <wireless-regdb@lists.infradead.org>; Mon, 08 Oct 2012 02:28:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:date:message-id:subject:from:to:cc:content-type
- :content-transfer-encoding;
- bh=SVjjP6SkaO7OTWlMpQUOekf1/EDlB/xFc7vAkSLQyzw=;
- b=bnuT9VWpQsOVz4b/LNbO5bpYnQ8H7+9PH0W/q6U/aSZuxUS2NNNW2LNd5dUz8sEoWR
- tnt+ZA14cPzy2CepejOzE4/v3W26+DooJqWbZyE+5BZV5159cTLBSCgU61QA0sE2r0t7
- j0yt4RtbWXRkTTNgnmwvD7/wgVYMyK3ML1N7ailbA6CH7ormXguzK5OfZz1rrstdJz7v
- qiUBRKFgp+gVZ4iVETjOHkRnMKXra68GawgDqNyDquqRQblKsDQalstiUS6C/awGTMpd
- lSb9ngu92PnGXP8j8QEbRvpX8UoI02lhm/pCpnJGO2dGnCcgdCwrTGgzLoyba49dVY2Z Fi6w==
+Received: from mms1.broadcom.com ([216.31.210.17])
+ by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
+ id 1TLUcr-0002Uw-Sd
+ for wireless-regdb@lists.infradead.org; Tue, 09 Oct 2012 07:53:16 +0000
+Message-ID: <5073D7DC.8080609@broadcom.com>
+Date: Tue, 9 Oct 2012 09:53:00 +0200
+From: "Arend van Spriel" <arend@broadcom.com>
 MIME-Version: 1.0
-Date: Mon, 8 Oct 2012 11:28:06 +0200
-Message-ID: <CAHc5FiXv=aeKKwpz2RP3ho+d-eggxfGuECk1deyNWNdkT8r8gg@mail.gmail.com>
-From: Mykyta Iziumtsev <mykyta.iziumtsev@gmail.com>
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulations for
-	Ukraine
+References: 
+	 <CAHc5FiXv=aeKKwpz2RP3ho+d-eggxfGuECk1deyNWNdkT8r8gg@mail.gmail.com>
+In-Reply-To: <CAHc5FiXv=aeKKwpz2RP3ho+d-eggxfGuECk1deyNWNdkT8r8gg@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulations
+ for Ukraine
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,48 +22,38 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="koi8-u"
+Content-Type: text/plain; charset="koi8-u"; format="flowed"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: base64
-To: linville@tuxdriver.com
-Cc: Andrew Bordunov <andrew.bordunov@gmail.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Pavel Chernyshev <pchernyshev@gmail.com>
+To: wireless-regdb@lists.infradead.org, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <rodrigue@qca.qualcomm.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-QWRkIDVHSHogYmFuZCBhbmQgbWFyayAyLjRHSHogYW5kIDVHSHogYXMgTk8tT1VURE9PUiBhY2Nv
-cmRpbmcgdG8KIvKm28XOztEg0NLPINrB1NfF0sTWxc7O0SDwxdLFzKbL1SDSwcSmz8XMxcvU0s/O
-zsnIINrB08/CptcK1MEg18nQ0s/Nps7A18HM2M7JyCDQ0snT1NLPp9csIMTM0SDFy9PQzNXB1MHD
-pqcg0cvJyCDOxSDQz9TSpsLOpgrEz9rXz8zJIM7BIMXL09DM1cHUwcOmwCIgZnJvbSAyNyBNYXkg
-MjAxMC4KClJlZjogaHR0cDovL3d3dy51Y3JmLmdvdi51YS91ay9kb2Mvbmtyei8xMTk2MDY4ODc0
-CgpVcGRhdGUgcnVsZXMgYXMgZm9sbG93cyBhcyBsb3dlc3QgY29tbW9uIGRlbm9taW5hdG9yOgog
-ICAgICAgICgyNDAwIC0gMjQ4My41IEAgNDApLCAoTi9BLCAyMCksIE5PLU9VVERPT1IKICAgICAg
-ICAoNTE1MCAtIDUzNTAgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9PUgoKQWxsIFdpRmkgZXF1
-aXBtZW50IGNhbiBiZSBjbGFzc2lmaWVkIGFzIGVpdGhlciBDbGllbnQsIE1hc3RlciwKb3IgQWNj
-ZXNzIFRlcm1pbmFsLiBDbGllbnQgbWFwcyB0byBTVEEgb3IgUDJQLUNsaWVudCwKTWFzdGVyIC0t
-IHRvIEFQLCBJQlNTL01lc2ggbm9kZSBvciBQMlAtR08sIGFuZCBBY2Nlc3MgVGVybWluYWwKY2Fu
-IGJlIGVpdGhlciBDbGllbnQgb3IgTWFzdGVyLCBidXQgdGhlcmUgaXMgYWRkaXRpb25hbCByZXF1
-aXJlbWVudAp0aGF0IGl0IHNob3VsZCBiZSBkZWFjdGl2YXRlZCBvbiByZXF1ZXN0IGZyb20gYXV0
-aG9yaXRpZXMuCkJ1dCBhdCB0aGUgc2FtZSB0aW1lIEFjY2VzcyBUZXJtaW5hbCBjYW4gYmUgdXNl
-ZCBvdXRkb29yLgpGb3IgTWFzdGVyIGRldmljZSB0aGVyZSBpcyByZXF1aXJlbWVudCBmb3IgaW5k
-b29yLW9ubHkgdXNhZ2UuCkZ1cnRoZXIsIFdpRmkgZXF1aXBtZW50IGlzIGRpdmlkZWQgYnkgODAy
-LjExbiBjYXBhYmlsaXR5IGNyaXRlcmlhLgoKODAyLjExYmcvODAyLjExYSBDbGllbnQgYW5kIE1h
-c3RlcgoyNDAwLTI0ODMsNSAxMDAgbVcgZm9yIERTU1MvT0ZETSBhbmQgNTAwIG1XIGZvciBGSFNT
-CjUxNTAtNTM1MCAyMDAgbVcKCjgwMi4xMWJnLzgwMjExYSBBY2Nlc3MgVGVybWluYWwKMjQwMC0y
-NDgzLDUgMTAwIG1XCjUxNTAtNTM1MCAyMDAgbVcKNTQ3MC01NjcwIDEgVwo1NzI1LTU4NTAgMiBX
-Cgo4MDIuMTFiZ24vODAyLjExYW4gQ2xpZW50LCBNYXN0ZXIgb3IgQWNjZXNzIFRlcm1pbmFsCjI0
-MDAtMjQ4Myw1IDEwMCBtVwo1MTUwLTUzNTAgMTAwIG1XCjU0NzAtNTY3MCAxMDAgbVcKNTcyNS01
-ODUwIDEwMCBtVwoKU2lnbmVkLW9mZi1ieTogTXlreXRhIEl6aXVtdHNldiA8bXlreXRhLml6aXVt
-dHNldkBnbWFpbC5jb20+ClNpZ25lZC1vZmYtYnk6IFBhdmVsIENoZXJueXNoZXYgPHBjaGVybnlz
-aGV2QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogQW5kcmV3IEJvcmR1bm92IDxhbmRyZXcuYm9y
-ZHVub3ZAZ21haWwuY29tPgotLS0KIGRiLnR4dCB8ICAgIDMgKystCiAxIGZpbGUgY2hhbmdlZCwg
-MiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCgpkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIu
-dHh0CmluZGV4IDRjNTQ1NDMuLjA4YzZjODkgMTAwNjQ0Ci0tLSBhL2RiLnR4dAorKysgYi9kYi50
-eHQKQEAgLTY1Myw3ICs2NTMsOCBAQCBjb3VudHJ5IFRSOiBERlMtRVRTSQogCSg1MjUwIC0gNTMz
-MCBAIDIwKSwgKE4vQSwgMjApLCBERlMKCiBjb3VudHJ5IFVBOgotCSgyNDAyIC0gMjQ4MiBAIDQw
-KSwgKE4vQSwgMjApCisJKDI0MDAgLSAyNDgzLjUgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9P
-UgorCSg1MTUwIC0gNTM1MCBAIDQwKSwgKE4vQSwgMjApLCBOTy1PVVRET09SCgogY291bnRyeSBV
-UzogREZTLUZDQwogCSgyNDAyIC0gMjQ3MiBAIDQwKSwgKDMsIDI3KQotLSAKMS43LjEwCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwp3aXJlbGVzcy1yZWdk
-YiBtYWlsaW5nIGxpc3QKd2lyZWxlc3MtcmVnZGJAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL3dpcmVsZXNzLXJlZ2RiCg==
+T24gMTAvMDgvMjAxMiAxMToyOCBBTSwgTXlreXRhIEl6aXVtdHNldiB3cm90ZToKPiBBZGQgNUdI
+eiBiYW5kIGFuZCBtYXJrIDIuNEdIeiBhbmQgNUdIeiBhcyBOTy1PVVRET09SIGFjY29yZGluZyB0
+bwo+ICLyptvFzs7RINDSzyDawdTXxdLE1sXOztEg8MXSxcymy9Ug0sHEps/FzMXL1NLPzs7JyCDa
+wdPPwqbXCj4g1MEg18nQ0s/Nps7A18HM2M7JyCDQ0snT1NLPp9csIMTM0SDFy9PQzNXB1MHDpqcg
+0cvJyCDOxSDQz9TSpsLOpgo+IMTP2tfPzMkgzsEgxcvT0MzVwdTBw6bAIiBmcm9tIDI3IE1heSAy
+MDEwLgo+Cj4gUmVmOiBodHRwOi8vd3d3LnVjcmYuZ292LnVhL3VrL2RvYy9ua3J6LzExOTYwNjg4
+NzQKPgo+IFVwZGF0ZSBydWxlcyBhcyBmb2xsb3dzIGFzIGxvd2VzdCBjb21tb24gZGVub21pbmF0
+b3I6Cj4gICAgICAgICAgKDI0MDAgLSAyNDgzLjUgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9P
+Ugo+ICAgICAgICAgICg1MTUwIC0gNTM1MCBAIDQwKSwgKE4vQSwgMjApLCBOTy1PVVRET09SCj4K
+PiBTaWduZWQtb2ZmLWJ5OiBNeWt5dGEgSXppdW10c2V2IDxteWt5dGEuaXppdW10c2V2QGdtYWls
+LmNvbT4KPiBTaWduZWQtb2ZmLWJ5OiBQYXZlbCBDaGVybnlzaGV2IDxwY2hlcm55c2hldkBnbWFp
+bC5jb20+Cj4gU2lnbmVkLW9mZi1ieTogQW5kcmV3IEJvcmR1bm92IDxhbmRyZXcuYm9yZHVub3ZA
+Z21haWwuY29tPgo+IC0tLQo+ICAgZGIudHh0IHwgICAgMyArKy0KPiAgIDEgZmlsZSBjaGFuZ2Vk
+LCAyIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPgo+IGRpZmYgLS1naXQgYS9kYi50eHQg
+Yi9kYi50eHQKPiBpbmRleCA0YzU0NTQzLi4wOGM2Yzg5IDEwMDY0NAo+IC0tLSBhL2RiLnR4dAo+
+ICsrKyBiL2RiLnR4dAo+IEBAIC02NTMsNyArNjUzLDggQEAgY291bnRyeSBUUjogREZTLUVUU0kK
+PiAgIAkoNTI1MCAtIDUzMzAgQCAyMCksIChOL0EsIDIwKSwgREZTCj4KClNvbWUgdGltZSBhZ28g
+SSBzdWdnZXN0ZWQgdG8gYWRkIHRoZSBzb3VyY2UgcmVmIGluIHRoZSBkYi50eHQuIENvdWxkIHdl
+IAphZGQgdGhhdCBoZXJlIG5vdzoKCisgLyoKKyAgKiBzb3VyY2U6IGh0dHA6Ly93d3cudWNyZi5n
+b3YudWEvdWsvZG9jL25rcnovMTE5NjA2ODg3NAorICAqLwo+ICAgY291bnRyeSBVQToKPiAtCSgy
+NDAyIC0gMjQ4MiBAIDQwKSwgKE4vQSwgMjApCj4gKwkoMjQwMCAtIDI0ODMuNSBAIDQwKSwgKE4v
+QSwgMjApLCBOTy1PVVRET09SCj4gKwkoNTE1MCAtIDUzNTAgQCA0MCksIChOL0EsIDIwKSwgTk8t
+T1VURE9PUgo+Cj4gICBjb3VudHJ5IFVTOiBERlMtRkNDCj4gICAJKDI0MDIgLSAyNDcyIEAgNDAp
+LCAoMywgMjcpCj4KClJlZ2FyZHMsCkF2UwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCndpcmVsZXNzLXJlZ2RiIG1haWxpbmcgbGlzdAp3aXJlbGVzcy1y
+ZWdkYkBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vd2lyZWxlc3MtcmVnZGIK
