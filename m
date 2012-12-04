@@ -2,20 +2,17 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1Tg1E9-0007PD-Cu
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 22:44:34 +0000
+ id 1Tfxwx-0007A5-St
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 19:14:36 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.0:DHE_RSA_CAMELLIA_256_CBC_SHA1:256) (Exim 4.80)
- (envelope-from <johannes@sipsolutions.net>) id 1Tg1E7-000106-Mn
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 23:44:31 +0100
-Message-ID: <1354661096.9608.24.camel@jlt4.sipsolutions.net>
+ (envelope-from <johannes@sipsolutions.net>) id 1Tfxww-0005ke-4l
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 20:14:34 +0100
+Message-ID: <1354648499.9608.19.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 04 Dec 2012 23:44:56 +0100
-In-Reply-To: <1354658967.9608.23.camel@jlt4.sipsolutions.net>
-References: <1354658967.9608.23.camel@jlt4.sipsolutions.net>
+Date: Tue, 04 Dec 2012 20:14:59 +0100
 Mime-Version: 1.0
-Subject: [wireless-regdb] [PATCH v2] regdb: enable HT40 on channels 8-13 in
-	Japan
+Subject: [wireless-regdb] [PATCH] dbparse: remove usable bandwidth check
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,34 +32,37 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: Johannes Berg <johannes.berg@intel.com>
 
-According to 802.11-2012 Table E-3 channel 8/9 can be
-used with HT40+, and correspondingly 12/13 with HT40-
-so enable this.
+The kernel uses the bandwidth this way: any frequency
+rule that is required for any of the 20 MHz subchannels
+of a given channel must allow the total bandwidth.
+Therefore, this check is wrong -- a frequency rule may
+need to be specified with higher bandwidth than it has
+to allow to form e.g. HT40 out of subchannels.
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
-v2: merge the rules, no need to maintain two
+John, this patch needs to be applied before the other one so the new
+db.txt will be parsed successfully.
 
- db.txt | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ dbparse.py | 3 ---
+ 1 file changed, 3 deletions(-)
 
-diff --git a/db.txt b/db.txt
-index 5318505..2622ede 100644
---- a/db.txt
-+++ b/db.txt
-@@ -374,8 +374,7 @@ country JM:
- 	(5735 - 5835 @ 40), (3, 30)
+diff --git a/dbparse.py b/dbparse.py
+index 893d64e..32cbce9 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -162,9 +162,6 @@ class DBParser(object):
+                 self._syntax_error("Inverted freq range (%d - %d)" % (start, end))
+             if start == end:
+                 self._syntax_error("Start and end freqs are equal (%d)" % start)
+-            if end - start < bw:
+-                self._syntax_error("Invalid bandwidth: %d width channel "
+-			"cannot possibly fit between %d - %d" % (bw, start, end))
+         except ValueError:
+             self._syntax_error("band must have frequency range")
  
- country JP:
--	(2402 - 2472 @ 40), (N/A, 20)
--	(2457 - 2482 @ 20), (N/A, 20)
-+	(2402 - 2482 @ 40), (N/A, 20)
- 	(2474 - 2494 @ 20), (N/A, 20), NO-OFDM
- 	(4910 - 4930 @ 10), (N/A, 23)
- 	(4910 - 4990 @ 40), (N/A, 23)
 -- 
 1.8.0
-
 
 
 
