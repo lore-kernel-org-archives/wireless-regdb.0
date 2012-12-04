@@ -2,17 +2,19 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1Tg1kD-0008U1-2e
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 23:17:41 +0000
+ id 1Tg1p4-00008e-QU
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 23:22:43 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.0:DHE_RSA_CAMELLIA_256_CBC_SHA1:256) (Exim 4.80)
- (envelope-from <johannes@sipsolutions.net>) id 1Tg1kB-0001XY-76
- for wireless-regdb@lists.infradead.org; Wed, 05 Dec 2012 00:17:39 +0100
-Message-ID: <1354663083.9608.31.camel@jlt4.sipsolutions.net>
+ (envelope-from <johannes@sipsolutions.net>) id 1Tg1p3-0001bw-2e
+ for wireless-regdb@lists.infradead.org; Wed, 05 Dec 2012 00:22:41 +0100
+Message-ID: <1354663382.32762.0.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Wed, 05 Dec 2012 00:18:03 +0100
+Date: Wed, 05 Dec 2012 00:23:02 +0100
+In-Reply-To: <1354663083.9608.31.camel@jlt4.sipsolutions.net>
+References: <1354663083.9608.31.camel@jlt4.sipsolutions.net>
 Mime-Version: 1.0
-Subject: [wireless-regdb] [PATCH] regdb: remove wrong 10 MHz rule for JP
+Subject: [wireless-regdb] [PATCH v2] regdb: remove wrong 10 MHz rule for JP
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,10 +38,19 @@ The kernel currently doesn't actually check the
 maximum bandwidth for 20 MHz channels (which is
 arguably a bug), but if it were to check then
 this rule would prevent channel 184 from being
-used which is wrong. Therefore remove the rule.
+used which is wrong.
+
+The rule does, however, prevent HT40 from being
+used when the primary or secondary channel is
+channel 184 as the kernel checks there. This is
+wrong though, it should be allowed.
+
+Remove the rule.
 
 Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
+v2: update commit log to note HT40 issue
+
  db.txt | 1 -
  1 file changed, 1 deletion(-)
 
@@ -58,6 +69,13 @@ index 402287a..ea6d83d 100644
 -- 
 1.8.0
 
+
+
+
+
+
+On Wed, 2012-12-05 at 00:18 +0100, Johannes Berg wrote:
+> : Johannes Berg <johannes.berg@intel.com>
 
 
 
