@@ -1,18 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
+Received: from mail-lb0-f177.google.com ([209.85.217.177])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1Tfxwx-0007A5-St
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 19:14:36 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.0:DHE_RSA_CAMELLIA_256_CBC_SHA1:256) (Exim 4.80)
- (envelope-from <johannes@sipsolutions.net>) id 1Tfxww-0005ke-4l
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 20:14:34 +0100
-Message-ID: <1354648499.9608.19.camel@jlt4.sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 04 Dec 2012 20:14:59 +0100
-Mime-Version: 1.0
-Subject: [wireless-regdb] [PATCH] dbparse: remove usable bandwidth check
+ id 1TfyBo-0007TD-P5
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 19:29:57 +0000
+Received: by mail-lb0-f177.google.com with SMTP id n10so3337050lbo.36 for
+ <wireless-regdb@lists.infradead.org>; Tue, 04 Dec 2012 11:29:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc:content-type; bh=NsPSsk+mkil9g2s58SxceEP6To/bBCpIgLJ7wZ8OZ0I=;
+ b=K5e191SoVbyifzkH+69QjeQB0rNPfBVHJz03GRQtBmEtRpjWnX6TfyLKyFXdfHYCzS
+ 9M7BDU/7lPMRYyrnUBHfrFxExnyDL7OGGZn0xoL4PplQ3XPg2INMNnUAxIAB4LP2f4J2
+ cYUzVV/+O6PUqYTsijDKJVslEubY6o5oLWl4/oEx1WkPohLlSSPXOXGGFDdOKGbVvaPi
+ 0ghB+erF1rtNJp9DtDVGsuVN9RqKharZgAOf536Uv3Xh1JeNdBHYdeJ+bl7ni7sFpFwr
+ rApk67tkcv8uOUHXQPywOADc+KtKiQ7aPyeCAGYJL6eK7AUvxAaJhEwpvbkPU8O6/0zj +/DQ==
+MIME-Version: 1.0
+In-Reply-To: <1354648499.9608.19.camel@jlt4.sipsolutions.net>
+References: <1354648499.9608.19.camel@jlt4.sipsolutions.net>
+From: "Luis R. Rodriguez" <mcgrof@gmail.com>
+Date: Tue, 4 Dec 2012 11:29:34 -0800
+Message-ID: <CAB=NE6W65F=3v=A8UPTguerc8h1n9bcE7nMAgB+kD+ZHmWipCA@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] dbparse: remove usable bandwidth check
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,44 +36,42 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: Johannes Berg <johannes.berg@intel.com>
+On Tue, Dec 4, 2012 at 11:14 AM, Johannes Berg
+<johannes@sipsolutions.net> wrote:
+> From: Johannes Berg <johannes.berg@intel.com>
+>
+> The kernel uses the bandwidth this way: any frequency
+> rule that is required for any of the 20 MHz subchannels
+> of a given channel must allow the total bandwidth.
+> Therefore, this check is wrong -- a frequency rule may
+> need to be specified with higher bandwidth than it has
+> to allow to form e.g. HT40 out of subchannels.
+>
+> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 
-The kernel uses the bandwidth this way: any frequency
-rule that is required for any of the 20 MHz subchannels
-of a given channel must allow the total bandwidth.
-Therefore, this check is wrong -- a frequency rule may
-need to be specified with higher bandwidth than it has
-to allow to form e.g. HT40 out of subchannels.
+Acked-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 
-Signed-off-by: Johannes Berg <johannes.berg@intel.com>
----
-John, this patch needs to be applied before the other one so the new
-db.txt will be parsed successfully.
+I'd add into the commit log:
 
- dbparse.py | 3 ---
- 1 file changed, 3 deletions(-)
+The current issue was spotted when dealing with the
+world regulatory domain which had overlapping frequency
+rules -- that is you had to evaluate two ranges to
+determine if you can use HT40 channel. The primary
+HT40 channel would fit into one freq range and the
+subchannel would fit into another frequency band.
 
-diff --git a/dbparse.py b/dbparse.py
-index 893d64e..32cbce9 100755
---- a/dbparse.py
-+++ b/dbparse.py
-@@ -162,9 +162,6 @@ class DBParser(object):
-                 self._syntax_error("Inverted freq range (%d - %d)" % (start, end))
-             if start == end:
-                 self._syntax_error("Start and end freqs are equal (%d)" % start)
--            if end - start < bw:
--                self._syntax_error("Invalid bandwidth: %d width channel "
--			"cannot possibly fit between %d - %d" % (bw, start, end))
-         except ValueError:
-             self._syntax_error("band must have frequency range")
- 
--- 
-1.8.0
+An additional change is possible however and that is
+to have the kernel check not for 40 MHz requirement
+on subchannels but only 20 MHz but this alone could
+lead to secondary issues by the current implicit
+architecture support of overlapping frequencies which
+are we currently evaluating.
 
-
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
