@@ -1,26 +1,19 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ia0-f170.google.com ([209.85.210.170])
- by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1Tg0y4-000607-JM
- for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2012 22:27:57 +0000
-Received: by mail-ia0-f170.google.com with SMTP id i1so2110668iaa.15 for
- <wireless-regdb@lists.infradead.org>; Tue, 04 Dec 2012 14:27:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:date:message-id:subject:from:to:cc:content-type
- :content-transfer-encoding;
- bh=+rfhIJNR6NgutCgcA2Szd8S0RYNSICnlIKkzonmaRYc=;
- b=sv1EJLSPDLFKor7DxmnN7zyHthXfWaT5K2XGktJTYcpsVtl0KTFZXiQ9qfvI9qodm8
- xP6j8aUc47m5ZoSyXRsXPycou3X8E1mSK0iG4cetqEoq6aJoBDuLsN3xIqoFuzo5Ftnu
- 5GglTw4D2wy3aNwJ6Ju6dV8DRfaL6uM/TDgU3Hs483ExflQc7Ee6VUv+1yFMXvvXS1bm
- PFxfdSbSDp1jRwn2MyVnlqcdXN3D/kImdvp6da80rlLwCKlBLe4EDxczl2uB5HIkNsW4
- pq4/upycQgHIeeEXOd5ek6vah6UfVonRLsnzlcEwIDkFwospm9YZxy525Uocr8h4oaQo lMZA==
+Received: from mx1.redhat.com ([209.132.183.28])
+ by merlin.infradead.org with esmtp (Exim 4.76 #1 (Red Hat Linux))
+ id 1TgXO0-0001B8-38
+ for wireless-regdb@lists.infradead.org; Thu, 06 Dec 2012 09:04:53 +0000
+Date: Thu, 6 Dec 2012 10:04:44 +0100
+From: Stanislaw Gruszka <sgruszka@redhat.com>
+Message-ID: <20121206090443.GD2502@redhat.com>
+References: 
+	 <CAHc5FiWpUBUDh=8tDaaLRh9fHXT-k3EBj+KdoOGoR=BhYhzrVQ@mail.gmail.com>
 MIME-Version: 1.0
-Date: Tue, 4 Dec 2012 23:27:55 +0100
-Message-ID: <CAHc5FiWpUBUDh=8tDaaLRh9fHXT-k3EBj+KdoOGoR=BhYhzrVQ@mail.gmail.com>
-From: Mykyta Iziumtsev <mykyta.iziumtsev@gmail.com>
-Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulations for
-	Ukraine
+Content-Disposition: inline
+In-Reply-To: <CAHc5FiWpUBUDh=8tDaaLRh9fHXT-k3EBj+KdoOGoR=BhYhzrVQ@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulations
+	for Ukraine
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,57 +23,40 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="koi8-u"
+Content-Type: text/plain; charset="utf-8"
 Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: base64
-To: wireless-regdb@lists.infradead.org, Arend van Spriel <arend@broadcom.com>, linux-wireless@vger.kernel.org
-Cc: Andrew Bordunov <andrew.bordunov@gmail.com>, Pavel Chernyshev <pchernyshev@gmail.com>, "Luis R. Rodriguez" <rodrigue@qca.qualcomm.com>
+Content-Transfer-Encoding: 8bit
+To: Mykyta Iziumtsev <mykyta.iziumtsev@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <rodrigue@qca.qualcomm.com>, Andrew Bordunov <andrew.bordunov@gmail.com>, Arend van Spriel <arend@broadcom.com>, Pavel Chernyshev <pchernyshev@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-QWRkIDVHSHogYmFuZCBhbmQgbWFyayAyLjRHSHogYW5kIDVHSHogYXMgTk8tT1VURE9PUiBhY2Nv
-cmRpbmcgdG8KIvKm28XOztEg0NLPINrB1NfF0sTWxc7O0SDwxdLFzKbL1SDSwcSmz8XMxcvU0s/O
-zsnIINrB08/CptcK1MEg18nQ0s/Nps7A18HM2M7JyCDQ0snT1NLPp9csIMTM0SDFy9PQzNXB1MHD
-pqcg0cvJyCDOxSDQz9TSpsLOpgrEz9rXz8zJIM7BIMXL09DM1cHUwcOmwCIgZnJvbSAyNyBNYXkg
-MjAxMC4KClJlZjoKKiAjOTE0IC8gMDYgU2VwIDIwMDc6IGh0dHA6Ly93d3cudWNyZi5nb3YudWEv
-dWsvZG9jL25rcnovMTE5NjA2ODg3NAoqICMxMTc0IC8gMjMgT2N0IDIwMDg6IGh0dHA6Ly93d3cu
-bmtyei5nb3YudWEvdWsvYWN0aXZpdGllcy9ydWxpbmcvMTIyNTI2OTM2MQooYXBwZW5kaXggOCkK
-ClVwZGF0ZSBydWxlcyBhcyBmb2xsb3dzIGFzIGxvd2VzdCBjb21tb24gZGVub21pbmF0b3I6CiAg
-ICAgICAgKDI0MDAgLSAyNDgzLjUgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9PUgogICAgICAg
-ICg1MTUwIC0gNTM1MCBAIDQwKSwgKE4vQSwgMjApLCBOTy1PVVRET09SCgpBbGwgV2lGaSBlcXVp
-cG1lbnQgY2FuIGJlIGNsYXNzaWZpZWQgYXMgZWl0aGVyIENsaWVudCwgTWFzdGVyLApvciBBY2Nl
-c3MgVGVybWluYWwuIENsaWVudCBtYXBzIHRvIFNUQSBvciBQMlAtQ2xpZW50LApNYXN0ZXIgLS0g
-dG8gQVAsIElCU1MvTWVzaCBub2RlIG9yIFAyUC1HTywgYW5kIEFjY2VzcyBUZXJtaW5hbApjYW4g
-YmUgZWl0aGVyIENsaWVudCBvciBNYXN0ZXIsIGJ1dCB0aGVyZSBpcyBhZGRpdGlvbmFsIHJlcXVp
-cmVtZW50CnRoYXQgaXQgc2hvdWxkIGJlIGRlYWN0aXZhdGVkIG9uIHJlcXVlc3QgZnJvbSBhdXRo
-b3JpdGllcy4KQnV0IGF0IHRoZSBzYW1lIHRpbWUgQWNjZXNzIFRlcm1pbmFsIGNhbiBiZSB1c2Vk
-IG91dGRvb3IuCkZvciBNYXN0ZXIgZGV2aWNlIHRoZXJlIGlzIHJlcXVpcmVtZW50IGZvciBpbmRv
-b3Itb25seSB1c2FnZS4KRnVydGhlciwgV2lGaSBlcXVpcG1lbnQgaXMgZGl2aWRlZCBieSA4MDIu
-MTFuIGNhcGFiaWxpdHkgY3JpdGVyaWEuCgo4MDIuMTFiZy84MDIuMTFhIENsaWVudCBhbmQgTWFz
-dGVyCjI0MDAtMjQ4Myw1IDEwMCBtVyBmb3IgRFNTUy9PRkRNIGFuZCA1MDAgbVcgZm9yIEZIU1MK
-NTE1MC01MzUwIDIwMCBtVwoKODAyLjExYmcvODAyMTFhIEFjY2VzcyBUZXJtaW5hbAoyNDAwLTI0
-ODMsNSAxMDAgbVcKNTE1MC01MzUwIDIwMCBtVwo1NDcwLTU2NzAgMSBXCjU3MjUtNTg1MCAyIFcK
-CjgwMi4xMWJnbi84MDIuMTFhbiBDbGllbnQsIE1hc3RlciBvciBBY2Nlc3MgVGVybWluYWwKMjQw
-MC0yNDgzLDUgMTAwIG1XCjUxNTAtNTM1MCAxMDAgbVcKNTQ3MC01NjcwIDEwMCBtVwo1NzI1LTU4
-NTAgMTAwIG1XCgpTaWduZWQtb2ZmLWJ5OiBNeWt5dGEgSXppdW10c2V2IDxteWt5dGEuaXppdW10
-c2V2QGdtYWlsLmNvbT4KU2lnbmVkLW9mZi1ieTogUGF2ZWwgQ2hlcm55c2hldiA8cGNoZXJueXNo
-ZXZAZ21haWwuY29tPgpTaWduZWQtb2ZmLWJ5OiBBbmRyZXcgQm9yZHVub3YgPGFuZHJldy5ib3Jk
-dW5vdkBnbWFpbC5jb20+Ci0tLQogZGIudHh0IHwgMTAgKysrKysrKysrLQogMSBmaWxlIGNoYW5n
-ZWQsIDkgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2RiLnR4dCBi
-L2RiLnR4dAppbmRleCA0YzU0NTQzLi4zMGQwNzkxIDEwMDY0NAotLS0gYS9kYi50eHQKKysrIGIv
-ZGIudHh0CkBAIC02NTIsOCArNjUyLDE2IEBAIGNvdW50cnkgVFI6IERGUy1FVFNJCiAJKDUxNzAg
-LSA1MjUwIEAgMjApLCAoTi9BLCAyMCkKIAkoNTI1MCAtIDUzMzAgQCAyMCksIChOL0EsIDIwKSwg
-REZTCgorIyBTb3VyY2U6CisjICM5MTQgLyAwNiBTZXAgMjAwNzogaHR0cDovL3d3dy51Y3JmLmdv
-di51YS91ay9kb2Mvbmtyei8xMTk2MDY4ODc0CisjICMxMTc0IC8gMjMgT2N0IDIwMDg6IGh0dHA6
-Ly93d3cubmtyei5nb3YudWEvdWsvYWN0aXZpdGllcy9ydWxpbmcvMTIyNTI2OTM2MQorIyAoYXBw
-ZW5kaXggOCkKKyMgTGlzdGVkIDVHSHogcmFuZ2UgaXMgYSBsb3dlc3QgY29tbW9uIGRlbm9taW5h
-dG9yIGZvciBhbGwgcmVsYXRlZAorIyBydWxlcyBpbiB0aGUgcmVmZXJlbmNlZCBsYXdzLiBTdWNo
-IGEgcmFuZ2UgaXMgdXNlZCBiZWNhdXNlIG9mCisjIGRpc3B1dGFibGUgZGVmaW5pdGlvbnMgdGhl
-cmUuCiBjb3VudHJ5IFVBOgotCSgyNDAyIC0gMjQ4MiBAIDQwKSwgKE4vQSwgMjApCisJKDI0MDAg
-LSAyNDgzLjUgQCA0MCksIChOL0EsIDIwKSwgTk8tT1VURE9PUgorCSg1MTUwIC0gNTM1MCBAIDQw
-KSwgKE4vQSwgMjApLCBOTy1PVVRET09SCgogY291bnRyeSBVUzogREZTLUZDQwogCSgyNDAyIC0g
-MjQ3MiBAIDQwKSwgKDMsIDI3KQotLSAKMS43LjExLjcKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCndpcmVsZXNzLXJlZ2RiIG1haWxpbmcgbGlzdAp3aXJl
-bGVzcy1yZWdkYkBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vd2lyZWxlc3MtcmVnZGIK
+On Tue, Dec 04, 2012 at 11:27:55PM +0100, Mykyta Iziumtsev wrote:
+> Add 5GHz band and mark 2.4GHz and 5GHz as NO-OUTDOOR according to
+> "Рішення про затвердження Переліку радіоелектронних засобів
+> та випромінювальних пристроїв, для експлуатації яких не потрібні
+> дозволи на експлуатацію" from 27 May 2010.
+> 
+> Ref:
+> * #914 / 06 Sep 2007: http://www.ucrf.gov.ua/uk/doc/nkrz/1196068874
+> * #1174 / 23 Oct 2008: http://www.nkrz.gov.ua/uk/activities/ruling/1225269361
+> (appendix 8)
+
+Since regulatory maintainer does not understand Ukrainian,
+there is little chance to get this patch applied.
+
+IMHO this can be solved by:
+
+* having official English translation of those document on gov.ua site
+* provide patch by wlan chip vendor, confirmed by legal deparament of
+  the vendor
+* provide patch by some known Ukrainian kernel developer, someone
+  who is know by regulatory maintainer and can be trust
+
+Stanislaw
+
+_______________________________________________
+wireless-regdb mailing list
+wireless-regdb@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/wireless-regdb
