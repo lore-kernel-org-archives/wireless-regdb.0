@@ -1,29 +1,17 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-bk0-f44.google.com ([209.85.214.44])
+Received: from mail-ia0-f173.google.com ([209.85.210.173])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TtNc6-0000Ib-6l
- for wireless-regdb@lists.infradead.org; Thu, 10 Jan 2013 19:16:31 +0000
-Received: by mail-bk0-f44.google.com with SMTP id w11so525701bku.3 for
- <wireless-regdb@lists.infradead.org>; Thu, 10 Jan 2013 11:16:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=x-received:message-id:date:from:user-agent:mime-version:to:subject
- :references:in-reply-to:content-type:content-transfer-encoding;
- bh=SQITn7Nszvk/upjdojz6eQHXOgbnHuaoPrOhFNjEWGE=;
- b=cXoH7dw9NH2XMgied77wTnhWWkSYLqJSiTZKHw0OTZ3ZlKiUoV0Wf7KJGXc6iPjaSG
- Ir4t+/Bw0MpN72G4judRQnFeMbFJ1D+G89hCWJs+sGa6izkruB/11KnECN4nq/qo4bzh
- TbwQP8+oGcyO+HHuZZ/Nd9nn69piStIBGrsC57I5pdKLqAqCaAaA5bxYScXSkiwxKpSf
- USZM+er6uGTxF++0LYSvjwRMvQ0trBuXhQSksbxnapHBh4/KCBCVLuVQ7u7rrE/d4hc2
- eSC+XUcZ9eKtDZ8agFpW0BfuwZaZ8SRLERiRYg07rs07UYdJsxS28KSlIxrORxXZjAyl hYEg==
-Message-ID: <50EF1387.4080504@gmail.com>
-Date: Thu, 10 Jan 2013 20:16:23 +0100
-From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+ id 1TrNeW-0001Bb-Hg
+ for wireless-regdb@lists.infradead.org; Sat, 05 Jan 2013 06:54:45 +0000
+Received: by mail-ia0-f173.google.com with SMTP id w21so14525911iac.32 for
+ <wireless-regdb@lists.infradead.org>; Fri, 04 Jan 2013 22:54:42 -0800 (PST)
 MIME-Version: 1.0
-References: <5452866.tG58b6Y9lW@lx-vladimir>
- <CAB=NE6WwW2jqieVi57Jecx_QHT7+h7yvQbk893CRjLC=sNED1g@mail.gmail.com>
-In-Reply-To: <CAB=NE6WwW2jqieVi57Jecx_QHT7+h7yvQbk893CRjLC=sNED1g@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] crda: fix compilation with libnl-3.0
+Date: Sat, 5 Jan 2013 19:54:42 +1300
+Message-ID: <CAOE46e7Bg=7ow33GAr0R-Zd1SCzR31ukVZ3fyb2y6LV6w=1tJw@mail.gmail.com>
+From: Dean Armstrong <dean.armstrong@virscient.com>
+Subject: [wireless-regdb] Understanding power rules where a max antenna
+ gain is specified
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,54 +29,68 @@ Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 12/12/2012 12:26 AM, Luis R. Rodriguez wrote:
+Hello All,
 
-> On Mon, Dec 10, 2012 at 7:58 AM, Vladimir Kondratiev
-> <qca_vkondrat at qca.qualcomm.com> wrote:
+I'm trying to understand the Linux wireless regulatory framework but
+am having trouble figuring out how the regulatory database is derived
+from the actual regulations. I think I've read the relevant
+documentation, and have been looking at various bits of source code,
+but I am still at a loss and was hoping that someone might be generous
+enough to answer a question or two on how it is all supposed to work.
 
->> From 97f1b27e02740ce6bb83c548de0c0a7fbe9b648f Mon Sep 17 00:00:00 2001
->> From: Vladimir Kondratiev <qca_vkondrat at qca.qualcomm.com>
->> Date: Mon, 10 Dec 2012 17:54:29 +0200
->> Subject: [PATCH] crda: fix compilation with libnl-3.0
->>
->> On the distributives that use libnl v.3, libnl-genl named
->> libnl-genl-3.
->>
->> Checked for both rpm based distros and Ubuntu.
->>
->> Signed-off-by: Vladimir Kondratiev <qca_vkondrat at qca.qualcomm.com>
->> ---
->>  Makefile |    2 +-
->>  1 file changed, 1 insertion(+), 1 deletion(-)
->>
->> diff --git a/Makefile b/Makefile
->> index 084d8e5..f5bd130 100644
->> --- a/Makefile
->> +++ b/Makefile
->> @@ -51,7 +51,7 @@ NL3FOUND := $(shell pkg-config --atleast-version=3 libnl-3.0 && echo Y)
->>
->>  ifeq ($(NL3FOUND),Y)
->>  CFLAGS += -DCONFIG_LIBNL30
->> -NLLIBS += -lnl-genl
->> +NLLIBS += -lnl-genl-3
->>  NLLIBNAME = libnl-3.0
->>  else
+In particular, I am looking at the version of db.txt that is visible
+at [1] (this being the head of that branch as I write). For the
+example I want to query I'm contemplating the following two lines
+(and, specifically, the power rule - "(3, 27)" on the second line).
 
-> Thanks but see upstream commit f2a073df, this added this:
-> 
-> +NLLIBS += $(shell pkg-config --libs libnl-genl-3.2)
-> 
-> But I never made a new release with that so I just tag'd v1.1.3 to
-> kick out a new release. If the wireless.kernel.org tarball generation
-> cronjob is still alive it will make a new tarball tomorrow sometime
-> with this release.
+country US: DFS-FCC
+	(2402 - 2472 @ 40), (3, 27)
 
+After reading [2], I interpret this rule as defining an EIRP limit of
+27 dBm and a "maximum antenna gain" of 3 dBi.
 
-There is *NO* 1.1.3 tarball of crda at:
-http://wireless.kernel.org/download/crda/
+The confusion I have is over how this reconciles with the actual FCC
+regulations for this band. The concise description at [3] tallies with
+my understanding (but, of course, this may be where I'm mistaken), and
+I paraphrase it thus for non-"fixed point-to-point links" (which, I
+assume, is what we are talking about):
 
-Also, latest(2011.04.28) wireless-regdb is outdated compared to
-the git tree: http://wireless.kernel.org/download/wireless-regdb/
+ - Total Power Output (TPO) limit of 30 dBm
+ - Effective Isotropic Radiated Power (EIRP) limit of 36 dBm
+
+The first point of confusion for me is the "maximum antenna gain"
+number in the regulatory database (the "3" in "(3, 27)"). I wasn't
+aware that FCC imposed an explicit limit on the gain of antennas used
+in this band (and certainly not a limit of 3 dBi as db.txt suggests),
+so I don't understand why this is named what it is in the
+documentation. I'm therefore left wondering whether the "maximum
+antenna gain" number (where) specified in db.txt is actually giving a
+conversion from the EIRP limit given, to a TPO limit.
+
+If this were true it would make some sense to me, but even if I assume
+this the numbers still don't reconcile with FCC. Basically, given the
+30 dBm TPO limit and 36 dBm EIRP limit of FCC for 2.4-2.5 GHz ISM, I
+would have expected to see a rule like:
+
+country US: DFS-FCC
+        (2402 - 2472 @ 40), (6, 36)
+
+i.e., a 36 dBm EIRP limit, with TPO limit 6 dB below this.
+
+Obviously I am grossly misunderstanding something and I would very
+much appreciate it if someone on this list could enlighten me.
+
+Many thanks,
+Dean.
+
+References
+---
+[1] http://git.kernel.org/?p=linux/kernel/git/linville/wireless-regdb.git;a=blob_plain;f=db.txt;hb=1e7bf666e34e30e13238879ee76b58449be2f9fd
+[2] http://wireless.kernel.org/en/developers/Regulatory/processing_rules
+[3] http://www.afar.net/tutorials/fcc-rules/
+
+-- 
+Dean Armstrong | Virscient Limited | www.virscient.com
 
 _______________________________________________
 wireless-regdb mailing list
