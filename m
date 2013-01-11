@@ -1,18 +1,18 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
+Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
+ ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TwJaA-0004Ey-2h
- for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 21:34:39 +0000
-Received: by sipsolutions.net with esmtpsa
- (TLS1.0:DHE_RSA_CAMELLIA_256_CBC_SHA1:256) (Exim 4.80)
- (envelope-from <johannes@sipsolutions.net>) id 1TwJZ2-0004I3-RQ
- for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 22:33:29 +0100
-Message-ID: <1358544834.7922.30.camel@jlt4.sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Fri, 18 Jan 2013 22:33:54 +0100
-Mime-Version: 1.0
-Subject: [wireless-regdb] [Fwd: [ANN] crda: v1.1.3]
+ id 1TtmB7-0000ib-Jc
+ for wireless-regdb@lists.infradead.org; Fri, 11 Jan 2013 21:30:18 +0000
+Date: Fri, 11 Jan 2013 16:26:59 -0500
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20130111212659.GH2170@tuxdriver.com>
+References: <50F07C03.3050204@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <50F07C03.3050204@gmail.com>
+Subject: Re: [wireless-regdb] wireless-regdb updated, please check!
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,51 +27,42 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
--------- Forwarded Message --------
-> From: wireless@sipsolutions.net
-> To: linux-wireless@vger.kernel.org
-> Subject: [ANN] crda: v1.1.3
-> Date: Fri, 18 Jan 2013 21:44:01 +0100
+On Fri, Jan 11, 2013 at 09:54:27PM +0100, Xose Vazquez Perez wrote:
+> John W. Linville wrote:
 > 
-> A new release of crda (v1.1.3) is available at:
+> > I've been sitting on some wireless-regdb patches for some time.
+> > Mostly this is because I wasn't sure what to do with some/most of them.
+> > I even still have a few more like that...
+> > 
+> > Anyway, I wanted to at least get the 60GHz bits out, and I pushed a
+> > few other changes as well.  Please take a look, and let me know if
+> > I merged anything wrong or if there is still something missing.
+> > 
+> > 	git://git.kernel.org/pub/scm/linux/kernel/git/linville/wireless-regdb.git
 > 
-> http://wireless.kernel.org/download/crda/crda-1.1.3.tar.bz2
 > 
-> SHA1 sum: 6e0adbfc0f5418a03d7d708bd39d52cd1325b511
-> 
-> Here is the short log of the changes (since v1.1.2)
-> included in this release:
-> 
-> Luis R. Rodriguez (15):
->       crda: synch up nl80211.h
->       crda: fix null string assumption for alpha2
->       crda: add support to send DFS master region
->       crda: use stdint.h instead of linux/types.h
->       crda: move country2rd() and its helper to reglib.c
->       crda: add a reglib iterator reglib_for_each_country()
->       crda: make intersect.c use reglib_for_each_country()
->       crda: close fd upon leaving
->       crda: add new reglib_get_country_alpha2()
->       crda: add dfs_region to the ieee80211_regdomain data structure
->       crda: make crda use reglib_get_country_alpha2()
->       crda: clean header files
->       crda: make country2rd() static
->       crda: make usage of regdb.h exclusive to reglib.c
->       crda: rename reglib_get_*() routines
-> 
-> Stefan Lippers-Hollmann (1):
->       crda: add nested support for libnl-3.2
-> 
-> --
-> To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
-> the body of a message to majordomo@vger.kernel.org
-> More majordomo info at  http://vger.kernel.org/majordomo-info.html
-> 
+> Did you forget CC:wireless-regdb@lists.infradead.org ?
 
+Well, sorta...but I'm not sure that you can prove that anyone actually
+reads that list anyway... :-(
 
+> How about these?
+> 
+> CEPT rules to ES:
+> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000073.html
+> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000074.html
+> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000075.html
+
+Yeah, those are probably fine.  I'll try to pick those up in a few days...
+
+John
+-- 
+John W. Linville		Someday the world will need a hero, and you
+linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
