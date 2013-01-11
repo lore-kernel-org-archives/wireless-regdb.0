@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-f172.google.com ([209.85.212.172])
+Received: from mail-ee0-f41.google.com ([74.125.83.41])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1U5kVM-00012M-98
- for wireless-regdb@lists.infradead.org; Wed, 13 Feb 2013 22:08:40 +0000
-Received: by mail-wi0-f172.google.com with SMTP id ez12so6326850wid.11 for
- <wireless-regdb@lists.infradead.org>; Wed, 13 Feb 2013 14:08:37 -0800 (PST)
+ id 1TtlcZ-0004q6-AR
+ for wireless-regdb@lists.infradead.org; Fri, 11 Jan 2013 20:54:36 +0000
+Received: by mail-ee0-f41.google.com with SMTP id d41so1079710eek.28 for
+ <wireless-regdb@lists.infradead.org>; Fri, 11 Jan 2013 12:54:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=x-received:message-id:date:from:user-agent:mime-version:to:subject
  :content-type:content-transfer-encoding;
- bh=+VGpjQ3u/05g/5LsiCGARC6JPL0SBqn2sbdLsc45BN8=;
- b=m0drF/dpdr4rSnnSdEnxTrtRKf/g2jQ/dbYbPUeukkRh2GpnCavwNxC+RWWk2f4a67
- miVebxUMOLqlzcFAMwlOL0Sn5uYs7nIA5OHSjQfeeiBf2cfTV9GxK3HTNdt+h2MFtB7p
- 1Yc9LXP52sdsMEdWGTSvwr7rrAk+OfEZPS9NCRfZbHPrXiuwFXPpNqu0teZ1+Jjv68Qp
- pxl7uYvDTttfg+1B+lizMyCl3reIcaap3K1BCGvMOa6ddEjM/ZIzBu4VevJXskrA6XN1
- G/M6FbLnQOiOpufJfb/vx4R6Xt9yY4m7fjOP8qOAQsP/6C86sb3OUEp1w32v1dTRuewL yJKQ==
-Message-ID: <511C0EE1.5030503@gmail.com>
-Date: Wed, 13 Feb 2013 23:08:33 +0100
+ bh=PUhzERWHDC0hYhHvn+eRcLuNKHBIop07JEh+9HkMSoY=;
+ b=W09ZD8dBdrtot4RqeFRJ4qSeEpvdYwFX9wtrs2zfHLS6RGY671BYbkSg40ESYVQ/ul
+ kvDl2S/PzjvYvjhb3Sd9Hdp0ndkYT+A12Wiz+1uOw6+EVxA8hTCgt58hkBkFRbn56JRR
+ NNN81gg6fL5R6929xywxoxzSS2oQLJ5MlSUya0E3rLiBC4buevd+IWy0/qDQwdj1uXi6
+ DaA2XlHA1nX3UfuWuKvmo4OJgPnTV1xYAn9BvcCUarCXA/HIka28MW7SWhe5NO/2tfgu
+ tmtfKxw888Bg16qoNdmiIdZVKNgcfVgNCTyOvXROu1Ie6PvFMvsf2mqD5unkJC5GlpvJ KRTA==
+Message-ID: <50F07C03.3050204@gmail.com>
+Date: Fri, 11 Jan 2013 21:54:27 +0100
 From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Subject: Re: [wireless-regdb] [ANN] wireless-regdb: master-2013-01-11
+Subject: Re: [wireless-regdb] wireless-regdb updated, please check!
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,16 +35,31 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org, "John W. Linville" <linville@tuxdriver.com>, wireless-regdb@lists.infradead.org
+To: "John W. Linville" <linville@tuxdriver.com>, linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
+John W. Linville wrote:
 
-> Vladimir Kondratiev (3):
->       wireless-regdb: add regulatory rule for ETSI members on 60GHz band
+> I've been sitting on some wireless-regdb patches for some time.
+> Mostly this is because I wasn't sure what to do with some/most of them.
+> I even still have a few more like that...
+> 
+> Anyway, I wanted to at least get the 60GHz bits out, and I pushed a
+> few other changes as well.  Please take a look, and let me know if
+> I merged anything wrong or if there is still something missing.
+> 
+> 	git://git.kernel.org/pub/scm/linux/kernel/git/linville/wireless-regdb.git
 
-This update[1] did also harm Andorra(AD), as it did with Serbia(RS).
 
-[1] http://git.kernel.org/?p=linux/kernel/git/linville/wireless-regdb.git;a=commitdiff;h=623d8438b724afb7c4818cb9b129a552ef2b518b
+Did you forget CC:wireless-regdb@lists.infradead.org ?
+
+
+How about these?
+
+CEPT rules to ES:
+http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000073.html
+http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000074.html
+http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000075.html
 
 _______________________________________________
 wireless-regdb mailing list
