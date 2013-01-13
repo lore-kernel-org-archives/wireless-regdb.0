@@ -1,17 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
- ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
+Received: from mail-ee0-f44.google.com ([74.125.83.44])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TtmB7-0000ib-Jc
- for wireless-regdb@lists.infradead.org; Fri, 11 Jan 2013 21:30:18 +0000
-Date: Fri, 11 Jan 2013 16:26:59 -0500
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20130111212659.GH2170@tuxdriver.com>
-References: <50F07C03.3050204@gmail.com>
+ id 1TuNZK-00059x-Da
+ for wireless-regdb@lists.infradead.org; Sun, 13 Jan 2013 13:25:47 +0000
+Received: by mail-ee0-f44.google.com with SMTP id l10so1531098eei.17 for
+ <wireless-regdb@lists.infradead.org>; Sun, 13 Jan 2013 05:25:44 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=x-received:message-id:date:from:user-agent:mime-version:to:cc
+ :subject:references:in-reply-to:content-type :content-transfer-encoding;
+ bh=1WrHCI1z0N7jkx1PK1pwGc1Ekn8XZnQXzuUshajG7dM=;
+ b=FbTh/fav7TOtXYEwBSWNidpWVop3EMUtmckb6q7GlT6X6tlmb/nM89p9X1vD+Vzfdb
+ cp4WQIwegwd7wZVLpzwuYUKXELiFBz4anJOPSw0AzhZVeP+WMD3Dx4tvDtkTKleTpXdj
+ vv2wNwUGJFPh2YUVkMLLVE/IpamDgrvx6ZidrurJLDQl4Y57koCRFFoSmgePYnpQ6k5y
+ s6RHTamwMnLJPKbMeb1eqBPt7j5So1jxm4GSJ/5tNUalyLrMbX+lzKlWO0dV0/70vKe1
+ Ht5Jpd9K427HsgLbvLrWh7HFPT79Nnw60RnrUrUSWJy0G2LO9lXErJd4EfNzPj+GqC3E M6tg==
+Message-ID: <50F2B5D5.6080808@gmail.com>
+Date: Sun, 13 Jan 2013 14:25:41 +0100
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <50F07C03.3050204@gmail.com>
+References: <50F07C03.3050204@gmail.com>
+	 <20130111212659.GH2170@tuxdriver.com>
+In-Reply-To: <20130111212659.GH2170@tuxdriver.com>
 Subject: Re: [wireless-regdb] wireless-regdb updated, please check!
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -27,42 +37,25 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>
+To: "John W. Linville" <linville@tuxdriver.com>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Jan 11, 2013 at 09:54:27PM +0100, Xose Vazquez Perez wrote:
-> John W. Linville wrote:
-> 
-> > I've been sitting on some wireless-regdb patches for some time.
-> > Mostly this is because I wasn't sure what to do with some/most of them.
-> > I even still have a few more like that...
-> > 
-> > Anyway, I wanted to at least get the 60GHz bits out, and I pushed a
-> > few other changes as well.  Please take a look, and let me know if
-> > I merged anything wrong or if there is still something missing.
-> > 
-> > 	git://git.kernel.org/pub/scm/linux/kernel/git/linville/wireless-regdb.git
-> 
-> 
-> Did you forget CC:wireless-regdb@lists.infradead.org ?
+On 01/11/2013 10:26 PM, John W. Linville wrote:
 
-Well, sorta...but I'm not sure that you can prove that anyone actually
-reads that list anyway... :-(
+> On Fri, Jan 11, 2013 at 09:54:27PM +0100, Xose Vazquez Perez wrote:
 
-> How about these?
-> 
-> CEPT rules to ES:
-> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000073.html
-> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000074.html
-> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000075.html
+>> How about these?
+>>
+>> CEPT rules to ES:
+>> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000073.html
+>> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000074.html
+>> http://lists.infradead.org/pipermail/wireless-regdb/2012-July/000075.html
 
-Yeah, those are probably fine.  I'll try to pick those up in a few days...
+> Yeah, those are probably fine.  I'll try to pick those up in a few days...
 
-John
--- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+Someone should review all others CEPT countries, because those rules
+also apply to all of them.
 
 _______________________________________________
 wireless-regdb mailing list
