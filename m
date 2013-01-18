@@ -2,17 +2,17 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TwJaF-0004Nb-A8
- for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 21:34:43 +0000
+ id 1TwJaA-0004Ey-2h
+ for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 21:34:39 +0000
 Received: by sipsolutions.net with esmtpsa
  (TLS1.0:DHE_RSA_CAMELLIA_256_CBC_SHA1:256) (Exim 4.80)
- (envelope-from <johannes@sipsolutions.net>) id 1TwJZB-0004I7-SC
- for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 22:33:38 +0100
-Message-ID: <1358544843.7922.31.camel@jlt4.sipsolutions.net>
+ (envelope-from <johannes@sipsolutions.net>) id 1TwJZ2-0004I3-RQ
+ for wireless-regdb@lists.infradead.org; Fri, 18 Jan 2013 22:33:29 +0100
+Message-ID: <1358544834.7922.30.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Fri, 18 Jan 2013 22:34:03 +0100
+Date: Fri, 18 Jan 2013 22:33:54 +0100
 Mime-Version: 1.0
-Subject: [wireless-regdb] [Fwd: [ANN] wireless-regdb: master-2013-01-11]
+Subject: [wireless-regdb] [Fwd: [ANN] crda: v1.1.3]
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,45 +33,37 @@ List-ID: <wireless-regdb@lists.infradead.org>
 -------- Forwarded Message --------
 > From: wireless@sipsolutions.net
 > To: linux-wireless@vger.kernel.org
-> Subject: [ANN] wireless-regdb: master-2013-01-11
-> Date: Fri, 18 Jan 2013 21:44:02 +0100
+> Subject: [ANN] crda: v1.1.3
+> Date: Fri, 18 Jan 2013 21:44:01 +0100
 > 
-> A new release of wireless-regdb (master-2013-01-11) is available at:
+> A new release of crda (v1.1.3) is available at:
 > 
-> http://wireless.kernel.org/download/wireless-regdb/wireless-regdb-2013.01.11.tar.bz2
+> http://wireless.kernel.org/download/crda/crda-1.1.3.tar.bz2
 > 
-> SHA1 sum: 38cd3098903b8b1aa991f893d8b1fb0e068173ba
+> SHA1 sum: 6e0adbfc0f5418a03d7d708bd39d52cd1325b511
 > 
+> Here is the short log of the changes (since v1.1.2)
+> included in this release:
 > 
-> For your convenience the individual regulatory.bin file can be downloaded from:
+> Luis R. Rodriguez (15):
+>       crda: synch up nl80211.h
+>       crda: fix null string assumption for alpha2
+>       crda: add support to send DFS master region
+>       crda: use stdint.h instead of linux/types.h
+>       crda: move country2rd() and its helper to reglib.c
+>       crda: add a reglib iterator reglib_for_each_country()
+>       crda: make intersect.c use reglib_for_each_country()
+>       crda: close fd upon leaving
+>       crda: add new reglib_get_country_alpha2()
+>       crda: add dfs_region to the ieee80211_regdomain data structure
+>       crda: make crda use reglib_get_country_alpha2()
+>       crda: clean header files
+>       crda: make country2rd() static
+>       crda: make usage of regdb.h exclusive to reglib.c
+>       crda: rename reglib_get_*() routines
 > 
-> http://wireless.kernel.org/download/wireless-regdb/regulatory.bins/2013.01.11-regulatory.bin
-> 
-> SHA1 sum a152577246d35299ff195dc650d1097935bda830
-> 
-> Here is the short log of the changes included in this 
-> release:
-> 
-> Johannes Berg (4):
->       dbparse: remove usable bandwidth check
->       regdb: enable HT40 on channels 8-13 in Japan
->       regdb: remove unused 10 MHz wide rules for JP
->       regdb: remove wrong 10 MHz rule for JP
-> 
-> John W. Linville (2):
->       wireless-regdb: update regulatory.bin based on preceding changes.
->       wireless-regdb: update regulatory.bin based on preceding changes.
-> 
-> Mykyta Iziumtsev (1):
->       wireless-regdb: Update regulations for Ukraine
-> 
-> Rajkumar Manoharan (1):
->       wireless-regdb: add Rwanda (RW)
-> 
-> Vladimir Kondratiev (3):
->       wireless-regdb: add regulatory rule for US on 60gHz band
->       wireless-regdb: add regulatory rule for ETSI members on 60GHz band
->       wireless-regdb: add regulatory rule for China on 60GHz band
+> Stefan Lippers-Hollmann (1):
+>       crda: add nested support for libnl-3.2
 > 
 > --
 > To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
