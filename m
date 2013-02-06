@@ -1,17 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ia0-f173.google.com ([209.85.210.173])
+Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
+ ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1TrNeW-0001Bb-Hg
- for wireless-regdb@lists.infradead.org; Sat, 05 Jan 2013 06:54:45 +0000
-Received: by mail-ia0-f173.google.com with SMTP id w21so14525911iac.32 for
- <wireless-regdb@lists.infradead.org>; Fri, 04 Jan 2013 22:54:42 -0800 (PST)
+ id 1U3AhV-0004EU-Nq
+ for wireless-regdb@lists.infradead.org; Wed, 06 Feb 2013 19:30:35 +0000
+Date: Wed, 6 Feb 2013 14:25:44 -0500
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20130206192544.GH2148@tuxdriver.com>
+References: 
+	 <CAL1G+-HfPJnwvisiE5Vr0ihenwKzL3_QL40DLPP_PsPyv+nveQ@mail.gmail.com>
 MIME-Version: 1.0
-Date: Sat, 5 Jan 2013 19:54:42 +1300
-Message-ID: <CAOE46e7Bg=7ow33GAr0R-Zd1SCzR31ukVZ3fyb2y6LV6w=1tJw@mail.gmail.com>
-From: Dean Armstrong <dean.armstrong@virscient.com>
-Subject: [wireless-regdb] Understanding power rules where a max antenna
- gain is specified
+Content-Disposition: inline
+In-Reply-To: <CAL1G+-HfPJnwvisiE5Vr0ihenwKzL3_QL40DLPP_PsPyv+nveQ@mail.gmail.com>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Serbia (RS) on 2.4 and 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,71 +29,82 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Ognjen Ikovic <ognjen.ikovic@lacitadelleing.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, robertbasic.com@gmail.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello All,
+Ognjen,
 
-I'm trying to understand the Linux wireless regulatory framework but
-am having trouble figuring out how the regulatory database is derived
-from the actual regulations. I think I've read the relevant
-documentation, and have been looking at various bits of source code,
-but I am still at a loss and was hoping that someone might be generous
-enough to answer a question or two on how it is all supposed to work.
+Thank you so much for this timely message!  I apologize for having
+overlooked it so far.
 
-In particular, I am looking at the version of db.txt that is visible
-at [1] (this being the head of that branch as I write). For the
-example I want to query I'm contemplating the following two lines
-(and, specifically, the power rule - "(3, 27)" on the second line).
+I don't suppose that you could translate the information you have
+provided into the format used within the regulatory database file?
+Also, could you provide a link to the original regulatory document
+(even if it is in Serbian)?
 
-country US: DFS-FCC
-	(2402 - 2472 @ 40), (3, 27)
+Ideally you could post a patch for the db.txt file.  If that is a
+problem, simply posting the information should be sufficient.
 
-After reading [2], I interpret this rule as defining an EIRP limit of
-27 dBm and a "maximum antenna gain" of 3 dBi.
+Thanks!
 
-The confusion I have is over how this reconciles with the actual FCC
-regulations for this band. The concise description at [3] tallies with
-my understanding (but, of course, this may be where I'm mistaken), and
-I paraphrase it thus for non-"fixed point-to-point links" (which, I
-assume, is what we are talking about):
+John
 
- - Total Power Output (TPO) limit of 30 dBm
- - Effective Isotropic Radiated Power (EIRP) limit of 36 dBm
-
-The first point of confusion for me is the "maximum antenna gain"
-number in the regulatory database (the "3" in "(3, 27)"). I wasn't
-aware that FCC imposed an explicit limit on the gain of antennas used
-in this band (and certainly not a limit of 3 dBi as db.txt suggests),
-so I don't understand why this is named what it is in the
-documentation. I'm therefore left wondering whether the "maximum
-antenna gain" number (where) specified in db.txt is actually giving a
-conversion from the EIRP limit given, to a TPO limit.
-
-If this were true it would make some sense to me, but even if I assume
-this the numbers still don't reconcile with FCC. Basically, given the
-30 dBm TPO limit and 36 dBm EIRP limit of FCC for 2.4-2.5 GHz ISM, I
-would have expected to see a rule like:
-
-country US: DFS-FCC
-        (2402 - 2472 @ 40), (6, 36)
-
-i.e., a 36 dBm EIRP limit, with TPO limit 6 dB below this.
-
-Obviously I am grossly misunderstanding something and I would very
-much appreciate it if someone on this list could enlighten me.
-
-Many thanks,
-Dean.
-
-References
----
-[1] http://git.kernel.org/?p=linux/kernel/git/linville/wireless-regdb.git;a=blob_plain;f=db.txt;hb=1e7bf666e34e30e13238879ee76b58449be2f9fd
-[2] http://wireless.kernel.org/en/developers/Regulatory/processing_rules
-[3] http://www.afar.net/tutorials/fcc-rules/
+On Thu, Jan 31, 2013 at 03:18:56PM +0100, Ognjen Ikovic wrote:
+> Dear Mr. John,
+> 
+> my name is Ognjen Ikovic and I am R&D engineer from Novi Sad, Serbia. I
+> have noticed that You are listed as maintainer for the wireless-regdb
+> database, congratulations on a fine work You are doing.
+> 
+> I have noticed the following inputs in the regulatory database for Serbia
+> which are not in line with regulatory documents for Serbia:
+> 
+> country RS:
+>         # 60 gHz band channels 1-4, ref: Etsi En 302 567
+>         (57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
+> 
+> I was wondering if You could, please, update the regulatory database with
+> new information:
+> 
+> *WAS/RLANs for indoor usage:*
+> 1. Frequency Band 2400-2483.5 MHz;  Power 100mW e.i.r.p.; Channel spacing:
+> None;
+> CEPT document:  ERC/DEC/(01)07, ERC/DEC/(04)07, ERC/REC/70-03; ETSI
+> standard EN 300 328
+> 
+> 2. Frequency Band 5150-5350 MHz;  Power 200mW e.i.r.p.;
+> CEPT document:  ERC/DEC/(99)24, ECC/DEC/(04)08, ERC/REC/70-03; ETSI
+> standard: EN 300 836, EN 301 893
+> 
+> *WAS/RLANs for outdoor usage:*
+> 1. Frequency Band 2400-2483.5 MHz;  Power 100mW e.i.r.p.; Channel spacing:
+> None;
+> CEPT document:  ERC/DEC/(01)07, ERC/REC/70-03; ETSI standard EN 300 328
+> 
+> 2. Frequency Band 5470-5725 MHz;  Power 1W e.i.r.p; Channel spacing: 20
+> MHz; TCP required 3dB;  DFS required;
+> CEPT document: ECC/DEC/(04)08; ETSI standard: EN 301 893
+> 
+> I have regulatory document with these information, but it is on Serbian
+> language. If You need more information regarding this subject do not
+> hesitate to contact me.
+> 
+> Best regards,
+> 
+> Ognjen Ikovic
+> 
+> -- 
+> Ognjen Ikovic
+> Staff engineer
+> ognjen.ikovic@lacitadelleing.com
+> +381640272551
+> LaCitadelle Inzenjering
+> www.lacitadelleing.com
 
 -- 
-Dean Armstrong | Virscient Limited | www.virscient.com
+John W. Linville		Someday the world will need a hero, and you
+linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
