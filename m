@@ -3,13 +3,15 @@ Return-path:
 Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
  ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1U5L5n-0007gV-4A
- for wireless-regdb@lists.infradead.org; Tue, 12 Feb 2013 19:00:35 +0000
+ id 1U5LnN-0001qZ-8v
+ for wireless-regdb@lists.infradead.org; Tue, 12 Feb 2013 19:45:37 +0000
 From: "John W. Linville" <linville@tuxdriver.com>
-Date: Tue, 12 Feb 2013 13:57:41 -0500
-Message-Id: <1360695461-4529-1-git-send-email-linville@tuxdriver.com>
-Subject: [wireless-regdb] [PATCH] Add specific data for Serbia for the 2
- GHz and 5 GHz bands.
+Date: Tue, 12 Feb 2013 14:39:16 -0500
+Message-Id: <1360697956-18658-1-git-send-email-linville@tuxdriver.com>
+In-Reply-To: <1360695461-4529-1-git-send-email-linville@tuxdriver.com>
+References: <1360695461-4529-1-git-send-email-linville@tuxdriver.com>
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Add specific data for
+	Serbia for the 2 GHz and 5 GHz bands.
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,14 +40,16 @@ Message-ID:
 
 Signed-off-by: John W. Linville <linville@tuxdriver.com>
 ---
- db.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+v2 -- change "1 W" to "1000 mW" so the database will build...
+
+ db.txt | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index a6b94b1..a61f40a 100644
+index a6b94b1..0270c2f 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -642,7 +642,13 @@ country RO: DFS-ETSI
+@@ -642,9 +642,15 @@ country RO: DFS-ETSI
          # 60 gHz band channels 1-4, ref: Etsi En 302 567
          (57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
  
@@ -53,12 +57,16 @@ index a6b94b1..a61f40a 100644
 +# Source:
 +# http://www.ratel.rs/upload/documents/Plan_namene/Plan_namene-sl_glasnik.pdf
  country RS:
+-        # 60 gHz band channels 1-4, ref: Etsi En 302 567
+-        (57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
 +	(2400 - 2483.5 @ 40), (N/A, 100 mW)
 +	(5150 - 5350 @ 40), (N/A, 200 mW), NO-OUTDOOR
-+	(5470 - 5725 @ 20), (3, 1 W), DFS
-         # 60 gHz band channels 1-4, ref: Etsi En 302 567
-         (57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
++	(5470 - 5725 @ 20), (3, 1000 mW), DFS
++	# 60 gHz band channels 1-4, ref: Etsi En 302 567
++	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
  
+ country RU:
+ 	(2402 - 2482 @ 40), (N/A, 20)
 -- 
 1.7.11.7
 
