@@ -1,24 +1,16 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
+ ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1U5lD6-0002ga-Op
- for wireless-regdb@lists.infradead.org; Wed, 13 Feb 2013 22:53:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1360796032; x=1392332032;
- h=from:to:subject:date:message-id:
- content-transfer-encoding:mime-version;
- bh=8J/WcLGjijZHo+F1huxjBjSGvfLgwT4HcTBvVH17PV4=;
- b=QCWnFJRY8SIOjhChDtMfMD5PnmrN0MRIqVFxCVxWU8JKWazRUoXoRuOu
- G9IgXGxitCYcvgatpjOpUQZxbaJQ38zcRFwv6IVY7pm8dMZQG8ZDm6yQy
- jHy6frp+GSbmSrrqVDrgWxNHBvcVIw194sTXfvB7a/zPshlBtsIzIblWG 0=;
-From: "Green, Michael" <green@qca.qualcomm.com>
-Date: Wed, 13 Feb 2013 22:53:47 +0000
-Message-ID: <237CF5B631AA3446BAC55A2F73815CEB0154C3A8@NASANEXD02D.na.qualcomm.com>
-Content-Language: en-US
+ id 1U5iju-0005hv-Ch
+ for wireless-regdb@lists.infradead.org; Wed, 13 Feb 2013 20:15:35 +0000
+Date: Wed, 13 Feb 2013 15:05:58 -0500
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20130213200557.GD2169@tuxdriver.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] Russia Update (not Serbia)
+Content-Disposition: inline
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2013-02-13
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,68 +25,34 @@ Sender: wireless-regdb-bounces@lists.infradead.org
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>, linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Sorry.  We have reached the limit of my cooperation.  I trust the community to do the right thing from this point.   
+A new release of wireless-regdb (master-2013-02-13) is available at:
 
+http://kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.02.13.tar.bz2
 
-Michael Green
-green@qualcomm.com
+Here is the short log of the changes included since the 2013-02-13
+release:
 
-Qualcomm Atheros, Inc.
-781-400-1491 (office)
-508-380-4921 (cell)
+Johannes Berg (1):
+      regdb: allow 40 MHz on world roaming channels 12/13
 
+John W. Linville (4):
+      wireless-regdb: update regulatory.bin based on preceding changes.
+      Add specific data for Serbia for the 2 GHz and 5 GHz bands.
+      Clean-up some whitespace damage that had crept into db.txt...
+      wireless-regdb: update regulatory.bin based on preceding changes.
 
------Original Message-----
-From: wireless-regdb-bounces@lists.infradead.org [mailto:wireless-regdb-bounces@lists.infradead.org] On Behalf Of Xose Vazquez Perez
-Sent: Wednesday, February 13, 2013 5:44 PM
-To: linux-wireless; wireless-regdb@lists.infradead.org; John W. Linville
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for Serbia (RS) on 2.4 and 5GHz
+Xose Vazquez Perez (3):
+      wireless-regdb: Update regulatory rules for ES (Spain) on 5GHz and 2.4GHz
+      wireless-regdb: Update regulatory rules for ES (Spain) on 5GHz and 2.4GHz
+      wireless-regdb: Update regulatory rules for ES (Spain) on 5GHz and 2.4GHz
 
-On 02/06/2013 08:25 PM, John W. Linville wrote:
-
-> Thank you so much for this timely message!  I apologize for having 
-> overlooked it so far.
-> 
-> I don't suppose that you could translate the information you have 
-> provided into the format used within the regulatory database file?
-> Also, could you provide a link to the original regulatory document 
-> (even if it is in Serbian)?
-
-Serbia is under ETSI/CEPT rules( ECC/DEC/(04)08 ), see summary[1]:
-
-5 GHz current rules are too much liberal and incomplete:
-
-country RS:
-	(2400 - 2483.5 @ 40), (N/A, 100 mW)
-	(5150 - 5350 @ 40), (N/A, 200 mW), NO-OUTDOOR
-	(5470 - 5725 @ 20), (3, 1000 mW), DFS
-	# 60 gHz band channels 1-4, ref: Etsi En 302 567
-	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
-
-They should be changed to "standard" ETSI rules:
-	(2400 - 2483.5 @ 40), (N/A, 100 mW)
-	(5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
-	(5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
-	(5470 - 5725 @ 40), (N/A, 500 mW), DFS
-	# 60 gHz band channels 1-4, ref: Etsi En 302 567
-	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
-
-http://www.erodocdb.dk/doks/implement_doc_adm.aspx?docid=2033
-http://www.erodocdb.dk/doks/implement_adm_doc.aspx?ITUID=48&ITUSHORT=RS&ITULONG=Serbia
-
-Contact point for implementation status:
-Ms Jelena Surculija <jelena.surculija@mtid.gov.rs> Dr Milan Jankovic <milan.jankovic@ratel.org.rs>
-
-
-[1] http://lists.infradead.org/pipermail/wireless-regdb/2012-June/000058.html
-
-_______________________________________________
-wireless-regdb mailing list
-wireless-regdb@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/wireless-regdb
+-- 
+John W. Linville		Someday the world will need a hero, and you
+linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
