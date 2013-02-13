@@ -1,28 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x232.google.com ([2a00:1450:4010:c03::232])
- by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UuXKI-0001vK-Sf
- for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 00:23:12 +0000
-Received: by mail-la0-f50.google.com with SMTP id dy20so693847lab.9 for
- <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 17:22:46 -0700 (PDT)
+Received: from mail-wg0-f43.google.com ([74.125.82.43])
+ by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
+ id 1U5kFq-00005m-UU
+ for wireless-regdb@lists.infradead.org; Wed, 13 Feb 2013 21:52:39 +0000
+Received: by mail-wg0-f43.google.com with SMTP id e12so1397098wge.22 for
+ <wireless-regdb@lists.infradead.org>; Wed, 13 Feb 2013 13:52:37 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:sender:in-reply-to:references:from:date
- :x-google-sender-auth:message-id:subject:to:cc:content-type;
- bh=ucz28lbA9hsnyEIUVo7ldkOI7wX6zrqZhe1E5cyWwGU=;
- b=aDMdn2LZqlEN9hqEe/5HMiGXbYOkFUwF3tYcVnFAiTAk3dOUuB9eCzAKNBxIBE2y2K
- fDdaIJ8JCPUup5ISAZf7bi4SsCdy4nkFMyazHXB3pZFbSK+24A2O45tufGdoWwfSR3tc
- nr6yg+Uu1wtkC38FPu1+tTDhzQjMQdarmgJ8t2Jz75syaCmqk7IzjCzdy4WmeKlnBrWX
- L1WRdqm8bZz2qZzcfYa9wBSgJI3o3j7A4QyxJF8bZZ/do8l7SmSHSn6h9i0VxweVaU3Z
- lFQkCmsFUadrW06J+ZInQ1sDLq/nEjHXlAJKZSaZPCVHV2b+YG9BzuqgkdGpfio1oIvE 7jGA==
+ s=20120113;
+ h=x-received:message-id:date:from:user-agent:mime-version:to:subject
+ :content-type:content-transfer-encoding;
+ bh=kQMzcNj4Sf6gmjm+pg1NihbpAEjhVD3ePRDZWaB53sU=;
+ b=fkreUGDBtijX42jLsvDaTrcrzb8Wca31jPKQ9rJyIGMU7ScmbeeP7VdFlymeBcPXIZ
+ J2JJUv5+UGDStXbLYNGRTtWkw/H8XK0rTUfpmq0YIWcWCKhjhf9OfglfYidNR49vbijg
+ ec5bEMjg3rxHrnRpaZNstMaV191Aky8y4V7h52+dDYQ4R8PWgnIWcA06H+yP+ZyV6xiY
+ vAbyiicFgzGf3d8AkJR3mVHNK3KD/qzYqywMoRZAkLhQfXGEwWSTrbdi22gGlRFyIltr
+ a9bKWzUTb33MCy/htda8hAU3jkfiBPRsfui2yIjtNgNhy8pvJt0Ax4s9h3Bt5JSObuGy ozlQ==
+Message-ID: <511C0B22.6090600@gmail.com>
+Date: Wed, 13 Feb 2013 22:52:34 +0100
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20130702172537.DC8F62006D3@clearcreek.mtv.corp.google.com>
-References: <20130702172537.DC8F62006D3@clearcreek.mtv.corp.google.com>
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed, 3 Jul 2013 17:22:25 -0700
-Message-ID: <CAB=NE6UdCnNzd-_VjdePSgwKUhrJ4XWycT_4Wg0JoUkDncDpAg@mail.gmail.com>
-Subject: Re: [wireless-regdb] wireless-regdb: 5GHz rule for Indonesia
-	regdomain
+Subject: Re: [wireless-regdb] Russia RD Update - add 5GHz channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,20 +35,22 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Paul Stewart <pstew@chromium.org>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
+To: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org, green@qca.qualcomm.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Jul 2, 2013 at 10:20 AM, Paul Stewart <pstew@chromium.org> wrote:
-> Pursuant to
-> http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf, provide a 5GHz rule for Indonesian regulatory domain.
+Michael Green wrote:
 
-This looks good to me and matches QCA's work on this, but we also can
-enable VHT80. Given that I am working on sending a huge series of
-VHT80 patches I'll roll this into my series and modify your patch to
-add VHT80 as well. Will send out shortly.
+> CHANGE to:
+> Band [MHz]		Max BW [MHz]	Max gain	Max EIRP [dBm=A0(mW)]
+> 2402.000 - 2482.000	40		N/A		20.00 (100.00)
+> 5170-5330		40		N/A		20.00 (100.00)
+> 5650-5710		40		N/A		30.00 (1000.00)
 
-  Luis
+patch??
+
+> Source Document .PDF  attached.
+
+Where does it come from? NO reference to official documents.
 
 _______________________________________________
 wireless-regdb mailing list
