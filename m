@@ -1,29 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from we-in-x022c.1e100.net ([2a00:1450:400c:c03::22c]
- helo=mail-we0-x22c.google.com)
+Received: from mail-we0-x232.google.com ([2a00:1450:400c:c03::232])
  by merlin.infradead.org with esmtps (Exim 4.76 #1 (Red Hat Linux))
- id 1U5l9z-0002cO-2N
- for wireless-regdb@lists.infradead.org; Wed, 13 Feb 2013 22:50:40 +0000
-Received: by mail-we0-f172.google.com with SMTP id x10so1476446wey.3 for
- <wireless-regdb@lists.infradead.org>; Wed, 13 Feb 2013 14:50:36 -0800 (PST)
+ id 1U5mHG-0008SG-Al
+ for wireless-regdb@lists.infradead.org; Thu, 14 Feb 2013 00:02:15 +0000
+Received: by mail-we0-f178.google.com with SMTP id x48so1449824wey.23 for
+ <wireless-regdb@lists.infradead.org>; Wed, 13 Feb 2013 16:02:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=x-received:message-id:date:from:user-agent:mime-version:to:subject
  :references:in-reply-to:content-type:content-transfer-encoding;
- bh=WWCAC3MmraApykQPM8vEbmG5FIYFd5OuvjnzNGSX7YA=;
- b=aXbvaG6mdR7aItDKkZxn9EC32A1idATvsxjDxWe1z0HCTab7wgUsfyRKgMI/yt068w
- +IptzYasP206JRUGADsv4pHrsI7SRr+UU7a5CQhRNvnW/T07WsjESMlpWcuvaFzAix0d
- ANcBgox1cb04RJIeLhPp/tnbyxM0GM5NpllvRD0p9LQIxPlFntCEMnvSE0cVjO5Gv6gX
- WH27sO8k6nj3wGbKwzRZ57Eyr05kh3PwK5hTq0BwP0tQAt5UoMGc1OrsdT5L8VRLOEA4
- x+cY8KAgWe47pc9FhOT91/0KHMoCkl6wJ/t7OHoio4XUqNssVKVDge2BScuWcJR7p51t lqmA==
-Message-ID: <511C1745.4000502@gmail.com>
-Date: Wed, 13 Feb 2013 23:44:21 +0100
+ bh=SPv6oGhpenf2ePMboZqkTDILKTVFALFeicafVIys83Q=;
+ b=N6w1pAecCgkFcqdpd/PWELkghD4y5Ze8fI5/5iCdPKZqi/iJ6q+teZjR3IhvOTuwyn
+ tSpBbF8dJdnWvBcLe3MWGWwW028skfqQOlOUwFbjxaNAEwMOsJLPw8gKLPNL5Hh314XV
+ KglpOK3ChkNLy/8UkU450OFToiw3zEdkY2xQ5qC1hQUuoTfuvYjSjFExxfnBfW5pk3hu
+ +Av3z44+DcugDVGZuqQVWkSezntvEHYvxuEPssdaX5xwH3A/rdTKrCQPnJ4HLnSjCwMg
+ UwKgLu/xXms9np5AVkrJdl3CBzXA2gPRdSgKPAquB7A9BNVCA6OSqHwc/K8X+lVr4Q+L OsOQ==
+Message-ID: <511C2981.4000806@gmail.com>
+Date: Thu, 14 Feb 2013 01:02:09 +0100
 From: Xose Vazquez Perez <xose.vazquez@gmail.com>
 MIME-Version: 1.0
 References: <CAL1G+-HfPJnwvisiE5Vr0ihenwKzL3_QL40DLPP_PsPyv+nveQ@mail.gmail.com>
- <20130206192544.GH2148@tuxdriver.com>
-In-Reply-To: <20130206192544.GH2148@tuxdriver.com>
+ <20130206192544.GH2148@tuxdriver.com> <511C1745.4000502@gmail.com>
+In-Reply-To: <511C1745.4000502@gmail.com>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
  Serbia (RS) on 2.4 and 5GHz
 List-Unsubscribe: 
@@ -43,44 +42,38 @@ Content-Transfer-Encoding: 8bit
 To: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 02/06/2013 08:25 PM, John W. Linville wrote:
+On 02/13/2013 11:44 PM, Xose Vazquez Perez wrote:
 
-> Thank you so much for this timely message!  I apologize for having
-> overlooked it so far.
+> Serbia is under ETSI/CEPT rules( ECC/DEC/(04)08 ), see summary[1]:
 > 
-> I don't suppose that you could translate the information you have
-> provided into the format used within the regulatory database file?
-> Also, could you provide a link to the original regulatory document
-> (even if it is in Serbian)?
+> 5 GHz current rules are too much liberal and incomplete:
+> 
+> country RS:
+> 	(2400 - 2483.5 @ 40), (N/A, 100 mW)
+> 	(5150 - 5350 @ 40), (N/A, 200 mW), NO-OUTDOOR
+> 	(5470 - 5725 @ 20), (3, 1000 mW), DFS
+> 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+> 	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
 
-Serbia is under ETSI/CEPT rules( ECC/DEC/(04)08 ), see summary[1]:
+> They should be changed to "standard" ETSI rules:
+> 	(2400 - 2483.5 @ 40), (N/A, 100 mW)
+> 	(5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
+> 	(5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
+> 	(5470 - 5725 @ 40), (N/A, 500 mW), DFS
+> 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+> 	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
 
-5 GHz current rules are too much liberal and incomplete:
+sorry,
 
-country RS:
-	(2400 - 2483.5 @ 40), (N/A, 100 mW)
-	(5150 - 5350 @ 40), (N/A, 200 mW), NO-OUTDOOR
-	(5470 - 5725 @ 20), (3, 1000 mW), DFS
-	# 60 gHz band channels 1-4, ref: Etsi En 302 567
-	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
+5150-5250 should be 200 mW:
+ 	(5150 - 5250 @ 40), (N/A, 200 mW), NO-OUTDOOR
 
-They should be changed to "standard" ETSI rules:
-	(2400 - 2483.5 @ 40), (N/A, 100 mW)
-	(5150 - 5250 @ 40), (N/A, 100 mW), NO-OUTDOOR
-	(5250 - 5350 @ 40), (N/A, 100 mW), NO-OUTDOOR, DFS
-	(5470 - 5725 @ 40), (N/A, 500 mW), DFS
-	# 60 gHz band channels 1-4, ref: Etsi En 302 567
-	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
+<http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC0408.PDF>
 
-http://www.erodocdb.dk/doks/implement_doc_adm.aspx?docid=2033
-http://www.erodocdb.dk/doks/implement_adm_doc.aspx?ITUID=48&ITUSHORT=RS&ITULONG=Serbia
-
-Contact point for implementation status:
-Ms Jelena Surculija <jelena.surculija@mtid.gov.rs>
-Dr Milan Jankovic <milan.jankovic@ratel.org.rs>
-
-
-[1] http://lists.infradead.org/pipermail/wireless-regdb/2012-June/000058.html
+2. that in the frequency band 5.150-5.350 MHz, WAS/RLANs stations
+shall be restricted to indoor use with a maximum mean e.i.r.p. of
+200 mW and a maximum mean e.i.r.p. density of 10 mW/MHz in any 1MHz
+band;
 
 _______________________________________________
 wireless-regdb mailing list
