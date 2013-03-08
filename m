@@ -1,24 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-f44.google.com ([209.85.160.44])
+Received: from mail-lb0-f173.google.com ([209.85.217.173])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UE3yl-0003Ag-2V
- for wireless-regdb@lists.infradead.org; Fri, 08 Mar 2013 20:33:24 +0000
-Received: by mail-pb0-f44.google.com with SMTP id wz12so1574371pbc.3 for
- <wireless-regdb@lists.infradead.org>; Fri, 08 Mar 2013 12:33:20 -0800 (PST)
+ id 1UE3zl-0003J7-Vu
+ for wireless-regdb@lists.infradead.org; Fri, 08 Mar 2013 20:34:27 +0000
+Received: by mail-lb0-f173.google.com with SMTP id gf7so1659389lbb.18 for
+ <wireless-regdb@lists.infradead.org>; Fri, 08 Mar 2013 12:34:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
- h=x-received:sender:from:to:cc:subject:date:message-id:x-mailer;
- bh=hHJO46izhB1pFUIMJE7HABiGUzmZitaodV822EXI+tw=;
- b=W+HcLOE3k7sz9/wmXMVtkzJF9O9wjR4tIX+lgyuJ+ZfbpVkYhp8fkT8QGXeXvArUue
- 7uYnlR8fumvQ6BwA22ci/UsCEg8VoOgiw60AM+16LoOJQimia8Ipey0ItDnvL5Jwuosd
- KtOM04JfOEYJyaMH79rpfAbQxknkOyHt8uAS/OwsncOTP10IDvBIhFovg7VvXQf6ex6i
- hGt+DdiF08QXlsj0I5eyd2v8zgd44hvC/EWhVtQtb1PI0mNeFpGvbU1SIY4ODvlPoinv
- i08lGz7ppt0g7oO6bX4FGUxpemGxbHrracgn4ZxP0J2dUeWJX16VOpQkV+nEJvhly/Nb CSYA==
+ h=x-received:mime-version:sender:in-reply-to:references:from:date
+ :x-google-sender-auth:message-id:subject:to:cc:content-type;
+ bh=qYRDLSfedUuTKPLVoS+sxcvFpdIATQL1KqWQuwFV35U=;
+ b=QSG04k1vzdoNdOw604NSoqikzHg0xfHH8oIx1IDkh0lY9UNF08Pj+nYDrKWxlLBhlV
+ 19n8+Pn+vn3Hs9c93yXd4oKJUbg7sP4D6mvpqnxuceHQ7mDwpAvuWYIYF/lONRvvnFmM
+ F/DmtvMwyb0J85N0njnTE70f3e1Lm14Qn/5gAtukTyLgh9DCBgXJN2sVS/+bBrgrmcEV
+ hXUaNV2Qp/PB/pUJiSw5qe1g7ftqfdJUL01zLe72lcruYrQ/AS4g1yo/S/LNeJ2TFbqX
+ 8rm7XEywi05hdJ81yoU8pQcyiMxWKzi3DAHFALSk59fmT0QPah/Qw29ILbjyf0qvXRKo NagQ==
+MIME-Version: 1.0
+In-Reply-To: <1362774792-6209-1-git-send-email-mcgrof@do-not-panic.com>
+References: <1362774792-6209-1-git-send-email-mcgrof@do-not-panic.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  8 Mar 2013 12:33:12 -0800
-Message-Id: <1362774792-6209-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH] wireless-regdb: enable HT40 in RU -
+Date: Fri, 8 Mar 2013 12:34:03 -0800
+Message-ID: <CAB=NE6UyPyME_q-rYQcMM5qteDh9fZUoY+0g_+vYuqGdQ7fXuA@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: enable HT40 in RU -
 	Russian Federation
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -29,63 +33,23 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: linville@tuxdriver.com, wireless-regdb@lists.infradead.org
-Cc: Michael Greem <green@qca.qualcomm.com>, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: Michael Green <green@qca.qualcomm.com>, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+On Fri, Mar 8, 2013 at 12:33 PM, Luis R. Rodriguez
+<mcgrof@do-not-panic.com> wrote:
 
-As per QCA the Russian Federation (RU) enables
-HT40 on the 5 GHz band as follows. This has been
-verified by actual product submission and product
-certification.
+> Cc: Michael Greem <green@qca.qualcomm.com>
 
-Band [MHz]              Max BW [MHz]    Max gain        Max EIRP [dBm (mW)]
-5170-5330               40              N/A             20.00 (100.00)
-5650-5710               40              N/A             30.00 (1000.00)
-5735.000 - 5835.000     40              N/A             30.00 (1000.00)
+Typo on name, Green :)
 
-Prior to this we didn't have HT40 allowed on RU at all.
-This patch changes this and splits the 5 GHz band into
-two segments which allow two different max EIRP values.
-
-Exact details on the 5 GHz QCA work for Russia you can
-refer to this PDF:
-
-http://lists.infradead.org/pipermail/wireless-regdb/attachments/20130125/29d3fa1f/attachment-0001.pdf
-
-Originally submitted to the list by Michael Green.
-
-Cc: Michael Greem <green@qca.qualcomm.com>
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
----
- db.txt |    4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index c5861b8..2d09a3c 100644
---- a/db.txt
-+++ b/db.txt
-@@ -654,7 +654,9 @@ country RS:
- 
- country RU:
- 	(2402 - 2482 @ 40), (N/A, 20)
--	(5735 - 5835 @ 20), (N/A, 30)
-+	(5170 - 5330 @ 40), (N/A, 20)
-+	(5650 - 5710 @ 40), (N/A, 30)
-+	(5735 - 5835 @ 40), (N/A, 30)
- 
- country RW:
- 	(2402 - 2482 @ 40), (N/A, 20)
--- 
-1.7.10.4
-
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
