@@ -1,16 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
+Received: from mail-la0-x231.google.com ([2a00:1450:4010:c03::231])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UPSQs-0001Fh-Ee
- for wireless-regdb@lists.infradead.org; Tue, 09 Apr 2013 06:53:31 +0000
-Message-ID: <1365490278.8465.1.camel@jlt4.sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 09 Apr 2013 08:51:18 +0200
-In-Reply-To: <1365486778-2336-3-git-send-email-mcgrof@do-not-panic.com>
+ id 1UPTt9-0003SB-Es
+ for wireless-regdb@lists.infradead.org; Tue, 09 Apr 2013 08:26:49 +0000
+Received: by mail-la0-f49.google.com with SMTP id fs12so1501372lab.36 for
+ <wireless-regdb@lists.infradead.org>; Tue, 09 Apr 2013 01:26:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=x-received:mime-version:sender:in-reply-to:references:from:date
+ :x-google-sender-auth:message-id:subject:to:cc:content-type;
+ bh=KMMeenHifWf826F8BQoqVtXqv8gCmSJbdU+phaSaTGc=;
+ b=FsA4NiVOcuLhuZAjRRRl6gw0zAPijlztpPmkyAmrXD7fRIdEB5QOfRcCzzZjdaWcmA
+ 1EzKyhLv+rKAxVhsdoXakX2qqnbZRfVzSjTzk8aC8+LakNSB+xxkYzCaSGM8btBIi++w
+ fq7iJfNEYVjM3gnJ78mP6mzMRtMqIJiF97xDiNY2nhff9ByO79h3JtUDbUA0ORXwQXhc
+ fWW5eEoi6sIAwWjq6PYjuG+ki639v71BXikCFMth29ofY5arYuPvnRdNq2MHMiHUl7cF
+ l+YKbWLtJCuYw3eg4/zEJ1n9FbPS9NoATOl5erh9JuKCR+1DuN7Xx82+DPuiWCoguoeC fGig==
+MIME-Version: 1.0
+In-Reply-To: <1365490278.8465.1.camel@jlt4.sipsolutions.net>
 References: <1365486778-2336-1-git-send-email-mcgrof@do-not-panic.com>
  <1365486778-2336-3-git-send-email-mcgrof@do-not-panic.com>
-Mime-Version: 1.0
+ <1365490278.8465.1.camel@jlt4.sipsolutions.net>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Tue, 9 Apr 2013 01:26:23 -0700
+Message-ID: <CAB=NE6XjS7647FADXs7g9P4GmZPpdZmH1A9tNyY9u1_6QHX9og@mail.gmail.com>
 Subject: Re: [wireless-regdb] [PATCH 2/3] wireless-regdb: enable VHT80 when
  world roaming
 List-Unsubscribe: 
@@ -27,68 +40,46 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Cc: wireless-regdb@lists.infradead.org, kandala@qca.qualcomm.com, linux-wireless@vger.kernel.org, linville@tuxdriver.com, qca_vkondrat@qca.qualcomm.com, green@qca.qualcomm.com, yunsenw@qca.qualcomm.com
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, kandala@qca.qualcomm.com, linux-wireless <linux-wireless@vger.kernel.org>, "John W. Linville" <linville@tuxdriver.com>, qca_vkondrat <qca_vkondrat@qca.qualcomm.com>, Michael Green <green@qca.qualcomm.com>, yunsenw@qca.qualcomm.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2013-04-08 at 22:52 -0700, Luis R. Rodriguez wrote:
-> From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-> 
-> For VHT, the wider bandwidths (up to 160 MHz) need
-> to be allowed. Since world roaming only covers the
-> case of connecting to an AP, it can be opened up
-> there, we will rely on the AP to know the local
-> regulations.
-> 
-> Based on a patch by Johannes Berg for upstream Linux.
+On Mon, Apr 8, 2013 at 11:51 PM, Johannes Berg
+<johannes@sipsolutions.net> wrote:
+> On Mon, 2013-04-08 at 22:52 -0700, Luis R. Rodriguez wrote:
+>> From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+>>
+>> For VHT, the wider bandwidths (up to 160 MHz) need
+>> to be allowed. Since world roaming only covers the
+>> case of connecting to an AP, it can be opened up
+>> there, we will rely on the AP to know the local
+>> regulations.
+>>
+>> Based on a patch by Johannes Berg for upstream Linux.
+>
+>> --- a/db.txt
+>> +++ b/db.txt
+>> @@ -6,10 +6,10 @@ country 00:
+>>       # Channel 14. Only JP enables this and for 802.11b only
+>>       (2474 - 2494 @ 20), (3, 20), PASSIVE-SCAN, NO-IBSS, NO-OFDM
+>>       # Channel 36 - 48
+>> -     (5170 - 5250 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
+>> +     (5170 - 5250 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+>>       # NB: 5260 MHz - 5700 MHz requies DFS
+>>       # Channel 149 - 165
+>> -     (5735 - 5835 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
+>> +     (5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+>
+> I also have a separate upstream patch that I haven't sent here yet to
+> enable 160 MHz by enabling the radar channels (passively), see below;
+> any thoughts on that?
 
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -6,10 +6,10 @@ country 00:
->  	# Channel 14. Only JP enables this and for 802.11b only
->  	(2474 - 2494 @ 20), (3, 20), PASSIVE-SCAN, NO-IBSS, NO-OFDM
->  	# Channel 36 - 48
-> -	(5170 - 5250 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
-> +	(5170 - 5250 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
->  	# NB: 5260 MHz - 5700 MHz requies DFS
->  	# Channel 149 - 165
-> -	(5735 - 5835 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
-> +	(5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+Enabling it passively seems fine to me. Michael if we take care of DFS
+/ passive scan, etc, are we still OK to use VHT160 if we find an AP
+that uses it on the DFS channels (assuming client follows channel
+change announcements, etc)?
 
-I also have a separate upstream patch that I haven't sent here yet to
-enable 160 MHz by enabling the radar channels (passively), see below;
-any thoughts on that?
-
---- a/net/wireless/reg.c
-+++ b/net/wireless/reg.c
-@@ -184,11 +184,21 @@ static const struct ieee80211_regdomain
-world_regdom = {
-                        NL80211_RRF_NO_IBSS |
-                        NL80211_RRF_NO_OFDM),
-                /* IEEE 802.11a, channel 36..48 */
--               REG_RULE(5180-10, 5240+10, 80, 6, 20,
-+               REG_RULE(5180-10, 5240+10, 160, 6, 20,
-                         NL80211_RRF_PASSIVE_SCAN |
-                         NL80211_RRF_NO_IBSS),
- 
--               /* NB: 5260 MHz - 5700 MHz requires DFS */
-+               /* IEEE 802.11a, channel 52..64 - DFS required */
-+               REG_RULE(5260-10, 5320+10, 160, 6, 20,
-+                       NL80211_RRF_PASSIVE_SCAN |
-+                       NL80211_RRF_NO_IBSS |
-+                       NL80211_RRF_DFS),
-+
-+               /* IEEE 802.11a, channel 100..144 - DFS required */
-+               REG_RULE(5500-10, 5720+10, 160, 6, 20,
-+                       NL80211_RRF_PASSIVE_SCAN |
-+                       NL80211_RRF_NO_IBSS |
-+                       NL80211_RRF_DFS),
- 
-                /* IEEE 802.11a, channel 149..165 */
-                REG_RULE(5745-10, 5825+10, 80, 6, 20,
-
-johannes
-
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
