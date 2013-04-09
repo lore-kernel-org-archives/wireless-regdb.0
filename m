@@ -2,11 +2,11 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from he.sipsolutions.net ([78.46.109.217] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UPSRV-0001GF-MC
- for wireless-regdb@lists.infradead.org; Tue, 09 Apr 2013 06:54:10 +0000
-Message-ID: <1365490320.8465.2.camel@jlt4.sipsolutions.net>
+ id 1UPSRy-0001H0-6B
+ for wireless-regdb@lists.infradead.org; Tue, 09 Apr 2013 06:54:39 +0000
+Message-ID: <1365490352.8465.3.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 09 Apr 2013 08:52:00 +0200
+Date: Tue, 09 Apr 2013 08:52:32 +0200
 In-Reply-To: <1365486778-2336-4-git-send-email-mcgrof@do-not-panic.com>
 References: <1365486778-2336-1-git-send-email-mcgrof@do-not-panic.com>
  <1365486778-2336-4-git-send-email-mcgrof@do-not-panic.com>
@@ -31,7 +31,12 @@ To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 Cc: wireless-regdb@lists.infradead.org, kandala@qca.qualcomm.com, linux-wireless@vger.kernel.org, linville@tuxdriver.com, qca_vkondrat@qca.qualcomm.com, green@qca.qualcomm.com, yunsenw@qca.qualcomm.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Subject is wrong -- this isn't VHT but 60G
+On Mon, 2013-04-08 at 22:52 -0700, Luis R. Rodriguez wrote:
+
+> +	# IEEE 802.11ad (60gHz), channels 1..3
+> +	(57240 - 63720 @ 2160), (N/A, 0)
+
+Also -- GHz, not gHz :)
 
 johannes
 
