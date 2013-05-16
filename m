@@ -1,25 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-f178.google.com ([209.85.192.178])
+Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UPTwl-0003ZB-VJ
- for wireless-regdb@lists.infradead.org; Tue, 09 Apr 2013 08:30:32 +0000
-Received: by mail-pd0-f178.google.com with SMTP id w11so3706974pde.37 for
- <wireless-regdb@lists.infradead.org>; Tue, 09 Apr 2013 01:30:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=x-received:sender:from:to:cc:subject:date:message-id:x-mailer;
- bh=eobw94i/X22PAUGgAWnrEl2ckvkLFu9evnZS+1bB6qc=;
- b=QlS4dGhtuKM3yQNv3udhla2fj5VaFXYUiXT4xZ8tmz1a2lYNbsKzdKzdAtEhiH5/nO
- OtH/UqLiG4sFS+mJP7Qsvvht2dKY0gw5k6oRrrAUXQYmmBsUUFAx4IAscJo6ZtpZP26M
- u3xVMYd0pKEmmyKxn+nZJiUKajWTE71lTV9DZUNLOaWlgTzZCeLhSUZ7leQziGwhUnf4
- r402vY0kgCu2OcDjxSga/CNsNNtEU6v9d5kHtbkzldAcn4rTQC/v3k/I/g6gHsyKVrkJ
- 78ja8VyUQVFTSIn6OohB7aPiu1NtBl8snUCVuMl54jf+SMenjn1a12LyROooqqDw02mG g+mg==
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue,  9 Apr 2013 01:30:23 -0700
-Message-Id: <1365496223-23908-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH v2 3/3] wireless-regdb: add 802.11ad 60
- GHz channels 1..3 to world regdom
+ id 1Ud5OV-0000ju-Hh
+ for wireless-regdb@lists.infradead.org; Thu, 16 May 2013 21:07:24 +0000
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Thu, 16 May 2013 23:06:52 +0200
+Message-Id: <1368738412-7740-1-git-send-email-johannes@sipsolutions.net>
+Subject: [wireless-regdb] [PATCH] regulatory: enable channels 52-64 and
+	100-144 for world roaming
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,42 +24,58 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: wireless-regdb@lists.infradead.org, kandala@qca.qualcomm.com, "Luis R.
- Rodriguez" <mcgrof@do-not-panic.com>, linux-wireless@vger.kernel.org, qca_vkondrat@qca.qualcomm.com, green@qca.qualcomm.com, yunsenw@qca.qualcomm.com
+To: linux-wireless@vger.kernel.org
+Cc: bzhao@marvell.com, wireless-regdb@lists.infradead.org, Johannes Berg <johannes.berg@intel.com>, mcgrof@do-not-panic.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+From: Johannes Berg <johannes.berg@intel.com>
 
-This is a port of what Vladimir Kondratiev sent to the
-Linux kernel for the static world regulatory domain.
+If allowed in a country, these channels typically require DFS
+so mark them as such. Channel 144 is a bit special, it's coming
+into use now to allow more VHT 80 channels, but world roaming
+with passive scanning is acceptable anyway. It seems fairly
+unlikely that it'll be used as the control channel for a VHT
+AP, but it needs to be present to allow a full VHT connection
+to an AP that uses it as one of the secondary channels.
 
-Cc: Vladimir Kondratiev <qca_vkondrat@qca.qualcomm.com>
-Cc: Yunsen Wang <yunsenw@qca.qualcomm.com>
-Cc: wireless-regdb@lists.infradead.org
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+Also enable VHT 160 on these channels, and also for channels
+36-48 to be able to use VHT 160 there.
+
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
+ net/wireless/reg.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
 
-Fix subject and comments below.
-
- db.txt |    2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/db.txt b/db.txt
-index ae0f83d..c878b27 100644
---- a/db.txt
-+++ b/db.txt
-@@ -10,6 +10,8 @@ country 00:
- 	# NB: 5260 MHz - 5700 MHz requies DFS
- 	# Channel 149 - 165
- 	(5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
-+	# IEEE 802.11ad (60GHz), channels 1..3
-+	(57240 - 63720 @ 2160), (N/A, 0)
+diff --git a/net/wireless/reg.c b/net/wireless/reg.c
+index cc35fba..e713051 100644
+--- a/net/wireless/reg.c
++++ b/net/wireless/reg.c
+@@ -184,11 +184,21 @@ static const struct ieee80211_regdomain world_regdom = {
+ 			NL80211_RRF_NO_IBSS |
+ 			NL80211_RRF_NO_OFDM),
+ 		/* IEEE 802.11a, channel 36..48 */
+-		REG_RULE(5180-10, 5240+10, 80, 6, 20,
++		REG_RULE(5180-10, 5240+10, 160, 6, 20,
+                         NL80211_RRF_PASSIVE_SCAN |
+                         NL80211_RRF_NO_IBSS),
  
+-		/* NB: 5260 MHz - 5700 MHz requires DFS */
++		/* IEEE 802.11a, channel 52..64 - DFS required */
++		REG_RULE(5260-10, 5320+10, 160, 6, 20,
++			NL80211_RRF_PASSIVE_SCAN |
++			NL80211_RRF_NO_IBSS |
++			NL80211_RRF_DFS),
++
++		/* IEEE 802.11a, channel 100..144 - DFS required */
++		REG_RULE(5500-10, 5720+10, 160, 6, 20,
++			NL80211_RRF_PASSIVE_SCAN |
++			NL80211_RRF_NO_IBSS |
++			NL80211_RRF_DFS),
  
- country AD:
+ 		/* IEEE 802.11a, channel 149..165 */
+ 		REG_RULE(5745-10, 5825+10, 80, 6, 20,
 -- 
-1.7.10.4
+1.8.0
 
 
 _______________________________________________
