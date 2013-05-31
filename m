@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x233.google.com ([2607:f8b0:400e:c01::233])
+Received: from mail-pb0-x22b.google.com ([2607:f8b0:400e:c01::22b])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEow-0005Xw-BT
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:11:59 +0000
-Received: by mail-pb0-f51.google.com with SMTP id jt11so1382623pbb.38 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:37 -0700 (PDT)
+ id 1UiEox-0005YZ-RU
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:00 +0000
+Received: by mail-pb0-f43.google.com with SMTP id ma3so1396965pbc.16 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=Spty6gUFRXC7Y6HrejJ7iPEYVOkTUT7zIfXuPlm/Qas=;
- b=0UCHTqasPFsqAOz2KrBxBnPVbUifyhxIEDxR7ALC8JRBvU/uUX3AJS+Iy40yQ/JRde
- q6C1tuC+1lpI8T3DmOwtD+ATf1WVKA/9zg3lQMR+R0riq/JNb5oAF8F6zrHfzd5rczzZ
- lkVsUFTe+GT8VcjLBnrnfUDApfeDRd19AZpRDadzq4F+568bMOErDt9DlbHY71rqqoc9
- shWHIfFh8F6HoJjyc6P1OIMbAT1TjXJe3d0iJl9W6FiDZNH9DwqhZeTre4qZ8csu60lW
- 1Mv/81COn2w+cSWtKvtBeGG4y3sLWPjI1aqL76cd51uFf+OUBAirbHXiHgjccZZKJj7c XDWw==
+ :references; bh=YM1h3yF0SXsku71fpJxYyxPvyCE+v43/VR08piN0mlI=;
+ b=jZEmp123U7Tks32iAPA70Gf+88AgT9fYQx/GbRSMau4UtuFXEyU5PMrNcB04Kk/2xo
+ EesPgt0icingpuYuhI7/3zZ0GNPOQEwNm3D9J3K3jGm/yydEIdMasE32/+T1X18sTFOL
+ kdwKYS7lBx3d/zu1C4oJZZTCyNh4xw8OBjGeNYGeFwgJGWra1o1y0z95NrOQo9QmDDGj
+ czS9hG5Ggbfue+N6KEUOqOQMPHf4ceStUi157PBUciY7PgBJ1HEKkNm7kjPrt8hQjrWp
+ cG+uE5xkqmP7h048MWh4JsqOg7jvX2u8g5GXomacBb3rd/uDbV2EAgco6A7DDrqHkJUf d/1Q==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:15 -0700
-Message-Id: <1369966169-23640-27-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:16 -0700
+Message-Id: <1369966169-23640-28-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 26/40] crda: move reg print helpers to
-	reglib
+Subject: [wireless-regdb] [PATCH 27/40] crda: rename is_world_regdom() to
+	reglib_is_world_regdom()
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,197 +45,45 @@ From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- Makefile       |    4 +--
- print-regdom.c |   80 --------------------------------------------------------
- reglib.c       |   73 +++++++++++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 75 insertions(+), 82 deletions(-)
- delete mode 100644 print-regdom.c
+ intersect.c |    2 +-
+ reglib.h    |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/Makefile b/Makefile
-index 1d34bde..7d2e33f 100644
---- a/Makefile
-+++ b/Makefile
-@@ -113,11 +113,11 @@ crda: reglib.o crda.o
- 	$(NQ) '  LD  ' $@
- 	$(Q)$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS) $(NLLIBS)
+diff --git a/intersect.c b/intersect.c
+index 22b3225..bc1e63e 100644
+--- a/intersect.c
++++ b/intersect.c
+@@ -24,7 +24,7 @@ int main(int argc, char **argv)
  
--regdbdump: reglib.o regdbdump.o print-regdom.o
-+regdbdump: reglib.o regdbdump.o
- 	$(NQ) '  LD  ' $@
- 	$(Q)$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+ 	/* We intersect only when we have to rd structures ready */
+ 	reglib_for_each_country(rd, idx, argv[1]) {
+-		if (is_world_regdom((const char *) rd->alpha2)) {
++		if (reglib_is_world_regdom((const char *) rd->alpha2)) {
+ 			free((struct ieee80211_regdomain *) rd);
+ 			continue;
+ 		}
+diff --git a/reglib.h b/reglib.h
+index 4c0ec6d..98aadcc 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -31,7 +31,7 @@ struct ieee80211_regdomain {
+ 	struct ieee80211_reg_rule reg_rules[];
+ };
  
--intersect: reglib.o intersect.o print-regdom.o
-+intersect: reglib.o intersect.o
- 	$(NQ) '  LD  ' $@
- 	$(Q)$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+-static inline int is_world_regdom(const char *alpha2)
++static inline int reglib_is_world_regdom(const char *alpha2)
+ {
+ 	if (alpha2[0] == '0' && alpha2[1] == '0')
+ 		return 1;
+@@ -54,7 +54,7 @@ static inline int is_alpha2(const char *alpha2)
  
-diff --git a/print-regdom.c b/print-regdom.c
-deleted file mode 100644
-index 68c7b4e..0000000
---- a/print-regdom.c
-+++ /dev/null
-@@ -1,80 +0,0 @@
--#include <errno.h>
--#include <stdio.h>
--#include <string.h>
--#include <arpa/inet.h>
--
--#include "reglib.h"
--#include "regdb.h"
--
--static const char *dfs_domain_name(enum regdb_dfs_regions region)
--{
--	switch (region) {
--	case REGDB_DFS_UNSET:
--		return "DFS-UNSET";
--	case REGDB_DFS_FCC:
--		return "DFS-FCC";
--	case REGDB_DFS_ETSI:
--		return "DFS-ETSI";
--	case REGDB_DFS_JP:
--		return "DFS-JP";
--	default:
--		return "DFS-invalid";
--	}
--}
--
--static void print_reg_rule(const struct ieee80211_reg_rule *rule)
--{
--	const struct ieee80211_freq_range *freq;
--	const struct ieee80211_power_rule *power;
--
--	freq  = &rule->freq_range;
--	power = &rule->power_rule;
--
--	printf("\t(%.3f - %.3f @ %.3f), ",
--	       ((float)(freq->start_freq_khz))/1000.0,
--	       ((float)(freq->end_freq_khz))/1000.0,
--	       ((float)(freq->max_bandwidth_khz))/1000.0);
--
--	printf("(");
--
--	if (power->max_antenna_gain)
--		printf("%.2f, ", ((float)(power->max_antenna_gain)/100.0));
--	else
--		printf("N/A, ");
--
--	if (power->max_eirp)
--		printf("%.2f)", ((float)(power->max_eirp)/100.0));
--	else
--		printf("N/A)");
--
--	if (rule->flags & RRF_NO_OFDM)
--		printf(", NO-OFDM");
--	if (rule->flags & RRF_NO_CCK)
--		printf(", NO-CCK");
--	if (rule->flags & RRF_NO_INDOOR)
--		printf(", NO-INDOOR");
--	if (rule->flags & RRF_NO_OUTDOOR)
--		printf(", NO-OUTDOOR");
--	if (rule->flags & RRF_DFS)
--		printf(", DFS");
--	if (rule->flags & RRF_PTP_ONLY)
--		printf(", PTP-ONLY");
--	if (rule->flags & RRF_PTMP_ONLY)
--		printf(", PTMP-ONLY");
--	if (rule->flags & RRF_PASSIVE_SCAN)
--		printf(", PASSIVE-SCAN");
--	if (rule->flags & RRF_NO_IBSS)
--		printf(", NO-IBSS");
--
--	printf("\n");
--}
--
--void reglib_print_regdom(const struct ieee80211_regdomain *rd)
--{
--	unsigned int i;
--	printf("country %.2s: %s\n", rd->alpha2,
--	       dfs_domain_name(rd->dfs_region));
--	for (i = 0; i < rd->n_reg_rules; i++)
--		print_reg_rule(&rd->reg_rules[i]);
--	printf("\n");
--}
-diff --git a/reglib.c b/reglib.c
-index 316e201..0d258d8 100644
---- a/reglib.c
-+++ b/reglib.c
-@@ -553,3 +553,76 @@ reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
+ static inline int is_valid_regdom(const char *alpha2)
+ {
+-	if (!is_alpha2(alpha2) && !is_world_regdom(alpha2))
++	if (!is_alpha2(alpha2) && !reglib_is_world_regdom(alpha2))
+ 		return 0;
  
- 	return rd;
- }
-+
-+static const char *dfs_domain_name(enum regdb_dfs_regions region)
-+{
-+	switch (region) {
-+	case REGDB_DFS_UNSET:
-+		return "DFS-UNSET";
-+	case REGDB_DFS_FCC:
-+		return "DFS-FCC";
-+	case REGDB_DFS_ETSI:
-+		return "DFS-ETSI";
-+	case REGDB_DFS_JP:
-+		return "DFS-JP";
-+	default:
-+		return "DFS-invalid";
-+	}
-+}
-+
-+static void print_reg_rule(const struct ieee80211_reg_rule *rule)
-+{
-+	const struct ieee80211_freq_range *freq;
-+	const struct ieee80211_power_rule *power;
-+
-+	freq  = &rule->freq_range;
-+	power = &rule->power_rule;
-+
-+	printf("\t(%.3f - %.3f @ %.3f), ",
-+	       ((float)(freq->start_freq_khz))/1000.0,
-+	       ((float)(freq->end_freq_khz))/1000.0,
-+	       ((float)(freq->max_bandwidth_khz))/1000.0);
-+
-+	printf("(");
-+
-+	if (power->max_antenna_gain)
-+		printf("%.2f, ", ((float)(power->max_antenna_gain)/100.0));
-+	else
-+		printf("N/A, ");
-+
-+	if (power->max_eirp)
-+		printf("%.2f)", ((float)(power->max_eirp)/100.0));
-+	else
-+		printf("N/A)");
-+
-+	if (rule->flags & RRF_NO_OFDM)
-+		printf(", NO-OFDM");
-+	if (rule->flags & RRF_NO_CCK)
-+		printf(", NO-CCK");
-+	if (rule->flags & RRF_NO_INDOOR)
-+		printf(", NO-INDOOR");
-+	if (rule->flags & RRF_NO_OUTDOOR)
-+		printf(", NO-OUTDOOR");
-+	if (rule->flags & RRF_DFS)
-+		printf(", DFS");
-+	if (rule->flags & RRF_PTP_ONLY)
-+		printf(", PTP-ONLY");
-+	if (rule->flags & RRF_PTMP_ONLY)
-+		printf(", PTMP-ONLY");
-+	if (rule->flags & RRF_PASSIVE_SCAN)
-+		printf(", PASSIVE-SCAN");
-+	if (rule->flags & RRF_NO_IBSS)
-+		printf(", NO-IBSS");
-+
-+	printf("\n");
-+}
-+
-+void reglib_print_regdom(const struct ieee80211_regdomain *rd)
-+{
-+	unsigned int i;
-+	printf("country %.2s: %s\n", rd->alpha2,
-+	       dfs_domain_name(rd->dfs_region));
-+	for (i = 0; i < rd->n_reg_rules; i++)
-+		print_reg_rule(&rd->reg_rules[i]);
-+	printf("\n");
-+}
+ 	return 1;
 -- 
 1.7.10.4
 
