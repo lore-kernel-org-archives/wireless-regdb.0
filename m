@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-f182.google.com ([209.85.192.182])
+Received: from mail-pb0-x234.google.com ([2607:f8b0:400e:c01::234])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEnm-0005NK-1X
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:10:46 +0000
-Received: by mail-pd0-f182.google.com with SMTP id g10so1380377pdj.27 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:10:24 -0700 (PDT)
+ id 1UiEnr-0005Nt-8f
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:10:51 +0000
+Received: by mail-pb0-f52.google.com with SMTP id xa12so1377540pbc.25 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:10:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=dPEq5hZSCWssVlnBFdzhCAtBhwnKLKU7bcDAXzERCsY=;
- b=AvznP2ZkYgmlIe0rlNWBeQS59bQMQBJ7URKGTDCuIyP6zy1L8w0arzHpU/RMZeFEMd
- 1V0bVUFYigAsC/wP9+1wU4Gafy1seE3MnAvOkc1OkFmBpsDxFU0aGaBSpLvwzbEC/VrD
- ZJz/XsZjlj5kvHxHp7ej6XrcuaAlGnhQLEPcSsDYmlxVAfNB3cRGr8f/kRtkcxMOLh6U
- Zf1h85OilbKYSiXdl1bCpJ3henoDxphcsseH+zMyA90yEI0hSMu4M1tStPuHXRMfoY+6
- ifWMtPNlHk/BSK9wZmbMwFCfXsOaURiJavCsXo2O3FZKaAbg01TDr3Yum0X5ZvAW5sno jezA==
+ :references; bh=Fy1Sch0ctGhlpt7lWL+b/QURSLmq5xa2Sz/WjEa15Bc=;
+ b=G7BCh0Xg0R+/OJpaguX0ThpeYnay+/L2L4zWBNergF01LupYrt1V5qy4sixhc8/mgO
+ zJsrdeHfU8WdcyZ7Q8mskCWK6UbvyC270n+0KUwwkKn/0udxD5y9q/DjV5P0PU+EKjDn
+ tbCjbCXAA9K1VjmFjbS1CiwPzcs5FWjtHN8WXQjqs2Mt/+0xaBfrzhYe0umJOf4FCjP1
+ UIDhyM289CaZeIjiFufb4hbf+Bs1PblftoGE9N/ObX80NzrNS8KH0clW30URkWHhRVzC
+ 34djp/vPEqU5/vpcCW9bA1Wlt0hXzqzZxjzM9P767jeEseV+nOxhhvbfYKNjvJURGSli F7rA==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:08:58 -0700
-Message-Id: <1369966169-23640-10-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:08:59 -0700
+Message-Id: <1369966169-23640-11-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 09/40] crda: do not double count on
-	reglib_for_each_country()
+Subject: [wireless-regdb] [PATCH 10/40] crda: annotate intersection worst
+	case scenerio
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,64 +43,39 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-Commit ebcbfcf4 introduced reglib_for_each_country() used
-by regdbump and later intersect. This helper however only
-increased the index count after we requestd getting a new
-regulatory domain, this is incorrect and causes us to iterate
-over the same element twice in the beginning. This means
-intersection and regdb printing was going over the first
-element twice. This has been present since v1.1.
-
-This also requires an adjustment on intersect due to the
-way things were being handled before.
-
-mcgrof@frijol ~/devel/crda (git::master)$ git describe --contains ebcbfcf4
-v1.1.3~9
+In the worst case scenerio of regulatory domain intersections
+between a different set of regulatory rules you will end up
+without being able to initiate radiation on any frequency
+range. Provide a hint as to what needs to be done next in
+order to actually build a useful regulatory domain. Currently
+we do this manually but building the mathematics would be
+even more useful as we grow usage of the spectrum.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- intersect.c |   10 +++-------
- reglib.h    |    3 +--
- 2 files changed, 4 insertions(+), 9 deletions(-)
+ intersect.c |    9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/intersect.c b/intersect.c
-index 5cb7d7c..dea9145 100644
+index dea9145..169fe1a 100644
 --- a/intersect.c
 +++ b/intersect.c
-@@ -79,16 +79,12 @@ int main(int argc, char **argv)
- 		return -EINVAL;
+@@ -83,7 +83,14 @@ int main(int argc, char **argv)
+ 		printf("%d regulatory domains intersected\n", intersected);
+ 	else {
+ 		world = prev_world;
+-		printf("Only one intersection completed\n");
++		printf("No intersections completed\n");
++		if (idx > 1) {
++			printf("Since more than one regulatory domain is "
++			       "present and no intersections were possible "
++			       "no globally allowed spectrum is possible so "
++			       "consider enabling passive scan flags\n");
++			return r;
++		}
  	}
  
--	if (idx == 1) {
--		world = (struct ieee80211_regdomain *) rd;
--		rd = NULL;
--	}
--
--
- 	if (intersected > 1)
- 		printf("%d regulatory domains intersected\n", intersected);
--	else
-+	else {
-+		world = prev_world;
- 		printf("Only one intersection completed\n");
-+	}
- 
  	/* Tada! */
- 	printf("== World regulatory domain: ==\n");
-diff --git a/reglib.h b/reglib.h
-index b52d717..8bd9e03 100644
---- a/reglib.h
-+++ b/reglib.h
-@@ -79,8 +79,7 @@ reglib_get_rd_idx(unsigned int idx, const char *file);
- #define reglib_for_each_country(__rd, __idx, __file)			\
- 	for (__rd = reglib_get_rd_idx(__idx, __file);		\
- 	     __rd != NULL;						\
--	     __rd = reglib_get_rd_idx(__idx, __file),		\
--	     __idx++)
-+	     __rd = reglib_get_rd_idx(++__idx, __file))		\
- 
- const struct ieee80211_regdomain *
- reglib_get_rd_alpha2(const char *alpha2, const char *file);
 -- 
 1.7.10.4
 
