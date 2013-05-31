@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x236.google.com ([2607:f8b0:400e:c01::236])
+Received: from mail-pd0-f175.google.com ([209.85.192.175])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEnd-0005MQ-M4
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:10:38 +0000
-Received: by mail-pb0-f54.google.com with SMTP id ro12so1376538pbb.41 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:10:16 -0700 (PDT)
+ id 1UiEnh-0005N4-CO
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:10:41 +0000
+Received: by mail-pd0-f175.google.com with SMTP id 6so1377739pdd.34 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:10:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=2dOCqQ11wLE3qm4dc5X+drNYpzQ7P7PI7sh2ofPVzWs=;
- b=Z11WrNbB0xEXSRe6R+1ETwJQJ4HSdRXeEBgyigWgHsaKq16xQNQNyHvDF50koKxb5k
- ZmFn4D5n90ptKo0g98orJh+u5W38USTvp4n44ID26wVWUV8oDGup1nvojMxaFNNnJBzk
- bRZdhRL8AFCs29nBplveKllulmpQkHp8q81e5Won4a6gb1i5ORltgV9rCHAQwcjU3rRB
- 1jrDI6roDeNwkno74B1EtxJdYq6wsgF4DncAUveBFYw/M4IkW0OY+gze9II4/1O8Dqqp
- oKtfRcR9ShyjH4Vdwjs4VAW/s3ecQb92S/YWQGa1ngYVNYqSJf1BaC3xG2hyqbyWNJgj m4vw==
+ :references; bh=hHz8g3kQzAJHbf5cYg8ExowbQUPPG/X7H4GCf8uTUQk=;
+ b=DjyBqM8WQOw0S3pFhu+iuYxY3qWLvg167zx2Kzx2TUUQuX2meRo4sVjVh88GapK5GZ
+ ww92XhJUCtBtVPDlSPr7ZSD+WYKZ9ReCvOBAzXf4zOZCr43UAIz4wQGJIq1esuvTkE8s
+ GkCSfZfMt3HofA83k8BBYfDmB1dpjCReFz3TMTGbjHI3Z/Fd48Qetju+PVta9LHL6lca
+ j1Q8qFZllE39dYbKZNq6MCiS5cKD2n6fIMHFj5j3veo9W/o9+qP0EKZUXDS6GocSK7aW
+ xeXunE3YpfPIxbUev8df+WZSSmv8Vppdt16Y57N82ei5ERO4fxje1SyUgWCnRT3sLIy7 szfw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:08:56 -0700
-Message-Id: <1369966169-23640-8-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:08:57 -0700
+Message-Id: <1369966169-23640-9-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 07/40] crda: fix regression when using
-	reglib_for_each_country()
+Subject: [wireless-regdb] [PATCH 08/40] crda: move intersection if first
+	attempt failed
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,64 +43,35 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-When reglib_for_each_country() was introduced via ebcbfcf4
-its users were not updated with the possibility of rd being
-NULL due to the fact that the parsed file could be invalid
-or empty. The users
-
-mcgrof@frijol ~/devel/crda (git::master)$ git describe --contains 7a09f4dd
-v1.1.3~8
-
-mcgrof@frijol ~/devel/crda (git::master)$ git describe --contains ebcbfcf45
-v1.1.3~9
-
-This regression exists since v1.1. Fix this.
+The intersection should be able to continue on even if
+the first two countries could not be intersected.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- intersect.c |    6 ++++++
- regdbdump.c |    7 +++++++
- 2 files changed, 13 insertions(+)
+ intersect.c |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/intersect.c b/intersect.c
-index 1c00a67..8f826a0 100644
+index 8f826a0..5cb7d7c 100644
 --- a/intersect.c
 +++ b/intersect.c
-@@ -73,6 +73,12 @@ int main(int argc, char **argv)
- 		intersected++;
- 	}
+@@ -50,7 +50,7 @@ int main(int argc, char **argv)
+ 					"with country (%.2s)\n",
+ 					prev_world->alpha2,
+ 					rd->alpha2);
+-			goto out;
++			continue;
+ 		}
  
-+	if (!idx) {
-+		printf("Invalid or empty regulatory file, note: "
-+		       "a binary regulatory file should be used.\n");
-+		return -EINVAL;
-+	}
-+
- 	if (idx == 1) {
- 		world = (struct ieee80211_regdomain *) rd;
- 		rd = NULL;
-diff --git a/regdbdump.c b/regdbdump.c
-index 26cbef7..dcbed71 100644
---- a/regdbdump.c
-+++ b/regdbdump.c
-@@ -1,4 +1,5 @@
- #include <stdio.h>
-+#include <errno.h>
- #include "reglib.h"
+ 		if (intersected)
+@@ -94,7 +94,6 @@ int main(int argc, char **argv)
+ 	printf("== World regulatory domain: ==\n");
+ 	print_regdom(world);
  
- int main(int argc, char **argv)
-@@ -16,5 +17,11 @@ int main(int argc, char **argv)
- 		free((struct ieee80211_regdomain *) rd);
- 	}
- 
-+	if (!idx) {
-+		printf("Invalid or empty regulatory file, note: "
-+		       "a binary regulatory file should be used.\n");
-+		return -EINVAL;
-+	}
-+
- 	return 0;
- }
+-out:
+ 	if (!intersected) {
+ 		free(world);
+ 		return r;
 -- 
 1.7.10.4
 
