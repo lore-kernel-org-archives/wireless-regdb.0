@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-f178.google.com ([209.85.192.178])
+Received: from mail-pb0-x22d.google.com ([2607:f8b0:400e:c01::22d])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEpQ-0005cJ-Gb
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:28 +0000
-Received: by mail-pd0-f178.google.com with SMTP id w11so1379931pde.9 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:07 -0700 (PDT)
+ id 1UiEpR-0005d5-IT
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:29 +0000
+Received: by mail-pb0-f45.google.com with SMTP id mc17so1400288pbc.4 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=UYZEntuKEQQYcL/2GGWqN1WBpawwBba2/aie6OUYNmE=;
- b=ZMN7eXKFex5Sn+ns+caP4cUtuNLYLKUXal/ekwpX9qEQsP0yNBoRlKKLGyfGYvWtpO
- djD1w5HYDD3HjC9oTSjtnDe+lEs8e/4N0TsvE9/lfZwBVSD3BU7bx7oYcAzet9SOQfYE
- 1Y3yQLrx5fZa87h+dOLwtQIKFbjytsKvpC/vOTyvLd5VtmAv+HJt5LQCQRl/PlRYu4OB
- x9Y08ILkFUPfYAhZqGr+tv0F2WzWWROtQSubbQl/cLfX2KygKlp0Z6Ca8FGDYkuKVmlC
- YREoGuypByB3dkSMblKYDeVsuyvuWy7/ULZq+8wzAE1NIqILvzy2ojWc/o2W81gtzrzQ mMKg==
+ :references; bh=pnFZ3p3TA+XQ/XJ8r/QUd2bZtp+yFpyrNfJKhohDwU4=;
+ b=pcNCxBBMkL4qAbTnSlvlO0nm4JvbJ0GPsBnxvFtoZae/uSSHoO+pk4wdUD14hwIaJS
+ GY1wwCcMPrhz8dlJp0SFDVYzfS/eDk8FTs2ArXkTVTvpQyHqis0Dwga23yAPb8/NUz3u
+ ftoNg5z40IVZ84vtUVAlsx7fKn28mfsFDi7tnIzBBNNEqShmeOXOr8TTtA2K5CZYXBHZ
+ ceNJ4vGdab+r8rDk+dL/VZQdV8reLaHPQc/3tEK97q17apNyh4/M5FNjGcMxyKY5dFfI
+ 8Q+EYSHJwrGc1wg9agey+R/qzYPKjBTZi5HG2DKCN9fvZDo8k1p/ANcp4V3BECjzBoj0 iJ9Q==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:22 -0700
-Message-Id: <1369966169-23640-34-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:23 -0700
+Message-Id: <1369966169-23640-35-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 33/40] crda: fix spacing on
-	reglib_for_each_country()
+Subject: [wireless-regdb] [PATCH 34/40] crda: clarify intersect.c only
+	computes an intersection
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,27 +43,38 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
+World regulatory domains should deal with passive scan
+flags to account for gaps in the frequency spectrum that
+some countries do not rely on but some APs / Cell towers
+could be relied upon for determining location.
+
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- reglib.h |    4 ++--
+ intersect.c |    4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/reglib.h b/reglib.h
-index 8a31e0d..d89fcd5 100644
---- a/reglib.h
-+++ b/reglib.h
-@@ -76,9 +76,9 @@ int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen);
- const struct ieee80211_regdomain *
- reglib_get_rd_idx(unsigned int idx, const char *file);
+diff --git a/intersect.c b/intersect.c
+index bc1e63e..baca5f1 100644
+--- a/intersect.c
++++ b/intersect.c
+@@ -7,7 +7,7 @@
+ #include "reglib.h"
  
--#define reglib_for_each_country(__rd, __idx, __file)			\
-+#define reglib_for_each_country(__rd, __idx, __file)		\
- 	for (__rd = reglib_get_rd_idx(__idx, __file);		\
--	     __rd != NULL;						\
-+	     __rd != NULL;					\
- 	     __rd = reglib_get_rd_idx(++__idx, __file))		\
+ /* Intersects regulatory domains, this will skip any regulatory marked with
+- * an alpha2 of '00', which is used to indicate a regulatory domain */
++ * an alpha2 of '00', which is used to indicate a world regulatory domain */
  
- const struct ieee80211_regdomain *
+ int main(int argc, char **argv)
+ {
+@@ -67,7 +67,7 @@ int main(int argc, char **argv)
+ 		free(prev_rd_intsct);
+ 
+ 	/* Tada! */
+-	printf("== World regulatory domain: ==\n");
++	printf("Intersected regulatory domain:\n");
+ 	reglib_print_regdom(rd_intsct);
+ 
+ 	free(rd_intsct);
 -- 
 1.7.10.4
 
