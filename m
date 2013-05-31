@@ -2,26 +2,26 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from mail-pb0-x233.google.com ([2607:f8b0:400e:c01::233])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEpq-0005gE-AX
+ id 1UiEpq-0005gZ-AD
  for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:55 +0000
-Received: by mail-pb0-f51.google.com with SMTP id jt11so1383723pbb.38 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:33 -0700 (PDT)
+Received: by mail-pb0-f51.google.com with SMTP id jt11so1383820pbb.38 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=Zbcj5UGTlUdIgQhKbcl6bgAgyYC86tr8PAa1UhWjwP4=;
- b=WAB0TyduZvQp5NSbHihpw+a3Tco4KAu4ZJ/XdbN6qWSV8aycJP4/ER5vMa66SYLyfq
- PwN6ZKPoTXU34v4yibznuzEgyGK6ESqmfzSY51UBaw740XdaSKBwBKuCerHCm8ddPObO
- Mb8MvHVJVfbHf/WAks5CvgkgO40exmPj7c/0NM/aGt7xTdlCbJLCI08GgGN7L9v8QYbf
- iJaq/pd+rXd1P2ds05Vx6r0pazUCrMI18hIIsJ77+MdK1ONSCj96rktgLmWe/N1od2EZ
- Rc/w+VulfWAL0dg5eY6XwdaqvcmZsAUYHf1A9v84098Q5OsM2gLOH8cFfTvaRIZss0WT sMlg==
+ :references; bh=dRkHQnrSR2kL8Rt3v4Qe2yHYThaNcnzBXid2iti20RI=;
+ b=XyzWMl7tpXG3xNYFAXwCnvAR+b+0rc8hdXVJ+OdLniYcNC24fnwWClM/Mx/VmbYScg
+ Uj4S07aJdGuTM8KX5938CUbaizV7v9no37RFCz5oJo5f4Kl7K7W6aCfZ/V/dsgym3dvi
+ SuPXC0ecG+vZ8opKgIPsHwR+X351vZqGxiP05UnHwC2VDC/kLQKT7qpl5yAIJfbgJUY/
+ G4SByyVPB8BccNFAuK0sXf9oU357N7TbwUaAwZNy1LfxE5WsFoezxsuFwQxrQ6r/xmEj
+ uK4niTgdiuKmcNYAbp5swtvPAcVxhzC7cI2hKKOME5cS2L837czB5GTS4DSzRGB1QfEj i+xQ==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:28 -0700
-Message-Id: <1369966169-23640-40-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:29 -0700
+Message-Id: <1369966169-23640-41-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 39/40] crda: pass struct reglib_regdb_ctx
-	to country2rd()
+Subject: [wireless-regdb] [PATCH 40/40] crda: make
+ reglib_for_each_country() use the reglib context
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,67 +43,200 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-This consolidates the number of arguments.
+This allows users of reglib to iterate over the regdb
+with just one open() and mmap() to be kept sharing as
+much code as possible. This makes the regdbdump and
+intersection code use the context therefore sharing
+all that boiler plate code.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- reglib.c |   14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ intersect.c |   15 +++++++++++++--
+ regdbdump.c |   28 ++++++++++++++--------------
+ reglib.c    |   23 +++++++++--------------
+ reglib.h    |   11 ++++++-----
+ 4 files changed, 42 insertions(+), 35 deletions(-)
 
-diff --git a/reglib.c b/reglib.c
-index 6f076ff..ff05aaa 100644
---- a/reglib.c
-+++ b/reglib.c
-@@ -298,18 +298,18 @@ static void reg_rule2rd(uint8_t *db, int dblen,
+diff --git a/intersect.c b/intersect.c
+index 56d0d35..ae9ca1b 100644
+--- a/intersect.c
++++ b/intersect.c
+@@ -8,21 +8,32 @@
  
- /* Converts a file regdomain to ieee80211_regdomain, easier to manage */
- const static struct ieee80211_regdomain *
--country2rd(uint8_t *db, int dblen,
-+country2rd(const struct reglib_regdb_ctx *ctx,
- 	   struct regdb_file_reg_country *country)
+ int main(int argc, char **argv)
  {
- 	struct regdb_file_reg_rules_collection *rcoll;
- 	struct ieee80211_regdomain *rd;
- 	int i, num_rules, size_of_rd;
++	const struct reglib_regdb_ctx *ctx;
+ 	const struct ieee80211_regdomain *rd;
  
--	rcoll = reglib_get_file_ptr(db, dblen, sizeof(*rcoll),
--				country->reg_collection_ptr);
-+	rcoll = reglib_get_file_ptr(ctx->db, ctx->dblen, sizeof(*rcoll),
-+				    country->reg_collection_ptr);
- 	num_rules = ntohl(rcoll->reg_rule_num);
- 	/* re-get pointer with sanity checking for num_rules */
--	rcoll = reglib_get_file_ptr(db, dblen,
-+	rcoll = reglib_get_file_ptr(ctx->db, ctx->dblen,
- 			sizeof(*rcoll) + num_rules * sizeof(uint32_t),
- 			country->reg_collection_ptr);
- 
-@@ -328,7 +328,7 @@ country2rd(uint8_t *db, int dblen,
- 	rd->n_reg_rules = num_rules;
- 
- 	for (i = 0; i < num_rules; i++) {
--		reg_rule2rd(db, dblen, rcoll->reg_rule_ptrs[i],
-+		reg_rule2rd(ctx->db, ctx->dblen, rcoll->reg_rule_ptrs[i],
- 			&rd->reg_rules[i]);
+ 	if (argc != 2) {
+-		fprintf(stderr, "You must specify a file\n");
++		fprintf(stderr, "Usage: %s <regulatory-binary-file>\n", argv[0]);
+ 		return -EINVAL;
  	}
  
-@@ -351,7 +351,7 @@ reglib_get_rd_idx(unsigned int idx, const char *file)
+-	rd = reglib_intersect_regdb(argv[1]);
++	ctx = reglib_malloc_regdb_ctx(argv[1]);
++	if (!ctx) {
++		fprintf(stderr, "Invalid or empty regulatory file, note: "
++			"a binary regulatory file should be used.\n");
++		return -EINVAL;
++	}
++
++	rd = reglib_intersect_regdb(ctx);
+ 	if (!rd) {
+ 		fprintf(stderr, "Intersection not possible\n");
++		reglib_free_regdb_ctx(ctx);
+ 		return -ENOENT;
+ 	}
+ 
+ 	reglib_print_regdom(rd);
++
+ 	free((struct ieee80211_regdomain *) rd);
+ 
++	reglib_free_regdb_ctx(ctx);
+ 	return 0;
+ }
+diff --git a/regdbdump.c b/regdbdump.c
+index edf3e7c..cc7eb85 100644
+--- a/regdbdump.c
++++ b/regdbdump.c
+@@ -2,35 +2,35 @@
+ #include <errno.h>
+ #include "reglib.h"
+ 
+-static int reglib_regdbdump(char *regdb_file)
++static void reglib_regdbdump(const struct reglib_regdb_ctx *ctx)
+ {
+ 	const struct ieee80211_regdomain *rd = NULL;
+ 	unsigned int idx = 0;
+ 
+-	reglib_for_each_country(rd, idx, regdb_file) {
++	reglib_for_each_country(rd, idx, ctx) {
+ 		reglib_print_regdom(rd);
+ 		free((struct ieee80211_regdomain *) rd);
+ 	}
+-
+-	if (!idx) {
+-		fprintf(stderr, "Invalid or empty regulatory file, note: "
+-		       "a binary regulatory file should be used.\n");
+-		return -EINVAL;
+-	}
+-
+-	return 0;
+ }
+ 
+ int main(int argc, char **argv)
+ {
+-	int r;
++	const struct reglib_regdb_ctx *ctx;
+ 
+ 	if (argc != 2) {
+ 		fprintf(stderr, "Usage: %s <regulatory-binary-file>\n", argv[0]);
+-		return 2;
++		return -EINVAL;
++	}
++
++	ctx = reglib_malloc_regdb_ctx(argv[1]);
++	if (!ctx) {
++		fprintf(stderr, "Invalid or empty regulatory file, note: "
++			"a binary regulatory file should be used.\n");
++		return -EINVAL;
+ 	}
+ 
+-	r = reglib_regdbdump(argv[1]);
++	reglib_regdbdump(ctx);
++	reglib_free_regdb_ctx(ctx);
+ 
+-	return r;
++	return 0;
+ }
+diff --git a/reglib.c b/reglib.c
+index ff05aaa..c4d00f8 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -336,28 +336,19 @@ country2rd(const struct reglib_regdb_ctx *ctx,
+ }
+ 
+ const struct ieee80211_regdomain *
+-reglib_get_rd_idx(unsigned int idx, const char *file)
++reglib_get_rd_idx(unsigned int idx, const struct reglib_regdb_ctx *ctx)
+ {
+-	const struct reglib_regdb_ctx *ctx;
+ 	struct regdb_file_reg_country *country;
+-	const struct ieee80211_regdomain *rd = NULL;
+ 
+-	ctx = reglib_malloc_regdb_ctx(file);
+ 	if (!ctx)
+ 		return NULL;
+ 
+ 	if (idx >= ctx->num_countries)
+-		goto out;
++		return NULL;
  
  	country = ctx->countries + idx;
  
--	rd = country2rd(ctx->db, ctx->dblen, country);
-+	rd = country2rd(ctx, country);
- 	if (!rd)
- 		goto out;
+-	rd = country2rd(ctx, country);
+-	if (!rd)
+-		goto out;
+-
+-out:
+-	reglib_free_regdb_ctx(ctx);
+-	return rd;
++	return country2rd(ctx, country);
+ }
  
-@@ -384,7 +384,7 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file)
- 	if (!found_country)
- 		goto out;
+ const struct ieee80211_regdomain *
+@@ -552,14 +543,18 @@ reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
+ 	return rd;
+ }
  
--	rd = country2rd(ctx->db, ctx->dblen, country);
-+	rd = country2rd(ctx, country);
- 	if (!rd)
- 		goto out;
+-const struct ieee80211_regdomain *reglib_intersect_regdb(char *regdb_file)
++const struct ieee80211_regdomain *
++reglib_intersect_regdb(const struct reglib_regdb_ctx *ctx)
+ {
+ 	const struct ieee80211_regdomain *rd;
+ 	struct ieee80211_regdomain *prev_rd_intsct = NULL, *rd_intsct = NULL;
+ 	int intersected = 0;
+ 	unsigned int idx = 0;
  
+-	reglib_for_each_country(rd, idx, regdb_file) {
++	if (!ctx)
++		return NULL;
++
++	reglib_for_each_country(rd, idx, ctx) {
+ 		if (reglib_is_world_regdom((const char *) rd->alpha2)) {
+ 			free((struct ieee80211_regdomain *) rd);
+ 			continue;
+diff --git a/reglib.h b/reglib.h
+index f1bd6b8..86087e3 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -139,12 +139,12 @@ const struct reglib_regdb_ctx *reglib_malloc_regdb_ctx(const char *regdb_file);
+ void reglib_free_regdb_ctx(const struct reglib_regdb_ctx *regdb_ctx);
+ 
+ const struct ieee80211_regdomain *
+-reglib_get_rd_idx(unsigned int idx, const char *file);
++reglib_get_rd_idx(unsigned int idx, const struct reglib_regdb_ctx *ctx);
+ 
+-#define reglib_for_each_country(__rd, __idx, __file)		\
+-	for (__rd = reglib_get_rd_idx(__idx, __file);		\
++#define reglib_for_each_country(__rd, __idx, __ctx)		\
++	for (__rd = reglib_get_rd_idx(__idx, __ctx);		\
+ 	     __rd != NULL;					\
+-	     __rd = reglib_get_rd_idx(++__idx, __file))		\
++	     __rd = reglib_get_rd_idx(++__idx, __ctx))		\
+ 
+ const struct ieee80211_regdomain *
+ reglib_get_rd_alpha2(const char *alpha2, const char *file);
+@@ -166,6 +166,7 @@ reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
+  * to find rules that fit all regulatory domains it return a regulatory
+  * domain with such rules otherwise it returns NULL.
+  */
+-const struct ieee80211_regdomain *reglib_intersect_regdb(char *regdb_file);
++const struct ieee80211_regdomain *
++reglib_intersect_regdb(const struct reglib_regdb_ctx *ctx);
+ 
+ #endif
 -- 
 1.7.10.4
 
