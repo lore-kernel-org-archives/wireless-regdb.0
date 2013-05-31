@@ -2,26 +2,26 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from mail-pb0-x229.google.com ([2607:f8b0:400e:c01::229])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEoW-0005TE-OB
+ id 1UiEoW-0005Tw-OK
  for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:11:33 +0000
-Received: by mail-pb0-f41.google.com with SMTP id xb12so1397409pbc.14 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:11 -0700 (PDT)
+Received: by mail-pb0-f41.google.com with SMTP id xb12so1397497pbc.14 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=ggn/26yvZwXEt0ZLZGwFELLJC7P0cBM1ftOTJ+g6lFw=;
- b=RHAGmY0f7ra2HgVz1I7AXljPJBka3W2QkpaM71JxRxY/KRK1DeSpbHdG/UOMsggfVM
- D0PNvOfNMqaPWRSveckOOC8zz8JMi7WF37BWKCqTmHETD69yqMEuxFMauaCb4vNhF07L
- w1n8hve8uQDUvNTudFmzyDJMHgF8CO+FAxBsK6oSYMJ0hE3wQNppDJZsOsDkRF1mm/ql
- HRr5jddDqcan5QQXjYkkViHwM0BAML8MIx7EGGZGej0BvTrihUDGzO6HMRpC4R5bgxC5
- SzzNBJlo1nMv64wQzUTNQyjbxRbjkrhbgDuTK0baG8R+8C/280Hklhbp8Y8uT45sS/bv TTOw==
+ :references; bh=zUmk3g5qlgfBhg5RNTL8UN4pBLGVlHs62zqIMf5ITGs=;
+ b=UCFHEwQfDhp1VFamNVd1jTudgRMat10KIKDRDzN2XZSL1PiepTnKNVMO6yuyjuSEZG
+ 3Z+f2sflLZV2VmIr+1NfjUHYkyKNzZkX1MwfMw3YarB3qGg5eGJDq1DjHTGNhxA13ouL
+ cd5rpSW6XSayViNt18KzwRuoe3tAITCOqMZdLxVl6Y7HWcKPVfvL4LP6F79LRpGxXCGo
+ 7XjfrXojBSs0Sry3TWgEh1wRkJVirxJ3aFYTn8joxRb6asvIvziUCIOuhcT9AbIDaVY2
+ EHDKFMlPNMWs5hI5j67jeFb8QUGuh70ANXwFFXoljPK/NGWpKbR8xXSayfNnEbzGXOk5 sFJQ==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:09 -0700
-Message-Id: <1369966169-23640-21-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:10 -0700
+Message-Id: <1369966169-23640-22-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 20/40] crda: rename regdom_intersect() to
-	reglib_intersect_rds()
+Subject: [wireless-regdb] [PATCH 21/40] crda: rename crda_get_file_ptr() to
+	reglib_get_file_ptr()
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,75 +43,101 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-This fits more in line with the reglib prefix usage.
-
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- intersect.c |    2 +-
- reglib.c    |    8 ++++----
- reglib.h    |    4 ++--
- 3 files changed, 7 insertions(+), 7 deletions(-)
+ reglib.c |   20 ++++++++++----------
+ reglib.h |    2 +-
+ 2 files changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/intersect.c b/intersect.c
-index bce7eb3..51479e4 100644
---- a/intersect.c
-+++ b/intersect.c
-@@ -39,7 +39,7 @@ int main(int argc, char **argv)
- 			prev_rd_intsct = (struct ieee80211_regdomain *) rd_intsct;
- 		}
- 
--		rd_intsct = regdom_intersect(prev_rd_intsct, rd);
-+		rd_intsct = reglib_intersect_rds(prev_rd_intsct, rd);
- 		if (!rd_intsct) {
- 			free(prev_rd_intsct);
- 			free((struct ieee80211_regdomain *) rd);
 diff --git a/reglib.c b/reglib.c
-index 72ea78f..333db7a 100644
+index 333db7a..a957f0e 100644
 --- a/reglib.c
 +++ b/reglib.c
-@@ -417,7 +417,7 @@ static int is_valid_reg_rule(const struct ieee80211_reg_rule *rule)
- }
+@@ -37,7 +37,7 @@
+ #include "keys-gcrypt.c"
+ #endif
  
- /*
-- * Helper for regdom_intersect(), this does the real
-+ * Helper for reglib_intersect_rds(), this does the real
-  * mathematical intersection fun
-  */
- static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
-@@ -463,7 +463,7 @@ static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
- }
- 
- /**
-- * regdom_intersect - do the intersection between two regulatory domains
-+ * reglib_intersect_rds - do the intersection between two regulatory domains
-  * @rd1: first regulatory domain
-  * @rd2: second regulatory domain
-  *
-@@ -476,8 +476,8 @@ static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
-  * malloc() this structure for you.
-  */
- struct ieee80211_regdomain *
--regdom_intersect(const struct ieee80211_regdomain *rd1,
--		 const struct ieee80211_regdomain *rd2)
-+reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
-+		     const struct ieee80211_regdomain *rd2)
+-void *crda_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t ptr)
++void *reglib_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t ptr)
  {
- 	int r, size_of_regd;
- 	unsigned int x, y;
+ 	uint32_t p = ntohl(ptr);
+ 
+@@ -196,9 +196,9 @@ static void reg_rule2rd(uint8_t *db, int dblen,
+ 	struct ieee80211_freq_range *rd_freq_range = &rd_reg_rule->freq_range;
+ 	struct ieee80211_power_rule *rd_power_rule = &rd_reg_rule->power_rule;
+ 
+-	rule  = crda_get_file_ptr(db, dblen, sizeof(*rule), ruleptr);
+-	freq  = crda_get_file_ptr(db, dblen, sizeof(*freq), rule->freq_range_ptr);
+-	power = crda_get_file_ptr(db, dblen, sizeof(*power), rule->power_rule_ptr);
++	rule  = reglib_get_file_ptr(db, dblen, sizeof(*rule), ruleptr);
++	freq  = reglib_get_file_ptr(db, dblen, sizeof(*freq), rule->freq_range_ptr);
++	power = reglib_get_file_ptr(db, dblen, sizeof(*power), rule->power_rule_ptr);
+ 
+ 	rd_freq_range->start_freq_khz = ntohl(freq->start_freq);
+ 	rd_freq_range->end_freq_khz = ntohl(freq->end_freq);
+@@ -219,11 +219,11 @@ country2rd(uint8_t *db, int dblen,
+ 	struct ieee80211_regdomain *rd;
+ 	int i, num_rules, size_of_rd;
+ 
+-	rcoll = crda_get_file_ptr(db, dblen, sizeof(*rcoll),
++	rcoll = reglib_get_file_ptr(db, dblen, sizeof(*rcoll),
+ 				country->reg_collection_ptr);
+ 	num_rules = ntohl(rcoll->reg_rule_num);
+ 	/* re-get pointer with sanity checking for num_rules */
+-	rcoll = crda_get_file_ptr(db, dblen,
++	rcoll = reglib_get_file_ptr(db, dblen,
+ 			sizeof(*rcoll) + num_rules * sizeof(uint32_t),
+ 			country->reg_collection_ptr);
+ 
+@@ -279,7 +279,7 @@ reglib_get_rd_idx(unsigned int idx, const char *file)
+ 		return NULL;
+ 	}
+ 
+-	header = crda_get_file_ptr(db, dblen, sizeof(*header), 0);
++	header = reglib_get_file_ptr(db, dblen, sizeof(*header), 0);
+ 
+ 	if (ntohl(header->magic) != REGDB_MAGIC)
+ 		goto out;
+@@ -299,7 +299,7 @@ reglib_get_rd_idx(unsigned int idx, const char *file)
+ 		goto out;
+ 
+ 	num_countries = ntohl(header->reg_country_num);
+-	countries = crda_get_file_ptr(db, dblen,
++	countries = reglib_get_file_ptr(db, dblen,
+ 			sizeof(struct regdb_file_reg_country) * num_countries,
+ 			header->reg_country_ptr);
+ 
+@@ -350,7 +350,7 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file)
+ 		return NULL;
+ 	}
+ 
+-	header = crda_get_file_ptr(db, dblen, sizeof(*header), 0);
++	header = reglib_get_file_ptr(db, dblen, sizeof(*header), 0);
+ 
+ 	if (ntohl(header->magic) != REGDB_MAGIC)
+ 		goto out;
+@@ -370,7 +370,7 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file)
+ 		goto out;
+ 
+ 	num_countries = ntohl(header->reg_country_num);
+-	countries = crda_get_file_ptr(db, dblen,
++	countries = reglib_get_file_ptr(db, dblen,
+ 			sizeof(struct regdb_file_reg_country) * num_countries,
+ 			header->reg_country_ptr);
+ 
 diff --git a/reglib.h b/reglib.h
-index 8bd9e03..529772d 100644
+index 529772d..3510889 100644
 --- a/reglib.h
 +++ b/reglib.h
-@@ -87,7 +87,7 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file);
- /* reg helpers */
- void print_regdom(const struct ieee80211_regdomain *rd);
- struct ieee80211_regdomain *
--regdom_intersect(const struct ieee80211_regdomain *rd1,
--		 const struct ieee80211_regdomain *rd2);
-+reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
-+		     const struct ieee80211_regdomain *rd2);
+@@ -70,7 +70,7 @@ static inline uint32_t min(uint32_t a, uint32_t b)
+ 	return (a > b) ? b : a;
+ }
  
- #endif
+-void *crda_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t ptr);
++void *reglib_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t ptr);
+ int crda_verify_db_signature(uint8_t *db, int dblen, int siglen);
+ 
+ const struct ieee80211_regdomain *
 -- 
 1.7.10.4
 
