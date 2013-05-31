@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-f178.google.com ([209.85.192.178])
+Received: from mail-pb0-x229.google.com ([2607:f8b0:400e:c01::229])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEoS-0005T6-Ti
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:11:29 +0000
-Received: by mail-pd0-f178.google.com with SMTP id w11so1378735pde.9 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:07 -0700 (PDT)
+ id 1UiEoW-0005TE-OB
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:11:33 +0000
+Received: by mail-pb0-f41.google.com with SMTP id xb12so1397409pbc.14 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:11:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=NND/x5JCGzpkiWHHbWQumqm+H5wh3D78cB+MIbxQeX8=;
- b=zdoN4JWo7vM2b4JqaK7vxpbPnyP0tMs5Bo0FuCColb8DLy1XzwI7o1YaQ90F9TrMmQ
- SngGyINH+OhPkgWD3YWoF2yx5bSpKOIT+Zx6HBFtFLmbJRE+UKThjrlQtbsggV5vanOs
- Nr3yH6nw9/y9YJXHl66sc7rMFjxFn9BSFxRUVLIpQFq4FZz1XB4sK3DfEs/w2hl7Jk9f
- qDC6xDq0esDtiadd8RKP+oYK2T8pCc/oatTq30T5BN3cHoMW4wDIpX1mffhmGvr6mqU8
- 2YwU8dpEYWh05wCPwsUB+/s4sUaoE6eUgOGujByHfCg2mPvbXvlqbonaH+HQIAde21ve dLkQ==
+ :references; bh=ggn/26yvZwXEt0ZLZGwFELLJC7P0cBM1ftOTJ+g6lFw=;
+ b=RHAGmY0f7ra2HgVz1I7AXljPJBka3W2QkpaM71JxRxY/KRK1DeSpbHdG/UOMsggfVM
+ D0PNvOfNMqaPWRSveckOOC8zz8JMi7WF37BWKCqTmHETD69yqMEuxFMauaCb4vNhF07L
+ w1n8hve8uQDUvNTudFmzyDJMHgF8CO+FAxBsK6oSYMJ0hE3wQNppDJZsOsDkRF1mm/ql
+ HRr5jddDqcan5QQXjYkkViHwM0BAML8MIx7EGGZGej0BvTrihUDGzO6HMRpC4R5bgxC5
+ SzzNBJlo1nMv64wQzUTNQyjbxRbjkrhbgDuTK0baG8R+8C/280Hklhbp8Y8uT45sS/bv TTOw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:08 -0700
-Message-Id: <1369966169-23640-20-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:09 -0700
+Message-Id: <1369966169-23640-21-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 19/40] crda: remove verbosity out of
-	intersect.c
+Subject: [wireless-regdb] [PATCH 20/40] crda: rename regdom_intersect() to
+	reglib_intersect_rds()
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,70 +43,75 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-No need for such much verbosity, additionally,
-we'll move this eventually to reglib.
+This fits more in line with the reglib prefix usage.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- intersect.c |   33 +++------------------------------
- 1 file changed, 3 insertions(+), 30 deletions(-)
+ intersect.c |    2 +-
+ reglib.c    |    8 ++++----
+ reglib.h    |    4 ++--
+ 3 files changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/intersect.c b/intersect.c
-index 7903dd7..bce7eb3 100644
+index bce7eb3..51479e4 100644
 --- a/intersect.c
 +++ b/intersect.c
-@@ -43,48 +43,21 @@ int main(int argc, char **argv)
+@@ -39,7 +39,7 @@ int main(int argc, char **argv)
+ 			prev_rd_intsct = (struct ieee80211_regdomain *) rd_intsct;
+ 		}
+ 
+-		rd_intsct = regdom_intersect(prev_rd_intsct, rd);
++		rd_intsct = reglib_intersect_rds(prev_rd_intsct, rd);
  		if (!rd_intsct) {
  			free(prev_rd_intsct);
  			free((struct ieee80211_regdomain *) rd);
--			fprintf(stderr, "Intersection not possible\n");
- 			return -ENOENT;
- 		}
+diff --git a/reglib.c b/reglib.c
+index 72ea78f..333db7a 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -417,7 +417,7 @@ static int is_valid_reg_rule(const struct ieee80211_reg_rule *rule)
+ }
  
--		if (intersected)
--			/* Use UTF-8 Intersection symbol ? (0xE2,0x88,0xA9) :) */
--			printf("WW (%d) intersect %c%c (%d) ==> %d rules\n",
--				prev_rd_intsct->n_reg_rules,
--				rd->alpha2[0],
--				rd->alpha2[1],
--				rd->n_reg_rules,
--				rd_intsct->n_reg_rules);
--		else
--			printf("%c%c (%d) intersect %c%c (%d) ==> %d rules\n",
--				prev_rd_intsct->alpha2[0],
--				prev_rd_intsct->alpha2[1],
--				prev_rd_intsct->n_reg_rules,
--				rd->alpha2[0],
--				rd->alpha2[1],
--				rd->n_reg_rules,
--				rd_intsct->n_reg_rules);
- 		intersected++;
- 		free((struct ieee80211_regdomain *) rd);
- 	}
+ /*
+- * Helper for regdom_intersect(), this does the real
++ * Helper for reglib_intersect_rds(), this does the real
+  * mathematical intersection fun
+  */
+ static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
+@@ -463,7 +463,7 @@ static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
+ }
  
--	if (!idx) {
--		printf("Invalid or empty regulatory file, note: "
--		       "a binary regulatory file should be used.\n");
-+	if (!idx)
- 		return -EINVAL;
--	}
+ /**
+- * regdom_intersect - do the intersection between two regulatory domains
++ * reglib_intersect_rds - do the intersection between two regulatory domains
+  * @rd1: first regulatory domain
+  * @rd2: second regulatory domain
+  *
+@@ -476,8 +476,8 @@ static int reg_rules_intersect(const struct ieee80211_reg_rule *rule1,
+  * malloc() this structure for you.
+  */
+ struct ieee80211_regdomain *
+-regdom_intersect(const struct ieee80211_regdomain *rd1,
+-		 const struct ieee80211_regdomain *rd2)
++reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
++		     const struct ieee80211_regdomain *rd2)
+ {
+ 	int r, size_of_regd;
+ 	unsigned int x, y;
+diff --git a/reglib.h b/reglib.h
+index 8bd9e03..529772d 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -87,7 +87,7 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file);
+ /* reg helpers */
+ void print_regdom(const struct ieee80211_regdomain *rd);
+ struct ieee80211_regdomain *
+-regdom_intersect(const struct ieee80211_regdomain *rd1,
+-		 const struct ieee80211_regdomain *rd2);
++reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
++		     const struct ieee80211_regdomain *rd2);
  
--	if (intersected > 1)
--		printf("%d regulatory domains intersected\n", intersected);
--	else {
-+	if (intersected <= 0) {
- 		rd_intsct = prev_rd_intsct;
- 		prev_rd_intsct = NULL;
--		printf("No intersections completed\n");
- 		if (idx > 1) {
--			printf("Since more than one regulatory domain is "
--			       "present and no intersections were possible "
--			       "no globally allowed spectrum is possible so "
--			       "consider enabling passive scan flags\n");
-+			r = -ENOENT;
- 			free(rd_intsct);
- 			return r;
- 		}
+ #endif
 -- 
 1.7.10.4
 
