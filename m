@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-f169.google.com ([209.85.192.169])
+Received: from mail-pb0-x236.google.com ([2607:f8b0:400e:c01::236])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UiEph-0005eg-Ng
- for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:46 +0000
-Received: by mail-pd0-f169.google.com with SMTP id y11so1390861pdj.14 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:24 -0700 (PDT)
+ id 1UiEpj-0005fX-9t
+ for wireless-regdb@lists.infradead.org; Fri, 31 May 2013 02:12:48 +0000
+Received: by mail-pb0-f54.google.com with SMTP id ro12so1379151pbb.41 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2013 19:12:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=Hb7n9ZS2PvbTfaDttoHAeF9+HlSIoolfauyaeUEOPus=;
- b=btLdw3leKUaoXZGgun4yVvH73Ee13Z64JFWVpzV9MzQJcxvg+rwqwdYOnRITIxKjdA
- 72/phld/6N8h7q/qEIsdOAbEr+r+RRfNwam0Bri0SjGzIPAicghIyLvk/nUUvoBkNo1E
- rUnzboUZqnzLWXZY0Euk6/nl2HRcfKf5Zpkpmtjy/UqfY2SJkFWsfJ4gVzZKDKul6W5c
- unPLvZglQzMwX1zzS9fttrv6X4k+a24V2fMDF6PZVj/of0Rs0rZPRdI6mUJhNmMpfBns
- YnCy6GTxt9CVBFRhvZpPV/fwRcffOUnE+kdi+nwxvEDTMkr5JWJD5IzVHpyC9mmpYjro jjTg==
+ :references; bh=UD+vFpCCJ7gaO03FumRgALnjVCsAecJdhZP/IYqDw7M=;
+ b=kXd7WMx6KKKIFpH9vskaUv9NCalpJ7PsgGb9Crs93JAwKHXjaDGUIKxqE9YO1ChPmP
+ buibz+Ct7dRTTBtKpdJgMSXlu2XJ64fK5YQo95NB+8LznZZY+75tsdLXxXtQO2r85Ypc
+ 3JDwBRQHLUS8v1WZ+xjIKmDfe52kCvu3r8s+0GQqI9s+3FAuXksEvSSiEy1f6oqLcxxc
+ 5QrfIMsFSQ1F9SOImZ6CMy103DhnfyULV3vjSSJZhx73J6bbT4G17CBCg8b5v2OLTEI0
+ 1ofIWmHTWmJzrtCVOaIJ0jpj0+9rGPWXO+DFxsugtmPgHxMtnx64XxO1knEXvXI7LCsm 1s6Q==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Thu, 30 May 2013 19:09:26 -0700
-Message-Id: <1369966169-23640-38-git-send-email-mcgrof@do-not-panic.com>
+Date: Thu, 30 May 2013 19:09:27 -0700
+Message-Id: <1369966169-23640-39-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1369966169-23640-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 37/40] crda: move regdbprint to its own
-	helper
+Subject: [wireless-regdb] [PATCH 38/40] crda: add reglib regdb context
+	helpers: reglib_(malloc|free)_regdb_ctx()
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,62 +43,371 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-We'll later move this to reglib but first we have
-to clean up the print utility to make it more general.
+These are used to allow users of reglib to instantiate a
+reglib context to be used with reglib without having to
+always open the regdb, mmap() it and verify it. It also
+allows us to tuck away all that magic from users and put
+the responsibility on reglib to do all the sanity work
+for users.
+
+To start with consolidate with two users:
+
+reglib_get_rd_idx() and reglib_get_rd_alpha2()
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- regdbdump.c |   25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
+ reglib.c |  206 +++++++++++++++++++++++++++++++-------------------------------
+ reglib.h |   65 ++++++++++++++++++++
+ 2 files changed, 167 insertions(+), 104 deletions(-)
 
-diff --git a/regdbdump.c b/regdbdump.c
-index ea14730..edf3e7c 100644
---- a/regdbdump.c
-+++ b/regdbdump.c
-@@ -2,26 +2,35 @@
- #include <errno.h>
- #include "reglib.h"
- 
--int main(int argc, char **argv)
-+static int reglib_regdbdump(char *regdb_file)
- {
- 	const struct ieee80211_regdomain *rd = NULL;
- 	unsigned int idx = 0;
- 
--	if (argc != 2) {
--		fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
--		return 2;
--	}
--
--	reglib_for_each_country(rd, idx, argv[1]) {
-+	reglib_for_each_country(rd, idx, regdb_file) {
- 		reglib_print_regdom(rd);
- 		free((struct ieee80211_regdomain *) rd);
- 	}
- 
- 	if (!idx) {
--		printf("Invalid or empty regulatory file, note: "
-+		fprintf(stderr, "Invalid or empty regulatory file, note: "
- 		       "a binary regulatory file should be used.\n");
- 		return -EINVAL;
- 	}
- 
- 	return 0;
+diff --git a/reglib.c b/reglib.c
+index 67f5b2b..6f076ff 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -186,6 +186,92 @@ int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen)
  }
-+
-+int main(int argc, char **argv)
+ #endif
+ 
++const struct reglib_regdb_ctx *reglib_malloc_regdb_ctx(const char *regdb_file)
 +{
-+	int r;
++	struct regdb_file_header *header;
++	struct reglib_regdb_ctx *ctx;
 +
-+	if (argc != 2) {
-+		fprintf(stderr, "Usage: %s <regulatory-binary-file>\n", argv[0]);
-+		return 2;
++	ctx = malloc(sizeof(struct reglib_regdb_ctx));
++	if (!ctx)
++		return NULL;
++
++	memset(ctx, 0, sizeof(struct reglib_regdb_ctx));
++
++	ctx->fd = open(regdb_file, O_RDONLY);
++
++	if (ctx->fd < 0) {
++		free(ctx);
++		return NULL;
 +	}
 +
-+	r = reglib_regdbdump(argv[1]);
++	if (fstat(ctx->fd, &ctx->stat)) {
++		close(ctx->fd);
++		free(ctx);
++		return NULL;
++	}
 +
-+	return r;
++	ctx->real_dblen = ctx->stat.st_size;
++
++	ctx->db = mmap(NULL, ctx->real_dblen, PROT_READ,
++		       MAP_PRIVATE, ctx->fd, 0);
++	if (ctx->db == MAP_FAILED) {
++		close(ctx->fd);
++		free(ctx);
++		return NULL;
++	}
++
++	ctx->header = reglib_get_file_ptr(ctx->db, ctx->dblen,
++					  sizeof(struct regdb_file_header),
++					  0);
++	header = ctx->header;
++
++	if (ntohl(header->magic) != REGDB_MAGIC)
++		goto err_out;
++
++	if (ntohl(header->version) != REGDB_VERSION)
++		goto err_out;
++
++	ctx->siglen = ntohl(header->signature_length);
++	/* The actual dblen does not take into account the signature */
++	ctx->dblen = ctx->real_dblen - ctx->siglen;
++
++	if (ctx->dblen <= sizeof(*header))
++		goto err_out;
++
++	/* verify signature */
++	if (!reglib_verify_db_signature(ctx->db, ctx->dblen, ctx->siglen))
++		goto err_out;
++
++	ctx->verified = true;
++	ctx->num_countries = ntohl(header->reg_country_num);
++	ctx->countries = reglib_get_file_ptr(ctx->db,
++					     ctx->dblen,
++					     sizeof(struct regdb_file_reg_country) * ctx->num_countries,
++					     header->reg_country_ptr);
++	return ctx;
++
++err_out:
++	close(ctx->fd);
++	munmap(ctx->db, ctx->real_dblen);
++	free(ctx);
++	return NULL;
 +}
++
++void reglib_free_regdb_ctx(const struct reglib_regdb_ctx *regdb_ctx)
++{
++	struct reglib_regdb_ctx *ctx;
++
++	if (!regdb_ctx)
++		return;
++
++	ctx = (struct reglib_regdb_ctx *) regdb_ctx;
++
++	memset(ctx, 0, sizeof(struct reglib_regdb_ctx));
++	close(ctx->fd);
++	munmap(ctx->db, ctx->real_dblen);
++	free(ctx);
++}
++
+ static void reg_rule2rd(uint8_t *db, int dblen,
+ 	uint32_t ruleptr, struct ieee80211_reg_rule *rd_reg_rule)
+ {
+@@ -252,130 +338,43 @@ country2rd(uint8_t *db, int dblen,
+ const struct ieee80211_regdomain *
+ reglib_get_rd_idx(unsigned int idx, const char *file)
+ {
+-	int fd;
+-	struct stat stat;
+-	uint8_t *db;
+-	struct regdb_file_header *header;
+-	struct regdb_file_reg_country *countries;
+-	int dblen, siglen, num_countries;
+-	const struct ieee80211_regdomain *rd = NULL;
++	const struct reglib_regdb_ctx *ctx;
+ 	struct regdb_file_reg_country *country;
++	const struct ieee80211_regdomain *rd = NULL;
+ 
+-	fd = open(file, O_RDONLY);
+-
+-	if (fd < 0)
+-		return NULL;
+-
+-	if (fstat(fd, &stat)) {
+-		close(fd);
+-		return NULL;
+-	}
+-
+-	dblen = stat.st_size;
+-
+-	db = mmap(NULL, dblen, PROT_READ, MAP_PRIVATE, fd, 0);
+-	if (db == MAP_FAILED) {
+-		close(fd);
++	ctx = reglib_malloc_regdb_ctx(file);
++	if (!ctx)
+ 		return NULL;
+-	}
+-
+-	header = reglib_get_file_ptr(db, dblen, sizeof(*header), 0);
+ 
+-	if (ntohl(header->magic) != REGDB_MAGIC)
++	if (idx >= ctx->num_countries)
+ 		goto out;
+ 
+-	if (ntohl(header->version) != REGDB_VERSION)
+-		goto out;
++	country = ctx->countries + idx;
+ 
+-	siglen = ntohl(header->signature_length);
+-	/* adjust dblen so later sanity checks don't run into the signature */
+-	dblen -= siglen;
+-
+-	if (dblen <= (int)sizeof(*header))
+-		goto out;
+-
+-	/* verify signature */
+-	if (!reglib_verify_db_signature(db, dblen, siglen))
+-		goto out;
+-
+-	num_countries = ntohl(header->reg_country_num);
+-	countries = reglib_get_file_ptr(db, dblen,
+-			sizeof(struct regdb_file_reg_country) * num_countries,
+-			header->reg_country_ptr);
+-
+-	if (idx >= num_countries)
+-		goto out;
+-
+-	country = countries + idx;
+-
+-	rd = country2rd(db, dblen, country);
++	rd = country2rd(ctx->db, ctx->dblen, country);
+ 	if (!rd)
+ 		goto out;
+ 
+ out:
+-	close(fd);
+-	munmap(db, dblen);
++	reglib_free_regdb_ctx(ctx);
+ 	return rd;
+ }
+ 
+ const struct ieee80211_regdomain *
+ reglib_get_rd_alpha2(const char *alpha2, const char *file)
+ {
+-	int fd;
+-	struct stat stat;
+-	uint8_t *db;
+-	struct regdb_file_header *header;
+-	struct regdb_file_reg_country *countries;
+-	int dblen, siglen, num_countries;
++	const struct reglib_regdb_ctx *ctx;
+ 	const struct ieee80211_regdomain *rd = NULL;
+ 	struct regdb_file_reg_country *country;
+-	unsigned int i;
+ 	bool found_country = false;
++	unsigned int i;
+ 
+-	fd = open(file, O_RDONLY);
+-
+-	if (fd < 0)
+-		return NULL;
+-
+-	if (fstat(fd, &stat)) {
+-		close(fd);
+-		return NULL;
+-	}
+-
+-	dblen = stat.st_size;
+-
+-	db = mmap(NULL, dblen, PROT_READ, MAP_PRIVATE, fd, 0);
+-	if (db == MAP_FAILED) {
+-		close(fd);
++	ctx = reglib_malloc_regdb_ctx(file);
++	if (!ctx)
+ 		return NULL;
+-	}
+-
+-	header = reglib_get_file_ptr(db, dblen, sizeof(*header), 0);
+-
+-	if (ntohl(header->magic) != REGDB_MAGIC)
+-		goto out;
+-
+-	if (ntohl(header->version) != REGDB_VERSION)
+-		goto out;
+-
+-	siglen = ntohl(header->signature_length);
+-	/* adjust dblen so later sanity checks don't run into the signature */
+-	dblen -= siglen;
+-
+-	if (dblen <= (int)sizeof(*header))
+-		goto out;
+-
+-	/* verify signature */
+-	if (!reglib_verify_db_signature(db, dblen, siglen))
+-		goto out;
+-
+-	num_countries = ntohl(header->reg_country_num);
+-	countries = reglib_get_file_ptr(db, dblen,
+-			sizeof(struct regdb_file_reg_country) * num_countries,
+-			header->reg_country_ptr);
+ 
+-	for (i = 0; i < num_countries; i++) {
+-		country = countries + i;
++	for (i = 0; i < ctx->num_countries; i++) {
++		country = ctx->countries + i;
+ 		if (memcmp(country->alpha2, alpha2, 2) == 0) {
+ 			found_country = 1;
+ 			break;
+@@ -385,13 +384,12 @@ reglib_get_rd_alpha2(const char *alpha2, const char *file)
+ 	if (!found_country)
+ 		goto out;
+ 
+-	rd = country2rd(db, dblen, country);
++	rd = country2rd(ctx->db, ctx->dblen, country);
+ 	if (!rd)
+ 		goto out;
+ 
+ out:
+-	close(fd);
+-	munmap(db, dblen);
++	reglib_free_regdb_ctx(ctx);
+ 	return rd;
+ }
+ 
+diff --git a/reglib.h b/reglib.h
+index 2681164..f1bd6b8 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -3,6 +3,10 @@
+ 
+ #include <stdlib.h>
+ #include <stdint.h>
++#include <stdbool.h>
++#include <sys/stat.h>
++
++#include "regdb.h"
+ 
+ /* Common regulatory structures, functions and helpers */
+ 
+@@ -31,6 +35,44 @@ struct ieee80211_regdomain {
+ 	struct ieee80211_reg_rule reg_rules[];
+ };
+ 
++/**
++ * struct reglib_regdb_ctx - reglib regdb context
++ *
++ * This can be used to interat with reglib without
++ * having to open() / close() / mmap() / munmap()
++ * and check the regdb binary file for integrity and
++ * authorship.
++ *
++ * @fd: file descriptor of the db
++ * @stat: @fd fstat()
++ * @db: mmap() of the db of @real_dblen
++ * @real_dblen: file size in bytes of @fd
++ * @siglen: size in bytes of the signature at the end of the file
++ * @dblen: database lenghth, this is the @real_dblen - @siglen
++ * @verified: whether or not this regdb has been RSA verified.
++ * 	This value is dependent on whether or not you enabled
++ * 	signature verification with gcrypt, openssl, or none
++ * 	at all. If no signature verification was not compiled
++ * 	in then this will always be true otherwise this will
++ * 	only be true if the RSA digital signature of the SHA1
++ * 	sum of the regulatory database at the end of the
++ * 	regulatory database can be verified with the one of
++ * 	the trusted public keys.
++ */
++struct reglib_regdb_ctx {
++	int fd;
++	struct stat stat;
++	uint8_t *db;
++	uint32_t real_dblen;
++	uint32_t siglen;
++	uint32_t dblen;
++	bool verified;
++
++	struct regdb_file_header *header;
++	uint32_t num_countries;
++	struct regdb_file_reg_country *countries;
++};
++
+ static inline int reglib_is_world_regdom(const char *alpha2)
+ {
+ 	if (alpha2[0] == '0' && alpha2[1] == '0')
+@@ -73,6 +115,29 @@ static inline uint32_t reglib_min(uint32_t a, uint32_t b)
+ void *reglib_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t ptr);
+ int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen);
+ 
++/**
++ * reglib_malloc_regdb_ctx - create a regdb context for usage with reglib
++ *
++ * @regdb_file: file name
++ *
++ * Most operations on reglib iterate over the database somehow and prior
++ * to iterating over it it must check the signature. Use this context helper
++ * to let you query the db within different contexts in your program and
++ * just be sure to call reglib_free_regdb_ctx() when done. This helper will
++ * open the file passed and mmap() it.
++ */
++const struct reglib_regdb_ctx *reglib_malloc_regdb_ctx(const char *regdb_file);
++
++/**
++ * reglib_free_regdb_ctx - free a regdb context used with reglib
++ *
++ * @regdb_ctx: the reglib regdb context created with reglib_malloc_regdb_ctx()
++ *
++ * This will do all the handy work to close up, munmap, and free the
++ * reglib regdb context passed.
++ */
++void reglib_free_regdb_ctx(const struct reglib_regdb_ctx *regdb_ctx);
++
+ const struct ieee80211_regdomain *
+ reglib_get_rd_idx(unsigned int idx, const char *file);
+ 
 -- 
 1.7.10.4
 
