@@ -1,24 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pa0-x22d.google.com ([2607:f8b0:400e:c03::22d])
+Received: from shadbolt.e.decadent.org.uk ([88.96.1.126])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UzGc1-000551-6z
- for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 01:33:01 +0000
-Received: by mail-pa0-f45.google.com with SMTP id bi5so1381861pad.32 for
- <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 18:32:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=sender:from:to:cc:subject:date:message-id:x-mailer;
- bh=tOaiA5gFDvMQ/Z//vecmpXds9WK7oisUZwF+Vjzu/mI=;
- b=JT68sRMy6W2kPciJlot6qJpr+SwwNYf8DZY1Jmf7ckDLoXLKFm+m20/QRApY+T1CUa
- 5okKhWVLbOCIsa1XeLOBOtW0B57J0cTP3y+GayN0R2IaFYKNec6A2cTOX88Ar87p2q75
- 2L/BM/t3J8uLgq/t9RVl6zaBtr981QtkIg4veD11BqwRMgokwmI6kxbWU0nfoHx/1QJt
- RZ9CiYySuf7+cNZX9AcBmWP9ZNkEq/3mfrD/FXAa3ocgG8xxv9UVbkuOJCBagX/sj/A9
- uSZ4s44wMgWneJb2WfsMAuImizMruuNfLfU9cKO5Q/V3VZod6nGIj1lhw/lYeHl3OKjv rN+g==
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 16 Jul 2013 18:32:30 -0700
-Message-Id: <1374024750-16455-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH] reglib: add reglib_is_valid_rd() and
-	verify data upon build
+ id 1UtRNd-00046q-Dv
+ for wireless-regdb@lists.infradead.org; Sun, 30 Jun 2013 23:50:07 +0000
+Message-ID: <1372636171.5155.56.camel@deadeye.wl.decadent.org.uk>
+From: Ben Hutchings <ben@decadent.org.uk>
+Date: Mon, 01 Jul 2013 00:49:31 +0100
+Mime-Version: 1.0
+Subject: [wireless-regdb] [PATCH] reglib: Validate all structure and array
+	lengths
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -28,102 +19,266 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: multipart/mixed; boundary="===============2121621616753855357=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: wireless-regdb@lists.infradead.org, alexandre@cmu.edu
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+--===============2121621616753855357==
+Content-Type: multipart/signed; micalg="pgp-sha512";
+	protocol="application/pgp-signature"; boundary="=-PKbvDjeS/9WCRqTDGjPi"
 
-This will verify the sanity of a regulatory domain upon build
-time. This is useful if you are making modifications to
-wireless-regdb and need to verify the regulatory domains
-won't be rejected by a similar checker. In the case of the
-Linux kernel regulatory domain data structures that get
-a complaint would have been rejected completely.
 
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+--=-PKbvDjeS/9WCRqTDGjPi
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Add checks that:
+- Signature length does not exceed the file length (this was already
+  checked, but did not account for signature lengths greater than 2 GB)
+- Database length is long enough for all structures we expect in it
+- Array length calculations will not overflow
+
+To keep these checks simple, change the types of array length and index
+variables to unsigned int (must be at least 32-bit, matching the file
+format) and the types of byte-length variables to size_t.
+
+Alexandre Rebert <alexandre@cmu.edu> reported and provided a test case
+for the signature length issue; the others I found by inspection.
+
+Signed-off-by: Ben Hutchings <ben@decadent.org.uk>
 ---
- regdbdump.c |    5 +++++
- reglib.c    |   16 ++++++++++++++++
- reglib.h    |   10 ++++++++++
- 3 files changed, 31 insertions(+)
+ reglib.c | 58 +++++++++++++++++++++++++++++++++++++++++-----------------
+ reglib.h |  5 +++--
+ 2 files changed, 44 insertions(+), 19 deletions(-)
 
-diff --git a/regdbdump.c b/regdbdump.c
-index cc7eb85..bb83af9 100644
---- a/regdbdump.c
-+++ b/regdbdump.c
-@@ -8,6 +8,11 @@ static void reglib_regdbdump(const struct reglib_regdb_ctx *ctx)
- 	unsigned int idx = 0;
- 
- 	reglib_for_each_country(rd, idx, ctx) {
-+		if (!reglib_is_valid_rd(rd)) {
-+			fprintf(stderr, "country %.2s: invalid\n", rd->alpha2);
-+			free((struct ieee80211_regdomain *) rd);
-+			continue;
-+		}
- 		reglib_print_regdom(rd);
- 		free((struct ieee80211_regdomain *) rd);
- 	}
 diff --git a/reglib.c b/reglib.c
-index 224821b..64584f4 100644
+index c4d00f8..224821b 100644
 --- a/reglib.c
 +++ b/reglib.c
-@@ -427,6 +427,22 @@ static int is_valid_reg_rule(const struct ieee80211_reg_rule *rule)
- 	return 1;
- }
- 
-+int reglib_is_valid_rd(const struct ieee80211_regdomain *rd)
-+{
-+	const struct ieee80211_reg_rule *reg_rule = NULL;
-+	unsigned int i;
-+
-+	if (!rd->n_reg_rules)
-+		return 0;
-+
-+	for (i = 0; i < rd->n_reg_rules; i++) {
-+		reg_rule = &rd->reg_rules[i];
-+		if (!is_valid_reg_rule(reg_rule))
-+		return 0;
+@@ -10,6 +10,7 @@
+ #include <stdbool.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <limits.h>
+=20
+ #include <arpa/inet.h> /* ntohl */
+=20
+@@ -37,10 +38,16 @@
+ #include "keys-gcrypt.c"
+ #endif
+=20
+-void *reglib_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t =
+ptr)
++void *
++reglib_get_file_ptr(uint8_t *db, size_t dblen, size_t structlen, uint32_t =
+ptr)
+ {
+ 	uint32_t p =3D ntohl(ptr);
+=20
++	if (structlen > dblen) {
++		fprintf(stderr, "Invalid database file, too short!\n");
++		exit(3);
 +	}
-+	return 1;
++
+ 	if (p > dblen - structlen) {
+ 		fprintf(stderr, "Invalid database file, bad pointer!\n");
+ 		exit(3);
+@@ -49,6 +56,17 @@ void *reglib_get_file_ptr(uint8_t *db, int dblen, int st=
+ructlen, uint32_t ptr)
+ 	return (void *)(db + p);
+ }
+=20
++static size_t
++reglib_array_len(size_t baselen, unsigned int elemcount, size_t elemlen)
++{
++	if (elemcount > (SIZE_MAX - baselen) / elemlen) {
++		fprintf(stderr, "Invalid database file, count too large!\n");
++		exit(3);
++	}
++
++	return baselen + elemcount * elemlen;
 +}
 +
  /*
-  * Helper for reglib_intersect_rds(), this does the real
-  * mathematical intersection fun
+  * reglib_verify_db_signature():
+  *
+@@ -59,7 +77,7 @@ void *reglib_get_file_ptr(uint8_t *db, int dblen, int str=
+uctlen, uint32_t ptr)
+  */
+=20
+ #ifdef USE_OPENSSL
+-int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen)
++int reglib_verify_db_signature(uint8_t *db, size_t dblen, size_t siglen)
+ {
+ 	RSA *rsa;
+ 	uint8_t hash[SHA_DIGEST_LENGTH];
+@@ -118,7 +136,7 @@ out:
+ #endif /* USE_OPENSSL */
+=20
+ #ifdef USE_GCRYPT
+-int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen)
++int reglib_verify_db_signature(uint8_t *db, size_t dblen, size_t siglen)
+ {
+ 	gcry_mpi_t mpi_e, mpi_n;
+ 	gcry_sexp_t rsa, signature, data;
+@@ -180,7 +198,7 @@ out:
+ #endif /* USE_GCRYPT */
+=20
+ #if !defined(USE_OPENSSL) && !defined(USE_GCRYPT)
+-int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen)
++int reglib_verify_db_signature(uint8_t *db, size_t dblen, size_t siglen)
+ {
+ 	return 1;
+ }
+@@ -220,7 +238,7 @@ const struct reglib_regdb_ctx *reglib_malloc_regdb_ctx(=
+const char *regdb_file)
+ 		return NULL;
+ 	}
+=20
+-	ctx->header =3D reglib_get_file_ptr(ctx->db, ctx->dblen,
++	ctx->header =3D reglib_get_file_ptr(ctx->db, ctx->real_dblen,
+ 					  sizeof(struct regdb_file_header),
+ 					  0);
+ 	header =3D ctx->header;
+@@ -232,12 +250,13 @@ const struct reglib_regdb_ctx *reglib_malloc_regdb_ct=
+x(const char *regdb_file)
+ 		goto err_out;
+=20
+ 	ctx->siglen =3D ntohl(header->signature_length);
+-	/* The actual dblen does not take into account the signature */
+-	ctx->dblen =3D ctx->real_dblen - ctx->siglen;
+=20
+-	if (ctx->dblen <=3D sizeof(*header))
++	if (ctx->siglen > ctx->real_dblen - sizeof(*header))
+ 		goto err_out;
+=20
++	/* The actual dblen does not take into account the signature */
++	ctx->dblen =3D ctx->real_dblen - ctx->siglen;
++
+ 	/* verify signature */
+ 	if (!reglib_verify_db_signature(ctx->db, ctx->dblen, ctx->siglen))
+ 		goto err_out;
+@@ -272,7 +291,7 @@ void reglib_free_regdb_ctx(const struct reglib_regdb_ct=
+x *regdb_ctx)
+ 	free(ctx);
+ }
+=20
+-static void reg_rule2rd(uint8_t *db, int dblen,
++static void reg_rule2rd(uint8_t *db, size_t dblen,
+ 	uint32_t ruleptr, struct ieee80211_reg_rule *rd_reg_rule)
+ {
+ 	struct regdb_file_reg_rule *rule;
+@@ -303,18 +322,21 @@ country2rd(const struct reglib_regdb_ctx *ctx,
+ {
+ 	struct regdb_file_reg_rules_collection *rcoll;
+ 	struct ieee80211_regdomain *rd;
+-	int i, num_rules, size_of_rd;
++	unsigned int i, num_rules;
++	size_t size_of_rd;
+=20
+ 	rcoll =3D reglib_get_file_ptr(ctx->db, ctx->dblen, sizeof(*rcoll),
+ 				    country->reg_collection_ptr);
+ 	num_rules =3D ntohl(rcoll->reg_rule_num);
+ 	/* re-get pointer with sanity checking for num_rules */
+ 	rcoll =3D reglib_get_file_ptr(ctx->db, ctx->dblen,
+-			sizeof(*rcoll) + num_rules * sizeof(uint32_t),
+-			country->reg_collection_ptr);
++				    reglib_array_len(sizeof(*rcoll), num_rules,
++						     sizeof(uint32_t)),
++				    country->reg_collection_ptr);
+=20
+-	size_of_rd =3D sizeof(struct ieee80211_regdomain) +
+-		num_rules * sizeof(struct ieee80211_reg_rule);
++	size_of_rd =3D reglib_array_len(sizeof(struct ieee80211_regdomain),
++				      num_rules,
++				      sizeof(struct ieee80211_reg_rule));
+=20
+ 	rd =3D malloc(size_of_rd);
+ 	if (!rd)
+@@ -468,7 +490,8 @@ struct ieee80211_regdomain *
+ reglib_intersect_rds(const struct ieee80211_regdomain *rd1,
+ 		     const struct ieee80211_regdomain *rd2)
+ {
+-	int r, size_of_regd;
++	int r;
++	size_t size_of_regd;
+ 	unsigned int x, y;
+ 	unsigned int num_rules =3D 0, rule_idx =3D 0;
+ 	const struct ieee80211_reg_rule *rule1, *rule2;
+@@ -506,8 +529,9 @@ reglib_intersect_rds(const struct ieee80211_regdomain *=
+rd1,
+ 	if (!num_rules)
+ 		return NULL;
+=20
+-	size_of_regd =3D sizeof(struct ieee80211_regdomain) +
+-		((num_rules + 1) * sizeof(struct ieee80211_reg_rule));
++	size_of_regd =3D reglib_array_len(sizeof(struct ieee80211_regdomain),
++					num_rules + 1,
++					sizeof(struct ieee80211_reg_rule));
+=20
+ 	rd =3D malloc(size_of_regd);
+ 	if (!rd)
 diff --git a/reglib.h b/reglib.h
-index 57082fe..7a586a3 100644
+index 86087e3..57082fe 100644
 --- a/reglib.h
 +++ b/reglib.h
-@@ -150,6 +150,16 @@ reglib_get_rd_idx(unsigned int idx, const struct reglib_regdb_ctx *ctx);
- const struct ieee80211_regdomain *
- reglib_get_rd_alpha2(const char *alpha2, const char *file);
- 
-+/**
-+ * reglib_is_valid_rd - validate regulatory domain data structure
-+ *
-+ * @rd: regulatory domain data structure to validate
-+ *
-+ * You can use this to validate regulatory domain data structures
-+ * for possible inconsistencies.
-+ */
-+int reglib_is_valid_rd(const struct ieee80211_regdomain *rd);
-+
- /* reg helpers */
- void reglib_print_regdom(const struct ieee80211_regdomain *rd);
- struct ieee80211_regdomain *
--- 
-1.7.10.4
+@@ -112,8 +112,9 @@ static inline uint32_t reglib_min(uint32_t a, uint32_t =
+b)
+ 	return (a > b) ? b : a;
+ }
+=20
+-void *reglib_get_file_ptr(uint8_t *db, int dblen, int structlen, uint32_t =
+ptr);
+-int reglib_verify_db_signature(uint8_t *db, int dblen, int siglen);
++void *
++reglib_get_file_ptr(uint8_t *db, size_t dblen, size_t structlen, uint32_t =
+ptr);
++int reglib_verify_db_signature(uint8_t *db, size_t dblen, size_t siglen);
+=20
+ /**
+  * reglib_malloc_regdb_ctx - create a regdb context for usage with reglib
 
+
+--=-PKbvDjeS/9WCRqTDGjPi
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQIVAwUAUdDEC+e/yOyVhhEJAQrpsQ/+OJmTeb77TA+qxLHM2qZMDc+7tHMxOIYG
+BQ+9xpAajLcip1kHjQgtMvm5MSH+DEZQk5McnTK86OYCPXdyxQrVA8ok8oeuLBpq
+U2FxUthT1XAM+aXS/RbnLf3ySIKRSeV0O3SFzktgxy8wvR5P6b9KTPgHin5smjVN
+zCEUqxtexsmrtqofGtuxci0OXDlVN5erX5Ne4rqNiT6HzJDG2e6YdhF69Nfus+NQ
+bk3Wtr//YyWgioKyAWLDCiIw3AX5gZZwLdmG+doUG25tcGmqk3/Eryh/cwbnNjmD
+T2IS2q6CNq0kqMxqq55rw1jfix8em9GFlyLi8Dn+WaR2oFJx5vqlz17Oj+3y6Yph
+GEpwwjnk2Oq0DfmTg33ZHrcAr5kNA0QjcTDq0wlZvAKQh58y+qlWL72de1Dl5Dg1
+Cqqy/RqspAaOq4GWF+zHmsylPqtD84+RmmTB+W8Z/V2EqC8+4oOEMrEImB63BQdB
+nGfLlrOMkP6KQBlctalBbJOoGZqydqFvldw8qIP3CytMXWd4RfKo2HjnSMyfQKZB
+PriQH+PdhabtiAofw+d4kc8sPmzk8wtdlu43VzBjpOQUxqB+AYQ7nyzfJnqmbNHn
+FvsD0vN6+Hn1hSB6pa4ipZMNOUl0tGXR5C4g3q3aZsmDKgBNpc6kfXQbs1eboVwm
+odrj2mXBZNA=
+=Czpy
+-----END PGP SIGNATURE-----
+
+--=-PKbvDjeS/9WCRqTDGjPi--
+
+
+--===============2121621616753855357==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============2121621616753855357==--
+
 
