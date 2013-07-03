@@ -1,24 +1,18 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x232.google.com ([2a00:1450:4010:c03::232])
+Received: from canardo.mork.no ([2001:4620:9::1])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UuB6M-0006Rb-Tm
- for wireless-regdb@lists.infradead.org; Wed, 03 Jul 2013 00:39:19 +0000
-Received: by mail-la0-f50.google.com with SMTP id dy20so6153798lab.37 for
- <wireless-regdb@lists.infradead.org>; Tue, 02 Jul 2013 17:38:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:sender:from:date:x-google-sender-auth:message-id
- :subject:to:content-type; bh=ssgwtStS9WGeBhBvJf6skVqHLj8fhHt3dSSArC2pHzI=;
- b=iZQimPMjeItXSMyErTGblf9x5hhenPtFthGJlTIAP5+m6m16Kn/a0H2Uqh3OmQQ1yy
- RnCgN9S5u8YCFSLNUbt433ASQZoULXg54rDk24UCzDD3/3F+8QaKeWGsf7c/bZxoUs5X
- LyszHfaoXZxMJ9aPQ1GaqejuNRJuyzZl4NEF3/SBgYw+Ncv262BR5y4VPCcIzM/D8TLK
- OsBjHjaOZ1bNQreyb4W2BO0Egl6kkC2CvUZmIwxTkRfRsIuO79ov+JO+3wIIgXbfemiy
- 03FtGizMsqnsU3OfejsCi3NbvhhjUQFpMQ+9AajywJ3oFTWKozkLARjpNGhitcx/92+z 97ug==
+ id 1UuItu-0005DW-C8
+ for wireless-regdb@lists.infradead.org; Wed, 03 Jul 2013 08:59:00 +0000
+From: =?utf-8?Q?Bj=C3=B8rn_Mork?= <bjorn@mork.no>
+References: 
+	 <CAB=NE6V_PKG2UBSLPRhziUDcFzFi8uOJNiNzoPNaK0oU7rmZuQ@mail.gmail.com>
+Date: Wed, 03 Jul 2013 10:58:12 +0200
+In-Reply-To: <CAB=NE6V_PKG2UBSLPRhziUDcFzFi8uOJNiNzoPNaK0oU7rmZuQ@mail.gmail.com>
+ (Luis R. Rodriguez's message of "Tue, 2 Jul 2013 17:38:32 -0700")
+Message-ID: <87wqp8uijf.fsf@nemi.mork.no>
 MIME-Version: 1.0
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 2 Jul 2013 17:38:32 -0700
-Message-ID: <CAB=NE6V_PKG2UBSLPRhziUDcFzFi8uOJNiNzoPNaK0oU7rmZuQ@mail.gmail.com>
-Subject: [wireless-regdb] Updates to wireless-regdb review - vendor
+Subject: Re: [wireless-regdb] Updates to wireless-regdb review - vendor
 	namespaces and VHT80
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -29,50 +23,58 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Folks,
+"Luis R. Rodriguez" <mcgrof@do-not-panic.com> writes:
 
-we have 802.11ac and 802.11ad now and I have a few pending patches
-that I'd like to submit but unfortunately the requirements that we
-have discussed for accepting patches do not meet the criteria we have
-set in the community [0] for all the documentation. Additionally
-getting all that documentation has proven quite difficult and at this
-point I do not think we can easily get these upstream without making
-an exception.
+> In the meantime, while that gets developed, I'd still like to supply
+> patches to enable VHT80 for a few countries without hopefully such
+> high bar for documentation as I cannot get this information.
 
-I'd like to propose a middle ground to also address another issue I've
-noticed. Vendors can disagree and in order to give vendors a warm
-fuzzy on ability to ensure their data is interpreted and provide the
-ability to offload down to wireless-regdb even more interpretations
-I'd like to propose the idea of embracing vendor namespaces within
-wireless-regdb / crda / the kernel. The way I'd envision this is
-'/sbin/crda US OUI' is passed upon a regulatory hint and in turn CRDA
-will read the namespace for the OUI passed in regulatory.bin. Then at
-our wireless summit kumbaya and with the development / enhancements of
-intersect.c and union.c (not yet developed) we'd work on generalizing
-the data. This would also allow vendors to supply their own rules
-without the high bar that we are setting which so far has proven very
-difficult to met.
+I believe VHT80 (and VHT160) is allowed by current regulations in a
+large number of countries, and that the current db entries are in fact
+wrong by stating any upper channel width limits at all in the 5 GHz
+bands.
 
-In the meantime, while that gets developed, I'd still like to supply
-patches to enable VHT80 for a few countries without hopefully such
-high bar for documentation as I cannot get this information.
+For example, regulations in most CEPT countries are likely based on
 
-Let me know if this sounds reasonable.
+ "ECC/DEC/(04)08 on the harmonised use of the 5 GHz frequency bands for
+  the implementation of Wireless Access Systems including Radio Local
+  Area Networks (WAS/RLANs)"
 
-[0] http://marc.info/?l=linux-wireless&m=128414096127554&w=2
+or a previous version of that decision.  Which is available here:
+http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC0408.PDF
 
-  Luis
+Quoting:
+
+ "considering
+  ..
+
+  e. that the systems covered by this ECC Decision operate typically in a 20 MHz channel bandwidth, other
+    values for the channel bandwidth are also feasible provided they comply with the relevant maximum mean
+    e.i.r.p. and the corresponding maximum mean e.i.r.p. density limits;
+ "
+
+and the continues deciding the mentioned power and power density limits
+only, without any specific channelization.  This document clearly allows
+and anticipates both wider and narrower channels, and so does most
+likely the national regualations implementing the decision.
+
+The list of CEPT countries implementating this decision is here:
+http://www.erodocdb.dk/doks/implement_doc_adm.aspx?docid=2033
+
+
+
+Bjørn
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
