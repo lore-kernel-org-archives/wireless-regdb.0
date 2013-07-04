@@ -1,15 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ye0-f202.google.com ([209.85.213.202])
+Received: from mail-la0-x232.google.com ([2a00:1450:4010:c03::232])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Uu4L2-0004aE-GP
- for wireless-regdb@lists.infradead.org; Tue, 02 Jul 2013 17:26:01 +0000
-Received: by mail-ye0-f202.google.com with SMTP id r11so484497yen.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 02 Jul 2013 10:25:38 -0700 (PDT)
-From: Paul Stewart <pstew@chromium.org>
-Date: Tue, 2 Jul 2013 10:20:33 -0700
-Message-Id: <20130702172537.DC8F62006D3@clearcreek.mtv.corp.google.com>
-Subject: [wireless-regdb] wireless-regdb: 5GHz rule for Indonesia regdomain
+ id 1UuXKI-0001vK-Sf
+ for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 00:23:12 +0000
+Received: by mail-la0-f50.google.com with SMTP id dy20so693847lab.9 for
+ <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 17:22:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=mime-version:sender:in-reply-to:references:from:date
+ :x-google-sender-auth:message-id:subject:to:cc:content-type;
+ bh=ucz28lbA9hsnyEIUVo7ldkOI7wX6zrqZhe1E5cyWwGU=;
+ b=aDMdn2LZqlEN9hqEe/5HMiGXbYOkFUwF3tYcVnFAiTAk3dOUuB9eCzAKNBxIBE2y2K
+ fDdaIJ8JCPUup5ISAZf7bi4SsCdy4nkFMyazHXB3pZFbSK+24A2O45tufGdoWwfSR3tc
+ nr6yg+Uu1wtkC38FPu1+tTDhzQjMQdarmgJ8t2Jz75syaCmqk7IzjCzdy4WmeKlnBrWX
+ L1WRdqm8bZz2qZzcfYa9wBSgJI3o3j7A4QyxJF8bZZ/do8l7SmSHSn6h9i0VxweVaU3Z
+ lFQkCmsFUadrW06J+ZInQ1sDLq/nEjHXlAJKZSaZPCVHV2b+YG9BzuqgkdGpfio1oIvE 7jGA==
+MIME-Version: 1.0
+In-Reply-To: <20130702172537.DC8F62006D3@clearcreek.mtv.corp.google.com>
+References: <20130702172537.DC8F62006D3@clearcreek.mtv.corp.google.com>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Wed, 3 Jul 2013 17:22:25 -0700
+Message-ID: <CAB=NE6UdCnNzd-_VjdePSgwKUhrJ4XWycT_4Wg0JoUkDncDpAg@mail.gmail.com>
+Subject: Re: [wireless-regdb] wireless-regdb: 5GHz rule for Indonesia
+	regdomain
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -19,38 +32,25 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Paul Stewart <pstew@chromium.org>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Pursuant to
-http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf, provide a 5GHz rule for Indonesian regulatory domain.
----
- db.txt | 2 ++
- 1 file changed, 2 insertions(+)
+On Tue, Jul 2, 2013 at 10:20 AM, Paul Stewart <pstew@chromium.org> wrote:
+> Pursuant to
+> http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf, provide a 5GHz rule for Indonesian regulatory domain.
 
-diff --git a/db.txt b/db.txt
-index c5861b8..2c0dffd 100644
---- a/db.txt
-+++ b/db.txt
-@@ -377,6 +377,8 @@ country HU: DFS-ETSI
- 
- country ID:
- 	(2402 - 2482 @ 40), (N/A, 20)
-+	# ref: http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf
-+	(5735 - 5815 @ 20), (N/A, 20)
- 
- country IE: DFS-ETSI
- 	(2402 - 2482 @ 40), (N/A, 20)
--- 
-1.8.3
+This looks good to me and matches QCA's work on this, but we also can
+enable VHT80. Given that I am working on sending a huge series of
+VHT80 patches I'll roll this into my series and modify your patch to
+add VHT80 as well. Will send out shortly.
 
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
