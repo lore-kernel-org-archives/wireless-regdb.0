@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x233.google.com ([2607:f8b0:400e:c01::233])
+Received: from mail-pa0-x22a.google.com ([2607:f8b0:400e:c03::22a])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UuY2V-00031z-Sb
- for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:08:52 +0000
-Received: by mail-pb0-f51.google.com with SMTP id um15so672149pbc.10 for
- <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:08:30 -0700 (PDT)
+ id 1UuY2a-00032H-Pn
+ for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:08:57 +0000
+Received: by mail-pa0-f42.google.com with SMTP id rl6so779092pac.15 for
+ <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:08:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=m+Px3oDfQWXBET4cJ5wX9usJ3oobJPIo1eZYZ5u0nr4=;
- b=H2Ue1InoQ0arddch5XkdV/N67m4tbndI1suRIvZPAxhuJ5YO6x5/jisNPgBjwGFeTU
- W9belQMY7NPvY/G1/nr5UFCAz0Exhv+GaWgbudGUYnGvuUZ4GCIA/yeTs3mozZmwBll3
- iZF38JyuunPK0H4KvJBGBlESksC7FmM0GTygm3UCRQfHOeESWIcwhRpCtY2lSATplEcT
- Cw8ICi+9cXu8zd3Dcmd1AFZ89BLQeQCWGkpFDMXR/w3j0U3kb3AD6t5o9kw1viA/+2DD
- fIkxleN9VfPatgMXvBeOixkXUut/YmdxRN9XfZnEIzflfi8jpofM4/g6VMX9G0CxVTAm jXHA==
+ :references; bh=jwM5ZJtf+ZzOmU9xOzoNahm4VjI8c1XeEWaNECuYKnM=;
+ b=gLzMBJFR2qe5Z8QZdAIk0xSdC+8uL3U4KgMawU8UETUZYQfg0/OpdbG5jd3i2yqce6
+ PYa6iaAYHMi50XwzSYa5IGhPT7sBIBkPHY/fRMEMjBg7n4mpx7xBFZaD1oChs2BPs12i
+ 3tI0vX8UNMyr/53XQDI7mPLlVKOOUrGQsCuG4w3nZEc/xqpBam62xDADHyD0q+Q+rqq0
+ x6TTdMQOf2pmHaweW998n+ybngpIXTQI64AB0dKWZE3U6tHkNxr/CU7xVCvcg/W2yqtC
+ Me8y1Z3IXKsi07ISiton2IgXWTcpEQb9M3LuO3/q1c/p9Ezik9xjgRczLmJQcQfCbNTL dJ7Q==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed,  3 Jul 2013 18:04:45 -0700
-Message-Id: <1372899889-19183-50-git-send-email-mcgrof@do-not-panic.com>
+Date: Wed,  3 Jul 2013 18:04:46 -0700
+Message-Id: <1372899889-19183-51-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [RFC 49/53] wireless-regdb: TW,
-	Taiwan - enable VHT80
+Subject: [wireless-regdb] [RFC 50/53] wireless-regdb: enable VHT80 when
+	world roaming
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,32 +43,36 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-This enables 80 MHz bandwidth usage and enables a new
-5 GHz band:
+For VHT, the wider bandwidths (up to 160 MHz) need
+to be allowed. Since world roaming only covers the
+case of connecting to an AP, it can be opened up
+there, we will rely on the AP to know the local
+regulations.
 
-  * 5490 - 5710 MHz
+Based on a patch by Johannes Berg for upstream Linux.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |    5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ db.txt |    4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 9765ad8..7b1e6e8 100644
+index 7b1e6e8..767aee3 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -729,8 +729,9 @@ country SY:
+@@ -6,10 +6,10 @@ country 00:
+ 	# Channel 14. Only JP enables this and for 802.11b only
+ 	(2474 - 2494 @ 20), (3, 20), PASSIVE-SCAN, NO-IBSS, NO-OFDM
+ 	# Channel 36 - 48
+-	(5170 - 5250 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
++	(5170 - 5250 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+ 	# NB: 5260 MHz - 5700 MHz requies DFS
+ 	# Channel 149 - 165
+-	(5735 - 5835 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
++	(5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
  
- country TW:
- 	(2402 - 2472 @ 40), (3, 27)
--	(5270 - 5330 @ 40), (3, 17), DFS
--	(5735 - 5815 @ 40), (3, 30)
-+	(5270 - 5330 @ 80), (3, 17), DFS
-+	(5490 - 5710 @ 80), (3, 30), DFS
-+	(5735 - 5815 @ 80), (3, 30)
  
- country TH:
- 	(2402 - 2482 @ 40), (N/A, 20)
+ country AD:
 -- 
 1.7.10.4
 
