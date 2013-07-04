@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x230.google.com ([2607:f8b0:400e:c01::230])
+Received: from mail-pb0-x231.google.com ([2607:f8b0:400e:c01::231])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UuY8Y-0003Np-N0
- for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:15:07 +0000
-Received: by mail-pb0-f48.google.com with SMTP id ma3so667734pbc.35 for
- <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:14:45 -0700 (PDT)
+ id 1UuY2R-00031Q-Mo
+ for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:08:48 +0000
+Received: by mail-pb0-f49.google.com with SMTP id jt11so660945pbb.36 for
+ <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:08:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=JjChRZINOM4fk+vngzXOYn+3eZXVhzuh6JpIqNgAq/I=;
- b=zes0Z1lXnK+kR92rG/cvzi6blmxAH1fDDwP9LyVeSYhi3KaUxDkG/7+tqwN89P6DyM
- lCj9lE5rm4cLsf+nua18Pno68im/o2UCmUsmi8yMVNLpSZC9mVk72CJb+wb+SZu8OQ2E
- tE/5zu2Ryeb5JGe6aPAghhdA2j73+VpV2R4Pm3e6z+pFNI52MkGlUgG28HrbOs4dM09r
- pM52oO3tXf7lr1rVZ48uvB8RDpdDHnmKuEWZJuxcmogwMfFH8m6k1T3R+e1TBnUPMa3p
- /hE887yENsc3nXH28iRycmAeNAj3H1VqbNbo6Af9lq7+J+HN3It0QwHBJ1aLeOpV1PWF XL8A==
+ :references; bh=Fsq38ITuySb/GbHi2RDdxXA6fzAS2opBSWI0coUwBkE=;
+ b=UEagrL/3mSwDkGqu1X7Lw/KlYi/kN6M3sjYLmiD87vE0iaEC0ZZCNqBRQRbk26fk4H
+ VgbsHCPI2u3wNMvcTyuB3Rz9jZlNCjvXLJfXU0qIkIA7V2YIDtNyYxNqLx/TBT8kcoA2
+ Qp/TUQxYoKS+uOpPRL5s2Kr3ZPx8TV2OkH7BoRJtAMIiMBR3gXwoqedM0LtjfuhYXUOx
+ 5fwQCG4/I6gYNMOeaQoxUejLK9V0DfECB++6oMWSFd2TqpAMUqyu5u/kfJAcejpXOoaR
+ w2H5YxZFHQm9UTqCfcO8UAb6XEHnIdRknbyW4k+ac4MvmXUfIZhOcP6KcD3iuH3Bq4as LR8g==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed,  3 Jul 2013 18:04:43 -0700
-Message-Id: <1372899889-19183-48-git-send-email-mcgrof@do-not-panic.com>
+Date: Wed,  3 Jul 2013 18:04:44 -0700
+Message-Id: <1372899889-19183-49-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [RFC 47/53] wireless-regdb: enable HT40 in RU -
-	Russian Federation
+Subject: [wireless-regdb] [RFC 48/53] wireless-regdb: KR,
+	Republic of Korea - enable VHT80
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,46 +43,31 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-As per QCA the Russian Federation (RU) enables
-HT40 on the 5 GHz band as follows. This has been
-verified by actual product submission and product
-certification.
-
-Band [MHz]              Max BW [MHz]    Max gain        Max EIRP [dBm (mW)]
-5170-5330               40              N/A             20.00 (100.00)
-5650-5710               40              N/A             30.00 (1000.00)
-5735.000 - 5835.000     40              N/A             30.00 (1000.00)
-
-Prior to this we didn't have HT40 allowed on RU at all.
-This patch changes this and splits the 5 GHz band into
-two segments which allow two different max EIRP values.
-
-Exact details on the 5 GHz QCA work for Russia you can
-refer to this PDF:
-
-http://lists.infradead.org/pipermail/wireless-regdb/attachments/20130125/29d3fa1f/attachment-0001.pdf
-
-Originally submitted to the list by Michael Green.
+This enables 80 MHz bandwidth usage for 5 GHz.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |    4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ db.txt |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index aa41626..330ccb2 100644
+index 330ccb2..9765ad8 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -672,7 +672,9 @@ country RS:
+@@ -462,10 +462,10 @@ country KP:
  
- country RU:
- 	(2402 - 2482 @ 40), (N/A, 20)
--	(5735 - 5835 @ 20), (N/A, 30)
-+	(5170 - 5330 @ 40), (N/A, 20)
-+	(5650 - 5710 @ 40), (N/A, 30)
-+	(5735 - 5835 @ 40), (N/A, 30)
+ country KR:
+ 	(2402 - 2482 @ 20), (N/A, 20)
+-	(5170 - 5250 @ 20), (3, 20)
+-	(5250 - 5330 @ 20), (3, 20), DFS
+-	(5490 - 5630 @ 20), (3, 30), DFS
+-	(5735 - 5815 @ 20), (3, 30)
++	(5170 - 5250 @ 80), (3, 20)
++	(5250 - 5330 @ 80), (3, 20), DFS
++	(5490 - 5630 @ 80), (3, 30), DFS
++	(5735 - 5815 @ 80), (3, 30)
  
- country RW:
+ country KW:
  	(2402 - 2482 @ 40), (N/A, 20)
 -- 
 1.7.10.4
