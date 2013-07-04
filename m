@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x236.google.com ([2607:f8b0:400e:c01::236])
+Received: from mail-pb0-x22f.google.com ([2607:f8b0:400e:c01::22f])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UuY1y-0002xe-HB
- for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:08:19 +0000
-Received: by mail-pb0-f54.google.com with SMTP id ro2so670520pbb.27 for
- <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:07:55 -0700 (PDT)
+ id 1UuY20-0002y6-PR
+ for wireless-regdb@lists.infradead.org; Thu, 04 Jul 2013 01:08:22 +0000
+Received: by mail-pb0-f47.google.com with SMTP id rr13so666924pbb.34 for
+ <wireless-regdb@lists.infradead.org>; Wed, 03 Jul 2013 18:07:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=McXuVXYuo5+wTF45286B+bs3VjKnxz0aATS3Hangdck=;
- b=qOhPi/QhJKf9dCqKfeiRfuY4jZXHcOEO/+12Sg8vdqSBHxKl9nY4zw3gRpuI3b8K6I
- imVOZEUquomo8xSd8TNl7UDeQMdyWgbVsucgIWO5+72xce9yWoh6g3vbdigtzyI0x9zS
- AzUQ5jFuA5Dcg2o0uRNicYJReMprwba1d+rKaaxTFInnmNBqTv263wuCRCTCWGVOqstD
- nWMvkMyn3gQZojInAo68o/P8Hzd+L5EZp3tY8JyMQIwsIQz1Aw5esZhTPcfNfiF4Qdjq
- PNO7JWsaDYkpi4Wvw31g/Grk7UJq/Ifqs7ZrL7NKvcz4dTaUsJxygyo48AvXNpRWs/Wd YH+w==
+ :references; bh=ImJhIQaKAJWiRlTr4BTXS8mEQlNqlKGLSoyv78K2iw0=;
+ b=PbXx4j05yIhTwRa6iVPtZtLv4I1OrlC7oXxN1q8O4gllNkTnfp+1CGoKCLGt3MXWTv
+ FBfBwCWYXdCSrljTrM8VExAJqjSlQ+44YV7zRdAm45iXZR0sfbVeJ05dvJwlZOM9GYCA
+ qGx+xp3ubF99jD7XW0WCaJpG1V2YeEKvhPqXUCu5gr0UH9ZOqKQw8R0w868ftTdzry8F
+ OAZNfhdyRFwUyMLnqFhCsBcPm73XWmtfvYOrtCNMXnC/o4nH6fh66semPYchmuCv80Bx
+ VNi5/TP2i8/jQQUZ2ykspwoR6UzmJb99beYe1nBM3k1wkQ89G1jnfYYXWtyjV1eSX8P1 yA4g==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed,  3 Jul 2013 18:04:37 -0700
-Message-Id: <1372899889-19183-42-git-send-email-mcgrof@do-not-panic.com>
+Date: Wed,  3 Jul 2013 18:04:38 -0700
+Message-Id: <1372899889-19183-43-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [RFC 41/53] wireless-regdb: US,
-	United States - enable VHT80
+Subject: [wireless-regdb] [RFC 42/53] wireless-regdb: ID,
+	Indonesia - enable 5 GHz and VHT80
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,36 +43,34 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-This enables 80 MHz bandwidth support on the US 5 GHz
-frequencies. This also updates the 5 GHz bands with higher
-max EIRP.
+Pursuant to:
+
+http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf,
+
+provide a 5GHz rule for Indonesian regulatory domain. QCA has
+also verified VHT80 can be enabled. Patch originally posted by
+Paul Stewart <pstew@chromium.org>, I just modified to enable 80 MHz
+bandwidth.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |   10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ db.txt |    2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 63ee9b4..0ebb934 100644
+index 0ebb934..a101b1e 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -767,11 +767,11 @@ country UA:
+@@ -380,7 +380,9 @@ country HU: DFS-ETSI
+ 	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
  
- country US: DFS-FCC
- 	(2402 - 2472 @ 40), (3, 27)
--	(5170 - 5250 @ 40), (3, 17)
--	(5250 - 5330 @ 40), (3, 20), DFS
--	(5490 - 5600 @ 40), (3, 20), DFS
--	(5650 - 5710 @ 40), (3, 20), DFS
--	(5735 - 5835 @ 40), (3, 30)
-+	(5170 - 5250 @ 80), (3, 17)
-+	(5250 - 5330 @ 80), (3, 24), DFS
-+	(5490 - 5600 @ 80), (3, 24), DFS
-+	(5650 - 5710 @ 80), (3, 24), DFS
-+	(5735 - 5835 @ 80), (3, 30)
- 	# 60g band
- 	# reference: http://cfr.regstoday.com/47cfr15.aspx#47_CFR_15p255
- 	# channels 1,2,3, EIRP=40dBm(43dBm peak)
+ country ID:
++	# ref: http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf
+ 	(2402 - 2482 @ 40), (N/A, 20)
++	(5735 - 5815 @ 20), (N/A, 20)
+ 
+ country IE: DFS-ETSI
+ 	(2402 - 2482 @ 40), (N/A, 20)
 -- 
 1.7.10.4
 
