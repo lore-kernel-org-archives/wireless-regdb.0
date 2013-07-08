@@ -1,29 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x231.google.com ([2a00:1450:4010:c03::231])
+Received: from mail-la0-x233.google.com ([2a00:1450:4010:c03::233])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UwHvf-0007rX-H9
- for wireless-regdb@lists.infradead.org; Mon, 08 Jul 2013 20:21:01 +0000
-Received: by mail-la0-f49.google.com with SMTP id ea20so4095701lab.22 for
- <wireless-regdb@lists.infradead.org>; Mon, 08 Jul 2013 13:20:36 -0700 (PDT)
+ id 1UwHz2-000801-RX
+ for wireless-regdb@lists.infradead.org; Mon, 08 Jul 2013 20:24:29 +0000
+Received: by mail-la0-f51.google.com with SMTP id fq12so4142861lab.38 for
+ <wireless-regdb@lists.infradead.org>; Mon, 08 Jul 2013 13:24:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=mime-version:sender:in-reply-to:references:from:date
  :x-google-sender-auth:message-id:subject:to:cc:content-type;
- bh=XZtwwah5KQrPnLMFQ6t2pH0PNnLnzT9aA+jVFUzsXX0=;
- b=uXF+t1k8XQdUR8sLsT5QONTTw/93xZR0z7bY1udqy8V2d5ObEUBxDGLGInLxXEskl+
- u2DSMyJvC1heq4JiwatNHRp2lVuOQ4SXYREtvz4N+jCRE4rsnXEGe6CUM7Vl9JPi2zmb
- u6IQF01oZFQT4b8fDB0D0nAyvz4tqTcnigyJCcVeZfqyjzRVVhWnJK/51NkX0KYkeLK0
- AsG3Jg2Hmbrbtvejr5q0NzbDf97wOxIg+CwMGE7A1Xmg3WBFF+R5jetqfkvgsPUd9SY1
- nxQphIpqZfaDzPEnf37DB0TqEjyVcPuYwiXY00/WfCb5cxixYSH3nsjVylCWEnM/XxJr a/9Q==
+ bh=cWlOeja/1q0NK6R7gZkLzMJBAxmbP8DkXejHWaPtDLI=;
+ b=QEYYhkDbe/EQW7ckvnKsGaytjYwF6o1aM2BCVlOZOjIWMuaALSAJeRTieD2zs3npq4
+ JqfOn7OFDfmIyrzzGp9MWOOYlGfjI3JUkoDUiae188DTAzndL8lerNHFtfRhgscf1Hpd
+ uMLVdPKrsEn3HZOdnCpx8OQ4eNoXhORgfIcSqoxU5jwgFzZXH/KhZL5FHR90DINDKod8
+ L0ufh/kPfBZBFEGlW9domS9oz88rvl+GB9ymLgzH3WxJoQI3eikDV298i4iScmqRT7Yz
+ umFRBm+1nK8X/iMD+GpV4kzEx/IsTQanSISkHHuqSpLxJcZZwaBPQnYSaPaeltrBGfO9 g14g==
 MIME-Version: 1.0
-In-Reply-To: <CABPxzYLD3xp9vyTA42PsCdNo1qAm4+X4OrqFTN70-aGvO52FeQ@mail.gmail.com>
+In-Reply-To: <CAMcMvsiQb=byYEV4z2aZUYCLjRmqJUm_SQrUrOPUXrrfkcjeLA@mail.gmail.com>
 References: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
  <1372899889-19183-43-git-send-email-mcgrof@do-not-panic.com>
- <51D5BD9D.5020604@broadcom.com>
- <CABPxzYLD3xp9vyTA42PsCdNo1qAm4+X4OrqFTN70-aGvO52FeQ@mail.gmail.com>
+ <CAMcMvsiQb=byYEV4z2aZUYCLjRmqJUm_SQrUrOPUXrrfkcjeLA@mail.gmail.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Mon, 8 Jul 2013 13:20:16 -0700
-Message-ID: <CAB=NE6UvN25jbyVgGzbfdniJY9chxhr1FRDyF89Y+AEGyDBnkg@mail.gmail.com>
+Date: Mon, 8 Jul 2013 13:23:45 -0700
+Message-ID: <CAB=NE6XFY1po10NZOCqTAbBWT6kvpmS67pRnj9CDtBUQTt_Pqw@mail.gmail.com>
 Subject: Re: [wireless-regdb] [RFC 42/53] wireless-regdb: ID,
 	Indonesia - enable 5 GHz and VHT80
 List-Unsubscribe: 
@@ -40,38 +39,35 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Cc: Arend van Spriel <arend@broadcom.com>, linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
+To: Paul Stewart <pstew@chromium.org>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, John Linville <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 4, 2013 at 12:29 PM, Krishna Chaitanya
-<chaitanya.mgit@gmail.com> wrote:
-> On Thu, Jul 4, 2013 at 11:53 PM, Arend van Spriel <arend@broadcom.com> wrote:
+On Thu, Jul 4, 2013 at 10:51 AM, Paul Stewart <pstew@chromium.org> wrote:
+> On Wed, Jul 3, 2013 at 6:04 PM, Luis R. Rodriguez
+> <mcgrof@do-not-panic.com> wrote:
 >>
->> On 07/04/2013 03:04 AM, Luis R. Rodriguez wrote:
->>>
->>> From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
->>>
->>> Pursuant to:
->>>
->>> http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf,
->>>
->>> provide a 5GHz rule for Indonesian regulatory domain. QCA has
->>> also verified VHT80 can be enabled. Patch originally posted by
->>> Paul Stewart <pstew@chromium.org>, I just modified to enable 80 MHz
->>> bandwidth.
+>> From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 >>
+>> Pursuant to:
 >>
->> Hi Luis,
+>> http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf,
 >>
->> Is it just me or did you make a typo. Should '@ 20' be '@ 80' ?
+>> provide a 5GHz rule for Indonesian regulatory domain. QCA has
+>> also verified VHT80 can be enabled. Patch originally posted by
+>> Paul Stewart <pstew@chromium.org>, I just modified to enable 80 MHz
+>> bandwidth.
+>>
+>> Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+> Signed-off-by: Paul Stewart <pstew@chromium.org>
 
-Indeed, typo, I'll fix in my next iteration!
+Given I've been promoting the idea of taking the Linux kernel DCO and
+making it a standalone project [0] it is critical for me to promote
+proper usage of the Signed-off-by tag. In this case it is not
+required, and a more appropriate tag is either Acked-by or
+Reviewed-by. I'll add Acked-by for you and respin, thanks!
 
-> But as per the document shared above the maximum BW allowed is 20MHz only, no?
-> So is the VHT80 tested by QCA compliant to the reg rules?
-
-Yes it is.
+[0] https://docs.google.com/presentation/d/1J4VTSTuiJ88xcvOrYg7HRvwUoxOW9qvnBqOfoPPuc64/edit
 
   Luis
 
