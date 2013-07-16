@@ -1,27 +1,30 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x233.google.com ([2a00:1450:4010:c03::233])
+Received: from mail-wi0-f172.google.com ([209.85.212.172])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UwJYy-00017y-5P
- for wireless-regdb@lists.infradead.org; Mon, 08 Jul 2013 22:05:41 +0000
-Received: by mail-la0-f51.google.com with SMTP id fq12so4263493lab.10 for
- <wireless-regdb@lists.infradead.org>; Mon, 08 Jul 2013 15:05:16 -0700 (PDT)
+ id 1UzCKB-0000FR-30
+ for wireless-regdb@lists.infradead.org; Tue, 16 Jul 2013 20:58:20 +0000
+Received: by mail-wi0-f172.google.com with SMTP id c10so4633351wiw.17 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 13:57:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=mime-version:sender:in-reply-to:references:from:date
- :x-google-sender-auth:message-id:subject:to:cc:content-type;
- bh=EYrQm5NrpShMQ+ShaFiRFP16WjkkFbSKNMfQ9QU/EYI=;
- b=M7vUaEay3aONiMMK3zHu7yD28c9Gqvvs7UwpatWFb3dtpkADKAKXGtJMC65oGEUPSV
- rLe+Bnl+EvWyqa9HNIus1HBGa+2vL8NbaKVGKhHL8oywH01IyyNiyQML3GVteq7C8QTw
- jJadrYYWSR9iimF520FwrOj9Uv1IIl8l8IkDpz1lLWBf6DOdvpuMH7l5j27rvixatf9X
- xSZbjUwyIUX4U2zVDvIbYSOUiMFZbOXu3lKqB9zrfvoGSXHxidxj8KtaZVTA28wdCCPr
- lfYJ8VQkGSHif6rsW5kmPiuOn5PRBy/wCDbswtbn00mjaGTgUQixTFGixR2su05P4tz9 yVow==
+ :x-google-sender-auth:message-id:subject:to:cc:content-type
+ :content-transfer-encoding;
+ bh=fggRwI4JdATqK3Se47PAE6YniyBhEFzM1ZNniTfU2kg=;
+ b=HZzMAgzux9prr3O2DHvqREk0Yo7Ie+45jsLk9TQepkAZhxgVn+8YNU6BRrBg7xzipO
+ w3P+PEUyzhusBS7h5WH0it1YelBLrYo4fKdRH6rDdrTE1+yvZVwn0qssWm1RvHcAgIwt
+ EDf5LBFByGhgh9i03vRn8YDWKr5JXBiRse895bltTEsmDohXVPIcCBz7FXK/X9+7t8MT
+ 6kmqQ8H7tIGCQNQgxFd4Ax1u550hxckVyqs6RBBg2jJL0y9yuRYU3nzcWTv5dqLW6ytU
+ azLeWDRfImnw+Ydta3hRvo7j5TggrO6jb3SfJeEHPvhRwT7+7UatsCZ311mVG3Y5StGM +RTw==
 MIME-Version: 1.0
-In-Reply-To: <1372768095-26053-4-git-send-email-ilan.peer@intel.com>
+In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A01AD2DFC5@HASMSX106.ger.corp.intel.com>
 References: <1372768095-26053-1-git-send-email-ilan.peer@intel.com>
  <1372768095-26053-4-git-send-email-ilan.peer@intel.com>
+ <CAB=NE6VQXQPRK9_Q-Nh+ripRa+PdCd=4_EZvPxeghBjc32ejyQ@mail.gmail.com>
+ <CB3B3D4774441E42AA3EA0E1BA8230A01AD2DFC5@HASMSX106.ger.corp.intel.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Mon, 8 Jul 2013 15:04:56 -0700
-Message-ID: <CAB=NE6VQXQPRK9_Q-Nh+ripRa+PdCd=4_EZvPxeghBjc32ejyQ@mail.gmail.com>
+Date: Tue, 16 Jul 2013 13:57:34 -0700
+Message-ID: <CAB=NE6WY43BYDehH5-MyF0GQORC1dTrNToUsRVC-Q5bDwcna3A@mail.gmail.com>
 Subject: Re: [wireless-regdb] [PATCH 3/3] [RFC] cfg80211: Enable GO
 	operation on additional channels
 List-Unsubscribe: 
@@ -38,244 +41,79 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Ilan Peer <ilan.peer@intel.com>
-Cc: Jouni Malinen <j@w1.fi>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, David Spinadel <david.spinadel@intel.com>
+To: "Peer, Ilan" <ilan.peer@intel.com>
+Cc: "Shalev, Oz" <oz.shalev@intel.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Jouni Malinen <j@w1.fi>, linux-wireless <linux-wireless@vger.kernel.org>, "Ginsburg, Noam" <noam.ginsburg@intel.com>, "Perelmooter,
+ Liraz" <liraz.perelmooter@intel.com>, "Spinadel,
+ David" <david.spinadel@intel.com>, Michael Green <green@qca.qualcomm.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Jul 2, 2013 at 5:28 AM, Ilan Peer <ilan.peer@intel.com> wrote:
-> From: David Spinadel <david.spinadel@intel.com>
+On Wed, Jul 10, 2013 at 3:47 AM, Peer, Ilan <ilan.peer@intel.com> wrote:
+>> Are you aware of UNII-1, UNII-2, UNII-2E, UNII-3 are specific world regulatory
+>> language bands? When I last tried to look for a clear definition I could not find
+>> a clear definition of them and its why on the ath module on for QCA modules I
+>> state "we call these" in reference to the UNII nomenclature. If we can get a
+>> clear resource for its definition that would help here.
+>>
 >
-> Allow GO operation on a channel marked with
-> IEEE80211_CHAN_INDOOR_ONLY or IEEE80211_CHAN_GO_CONCURRENT
-> iff there is an active station interface that is associated to
-> an AP operating on this channel.
+> Maybe these link will help.
+> http://www.gpo.gov/fdsys/pkg/CFR-2010-title47-vol1/xml/CFR-2010-title47-vol1-part15.xml#seqnum15.403
+> http://hraunfoss.fcc.gov/edocs_public/attachmatch/FCC-13-22A1.pdf
 >
-> Note that this is a permissive approach to the FCC definitions,
-> that require a clear assessment that either the platform device
-> is an indoor device, or the device operating the AP is an indoor
-> device, i.e., AC powered.
-> It is assumed that these restrictions are enforced by user space.
-> Furthermore, it is assumed, that if the conditions that allowed for
-> the operation of the GO on such a channel change, it is the
-> responsibility of user space to evacuate the GO from the channel.
+> Anyway, I will use your ''we call these" notation as well :)
 
-In the context of strict regulatory data we currently do not
-differentiate specifically between a device that can initiate
-radiation between AP and Group Owner (GO) but in your earlier patches
-you proposed a way to do that. I reviewed feedback on that patch
-there. It may make sense however to define clearly what you mean by
-why the flag is being introduced by documenting the use case, ie what
-you describe here. Other regulatory bodies may follow and it helps to
-provide context here.
+No no, this is good, its just United States / FCC biased and I hadn't
+seen the documentation you provided before. This confirms these are
+official terms but still just US / FCC biased. My point was that we
+should be careful to not make global statements on regulatory code
+about things that are not global. If we know only the FCC calls this
+UNII well lets document that and provide the reference you supplied. I
+anticipated having to deal with special case regulatory code outside
+of of what CRDA / wireless-regdb provides -- given that CRDA /
+wireless-regdb were meant to be more RF agnostic anyway.
 
-My review below.
+Given that other vendors may also want to get the UNII band can you
+stuff instead cfg80211_get_unii_band() into reg.c and do the #ifdef
+properly with the Kconfig, and export it as well, as well as document
+it properly providing the reference you mentioned.
 
-> Signed-off-by: David Spinadel <david.spinadel@intel.com>
-> Signed-off-by: Ilan Peer <ilan.peer@intel.com>
-> ---
->  include/net/cfg80211.h |    4 +-
->  net/mac80211/ibss.c    |    2 +-
->  net/wireless/Kconfig   |   10 +++++
->  net/wireless/chan.c    |   98 ++++++++++++++++++++++++++++++++++++++++++++----
->  net/wireless/mesh.c    |    2 +-
->  net/wireless/nl80211.c |    8 ++--
->  net/wireless/trace.h   |   11 ++++--
->  7 files changed, 118 insertions(+), 17 deletions(-)
+>> > + * 1. Indoor only: a GO can be operational on such a channel, iff there is
+>> > + *    clear assessment that the platform device is indoor.
+>> > + * 2. Concurrent GO: a GO can be operational on such a channel, iff there is
+>> an
+>> > + *    additional station interface connected to an AP on this channel.
+>> > + *
+>> > + * TODO: The function is too permissive, as it does not verify the
+>> > + platform
+>> > + * device type is indeed indoor, or that the AP is indoor/AC powered.
+>>
+>> So to do this properly we need an eventual userspace API to throw to
+>> kernelspace if we are AC powered? We'll need this to enhance this routine
+>> here?
+>>
 >
-> diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-> index f0badeb..17d693d 100644
-> --- a/include/net/cfg80211.h
-> +++ b/include/net/cfg80211.h
-> @@ -4070,12 +4070,14 @@ void cfg80211_report_obss_beacon(struct wiphy *wiphy,
->   * cfg80211_reg_can_beacon - check if beaconing is allowed
->   * @wiphy: the wiphy
->   * @chandef: the channel definition
-> + * @p2p_go: if the interface type is a P2P GO
->   *
->   * Return: %true if there is no secondary channel or the secondary channel(s)
->   * can be used for beaconing (i.e. is not a radar channel etc.)
->   */
->  bool cfg80211_reg_can_beacon(struct wiphy *wiphy,
-> -                            struct cfg80211_chan_def *chandef);
-> +                            struct cfg80211_chan_def *chandef,
-> +                            bool p2p_go);
+> Not sure about this point. I prefer leaving the exact knowledge of the device type, being AC Powered or not (and which type of AC power) etc. out side of the kernel. The approach I chose with this patch was to only allow to start a GO on such a channel, making the basic verification done above, assuming that the user space component guarantees that all the full restrictions are satisfied.
+
+Fair enough. Seems we just need to zero in now on the requirement or
+not on the extra flag you suggested.
+
+>> In the meantime, while you get all your patch sets properly developed I'd
+>> recommend to define the code returning false there strictly or perhaps for any
+>> flag on the channel requiring DFS / no-ibss, or passive scan. The stricter case,
+>> defining false always, seems to be what you are suggesting here.
 >
->  /*
->   * cfg80211_ch_switch_notify - update wdev channel and notify userspace
-> diff --git a/net/mac80211/ibss.c b/net/mac80211/ibss.c
-> index ea7b9c2..1e0fac1 100644
-> --- a/net/mac80211/ibss.c
-> +++ b/net/mac80211/ibss.c
-> @@ -82,7 +82,7 @@ static void __ieee80211_sta_join_ibss(struct ieee80211_sub_if_data *sdata,
->         sdata->drop_unencrypted = capability & WLAN_CAPABILITY_PRIVACY ? 1 : 0;
+> I do not think that this is needed here. Returning false, means that the code should test if the PASSIVE_SCAN and NO_IBSS are not set on the channel we want to start beaconing on.
 >
->         chandef = ifibss->chandef;
-> -       if (!cfg80211_reg_can_beacon(local->hw.wiphy, &chandef)) {
-> +       if (!cfg80211_reg_can_beacon(local->hw.wiphy, &chandef, false)) {
->                 chandef.width = NL80211_CHAN_WIDTH_20;
->                 chandef.center_freq1 = chan->center_freq;
->         }
-> diff --git a/net/wireless/Kconfig b/net/wireless/Kconfig
-> index de76078..d9e2be7 100644
-> --- a/net/wireless/Kconfig
-> +++ b/net/wireless/Kconfig
-> @@ -102,6 +102,16 @@ config CFG80211_REG_CELLULAR_HINTS
->           This option adds support for drivers that can receive regulatory
->           hints from cellular base stations
+>> Do you have a white list that can exclude some channels for now globally or
+>> somehow as all this lines up?
+>>
 >
-> +config CFG80211_REG_SOFT_CONFIGURATIONS
-> +       bool "cfg80211 support for GO operation on additional channels"
-> +       depends on CFG80211 && CFG80211_CERTIFICATION_ONUS
-> +       ---help---
-> +         This option enables the operation of a P2P Group Owner on
-> +         additional channels, if there is a clear assessment that
-> +         the platform device operates in an indoor environment or
-> +         in case that there is an additional BSS interface which is
-> +         connected to an AP which is an indoor device.
-> +
+> Note sure I understood what you are looking for. Can you please clarify this point?
 
-I like this approach, indeed this is great work and reflects usage of
-the onus kconfig option appropriately in this case due dilligence
-required more in part on userspace / other components for full
-regulatory compliance.
-
->  config CFG80211_DEFAULT_PS
->         bool "enable powersave by default"
->         depends on CFG80211
-> diff --git a/net/wireless/chan.c b/net/wireless/chan.c
-> index 50f6195..92d9e3c 100644
-> --- a/net/wireless/chan.c
-> +++ b/net/wireless/chan.c
-> @@ -457,18 +457,102 @@ bool cfg80211_chandef_usable(struct wiphy *wiphy,
->  }
->  EXPORT_SYMBOL(cfg80211_chandef_usable);
->
-> +#ifdef CPTCFG_CFG80211_REG_SOFT_CONFIGURATIONS
-> +static int cfg80211_get_unii_band(int freq)
-> +{
-> +       /* UNII-1 */
-> +       if (freq >= 5150 && freq <= 5250)
-> +               return 0;
-> +
-> +       /* UNII-2 */
-> +       if (freq > 5250 && freq <= 5350)
-> +               return 1;
-> +
-> +       /* UNII-2E */
-> +       if (freq >= 5470 && freq <= 5725)
-> +               return 2;
-> +
-> +       /* UNII-3 */
-> +       if (freq > 5725 && freq <= 5825)
-> +               return 3;
-> +
-> +       WARN_ON(1);
-> +       return -EINVAL;
-> +}
-> +#endif
-
-#else?
-
-Are you aware of UNII-1, UNII-2, UNII-2E, UNII-3 are specific world
-regulatory language bands? When I last tried to look for a clear
-definition I could not find a clear definition of them and its why on
-the ath module on for QCA modules I state "we call these" in reference
-to the UNII nomenclature. If we can get a clear resource for its
-definition that would help here.
-
-> +
-> +/* For GO only, check if the channel can be used under permissive conditions
-> + * mandated by the FCC, i.e., the channel is marked as:
-
-Ah -- note - FCC, you are making an FCC specific rule global, that
-doesn't seems right. The implementation should reflect that *some*
-regulatory bodies are implicating software requirements for GO
-operation and in that case this tries to implement such known current
-interpretations.
-
-Hope is that regulatory bodies will stick to this singular
-interpretation / preference when required.
-
-So my point: your code treats this appropriately as agnostic to the
-regulatory body but your comments do not, just modify the comments
-more to make it more agnostic.
-
-> + * 1. Indoor only: a GO can be operational on such a channel, iff there is
-> + *    clear assessment that the platform device is indoor.
-> + * 2. Concurrent GO: a GO can be operational on such a channel, iff there is an
-> + *    additional station interface connected to an AP on this channel.
-> + *
-> + * TODO: The function is too permissive, as it does not verify the platform
-> + * device type is indeed indoor, or that the AP is indoor/AC powered.
-
-So to do this properly we need an eventual userspace API to throw to
-kernelspace if we are AC powered? We'll need this to enhance this
-routine here?
-
-> + */
-> +static bool cfg80211_can_go_use_chan(struct cfg80211_registered_device *rdev,
-> +                                    struct ieee80211_channel *chan)
-> +{
-> +#ifdef CPTCFG_CFG80211_REG_SOFT_CONFIGURATIONS
-> +       struct wireless_dev *wdev_iter;
-> +
-> +       ASSERT_RTNL();
-> +
-> +       if (!(chan->flags & (IEEE80211_CHAN_INDOOR_ONLY |
-> +                            IEEE80211_CHAN_GO_CONCURRENT)))
-> +               return false;
-> +
-> +       if (chan->band == IEEE80211_BAND_60GHZ)
-> +               return false;
-> +
-> +       list_for_each_entry(wdev_iter, &rdev->wdev_list, list) {
-> +               struct ieee80211_channel *other_chan = NULL;
-> +
-> +               if (wdev_iter->iftype != NL80211_IFTYPE_STATION ||
-> +                   (!netif_running(wdev_iter->netdev)))
-> +                               continue;
-> +
-> +
-> +               wdev_lock(wdev_iter);
-> +               if (wdev_iter->current_bss)
-> +                       other_chan = wdev_iter->current_bss->pub.channel;
-> +               wdev_unlock(wdev_iter);
-> +
-> +               if (!other_chan)
-> +                       continue;
-> +
-> +               if (chan == other_chan)
-> +                       return true;
-> +               else if ((chan->band == IEEE80211_BAND_5GHZ) &&
-> +                        (cfg80211_get_unii_band(chan->center_freq) ==
-> +                         cfg80211_get_unii_band(other_chan->center_freq)))
-> +                       return true;
-> +       }
-> +#endif
-> +       return false;
-> +}
-
-Please wrap code as follows:
-
-#ifdef FOO
-static int foo(void)
-{
-  return true;
-}
-#else
-static int foo(void)
-  return false;
-}
-#endif
-
-In the meantime, while you get all your patch sets properly developed
-I'd recommend to define the code returning false there strictly or
-perhaps for any flag on the channel requiring DFS / no-ibss, or
-passive scan. The stricter case, defining false always, seems to be
-what you are suggesting here.
-
-Do you have a white list that can exclude some channels for now
-globally or somehow as all this lines up?
+It was unclear for what exact channels you needed to deal with here.
+Given review so far wouldn't it just be DFS flagged channels on some
+UNII bands ? Then again if the indoor flag needs to be pegged to to a
+specific UNII band and we can do that on wireless-regdb do we even
+need the UNII band check routine helper?
 
   Luis
 
