@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-x234.google.com ([2607:f8b0:400e:c02::234])
+Received: from mail-pb0-x22e.google.com ([2607:f8b0:400e:c01::22e])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UzHOk-0006Lf-Sf
- for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:23:23 +0000
-Received: by mail-pd0-f180.google.com with SMTP id 10so1290387pdi.39 for
- <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:23:01 -0700 (PDT)
+ id 1UzHOq-0006MB-EA
+ for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:23:28 +0000
+Received: by mail-pb0-f46.google.com with SMTP id rq2so1357400pbb.33 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:23:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=7FxQRUQBLGoR95rGFgmOz8WqmQOFS6W4G4QJ/T72X34=;
- b=bAM9j+v+/Nkkyh4/qVjzii+6q5GXGsQB3AT/BLL2r6f1u+oj3IrOnCNxWgtgQl0heg
- HKtlRQ+jKRbaOGIW2x0xyRgwdzxPQo9WxTn9OwGWnHkyBx2yO0mc/j6BXgUIWb0TY0lF
- x2/zE6z60udQDRKPkI78uZzgCs5isGvZzWdqCXEyRPs7IvODNrfFPuFY1kIl0Ppe9s6o
- IsoJhSvcu1JwJtSF7sZNF1b3/Cgj2kxLozOBSiTjlE0XcYix83t0dF7DGzbskEcZ9o47
- hXLAXp8UyehZC33+mCW+TTNNid/l5pqsseRl9PRxaVs6AC83UI6Te8YERCzTg7iZ5PEX gVqg==
+ :references; bh=/co76qk3C40F8Ox4f4ChdQsDq/Tsm++0vMHixWgsRpw=;
+ b=lIb6AAtxDd8YaOuDo3QwE3wwUCTuJtRYzz+p3m2vbuT0Op1waez0VK9KK+R0S7+FxO
+ l9bVUFL+Qyr/b4r1Wvt3Lcql65KUfZ2IQQLjGhyx5+4GgmEH5i6l07ZLqqvjoRmugO5H
+ GE/b0C2RCl9ha+IcRLaMi9eEgLzPmzMy1I67qOcFHX9pG1UhRERwrFzuYpIXC7QNkKvf
+ /nqxspw86o1t03l5VdPAP6JR9HwYCXrKTX+WiE93LRQLZbB5D0HPxEXImWoR230rr/ZO
+ X5bxZcoqpkMr6/aI5+sxHJTm+SO9maLiRwctaX2XSbzqfmO6trNAb2N1xDQnsHSvdCV9 g2ZQ==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 16 Jul 2013 19:18:39 -0700
-Message-Id: <1374027522-18488-51-git-send-email-mcgrof@do-not-panic.com>
+Date: Tue, 16 Jul 2013 19:18:40 -0700
+Message-Id: <1374027522-18488-52-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 50/53] wireless-regdb: enable VHT80 when
-	world roaming
+Subject: [wireless-regdb] [PATCH 51/53] wireless-regdb: add 802.11ad 60 GHz
+	channels 1..3 to world regdom
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,33 +43,24 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-For VHT, the wider bandwidths (up to 160 MHz) need
-to be allowed. Since world roaming only covers the
-case of connecting to an AP, it can be opened up
-there, we will rely on the AP to know the local
-regulations.
-
-Based on a patch by Johannes Berg for upstream Linux.
+This is a port of what Vladimir Kondratiev sent to the
+Linux kernel for the static world regulatory domain.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |    4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ db.txt |    2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 0a4b56f..c6def1c 100644
+index c6def1c..54f89d3 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -6,10 +6,10 @@ country 00:
- 	# Channel 14. Only JP enables this and for 802.11b only
- 	(2474 - 2494 @ 20), (3, 20), PASSIVE-SCAN, NO-IBSS, NO-OFDM
- 	# Channel 36 - 48
--	(5170 - 5250 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
-+	(5170 - 5250 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+@@ -10,6 +10,8 @@ country 00:
  	# NB: 5260 MHz - 5700 MHz requies DFS
  	# Channel 149 - 165
--	(5735 - 5835 @ 40), (3, 20), PASSIVE-SCAN, NO-IBSS
-+	(5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
+ 	(5735 - 5835 @ 80), (3, 20), PASSIVE-SCAN, NO-IBSS
++	# IEEE 802.11ad (60GHz), channels 1..3
++	(57240 - 63720 @ 2160), (N/A, 0)
  
  
  country AD:
