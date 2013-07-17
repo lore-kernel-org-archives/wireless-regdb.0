@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pa0-x22f.google.com ([2607:f8b0:400e:c03::22f])
+Received: from mail-pa0-x234.google.com ([2607:f8b0:400e:c03::234])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UzHKl-0005qd-Uv
- for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:19:16 +0000
-Received: by mail-pa0-f47.google.com with SMTP id kl14so1418612pab.6 for
- <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:18:54 -0700 (PDT)
+ id 1UzHKq-0005r8-8Y
+ for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:19:20 +0000
+Received: by mail-pa0-f52.google.com with SMTP id kq14so314783pab.11 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:18:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=RzWeY8FC2GdCJyu0fIRbMDb5g6VlLmyzhWwQLszuNMw=;
- b=SlJIgrRoySqGe4zsXZjFGhFbwvGXFz3SeR8N+4O4WVObm7s/FzmqzKQZaQxHFNVegD
- GfmbPZJg0+th3xkjIylQKLdhqZ3hBTBEhpHWuMWg1CTdFXzbEfYl1SC8hW3RoxkxLPby
- QyIXZhtR8i36dNT4zwNp1G+M6DMn/miL6W0xfMd469lz/fHn9Cc9d207wCnt3rjIGrjq
- 8PPoUNksSvAfiouOYQKLZ0BKwiy5xZo6Mch8cDPDYxgEHrI91lfTasAz9rH32AI+jwU7
- 67cRPeM94kXLHu3tF8az452SWqVg5vrl/ZbixUvJAPDqvqEtydFcrjjuiyeAsT/mNVJ7 o9hg==
+ :references; bh=QqAIMd8KVqDPD1Xi8xq0CVP7qX7gGZEfqhpW1ZjGY40=;
+ b=RNV2m80EaCN+8/8Xecqz1vZA8z38SRRgzpcGtYlaTJLsSvqgaPyt0sH9qdGVcPmePA
+ Testmp8Up/9aIqfC7iTqdCB50ics99xX64++a6CeDyWhmkiHpN1GdTYBkNeGDm3CJgUw
+ /ZJY35+X5MkT2e4O4ZDNvhIW466Sv/UumvWgNX7W6GCnVJthXs4RpFHM0dvm7Ke/xabP
+ 6PzxKL4AdUaHDsLJabJVesDp8XqorPCbU4vlg5EjVI36wIabUW5R2s2Cah6R1tqq+HWh
+ cG9FqexpVr6HOnJIRZ6bitVeDs/zSFZ7NQJKdu2RuwOlXXwV3viCRavINizLflf0LDyn +rTw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 16 Jul 2013 19:17:50 -0700
-Message-Id: <1374027522-18488-2-git-send-email-mcgrof@do-not-panic.com>
+Date: Tue, 16 Jul 2013 19:17:51 -0700
+Message-Id: <1374027522-18488-3-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 01/53] wireless-regdb: AU,
-	Australia - enable VHT80
+Subject: [wireless-regdb] [PATCH 02/53] wireless-regdb: BR,
+	Brazil - enable VHT80
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,31 +44,32 @@ List-ID: <wireless-regdb@lists.infradead.org>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
 This enables 80 MHz bandwidth usage on all 5 GHz
-frequencies and updates the max EIRP. This also adds
-a new DFS 5 GHz band: 5490 - 5710 MHz.
+frequencies and increases the max EIRP on two
+5 GHz bands.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |    7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ db.txt |    8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index c5861b8..0e7794e 100644
+index 0e7794e..a6c23bd 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -53,9 +53,10 @@ country AT: DFS-ETSI
+@@ -125,10 +125,10 @@ country BO:
  
- country AU:
+ country BR:
  	(2402 - 2482 @ 40), (N/A, 20)
--	(5170 - 5250 @ 40), (3, 23)
--	(5250 - 5330 @ 40), (3, 23), DFS
+-	(5170 - 5250 @ 40), (3, 17)
+-	(5250 - 5330 @ 40), (3, 20), DFS
+-	(5490 - 5710 @ 40), (3, 20), DFS
 -	(5735 - 5835 @ 40), (3, 30)
 +	(5170 - 5250 @ 80), (3, 17)
 +	(5250 - 5330 @ 80), (3, 24), DFS
 +	(5490 - 5710 @ 80), (3, 24), DFS
 +	(5735 - 5835 @ 80), (3, 30)
  
- country AW:
+ country BY:
  	(2402 - 2482 @ 40), (N/A, 20)
 -- 
 1.7.10.4
