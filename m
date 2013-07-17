@@ -1,29 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pa0-x233.google.com ([2607:f8b0:400e:c03::233])
+Received: from mail-pa0-x22d.google.com ([2607:f8b0:400e:c03::22d])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1V0SxH-0001yX-8R
- for wireless-regdb@lists.infradead.org; Sat, 20 Jul 2013 08:55:56 +0000
-Received: by mail-pa0-f51.google.com with SMTP id lf11so5247574pab.38 for
- <wireless-regdb@lists.infradead.org>; Sat, 20 Jul 2013 01:55:32 -0700 (PDT)
+ id 1UzGc1-000551-6z
+ for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 01:33:01 +0000
+Received: by mail-pa0-f45.google.com with SMTP id bi5so1381861pad.32 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 18:32:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc:content-type; bh=8sAd1KW01dYXVzoM2uyVs8NYN6C3Gwv7gQh/NhHGB/k=;
- b=Yn6Kro1oE7Br2znH0iEEOM2iv/2aoxYLfOH1FdcvmD6OSFjxrCKWhxKjZQalUzgud/
- NabKKSwVSeXsQ2C8MDeP3BG6b4bJunOsPVLqA0CH3ZD/8NkBayUB0IxUwkriA6yVLCx9
- 5J6fyDZTXBU4ZomqABA8BmpEBQFqPu7QX9poVwfMZwheNhtcX0nw57mZ0Gu+BbEioiwm
- XpUse5aLK7gBXZDe/pT5xNbSOx3E7QbjlNWY3RiyZgaeboXog7BzmieF1sR9G+mA90DI
- Ioqje4MFUIxTnGwwhxvh77bV3wZsA1C+8ag2mDaFFSkd5p2d+jr2n7DbWU+Bw728m9Tn dUSw==
-MIME-Version: 1.0
-In-Reply-To: <CAAevFRQ7dfk2UeackHR1sMJaAG1f70DWmZ4kfGW91A5opmioaA@mail.gmail.com>
-References: 
-	 <CAAevFRQ7dfk2UeackHR1sMJaAG1f70DWmZ4kfGW91A5opmioaA@mail.gmail.com>
-From: Pui Yong Ng <desire@gmail.com>
-Date: Sat, 20 Jul 2013 16:55:02 +0800
-Message-ID: <CAAevFRQCEKMq4x2GOAHfxo-Zsqw1_JM9kePQeeuydfOw1QQpZQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Singapore (SG) on 2.4GHz and 5GHz
+ s=20120113; h=sender:from:to:cc:subject:date:message-id:x-mailer;
+ bh=tOaiA5gFDvMQ/Z//vecmpXds9WK7oisUZwF+Vjzu/mI=;
+ b=JT68sRMy6W2kPciJlot6qJpr+SwwNYf8DZY1Jmf7ckDLoXLKFm+m20/QRApY+T1CUa
+ 5okKhWVLbOCIsa1XeLOBOtW0B57J0cTP3y+GayN0R2IaFYKNec6A2cTOX88Ar87p2q75
+ 2L/BM/t3J8uLgq/t9RVl6zaBtr981QtkIg4veD11BqwRMgokwmI6kxbWU0nfoHx/1QJt
+ RZ9CiYySuf7+cNZX9AcBmWP9ZNkEq/3mfrD/FXAa3ocgG8xxv9UVbkuOJCBagX/sj/A9
+ uSZ4s44wMgWneJb2WfsMAuImizMruuNfLfU9cKO5Q/V3VZod6nGIj1lhw/lYeHl3OKjv rN+g==
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Tue, 16 Jul 2013 18:32:30 -0700
+Message-Id: <1374024750-16455-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [PATCH] reglib: add reglib_is_valid_rd() and
+	verify data upon build
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,34 +28,99 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: John Linville <linville@tuxdriver.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: linville@tuxdriver.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi.  I'd like to update that maximum EIRP for Singapore has changed.
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
-The updated Technical Specification for Short Range Devices was
-published at http://www.ida.gov.sg/~/media/Files/PCDG/Licensees/StandardsQoS/RadiocomEquipStd/TSSRD.pdf.
- In case the link changes, it can be retrieved from www.ida.gov.sg ->
-Policies & Regulation -> Industry & Licensees -> Standards & Quality
-of Service -> Radio-communication Equipment Standards
+This will verify the sanity of a regulatory domain upon build
+time. This is useful if you are making modifications to
+wireless-regdb and need to verify the regulatory domains
+won't be rejected by a similar checker. In the case of the
+Linux kernel regulatory domain data structures that get
+a complaint would have been rejected completely.
 
-In the above URL, table 1 rows 25 and 27-29 are applicable (i think).
+Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+---
+ regdbdump.c |    5 +++++
+ reglib.c    |   16 ++++++++++++++++
+ reglib.h    |   10 ++++++++++
+ 3 files changed, 31 insertions(+)
 
-Briefly, the changes applicable to wireless LAN are:
+diff --git a/regdbdump.c b/regdbdump.c
+index cc7eb85..bb83af9 100644
+--- a/regdbdump.c
++++ b/regdbdump.c
+@@ -8,6 +8,11 @@ static void reglib_regdbdump(const struct reglib_regdb_ctx *ctx)
+ 	unsigned int idx = 0;
+ 
+ 	reglib_for_each_country(rd, idx, ctx) {
++		if (!reglib_is_valid_rd(rd)) {
++			fprintf(stderr, "country %.2s: invalid\n", rd->alpha2);
++			free((struct ieee80211_regdomain *) rd);
++			continue;
++		}
+ 		reglib_print_regdom(rd);
+ 		free((struct ieee80211_regdomain *) rd);
+ 	}
+diff --git a/reglib.c b/reglib.c
+index 224821b..64584f4 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -427,6 +427,22 @@ static int is_valid_reg_rule(const struct ieee80211_reg_rule *rule)
+ 	return 1;
+ }
+ 
++int reglib_is_valid_rd(const struct ieee80211_regdomain *rd)
++{
++	const struct ieee80211_reg_rule *reg_rule = NULL;
++	unsigned int i;
++
++	if (!rd->n_reg_rules)
++		return 0;
++
++	for (i = 0; i < rd->n_reg_rules; i++) {
++		reg_rule = &rd->reg_rules[i];
++		if (!is_valid_reg_rule(reg_rule))
++		return 0;
++	}
++	return 1;
++}
++
+ /*
+  * Helper for reglib_intersect_rds(), this does the real
+  * mathematical intersection fun
+diff --git a/reglib.h b/reglib.h
+index 57082fe..7a586a3 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -150,6 +150,16 @@ reglib_get_rd_idx(unsigned int idx, const struct reglib_regdb_ctx *ctx);
+ const struct ieee80211_regdomain *
+ reglib_get_rd_alpha2(const char *alpha2, const char *file);
+ 
++/**
++ * reglib_is_valid_rd - validate regulatory domain data structure
++ *
++ * @rd: regulatory domain data structure to validate
++ *
++ * You can use this to validate regulatory domain data structures
++ * for possible inconsistencies.
++ */
++int reglib_is_valid_rd(const struct ieee80211_regdomain *rd);
++
+ /* reg helpers */
+ void reglib_print_regdom(const struct ieee80211_regdomain *rd);
+ struct ieee80211_regdomain *
+-- 
+1.7.10.4
 
-> Technical requirements have also been revised for the wireless LAN and broadband access applications:
->
-> Output power limit for 2.4000 - 2.4835 GHz band increased from 100 mW EIRP to 200 mW
-> Output power limit for 5.725 - 5.850 GHz band increased from 100 mW EIRP to 1 W EIRP
-
-
-Thanks.
 
 _______________________________________________
 wireless-regdb mailing list
