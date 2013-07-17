@@ -2,26 +2,26 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from mail-pd0-x22e.google.com ([2607:f8b0:400e:c02::22e])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UzHME-0005z5-R3
- for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:20:47 +0000
-Received: by mail-pd0-f174.google.com with SMTP id 10so1300285pdc.5 for
- <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:20:24 -0700 (PDT)
+ id 1UzHME-0005zr-R7
+ for wireless-regdb@lists.infradead.org; Wed, 17 Jul 2013 02:20:48 +0000
+Received: by mail-pd0-f174.google.com with SMTP id 10so1300341pdc.5 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 19:20:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:x-mailer:in-reply-to
- :references; bh=35ujA0rrw11eY7X/D7BxlaEigEjoqr/Ft/yAYRo0MnE=;
- b=UfYDoyVM1IZDjVse4OStbwowqLV2viQhgOOakTi6fBLavRtvVh7a2j68YiE2oXTP/m
- cwfaKUq5qp9JNYjjKapL3rMCRyrelicuCCtvGXUkhonAKVLp7VALIKJ98nVSIDlkZtGM
- scst641uKOc3C9qiA/5stSysBB3JhRr2inOXFU1palwOLwHVuahKCSyLzfLl7fsIgmnv
- GZsW0rPoWXOU9ab2VKEVUSV2wNNcfq/OXDGMl3onz/3C8gSgttRCAo3ZSaUR08HsVNQO
- WdyZ9CZNymXmiQCk6VLxFA+CcYq+qNLk0CnvMkTJEQyyEBEoh0FK2yFBBlMOx87W7CVk I2SQ==
+ :references; bh=n3gxDAFhoWovOmmST6MXBk4W1P2QsaEmaRclX6DQ12I=;
+ b=WOg/yQQtT4P4j36yrgXq6P13OSoMUj0uH26w+oXb+txiXKeJnNrzTuroRvdWe3jnv5
+ seWX9ZAKMc7PNyyjwkswif7/5/uGeYhMn/NdL2sx3ZVpRaC8aLAq5dhLW2nh7R5do+hR
+ uyNgeF0fAIKQCjy6UcKuo2N6sH1SVLh3s+bka3R0Zqvq0qCcFpyOBNtEFyddpyybH1Ru
+ 57eu8va5XWWCVUros508SRMwdNQuj1iw9wwqZnJDPeVnj2a4YbnbxbZB9PmeXCpqdFIu
+ VJbZOUIcKjMoExRpgiL7a3auS+5llqiJNGIcQ2+6bRr1hvPnKNNOxPit8ZMF6UumrBDv bwBg==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 16 Jul 2013 19:18:07 -0700
-Message-Id: <1374027522-18488-19-git-send-email-mcgrof@do-not-panic.com>
+Date: Tue, 16 Jul 2013 19:18:08 -0700
+Message-Id: <1374027522-18488-20-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1374027522-18488-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 18/53] wireless-regdb: VN,
-	Vietnam - enable VHT80
+Subject: [wireless-regdb] [PATCH 19/53] wireless-regdb: AT,
+	Austria - enable VHT80
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,34 +44,45 @@ List-ID: <wireless-regdb@lists.infradead.org>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 
 This enables 80 MHz bandwidth usage on all 5 GHz
-frequencies and update the max EIRP. This also adds
-two new 5 GHz bands:
+frequencies.
 
-  * 5490 - 5710 MHz
-  * 5735 - 5835 MHz
+This is a country that belongs CEPT [0] and an available
+regulatory source is ECC/DEC/(04)08 [1].
+
+Quoting:
+
+  considering [...]
+  e. that the systems covered by this ECC Decision operate
+  typically in a 20 MHz channel bandwidth, other values for
+  the channel bandwidth are also feasible provided they
+  comply with the relevant maximum mean e.i.r.p. and the
+  corresponding maximum mean e.i.r.p. density limits;
+
+[0] https://en.wikipedia.org/wiki/European_Conference_of_Postal_and_Telecommunications_Administrations
+[1] http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC0408.PDF
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt |    6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ db.txt |    6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index f714982..47bfc95 100644
+index 47bfc95..fb83f7a 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -796,8 +796,10 @@ country VE:
+@@ -46,9 +46,9 @@ country AR:
  
- country VN:
+ country AT: DFS-ETSI
  	(2402 - 2482 @ 40), (N/A, 20)
 -	(5170 - 5250 @ 40), (N/A, 20)
 -	(5250 - 5330 @ 40), (N/A, 20), DFS
-+	(5170 - 5250 @ 80), (3, 17)
-+	(5250 - 5330 @ 80), (3, 24), DFS
-+	(5490 - 5710 @ 80), (3, 24), DFS
-+	(5735 - 5835 @ 80), (3, 30)
+-	(5490 - 5710 @ 40), (N/A, 27), DFS
++	(5170 - 5250 @ 80), (N/A, 20)
++	(5250 - 5330 @ 80), (N/A, 20), DFS
++	(5490 - 5710 @ 80), (N/A, 27), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
  
- country YE:
- 	(2402 - 2482 @ 40), (N/A, 20)
 -- 
 1.7.10.4
 
