@@ -1,30 +1,31 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wg0-x22f.google.com ([2a00:1450:400c:c00::22f])
+Received: from mail-la0-x229.google.com ([2a00:1450:4010:c03::229])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1UzC6P-0008K8-Qa
- for wireless-regdb@lists.infradead.org; Tue, 16 Jul 2013 20:44:07 +0000
-Received: by mail-wg0-f47.google.com with SMTP id l18so1065694wgh.14 for
- <wireless-regdb@lists.infradead.org>; Tue, 16 Jul 2013 13:43:44 -0700 (PDT)
+ id 1Uzxff-0000LE-DK
+ for wireless-regdb@lists.infradead.org; Thu, 18 Jul 2013 23:31:40 +0000
+Received: by mail-la0-f41.google.com with SMTP id fn20so3010089lab.28 for
+ <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2013 16:31:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=mime-version:sender:in-reply-to:references:from:date
- :x-google-sender-auth:message-id:subject:to:cc:content-type
- :content-transfer-encoding;
- bh=36735zfbvCTlBDzzVvWr70vPAEls4vW3SiPK1rUAsuA=;
- b=sjof6CkP83ukt6spYHNxBfwKfphdsH0zL25eaKblqO3ZeHoiDQsyvaKcxOFNqRLNWh
- Hs1tu0qKNCLotp4tBiQzQVhL0bgGQCRnF0SKFt0mdV02x+QEza0cILBP4fTuYGWxO91i
- 4tqDDNxzzZo6s8t1/7fBsItNYWGUk3oW8WXV7vfHJQRWleBd6+2JZyhEcfsbmfNnT/B6
- HiZTo/+3KgIXKnqbXUaA4XqYPmlOmz6Mm/wb7PBZO+Gof8DJhNOSAJCSFhQPLG4qw8Jm
- tM4wvlc1yNAZ04hQYoO3Uoq2PImuKd3Ebn0wiZJLveHJ+LxeII0Tw+4z/qHLgkOAjgsE TrQA==
+ :x-google-sender-auth:message-id:subject:to:cc:content-type;
+ bh=xJ9yZM0Fl3rCihetz94WrlCjl5Lk+gCUIJ5OH2nMy9A=;
+ b=KB2x+tLZaiO95yMrgjjyEkY1b9iMq1ArDHYzf9JzJ72YucTYze/4M1yqLQfD0uOX6J
+ 0Iw8bmENRdDzx6yNgLo5x2p0cA0neoiiw6Z91LP8Whn6Bfo2IBykKwUx9WlLeb629LBm
+ rMAcI6fg3dgLhsv0LzsJYJiYVJmp8CpwP+AS4Qckc82iDlzuAuByZM/93YMYXe3R2KgW
+ wXpJ4CU9g6fbXTZDv4H90FhBezJkP1hm8K9uxyrxAmYcqmLOX4tzTdqGxVrJfELWOo0u
+ JvHwDR/osmEi/MErX9BR2CWRcwsoTwPFMIy1TiG9py54+qN1Dt9nDa5VVpZ3sbexGMAE pN1g==
 MIME-Version: 1.0
-In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A01AD2DF7B@HASMSX106.ger.corp.intel.com>
+In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A01AD31E07@HASMSX106.ger.corp.intel.com>
 References: <1372768095-26053-1-git-send-email-ilan.peer@intel.com>
  <1372768095-26053-2-git-send-email-ilan.peer@intel.com>
  <CAB=NE6Wr_Y+uoGwOT_nE-VE49vd0eobv_F7=hF=mtVfGgCOehg@mail.gmail.com>
  <CB3B3D4774441E42AA3EA0E1BA8230A01AD2DF7B@HASMSX106.ger.corp.intel.com>
+ <CAB=NE6WBz36HktdvOd_Ay=xrx0LJQd=9MxxTrTFKhALS+HMHzg@mail.gmail.com>
+ <CB3B3D4774441E42AA3EA0E1BA8230A01AD31E07@HASMSX106.ger.corp.intel.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 16 Jul 2013 13:43:24 -0700
-Message-ID: <CAB=NE6WBz36HktdvOd_Ay=xrx0LJQd=9MxxTrTFKhALS+HMHzg@mail.gmail.com>
+Date: Thu, 18 Jul 2013 16:30:53 -0700
+Message-ID: <CAB=NE6U3hBaEawcMJ27ZUFPaFo6RDUuzt9hh5AQN=eFWYMX-Hg@mail.gmail.com>
 Subject: Re: [wireless-regdb] [PATCH 1/3] [RFC] cfg80211: Add indoor only
  and GO concurrent channel attributes
 List-Unsubscribe: 
@@ -48,151 +49,59 @@ Cc: "Shalev, Oz" <oz.shalev@intel.com>, "wireless-regdb@lists.infradead.org" <wi
  David" <david.spinadel@intel.com>, Michael Green <green@qca.qualcomm.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Jul 10, 2013 at 3:43 AM, Peer, Ilan <ilan.peer@intel.com> wrote:
->> On Tue, Jul 2, 2013 at 5:28 AM, Ilan Peer <ilan.peer@intel.com> wrote:
->> > From: David Spinadel <david.spinadel@intel.com>
->> >
->> > The FCC are clarifying some soft configuration requirements, which
->> > among other includes the following:
->> >
->> > 1. Concurrent GO operation, where devices may support WFD in
->> >    bands where an authorized master (for example with DFS and
->> >    DFS and radar detection capability in the UNII band) is operating.
->>
->> Is WFD WiFi Display? Is there any strict relationship here to WFD and GO and
->> regulatory or is WFD just a use case example? Are you indicating that the FCC
->> is making special rules for cases in specific bands where GO *can* co-exist with
->> other GO devices ?
+On Wed, Jul 17, 2013 at 11:47 AM, Peer, Ilan <ilan.peer@intel.com> wrote:
+> On some day Luis wrote:
 >
-> WFD is WiFi direct in this context. I do not think that the FCC are making special rules only for GO specific scenarios but a more general approach where "compliance may be achieved under the guidance of an authorized master". The WFD/P2P GO case is only an example.
-
-OK then I think cullular base station regulatory hints might be
-another example. In fact I believe I am looking at the information you
-might be using as reference. I am looking at public draft edit for FCC
-KDB 594280:
-
-https://apps.fcc.gov/eas/comments/GetPublishedDocument.html?id=327&tn=528122
-
-The original KDB:
-
-http://transition.fcc.gov/oet/ea/presentations/files/apr11/3b.SoftwareConfigurationControl-RDJS.pdf
-
-Specifically in the above document, the draft edit, I am looking at
-page 12. That actually references WiFi Direct precisely and considers
-the case that a GO may need to move out of its channel if its master
-device its using to configure itself also switches channels. Given
-that cellular base station hints could also technically be used this
-also would need to be considered for cellular base stations. But also
-note on page 14 it states clearly:
-
-"Mobile Country Codes (MCC) or Mobile Network Codes
-(MNC) are not acceptable for programming host
-compliance"
-
-So it seems cellular base station hints are simply not allowed by the
-FCC (unless specific approval is requested / revised). Even if the FCC
-allowed for it I believe an API would need to be provided should
-cellular base stations have a case where they may stop operating as
-well similar to DFS.
-
-BTW in future iterations of patches I'd appreciate if you can include
-the above references to documentation given that we've pulled them up
-now.
-
->> You annotate that this is somehow related to DFS, are the GO concurrent rules
->> that the FCC is defining only applicable to DFS frequency ranges? If so would it
->> suffice to only use DFS flag ? Or are there other special cases beyond DFS
->> frequency ranges that the FCC is creating special handling?
->>
+>> Based on the documentation I reviewed and your proposal it'd seem to me that
+>> we can distinguish GO on the upper layers and determine if a channel is DFS or
+>> not by just the DFS flag. The next hint you'd need is if the GO got regulatory
+>> information from a master somehow, no?
 >
-> DFS was given here as an example. Generally, I think that the changes that the FCC are making are targeting various scenarios and various RF devices (for example those defined in part 15 of CFR title 47).
+> This should also be handled by user space, based on the device type/sub type of the local device directly, or
+> indirectly through other means such a managed interface associating with an AP that it's device type
+> value is 6 etc.
 
-OK thanks. Things are clear now that I see the document that you might
-be referring to.
+This seems reasonable but we need to also consider state machine
+changes possible on the channel the GO is on as well and there are
+different reasons for the channel to change:
 
->> Apart from the FCC are you aware of special cases handling for other
->> regulatory bodies at this point?
+  * beacon hint - nl80211_send_beacon_hint_event()
+  * regulatory change - nl80211_send_reg_change_event()
+
+The beacon hint multicast group message sends the channel prior to the
+beacon hint and after. The regulatory change event currently isn't as
+atomic and only provides the the fact that regulatory domain state
+machine has incurred a change. In this case it may make sense to send
+all wiphy information and have hostapd verify if a change has occurred
+on the channel.
+
+>> That is I am not seeing a need for a new flag at this point in wireless-regdb,
+>> given also I mentioned another type of case for regulatory hints technically
+>> possible (cellular base station hints but it seems only allowed with exceptional
+>> review by the FCC).
+>>
+>> I take it what you want to enable here is GO operation on DFS channels and use
+>> country IEs to determine if you can use GO, but if you do have GO enabled then
+>> you'd want hooks to not daisy chain, ack?
 >
-> Not that I'm aware of. Adding some more people that might know more.
+> Currently, we do not intend to base the relaxation on the country IE directly,
 
-Hey folks, anyone? :)
+Its still a possibility so it should be handled and we should consider
+it on core regulatory. One possible solution might be to not enable GO
+unless the the NL80211_ATTR_REG_INITIATOR was something appropriate
+for the wiphy.
 
->> Note that we have already these on regdb.h from CRDA:
->>
->>
->> /*
->>  * The Linux map defined in <linux/uapi/nl80211.h> enum
->> nl80211_reg_rule_flags  */ enum reg_rule_flags {
->>         RRF_NO_OFDM             = 1<<0, /* OFDM modulation not allowed */
->>         RRF_NO_CCK              = 1<<1, /* CCK modulation not allowed */
->>         RRF_NO_INDOOR           = 1<<2, /* indoor operation not allowed */
->>         RRF_NO_OUTDOOR          = 1<<3, /* outdoor operation not allowed */
->>         RRF_DFS                 = 1<<4, /* DFS support is required to be
->>                                          * used */
->>         RRF_PTP_ONLY            = 1<<5, /* this is only for Point To Point
->>                                          * links */
->>         RRF_PTMP_ONLY           = 1<<6, /* this is only for Point To Multi
->>                                          * Point links */
->>         RRF_PASSIVE_SCAN        = 1<<7, /* passive scan is required */
->>         RRF_NO_IBSS             = 1<<8, /* IBSS is not allowed */
->> };
->>
->> Historically we don't distinguish then a type of 802.11 device that initiates
->> radiation except for the NO_IBSS rule, but that rule can be treated more as
->> legacy given that the intent and motivation behind that was that some ODMs
->> simply preferred an interpretation of regulatory rules and we *currently* don't
->> use that in much places other than custom regulatory domains defined in the
->> kernel. The PTP_ONLY and PTMP_ONLY are example other rules that could
->> potentially have been used but to this day we haven't found a use case for it
->> given that typical 802.11 devices are PTMP.
->>
->> I mention the NO_IBSS case as I'd like to try to avoid adding GO specific flag if
->> we can figure out a way to make this more generic. At this point for example I
->> think a more appropriate flag is in place:
->>
->
-> Actually, this should be a GO only flag, meaning that such relaxation should not be valid for soft AP, IBSS or mesh. The intention here is limit the extend of the cell, and prevent daisy chain scenarios (assume that you allow a soft AP on such a channel and that a client associated to it, and then that device can also start a soft AP on the channel ....). Anyway, I'll need to have another look at this (might be permissible for IBSS ...)
+> but base it on the fact that if
+> there is a managed connection to an AP who's not a mobile device (assuming that it is an authorized master),
 
-Based on the documentation I reviewed and your proposal it'd seem to
-me that we can distinguish GO on the upper layers and determine if a
-channel is DFS or not by just the DFS flag. The next hint you'd need
-is if the GO got regulatory information from a master somehow, no?
-That is I am not seeing a need for a new flag at this point in
-wireless-regdb, given also I mentioned another type of case for
-regulatory hints technically possible (cellular base station hints but
-it seems only allowed with exceptional review by the FCC).
+How do you intend on verifying a device that has associated to an AP,
+that that AP is not a mobile device, ie that it fits this "authorized
+master" category ?
 
-I take it what you want to enable here is GO operation on DFS channels
-and use country IEs to determine if you can use GO, but if you do have
-GO enabled then you'd want hooks to not daisy chain, ack?
+> than the channel used by the managed connection is valid for use (as long as the managed interface
+> is connected to the AP on the channel).
 
->> > 2. Indoor operation, where in bands requiring indoor operation, the
->> >    device must be programmed to detect indoor operation, or
->> >    - Device must be connected to AC Power
->>
->> Does anyone  know if the FCC considers "indoor" if we power a device through
->> the car on AC power through a converter ? Are we willing to ignore that corner
->> case?
->
-> No. AC power means "mains" and not through portable DC converters (see slide 12 in https://apps.fcc.gov/eas/comments/GetPublishedDocument.html?id=327&tn= 528122). It would be up to the user space to identify the device type etc. and identify if this a truly AC powered AP.
-
-OK thanks for the clarification. I wonder if we can distinguish
-between the two in userspace today. I'm happy to start pegging
-frequency ranges as indoor-only on wireless-regdb even if we don't
-have the userspace APIs to annotate when a device is indoor or not
-yet. Patches welcomed then.
-
->> >    - Device must be under the control of a local master that is acting
->>
->> Interesting, so some APIs would be defined, I take it on hostapd to do the
->> proper callbacks to 'slave' type of devices that depend on the local master(s). I
->> could envision this being implemented on hostapd by expanding the AP
->> interface type and associating 'slave' devices and callbacks for updates on AP
->> device updates (channel changes, and so on). Is this work being planned?
->
-> Yes. We have plans to incorporate more logic to hostap (currently into wpa_supplicant for P2P use cases).
-
-Sweet.
+Makes sense.
 
   Luis
 
