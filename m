@@ -1,29 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x232.google.com ([2a00:1450:4010:c03::232])
+Received: from mail-la0-x229.google.com ([2a00:1450:4010:c03::229])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1V2d3b-0000yl-61
- for wireless-regdb@lists.infradead.org; Fri, 26 Jul 2013 08:07:24 +0000
-Received: by mail-la0-f50.google.com with SMTP id ep20so2097768lab.9 for
- <wireless-regdb@lists.infradead.org>; Fri, 26 Jul 2013 01:07:01 -0700 (PDT)
+ id 1V1OEC-0007me-PY
+ for wireless-regdb@lists.infradead.org; Mon, 22 Jul 2013 22:05:14 +0000
+Received: by mail-la0-f41.google.com with SMTP id fn20so5688321lab.0 for
+ <wireless-regdb@lists.infradead.org>; Mon, 22 Jul 2013 15:04:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=mime-version:sender:in-reply-to:references:from:date
  :x-google-sender-auth:message-id:subject:to:cc:content-type;
- bh=OR3NedITegy/LxRPv9cE+yzoBBxJB1CNs/4GEWDsBeo=;
- b=eidMTWvqnkOG6mMrpXQbgha2P7QqoH0LosR/0Maa2ySXqSIGgg/pSyB5wyOH0aOpSN
- xCU2f8yqJJlZ/hARfFwwnfJthkUWjfWvgzBXP1xa+ndkV4DEjPBnNcazoZuKDizJfbfI
- NVZ2fBQ7rjK+0dKqJIBfV+z6RE5gzTxV5mT7vSlTfVlE+Rs+gwNI6qxqsHezZu0HTVlz
- +uXLGOCkJxZH8VzVhIbljGtNuyCGuskxEDsnxTVE8LOFeX+YZlJUhQsfdPdexDpN4e2n
- FsQIOCyEkhf+9FGKsCwyU+tir1fXj87uEOdooxK1B8jplDKf16a2d1NReKeiTFnG3MRm 0Fjg==
+ bh=zJyZjH4q/jpcU1ZRs3AWT9k4OLBYjdEDYKau766/bwM=;
+ b=LKgSMM92FUem6j6gIv2zt1/XsEGZafPxV6VeKyZyZaFCh6WJI7/LDF0e7vd8FB8J25
+ peWqOgWucO1ABLTp71q0xd7ul/2UdAO6YJNQbt15FLxV6lLSwp3GTrCY30Qke5waVAq1
+ +XuhaoFc5nesJjFiV/vYPLWFiI0bZkkJ6WNSWXh7viW26kBghrgJe25WnpuWuKY527+E
+ Ij5C8YTcKdPfNATCJCIrFy4cTh0r6ZyFi9tBTxpmc9HKsnoMwlwu/UELX4VzyGSzHKMz
+ u3wmJmE1xaNiFUrDyJgBmpJkisHxkzw3dJTTnGQJQeu9bgSRi0eHm5h0KfRr7dy5K8DC mGAg==
 MIME-Version: 1.0
-In-Reply-To: <1374825552.8248.2.camel@jlt4.sipsolutions.net>
-References: <CAB=NE6V_PKG2UBSLPRhziUDcFzFi8uOJNiNzoPNaK0oU7rmZuQ@mail.gmail.com>
- <1374825552.8248.2.camel@jlt4.sipsolutions.net>
+In-Reply-To: <CAB=NE6X0vJ4Ts6p8M3i9GyZPCY6Gf6ztCdWvhdsVySO+4CL7pg@mail.gmail.com>
+References: 
+	 <CAB=NE6X0vJ4Ts6p8M3i9GyZPCY6Gf6ztCdWvhdsVySO+4CL7pg@mail.gmail.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri, 26 Jul 2013 01:06:40 -0700
-Message-ID: <CAB=NE6Wr1hC2mQy1qo79yAawkw1cVsTG4unEFYYdu7vWKMM2MA@mail.gmail.com>
-Subject: Re: [wireless-regdb] Updates to wireless-regdb review - vendor
-	namespaces and VHT80
+Date: Mon, 22 Jul 2013 15:04:29 -0700
+Message-ID: <CAB=NE6W=RZFNJnLSZZXn4dAeutuMFjMMzfqLd3-=QgeJwaqYaA@mail.gmail.com>
+Subject: Re: [wireless-regdb] IEEE VHT80 802.11 channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,43 +37,41 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>
+To: linux-wireless <linux-wireless@vger.kernel.org>
+Cc: Felix Bitterli <ic.felix@gmail.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Jul 26, 2013 at 12:59 AM, Johannes Berg
-<johannes@sipsolutions.net> wrote:
-> On Tue, 2013-07-02 at 17:38 -0700, Luis R. Rodriguez wrote:
+On Wed, Jul 3, 2013 at 12:05 PM, Luis R. Rodriguez
+<mcgrof@do-not-panic.com> wrote:
+> We reviewed a while ago how we'd enable VHT80 channels and decided to
+> go with a scaping of the regulatory data even though IEEE defined very
+> specific channels. I hadn't seen a list with these center of freq IEEE
+> channels so I figured I'd post them. As far as I can tell I see these
+> defined. Whether or not you can use them will vary depending on your
+> country's regulatory rules.
 >
->> I'd like to propose a middle ground to also address another issue I've
->> noticed. Vendors can disagree and in order to give vendors a warm
->> fuzzy on ability to ensure their data is interpreted and provide the
->> ability to offload down to wireless-regdb even more interpretations
->> I'd like to propose the idea of embracing vendor namespaces within
->> wireless-regdb / crda / the kernel. The way I'd envision this is
->> '/sbin/crda US OUI' is passed upon a regulatory hint and in turn CRDA
->> will read the namespace for the OUI passed in regulatory.bin. Then at
->> our wireless summit kumbaya and with the development / enhancements of
->> intersect.c and union.c (not yet developed) we'd work on generalizing
->> the data. This would also allow vendors to supply their own rules
->> without the high bar that we are setting which so far has proven very
->> difficult to met.
->
-> I'm not really fully convinced, but let's discuss at the summit.
->
-> Wasn't the point of the regdb and documentation etc. also that the users
-> can trust it? It seems to me that if you're building a generic system
-> you wouldn't really want different regulatory interpretations. And if
-> you think for some special system (say a tablet) you need a different
-> database, you'll probably hand-roll one specifically for that system
-> anyway.
+> 5210, 5290, 5530, 5610, 5610, 5690, 5775
 
-I don't think that's the problem. The problem is more -- folks are not
-used to and don't wan to engage. What do we do in the meantime where
-the alternative is something separate and likely redistributable
-elsewhere. I'd personally rather have folks engaged and I figured a
-namespace would at least provide a central middle ground. Glad to
-discuss at the summit.
+The below extended map may help and could also be used to help
+understand the corner case of VHT80 support on VHT80 center of freq
+5690 MHz.
+
+IEEE VHT80 center of freqs possible:
+
+Center                  20 MHz channels                    ath10k capable
+        __________  __________  __________  __________
+       /          \/          \/          \/          \
+5210     5180 (36)   5200 (40)   5220 (44)   5240 (48)           OK
+5290     5260 (52)   5280 (56)   5300 (60)   5320 (64)           OK
+5530     5500 (100)  5520 (104)  5540 (108)  5560 (112)          OK
+5610     5580 (116)  5600 (120)  5620 (124)  5640 (128)          OK
+5690     5660 (132)  5680 (136)  5700 (140)  5720 (144)*        Nope
+5775     5745 (149)  5765 (153)  5785 (157)  5805 (161)          OK
+
+Other vendor should consider reviewing their own implementation /
+support / regulatory considerations / preferences for collateral of
+not having a 20 MHz IEEE channel at center of freq 5720 (144) before.
+I'll be pushing out how we address this next.
 
   Luis
 
