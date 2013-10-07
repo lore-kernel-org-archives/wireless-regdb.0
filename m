@@ -1,15 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by merlin.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1VUj80-00065e-Gm for
- wireless-regdb@lists.infradead.org; Fri, 11 Oct 2013 20:16:05 +0000
-Date: Fri, 11 Oct 2013 16:12:26 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20131011201226.GD14329@tuxdriver.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2013-10-11
+Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
+ by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1VT6D0-0003yP-ED
+ for wireless-regdb@lists.infradead.org; Mon, 07 Oct 2013 08:30:31 +0000
+Message-ID: <1381134605.13586.4.camel@jlt4.sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Mon, 07 Oct 2013 10:30:05 +0200
+In-Reply-To: <1381134567.13586.3.camel@jlt4.sipsolutions.net>
+References: <1378472763-36062-1-git-send-email-nbd@openwrt.org>
+ <1378472763-36062-2-git-send-email-nbd@openwrt.org>
+ <1380625512.14430.19.camel@jlt4.sipsolutions.net>
+ <524AAE97.5020708@openwrt.org>
+ <1380628244.14430.37.camel@jlt4.sipsolutions.net>
+ <524FF599.5040706@openwrt.org>
+ <1381134567.13586.3.camel@jlt4.sipsolutions.net>
+Mime-Version: 1.0
+Subject: Re: [wireless-regdb] [PATCH 2/2] mac80211: implement support for
+ configuring antenna gain
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,81 +32,44 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+To: Felix Fietkau <nbd@openwrt.org>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2013-10-11) is available at:
++ wireless-regdb
 
-http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.10.11.tar.gz
+On Mon, 2013-10-07 at 10:29 +0200, Johannes Berg wrote:
+> On Sat, 2013-10-05 at 13:18 +0200, Felix Fietkau wrote:
+> 
+> > > I understand. I don't understand the pieces about "max_antenna_gain".
+> 
+> > Right now ath9k has an antenna gain value in the EEPROM, and it compares
+> > it against the channel max_antenna_gain value.
+> 
+> I just don't understand what the max means. If I connect a 5dBi gain
+> antenna, but the "max antenna gain" is 3dBi, what should happen?
+> 
+> > Let's assume we have configured the tx power to the maximum value, the
+> > regdb allows 3 dB antenna gain, and the ath9k EEPROM contains an antenna
+> > gain of 3 dB as well.
+> > If we now add another 3 dB of user-configured antenna gain, it first
+> > starts tapping into the regulatory-allowed antenna gain before reducing
+> > tx power in mac80211. The driver needs to know about this, so I put the
+> > calculated maximum antenna gain into the hw conf as well.
+> 
+> I don't think it really works this way, does it? I don't believe the
+> "regulatory-allowed antenna gain" is really something that's allowed on
+> top of the EIRP?
+> 
+> johannes
+> 
+> --
+> To unsubscribe from this list: send the line "unsubscribe linux-wireless" in
+> the body of a message to majordomo@vger.kernel.org
+> More majordomo info at  http://vger.kernel.org/majordomo-info.html
+> 
 
-Here is the short log of the changes included since the 2013-02-13
-release:
 
-Emanuel Taube (1):
-      Remove obsolete country code CS from regdb
-
-John W. Linville (1):
-      wireless-regdb: update regulatory.bin based on preceding changes.
-
-Luis R. Rodriguez (53):
-      wireless-regdb: AU, Australia - enable VHT80
-      wireless-regdb: BR, Brazil - enable VHT80
-      wireless-regdb: CA, Canada - enable VHT80
-      wireless-regdb: HK, Hong Kong - enable VHT80
-      wireless-regdb: NZ, New Zealand - enable VHT80
-      wireless-regdb: AR, Argentina - enable VHT80
-      wireless-regdb: CO, Colombia - enable VHT80
-      wireless-regdb: GU, Guam - enable VHT80
-      wireless-regdb: MX, Mexico - enable VHT80
-      wireless-regdb: PE, Peru - enable VHT80
-      wireless-regdb: PH, Philippines - enable VHT80
-      wireless-regdb: PR, Puerto Rico - enable VHT80
-      wireless-regdb: SA, Saudi Arabia - enable VHT80
-      wireless-regdb: SG, Singapore - enable VHT80
-      wireless-regdb: ZA, South Africa - enable VHT80
-      wireless-regdb: TH, Thailand - enable VHT80
-      wireless-regdb: AE, United Arab Emirates - enable VHT80
-      wireless-regdb: VN, Vietnam - enable VHT80
-      wireless-regdb: AT, Austria - enable VHT80
-      wireless-regdb: FR, France - enable VHT80
-      wireless-regdb: DE, Germany - enable VHT80
-      wireless-regdb: GB, United Kingdom - enable VHT80
-      wireless-regdb: BE, Belgium - enable VHT80
-      wireless-regdb: CZ, Czech Republic - enable VHT80
-      wireless-regdb: DK, Denmark - enable VHT80
-      wireless-regdb: FI, Finland - enable VHT80
-      wireless-regdb: GR, Greece- enable VHT80
-      wireless-regdb: IE, Ireland - enable VHT80
-      wireless-regdb: IT, Italy - enable VHT80
-      wireless-regdb: LU, Luxembourg - enable VHT80
-      wireless-regdb: NL, Netherlands - enable VHT80
-      wireless-regdb: PL, Poland - enable VHT80
-      wireless-regdb: PT, Portugal - enable VHT80
-      wireless-regdb: SK, Slovakia - enable VHT80
-      wireless-regdb: ES, Spain - enable VHT80
-      wireless-regdb: SE, Sweden - enable VHT80
-      wireless-regdb: CH, Switzerland - enable VHT80
-      wireless-regdb: TR, Turkey - enable VHT80
-      wireless-regdb: CN, China - enable VHT80
-      wireless-regdb: enable VHT80 and VHT160 for JP
-      wireless-regdb: US, United States - enable VHT80
-      wireless-regdb: ID, Indonesia - enable 5 GHz and VHT80
-      wireless-regdb: IL, Isreal - enable VHT80
-      wireless-regdb: KW, Kuwait - enable VHT80
-      wireless-regdb: MY, Malaysia - enable VHT80
-      wireless-regdb: MA, Morocco - enable 5 GHz and VHT80
-      wireless-regdb: enable HT40 in RU - Russian Federation
-      wireless-regdb: KR, Republic of Korea - enable VHT80
-      wireless-regdb: TW, Taiwan - enable VHT80
-      wireless-regdb: enable VHT80 when world roaming
-      wireless-regdb: add 802.11ad 60 GHz channels 1..3 to world regdom
-      wireless-regdb: CR, Costa Rica - enable VHT80
-      wireless-regdb: EC, Ecauador - enable VHT80
-
--- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
