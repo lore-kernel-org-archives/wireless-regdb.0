@@ -3,14 +3,16 @@ Return-path:
 Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
  ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VUjHM-0006Qz-8a
- for wireless-regdb@lists.infradead.org; Fri, 11 Oct 2013 20:25:44 +0000
-Date: Fri, 11 Oct 2013 16:24:59 -0400
+ id 1VUjab-00078w-Sh
+ for wireless-regdb@lists.infradead.org; Fri, 11 Oct 2013 20:45:38 +0000
+Date: Fri, 11 Oct 2013 16:39:01 -0400
 From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20131011202459.GF14329@tuxdriver.com>
+Message-ID: <20131011203901.GA23477@tuxdriver.com>
+References: <20131011202459.GF14329@tuxdriver.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2013-10-11
+In-Reply-To: <20131011202459.GF14329@tuxdriver.com>
+Subject: Re: [wireless-regdb] [ANN] wireless-regdb: master-2013-10-11
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,20 +31,28 @@ To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-(Cutting the short log, since the original version got classified as
-SPAM on vger.kernel.org...??)
+On Fri, Oct 11, 2013 at 04:24:59PM -0400, John W. Linville wrote:
+> (Cutting the short log, since the original version got classified as
+> SPAM on vger.kernel.org...??)
+> 
+> A new release of wireless-regdb (master-2013-10-11) is available at:
+> 
+> http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.10.11.tar.gz
+> 
+> Here is the short log of the changes included since the 2013-02-13
+> release:
+> 
+> SNIP -- you'll have to check it yourself:
+> 
+> 	git log master-2013-02-13..master-2013-10-11 | git shortlog
 
-A new release of wireless-regdb (master-2013-10-11) is available at:
+FYI -- I've purged my folders of all other old/pending wireless-regdb
+stuff.  If you have a change that you still want to propose to the
+regulatory database, please send it as a _patch_ at your leisure.
 
-http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.10.11.tar.gz
+Thanks,
 
-Here is the short log of the changes included since the 2013-02-13
-release:
-
-SNIP -- you'll have to check it yourself:
-
-	git log master-2013-02-13..master-2013-10-11 | git shortlog
-
+John
 -- 
 John W. Linville		Someday the world will need a hero, and you
 linville@tuxdriver.com			might be all we have.  Be ready.
