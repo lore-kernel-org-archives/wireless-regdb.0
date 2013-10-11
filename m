@@ -1,14 +1,16 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from canardo.mork.no ([2001:4620:9::1])
+Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
+ ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VUm7h-0002f1-H2
- for wireless-regdb@lists.infradead.org; Fri, 11 Oct 2013 23:28:00 +0000
-From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
-Date: Sat, 12 Oct 2013 01:27:22 +0200
-Message-Id: <1381534042-28273-1-git-send-email-bjorn@mork.no>
+ id 1VUjHM-0006Qz-8a
+ for wireless-regdb@lists.infradead.org; Fri, 11 Oct 2013 20:25:44 +0000
+Date: Fri, 11 Oct 2013 16:24:59 -0400
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20131011202459.GF14329@tuxdriver.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: NO, Norway - enable VHT80
+Content-Disposition: inline
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2013-10-11
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -18,63 +20,35 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This enables 80 MHz bandwidth usage on all 5 GHz
-frequencies.
+(Cutting the short log, since the original version got classified as
+SPAM on vger.kernel.org...??)
 
-This is a country that belongs to CEPT [0] and an available
-regulatory source is ECC/DEC/(04)08 [1].
+A new release of wireless-regdb (master-2013-10-11) is available at:
 
-Quoting:
+http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.10.11.tar.gz
 
-considering [...]
-   e. that the systems covered by this ECC Decision operate
-   typically in a 20 MHz channel bandwidth, other values for
-   the channel bandwidth are also feasible provided they
-   comply with the relevant maximum mean e.i.r.p. and the
-   corresponding maximum mean e.i.r.p. density limits;
+Here is the short log of the changes included since the 2013-02-13
+release:
 
-[0] https://en.wikipedia.org/wiki/European_Conference_of_Postal_and_Telecommunications_Administrations
-[1] http://www.erodocdb.dk/Docs/doc98/official/pdf/ECCDEC0408.PDF
+SNIP -- you'll have to check it yourself:
 
-Cc: Luis R. Rodriguez <mcgrof@do-not-panic.com>
-Signed-off-by: Bjørn Mork <bjorn@mork.no>
----
-I have no idea why this was left out of the big CEPT VHT80 batch...
+	git log master-2013-02-13..master-2013-10-11 | git shortlog
 
- db.txt |    6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index d0d1a3f..8c61b14 100644
---- a/db.txt
-+++ b/db.txt
-@@ -569,9 +569,9 @@ country NL: DFS-ETSI
- 
- country NO: DFS-ETSI
- 	(2402 - 2482 @ 40), (N/A, 20)
--	(5170 - 5250 @ 40), (N/A, 20)
--	(5250 - 5330 @ 40), (N/A, 20), DFS
--	(5490 - 5710 @ 40), (N/A, 27), DFS
-+	(5170 - 5250 @ 80), (N/A, 20)
-+	(5250 - 5330 @ 80), (N/A, 20), DFS
-+	(5490 - 5710 @ 80), (N/A, 27), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (N/A, 40), NO-OUTDOOR
- 
 -- 
-1.7.10.4
-
+John W. Linville		Someday the world will need a hero, and you
+linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
