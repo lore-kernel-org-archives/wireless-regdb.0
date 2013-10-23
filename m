@@ -1,29 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-x233.google.com ([2a00:1450:4010:c04::233])
+Received: from mail-wi0-x22a.google.com ([2a00:1450:400c:c05::22a])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1V77PL-0007gY-BK
- for wireless-regdb@lists.infradead.org; Wed, 07 Aug 2013 17:20:24 +0000
-Received: by mail-lb0-f179.google.com with SMTP id v1so1692225lbd.24 for
- <wireless-regdb@lists.infradead.org>; Wed, 07 Aug 2013 10:20:00 -0700 (PDT)
+ id 1VZ3b7-0005iZ-7z
+ for wireless-regdb@lists.infradead.org; Wed, 23 Oct 2013 18:56:01 +0000
+Received: by mail-wi0-f170.google.com with SMTP id l12so8801105wiv.3 for
+ <wireless-regdb@lists.infradead.org>; Wed, 23 Oct 2013 11:55:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:sender:in-reply-to:references:from:date:message-id
- :subject:to:cc:content-type;
- bh=eqxcv1b4gDkiue4WB+UTu55M2bmsoROP9AAr4lMyxZ4=;
- b=WYQCuIX9UU3Cgj8NWMkNBk1PwOxkgdqd4tmK09tSQzmCYIG6owSupBsWKrgP7qJw+d
- TCiLOm/i6W7dftyc8v6y6VPuJC89pTi04tbk07wDObkffahk1Wmu5S5Fcjk+dViRsufP
- W1JGTkgNLZ3dUXwNrRQkPwWLPZRSr0+zUCbYe4hDHOC46jn+58br+jfYaNiOK5M7gU6T
- ymCpyomRapE1sjpUW9ME+ZjFV8RtTtrOrzfybgxRy6Tmt67qp4lprSnPRPDF1vgqHh+n
- fONWDL409P0udkEwZ9qBhamAUzoswquFrL2BOMXehCeRX839XO7MXboMSt0Td5frme+T Roxg==
-MIME-Version: 1.0
-In-Reply-To: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
-References: <1372899889-19183-1-git-send-email-mcgrof@do-not-panic.com>
+ s=20120113; h=sender:from:to:cc:subject:date:message-id;
+ bh=Y9Kz9f9DAlvrXLm9iXls2IvKB13gkEozuOajMKZmf6w=;
+ b=BqpJVSWmuwqCcRX0dEqcR1S/aEBMqOlflrjedXLfhj6bKoNEWXaNU/WOxzuZ3Gf0uz
+ 4tgAhIxdRhUNYCkgldADPjdlDOB93lYLObY0vmEt0be/dQ2NFDJ0A/vOiLSjgI7E3p3B
+ G2/kgy1KwHOel87VWPdQdiAPOr9IvCO4Lkx4U+mIU5Y3qfq0fWsvAjZcK09vpsLNwDM+
+ AXx+u8nd9cgh/1Hefvp1fY7xs1HdydAheHaRvCQ8YWqYRcLoSKC5r3+mewjUFi+yEoye
+ vQO5WkCDw8leVcPUkSAiB3Cz6FzpaR0hhVZggOotMSfa9eENZ1X0XaPPqdHh8VQiGYKY kUdw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed, 7 Aug 2013 10:19:40 -0700
-Message-ID: <CAB=NE6XSQOtMzhB6Q_CmjT5aA+=hKvVU3m8yT33=bcE7sEBOFQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] [RFC 00/53] wireless-regdb: mostly VHT80
-	updates
+Date: Wed, 23 Oct 2013 20:55:36 +0200
+Message-Id: <1382554536-27943-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [RFC] cfg80211: make genregdb.awk skip antenna
+ gain
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,44 +28,63 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Jul 3, 2013 at 6:03 PM, Luis R. Rodriguez
-<mcgrof@do-not-panic.com> wrote:
-> From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
->
-> Here's a series of updates for wireless-regdb. Most of this is
-> to just enable VHT80 support to enable support for 802.11ac
-> where this has been verified to be usable. I cannot meet the
-> criteria of providing full documentation for sources for all
-> patches, only a few ones so what I recommend for the rest is
-> to let this sit on the list for a bit and I'd hope after
-> review if no one spots any issues I'd hope we can merge this.
->
-> I reviewed the idea of vendor namespaces on wireless-regdb
-> and at least through review with pkgadd on IRC we concluded
-> its best to try to take this approach instead of encouraging
-> divergence due to any lack of full source documentation or
-> inability to provide such documentation for whatever reason.
-> This seems to be better than not getting any updates at all
-> and keeps vendors hopefully encouraged to push changes upstream.
+Now that wireless-regdb doesn't include
+antenna gain lets skip parsing it completely
+for when CONFIG_CFG80211_INTERNAL_REGDB is
+enabled.
 
-John,
+Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+---
+ net/wireless/genregdb.awk | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+ mode change 100644 => 100755 net/wireless/genregdb.awk
 
-I addressed all comments and its been a while without any negative
-feedback on the patches. If you do decide to merge I put the delta on
-this tree to make it easy to pull, on the master branch.
+diff --git a/net/wireless/genregdb.awk b/net/wireless/genregdb.awk
+old mode 100644
+new mode 100755
+index c808619..3e241e4e
+--- a/net/wireless/genregdb.awk
++++ b/net/wireless/genregdb.awk
+@@ -63,14 +63,11 @@ active && /^[ \t]*\(/ {
+ 	end = $3
+ 	bw = $5
+ 	sub(/\),/, "", bw)
+-	gain = $6
+-	sub(/\(/, "", gain)
+-	sub(/,/, "", gain)
+-	power = $7
+-	sub(/\)/, "", power)
++	power = $6
++	sub(/\(/, "", power)
+ 	sub(/,/, "", power)
+ 	# power might be in mW...
+-	units = $8
++	units = $7
+ 	sub(/\)/, "", units)
+ 	sub(/,/, "", units)
+ 	if (units == "mW") {
+@@ -87,7 +84,7 @@ active && /^[ \t]*\(/ {
+ 		}
+ 	}
+ 	flagstr = ""
+-	for (i=8; i<=NF; i++)
++	for (i=7; i<=NF; i++)
+ 		flagstr = flagstr $i
+ 	split(flagstr, flagarray, ",")
+ 	flags = ""
+-- 
+1.8.4.rc3
 
-git://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/wireless-regdb.git
-
-  Luis
 
 _______________________________________________
 wireless-regdb mailing list
