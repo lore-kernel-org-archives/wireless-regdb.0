@@ -1,27 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-f179.google.com ([74.125.82.179])
+Received: from mail-wg0-x22a.google.com ([2a00:1450:400c:c00::22a])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Vac1N-0000ZH-Gs
- for wireless-regdb@lists.infradead.org; Mon, 28 Oct 2013 01:53:35 +0000
-Received: by mail-we0-f179.google.com with SMTP id w61so5852133wes.38 for
- <wireless-regdb@lists.infradead.org>; Sun, 27 Oct 2013 18:53:08 -0700 (PDT)
+ id 1Vac1P-0000ZI-QM
+ for wireless-regdb@lists.infradead.org; Mon, 28 Oct 2013 01:53:36 +0000
+Received: by mail-wg0-f42.google.com with SMTP id n12so2865087wgh.5 for
+ <wireless-regdb@lists.infradead.org>; Sun, 27 Oct 2013 18:53:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=3jaL/5Fx95VvwC2oBcP2wzLcyrw3K9kJUGqddM3dgVE=;
- b=mHUYVgwDU8GTWiXhkE2Xlsu7aTaWPIA6HhxeL7j2LWMUg2SocV3bg6GsAvOecITNi4
- vAxNCd97ipIXbwPMXXUqK7KRzdLeZtF9N1HH75oUSO0Y/SIvwxuihlDQLM/e6EldDXLI
- fCBcUwpFRsHog4ja/n42TVfP20+2FTGjlhiPsXHqGGWCy9sUGgc7s79F1nr3KuOxeYSl
- 4kHWivWK03nft3/KDBDcQP/MwYBIxJnsJVbykgy6+OlHS4eM7FdW7EbwE5KYAU8PpVFv
- OhFBQj5F98mUPl6KRoLma/8JGDCRFiiG9oOj7yk9h8S7QML2Ys/EUUVw7lNsDSD72RUz wNBg==
+ bh=qZW6UKLJgyDiQrpdsy4NsUDyBuIP2ShiFRTk/Rf6LAo=;
+ b=oTaXcvVBSBYIreYE4SISCRSxHBfrI8xBS0ndC+6X9FdBQfwwNmsDbkR3jNrrPaPl38
+ eIgryMQneLON5gww0k+bBNdfwM3aV2aLdvEQ4lsI4gpTWiBaIT7fhYI7F+scCDJgYyVG
+ 1jWAms3Kne/TkWhVka/gHrCkptMKZIHVqP1nRquV17g/Kztqw4X+bYBF8rDIPpN+rp9B
+ aORQ3FI9NRMvIqX0McmxcJ6oUdt6+6PDUGMvElLU/fEG3MieMXRxEWIzFRl8DGjZgq3A
+ 4KVBN5U6KstR/eM2sors79N3fL+khafZbUYwLqKWc/3DBYMlKkkvr4xa2v9Yx3yjrxy1 069A==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Mon, 28 Oct 2013 02:52:57 +0100
-Message-Id: <1382925182-7393-2-git-send-email-mcgrof@do-not-panic.com>
+Date: Mon, 28 Oct 2013 02:52:58 +0100
+Message-Id: <1382925182-7393-3-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1382925182-7393-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1382925182-7393-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 1/6] crda: relicense under
-	copyleft-next-0.3.0
+Subject: [wireless-regdb] [PATCH 2/6] crda: fix -pedantic gcc compilation
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,283 +40,36 @@ To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-I'm relicensing CRDA to copyleft-next-0.3.0. The original
-motivation was to help with the BSD family but they are not
-using any of this software and as this software grows I'd
-like to ensure we use the best free software license
-possible.
-
-Fontana's work on copyleft-next is great and has good
-community traction. At this point development for
-copyleft-next has slowed down as copyleft-next-0.3.0
-is already a good, usable alternative to GPLv2 and GPLv3.
-
-A few notes:
-
-  * With copyleft we don't have to specify 'at your option
-    any later version' since the license allows that by
-    default.
-
-  * Some folks might wonder if copyleft-next-0.3.0 is
-    OSI OSD-conformant or FSF-free since neither of
-    those bodies have examined the license officially,
-    but note, although IANAL, that copyleft-next is
-    outbound-compatible with GPLv2 and GPLv3
+gcc likes to complain about this, fix that as we're
+going to get a bit more anal with code here soon as
+we're moving towards making a library out of reglib.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- LICENSE             |  14 +++-
- copyleft-next-0.3.0 | 219 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 232 insertions(+), 1 deletion(-)
- create mode 100644 copyleft-next-0.3.0
+ crda.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/LICENSE b/LICENSE
-index 652a6dd..cc26ff2 100644
---- a/LICENSE
-+++ b/LICENSE
-@@ -1,4 +1,16 @@
--Copyright (c) 2008, Luis R. Rodriguez <mcgrof@gmail.com>
-+Copyright (c) 2013, Luis R. Rodriguez <mcgrof@do-not-panic.com>
-+
-+CRDA is licensed under copyleft-next 0.3.0
-+
-+Refer to copyleft-next-0.3.0 for license details, you can
-+also always get the latest updates of copyleft-next from:
-+
-+https://gitorious.org/copyleft-next/
-+
-+This file incorporates work covered by the following copyright and
-+permission notice:
-+
-+Copyright (c) 2008, Luis R. Rodriguez <mcgrof@do-not-panic.com>
- Copyright (c) 2008, Johannes Berg <johannes@sipsolutions.net>
- Copyright (c) 2008, Michael Green <Michael.Green@Atheros.com>
+diff --git a/crda.c b/crda.c
+index 2a601eb..4751a39 100644
+--- a/crda.c
++++ b/crda.c
+@@ -141,13 +141,15 @@ int main(int argc, char **argv)
+ {
+ 	int fd = -1;
+ 	int i = 0, j, r;
+-	char alpha2[3] = {}; /* NUL-terminate */
++	char alpha2[3];
+ 	char *env_country;
+ 	struct nl80211_state nlstate;
+ 	struct nl_cb *cb = NULL;
+ 	struct nl_msg *msg;
+ 	int finished = 0;
  
-diff --git a/copyleft-next-0.3.0 b/copyleft-next-0.3.0
-new file mode 100644
-index 0000000..a66d5bf
---- /dev/null
-+++ b/copyleft-next-0.3.0
-@@ -0,0 +1,219 @@
-+                   copyleft-next 0.3.0 ("this License")
-+                         Release date: 2013-05-16
++	memset(alpha2, 0, 3);
 +
-+1. License Grants; No Trademark License
-+
-+   Subject to the terms of this License, I grant You:
-+
-+   a) A non-exclusive, worldwide, perpetual, royalty-free, irrevocable
-+      copyright license, to reproduce, Distribute, prepare derivative works
-+      of, publicly perform and publicly display My Work.
-+
-+   b) A non-exclusive, worldwide, perpetual, royalty-free, irrevocable
-+      patent license under Licensed Patents to make, have made, use, sell,
-+      offer for sale, and import Covered Works.
-+
-+   This License does not grant any rights in My name, trademarks, service
-+   marks, or logos.
-+
-+2. Distribution: General Conditions
-+
-+   You may Distribute Covered Works, provided that You (i) inform
-+   recipients how they can obtain a copy of this License; (ii) satisfy the
-+   applicable conditions of sections 3 through 6; and (iii) preserve all
-+   Legal Notices contained in My Work (to the extent they remain
-+   pertinent). "Legal Notices" means copyright notices, license notices,
-+   license texts, and author attributions, but does not include logos,
-+   other graphical images, trademarks or trademark legends.
-+
-+3. Conditions for Distributing Derived Works; Outbound GPL Compatibility
-+
-+   If You Distribute a Derived Work, You must license the entire Derived
-+   Work as a whole under this License, with prominent notice of such
-+   licensing. This condition may not be avoided through such means as
-+   separate Distribution of portions of the Derived Work. You may
-+   additionally license the Derived Work under the GPL, so that the
-+   recipient may further Distribute the Derived Work under either this
-+   License or the GPL.
-+
-+4. Condition Against Further Restrictions; Inbound License Compatibility
-+
-+   When Distributing a Covered Work, You may not impose further
-+   restrictions on the exercise of rights in the Covered Work granted under
-+   this License. This condition is not excused merely because such
-+   restrictions result from Your compliance with conditions or obligations
-+   extrinsic to this License (such as a court order or an agreement with a
-+   third party).
-+
-+   However, You may Distribute a Covered Work incorporating material
-+   governed by a license that is both OSI-Approved and FSF-Free as of the
-+   release date of this License, provided that Your Distribution complies
-+   with such other license.
-+
-+5. Conditions for Distributing Object Code
-+
-+   You may Distribute an Object Code form of a Covered Work, provided that
-+   you accompany the Object Code with a URL through which the Corresponding
-+   Source is made available, at no charge, by some standard or customary
-+   means of providing network access to source code.
-+
-+   If you Distribute the Object Code in a physical product or tangible
-+   storage medium ("Product"), the Corresponding Source must be available
-+   through such URL for two years from the date of Your most recent
-+   Distribution of the Object Code in the Product. However, if the Product
-+   itself contains or is accompanied by the Corresponding Source (made
-+   available in a customarily accessible manner), You need not also comply
-+   with the first paragraph of this section.
-+
-+   Each recipient of the Covered Work from You is an intended third-party
-+   beneficiary of this License solely as to this section 5, with the right
-+   to enforce its terms.
-+
-+6. Symmetrical Licensing Condition for Upstream Contributions
-+
-+   If You Distribute a work to Me specifically for inclusion in or
-+   modification of a Covered Work (a "Patch"), and no explicit licensing
-+   terms apply to the Patch, You license the Patch under this License, to
-+   the extent of Your copyright in the Patch. This condition does not
-+   negate the other conditions of this License, if applicable to the Patch.
-+
-+7. Nullification of Copyleft/Proprietary Dual Licensing
-+
-+   If I offer to license, for a fee, a Covered Work under terms other than
-+   a license that is OSI-Approved or FSF-Free as of the release date of this
-+   License or a numbered version of copyleft-next released by the
-+   Copyleft-Next Project, then the license I grant You under section 1 is no
-+   longer subject to the conditions in sections 2 through 5.
-+
-+8. Copyleft Sunset
-+
-+   The conditions in sections 2 through 5 no longer apply once fifteen
-+   years have elapsed from the date of My first Distribution of My Work
-+   under this License.
-+
-+9. Pass-Through
-+
-+   When You Distribute a Covered Work, the recipient automatically receives
-+   a license to My Work from Me, subject to the terms of this License.
-+
-+10. Termination
-+
-+    Your license grants under section 1 are automatically terminated if You
-+
-+    a) fail to comply with the conditions of this License, unless You cure
-+       such noncompliance within thirty days after becoming aware of it, or
-+
-+    b) initiate a patent infringement litigation claim (excluding
-+       declaratory judgment actions, counterclaims, and cross-claims)
-+       alleging that any part of My Work directly or indirectly infringes
-+       any patent.
-+
-+    Termination of Your license grants extends to all copies of Covered
-+    Works You subsequently obtain. Termination does not terminate the
-+    rights of those who have received copies or rights from You subject to
-+    this License.
-+
-+    To the extent permission to make copies of a Covered Work is necessary
-+    merely for running it, such permission is not terminable.
-+
-+11. Later License Versions
-+
-+    The Copyleft-Next Project may release new versions of copyleft-next,
-+    designated by a distinguishing version number ("Later Versions").
-+    Unless I explicitly remove the option of Distributing Covered Works
-+    under Later Versions, You may Distribute Covered Works under any Later
-+    Version.
-+
-+** 12. No Warranty                                                       **
-+**                                                                       **
-+**     My Work is provided "as-is", without warranty. You bear the risk  **
-+**     of using it. To the extent permitted by applicable law, each      **
-+**     Distributor of My Work excludes the implied warranties of title,  **
-+**     merchantability, fitness for a particular purpose and             **
-+**     non-infringement.                                                 **
-+
-+** 13. Limitation of Liability                                           **
-+**                                                                       **
-+**     To the extent permitted by applicable law, in no event will any   **
-+**     Distributor of My Work be liable to You for any damages           **
-+**     whatsoever, whether direct, indirect, special, incidental, or     **
-+**     consequential damages, whether arising under contract, tort       **
-+**     (including negligence), or otherwise, even where the Distributor  **
-+**     knew or should have known about the possibility of such damages.  **
-+
-+14. Severability
-+
-+    The invalidity or unenforceability of any provision of this License
-+    does not affect the validity or enforceability of the remainder of
-+    this License. Such provision is to be reformed to the minimum extent
-+    necessary to make it valid and enforceable.
-+
-+15. Definitions
-+
-+    "Copyleft-Next Project" means the project that maintains the source
-+    code repository at <https://gitorious.org/copyleft-next/> as of the
-+    release date of this License.
-+
-+    "Corresponding Source" of a Covered Work in Object Code form means (i)
-+    the Source Code form of the Covered Work; (ii) all scripts,
-+    instructions and similar information that are reasonably necessary for
-+    a skilled developer to generate such Object Code from the Source Code
-+    provided under (i); and (iii) a list clearly identifying all Separate
-+    Works (other than those provided in compliance with (ii)) that were
-+    specifically used in building and (if applicable) installing the
-+    Covered Work (for example, a specified proprietary compiler including
-+    its version number). Corresponding Source must be machine-readable.
-+
-+    "Covered Work" means My Work or a Derived Work.
-+
-+    "Derived Work" means a work of authorship that copies from, modifies,
-+    adapts, is based on, is a derivative work of, transforms, translates or
-+    contains all or part of My Work, such that copyright permission is
-+    required. The following are not Derived Works: (i) Mere Aggregation;
-+    (ii) a mere reproduction of My Work; and (iii) if My Work fails to
-+    explicitly state an expectation otherwise, a work that merely makes
-+    reference to My Work.
-+
-+    "Distribute" means to distribute, transfer or make a copy available to
-+    someone else, such that copyright permission is required.
-+
-+    "Distributor" means Me and anyone else who Distributes a Covered Work.
-+
-+    "FSF-Free" means classified as 'free' by the Free Software Foundation.
-+
-+    "GPL" means a version of the GNU General Public License or the GNU
-+    Affero General Public License.
-+
-+    "I"/"Me"/"My" refers to the individual or legal entity that places My
-+    Work under this License. "You"/"Your" refers to the individual or legal
-+    entity exercising rights in My Work under this License. A legal entity
-+    includes each entity that controls, is controlled by, or is under
-+    common control with such legal entity. "Control" means (a) the power to
-+    direct the actions of such legal entity, whether by contract or
-+    otherwise, or (b) ownership of more than fifty percent of the
-+    outstanding shares or beneficial ownership of such legal entity.
-+
-+    "Licensed Patents" means all patent claims licensable royalty-free by
-+    Me, now or in the future, that are necessarily infringed by making,
-+    using, or selling My Work, and excludes claims that would be infringed
-+    only as a consequence of further modification of My Work.
-+
-+    "Mere Aggregation" means an aggregation of a Covered Work with a
-+    Separate Work.
-+
-+    "My Work" means the particular work of authorship I license to You
-+    under this License.
-+
-+    "Object Code" means any form of a work that is not Source Code.
-+
-+    "OSI-Approved" means approved as 'Open Source' by the Open Source
-+    Initiative.
-+
-+    "Separate Work" means a work that is separate from and independent of a
-+    particular Covered Work and is not by its nature an extension or
-+    enhancement of the Covered Work, and/or a runtime library, standard
-+    library or similar component that is used to generate an Object Code
-+    form of a Covered Work.
-+
-+    "Source Code" means the preferred form of a work for making
-+    modifications to it.
+ 	struct nlattr *nl_reg_rules;
+ 	const struct ieee80211_regdomain *rd = NULL;
+ 
 -- 
 1.8.4.rc3
 
