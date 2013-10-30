@@ -1,27 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x22e.google.com ([2a00:1450:400c:c03::22e])
+Received: from mail-la0-x235.google.com ([2a00:1450:4010:c03::235])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VbdaK-0007xx-OY
- for wireless-regdb@lists.infradead.org; Wed, 30 Oct 2013 21:45:53 +0000
-Received: by mail-we0-f174.google.com with SMTP id u56so1904211wes.33 for
- <wireless-regdb@lists.infradead.org>; Wed, 30 Oct 2013 14:45:29 -0700 (PDT)
+ id 1VbdbW-00087f-Nm
+ for wireless-regdb@lists.infradead.org; Wed, 30 Oct 2013 21:47:07 +0000
+Received: by mail-la0-f53.google.com with SMTP id eo20so1591573lab.26 for
+ <wireless-regdb@lists.infradead.org>; Wed, 30 Oct 2013 14:46:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=sRhOnK6NzqAk+WxB5wkqhvc50w0RShHTJCiFTfl/BxM=;
- b=sk/xpfn8Ow9lOyGCAuI5zPzAuAzbXqfXFTp+0xNjBwvUoFQ8km1LFEy4a8Dpj2Bko1
- ezmRu8PgVek1ft7rL9IS8JWgGebIvkMZJYhWnaP/hND7kuFylg6c6QimYiLyykXTumyg
- HXlgeOjghy1GubtAOhB6yJgKpZOvQMTvqdkcOijeA1Sael0RScWdLu1+OEOM7EWCEFqu
- TpbPylZpIh42LbvRa7jrME14TIpzXRoDIzX82ipTRitHmGxv9WUpO2OaqOmE1jNTdmNQ
- kUjOPZl14n7IwfhSO4fbiFybi9ywVmwPFHXBKQGRJSgLNJHGOL5q1BF7j/Cg1m9oBlWs aOtw==
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed, 30 Oct 2013 22:45:09 +0100
-Message-Id: <1383169509-22619-8-git-send-email-mcgrof@do-not-panic.com>
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=+3HaT1T2G4ZqWMaEBKAJBGEQKXP2HVoxnjJGZJZ2wDk=;
+ b=mlk43iOiIEThwMkex29oSdbVc3n5R1zt5kE/kNDYWTHDimJk1spM1zCH7hyLT4WWjz
+ agKNHE4P//6D8ol1PfpdDkhArUzcRWz4+E1CmdqmDJt1z2jiaoFauALLfnwvpsaJtiAK
+ yUXivY3epGXiU1AjfMCj5c6M6exgXyHalyW8B7bc/NQ9CK2sHqz7PFSIk+l1AYNLaKCE
+ xJjegC0GNO/9iwladxD+xSJkg2Gv1Z69ENXW6y2hjUwvsBbXCZWjf+N+6lfLqizkiP+Y
+ yOYXvavO811ZgRHApqx/+COqQiT2ODeveIWWJDYd5pN+cMNFr8CiB3OdnRFWFAY7raYQ ssCg==
+MIME-Version: 1.0
 In-Reply-To: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 7/7] wireless-regdb: optimize two of NL's
-	rules
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Wed, 30 Oct 2013 22:46:23 +0100
+Message-ID: <CAB=NE6W7xpp_zr7a_Dtkbiqe9fo5=Si_GjkAr1wypSPgng64rw@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH 0/7] wireless-regdb: DFS regions and
+	optimizations
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,41 +33,28 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-There's no reason not to merge these two rules.
-This as picked up by the new CRDA optimizer.
+On Wed, Oct 30, 2013 at 10:45 PM, Luis R. Rodriguez
+<mcgrof@do-not-panic.com> wrote:
+> This patch series associates a slew of countries
+> to DFS regions and then provides updates to 4
+> countries based on the new CRDA optimizer. The
+> optimizations have no functional changes other
+> than reducing the size of the regulatory domain
+> data strucutre that would be used to send to
+> the kernel.
 
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
----
- db.txt | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+I should note that this depends on the removal of antenna gain patch.
 
-diff --git a/db.txt b/db.txt
-index efd9902..429a380 100644
---- a/db.txt
-+++ b/db.txt
-@@ -557,8 +557,7 @@ country MX: DFS-FCC
- 
- country NL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), NO-OUTDOOR
--	(5250 - 5330 @ 80), (20), NO-OUTDOOR
-+	(5170 - 5330 @ 80), (20), NO-OUTDOOR
- 	(5490 - 5710 @ 80), (27), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
--- 
-1.8.4.rc3
-
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
