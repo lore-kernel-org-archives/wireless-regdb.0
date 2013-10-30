@@ -1,26 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x22f.google.com ([2a00:1450:400c:c03::22f])
+Received: from mail-wi0-x22b.google.com ([2a00:1450:400c:c05::22b])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Vbda8-0007wz-Ma
- for wireless-regdb@lists.infradead.org; Wed, 30 Oct 2013 21:45:43 +0000
-Received: by mail-we0-f175.google.com with SMTP id t61so1874615wes.20 for
- <wireless-regdb@lists.infradead.org>; Wed, 30 Oct 2013 14:45:18 -0700 (PDT)
+ id 1VbdaB-0007xG-RP
+ for wireless-regdb@lists.infradead.org; Wed, 30 Oct 2013 21:45:44 +0000
+Received: by mail-wi0-f171.google.com with SMTP id f4so3534710wiw.4 for
+ <wireless-regdb@lists.infradead.org>; Wed, 30 Oct 2013 14:45:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=mzLS7vDJ+ilDNx4XsPhV6YxUdE2Tq9V5JjDRj6K/DNM=;
- b=n0slBO7jXo2dIR+G1tKINNdIHOIj50iHvCFBISCe2PwLNCX8d6Ekt8aUGIK7F0Rpl8
- NyNwEwToj7RT0G/1oYqD+HqrerNf4DOQ2P6rStVT8C/dWTrvoXzSj0ipXSufgOzkPTr7
- LwJKY8BMK84V4DIWsWniz4KR1UU1JG3qQIb4x8kUzIo+Yrbzuwa3N40uqxo+FOl32UZD
- QYfmMdf3MDWEgj0SNKRkiLOS3fl+w/B0bHnH36Zew5zC/ObyhoFuA9ng4a2x0JAHJfvZ
- TFGYu0adI8HpYVLx2ZAVJsu7k+x+WpAlANFK5xe1ca9vBm5rMZFhXkEisoISir5Th/VY UyOw==
+ bh=U7oUDlGMkWHWA9FbK+RCZDXSVTkLK55qE5Vmn6GRWWM=;
+ b=rXrgpi1d+8LgF79O//wy64UbRX91ZHq9dROpanB9ZYqS2s1OQ/tOSZxDm3L1L7wmTb
+ fmE3hST5zIzeZ0eL8sOS1WIciIL2kGA40KIKhWLmOCIjVuRVRz41Kk+jDqO0/YdFJwPX
+ dBhUKToZfF3w4s4sDSCPFVE486jsjh/m2SOBJooDP2/hZlir1V1AWhzDabQDGNBe9Qf+
+ sOy0kmJMbhlU0UZ25jXmdEfxU2xQU15ILzFZa3PmY2ZsrrU32N38esD5TgTMBfS/ZFrO
+ uW7rweGvGqBqhN+Wt45VXGLUD9dXBrudcahRg7IhPMRCnEhxmy3mHqGJ7OdKOFNpinKZ yAvQ==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed, 30 Oct 2013 22:45:05 +0100
-Message-Id: <1383169509-22619-4-git-send-email-mcgrof@do-not-panic.com>
+Date: Wed, 30 Oct 2013 22:45:06 +0100
+Message-Id: <1383169509-22619-5-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 3/7] wireless-regdb: add DFS JP regions
+Subject: [wireless-regdb] [PATCH 4/7] wireless-regdb: optimize two of DE's
+	rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,177 +41,31 @@ To: linville@tuxdriver.com
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This associates the following countries to the
-DFS JP region:
-
-	BD, BH, BN, BO, BZ, CL, DZ, ID, IN, IR
-	JP, JO, KE, KP, KR, NP, PK, QA, TW
+There's no reason not to merge these two rules.
+This as picked up by the new CRDA optimizer.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 36 ++++++++++++++++++------------------
- 1 file changed, 18 insertions(+), 18 deletions(-)
+ db.txt | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 1c20be2..5ca9704 100644
+index 5ca9704..da8fcfe 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -86,7 +86,7 @@ country BB: DFS-FCC
- 	(5250 - 5330 @ 40), (23), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country BD:
-+country BD: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 
- country BE: DFS-ETSI
-@@ -105,7 +105,7 @@ country BG: DFS-ETSI
+@@ -222,10 +222,8 @@ country CZ: DFS-ETSI
+ country DE: DFS-ETSI
+ 	# entries 279004 and 280006
+ 	(2400 - 2483.5 @ 40), (100 mW)
+-	# entry 303005
+-	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR
+-	# entries 304002 and 305002
+-	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR
++	# entry 303005, 304002 and 305002
++	(5150 - 5350 @ 80), (100 mW), NO-OUTDOOR
+ 	# entries 308002, 309001 and 310003
+ 	(5470 - 5725 @ 80), (500 mW), DFS
  	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country BH:
-+country BH: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 20), (20)
- 	(5250 - 5330 @ 20), (20), DFS
-@@ -116,13 +116,13 @@ country BL:
- 	(5170 - 5250 @ 40), (18)
- 	(5250 - 5330 @ 40), (18), DFS
- 
--country BN:
-+country BN: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (20)
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country BO:
-+country BO: DFS-JP
- 	(2402 - 2482 @ 40), (30)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -139,7 +139,7 @@ country BY: DFS-ETSI
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5490 - 5710 @ 40), (27), DFS
- 
--country BZ:
-+country BZ: DFS-JP
- 	(2402 - 2482 @ 40), (30)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -158,7 +158,7 @@ country CH: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country CL:
-+country CL: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (20)
- 	(5250 - 5330 @ 40), (20), DFS
-@@ -245,7 +245,7 @@ country DO: DFS-FCC
- 	(5250 - 5330 @ 40), (23), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country DZ:
-+country DZ: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 
- country EC: DFS-FCC
-@@ -377,7 +377,7 @@ country HU: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country ID:
-+country ID: DFS-JP
- 	# ref: http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5815 @ 80), (20)
-@@ -395,7 +395,7 @@ country IL: DFS-ETSI
- 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
- 	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR
- 
--country IN:
-+country IN: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (20)
- 	(5250 - 5330 @ 40), (20), DFS
-@@ -409,7 +409,7 @@ country IS: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country IR:
-+country IR: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -428,7 +428,7 @@ country JM: DFS-FCC
- 	(5490 - 5710 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country JP:
-+country JP: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(2474 - 2494 @ 20), (20), NO-OFDM
- 	(4910 - 4990 @ 40), (23)
-@@ -437,11 +437,11 @@ country JP:
- 	(5250 - 5330 @ 80), (20), DFS
- 	(5490 - 5710 @ 160), (23), DFS
- 
--country JO:
-+country JO: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (18)
- 
--country KE:
-+country KE: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -451,7 +451,7 @@ country KH: DFS-ETSI
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5490 - 5710 @ 40), (27), DFS
- 
--country KP:
-+country KP: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5330 @ 40), (20)
- 	(5160 - 5250 @ 40), (20), DFS
-@@ -575,7 +575,7 @@ country NO: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country NP:
-+country NP: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -619,7 +619,7 @@ country PH: DFS-FCC
- 	(5490 - 5710 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country PK:
-+country PK: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -646,7 +646,7 @@ country PR: DFS-FCC
- 	(5490 - 5710 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country QA:
-+country QA: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -725,7 +725,7 @@ country SV: DFS-FCC
- country SY:
- 	(2402 - 2482 @ 40), (20)
- 
--country TW:
-+country TW: DFS-JP
- 	(2402 - 2472 @ 40), (27)
- 	(5270 - 5330 @ 40), (17), DFS
- 	(5490 - 5710 @ 80), (30), DFS
 -- 
 1.8.4.rc3
 
