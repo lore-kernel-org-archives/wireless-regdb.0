@@ -1,24 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wg0-x22c.google.com ([2a00:1450:400c:c00::22c])
+Received: from mail-we0-x22b.google.com ([2a00:1450:400c:c03::22b])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcH8a-0003S8-7G
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 15:59:53 +0000
-Received: by mail-wg0-f44.google.com with SMTP id n12so4216101wgh.23 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 08:59:28 -0700 (PDT)
+ id 1VcFKM-00015h-1d
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:03:55 +0000
+Received: by mail-we0-f171.google.com with SMTP id t60so3977726wes.16 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:03:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=sender:from:to:cc:subject:date:message-id;
- bh=2Yuq5MUVhnr1I/xglf7iu7N/tqn54gByUkfTmOpPBlU=;
- b=ITzaDbcM0aCo2pwGK4DWsgw5O3WR/ncrBJfQYB6j8xca8MqilBxwtjJND47lej+tgE
- 9Bxtue7hDuBUgUClakfKtDltIFmUZwzMY35nzlWhtBPum2dv3jEguJNBK58Cs0CSb0Pg
- aMkUdIwsX7y9nbAZRQ53+imZpkK//gfxg5afNv6DlvNz+FxhAZwnYMxzoMxCE1llwp99
- bQPF42hLWSfi8yy30DHmY0eymvsP96Ycgz4S8c98XubiU+u+BFpS7i2fCCFAhlk2CUMv
- pjIM6T9beOns+b30vJ8PMX9ZEIjLXhlkTsz+HxT9TyZ+VZl5Rp3zvmRC9a0RqZ1XP4jm 3ToQ==
+ bh=4ESH1RhY1x8I/RNaJM0TVMsRM/5KAnNim0FcYdI5EIg=;
+ b=YlVxqcSJc4xRR+61haWpmZRv+nDWh/le9DoatvIJ/5x0KFmKbQsIPnScmmWEDGPhVs
+ ukiZ/noM9rYdUuhJ+WViWGAf7UOivByjagvdjqaYpEBiWdxH7OJYDDUfF+CPhoGOeZyW
+ 4m5kqdY/ULMYdkVxLFkXW1lmVKWUPdd2Pc4WyCMWDIs9Yemku2IjPOB01LZYSb3GIZoM
+ qzchcRl0OzgZ6JPXX+iiJ9SuGEMqkAnBBOiHdEuovLf9tKTPVI6ksWjoIRqC8hPLVEuH
+ QeDgrifsnItDob60L69RXhLhLWY7Rov9gY7Y1GYSp6JVAwLPq7lMS5iIHJ2WqM7LD3YI kUCQ==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 16:59:24 +0100
-Message-Id: <1383321564-25138-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH v2 15/23] wireless-regdb: update BG's
-	regulatory rules
+Date: Fri,  1 Nov 2013 15:02:55 +0100
+Message-Id: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [PATCH 00/23] wireless-regdb: general rules
+ updates
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,35 +38,39 @@ To: linville@tuxdriver.com
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This reduces the 5 GHz max EIRP to 20, enables VHT80
-and removes the last 5 GHz DFS frequency range.
+This is my third series, it contains either just changes for
+the 5 GHz band or changes to both the 2.4 GHz and 5 GHz band.
+This will consist of removal of some frequency ranges so
+special attention should be put to this series.
 
-Source is QCA's regulatory team's efforts.
+Luis R. Rodriguez (23):
+  wireless-regdb: update BN's 5 GHz rules
+  wireless-regdb: update CA's 5 GHz rules
+  wireless-regdb: update KE's 5 GHz rules
+  wireless-regdb: update KP's 5 GHz rules
+  wireless-regdb: update MC's 5 GHz rules
+  wireless-regdb: update MA's 5 GHz rules
+  wireless-regdb: update NP's 5 GHz rules
+  wireless-regdb: update OM's 5 GHz rules
+  wireless-regdb: update PG's 5 GHz rules
+  wireless-regdb: update RU's 5 GHz rules
+  wireless-regdb: update RW's 5 GHz rules
+  wireless-regdb: update SA's 5 GHz rules
+  wireless-regdb: update TT's 5 GHz rules
+  wireless-regdb: update ZA's 5 GHz rules
+  wireless-regdb: update BG's regulatory rules
+  wireless-regdb: update CO's regulatory rules
+  wireless-regdb: update GE's regulatory rules
+  wireless-regdb: update PR's regulatory rules
+  wireless-regdb: update KR's regulatory rules
+  wireless-regdb: update MX's regulatory rules
+  wireless-regdb: update PA's regulatory rules
+  wireless-regdb: update TW's regulatory rules
+  wireless-regdb: update US'  regulatory rules
 
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
----
+ db.txt | 133 ++++++++++++++++++++++++++++++++++-------------------------------
+ 1 file changed, 70 insertions(+), 63 deletions(-)
 
-I had forgotten to remove the 5 GHz frequency range.
-
- db.txt | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index de2e94e..09a0164 100644
---- a/db.txt
-+++ b/db.txt
-@@ -103,9 +103,8 @@ country BE: DFS-ETSI
- 
- country BG: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 40), (23)
--	(5250 - 5290 @ 40), (23), DFS
--	(5490 - 5710 @ 40), (30), DFS
-+	(5170 - 5250 @ 80), (20)
-+	(5250 - 5330 @ 80), (20), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
 -- 
 1.8.4.rc3
 
