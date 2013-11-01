@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x22a.google.com ([2a00:1450:400c:c05::22a])
+Received: from mail-we0-x231.google.com ([2a00:1450:400c:c03::231])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFF9-0000Im-FC
+ id 1VcFFA-0000Is-7i
  for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:58:32 +0000
-Received: by mail-wi0-f170.google.com with SMTP id ex4so1194930wid.3 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:58:08 -0700 (PDT)
+Received: by mail-we0-f177.google.com with SMTP id x55so3958447wes.22 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:58:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=htXz8KXK0MUKx1Xv196n8LU3ekHtRAVaGbLmDckSveM=;
- b=YDfmvMZ3I1N+/BJPdH4Q1260FHJvfZQ72gYpdY6eIsKfAqK3cZV9p6c+1xlGbLorMt
- 0AbNL8KrGgS12I8IvUgWXFzsc9X253WsCv99IvwsfEPrpvaBSdxFFIQRCEcdO+iIjd8S
- bJ4RwlEwpMvx8o9AQZY6/vQVBVxXgQFfBSchtkQjHF/ksiZ/UQguOU6jkIgKQ+sjMmLc
- CAXCrUkrr1gRpmfDEQ6xxKF9mfqCwAAyH1Y5CkSerxe09cEYe41G52i3KFr53iY/aqAP
- K4UYqHes6VXc5eTdzJhfx3xKukGMyWT8MhgG9tIoCGXEfI48WcazlBGtoV/Po1F6Fx8Z 5heQ==
+ bh=ef7ixrP9KwM1KLyH7KQwKZ7xusfTkwworsEMrgrgBNo=;
+ b=qqFuJ7b6IL6z3rYvakg1Rn55Y/yHolYlwvroAljmdlm7TKKJgDC6JVK0u+2qU0WqWS
+ 49cD3JuHt6x6cWEDHcPrEt9llmihTqf2HAB9O1ZIxDurZN+L1YS4a+YWNRJd7jHc5N0r
+ orMlwL7d8+ngQ5BbbQVyoz0Q6UfZFSGNbllBawGOrMEJSQ7Ngckyh/jL2C60nrJSntBY
+ sgHCUhhnnREnnEKMNOwBP2cBLJUIdGlUnTQKmkJgoGbHVwCgDMeuKsEi4ilX7EU7l6Zl
+ zAW/kDxrTlHiIfARMsopeg5a83XXQ9VkKa1MdnL37DMUzXXDKDVoTA5ZyDVobVezKsTm 10jA==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 14:56:54 +0100
-Message-Id: <1383314275-20960-5-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 14:56:55 +0100
+Message-Id: <1383314275-20960-6-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 04/65] wireless-regdb: enable VHT80 for AW
+Subject: [wireless-regdb] [PATCH 05/65] wireless-regdb: enable VHT80 for AZ
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,25 +44,23 @@ Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ db.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 5ef95ee..993b8f1 100644
+index 993b8f1..2f62549 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -63,9 +63,9 @@ country AU:
- 
- country AW: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 40), (20)
--	(5250 - 5330 @ 40), (20), DFS
--	(5490 - 5710 @ 40), (27), DFS
-+	(5170 - 5250 @ 80), (20)
-+	(5250 - 5330 @ 80), (20), DFS
-+	(5490 - 5710 @ 80), (27), DFS
+@@ -69,8 +69,8 @@ country AW: DFS-ETSI
  
  country AZ: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 40), (18)
+-	(5250 - 5330 @ 40), (18), DFS
++	(5170 - 5250 @ 80), (18)
++	(5250 - 5330 @ 80), (18), DFS
+ 
+ country BA: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
 -- 
 1.8.4.rc3
