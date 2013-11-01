@@ -1,27 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wg0-x22d.google.com ([2a00:1450:400c:c00::22d])
+Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFHT-0000rc-D6
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:00:55 +0000
-Received: by mail-wg0-f45.google.com with SMTP id z12so4136136wgg.24 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:00:33 -0700 (PDT)
+ id 1VcEn1-0007b6-O2
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:29:28 +0000
+Received: by mail-lb0-f176.google.com with SMTP id z5so3416566lbh.21 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:29:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=o1nj7qWgj6POrwRh8TtslcWZ/LGJQAXNJWJDS2sn1h8=;
- b=PIOTSXKqfEGq7RT+do4YcqMGQdUe0355na7Z8FoAxbRkpXddLFiIcJDR6ghFs5C36x
- Hm0Woo89PIFndcLSKf5Sznb9oZ+6s7fY2NkI+W9vMfi/efcAykZJVf/1ZoXwj0rMoFnI
- va9I+orf97zpPi+2qbr2vKa2P2XETccUArg6ahvd7+X5aEMPKpLxMkmbt8/9rHYX92hL
- OVyeZXaa6iXzW43bCpJTwkCPvUB8jEMECraY3859m2zt0wJyAtpdy6SG1IvwPUo7BtwI
- dtJKlvdfhDy/isVj0VNTUvVfv4g4WhZLlD/TRZmOD0E89NNuQTDhtH/rKZv2dNjKQb5F gzmA==
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=Ok74Ff2tyLNp+J2VOGCcZMOZ9e3ljKQ5cnHXfTNfdFk=;
+ b=Fd5y+eXNuGdLRyRXfUZBHL9bGXfX54EkaG9xhY4uuGrc1+lvpZTs0JXTcC60xj5k+t
+ XAe5enyYHv/g6g347KSZBzhWPK+sr/oo55lv+TS0isUXE45Jote7cL80ruidvLUgETT6
+ aU6J8qSkQJ9LsN3OPaqBUvpYh7MYFBeu2Cush0xHVk9xatFwUSyEmMWO1QJMTXKZlAAY
+ nkzL3t0FN12O4aK0rNHlEaFHsyU2J72uDqrKOKnRRWs5f9Ppm0pM4OwEeRcaT7O6LCIz
+ RA8/Xxw04KxFY9y955ba21EBYAZf62p5Nqw4OT1GbgQqVtfhZlnlVXhovPRkQo9o0a0S JQdw==
+MIME-Version: 1.0
+In-Reply-To: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
+References: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 14:57:55 +0100
-Message-Id: <1383314275-20960-66-git-send-email-mcgrof@do-not-panic.com>
-In-Reply-To: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
-References: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 65/65] wireless-regdb: increase 5 GHz
- power for IL
+Date: Fri, 1 Nov 2013 14:28:42 +0100
+Message-ID: <CAB=NE6W+hf6_+d1Koz84GVcaFHK8xUperA9yht6WfyEw=Gs_pg@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH 0/7] wireless-regdb: DFS regions and
+	optimizations
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,40 +33,46 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This increases the max EIRP for the only 5 GHz frequency
-range on IL from 20 dBm to 23 dBm.
+On Wed, Oct 30, 2013 at 10:45 PM, Luis R. Rodriguez
+<mcgrof@do-not-panic.com> wrote:
+> This patch series associates a slew of countries
+> to DFS regions and then provides updates to 4
+> countries based on the new CRDA optimizer. The
+> optimizations have no functional changes other
+> than reducing the size of the regulatory domain
+> data strucutre that would be used to send to
+> the kernel.
+>
+> Luis R. Rodriguez (7):
+>   wireless-regdb: add DFS FCC regions
+>   wireless-regdb: add DFS ETSI regions
 
-Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
----
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+This patch was missing one country although the commit log mentioned it.
 
-diff --git a/db.txt b/db.txt
-index 7ec31a1..591bdab 100644
---- a/db.txt
-+++ b/db.txt
-@@ -387,7 +387,7 @@ country HU: DFS-ETSI
- country ID: DFS-JP
- 	# ref: http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf
- 	(2402 - 2482 @ 40), (20)
--	(5735 - 5815 @ 80), (20)
-+	(5735 - 5815 @ 80), (23)
- 
- country IE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--- 
-1.8.4.rc3
+>   wireless-regdb: add DFS JP regions
 
+This one as well.
+
+>   wireless-regdb: optimize two of DE's rules
+>   wireless-regdb: optimize two of ES's rules
+
+This one conflicts with Xose's patch so I'll drop it.
+
+>   wireless-regdb: optimize two of IL's rules
+>   wireless-regdb: optimize two of NL's rules
+
+I'll just respin.
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
