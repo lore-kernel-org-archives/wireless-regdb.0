@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x229.google.com ([2a00:1450:400c:c05::229])
+Received: from mail-wg0-x22e.google.com ([2a00:1450:400c:c00::22e])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFLK-0001HA-4D
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:04:54 +0000
-Received: by mail-wi0-f169.google.com with SMTP id cb5so1203963wib.2 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:32 -0700 (PDT)
+ id 1VcFLR-0001IR-Hj
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:05:02 +0000
+Received: by mail-wg0-f46.google.com with SMTP id m15so4080916wgh.25 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pKX1Z/zqEM0AHtqMHPJBJ4PSpULl47XTzSUxxOezONg=;
- b=EodiKG6eqvq+beDZ5DDC1ezewtZ99EX9c5IoYT74SYLP8vJtEbMUdt/PiyJBvuCe9O
- Apvan6pErmLV18NlFms94lhOO4AC5+TWqh0rUqhjuVXOH9FUB0q6vMkXXCzhSU/0Gn8t
- z9UNYGHvdY6tE1Nj9MNrrMiroB8KpBuEki7unGZw4KoZfKN9V+e4hZO+nlxFPEpShrW7
- jtSE7YCMvfGJ1doWUYYaIb4Ydarr1H2C/C8YkagCZP3o9BOPkgyWbHrjUJLDelBPmyDW
- c8nXgXh43oYC3OJ3HGOu+3HBYB/oVpsOpWC94p0S4m1j8fQVBFpHpdqa5IcMH0hr219A I84g==
+ bh=UiXgYlsRQ0RgfaHSK/CJvypkmoxn6s2oClETN+fEgEA=;
+ b=Ue9kXPSCAnrccVj0HJVwZzm/odn+oDPafHe24BkhH2qYuNZ2x1JfjI89w+5cUfTAU+
+ DOOzaRONBAy+z3wgRll59j7cUyfCcPBVEajPVWGjOVjIVhFw0DVtCRJPiANFjNihVgJR
+ hfuehPW4NrsXNKLSQfhXw5DiKjr1QRgHejOnzX0YSFNRvoeQNlduLmw50AYLgdgF3v8V
+ g9efN3X8xSOZPZALPnJP2Bu3ZDAtW9l3t4V1aXpecbc5QqvgWveIzCF9a8MAjlAP9EIF
+ m5LmSKC09nfI3VSxMXW3hXvBY14JeCa9brh471Foz4GqZI7USIZmSMHta8V0Ll0IPlcV p0Tw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 15:03:17 +0100
-Message-Id: <1383314598-21240-23-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 15:03:18 +0100
+Message-Id: <1383314598-21240-24-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 22/23] wireless-regdb: update TW's
+Subject: [wireless-regdb] [PATCH 23/23] wireless-regdb: update US'
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -43,41 +43,39 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 This:
 
-  o Increases the max EIRP for the 2.4 GHz band from
+  o Increases the max EIRP on the 2.4 GHz band from
     27 dBm to 30 dBm
 
-  o Splits up the 5 GHz DFS band into two DFS bands,
-    one with VHT80 support, another only with HT40
-    support
+  o Decreases the max EIRP for the first DFS frequency
+    range by 1 dBm
 
-  o Extends the last 5 GHz frequency range by 20 MHz
+  o Removes the two lower 5 GHz DFS frequency ranges
 
 Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ db.txt | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 97165ed..e45991f 100644
+index e45991f..752dfc9 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -744,10 +744,11 @@ country SY:
- 	(2402 - 2482 @ 40), (20)
+@@ -793,11 +793,9 @@ country UA: DFS-ETSI
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
- country TW: DFS-JP
+ country US: DFS-FCC
 -	(2402 - 2472 @ 40), (27)
 +	(2402 - 2472 @ 40), (30)
- 	(5270 - 5330 @ 40), (17), DFS
--	(5490 - 5710 @ 80), (30), DFS
--	(5735 - 5815 @ 80), (30)
-+	(5490 - 5590 @ 80), (30), DFS
-+	(5650 - 5710 @ 40), (30), DFS
-+	(5735 - 5835 @ 80), (30)
- 
- country TH: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (17)
+-	(5250 - 5330 @ 80), (24), DFS
+-	(5490 - 5600 @ 80), (24), DFS
+-	(5650 - 5710 @ 40), (24), DFS
++	(5250 - 5330 @ 80), (23), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 	# 60g band
+ 	# reference: http://cfr.regstoday.com/47cfr15.aspx#47_CFR_15p255
 -- 
 1.8.4.rc3
 
