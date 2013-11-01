@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x22f.google.com ([2a00:1450:400c:c03::22f])
+Received: from mail-we0-x234.google.com ([2a00:1450:400c:c03::234])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFKz-0001DD-G9
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:04:33 +0000
-Received: by mail-we0-f175.google.com with SMTP id t61so3969116wes.20 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:12 -0700 (PDT)
+ id 1VcFL4-0001EP-Oh
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:04:39 +0000
+Received: by mail-we0-f180.google.com with SMTP id q59so3986657wes.39 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4Bq0oHRHoPjTSrRtAse1WVrMnm3QDfW3hdKlbXbEKUw=;
- b=KiEvswl4BPYHcpR2h9wpQpRJWRLpe4FJqmQAzHDX9R5hlVk1WlIPy5wNV4+mSMr789
- omVPTTmOatElXL4EUy4DFa3eudtz5XdaTedGgxbcvbvvALm3NGzu+zuOq5pCM+6Ef32w
- HNw4YNkctnwhjXoJ1Ixe+t4/2xWdOcwn1N2CWUT7d7/dAqDeUkyuATiOC96E6bXNK5gg
- cd8n27IGStXFrMyKHHE5LLuaRGxpJ0FLL+4rLz8dfn4F1QxGeRlJOjqRVeTlXVYBb397
- k7cAsVeRWd/yjf5VwyPLyztQLuzoYVWMuE+GZ1sZZQuq4CHDtyO7XRIiAHc/EM9D2HyT 85+Q==
+ bh=EM9uzZEsJvSjRsoBjS97/nZNDnNqDuH9nZVILMyVRYA=;
+ b=n//dbfRcy6Zdqccf5hPSUngo+uFVjM42wyetyTsH1oqmZlZkGmGcaKZs3OixWZlHp1
+ TxUPIyZ18Roeh37i8hY3UfwPtWYMOR5qTslW/b76rX7e7yLRaMQZqH3Iw15b9us6jJo5
+ TSOaVVH+yu8zUGVULT5rGKB5DpYjgCbLBKALRvzDP0V4FlRlCYoa2EVq0qhBAMmdSFaF
+ wWMFLgZmnCiuJqg8wk4KsHJj4nD4tsRVrH7+mnql4f6sL4ecXA798QkwEiIrv6pq19Oh
+ KbPiFxX9VpWxSjhhUS+cc9qXUgLipAhtWiYWLOtynh+xUy3K4xuO9MnRECjAg1pmDTTN dVIA==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 15:03:11 +0100
-Message-Id: <1383314598-21240-17-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 15:03:12 +0100
+Message-Id: <1383314598-21240-18-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 16/23] wireless-regdb: update CO's
+Subject: [wireless-regdb] [PATCH 17/23] wireless-regdb: update GE's
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -41,34 +41,40 @@ To: linville@tuxdriver.com
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This extends CO's coverage by 10 MHz but reduces its
-max EIRP from 27 dBm to 20 dBm. This also increases
-the 5 GHz DFS frequency range.
+This:
+
+  o increases the max EIRP for 2.4 GHz from 27 dBm to 30 dBm.
+  o Enables VHT80 on 5 GHz
+  o Increases max EIRP from 20 dBm to 24 dBm on 5 GHz DFS freqs
 
 Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ db.txt | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index f26fd1d..50c81ce 100644
+index 50c81ce..e9d1540 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -180,10 +180,10 @@ country CN: DFS-FCC
- 	(63720 - 65880 @ 2160), (28)
+@@ -315,11 +315,11 @@ country GB: DFS-ETSI
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
- country CO: DFS-FCC
+ country GD: DFS-FCC
 -	(2402 - 2472 @ 40), (27)
-+	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
--	(5490 - 5710 @ 80), (24), DFS
+-	(5170 - 5250 @ 40), (17)
+-	(5250 - 5330 @ 40), (20), DFS
+-	(5490 - 5710 @ 40), (20), DFS
+-	(5735 - 5835 @ 40), (30)
++	(2402 - 2472 @ 40), (30)
++	(5170 - 5250 @ 80), (17)
++	(5250 - 5330 @ 80), (24), DFS
 +	(5490 - 5730 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
++	(5735 - 5835 @ 80), (30)
  
- country CR: DFS-FCC
+ country GR: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
 -- 
 1.8.4.rc3
 
