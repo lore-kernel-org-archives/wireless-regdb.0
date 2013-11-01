@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x231.google.com ([2a00:1450:400c:c05::231])
+Received: from mail-we0-f176.google.com ([74.125.82.176])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFCl-000080-JY
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:56:05 +0000
-Received: by mail-wi0-f177.google.com with SMTP id f4so1107293wiw.4 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:55:41 -0700 (PDT)
+ id 1VcFCr-00008D-Fv
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:56:10 +0000
+Received: by mail-we0-f176.google.com with SMTP id w62so3956409wes.21 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:55:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=PO5xx4Mlg9nGOZXj1WYD8yH2/S4cNS26R+vLLtAkkRE=;
- b=puJdfsbBuCIDY5XhiB+/iTNwYaVqVv4norlvHJEe9aQL9FYukag106WxDsOq8Q/sZ+
- cTwVDb36yrhyZdH9gAeGIDHakjyyVugt/D/Eq9C4BLyzKb+SwCuONgZK3oXUqoR/G9+D
- 925afNZBbVYpDuOW3mgCC5iyenj0TA4S5hq67mAhN6Az2PmH/aeM2uVCHdPbc6+n9Xba
- D/q+AbaMFfUupLouLxW4wHVbv8us+4kSJd1kia4sgJpe2y8zyxe7HbOzjKaKpDUl6TR2
- Z0ZA7VmoN93yCqMhJiVReCzdQ0eyTf0pKt9wNngoH3ICaw+Wwz3i2J5FsFMAMsEhSdyn GegQ==
+ bh=mPJaChacfuh3qNo+tHdPB74wtu5OrtdAOh5mlX+4rTM=;
+ b=NWfFCQdKmYt+EQqT2pZpYqZS83kMBeXX5l5nUYnfxbt2EdlKIaDSlaudMTgDQ87EQ5
+ naMppO3zpYr037kGhggKJ0S4zVHSKafSRf4Tb4kBjwR+7dy6CANktOCjMcIiC/WyEHnG
+ 5DDOBMssSen6m4EPuazie7LrLxTRWWL+vjWAEmh7rCpD/F9lClt0h75nqLUao/SwJo9t
+ 5HK/x8DiEry6jVceIa2WS3pLD4Up41RGUe8Q69N2z8VxVzVvq0LVq7P6K5m57GbyEXcy
+ 7Zmo2mVI/PoT7ks3d32kMvVr4+86eVSh2+5vZlAPWZbqbH66Fyo0TNsOuVWQ+Rvc175H Yc4g==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 14:55:26 +0100
-Message-Id: <1383314131-20774-4-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 14:55:27 +0100
+Message-Id: <1383314131-20774-5-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314131-20774-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314131-20774-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 3/8] wireless-regdb: add DFS FCC regions
+Subject: [wireless-regdb] [PATCH 4/8] wireless-regdb: add DFS ETSI regions
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,310 +41,197 @@ Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R.
 List-ID: <wireless-regdb@lists.infradead.org>
 
 This associates the following countries to the
-DFS FCC region:
+DFS ETSI region:
 
-	AE, AR, BB, BR, CA, CN, CO, CR, DO, EC,
-	GD, GT, GU, HN, JM, LB, LK, MY, MX, NZ,
-	PA, PE, PG, PH, PR, RW, SG, SV, TH, TT,
-	UY, UZ, VE, VN
+	AL, AM, AN, AW, AZ, BY, EG, GE, HT,
+	IL, KH, KW, MA, OM, RS, RU, SA, TN,
+	UA, ZA, ZW
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 68 +++++++++++++++++++++++++++++++++---------------------------------
- 1 file changed, 34 insertions(+), 34 deletions(-)
+ db.txt | 42 +++++++++++++++++++++---------------------
+ 1 file changed, 21 insertions(+), 21 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index c938767..94da96a 100644
+index 94da96a..beb94fd 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -18,7 +18,7 @@ country AD:
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+@@ -25,15 +25,15 @@ country AE: DFS-FCC
+ 	(5490 - 5710 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
--country AE:
-+country AE: DFS-FCC
+-country AL:
++country AL: DFS-ETSI
+ 	(2402 - 2482 @ 20), (20)
+ 
+-country AM:
++country AM: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -39,7 +39,7 @@ country AN:
+ 	(5170 - 5250 @ 20), (18)
+ 	(5250 - 5330 @ 20), (18), DFS
+ 
+-country AN:
++country AN: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (20)
+ 	(5250 - 5330 @ 40), (20), DFS
+@@ -61,13 +61,13 @@ country AU:
+ 	(5490 - 5710 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
+-country AW:
++country AW: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (20)
  	(5250 - 5330 @ 40), (20), DFS
  	(5490 - 5710 @ 40), (27), DFS
  
--country AR:
-+country AR: DFS-FCC
+-country AZ:
++country AZ: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -80,7 +80,7 @@ country BA: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country BB:
-+country BB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (23)
- 	(5250 - 5330 @ 40), (23), DFS
-@@ -126,7 +126,7 @@ country BO:
- 	(2402 - 2482 @ 40), (30)
- 	(5735 - 5835 @ 40), (30)
- 
--country BR:
-+country BR: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -143,7 +143,7 @@ country BZ:
- 	(2402 - 2482 @ 40), (30)
- 	(5735 - 5835 @ 40), (30)
- 
--country CA:
-+country CA: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -164,7 +164,7 @@ country CL:
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (20)
- 
--country CN:
-+country CN: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 80), (30)
- 	# 60 gHz band channels 1,4: 28dBm, channels 2,3: 44dBm
-@@ -173,14 +173,14 @@ country CN:
- 	(59400 - 63720 @ 2160), (44)
- 	(63720 - 65880 @ 2160), (28)
- 
--country CO:
-+country CO: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
+ 	(5170 - 5250 @ 40), (18)
+ 	(5250 - 5330 @ 40), (18), DFS
+@@ -133,7 +133,7 @@ country BR: DFS-FCC
  	(5490 - 5710 @ 80), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
--country CR:
-+country CR: DFS-FCC
+-country BY:
++country BY: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -239,7 +239,7 @@ country DK: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country DO:
-+country DO: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (23), DFS
-@@ -248,7 +248,7 @@ country DO:
- country DZ:
- 	(2402 - 2482 @ 40), (20)
- 
--country EC:
-+country EC: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -307,7 +307,7 @@ country GB: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country GD:
-+country GD: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 40), (17)
+ 	(5170 - 5250 @ 40), (20)
  	(5250 - 5330 @ 40), (20), DFS
-@@ -328,20 +328,20 @@ country GL: DFS-ETSI
+@@ -263,7 +263,7 @@ country EE: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-country EG:
++country EG: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 20), (20)
  	(5250 - 5330 @ 20), (20), DFS
- 	(5490 - 5710 @ 20), (27), DFS
+@@ -292,7 +292,7 @@ country FR: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
--country GT:
-+country GT: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (23), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country GU:
-+country GU: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
- 	(5490 - 5710 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country HN:
-+country HN: DFS-FCC
+-country GE:
++country GE: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (17)
+ 	(5170 - 5250 @ 40), (18)
+ 	(5250 - 5330 @ 40), (18), DFS
+@@ -363,7 +363,7 @@ country HR: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-country HT:
++country HT: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (20)
  	(5250 - 5330 @ 40), (20), DFS
-@@ -421,7 +421,7 @@ country IT: DFS-ETSI
+@@ -390,7 +390,7 @@ country IE: DFS-ETSI
  	# 60 gHz band channels 1-4, ref: Etsi En 302 567
  	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
--country JM:
-+country JM: DFS-FCC
+-country IL:
++country IL: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (17)
+ 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
+ 	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR
+@@ -445,7 +445,7 @@ country KE:
+ 	(2402 - 2482 @ 40), (20)
+ 	(5735 - 5835 @ 40), (30)
+ 
+-country KH:
++country KH: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (20)
  	(5250 - 5330 @ 40), (20), DFS
-@@ -473,7 +473,7 @@ country KW:
- country KZ:
- 	(2402 - 2482 @ 40), (20)
- 
--country LB:
-+country LB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -483,7 +483,7 @@ country LI: DFS-ETSI
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5490 - 5710 @ 40), (27), DFS
- 
--country LK:
-+country LK: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 20), (17)
- 	(5250 - 5330 @ 20), (20), DFS
-@@ -546,13 +546,13 @@ country MT: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country MY:
-+country MY: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (23), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country MX:
-+country MX: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -579,7 +579,7 @@ country NP:
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
--country NZ:
-+country NZ: DFS-FCC
- 	(2402 - 2482 @ 40), (30)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -593,26 +593,26 @@ country OM:
- 	(5490 - 5710 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country PA:
-+country PA: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (23), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country PE:
-+country PE: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
- 	(5490 - 5710 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country PG:
-+country PG: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (23), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country PH:
-+country PH: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -639,7 +639,7 @@ country PT: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country PR:
-+country PR: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -674,7 +674,7 @@ country RU:
- 	(5650 - 5710 @ 40), (30)
- 	(5735 - 5835 @ 40), (30)
- 
--country RW:
-+country RW: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5835 @ 40), (30)
- 
-@@ -693,7 +693,7 @@ country SE: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country SG:
-+country SG: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
-@@ -716,7 +716,7 @@ country SK: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--country SV:
-+country SV: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 20), (17)
- 	(5250 - 5330 @ 20), (23), DFS
-@@ -731,14 +731,14 @@ country TW:
- 	(5490 - 5710 @ 80), (30), DFS
+@@ -465,7 +465,7 @@ country KR:
+ 	(5490 - 5630 @ 80), (30), DFS
  	(5735 - 5815 @ 80), (30)
  
--country TH:
-+country TH: DFS-FCC
+-country KW:
++country KW: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
+ 	(5250 - 5330 @ 80), (20), DFS
+@@ -519,7 +519,7 @@ country MC: DFS-ETSI
+ 	(5170 - 5250 @ 40), (18)
+ 	(5250 - 5330 @ 40), (18), DFS
+ 
+-country MA:
++country MA: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (23)
+ 	(5735 - 5835 @ 80), (23)
+@@ -586,7 +586,7 @@ country NZ: DFS-FCC
+ 	(5490 - 5710 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
+-country OM:
++country OM: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (17)
+ 	(5250 - 5330 @ 40), (20), DFS
+@@ -661,14 +661,14 @@ country RO: DFS-ETSI
+ 
+ # Source:
+ # http://www.ratel.rs/upload/documents/Plan_namene/Plan_namene-sl_glasnik.pdf
+-country RS:
++country RS: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (100 mW)
+ 	(5150 - 5350 @ 40), (200 mW), NO-OUTDOOR
+ 	(5470 - 5725 @ 20), (1000 mW), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-country RU:
++country RU: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5330 @ 40), (20)
+ 	(5650 - 5710 @ 40), (30)
+@@ -678,7 +678,7 @@ country RW: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+ 	(5735 - 5835 @ 40), (30)
+ 
+-country SA:
++country SA: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (17)
+ 	(5250 - 5330 @ 80), (24), DFS
+@@ -745,7 +745,7 @@ country TT: DFS-FCC
+ 	(5490 - 5710 @ 40), (20), DFS
+ 	(5735 - 5835 @ 40), (30)
+ 
+-country TN:
++country TN: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 20), (20)
+ 	(5250 - 5330 @ 20), (20), DFS
+@@ -765,7 +765,7 @@ country TR: DFS-ETSI
+ # Listed 5GHz range is a lowest common denominator for all related
+ # rules in the referenced laws. Such a range is used because of
+ # disputable definitions there.
+-country UA:
++country UA: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (20), NO-OUTDOOR
+ 	(5150 - 5350 @ 40), (20), NO-OUTDOOR
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+@@ -811,13 +811,13 @@ country VN: DFS-FCC
+ country YE:
+ 	(2402 - 2482 @ 40), (20)
+ 
+-country ZA:
++country ZA: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
  	(5170 - 5250 @ 80), (17)
  	(5250 - 5330 @ 80), (24), DFS
  	(5490 - 5710 @ 80), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
--country TT:
-+country TT: DFS-FCC
+-country ZW:
++country ZW: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (20), DFS
-@@ -783,25 +783,25 @@ country US: DFS-FCC
- 	# channels 1,2,3, EIRP=40dBm(43dBm peak)
- 	(57240 - 63720 @ 2160), (40)
  
--country UY:
-+country UY: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5490 - 5710 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country UZ:
-+country UZ: DFS-FCC
- 	(2402 - 2472 @ 40), (27)
- 	(5170 - 5250 @ 40), (17)
- 	(5250 - 5330 @ 40), (20), DFS
- 	(5490 - 5710 @ 40), (20), DFS
- 	(5735 - 5835 @ 40), (30)
- 
--country VE:
-+country VE: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5735 - 5815 @ 40), (23)
- 
--country VN:
-+country VN: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (17)
- 	(5250 - 5330 @ 80), (24), DFS
 -- 
 1.8.4.rc3
 
