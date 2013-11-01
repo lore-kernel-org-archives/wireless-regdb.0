@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x232.google.com ([2a00:1450:400c:c03::232])
+Received: from mail-wi0-f171.google.com ([209.85.212.171])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFFc-0000NK-B7
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:59:00 +0000
-Received: by mail-we0-f178.google.com with SMTP id q59so3938275wes.23 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:58:37 -0700 (PDT)
+ id 1VcFFd-0000Om-OM
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:59:02 +0000
+Received: by mail-wi0-f171.google.com with SMTP id f4so1103850wiw.16 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:58:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2oUEEzjFe9HVbeN1gpLwtXng6OvDtUSwqpR2/EO/sKg=;
- b=fH+tAi5E784qqE3WY8nmlaQXIy2jeZjivkE5pakHdvudtw18wrYwlwasfGYo17JDQy
- N3LLeJC3w0cRbRK/UGsBprKkV5ddWMnHyU+tiNOuKqi2jjM9nh/PJbKLN5PAbgjiov9z
- om5up4AnL21SqKI9Zb3BGc3bhnBc67wV3KYLIxo86QtbRuACgVz1MbwOEJXULg7RWY8n
- tTahXeKf+4fLBFfYmN23rOW5Buxk5PIYUbKSoBZ9n0DmlGvBLcXMOUI3xWqnG/Xrsi7m
- FLU+xMw+/fYwXFXL7WSEolPQb7x/bYpGVKVdChKxUCAfsxp4GwRjeSK56q/PGhv7Tj5l b7rw==
+ bh=RGXGh67nJ+z+t56+QhfUWbNUBjQaX7IkuJnGVziTkls=;
+ b=MlRWqRM3cOc3JSiJ+9EdUNz7/4nT7nCJmAIht10PuSRcdI3S+C85ClGffiJvyjNYkN
+ t1C3OHsRq/dkp7Ln4I8KCEnsBmEcn4y6o8pYsj9oXLC3QQgnff1gXZb0FuFwrltHeWGL
+ PxJ+s/RCkWqMxzmkzxQtNQn59y1c31UIkw2ECggffmthBthiJDQqWq4a1wWNcNOHN3ZF
+ eISMqaLi9K2RAz+h3CQ7M+DyZSWmUPahmjylv/w2zBgAamDLuPesW8zF/lFQ7OgA8IPu
+ vN02DEsSgNjYHoQBcWRQKbwWfewAK9Mf6+91iv9c1nVSi7kErdEKnpQY1tkZ9QHRDR35 9d2Q==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 14:57:07 +0100
-Message-Id: <1383314275-20960-18-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 14:57:08 +0100
+Message-Id: <1383314275-20960-19-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314275-20960-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 17/65] wireless-regdb: enable VHT80 for HN
+Subject: [wireless-regdb] [PATCH 18/65] wireless-regdb: enable VHT80 for HR
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,36 +40,30 @@ To: linville@tuxdriver.com
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This also increases the max EIRP from 20 dBm to 24 dBm for
-the 5 GHz DFS frequency ranges. Also extend the 5 GHz
-DFS frequency range by 20 MHz.
-
 Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ db.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 2f43aa9..d020532 100644
+index d020532..9f2fd2a 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -341,10 +341,10 @@ country GU: DFS-FCC
+@@ -355,9 +355,9 @@ country HK:
  
- country HN: DFS-FCC
+ country HR: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 40), (17)
+-	(5170 - 5250 @ 40), (20)
 -	(5250 - 5330 @ 40), (20), DFS
--	(5490 - 5710 @ 40), (20), DFS
--	(5735 - 5835 @ 40), (30)
-+	(5170 - 5250 @ 80), (17)
-+	(5250 - 5330 @ 80), (24), DFS
-+	(5490 - 5730 @ 80), (24), DFS
-+	(5735 - 5835 @ 80), (30)
+-	(5490 - 5710 @ 40), (27), DFS
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5490 - 5710 @ 80), (27), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
- country HK:
- 	(2402 - 2482 @ 40), (20)
 -- 
 1.8.4.rc3
 
