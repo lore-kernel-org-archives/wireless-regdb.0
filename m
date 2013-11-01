@@ -1,24 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x22b.google.com ([2a00:1450:400c:c03::22b])
+Received: from mail-we0-x234.google.com ([2a00:1450:400c:c03::234])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFKM-00015h-1d
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:03:55 +0000
-Received: by mail-we0-f171.google.com with SMTP id t60so3977726wes.16 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:03:32 -0700 (PDT)
+ id 1VcFKO-00015z-4q
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:03:56 +0000
+Received: by mail-we0-f180.google.com with SMTP id q59so3985840wes.39 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:03:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=sender:from:to:cc:subject:date:message-id;
- bh=4ESH1RhY1x8I/RNaJM0TVMsRM/5KAnNim0FcYdI5EIg=;
- b=YlVxqcSJc4xRR+61haWpmZRv+nDWh/le9DoatvIJ/5x0KFmKbQsIPnScmmWEDGPhVs
- ukiZ/noM9rYdUuhJ+WViWGAf7UOivByjagvdjqaYpEBiWdxH7OJYDDUfF+CPhoGOeZyW
- 4m5kqdY/ULMYdkVxLFkXW1lmVKWUPdd2Pc4WyCMWDIs9Yemku2IjPOB01LZYSb3GIZoM
- qzchcRl0OzgZ6JPXX+iiJ9SuGEMqkAnBBOiHdEuovLf9tKTPVI6ksWjoIRqC8hPLVEuH
- QeDgrifsnItDob60L69RXhLhLWY7Rov9gY7Y1GYSp6JVAwLPq7lMS5iIHJ2WqM7LD3YI kUCQ==
+ s=20120113;
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=Kvk+jK59VhcmKhKdecqIiZ6FTVX0d4I+ftqS0LgcWB0=;
+ b=GMrgJPgDGKvRYp8GI5NaMae6I/cyXqIci2TaxuJ1PT5xmzwy6FhY3DDgfhB3m/KGMj
+ ZwqGC5w+IAOXz7uav1X0kZtPNwW3598wh0hP2r0a0WGpXfQJn5+5Yxp1MGMrIiz2fofm
+ 9tF//1jB91GF3YOgTVTfOnoGgglkZbwODu0IlDYXtzwZIWsI7zO+F9X475oj1A9kjUkV
+ iEMFuE+SchJSaihTls1r51C3mbucV1WvvQ1nBkEObbPQwUyLf5wIgJ/6ikNASs1889BW
+ b+7zkcIzHwWcFWebwtN3bUXwNYUHjWgdXOdl66j91qjoA0TY9toMr/AAeZhXlt/8G6oF mRfg==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 15:02:55 +0100
-Message-Id: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 00/23] wireless-regdb: general rules
- updates
+Date: Fri,  1 Nov 2013 15:02:56 +0100
+Message-Id: <1383314598-21240-2-git-send-email-mcgrof@do-not-panic.com>
+In-Reply-To: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
+References: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [PATCH 01/23] wireless-regdb: update BN's 5 GHz
+	rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,39 +41,33 @@ To: linville@tuxdriver.com
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This is my third series, it contains either just changes for
-the 5 GHz band or changes to both the 2.4 GHz and 5 GHz band.
-This will consist of removal of some frequency ranges so
-special attention should be put to this series.
+Enables VHT80 but reduces the max EIRP on the last
+5 GHz band from 30 dBm to 20 dBm.
 
-Luis R. Rodriguez (23):
-  wireless-regdb: update BN's 5 GHz rules
-  wireless-regdb: update CA's 5 GHz rules
-  wireless-regdb: update KE's 5 GHz rules
-  wireless-regdb: update KP's 5 GHz rules
-  wireless-regdb: update MC's 5 GHz rules
-  wireless-regdb: update MA's 5 GHz rules
-  wireless-regdb: update NP's 5 GHz rules
-  wireless-regdb: update OM's 5 GHz rules
-  wireless-regdb: update PG's 5 GHz rules
-  wireless-regdb: update RU's 5 GHz rules
-  wireless-regdb: update RW's 5 GHz rules
-  wireless-regdb: update SA's 5 GHz rules
-  wireless-regdb: update TT's 5 GHz rules
-  wireless-regdb: update ZA's 5 GHz rules
-  wireless-regdb: update BG's regulatory rules
-  wireless-regdb: update CO's regulatory rules
-  wireless-regdb: update GE's regulatory rules
-  wireless-regdb: update PR's regulatory rules
-  wireless-regdb: update KR's regulatory rules
-  wireless-regdb: update MX's regulatory rules
-  wireless-regdb: update PA's regulatory rules
-  wireless-regdb: update TW's regulatory rules
-  wireless-regdb: update US'  regulatory rules
+Source is QCA's regulatory team's efforts.
 
- db.txt | 133 ++++++++++++++++++++++++++++++++++-------------------------------
- 1 file changed, 70 insertions(+), 63 deletions(-)
+Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
+---
+ db.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
+diff --git a/db.txt b/db.txt
+index 591bdab..3c03886 100644
+--- a/db.txt
++++ b/db.txt
+@@ -122,9 +122,9 @@ country BL:
+ 
+ country BN: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 40), (20)
+-	(5250 - 5330 @ 40), (20), DFS
+-	(5735 - 5835 @ 40), (30)
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5735 - 5835 @ 80), (20)
+ 
+ country BO: DFS-JP
+ 	(2402 - 2482 @ 40), (30)
 -- 
 1.8.4.rc3
 
