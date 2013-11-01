@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x229.google.com ([2a00:1450:400c:c05::229])
+Received: from mail-wg0-x231.google.com ([2a00:1450:400c:c00::231])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcFKp-0001AD-FE
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:04:24 +0000
-Received: by mail-wi0-f169.google.com with SMTP id cb5so1208562wib.0 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:01 -0700 (PDT)
+ id 1VcFKs-0001Ai-3n
+ for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 14:04:26 +0000
+Received: by mail-wg0-f49.google.com with SMTP id x12so4147866wgg.16 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 07:04:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ECKsMsqq1nS31AaENt6n11eCKFQUO+sMjn7GrbdRb2I=;
- b=L/BceA1XUItW331OCeTVmYMeWJ/1ReGl0SFNctNbmtZ93tOI8LYskPbMwBL9TpS8NK
- UhIrPRydR3VsJqsk46pqQAaHFx/+0kzXrbrlAWzQgah5TlKJevDSvESYVQzXQYeRPT9X
- QmhcPrbpkTbkbMZbYiDqGuPiuwORZy+3nRuhDu8KwyKOKCjRyg7fioQeKaqDu8gjPbHw
- cVnNfemlNDfezjphZvt1s08GTpEKhNuuhjLUrLJbAkK18o6b6daEFmsjpl2PJTCSTVfb
- WA0u/YYTPVy65PGf1D45uCgEuMIEwGZ4TuFE+zIHvATi5vL02R4ubU8qg0FfSHUELvXj kZ8Q==
+ bh=2lexwIJexYqH7/cI8h6059/mwpz0m96QWoI7hC5vTF4=;
+ b=tXqTViC9pKc0qfntQVy8yNHmHj7rv6MXr4gQ3usLi7pnpb/7RTaYGCFra+FsmsGzjB
+ YhCAvvZNgj9ovywGeoPihGpbsylWc+dhPcme6loBZQQGnRGpZkRRCPZfLI9EKVkBYm4L
+ 8VsYGcvY+Iw96NrSMF8atg7I/e2YSvYwdpXLGSgm8p5BMmNFctrhPVaiFGJxEXAbQg5Q
+ JxElET/YIlptjnI6hWrt8Io6iTeof9xwJDRiaa3i05lA0WHAYzBkaMmVh1de3a1OjNkI
+ BMM/eX9L5Z9hywCg0xYYTCXVxmN5ZsMt1sWO9RnEBmd2Yv47QdIPPjsY7gef/2eiMSyj UTRw==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri,  1 Nov 2013 15:03:08 +0100
-Message-Id: <1383314598-21240-14-git-send-email-mcgrof@do-not-panic.com>
+Date: Fri,  1 Nov 2013 15:03:09 +0100
+Message-Id: <1383314598-21240-15-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1383314598-21240-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH 13/23] wireless-regdb: update TT's 5 GHz
+Subject: [wireless-regdb] [PATCH 14/23] wireless-regdb: update ZA's 5 GHz
 	rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -43,43 +43,41 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 This:
 
-  o Enables VHT80 on the first 5 GHz frequency range
+  o Increases the max EIRP on the first 5 GHz frequency
+    range from 17 dBm to 20 dBm
 
-  o Enables VHT80 for the first 5 GHz DFS frequency
-    range and increases the max EIRP from 20 dBm to
-    24 dBm
+  o Reduces the max EIRP on the first 5 GHz DFS frequency
+    range from 24 dBm to 20 dBm
 
-  o Extends the second DFS frequency range by 20 MHz,
-    enables VHT80 and increases the max EIRP from 20
-    dBm to 24 dBm
+  o Increases the max EIRP on the second 5 GHz DFS frequency
+    range from 24 dBm to 27 dBm
 
-  o Enables VHT80 on the last 5 GHz frequency range
+  o Removes the last 5 GHz frequency range
 
 Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Luis R. Rodriguez <mcgrof@do-not-panic.com>
 ---
- db.txt | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ db.txt | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index bd5994d..1d23fa1 100644
+index 1d23fa1..de2e94e 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -757,10 +757,10 @@ country TH: DFS-FCC
+@@ -834,10 +834,9 @@ country YE:
  
- country TT: DFS-FCC
+ country ZA: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 40), (17)
--	(5250 - 5330 @ 40), (20), DFS
--	(5490 - 5710 @ 40), (20), DFS
--	(5735 - 5835 @ 40), (30)
-+	(5170 - 5250 @ 80), (17)
-+	(5250 - 5330 @ 80), (24), DFS
-+	(5490 - 5730 @ 80), (24), DFS
-+	(5735 - 5835 @ 80), (30)
+-	(5170 - 5250 @ 80), (17)
+-	(5250 - 5330 @ 80), (24), DFS
+-	(5490 - 5710 @ 80), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5490 - 5710 @ 80), (27), DFS
  
- country TN: DFS-ETSI
+ country ZW: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
 -- 
 1.8.4.rc3
