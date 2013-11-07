@@ -1,16 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
+Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
+ ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VgA22-0008Os-0w
- for wireless-regdb@lists.infradead.org; Tue, 12 Nov 2013 09:13:10 +0000
-Message-ID: <1384247555.14301.3.camel@jlt4.sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 12 Nov 2013 10:12:35 +0100
-In-Reply-To: <1384204531-10025-1-git-send-email-mcgrof@do-not-panic.com>
-References: <1384204531-10025-1-git-send-email-mcgrof@do-not-panic.com>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH 0/3] cfg80211: add reguatory flags
+ id 1VeUoj-0008AV-Rj
+ for wireless-regdb@lists.infradead.org; Thu, 07 Nov 2013 19:00:34 +0000
+Date: Thu, 7 Nov 2013 13:54:48 -0500
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20131107185448.GB2002@tuxdriver.com>
+References: <1382926786-7904-1-git-send-email-mcgrof@do-not-panic.com>
+ <1382968735.17956.12.camel@jlt4.sipsolutions.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1382968735.17956.12.camel@jlt4.sipsolutions.net>
+Subject: Re: [wireless-regdb] [PATCH 0/2] cfg80211: a few genregdb.awk
+	updates
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -25,22 +29,21 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, linville@tuxdriver.com
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2013-11-11 at 22:15 +0100, Luis R. Rodriguez wrote:
-> This series is based on Mihir's unfinished work, it addresses
-> Johannes' comments. John, Johannes, you guys pick who this
-> goes through, I've based it on Johannes' mac80211-next as
-> it touches on regulatory and I had tons of changes already
-> merged. I've provided SmPL grammar in case of merge
-> conclicts.
+On Mon, Oct 28, 2013 at 02:58:55PM +0100, Johannes Berg wrote:
+> I'd apply this, but would prefer John to take a look - he wrote the awk
+> script and I'm not familiar with it.
 
-I'll take them all.
+They seem OK to me.
 
-johannes
+Acked-by: John W. Linville <linville@tuxdriver.com>
 
+-- 
+John W. Linville		Someday the world will need a hero, and you
+linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
