@@ -1,18 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
- ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
+Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VeUoj-0008AV-Rj
- for wireless-regdb@lists.infradead.org; Thu, 07 Nov 2013 19:00:34 +0000
-Date: Thu, 7 Nov 2013 13:54:48 -0500
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20131107185448.GB2002@tuxdriver.com>
+ id 1VfsEO-0007kd-ME
+ for wireless-regdb@lists.infradead.org; Mon, 11 Nov 2013 14:12:45 +0000
+Message-ID: <1384179133.14334.22.camel@jlt4.sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Mon, 11 Nov 2013 15:12:13 +0100
+In-Reply-To: <1382926786-7904-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1382926786-7904-1-git-send-email-mcgrof@do-not-panic.com>
- <1382968735.17956.12.camel@jlt4.sipsolutions.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1382968735.17956.12.camel@jlt4.sipsolutions.net>
+Mime-Version: 1.0
 Subject: Re: [wireless-regdb] [PATCH 0/2] cfg80211: a few genregdb.awk
 	updates
 List-Unsubscribe: 
@@ -29,21 +26,19 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Oct 28, 2013 at 02:58:55PM +0100, Johannes Berg wrote:
-> I'd apply this, but would prefer John to take a look - he wrote the awk
-> script and I'm not familiar with it.
+On Mon, 2013-10-28 at 03:19 +0100, Luis R. Rodriguez wrote:
+> A few updates while toying with genregdb.awk for small
+> regulatory domains. This depends on the antenna gain removal
+> patch.
 
-They seem OK to me.
+Applied, thanks.
 
-Acked-by: John W. Linville <linville@tuxdriver.com>
+johannes
 
--- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
