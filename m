@@ -1,29 +1,18 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-we0-x22d.google.com ([2a00:1450:400c:c03::22d])
+Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Vsorx-0003CV-Gc
- for wireless-regdb@lists.infradead.org; Tue, 17 Dec 2013 07:15:06 +0000
-Received: by mail-we0-f173.google.com with SMTP id u57so5730384wes.32 for
- <wireless-regdb@lists.infradead.org>; Mon, 16 Dec 2013 23:14:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to
- :cc:content-type; bh=tHOirP1ChTFe9bKGpsNss9WBn/uBWI3gz6c1YkCKZMo=;
- b=oD09M24/ycgY/Wt4CFbXkERtNsTqlXBC45Nzen3uJ3NgyVuD+HXuYpdkywUue7ZdM3
- OwZM/oHYgl6NCIFWMv9279UuaykUHKJV0ivkOWtLuou3XL/bpCvfIinLn20/U6zNJD9Y
- kkcj/iBD52rX9PRM7ZGxTlvfiyswJyQLvTBNxB/0wJDQLmJk+Z73OAoNFx1wQbnXrKWg
- fz5axbufRBJbf9c4PqGM7sIDHT4k5kaYiN8VVd7HeWXAb8x70tWJ8/YEu1sfw8ZAT7fN
- odfrBuTJ5kRcowDHHwu57NsYgrMaIM2PoncxvhcVR3KCOEjYw+ugRMWTBQIdKTnCSOgd I7jQ==
-MIME-Version: 1.0
-In-Reply-To: <CABPxzYJSBagxbz4nd8=Qt_HbG4ecqe=-cbzi0N4JDPCwDE42Mg@mail.gmail.com>
-References: 
-	 <CABPxzYJSBagxbz4nd8=Qt_HbG4ecqe=-cbzi0N4JDPCwDE42Mg@mail.gmail.com>
-From: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Date: Tue, 17 Dec 2013 12:44:22 +0530
-Message-ID: <CABPxzYLu+yjkfsi13BXG8sKoySu_CwtN+uSgwwYdiXdEq8sGMw@mail.gmail.com>
-Subject: Re: [wireless-regdb] CRDA: Build Fail: Database signature
-	verification failed
+ id 1VoYgZ-0000TT-3i
+ for wireless-regdb@lists.infradead.org; Thu, 05 Dec 2013 13:09:43 +0000
+Message-ID: <1386248952.4182.1.camel@jlt4.sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Thu, 05 Dec 2013 14:09:12 +0100
+In-Reply-To: <1386098166-24196-4-git-send-email-ilan.peer@intel.com>
+References: <1386098166-24196-1-git-send-email-ilan.peer@intel.com>
+ <1386098166-24196-4-git-send-email-ilan.peer@intel.com>
+Mime-Version: 1.0
+Subject: Re: [wireless-regdb] [PATCH v2 3/6] cfg80211: Enable GO operation
+ on additional channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,40 +27,65 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: John Linville <linville@tuxdriver.com>, Luis Rodriguez <mcgrof@do-not-panic.com>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
+To: Ilan Peer <ilan.peer@intel.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Dec 17, 2013 at 12:20 PM, Krishna Chaitanya
-<chaitanya.mgit@gmail.com> wrote:
-> Hi,
->
-> With the latest git source, i am seeing a build failure with the below error.
->
->   LD   crda
->   CC   intersect.o
->   LD   intersect
->   CC   regdbdump.o
->   LD   regdbdump
->   CC   db2rd.o
->   LD   db2rd
->   CC   optimize.o
->   LD   optimize
->   CHK  /usr/lib/crda/regulatory.bin
-> Database signature verification failed.
-> Invalid or empty regulatory file, note: a binary regulatory file should be used.
-> make: *** [verify] Error 234
->
-> Is there something wrong with the certificate?
->
-Additional info:
+On Tue, 2013-12-03 at 21:16 +0200, Ilan Peer wrote:
 
-# regdbdump /usr/lib/crda/regulatory.bin
-Database signature verification failed.
-#  ls -l /usr/lib/crda/regulatory.bin
--rw-r--r-- 1 root root 3344 Dec 16 17:34 /usr/lib/crda/regulatory.bin
+> +#ifdef CONFIG_CFG80211_REG_SOFT_CONFIGURATIONS
+> +/* For GO only, check if the channel can be used under permissive conditions
+> + * mandated by the some regulatory bodies, i.e., the channel is marked with
+> + * IEEE80211_CHAN_GO_CONCURRENT and there is an additional station interface
+> + * associated to an AP on the same channel or on the same UNII band
+> + * (assuming that the AP is an authorized master).
+> + */
+> +static bool cfg80211_go_permissive_chan(struct cfg80211_registered_device *rdev,
+> +					struct ieee80211_channel *chan)
+> +{
 
-regualtory.bin copied from wireless-regdb latest git.
+Seems like you could move the ifdef here ...
+
+> +	struct wireless_dev *wdev_iter;
+> +
+> +	ASSERT_RTNL();
+> +
+> +	if (!(chan->flags & IEEE80211_CHAN_GO_CONCURRENT))
+> +		return false;
+> +
+> +	list_for_each_entry(wdev_iter, &rdev->wdev_list, list) {
+> +		struct ieee80211_channel *other_chan = NULL;
+> +
+> +		if (wdev_iter->iftype != NL80211_IFTYPE_STATION ||
+> +		    !netif_running(wdev_iter->netdev))
+> +				continue;
+> +
+> +		wdev_lock(wdev_iter);
+> +		if (wdev_iter->current_bss)
+> +			other_chan = wdev_iter->current_bss->pub.channel;
+> +		wdev_unlock(wdev_iter);
+> +
+> +		if (!other_chan)
+> +			continue;
+> +
+> +		if (chan == other_chan) {
+> +			return true;
+> +		} else if (chan->band == IEEE80211_BAND_5GHZ) {
+> +			int r1 = cfg80211_get_unii(chan->center_freq);
+> +			int r2 = cfg80211_get_unii(other_chan->center_freq);
+> +
+> +			if (r1 != -EINVAL && r1 == r2)
+> +				return true;
+> +		}
+> +	}
+
+and here instead of duplicating the function prototype
+
+> +	return false;
+> +}
+
+johannes
+
 
 _______________________________________________
 wireless-regdb mailing list
