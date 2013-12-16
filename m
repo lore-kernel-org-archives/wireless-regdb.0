@@ -1,29 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
+Received: from mail-we0-x233.google.com ([2a00:1450:400c:c03::233])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VcEn1-0007b6-O2
- for wireless-regdb@lists.infradead.org; Fri, 01 Nov 2013 13:29:28 +0000
-Received: by mail-lb0-f176.google.com with SMTP id z5so3416566lbh.21 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Nov 2013 06:29:04 -0700 (PDT)
+ id 1Vsb1q-0007va-Jx
+ for wireless-regdb@lists.infradead.org; Mon, 16 Dec 2013 16:28:23 +0000
+Received: by mail-we0-f179.google.com with SMTP id q59so4769367wes.24 for
+ <wireless-regdb@lists.infradead.org>; Mon, 16 Dec 2013 08:28:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:sender:in-reply-to:references:from:date:message-id
- :subject:to:cc:content-type;
- bh=Ok74Ff2tyLNp+J2VOGCcZMOZ9e3ljKQ5cnHXfTNfdFk=;
- b=Fd5y+eXNuGdLRyRXfUZBHL9bGXfX54EkaG9xhY4uuGrc1+lvpZTs0JXTcC60xj5k+t
- XAe5enyYHv/g6g347KSZBzhWPK+sr/oo55lv+TS0isUXE45Jote7cL80ruidvLUgETT6
- aU6J8qSkQJ9LsN3OPaqBUvpYh7MYFBeu2Cush0xHVk9xatFwUSyEmMWO1QJMTXKZlAAY
- nkzL3t0FN12O4aK0rNHlEaFHsyU2J72uDqrKOKnRRWs5f9Ppm0pM4OwEeRcaT7O6LCIz
- RA8/Xxw04KxFY9y955ba21EBYAZf62p5Nqw4OT1GbgQqVtfhZlnlVXhovPRkQo9o0a0S JQdw==
+ s=20120113; h=mime-version:from:date:message-id:subject:to:cc:content-type;
+ bh=JtF5Kpvy6a/OlXS5AGDT5mfh2UQG2an6DnUQGSkeRs4=;
+ b=Gzmm7dCuum3ABLva5tBVZFupvTdAefCSJtMB9SDO7wpmlTEfZTPSIlvR1ihCUpP6Q1
+ b0u+xwtJ42GnbQryhAfRxA36zOOJpOnQRrZXqTO907Y7MlljojxS4pnZUv20ucZ/92k7
+ +2bsfoXUtMnOrPeT6exKrjGZv/r52DCvnz4HYKlZVtSjjJlQyhp+cD8qtmPJt5/Pza53
+ HVV7d31NUUbfwMCrIFxSdEjkXNtfdWFm9Ql9lJlXhigSHnUuw26WVBxhILZoFEPXclXG
+ rL+6rcPSyEGcacXM0A/yNdqsb0R79idOzY9E/bkIwd9Wa91PTTJIWJML639e/6w/5zmi lTxw==
 MIME-Version: 1.0
-In-Reply-To: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
-References: <1383169509-22619-1-git-send-email-mcgrof@do-not-panic.com>
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri, 1 Nov 2013 14:28:42 +0100
-Message-ID: <CAB=NE6W+hf6_+d1Koz84GVcaFHK8xUperA9yht6WfyEw=Gs_pg@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH 0/7] wireless-regdb: DFS regions and
-	optimizations
+From: Krishna Chaitanya <chaitanya.mgit@gmail.com>
+Date: Mon, 16 Dec 2013 21:57:39 +0530
+Message-ID: <CABPxzY+CnnssaZpqgWuJ=QH-k=zJbHpLaGkJXAQSWSxq7kKa6Q@mail.gmail.com>
+Subject: [wireless-regdb] [RFC] crda: Fix the linking order to avoid
+	compilation error
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,41 +34,53 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: John Linville <linville@tuxdriver.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Oct 30, 2013 at 10:45 PM, Luis R. Rodriguez
-<mcgrof@do-not-panic.com> wrote:
-> This patch series associates a slew of countries
-> to DFS regions and then provides updates to 4
-> countries based on the new CRDA optimizer. The
-> optimizations have no functional changes other
-> than reducing the size of the regulatory domain
-> data strucutre that would be used to send to
-> the kernel.
->
-> Luis R. Rodriguez (7):
->   wireless-regdb: add DFS FCC regions
->   wireless-regdb: add DFS ETSI regions
+While linking the crda.o and libreg.so, first put crda.o
+and then -lreg. This fixed the below error:
 
-This patch was missing one country although the commit log mentioned it.
+# make
+  GEN  keys-gcrypt.c
+  Trusted pubkeys: pubkeys/linville.key.pub.pem
+  CC   libreg.so
+  CC   crda.o
+  LD   crda
+crda.o: In function `main':
+crda/crda.c:196: undefined reference to `reglib_get_rd_alpha2'
+collect2: ld returned 1 exit status
+make: *** [crda] Error 1
 
->   wireless-regdb: add DFS JP regions
+Note: This still doesn't fix the below error (will send another mail)
 
-This one as well.
+  CHK  /usr/lib/crda/regulatory.bin
+Database signature verification failed.
+Invalid or empty regulatory file, note: a binary regulatory file should be used.
+make: *** [verify] Error 234
 
->   wireless-regdb: optimize two of DE's rules
->   wireless-regdb: optimize two of ES's rules
+Signed-off-by: Chaitanya T K <chaitanya.mgit@gmail.com>
+---
+ Makefile |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-This one conflicts with Xose's patch so I'll drop it.
+diff --git a/Makefile b/Makefile
+index 4a351c6..0b2f0d7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -28,10 +28,11 @@ RUNTIME_PUBKEY_DIR?=/etc/wireless-regdb/pubkeys
+ CFLAGS += -O2 -fpic
+ CFLAGS += -std=gnu99 -Wall -Werror -pedantic
+ CFLAGS += -Wall -g
+-LDLIBS += -lm
+ LDLIBREG += -lreg
++LDLIBS += $(LDLIBREG)
++LDLIBS += -lm
+ LIBREG += libreg.so
+-LDFLAGS += -L ./ $(LDLIBREG)
++LDFLAGS += -L ./
 
->   wireless-regdb: optimize two of IL's rules
->   wireless-regdb: optimize two of NL's rules
-
-I'll just respin.
-
-  Luis
+ all: all_noverify verify
 
 _______________________________________________
 wireless-regdb mailing list
