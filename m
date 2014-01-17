@@ -1,21 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from tuxdriver-1-pt.tunnel.tserv13.ash1.ipv6.he.net
- ([2001:470:7:9c9::2] helo=smtp.tuxdriver.com)
+Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1W6quu-0003Hx-Ij
- for wireless-regdb@lists.infradead.org; Sat, 25 Jan 2014 00:16:09 +0000
-Date: Fri, 24 Jan 2014 19:01:13 -0500
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20140125000113.GO4309@tuxdriver.com>
-References: <CABPxzYJSBagxbz4nd8=Qt_HbG4ecqe=-cbzi0N4JDPCwDE42Mg@mail.gmail.com>
- <CABPxzYLu+yjkfsi13BXG8sKoySu_CwtN+uSgwwYdiXdEq8sGMw@mail.gmail.com>
- <CAB=NE6U7zy8MeO4qLuWsEC_t69JKkS2=98crGrp4073=5WHU9Q@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAB=NE6U7zy8MeO4qLuWsEC_t69JKkS2=98crGrp4073=5WHU9Q@mail.gmail.com>
-Subject: Re: [wireless-regdb] CRDA: Build Fail: Database signature
-	verification failed
+ id 1W4669-0004LZ-3J
+ for wireless-regdb@lists.infradead.org; Fri, 17 Jan 2014 09:52:22 +0000
+Message-ID: <1389952310.6858.1.camel@jlt4.sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Fri, 17 Jan 2014 10:51:50 +0100
+Mime-Version: 1.0
+Subject: [wireless-regdb] [PATCH] regdb: Republic of Korea: fix double rule
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,51 +23,37 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Cc: Krishna Chaitanya <chaitanya.mgit@gmail.com>, linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+To: wireless-regdb <wireless-regdb@lists.infradead.org>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Jan 24, 2014 at 03:02:11PM -0800, Luis R. Rodriguez wrote:
-> On Mon, Dec 16, 2013 at 11:14 PM, Krishna Chaitanya
-> <chaitanya.mgit@gmail.com> wrote:
-> > On Tue, Dec 17, 2013 at 12:20 PM, Krishna Chaitanya
-> > <chaitanya.mgit@gmail.com> wrote:
-> >> Hi,
-> >>
-> >> With the latest git source, i am seeing a build failure with the below error.
-> >>
-> >>   LD   crda
-> >>   CC   intersect.o
-> >>   LD   intersect
-> >>   CC   regdbdump.o
-> >>   LD   regdbdump
-> >>   CC   db2rd.o
-> >>   LD   db2rd
-> >>   CC   optimize.o
-> >>   LD   optimize
-> >>   CHK  /usr/lib/crda/regulatory.bin
-> >> Database signature verification failed.
-> >> Invalid or empty regulatory file, note: a binary regulatory file should be used.
-> >> make: *** [verify] Error 234
-> >>
-> >> Is there something wrong with the certificate?
-> >>
-> > Additional info:
-> >
-> > # regdbdump /usr/lib/crda/regulatory.bin
-> > Database signature verification failed.
-> > #  ls -l /usr/lib/crda/regulatory.bin
-> > -rw-r--r-- 1 root root 3344 Dec 16 17:34 /usr/lib/crda/regulatory.bin
-> >
-> > regualtory.bin copied from wireless-regdb latest git.
-> 
-> John, what ever happened with this, I forget.
+From: Johannes Berg <johannes.berg@intel.com>
 
-I thought these issues were resolved...?
+There's no need to have a 20 MHz and a 40 MHz rule that are
+other wise completely the same, remove the 20 MHz one.
 
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+---
+ db.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/db.txt b/db.txt
+index fcab208..bf99234 100644
+--- a/db.txt
++++ b/db.txt
+@@ -467,7 +467,6 @@ country KP: DFS-JP
+ 	(5735 - 5815 @ 80), (30)
+ 
+ country KR: DFS-JP
+-	(2402 - 2482 @ 20), (20)
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
+ 	(5250 - 5330 @ 80), (20), DFS
 -- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+1.8.5.1
+
+
+
 
 _______________________________________________
 wireless-regdb mailing list
