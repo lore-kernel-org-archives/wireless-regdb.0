@@ -1,30 +1,30 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-x235.google.com ([2607:f8b0:400e:c02::235])
+Received: from mail-lb0-x229.google.com ([2a00:1450:4010:c04::229])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1W6r3E-0003QI-Sb
- for wireless-regdb@lists.infradead.org; Sat, 25 Jan 2014 00:24:45 +0000
-Received: by mail-pd0-f181.google.com with SMTP id y10so3663791pdj.26 for
- <wireless-regdb@lists.infradead.org>; Fri, 24 Jan 2014 16:24:23 -0800 (PST)
+ id 1W6pm3-00020I-1C
+ for wireless-regdb@lists.infradead.org; Fri, 24 Jan 2014 23:02:55 +0000
+Received: by mail-lb0-f169.google.com with SMTP id q8so3021524lbi.14 for
+ <wireless-regdb@lists.infradead.org>; Fri, 24 Jan 2014 15:02:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-type:content-disposition:in-reply-to:user-agent;
- bh=ybE6TeDVAYAXFFckg6J0DDGAbQdOmkQpNSzLhHApIvo=;
- b=jFLGoXzU3sgL1cHDaFSV9NYAtIZRG5whOMnz4XPUm9QbXG4P2daASbzTuMsI2K/MHi
- 6Mp5w809IB9TacV9gPsCuaCCYOt9DDxiXbN1JJRCAQcp2vySr5Hir5QRtSQet8JtA1Bc
- NRZIFPPipkweOby5ResV/PGYy8uvbLMneG94Z6Bpm/AxAa5ToVf2jA26ZnsbR1hnIBBs
- 5XDqPEKk0uyDIvoTNJv/qXy8W7cSldP90vQcQkewK4TKEbpfE7rs+Bnpsg0s6dyTPdft
- IDBuM9HYQIQb/1XyWZfRlUlUaT+a/ivgpRD0PJRPNZMDr3ojK1F46nJXPuHfkVv3GnNh 5FtQ==
-Date: Fri, 24 Jan 2014 16:24:18 -0800
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Message-ID: <20140125002416.GD28512@garbanzo.do-not-panic.com>
-References: <1389801162-14488-1-git-send-email-ilan.peer@intel.com>
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=q03mckI/XfqIr5Wqh+GZGyhrVHqfuxABcSZVmpWgFB4=;
+ b=ruUUPYLNDD50DkTFarqImwjhvYUZuLnSIBaX6gMqdW6g5fr2DRsiU+uJ71qjI7RVos
+ Ef62LBe3GFTeA10N6EXukbM8SULdxRDdKG51fIMoELVtVI09T5037UhZiKjXHbkjBrut
+ b/egD4J5c6RCLcbdvLHZEzOFt6GVjlZgNtSZLnY5/9sy7cTUCWTwot7Z1R6xJdGnHFfC
+ 3jzzDTB0khO6QSN6WHlvvKTeZN9wbUi9c06KwR1C2Bn51hruccvWqCCzo1RI+j/BYanL
+ UpVoX9vOtMEhtWeWkmch49FBzLlhqJKEQMO1epkO8wUPu4P3B4KwXXtFrPaTQKjVMdAb W86Q==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1389801162-14488-1-git-send-email-ilan.peer@intel.com>
-Subject: Re: [wireless-regdb] [PATCH v2 0/6] Enable additional channels for
-	use
+In-Reply-To: <CABPxzYLu+yjkfsi13BXG8sKoySu_CwtN+uSgwwYdiXdEq8sGMw@mail.gmail.com>
+References: <CABPxzYJSBagxbz4nd8=Qt_HbG4ecqe=-cbzi0N4JDPCwDE42Mg@mail.gmail.com>
+ <CABPxzYLu+yjkfsi13BXG8sKoySu_CwtN+uSgwwYdiXdEq8sGMw@mail.gmail.com>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Fri, 24 Jan 2014 15:02:11 -0800
+Message-ID: <CAB=NE6U7zy8MeO4qLuWsEC_t69JKkS2=98crGrp4073=5WHU9Q@mail.gmail.com>
+Subject: Re: [wireless-regdb] CRDA: Build Fail: Database signature
+	verification failed
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,22 +39,44 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Ilan Peer <ilan.peer@intel.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: Krishna Chaitanya <chaitanya.mgit@gmail.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, John Linville <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Jan 15, 2014 at 05:52:36PM +0200, Ilan Peer wrote:
-> Hi Luis,
-> 
-> I'm resending this patch set. Any chance you could review it?
+On Mon, Dec 16, 2013 at 11:14 PM, Krishna Chaitanya
+<chaitanya.mgit@gmail.com> wrote:
+> On Tue, Dec 17, 2013 at 12:20 PM, Krishna Chaitanya
+> <chaitanya.mgit@gmail.com> wrote:
+>> Hi,
+>>
+>> With the latest git source, i am seeing a build failure with the below error.
+>>
+>>   LD   crda
+>>   CC   intersect.o
+>>   LD   intersect
+>>   CC   regdbdump.o
+>>   LD   regdbdump
+>>   CC   db2rd.o
+>>   LD   db2rd
+>>   CC   optimize.o
+>>   LD   optimize
+>>   CHK  /usr/lib/crda/regulatory.bin
+>> Database signature verification failed.
+>> Invalid or empty regulatory file, note: a binary regulatory file should be used.
+>> make: *** [verify] Error 234
+>>
+>> Is there something wrong with the certificate?
+>>
+> Additional info:
+>
+> # regdbdump /usr/lib/crda/regulatory.bin
+> Database signature verification failed.
+> #  ls -l /usr/lib/crda/regulatory.bin
+> -rw-r--r-- 1 root root 3344 Dec 16 17:34 /usr/lib/crda/regulatory.bin
+>
+> regualtory.bin copied from wireless-regdb latest git.
 
-Looks good but needs a bit of work. In particular the biggest
-concern I have is the last_request thing, and the feature flag
-on the wiphy. Other than that, tons of cleanup and one last
-requirement: please document this on the wireless wiki on the
-regulatory page, once accepted.
-
-http://wireless.kernel.org/en/developers/Regulatory/processing_rules
+John, what ever happened with this, I forget.
 
   Luis
 
