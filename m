@@ -2,17 +2,17 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VoYhY-0000WX-B2
- for wireless-regdb@lists.infradead.org; Thu, 05 Dec 2013 13:10:44 +0000
-Message-ID: <1386249019.4182.2.camel@jlt4.sipsolutions.net>
+ id 1W9Eou-0000i1-7D
+ for wireless-regdb@lists.infradead.org; Fri, 31 Jan 2014 14:11:48 +0000
+Message-ID: <1391177479.4141.23.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Thu, 05 Dec 2013 14:10:19 +0100
-In-Reply-To: <1386098166-24196-6-git-send-email-ilan.peer@intel.com>
-References: <1386098166-24196-1-git-send-email-ilan.peer@intel.com>
- <1386098166-24196-6-git-send-email-ilan.peer@intel.com>
+Date: Fri, 31 Jan 2014 15:11:19 +0100
+In-Reply-To: <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
+References: <1390818118-27261-1-git-send-email-ilan.peer@intel.com>
+ <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
 Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH v2 5/6] cfg80211: Enable GO operation
-	on indoor channels
+Subject: Re: [wireless-regdb] [PATCH v3 3/6] cfg80211: Enable GO operation
+ on additional channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,10 +31,18 @@ To: Ilan Peer <ilan.peer@intel.com>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, 2013-12-03 at 21:16 +0200, Ilan Peer wrote:
-> Signed-off-by: Ilan Peer <ilan.peer@intel.com>
+On Mon, 2014-01-27 at 12:21 +0200, Ilan Peer wrote:
 
-Some commit log maybe? :)
+> It is assumed that such restrictions are enforced by user space.
+> Furthermore, it is assumed, that if the conditions that allowed for
+> the operation of the GO on such a channel change, i.e., the station
+> interface disconnected from the AP, it is the responsibility of user
+> space to evacuate the GO from the channel.
+
+For the latter here, don't we need some sort of flag with userspace
+saying "trust me, I know what I'm doing"? Or put another way - how does
+this not make us break compliance when running with old versions of
+wpa_supplicant?
 
 johannes
 
