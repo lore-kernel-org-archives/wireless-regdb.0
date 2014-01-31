@@ -2,17 +2,17 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from s3.sipsolutions.net ([144.76.43.152] helo=sipsolutions.net)
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1W9Eou-0000i1-7D
- for wireless-regdb@lists.infradead.org; Fri, 31 Jan 2014 14:11:48 +0000
-Message-ID: <1391177479.4141.23.camel@jlt4.sipsolutions.net>
+ id 1W9ErK-0000nc-I7
+ for wireless-regdb@lists.infradead.org; Fri, 31 Jan 2014 14:14:19 +0000
+Message-ID: <1391177634.4141.24.camel@jlt4.sipsolutions.net>
 From: Johannes Berg <johannes@sipsolutions.net>
-Date: Fri, 31 Jan 2014 15:11:19 +0100
-In-Reply-To: <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
+Date: Fri, 31 Jan 2014 15:13:54 +0100
+In-Reply-To: <1390818118-27261-5-git-send-email-ilan.peer@intel.com>
 References: <1390818118-27261-1-git-send-email-ilan.peer@intel.com>
- <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
+ <1390818118-27261-5-git-send-email-ilan.peer@intel.com>
 Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH v3 3/6] cfg80211: Enable GO operation
- on additional channels
+Subject: Re: [wireless-regdb] [PATCH v3 4/6] cfg80211: Add an option to
+ hint indoor operation
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,16 +33,27 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 On Mon, 2014-01-27 at 12:21 +0200, Ilan Peer wrote:
 
-> It is assumed that such restrictions are enforced by user space.
-> Furthermore, it is assumed, that if the conditions that allowed for
-> the operation of the GO on such a channel change, i.e., the station
-> interface disconnected from the AP, it is the responsibility of user
-> space to evacuate the GO from the channel.
+>  	switch (user_reg_hint_type) {
+>  	case NL80211_USER_REG_HINT_USER:
+>  	case NL80211_USER_REG_HINT_CELL_BASE:
+> -		break;
+> +		if (!info->attrs[NL80211_ATTR_REG_ALPHA2])
+> +			return -EINVAL;
+> +
+> +		data = nla_data(info->attrs[NL80211_ATTR_REG_ALPHA2]);
+> +		return regulatory_hint_user(data, user_reg_hint_type);
+> +	case NL80211_USER_REG_HINT_INDOOR:
+> +		return regulatory_hint_indoor_user();
+>  	default:
+>  		return -EINVAL;
+>  	}
+>  
+> -	r = regulatory_hint_user(data, user_reg_hint_type);
+> -
+> -	return r;
+> +	return 0;
 
-For the latter here, don't we need some sort of flag with userspace
-saying "trust me, I know what I'm doing"? Or put another way - how does
-this not make us break compliance when running with old versions of
-wpa_supplicant?
+Isn't that "return 0" dead code now?
 
 johannes
 
