@@ -1,32 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-x232.google.com ([2a00:1450:4010:c04::232])
+Received: from mail-qc0-x235.google.com ([2607:f8b0:400d:c01::235])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WFt3x-0002JF-AM
- for wireless-regdb@lists.infradead.org; Tue, 18 Feb 2014 22:22:50 +0000
-Received: by mail-lb0-f178.google.com with SMTP id u14so12513833lbd.23 for
- <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2014 14:22:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:sender:in-reply-to:references:from:date:message-id
- :subject:to:cc:content-type;
- bh=03rKVUMJME+ZBiIoFFnMtIcyU9O+U/QGDoXNVIx2UBU=;
- b=l0gtcsXX/eUsgUXtgS1MGYoFyUbqznyjqD1+aXhCXMH9tE/yruBqpiK+PmjHBG3MaP
- +x1fQ04BQliKRbNHUu29P3SjNLB8/7SyNVzVrv8FJYzH2QAu/kS5nF1YCwdCuavgMCbo
- newrhLqFkn7Z8TKYGRlGtmeQJdWqAnLDbnown0JTkl8XXKZKPSSlXblVDlNS5vJp8I3p
- p5s6k1Y7gV/4v7JHP9/HvObeMU6o1oUYkSwkt3mLIiLQYpquoJGBBJ2YgROEEn8/2/JR
- IwaOb4my1qVH4JnJx9xVxGS31tb9lrryI+gBLeo1a1dVlybj07aihXA7hvb8KtVk8O30 2Upw==
+ id 1WA8Ty-0003Jj-AU
+ for wireless-regdb@lists.infradead.org; Mon, 03 Feb 2014 01:37:54 +0000
+Received: by mail-qc0-f181.google.com with SMTP id e9so10029344qcy.26 for
+ <wireless-regdb@lists.infradead.org>; Sun, 02 Feb 2014 17:37:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=aenertia.net; s=dkimaenertianet;
+ h=mime-version:sender:from:date:message-id:subject:to:content-type
+ :content-transfer-encoding;
+ bh=mpkD5ALNjbfoGCQXfnvKEzYZVpwuLaQAT3jK7V+3sJk=;
+ b=ddPxATFBy397wZIeJddFemEKamK/6L3EN9rvKibkq4OTrvGFF9ljLm5Ek7qyiqmnbv
+ mtoCDNNe5EiiBbYQSKRfyTi9JdqTySwWM6Uaa37QbTYTrVoMAEfs0YnIm4x3JmAQN8Ai
+ WtusdvhLBmW/62PhBh0aNcC8grtM/GvXaEH/w=
 MIME-Version: 1.0
-In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A03336BCAF@HASMSX106.ger.corp.intel.com>
-References: <1389801162-14488-1-git-send-email-ilan.peer@intel.com>
- <1389801162-14488-5-git-send-email-ilan.peer@intel.com>
- <20140125002002.GB28512@garbanzo.do-not-panic.com>
- <CB3B3D4774441E42AA3EA0E1BA8230A03336BCAF@HASMSX106.ger.corp.intel.com>
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 18 Feb 2014 14:22:05 -0800
-Message-ID: <CAB=NE6XgDSLE__a3Ud2yWVCkqxudA5_NGBaN9R_aqfBsF93bwQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v2 4/6] cfg80211: Add an option to
- hint indoor operation
+From: =?UTF-8?Q?Joel_Wir=C4=81mu_Pauling?= <joel@aenertia.net>
+Date: Mon, 3 Feb 2014 14:37:12 +1300
+Message-ID: <CAKiAkGRN9w8vHyCZ-985En+rajNjrqgwCTwN67pMFOmAf=Ympg@mail.gmail.com>
+Subject: [wireless-regdb] Update to NZ Channel List/RegDB
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,25 +28,82 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Peer, Ilan" <ilan.peer@intel.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sun, Jan 26, 2014 at 2:11 PM, Peer, Ilan <ilan.peer@intel.com> wrote:
-> Actually, when the hint is processed, REG_REQ_ALREADY_SET is returned, so the request is immedialty freed, and the last request is not updated. I thought that this should suffice. Do you see any other issue with this?
+Hi there,
 
-Yeah that seems hackish -- please add another enum entry and document
-it to allow further hints of similar kind to be added.
+I approached Peter (who works for the Radio Spectrum branch of the NZ
+Government) at the New Zealand network operators conference last week
+(http://nznog.org) about fixing some rather outdated and wrong Regdb
+info for NZ chanlists.
 
-  Luis
+I found Luis's commits (out of a Qualcom project it appears) which fix
+some of the issues from a couple of months ago after the fact (I was
+using an outdated branch of the mac80211 driver from openwrt) . The
+commit:
+
+http://git.kernel.org/cgit/linux/kernel/git/linville/wireless-regdb.git/commit/?id=a03fedab50684d7bf956da47dfdd91212d9a9004
+
+goes some (long) way to fixing the list but what follows is a better reference.
+
+Peter has been trying to post to list but getting bounced as SPAM.
+
+Message follows.
+
+
+Kind regards
+
+Joel Wirāmu Pauling
++64 21 171 8049
+@aenertia
+
+
+---
+
+Hi,
+
+I've recently been made aware that the current regulatory database for
+5 GHz channelling is not up to date for New Zealand. Therefore we
+would like to suggest the following changes
+
+5150 - 5250 MHz (indoor use only) 200 mW
+5250 - 5350 MHz (indoor use only) 200 mW DFS enabled and Transmitter
+power control enabled
+5250 - 5350 MHz (outdoor use) 1 W DFS enabled and Transmitter power
+control enabled
+5470 - 5725 MHz 500 mW, transmitter power control not enabled
+5470 - 5725 MHz 1 Watt, DFS enabled and transmitter power control enabled
+5725 - 5875 MHz 1 Watt DFS not enabled
+5725 - 5875 MHZ 4 Watts DFS enabled
+
+There are no restrictions on channel size however power densities are
+specified. Therefore 40 MHz channelling is allowed (up from the
+current state of 20 MHz channelling) at a minimum and all power values
+are given as EIRP in Watts include the gain of the system antenna
+
+Regards
+
+Peter Gent
+
+Peter Gent
+Planning Analyst
+Radio Spectrum Policy & Planning
+Ministry of Business, Innovation & Employment
+DDI: +64 4 462 4279
+33 Bowen Street, PO Box 1473, Wellington 6140
+
+
+
+http://newzealand.govt.nz/ - connecting you to New Zealand central &
+local government services
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
