@@ -1,30 +1,32 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-x231.google.com ([2a00:1450:4010:c04::231])
+Received: from mail-lb0-x232.google.com ([2a00:1450:4010:c04::232])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WGF7j-0001QI-9F
- for wireless-regdb@lists.infradead.org; Wed, 19 Feb 2014 21:56:12 +0000
-Received: by mail-lb0-f177.google.com with SMTP id 10so742752lbg.36 for
- <wireless-regdb@lists.infradead.org>; Wed, 19 Feb 2014 13:55:49 -0800 (PST)
+ id 1WFt3x-0002JF-AM
+ for wireless-regdb@lists.infradead.org; Tue, 18 Feb 2014 22:22:50 +0000
+Received: by mail-lb0-f178.google.com with SMTP id u14so12513833lbd.23 for
+ <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2014 14:22:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=mime-version:sender:in-reply-to:references:from:date:message-id
  :subject:to:cc:content-type;
- bh=011LG0owLa3A3z9B6gDVUTjr9TcdsPPF8x3rjVe7x8I=;
- b=PAMAhSS4SyTAyKqBsTh6NXtCD+1TAqpuBxXnK5p3P/EvD0dP2oCoTFLhUZ9UblLbw+
- +3lJp/1YjVqM0no/km0kevm/SxjuTRXcXtJ0LNDZaot+gDxUgFVLyoF4G9oHSxuBKcj3
- dIiNxze+kedcX0wwVzdETloouHxTPQRsyQaVZUV7OX1+i25U+8FONz/34imfrhV/9js9
- EkSU7JO0PC0Rmve6lM99Q7VSuveRVgHQwxIgxWOSGf+DKeFAR91QR3pcZFSxamlF5ppX
- dG24th17ewdt7zamzmRZJFIM9AK88Mgm9yqDCTlrz9w5eAlBeZdytPmtTZsOmn7L4XmF wneA==
+ bh=03rKVUMJME+ZBiIoFFnMtIcyU9O+U/QGDoXNVIx2UBU=;
+ b=l0gtcsXX/eUsgUXtgS1MGYoFyUbqznyjqD1+aXhCXMH9tE/yruBqpiK+PmjHBG3MaP
+ +x1fQ04BQliKRbNHUu29P3SjNLB8/7SyNVzVrv8FJYzH2QAu/kS5nF1YCwdCuavgMCbo
+ newrhLqFkn7Z8TKYGRlGtmeQJdWqAnLDbnown0JTkl8XXKZKPSSlXblVDlNS5vJp8I3p
+ p5s6k1Y7gV/4v7JHP9/HvObeMU6o1oUYkSwkt3mLIiLQYpquoJGBBJ2YgROEEn8/2/JR
+ IwaOb4my1qVH4JnJx9xVxGS31tb9lrryI+gBLeo1a1dVlybj07aihXA7hvb8KtVk8O30 2Upw==
 MIME-Version: 1.0
-In-Reply-To: <CABPxzY+CnnssaZpqgWuJ=QH-k=zJbHpLaGkJXAQSWSxq7kKa6Q@mail.gmail.com>
-References: 
-	 <CABPxzY+CnnssaZpqgWuJ=QH-k=zJbHpLaGkJXAQSWSxq7kKa6Q@mail.gmail.com>
+In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A03336BCAF@HASMSX106.ger.corp.intel.com>
+References: <1389801162-14488-1-git-send-email-ilan.peer@intel.com>
+ <1389801162-14488-5-git-send-email-ilan.peer@intel.com>
+ <20140125002002.GB28512@garbanzo.do-not-panic.com>
+ <CB3B3D4774441E42AA3EA0E1BA8230A03336BCAF@HASMSX106.ger.corp.intel.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Wed, 19 Feb 2014 13:55:28 -0800
-Message-ID: <CAB=NE6Xdj=RMc=rZ8FpFge0vaX=5HNmf-3dnR-icPBEhDzpGxg@mail.gmail.com>
-Subject: Re: [wireless-regdb] [RFC] crda: Fix the linking order to avoid
-	compilation error
+Date: Tue, 18 Feb 2014 14:22:05 -0800
+Message-ID: <CAB=NE6XgDSLE__a3Ud2yWVCkqxudA5_NGBaN9R_aqfBsF93bwQ@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH v2 4/6] cfg80211: Add an option to
+ hint indoor operation
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,36 +41,15 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, John Linville <linville@tuxdriver.com>
+To: "Peer, Ilan" <ilan.peer@intel.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Dec 16, 2013 at 8:27 AM, Krishna Chaitanya
-<chaitanya.mgit@gmail.com> wrote:
-> While linking the crda.o and libreg.so, first put crda.o
-> and then -lreg. This fixed the below error:
->
-> # make
->   GEN  keys-gcrypt.c
->   Trusted pubkeys: pubkeys/linville.key.pub.pem
->   CC   libreg.so
->   CC   crda.o
->   LD   crda
-> crda.o: In function `main':
-> crda/crda.c:196: undefined reference to `reglib_get_rd_alpha2'
-> collect2: ld returned 1 exit status
-> make: *** [crda] Error 1
->
-> Note: This still doesn't fix the below error (will send another mail)
->
->   CHK  /usr/lib/crda/regulatory.bin
-> Database signature verification failed.
-> Invalid or empty regulatory file, note: a binary regulatory file should be used.
-> make: *** [verify] Error 234
->
-> Signed-off-by: Chaitanya T K <chaitanya.mgit@gmail.com>
+On Sun, Jan 26, 2014 at 2:11 PM, Peer, Ilan <ilan.peer@intel.com> wrote:
+> Actually, when the hint is processed, REG_REQ_ALREADY_SET is returned, so the request is immedialty freed, and the last request is not updated. I thought that this should suffice. Do you see any other issue with this?
 
-Applied and pushed, thanks!
+Yeah that seems hackish -- please add another enum entry and document
+it to allow further hints of similar kind to be added.
 
   Luis
 
