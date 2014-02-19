@@ -1,28 +1,30 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x232.google.com ([2607:f8b0:400e:c01::232])
+Received: from mail-pd0-x235.google.com ([2607:f8b0:400e:c02::235])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WFuG4-0004tO-En
- for wireless-regdb@lists.infradead.org; Tue, 18 Feb 2014 23:39:25 +0000
-Received: by mail-pb0-f50.google.com with SMTP id rq2so17463315pbb.37 for
- <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2014 15:39:01 -0800 (PST)
+ id 1WG9Te-000620-3i
+ for wireless-regdb@lists.infradead.org; Wed, 19 Feb 2014 15:54:27 +0000
+Received: by mail-pd0-f181.google.com with SMTP id y10so535130pdj.40 for
+ <wireless-regdb@lists.infradead.org>; Wed, 19 Feb 2014 07:54:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-type:content-disposition:in-reply-to:user-agent;
- bh=+uud/FKmKwUG+MJN+csb3mzkf9xGTwkiRf+raQcBu84=;
- b=G8qGXXzKGbpEW3dQbVzVniIM2E0cKCbmsZ7qoQsdmkfUZ8scY8vSGwErX2y4DXUp08
- 8gfGBmaRpjTlICPHfogJrmjtSu6XNJgZZe8LTCDkORxgpG7U7aefAqC+T3ypEMQjyvnF
- 2vLdHz5do20gNOHjxe70J/tTNdhYSJCn1QMEc971LV6TVGjk71kZEcP+NsLNOgCHVSkD
- H41nSqwO0CZAnTVER+xCuF7ruYRKY83sStRr1Fxh9bOMy/TQnNo0eUsbI6wc9mR+R8r8
- CHehfB8+92N4yCXbn6qZzTw6mFu+W7NuaKdR/Uv+n2kFVnS0t31FyA+NPefxqnJwsEfB DYbQ==
-Date: Tue, 18 Feb 2014 15:38:56 -0800
+ bh=NSk7lnfm4+ZHRDKZv2n5GkiOlMrMeBRi9dV2JCTqBWI=;
+ b=aS0cWKyC3JUyVzzeOMYPPfZHfGGOVkjp4mW/6S8ixyplcGl5wY3IYNX8keZlEMPq7C
+ 8Y2ALHxmd65ubdc3BKUpjVtDw/1EZhzGnNRRI9UCu8TaQWRaSHTH/yDvdU0H+E5V7uth
+ bqqJYqXTk1AOVaewH/y82EMWGjQhbEe3MQfl6GaPp9To/xI1hmFswNC8RMKSXYEsy8f8
+ 4HjjW26wvnQ1YdN50CJBmai3RR9TQio9aBcNSUKwkALbhs+TCxj+K9vIBhKXNQaF736P
+ 8lZaDNE//AJo4oxFfql8PfVSnoyxB3wQfUW6PNBLbQk2ugbTq6/mOfTvzUUhxgt0MC0C tWog==
+Date: Wed, 19 Feb 2014 07:47:51 -0800
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Message-ID: <20140218233852.GC14296@garbanzo.do-not-panic.com>
+Message-ID: <20140219154747.GG14296@garbanzo.do-not-panic.com>
 References: <1390818118-27261-1-git-send-email-ilan.peer@intel.com>
  <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
+ <20140218233852.GC14296@garbanzo.do-not-panic.com>
+ <CB3B3D4774441E42AA3EA0E1BA8230A0333823B5@HASMSX106.ger.corp.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <1390818118-27261-4-git-send-email-ilan.peer@intel.com>
+In-Reply-To: <CB3B3D4774441E42AA3EA0E1BA8230A0333823B5@HASMSX106.ger.corp.intel.com>
 Subject: Re: [wireless-regdb] [PATCH v3 3/6] cfg80211: Enable GO operation
  on additional channels
 List-Unsubscribe: 
@@ -34,402 +36,123 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============3809234605284760678=="
+Content-Type: multipart/mixed; boundary="===============0219779312469955661=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-To: Ilan Peer <ilan.peer@intel.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: "Peer, Ilan" <ilan.peer@intel.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
---===============3809234605284760678==
+--===============0219779312469955661==
 Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="NDin8bjvE/0mNLFQ"
+	protocol="application/pgp-signature"; boundary="llIrKcgUOe3dCx0c"
 Content-Disposition: inline
 
 
---NDin8bjvE/0mNLFQ
+--llIrKcgUOe3dCx0c
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Jan 27, 2014 at 12:21:55PM +0200, Ilan Peer wrote:
-> Allow GO operation on a channel marked with IEEE80211_CHAN_GO_CONCURRENT
-> iff there is an active station interface that is associated to
-> an AP operating on the same channel in 2.4 or the same UNII band in 5.2
-> (assuming that the AP is an authorized master)
+On Wed, Feb 19, 2014 at 02:52:13PM +0000, Peer, Ilan wrote:
+> > Ilan, also extend the above with language similar to the one I provided=
+ on the
+> > cellular base station hints if you ended up adding a device feature cap=
+ability.
+> >=20
 >=20
-> Note that this is a permissive approach to the FCC definitions,
-> that require a clear assessment that the device operating the AP is
-> an authorized master, i.e., with radar detection and DFS capabilities.
+> You mean specify that this option is enabled, drivers can still use
+> the device specific flags to disable this?
 
-OK It seems here you are clarifying that the feature is only when
-you can verify the AP is DFS-capable. How can you verify that?
+Yeap! In particular its important to make it clear that
+enabling this option isn't enough to get enable this feature,
+this option will only be usable on device drivers that have
+support for this feature.
 
-> It is assumed that such restrictions are enforced by user space.
-> Furthermore, it is assumed, that if the conditions that allowed for
-> the operation of the GO on such a channel change, i.e., the station
-> interface disconnected from the AP, it is the responsibility of user
-> space to evacuate the GO from the channel.
-
-This is a pretty important piece of information as well. Once
-these patches go in I really want to make it clear that we should
-update the documentation the wiki as noted before.
-
-> Signed-off-by: Ilan Peer <ilan.peer@intel.com>
-> ---
->  include/net/cfg80211.h   |    4 ++-
->  include/net/regulatory.h |    4 +++
->  net/mac80211/ibss.c      |    9 ++++--
->  net/wireless/Kconfig     |   14 ++++++++++
->  net/wireless/chan.c      |   68 ++++++++++++++++++++++++++++++++++++++++=
-++++--
->  net/wireless/mesh.c      |    3 +-
->  net/wireless/nl80211.c   |   11 +++++---
->  net/wireless/reg.c       |   26 ++++++++++++++++++
->  net/wireless/reg.h       |   12 ++++++++
->  net/wireless/trace.h     |   11 +++++---
->  10 files changed, 146 insertions(+), 16 deletions(-)
+> > > +
+> > > +		if (!other_chan)
+> > > +			continue;
+> > > +
+> > > +		if (chan =3D=3D other_chan)
+> > > +			return true;
+> >=20
+> > This seems to me to indicate that we have allowed here daisy chaining /=
+ trust
+> > on another GO who also trusted its AP. That is, we are leaving it up to=
+ the
+> > kernel for the above few lines of code to check if the STA was associat=
+ed to
+> > an AP that had DFS support. How do we know the AP the STA was associated
+> > to was not another GO that ran through this permissive check? Is the FCC
+> > happy with that?
+> >=20
 >=20
-> diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
-> index dbc5490..317bd06 100644
-> --- a/include/net/cfg80211.h
-> +++ b/include/net/cfg80211.h
-> @@ -4520,12 +4520,14 @@ void cfg80211_report_obss_beacon(struct wiphy *wi=
-phy,
->   * cfg80211_reg_can_beacon - check if beaconing is allowed
->   * @wiphy: the wiphy
->   * @chandef: the channel definition
-> + * @iftype: interface type
->   *
->   * Return: %true if there is no secondary channel or the secondary chann=
-el(s)
->   * can be used for beaconing (i.e. is not a radar channel etc.)
->   */
->  bool cfg80211_reg_can_beacon(struct wiphy *wiphy,
-> -			     struct cfg80211_chan_def *chandef);
-> +			     struct cfg80211_chan_def *chandef,
-> +			     enum nl80211_iftype iftype);
-> =20
->  /*
->   * cfg80211_ch_switch_notify - update wdev channel and notify userspace
-> diff --git a/include/net/regulatory.h b/include/net/regulatory.h
-> index b07cdc9..fab0c37 100644
-> --- a/include/net/regulatory.h
-> +++ b/include/net/regulatory.h
-> @@ -131,6 +131,9 @@ struct regulatory_request {
->   * 	all country IE information processed by the regulatory core. This wi=
-ll
->   * 	override %REGULATORY_COUNTRY_IE_FOLLOW_POWER as all country IEs will
->   * 	be ignored.
-> + * @REGULATORY_DISABLE_RELAX_NO_IR: for devices that do not wish to allo=
-w the
-> + *      NO_IR relaxation, which enables transmissions on channels on whi=
-ch
-> + *      otherwise initiating radiation is not allowed.
+> This verification should be done by user space, i.e., if the station
+> is a legacy client associated to a GO, then wpa_supplicant should not
+> allow the GO_CONCURRENT relaxation. In addition, a GO instantiated on
+> channel based on this relaxation should not allow connection from
+> legacy clients ... again this should be enforced by user space. System
+> wise this should adhere to the FCC expectations and prevent daisy
+> chaining.
 
-Please provide an example. A read of this documentation likely
-cannot guess the available relaxations available, and this is
-only obvious to the reader of this patch series. If you are
-adding a Kconfig entry you can refer to it, or you can refer
-to the channel flags as pointers to further documentation.
+Wow this is a hugely important piece of information, please toss it into
+the documentation both kconfig and wiki (once accepted upstream). As for
+references to userspace you can mention supplicant (wpa_supplicant).
 
-> diff --git a/net/wireless/Kconfig b/net/wireless/Kconfig
-> index 81c05e4..6335590 100644
-> --- a/net/wireless/Kconfig
-> +++ b/net/wireless/Kconfig
-> @@ -102,6 +102,20 @@ config CFG80211_REG_CELLULAR_HINTS
->  	  This option adds support for drivers that can receive regulatory
->  	  hints from cellular base stations
-> =20
-> +config CFG80211_REG_RELAX_NO_IR
-> +	bool "cfg80211 support for NO_IR relaxation"
-> +	depends on CFG80211_CERTIFICATION_ONUS
-> +	---help---
-> +	  This option enables relaxation of the NO_IR flag. The relaxation
-> +	  allows initiating radiation on channels that are marked with the
-> +	  NO_IR flag which forbids transmissions on the channel.
-> +
-> +	  For example, enabling this option allows the operation of a P2P
-> +	  group owner on channels marked with NO_IR if there is an additional
-> +	  BSS interface which is connected to an AP which is assumed to be
-> +	  an authorized master, i.e., with radar detection support and DFS
-> +	  capabilities
+> > Also to be clear, you check for IEEE80211_CHAN_GO_CONCURRENT only on
+> > the caller's channel, not the STA's device, is that OK ? Lets
+> > consider the case case of two different types of interfaces on the
+> > same system. I am aware of at least one 802.11 AP company selling
+> > devices with one 802.11 vendor as the AP and another as the STA. I
+> > don't consider this rare anymore now, as such please think about
+> > this case as well.
+>=20
+> The property is of the channel so this should suffice. Overall, I
+> think that the FCC definition rules are centered on the UNII bands, so
+> the rules mandated for a given channel in a specific channel should
+> also hold to other channels in the same UNII band. Ultimately, I would
+> expect all channels in the same UNII band to share the same settings.
 
-Please use:
+OK.
 
-This option enables support for relaxation of the NO_IR flag
-for situations that certain regulatory bodies have provided
-clarifications on how relaxation can occur. This feature
-has an inherent dependency on userspace features which must
-have been properly tested and as such is not enabled by
-default.
+> The iteration in this case is over all the interfaces of the same
+> registered device
 
-A relaxation feature example is allowing the operation of a P2P
-group owner (GO) on channels marked with NO_IR if there is an
-additional BSS interface which associated to an AP which
-userspace assumes or confirems to be an authorized master,
-i.e., with radar detection support and DFS capabilities.
-
-
-Ilan, also extend the above with language similar to the one
-I provided on the cellular base station hints if you ended
-up adding a device feature capability.
-
-> diff --git a/net/wireless/chan.c b/net/wireless/chan.c
-> index 78559b5..87a9d0e 100644
-> --- a/net/wireless/chan.c
-> +++ b/net/wireless/chan.c
-> @@ -605,15 +605,77 @@ bool cfg80211_chandef_usable(struct wiphy *wiphy,
->  }
->  EXPORT_SYMBOL(cfg80211_chandef_usable);
-> =20
-> +/*
-> + * For GO only, check if the channel can be used under permissive condit=
-ions
-> + * mandated by the some regulatory bodies, i.e., the channel is marked w=
-ith
-> + * IEEE80211_CHAN_GO_CONCURRENT and there is an additional station inter=
-face
-> + * associated to an AP on the same channel or on the same UNII band
-> + * (assuming that the AP is an authorized master).
-> + */
-> +static bool cfg80211_go_permissive_chan(struct cfg80211_registered_devic=
-e *rdev,
-> +					struct ieee80211_channel *chan)
-> +{
-> +	struct wireless_dev *wdev_iter;
-> +
-> +	ASSERT_RTNL();
-
-You can simplify the check that calls this by having the
-config_enabled() check here. You can also add the check
-for REGULATORY_DISABLE_RELAX_NO_IR here.
-
-> +
-> +	if (!(chan->flags & IEEE80211_CHAN_GO_CONCURRENT))
-> +		return false;
-> +
-> +	list_for_each_entry(wdev_iter, &rdev->wdev_list, list) {
-> +		struct ieee80211_channel *other_chan =3D NULL;
-> +		int r1, r2;
-> +
-> +		if (wdev_iter->iftype !=3D NL80211_IFTYPE_STATION ||
-> +		    !netif_running(wdev_iter->netdev))
-> +				continue;
-> +
-> +		wdev_lock(wdev_iter);
-> +		if (wdev_iter->current_bss)
-> +			other_chan =3D wdev_iter->current_bss->pub.channel;
-> +		wdev_unlock(wdev_iter);
-
-Please wrap this up into a helper either for this series or after.
-Just a friendly reminder :)
-
-> +
-> +		if (!other_chan)
-> +			continue;
-> +
-> +		if (chan =3D=3D other_chan)
-> +			return true;
-
-This seems to me to indicate that we have allowed here
-daisy chaining / trust on another GO who also trusted
-its AP. That is, we are leaving it up to the kernel for
-the above few lines of code to check if the STA was
-associated to an AP that had DFS support. How do we
-know the AP the STA was associated to was not another
-GO that ran through this permissive check? Is the FCC
-happy with that?
-
-Also to be clear, you check for IEEE80211_CHAN_GO_CONCURRENT
-only on the caller's channel, not the STA's device, is that
-OK ? Lets consider the case case of two different types of
-interfaces on the same system. I am aware of at least one
-802.11 AP company selling devices with one 802.11 vendor as
-the AP and another as the STA. I don't consider this rare
-anymore now, as such please think about this case as well.
-
-> +
-> +		if (chan->band !=3D IEEE80211_BAND_5GHZ)
-> +			continue;
-> +
-> +		r1 =3D cfg80211_get_unii(chan->center_freq);
-> +		r2 =3D cfg80211_get_unii(other_chan->center_freq);
-> +
-> +		if (r1 !=3D -EINVAL && r1 =3D=3D r2)
-> +			return true;
-
-Looks good, the same concern about IEEE80211_CHAN_GO_CONCURRENT
-on the other_chan applies here.
-
-> +	}
-> +
-> +	return false;
-> +}
-> +
->  bool cfg80211_reg_can_beacon(struct wiphy *wiphy,
-> -			     struct cfg80211_chan_def *chandef)
-> +			     struct cfg80211_chan_def *chandef,
-> +			     enum nl80211_iftype iftype)
->  {
-> +	struct cfg80211_registered_device *rdev =3D wiphy_to_dev(wiphy);
->  	bool res;
->  	u32 prohibited_flags =3D IEEE80211_CHAN_DISABLED |
-> -			       IEEE80211_CHAN_NO_IR |
->  			       IEEE80211_CHAN_RADAR;
-> =20
-> -	trace_cfg80211_reg_can_beacon(wiphy, chandef);
-> +	trace_cfg80211_reg_can_beacon(wiphy, chandef, iftype);
-> +
-> +	/*
-> +	 * Under certain conditions suggested by the some regulatory bodies
-> +	 * a GO can operate on channels marked with IEEE80211_NO_IR
-> +	 * so set this flag only if such relaxations are not enabled and
-> +	 * the conditions are not met.
-> +	 */
-> +	if (iftype !=3D NL80211_IFTYPE_P2P_GO ||
-> +	    !config_enabled(CONFIG_CFG80211_REG_RELAX_NO_IR) ||
-> +	    (wiphy->regulatory_flags & REGULATORY_DISABLE_RELAX_NO_IR) ||
-> +	    !cfg80211_go_permissive_chan(rdev, chandef->chan))
-
-This is the check I was saying you could simplify by tossing the
-config checks and wiphy->regulatory_flags check there.
-
-> +		prohibited_flags |=3D IEEE80211_CHAN_NO_IR;
-> =20
->  	if (cfg80211_chandef_dfs_required(wiphy, chandef) > 0 &&
->  	    cfg80211_chandef_dfs_available(wiphy, chandef)) {
-> diff --git a/net/wireless/mesh.c b/net/wireless/mesh.c
-> index 8858624..93c4d42 100644
-> --- a/net/wireless/mesh.c
-> +++ b/net/wireless/mesh.c
-> @@ -175,7 +175,8 @@ int __cfg80211_join_mesh(struct cfg80211_registered_d=
-evice *rdev,
->  							       scan_width);
->  	}
-> =20
-> -	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &setup->chandef))
-> +	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &setup->chandef,
-> +				     NL80211_IFTYPE_MESH_POINT))
->  		return -EINVAL;
-> =20
->  	err =3D cfg80211_chandef_dfs_required(wdev->wiphy, &setup->chandef);
-> diff --git a/net/wireless/nl80211.c b/net/wireless/nl80211.c
-> index 3c1587f..b37b36e 100644
-> --- a/net/wireless/nl80211.c
-> +++ b/net/wireless/nl80211.c
-> @@ -1914,7 +1914,7 @@ static int __nl80211_set_channel(struct cfg80211_re=
-gistered_device *rdev,
->  			result =3D -EBUSY;
->  			break;
->  		}
-> -		if (!cfg80211_reg_can_beacon(&rdev->wiphy, &chandef)) {
-> +		if (!cfg80211_reg_can_beacon(&rdev->wiphy, &chandef, iftype)) {
->  			result =3D -EINVAL;
->  			break;
->  		}
-> @@ -3263,7 +3263,8 @@ static int nl80211_start_ap(struct sk_buff *skb, st=
-ruct genl_info *info)
->  	} else if (!nl80211_get_ap_channel(rdev, &params))
->  		return -EINVAL;
-> =20
-> -	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &params.chandef))
-> +	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &params.chandef,
-> +				     wdev->iftype))
->  		return -EINVAL;
-> =20
->  	err =3D cfg80211_chandef_dfs_required(wdev->wiphy, &params.chandef);
-> @@ -5852,7 +5853,8 @@ skip_beacons:
->  	if (err)
->  		return err;
-> =20
-> -	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &params.chandef))
-> +	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &params.chandef,
-> +				     wdev->iftype))
->  		return -EINVAL;
-> =20
->  	if (dev->ieee80211_ptr->iftype =3D=3D NL80211_IFTYPE_AP ||
-> @@ -6623,7 +6625,8 @@ static int nl80211_join_ibss(struct sk_buff *skb, s=
-truct genl_info *info)
->  	if (err)
->  		return err;
-> =20
-> -	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &ibss.chandef))
-> +	if (!cfg80211_reg_can_beacon(&rdev->wiphy, &ibss.chandef,
-> +				     NL80211_IFTYPE_ADHOC))
->  		return -EINVAL;
-> =20
->  	switch (ibss.chandef.width) {
-> diff --git a/net/wireless/reg.c b/net/wireless/reg.c
-> index 8a81913..ec38f5d 100644
-> --- a/net/wireless/reg.c
-> +++ b/net/wireless/reg.c
-> @@ -2489,6 +2489,32 @@ static void reg_timeout_work(struct work_struct *w=
-ork)
->  	rtnl_unlock();
->  }
-> =20
->
-> +int cfg80211_get_unii(int freq)
-
-A reference to where this is documented would be good.
-
-> +{
-> +	/* UNII-1 */
-> +	if (freq >=3D 5150 && freq <=3D 5250)
-> +		return 0;
-> +
-> +	/* UNII-2A */
-> +	if (freq > 5250 && freq <=3D 5350)
-> +		return 1;
-> +
-> +	/* UNII-2B */
-> +	if (freq > 5350 && freq <=3D 5470)
-> +		return 2;
-> +
-> +	/* UNII-2C */
-> +	if (freq > 5470 && freq <=3D 5725)
-> +		return 3;
-> +
-> +	/* UNII-3 */
-> +	if (freq > 5725 && freq <=3D 5825)
-> +		return 4;
-> +
-> +	WARN_ON(1);
-
-probably best to avoid that warning -- there are some
-4 GHz channels used out there, and pretty sure we'll hit
-this fast.
+This feature seems limited then. Can this be extended to relay on the
+information from any other registered device? I suspect folks may soon
+enter bug reports for this otherwise. That carefulness here seems to
+be an implementation preference, but is it a hard requirement? If not
+then please considering revising all registered devices.
 
   Luis
 
---NDin8bjvE/0mNLFQ
+--llIrKcgUOe3dCx0c
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: Digital signature
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQIcBAEBAgAGBQJTA+8MAAoJEKwtdpJg+MHGAgkQALCtMmp9kjeccZM1Gi9EebOL
-5b9iZFDc1XtM5r3lT12wDw/Au8012ThUiV7Wz6BjwPeBeLNNCeQMABzaHDXvm1Ih
-h0R8J70FuBtE+H2zm6fDL4i/oJUWohSIdf3hz9A2/Zfn6jG0ba9GEeulLpm91i8r
-nGYja2IhlVc//iNB8TIBbX0knxkI6SuNKqumRxPQYbgVhoIzYfw0QXjWh8ibf3h/
-OzO/Kv4Nru/FsYMeAw16BMCMpEw2PO4bg0jv0IETQ4Xza9F2+kR9MkQxNNLg5tNo
-UlRS8gHhDjnCsyOspZEq8e5GquGIVi9f+KCEEJB7Cu9Z5mijQZHz0Ye4aoPjfSsO
-6B3CRNDIY7Q2BSNpJdYmk8IByWtTJ9Ty9iSTzTjCV+/CM9GXJtl1KPQSf8s7bd79
-mbHxr3ReaNk3Czf8Pcd0p53ixZRUWd/9215ldcLhAvXo3LNVc/AdcULviT0uAQIY
-36UU8Yy6xc6OUIx1xfsyCQkalicW4amtRlKETP1tHWV5Wdd7zmJwXeDkp41mnK1F
-PkIVSBo5JtBlmUgG80bWE/NvRtR3ozbb65WEEmLDc638vPG1oU1wXg+eex4hGjlf
-iyZbrpWJlHDc505iNYIeuQRjbYzYmkdh0F1003qQ8HlNMLY643dXHVli4YtjXp/a
-8u1mOuO4l0RVxe+iw+jT
-=JiS9
+iQIcBAEBAgAGBQJTBNIjAAoJEKwtdpJg+MHGIi8P/1uAMXehEGIoD+BxJZCnX88o
+xvB9MOm5fjViHyoLqDDoGd2XeGuj2/1Mp1RTagjGRNdKR63+fzPRsjxc2H/r7Ium
+QwcZO2Es1yHRGKmaLDUD9QzW3syrGPbCoG+El2ASbRy4nwaxClwZfk4AShMCmZir
+We9xD6DBIefXKsP6Dk3HsNarTUYk3eBSSl9clm4fe/9PwE0Ya/XF85cdFpJV9Q3N
+B/JOEhWkIxlozvE+vjVxZIJu7aVoIz9Y0biCqNaQ+EjsDbYoGpcr60pUcVEUoTji
+kOEjVTq6TLvz6lHY2QvF1efvriHFbRo0ooCBxwZCv4SIU5GoP0GE8Hbe9b6gYaNZ
+vWjCHpq2afwaTGeCRV2ok6D9Uq/V2QjciEcAT5e8A/nPeZlWbzVYQ6plDki3cSh2
+xCoTLh/GUnU7SfSa+40mmq5QkeZhwGe9mFdAOe91lKryrHsXQEG2vU4FVPhSSOB1
+ESO5xwj3gpbsc/h4dVyUxZXwnrRlyXxclhL6L7DeS1xa0sMjgeuxgOW8sVwRck7X
+7LP0DBh9rUEvMjXcCWn9r13FJiWzB0uNW6r76I129y4aDeBDtJAeKqIXMlQsOLZ6
+Y9YC6pYAaSvcwwNR+aV6e80NdfObXmFdpEdgob5YMOELE8mH2tVl/m3c8E5ZELCq
+o+jcxVZ+3/iUICs/90+d
+=FE3R
 -----END PGP SIGNATURE-----
 
---NDin8bjvE/0mNLFQ--
+--llIrKcgUOe3dCx0c--
 
 
---===============3809234605284760678==
+--===============0219779312469955661==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Disposition: inline
@@ -440,6 +163,6 @@ wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
 
---===============3809234605284760678==--
+--===============0219779312469955661==--
 
 
