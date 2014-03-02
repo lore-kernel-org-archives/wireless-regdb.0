@@ -1,28 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x22d.google.com ([2a00:1450:4010:c03::22d])
+Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WLAAq-0005oG-RQ
- for wireless-regdb@lists.infradead.org; Wed, 05 Mar 2014 11:39:45 +0000
-Received: by mail-la0-f45.google.com with SMTP id hr17so596914lab.4 for
- <wireless-regdb@lists.infradead.org>; Wed, 05 Mar 2014 03:39:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google;
- h=mime-version:in-reply-to:references:date:message-id:subject:from:to
- :cc:content-type; bh=G5Zb6AMja0OwV9bAzVK5e8wVsZKl2p6dDIIprFqnpDk=;
- b=1YZEizFw/e5vBVEhZXsuZO3fjDxAaggiH2XC2foHPVOiHGNQioqNxC4lEGy5wuD/7d
- rbsPkvoWRNJ/tD7CkKxq8qx34/sGjygwM82BW2VWU4Qwb8nnNKodr1GFDT2KUVg6OzDF
- rtEc/Db1U37iFMIAbl4P6HTpbcMDpLi8t3Iwo=
+ id 1WJupY-0000Y7-Mp
+ for wireless-regdb@lists.infradead.org; Sun, 02 Mar 2014 01:04:37 +0000
+Received: by mail-lb0-f176.google.com with SMTP id 10so3658745lbg.7 for
+ <wireless-regdb@lists.infradead.org>; Sat, 01 Mar 2014 17:04:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:sender:from:date:message-id:subject:to:cc:content-type;
+ bh=mLGUnWXyFs+W2HVPbEA3q3HGXsDT9rRltAaeYjp3+4I=;
+ b=yHHvUezR6jnRiW0TrKuJyMaU7evES9uDb0fQ+QQkqDJnt6ED08r7pC7pD5R8zpvbgy
+ gNdoubWEnVebStmg3HEmXdWGJKruMUEjle31ZW0wbvAwzFbBTBVulBz2dBy+3NgkUeD6
+ oX3pnUr3rhtvSgznZIAfQIi4dzh4kLqV7WTscVEV4/quAAQoWrr81cPpsP2xomEC0A64
+ G397x+w9xQGio3uutDJYv1fE90fbaUfuQVIn/IMD32oEdoACdpe4rtMtGbzXiK0kuB4M
+ 3rWhabI0sRnUht89MoGJ/4vu+tPgOg1xsmOHxkLrjjaLL2vNOFADqBQmw0B2QW4/e3YQ HAZQ==
 MIME-Version: 1.0
-In-Reply-To: <53170512.9040205@raritan.com>
-References: <1393844485-23624-1-git-send-email-ronald.wahl@raritan.com>
- <CALhHN=oonTMjSu3p3VcSXX_tomf1LAPA-gUCc3U6hB2Y-gKe0A@mail.gmail.com>
- <53170512.9040205@raritan.com>
-Date: Wed, 5 Mar 2014 12:39:22 +0100
-Message-ID: <CALhHN=ov8CohcvE6aujD3cqb9ODW6rpopVsrDpfJMcBh-3iR5Q@mail.gmail.com>
-From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Subject: Re: [wireless-regdb] [PATCH] regulatory: add channels 52..64 and
- 100..144 to world regdom
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Sat, 1 Mar 2014 17:03:47 -0800
+Message-ID: <CAB=NE6XVMfCbkb4pu-1qcNbiS3dNrR9LcHWWeLU4M5vm_frE5g@mail.gmail.com>
+Subject: [wireless-regdb] Clarification on license for CRDA and
+	wireless-regdb
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,70 +35,29 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Ronald Wahl <ronald.wahl@raritan.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: linux-wireless <linux-wireless@vger.kernel.org>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 5 March 2014 12:05, Ronald Wahl <ronald.wahl@raritan.com> wrote:
-> On 05.03.2014 11:32, Janusz Dziedzic wrote:
->>
->> On 3 March 2014 12:01, Ronald Wahl <ronald.wahl@raritan.com> wrote:
->>>
->>> This is a port of what Johannes Berg sent to the Linux kernel
->>> in May 2013 for the static world regulatory domain.
->>>
->>> Signed-off-by: Ronald Wahl <ronald.wahl@raritan.com>
->>> ---
->>>   db.txt | 5 ++++-
->>>   1 file changed, 4 insertions(+), 1 deletion(-)
->>>
->>> diff --git a/db.txt b/db.txt
->>> index fcab208..9391ff6 100644
->>> --- a/db.txt
->>> +++ b/db.txt
->>> @@ -7,7 +7,10 @@ country 00:
->>>          (2474 - 2494 @ 20), (20), NO-IR
->>>          # Channel 36 - 48
->>>          (5170 - 5250 @ 80), (20), NO-IR
->>
->> @ 160
->>>
->>> -       # NB: 5260 MHz - 5700 MHz requies DFS
->>> +       # Channel 52 - 64
->>> +       (5250 - 5330 @ 80), (20), NO-IR, DFS
->>
->> @160
->>>
->>> +       # Channel 100 - 144
->>> +       (5490 - 5730 @ 80), (20), NO-IR, DFS
->>
->> @160?
->>>
->>>          # Channel 149 - 165
->>>          (5735 - 5835 @ 80), (20), NO-IR
->>>          # IEEE 802.11ad (60GHz), channels 1..3
->>> --
->>> 1.8.5.3
->
->
-> At the moment there are no @ 160 entries at all in the db.txt so I hesitated
-> to add it for the world regdom. Maybe we should add the @ 160 in a separate
-> patch for the regdoms where this is appropriate. What do you think?
->
-I think we should set 160 for world regdom - same as kernel do.
-World regdom freq_diff is not verified for rules, when REQUEST by CORE
-- workaround? - and such config will be allowed.
+Its come to my attention that some silly companies that are afraid to
+contribute to advanced copyleft licenses are afraid to make
+contributions to wireless-regdb. I'd like to take the time to clarify
+that CRDA is under copyleft-next while wireless-regdb is under the ISC
+license. wireless-regdb is the project that has the db.txt file which
+is used by John to build the regulatory.bin file to the community. In
+the event that you build the Linux kernel with db.txt built in you are
+using the wireless-regdb file which is under ISC license.
 
-@Luis ?
+Hope this helps clarify some things for some folks. If there are any
+questions please let me know. I abide by the Harvey Birdman Rule [0]
+so I appreciate any further questions or discussions to be directed
+publicly through these mailing lists.
 
-For the other countries we could not set 160 while freq_diff < 160 for
-most of the rules and there will be verification in kernel space for
-that.
-In such case AUTO-BW flag could be used in the future. That allow auto
-calculation of max bandwidth base on contiguous freq rules.
+[0] https://gitorious.org/copyleft-next/copyleft-next/source/3baab310f662811ba48d8a86bfe7f9ef7ef612dc:CONTRIBUTING.md
 
-BR
-Janusz
+Thanks,
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
