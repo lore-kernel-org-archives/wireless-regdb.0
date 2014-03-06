@@ -1,23 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pb0-x235.google.com ([2607:f8b0:400e:c01::235])
+Received: from iron5.routit.net ([2a02:22a0:0:2:2::2])
  by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WQ2Cl-0000Ap-TQ
- for wireless-regdb@lists.infradead.org; Tue, 18 Mar 2014 22:09:53 +0000
-Received: by mail-pb0-f53.google.com with SMTP id rp16so7925039pbb.12 for
- <wireless-regdb@lists.infradead.org>; Tue, 18 Mar 2014 15:09:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=sender:from:to:cc:subject:date:message-id;
- bh=ChxE/gQ82T8D6+IBNE5CNx2hB1g+UIZFhZN7l1qP0YM=;
- b=W2lw3EY4VxvSq2BF7o7iPZ6xxdmtqg+aL6rNhi8kZ4UavqSUwuWE2y+hyFQsOVAq2g
- jcGR9dqPEODn6twUmfivba/XgcxV/n2BzhlXGW00kkGEOXPymby0NUWh6u21kMyhNu3n
- LaPh3o/2k4z43NVapPg8hJU6/1ImqrDK+zwe84uDuGcNIdhj9JnKOol7AMJT/sKT7PCS
- YPcFqo44ssQQlLr/hB6xwSncKmd0daR/xI9+zw+KEio9UGFxEBPUHJphiHg2OEQFNDf/
- pyuzOufgMkOd23+0dyjGHFYslrxtKhxSjY2xPFV5CJG9trxYpkw00Rec+pmr1N4dD3hy FvaQ==
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 18 Mar 2014 15:07:14 -0700
-Message-Id: <1395180434-28349-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH] rel-html: add wireless-regdb project page
+ id 1WLZDZ-0000Us-5m
+ for wireless-regdb@lists.infradead.org; Thu, 06 Mar 2014 14:24:14 +0000
+From: Ronald Wahl <ronald.wahl@raritan.com>
+Date: Thu,  6 Mar 2014 15:14:16 +0100
+Message-Id: <1394115256-30733-1-git-send-email-ronald.wahl@raritan.com>
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: add channels 52..64
+ and 100..144 to world regdom
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,63 +24,36 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: Jouni Malinen <j@w1.fi>, Michael Green <green@qca.qualcomm.com>, "Luis R. Rodriguez" <mcgrof@suse.com>, wireless-regdb@lists.infradead.org, Andy Davidson <adavidso@qca.qualcomm.com>
+To: wireless-regdb@lists.infradead.org
+Cc: Ronald Wahl <ronald.wahl@raritan.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
+This is a port of what Johannes Berg sent to the
+Linux kernel for the static world regulatory domain.
 
-Since I relicensed CRDA to the copyleft-next license lets make
-it crystal clear wireless-regdb is a separate project project
-under the ISC license with its dedicated separate documentation
-and own release page.
-
-http://wireless.kernel.org/en/developers/Regulatory/wireless-regdb
-http://drvbp1.linux-foundation.org/~mcgrof/rel-html/wireless-regdb
-
-Cc: Jouni Malinen <j@w1.fi>
-Cc: Michael Green <green@qca.qualcomm.com>
-Cc: Andy Davidson <adavidso@qca.qualcomm.com>
-Cc: wireless-regdb@lists.infradead.org
-Signed-off-by: Luis R. Rodriguez <mcgrof@suse.com>
+Signed-off-by: Ronald Wahl <ronald.wahl@raritan.com>
 ---
- projects/wireless-regdb.cfg | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
- create mode 100644 projects/wireless-regdb.cfg
+ db.txt | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-diff --git a/projects/wireless-regdb.cfg b/projects/wireless-regdb.cfg
-new file mode 100644
-index 0000000..7b14d78
---- /dev/null
-+++ b/projects/wireless-regdb.cfg
-@@ -0,0 +1,27 @@
-+[project]
-+rel_html_proj           = wireless-regdb
-+supported =
-+	2013.11.27
-+rel_html_url_releases	= http://kernel.org/pub/software/network/wireless-regdb/
-+rel_license 		= ISC
-+ignore_changelogs	= True
-+
-+[html]
-+title = wireless-regdb: Linux Wireless Regulatory Database
-+
-+nav_01_url = http://wireless.kernel.org/en/developers/Regulatory/wireless-regdb
-+nav_01_txt = Documentation
-+
-+# XXX: Note: two % added here to help with what seems to be a python ConfigParser.py bug.
-+#      We should address this eventually.
-+nav_02_url = http://wireless.kernel.org/en/developers/Regulatory/wireless-regdb
-+nav_02_txt = Bugs
-+
-+nav_03_url = http://lists.infradead.org/mailman/listinfo/wireless-regdb
-+nav_03_txt = Mailing List
-+
-+release_title = Latest wireless-regdb release
-+
-+about_title = About wireless-regdb
-+about = wireless-regdb provides the database and tools to build the database
-+	read by CRDA to provide regulatory domains to the Linux kernnel.
+diff --git a/db.txt b/db.txt
+index fcab208..e5ab911 100644
+--- a/db.txt
++++ b/db.txt
+@@ -6,8 +6,11 @@ country 00:
+ 	# Channel 14. Only JP enables this and for 802.11b only
+ 	(2474 - 2494 @ 20), (20), NO-IR
+ 	# Channel 36 - 48
+-	(5170 - 5250 @ 80), (20), NO-IR
+-	# NB: 5260 MHz - 5700 MHz requies DFS
++	(5170 - 5250 @ 160), (20), NO-IR
++	# Channel 52 - 64
++	(5250 - 5330 @ 160), (20), NO-IR, DFS
++	# Channel 100 - 144
++	(5490 - 5730 @ 160), (20), NO-IR, DFS
+ 	# Channel 149 - 165
+ 	(5735 - 5835 @ 80), (20), NO-IR
+ 	# IEEE 802.11ad (60GHz), channels 1..3
 -- 
 1.8.5.3
 
