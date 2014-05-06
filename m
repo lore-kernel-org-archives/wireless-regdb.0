@@ -1,15 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from canardo.mork.no ([2001:4641::1])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WjrCh-0002rZ-5g
- for wireless-regdb@lists.infradead.org; Mon, 12 May 2014 14:27:45 +0000
-From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
-Date: Mon, 12 May 2014 16:26:52 +0200
-Message-Id: <1399904812-22753-1-git-send-email-bjorn@mork.no>
-MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update NO's regulatory
-	rules
+Received: from mx0.hfg-karlsruhe.de ([193.197.160.26])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1WhmZa-0000M2-Fj
+ for wireless-regdb@lists.infradead.org; Tue, 06 May 2014 21:06:47 +0000
+Received: from postamt.hfg-karlsruhe.de (postamt.hfg-karlsruhe.de
+ [193.197.160.12])
+ by mx0.hfg-karlsruhe.de (Postfix) with ESMTP id 2BA2872189C
+ for <wireless-regdb@lists.infradead.org>;
+ Tue,  6 May 2014 23:06:24 +0200 (CEST)
+Received: from [192.168.9.8] (unknown [192.168.9.8])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by postamt.hfg-karlsruhe.de (Postfix) with ESMTPSA id 1D69F23C304A
+ for <wireless-regdb@lists.infradead.org>;
+ Tue,  6 May 2014 23:06:24 +0200 (CEST)
+Message-ID: <1399410383.17354.50.camel@snkws.hfg-karlsruhe.de>
+From: Christian =?ISO-8859-1?Q?S=FCnkenberg?=
+ <christian.suenkenberg@hfg-karlsruhe.de>
+Date: Tue, 06 May 2014 23:06:23 +0200
+Mime-Version: 1.0
+Subject: [wireless-regdb] commit e56cd9618e3e5bf8ff96b799544b85170e34d9c3
+ erroneously removed channel flags
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -19,78 +31,169 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: multipart/mixed; boundary="===============4629416432071367829=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: linville@tuxdriver.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This aligns the regdb entry with the current Norwegian
-regulations.
+--===============4629416432071367829==
+Content-Type: multipart/signed; micalg="sha1"; protocol="application/x-pkcs7-signature";
+	boundary="=-pMx7GE+S6uW04XjkdeSS"
 
- o Adding a reference to the authoritative source
 
- o Adding a note about TPC
+--=-pMx7GE+S6uW04XjkdeSS
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
- o Adjusting band edges to match the text of the regulations,
-   except for merging 5470 - 5725 and 5725 – 5795 MHz using
-   the lowest common EIRP limit
+Hi,
 
- o Syncronizing EIRP limits with the regulation text, fixing
-   values, using mW instead of dBm, and adjusting for "no TPC"
-   where applicable
+commit e56cd9618e3e5bf8ff96b799544b85170e34d9c3 (wireless-regdb: remove
+antenna gain) stripped all channel definitions with multiple flags down
+to a single flag, e.g.:
+- (2474 - 2494 @ 20), (3, 20), NO-IR, NO-OFDM
++ (2474 - 2494 @ 20), (20), NO-IR
 
- o Adding the bands 5710 – 5795 MHz, 5815 – 5850 MHz and
-   17.1 - 17.3 GHz
+This was most certainly unintended.
 
-An unofficial English translation of the regulations is available
-from (attachment link on the right):
-http://eng.npt.no/technical/frequency-management/frequency-licenses/permission-to-use-radio-frequencies
-The relevant part is "Section 11. Wireless networks"
+Thanks,
+Christian S=C3=BCnkenberg
 
-The reference in the db.txt comment is the actual authoritative
-publication of these regulations, in Norwegian only.
 
-Signed-off-by: Bjørn Mork <bjorn@mork.no>
----
- db.txt | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+--=-pMx7GE+S6uW04XjkdeSS
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Transfer-Encoding: base64
 
-diff --git a/db.txt b/db.txt
-index fcab208..9d32643 100644
---- a/db.txt
-+++ b/db.txt
-@@ -579,11 +579,18 @@ country NL: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
-+# Data from http://www.lovdata.no/dokument/SF/forskrift/2012-01-19-77
-+# Power at 5250 - 5350 MHz, 5470 - 5725 MHz and 5815 – 5850 MHz can
-+# be doubled if TPC is implemented.
-+# Up to 2W (or 4W with TPC) is allowed in the 5725 – 5795 MHz band
-+# which has been merged with 5470 - 5725 MHz to allow wide channels
- country NO: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20)
--	(5250 - 5330 @ 80), (20), DFS
--	(5490 - 5710 @ 80), (27), DFS
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW)
-+	(5250 - 5350 @ 80), (100 mW), DFS
-+	(5470 - 5795 @ 80), (500 mW), DFS
-+	(5815 - 5850 @ 35), (2000 mW), DFS
-+	(17100 - 17300 @ 200), (100 mW)
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
- 
--- 
-2.0.0.rc2
+MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAQAAoIIUrDCCBHQw
+ggNcoAMCAQICCQCJkBEVWD6HmzANBgkqhkiG9w0BAQsFADBxMQswCQYDVQQGEwJERTEcMBoGA1UE
+ChMTRGV1dHNjaGUgVGVsZWtvbSBBRzEfMB0GA1UECxMWVC1UZWxlU2VjIFRydXN0IENlbnRlcjEj
+MCEGA1UEAxMaRGV1dHNjaGUgVGVsZWtvbSBSb290IENBIDIwHhcNMTQwMjExMTMxMTQ1WhcNMTkw
+NzA5MjM1OTAwWjBaMQswCQYDVQQGEwJERTETMBEGA1UEChMKREZOLVZlcmVpbjEQMA4GA1UECxMH
+REZOLVBLSTEkMCIGA1UEAxMbREZOLVZlcmVpbiBQQ0EgR2xvYmFsIC0gRzAxMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6ZvDZ4X5Da71jVTDllA1PWLpbkztlNcAW5UidNQg6zSP1uzA
+MQQLmYHiphTSUqAoI4SLdIkEXlvg4njBeMsWyyg1OXstkEXQ7aAAeny/Sg4bAMOG6VwrMRF7DPOC
+JEOMHDiLamgAmu7cT3ir0sYTm3at7t4m6O8Br3QPwQmi9mvOvdPNFDBP9eXjpMhim4IaAycwDQJl
+YE3t0QkjKpY1WCfTdsZxtpAdxO3/NYZ9bzOz2w/FEcKKg6GUXUFr2NIQ9Uz9ylGs2b3vkoO72uuL
+FlZWQ8/h1RM9ph8nMM1JVNvJEzSacXXFbOqnC5j5IZ0nrz6jOTlIaoytyZn7wxLyvQIDAQABo4IB
+JDCCASAwDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBRJt8bP6D0ff+pEexMp9/EKcD7eZDAfBgNV
+HSMEGDAWgBQxw3kbuvVT1xfgiXotF2wKsyudMzASBgNVHRMBAf8ECDAGAQH/AgECMD8GA1UdHwQ4
+MDYwNKAyoDCGLmh0dHA6Ly9vY3NwMDMzNi50ZWxlc2VjLmRlL3JsL0RUX1JPT1RfQ0FfMi5jcmww
+eQYIKwYBBQUHAQEEbTBrMCwGCCsGAQUFBzABhiBodHRwOi8vb2NzcDAzMzYudGVsZXNlYy5kZS9v
+Y3NwcjA7BggrBgEFBQcwAoYvaHR0cDovL29jc3AwMzM2LnRlbGVzZWMuZGUvY3J0L0RUX1JPT1Rf
+Q0FfMi5jZXIwDQYJKoZIhvcNAQELBQADggEBACwvqeBeQy8FcNxRlXVdgI47DMFjWFSBMIOcXalR
+h8m21w8runhIJGBCzPGi4jPhMh4ym1ETlXnGtazQJO0YFLwvKuovq7ITrEkdXgALBBhqmmXU6Ec1
+vK7t33S22PGAUGWgxtojm41TR8psu0DJlV1OYHor5LtmQFWvtjPB6iMhbvxUnd0zQm5Ma9Xkw/Lq
+BrdaMmoyRXS2tW/+6v8cY6q7iNH4WK8gfo+///b3OHeLGrZQP609R3lGw1e0F2KHvZ6jNiUHaCSq
+IvL2rynsN6UUma66AWCGdS1hFbp4loe1ks/hUJGeWToV7J5axob8KD5mutTZNa+tPEkihYfub48w
+ggUYMIIEAKADAgECAgQO0rcZMA0GCSqGSIb3DQEBBQUAMFoxCzAJBgNVBAYTAkRFMRMwEQYDVQQK
+EwpERk4tVmVyZWluMRAwDgYDVQQLEwdERk4tUEtJMSQwIgYDVQQDExtERk4tVmVyZWluIFBDQSBH
+bG9iYWwgLSBHMDEwHhcNMDkwOTE4MDc0MDU3WhcNMTkwNjMwMDAwMDAwWjCBkDELMAkGA1UEBhMC
+REUxLTArBgNVBAoTJEhvY2hzY2h1bGUgZnVlciBHZXN0YWx0dW5nIEthcmxzcnVoZTE2MDQGA1UE
+AxMtSG9jaHNjaHVsZSBmdWVyIEdlc3RhbHR1bmcgS2FybHNydWhlIENBIC0gRzAxMRowGAYJKoZI
+hvcNAQkBFgtwa2lAaGZnLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJiERIIW
+hbm67hmlxNHd73lv0+AaQDz3T95WXOx2Oa8sG7ZBUHI3zxeILO75Qnb6nL2BEsktOBeUyVRj85Er
+65/i/Jq25yUpmW4QtHjGCjqNMYVcpPcN7Jw7NyiThRahotbi4G+5SgYnZyxchWDhqgiL0ZRwMWTK
+FnhMPbzfTZrJ+03CV8oJzcAaWJAOB8OZ/SW8GbSJqFIYHv3xEFUJgx6yLNy2BPtiU41LR3goiPvB
+jXyGfQvmrah8H/ncxPRtKWaM5JX9Hjz9bDAbwCTjHmkBYqkfuFp3V1WTSTPscgRxE9g5PZ7+ZyQR
+EnnHVRq0cbtMFPg+fkeNM0j1mJngoQsCAwEAAaOCAa0wggGpMBIGA1UdEwEB/wQIMAYBAf8CAQEw
+CwYDVR0PBAQDAgEGMB0GA1UdDgQWBBQZgIw+XPbcj+W5GsVM6l/AFt4WADAfBgNVHSMEGDAWgBRJ
+t8bP6D0ff+pEexMp9/EKcD7eZDAWBgNVHREEDzANgQtwa2lAaGZnLmVkdTCBiAYDVR0fBIGAMH4w
+PaA7oDmGN2h0dHA6Ly9jZHAxLnBjYS5kZm4uZGUvZ2xvYmFsLXJvb3QtY2EvcHViL2NybC9jYWNy
+bC5jcmwwPaA7oDmGN2h0dHA6Ly9jZHAyLnBjYS5kZm4uZGUvZ2xvYmFsLXJvb3QtY2EvcHViL2Ny
+bC9jYWNybC5jcmwwgaIGCCsGAQUFBwEBBIGVMIGSMEcGCCsGAQUFBzAChjtodHRwOi8vY2RwMS5w
+Y2EuZGZuLmRlL2dsb2JhbC1yb290LWNhL3B1Yi9jYWNlcnQvY2FjZXJ0LmNydDBHBggrBgEFBQcw
+AoY7aHR0cDovL2NkcDIucGNhLmRmbi5kZS9nbG9iYWwtcm9vdC1jYS9wdWIvY2FjZXJ0L2NhY2Vy
+dC5jcnQwDQYJKoZIhvcNAQEFBQADggEBANKKEMlNnCTlILM/t7+i1+zmJy2xJnKJiFOWOsDoF6qd
+arN/upqtjITwaz1h+F2xstkrIa6aGEfpuUatPIPqVDB3V0dDfw2bQfEqu7RS0SFiggLjZu4TQVi9
+CgOFsAzI8A3qX9Ngp2pvJjcy84UDi9I1FDbVaKHpSxIH2+jbtJGQy2rYrxcB42U8PoLfiKJZV33F
+UigHRjShaFtXGoXuLiSgAO8UiczsyXtnmX9Nb6MqRXeOU/8WYOchWh5kWUTsCcAl9wwob1gC5uVV
+8HQlZApiR17bSn2KM7Ch6yfHDI5S5h6h1iIfTYFeeTYE5j35Q4Jj1+dJURWmFaYIYgG7XPYwggWI
+MIIEcKADAgECAgcUvKKWJu21MA0GCSqGSIb3DQEBBQUAMIGQMQswCQYDVQQGEwJERTEtMCsGA1UE
+ChMkSG9jaHNjaHVsZSBmdWVyIEdlc3RhbHR1bmcgS2FybHNydWhlMTYwNAYDVQQDEy1Ib2Noc2No
+dWxlIGZ1ZXIgR2VzdGFsdHVuZyBLYXJsc3J1aGUgQ0EgLSBHMDExGjAYBgkqhkiG9w0BCQEWC3Br
+aUBoZmcuZWR1MB4XDTEyMTEwOTE1NDUxMFoXDTE1MTEwOTE1NDUxMFowXDELMAkGA1UEBhMCREUx
+LTArBgNVBAoTJEhvY2hzY2h1bGUgZnVlciBHZXN0YWx0dW5nIEthcmxzcnVoZTEeMBwGA1UEAxMV
+Q2hyaXN0aWFuIFN1ZW5rZW5iZXJnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2EpK
+GkQM8amJZDfvYWa43eDb6c7KJkDn5qnGOnhwWdAU7bc6jc6Zl4AkTkaAzqZPl3QkLaWxMW7BbsUN
+aHxcWyA/m+4gy8I0NIgs37q/7S9HWrUkxQCfoiz35uUy95lS//6/7UmcDuIJ0CdpL6x8dcxmNIla
+kdQGc0fOQ8ypn4fkEvom8skFRU1MlPpOBHGzGoxJvzc8CV+Ge+TtD1U1zc0c9irKQzyeh4xx68ZX
+0BESYQ9QWY5aO3Drz2Va7q3nK2PhxykOxoKC38VUSX6QJWkHdNwsltWkNTno6jOVOSicvSesdi8f
+h2GBXHey/r2MJxgK3m8f9xgl2lINllXVMQIDAQABo4ICGDCCAhQwLwYDVR0gBCgwJjARBg8rBgEE
+AYGtIYIsAQEEAgMwEQYPKwYBBAGBrSGCLAIBBAIDMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgXgMB0G
+A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDAdBgNVHQ4EFgQUWwtcDbwUe33Kp+3EX1jUrWlY
+RoEwHwYDVR0jBBgwFoAUGYCMPlz23I/luRrFTOpfwBbeFgAwMQYDVR0RBCowKIEmY2hyaXN0aWFu
+LnN1ZW5rZW5iZXJnQGhmZy1rYXJsc3J1aGUuZGUwgY0GA1UdHwSBhTCBgjA/oD2gO4Y5aHR0cDov
+L2NkcDEucGNhLmRmbi5kZS9oZmcta2FybHNydWhlLWNhL3B1Yi9jcmwvY2FjcmwuY3JsMD+gPaA7
+hjlodHRwOi8vY2RwMi5wY2EuZGZuLmRlL2hmZy1rYXJsc3J1aGUtY2EvcHViL2NybC9jYWNybC5j
+cmwwgaYGCCsGAQUFBwEBBIGZMIGWMEkGCCsGAQUFBzAChj1odHRwOi8vY2RwMS5wY2EuZGZuLmRl
+L2hmZy1rYXJsc3J1aGUtY2EvcHViL2NhY2VydC9jYWNlcnQuY3J0MEkGCCsGAQUFBzAChj1odHRw
+Oi8vY2RwMi5wY2EuZGZuLmRlL2hmZy1rYXJsc3J1aGUtY2EvcHViL2NhY2VydC9jYWNlcnQuY3J0
+MA0GCSqGSIb3DQEBBQUAA4IBAQBpYbeV7KlHkZEN4X1EjhM3yqqVVDbvoescllytJalsAGiM+sx4
+33VQP4BAyuDLLXjoULW3iuwYPNkBFJRVtgAw5upBbA82Gosr+liPMl6qJtPyextGlX2S/iDtBmTo
+uALLH83guh4ea6mmiPAX9xHpm3951Fjs50KWYs03vdqu6eEyv1Tx8b8NqX8gTy99GJwVhUXtRRlL
+0EWcnbGDNzEsNPVaJK867o7bv6a9ger6q1RyD5ffmiGNRtKzfugRhKDfE3PBVc/ZzR33C1iAm/9s
+Lm/f8CcHcBgZSgJriXx5T+JbLcmkoWBXHnM4eBdb6oFG9uD8mbBN5W+hLaGjUYcfMIIFiDCCBHCg
+AwIBAgIHFLyilibttTANBgkqhkiG9w0BAQUFADCBkDELMAkGA1UEBhMCREUxLTArBgNVBAoTJEhv
+Y2hzY2h1bGUgZnVlciBHZXN0YWx0dW5nIEthcmxzcnVoZTE2MDQGA1UEAxMtSG9jaHNjaHVsZSBm
+dWVyIEdlc3RhbHR1bmcgS2FybHNydWhlIENBIC0gRzAxMRowGAYJKoZIhvcNAQkBFgtwa2lAaGZn
+LmVkdTAeFw0xMjExMDkxNTQ1MTBaFw0xNTExMDkxNTQ1MTBaMFwxCzAJBgNVBAYTAkRFMS0wKwYD
+VQQKEyRIb2Noc2NodWxlIGZ1ZXIgR2VzdGFsdHVuZyBLYXJsc3J1aGUxHjAcBgNVBAMTFUNocmlz
+dGlhbiBTdWVua2VuYmVyZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANhKShpEDPGp
+iWQ372FmuN3g2+nOyiZA5+apxjp4cFnQFO23Oo3OmZeAJE5GgM6mT5d0JC2lsTFuwW7FDWh8XFsg
+P5vuIMvCNDSILN+6v+0vR1q1JMUAn6Is9+blMveZUv/+v+1JnA7iCdAnaS+sfHXMZjSJWpHUBnNH
+zkPMqZ+H5BL6JvLJBUVNTJT6TgRxsxqMSb83PAlfhnvk7Q9VNc3NHPYqykM8noeMcevGV9AREmEP
+UFmOWjtw689lWu6t5ytj4ccpDsaCgt/FVEl+kCVpB3TcLJbVpDU56OozlTkonL0nrHYvH4dhgVx3
+sv69jCcYCt5vH/cYJdpSDZZV1TECAwEAAaOCAhgwggIUMC8GA1UdIAQoMCYwEQYPKwYBBAGBrSGC
+LAEBBAIDMBEGDysGAQQBga0hgiwCAQQCAzAJBgNVHRMEAjAAMAsGA1UdDwQEAwIF4DAdBgNVHSUE
+FjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwHQYDVR0OBBYEFFsLXA28FHt9yqftxF9Y1K1pWEaBMB8G
+A1UdIwQYMBaAFBmAjD5c9tyP5bkaxUzqX8AW3hYAMDEGA1UdEQQqMCiBJmNocmlzdGlhbi5zdWVu
+a2VuYmVyZ0BoZmcta2FybHNydWhlLmRlMIGNBgNVHR8EgYUwgYIwP6A9oDuGOWh0dHA6Ly9jZHAx
+LnBjYS5kZm4uZGUvaGZnLWthcmxzcnVoZS1jYS9wdWIvY3JsL2NhY3JsLmNybDA/oD2gO4Y5aHR0
+cDovL2NkcDIucGNhLmRmbi5kZS9oZmcta2FybHNydWhlLWNhL3B1Yi9jcmwvY2FjcmwuY3JsMIGm
+BggrBgEFBQcBAQSBmTCBljBJBggrBgEFBQcwAoY9aHR0cDovL2NkcDEucGNhLmRmbi5kZS9oZmct
+a2FybHNydWhlLWNhL3B1Yi9jYWNlcnQvY2FjZXJ0LmNydDBJBggrBgEFBQcwAoY9aHR0cDovL2Nk
+cDIucGNhLmRmbi5kZS9oZmcta2FybHNydWhlLWNhL3B1Yi9jYWNlcnQvY2FjZXJ0LmNydDANBgkq
+hkiG9w0BAQUFAAOCAQEAaWG3leypR5GRDeF9RI4TN8qqlVQ276HrHJZcrSWpbABojPrMeN91UD+A
+QMrgyy146FC1t4rsGDzZARSUVbYAMObqQWwPNhqLK/pYjzJeqibT8nsbRpV9kv4g7QZk6LgCyx/N
+4LoeHmuppojwF/cR6Zt/edRY7OdClmLNN73arunhMr9U8fG/Dal/IE8vfRicFYVF7UUZS9BFnJ2x
+gzcxLDT1WiSvOu6O27+mvYHq+qtUcg+X35ohjUbSs37oEYSg3xNzwVXP2c0d9wtYgJv/bC5v3/An
+B3AYGUoCa4l8eU/iWy3JpKFgVx5zOHgXW+qBRvbg/JmwTeVvoS2ho1GHHzGCA4cwggODAgEBMIGc
+MIGQMQswCQYDVQQGEwJERTEtMCsGA1UEChMkSG9jaHNjaHVsZSBmdWVyIEdlc3RhbHR1bmcgS2Fy
+bHNydWhlMTYwNAYDVQQDEy1Ib2Noc2NodWxlIGZ1ZXIgR2VzdGFsdHVuZyBLYXJsc3J1aGUgQ0Eg
+LSBHMDExGjAYBgkqhkiG9w0BCQEWC3BraUBoZmcuZWR1AgcUvKKWJu21MAkGBSsOAwIaBQCgggG/
+MBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTE0MDUwNjIxMDYyM1ow
+IwYJKoZIhvcNAQkEMRYEFCE10PA+WNFMx5Pa0ATsrAk2swN6MIGtBgkrBgEEAYI3EAQxgZ8wgZww
+gZAxCzAJBgNVBAYTAkRFMS0wKwYDVQQKEyRIb2Noc2NodWxlIGZ1ZXIgR2VzdGFsdHVuZyBLYXJs
+c3J1aGUxNjA0BgNVBAMTLUhvY2hzY2h1bGUgZnVlciBHZXN0YWx0dW5nIEthcmxzcnVoZSBDQSAt
+IEcwMTEaMBgGCSqGSIb3DQEJARYLcGtpQGhmZy5lZHUCBxS8opYm7bUwga8GCyqGSIb3DQEJEAIL
+MYGfoIGcMIGQMQswCQYDVQQGEwJERTEtMCsGA1UEChMkSG9jaHNjaHVsZSBmdWVyIEdlc3RhbHR1
+bmcgS2FybHNydWhlMTYwNAYDVQQDEy1Ib2Noc2NodWxlIGZ1ZXIgR2VzdGFsdHVuZyBLYXJsc3J1
+aGUgQ0EgLSBHMDExGjAYBgkqhkiG9w0BCQEWC3BraUBoZmcuZWR1AgcUvKKWJu21MA0GCSqGSIb3
+DQEBAQUABIIBALd7FdTrwtwAQrk05JmZXZ2hpwQYbV3dKPqLMvt1TOHtEpNwvCk6mWobrXqUAbWi
+wkJnJ5JdIEjuUORVPLs2ESTFJKaarcICT3dxhJ4Pek5qjGf3ydq6FDpAC9TOZFjhLH/fUoe9rqtw
+m+cd/pK5Hfa0sBNOfcUaP7iE2+eln7V+j7n4YyrH2KOg8q+8WZ/CRdjnInt0+K4I4Ttoxkl56dNR
+ZLHlDp7hM8QTQ79oRbguN/rO5Ta3foV2x0dmpBCv98ibLgxqmC/mgQaI5wfqmS6aoIp0ZPoNfosM
+sQZ5CDcGJn6f/YVkGFVMtGn/++2KbV9VIDxOrynjzN+q+ol9ISoAAAAAAAA=
 
+
+--=-pMx7GE+S6uW04XjkdeSS--
+
+
+
+--===============4629416432071367829==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============4629416432071367829==--
+
+
+
