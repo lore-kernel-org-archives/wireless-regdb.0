@@ -1,21 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ee0-x235.google.com ([2a00:1450:4013:c00::235])
+Received: from mail-ee0-x22f.google.com ([2a00:1450:4013:c00::22f])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WigMX-00019Z-Mv
- for wireless-regdb@lists.infradead.org; Fri, 09 May 2014 08:41:02 +0000
-Received: by mail-ee0-f53.google.com with SMTP id c13so2400916eek.40 for
- <wireless-regdb@lists.infradead.org>; Fri, 09 May 2014 01:40:39 -0700 (PDT)
+ id 1WigMZ-00019l-04
+ for wireless-regdb@lists.infradead.org; Fri, 09 May 2014 08:41:03 +0000
+Received: by mail-ee0-f47.google.com with SMTP id c13so2400290eek.34 for
+ <wireless-regdb@lists.infradead.org>; Fri, 09 May 2014 01:40:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google; h=from:to:cc:subject:date:message-id;
- bh=SxEzUvsrVrOHZf/CD3MA9i4Td1rmmY/JWHEJ3rUUnSg=;
- b=hRdWQqUEfx5hBgIaHpZURnr6P59i15peHF2CsWv+MmwoTHyd4kqUF/teAh0UAEJAlf
- PYI/4u31D/w+5NemNwxMgQmjXphQd00Us7OBeqf4eB80otkX3CI62RO+etH7mRQ+M0lH
- Kp420sGS2Shvnmes8irikiofo2IGj9dzlUyx4=
+ s=google; h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=h2IzPOvkw7j3L3b5++xW45h1w97Yimt149jmMBn7kfQ=;
+ b=fU+DXxWGbKiBl2KUy4P7U3N3kIK1VysKAnP3xV1VyHp5o7KjDhb99J5a+AHGaIiBnJ
+ 9ICsBP8GOHFnvgi/j3SUVCaYvmlw7NVRjsnvPuO0LyZJJ9tNyzxcGQxdG56LCp+CWf9f
+ QsQsx9L5MYLWFtBtB+RpyGWQfBQBrumh+Tnig=
 From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Date: Fri,  9 May 2014 10:40:23 +0200
-Message-Id: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
-Subject: [wireless-regdb] [PATCH] wireless-regdb: add DFS CAC time parameter
+Date: Fri,  9 May 2014 10:40:24 +0200
+Message-Id: <1399624824-9204-2-git-send-email-janusz.dziedzic@tieto.com>
+In-Reply-To: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
+References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
+Subject: [wireless-regdb] [PATCH] crda: add DFS CAC time support
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,105 +37,298 @@ To: wireless-regdb@lists.infradead.org
 Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless@vger.kernel.org, mcgrof@do-not-panic.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Introduce support for setting DFS CAC time
-in milliseconds.
+Add DFS CAC time support. Get this
+value form regulatory.bin file.
+Add parsers required by db2rd.
 
-Eg.
-(5250 - 5330 @ AUTO), (20), (60000), DFS
-
-will setup CAC 60 seconds CAC time.
+Change REGDB_VERSION while binary file
+format was changed little bit (rule structure).
 
 Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 ---
- db2bin.py  |    6 +++---
- dbparse.py |   17 +++++++++++++----
- 2 files changed, 16 insertions(+), 7 deletions(-)
+ crda.c   |    3 ++
+ regdb.h  |    5 ++-
+ reglib.c |  149 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ reglib.h |    1 +
+ 4 files changed, 150 insertions(+), 8 deletions(-)
 
-diff --git a/db2bin.py b/db2bin.py
-index 41d3741..f6c3bc1 100755
---- a/db2bin.py
-+++ b/db2bin.py
-@@ -7,7 +7,7 @@ from dbparse import DBParser
- import sys
+diff --git a/crda.c b/crda.c
+index 4751a39..0bf83a1 100644
+--- a/crda.c
++++ b/crda.c
+@@ -131,6 +131,9 @@ static int put_reg_rule(const struct ieee80211_reg_rule *rule, struct nl_msg *ms
+ 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_ANT_GAIN,	power_rule->max_antenna_gain);
+ 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_EIRP,	power_rule->max_eirp);
  
- MAGIC = 0x52474442
--VERSION = 19
-+VERSION = 20
- 
- if len(sys.argv) < 3:
-     print 'Usage: %s output-file input-file [key-file]' % sys.argv[0]
-@@ -93,8 +93,8 @@ for reg_rule in rules:
-     freq_range, power_rule = reg_rule.freqband, reg_rule.power
-     reg_rules[reg_rule] = output.tell()
-     # struct regdb_file_reg_rule
--    output.write(struct.pack('>III', freq_ranges[freq_range], power_rules[power_rule],
--                             reg_rule.flags))
-+    output.write(struct.pack('>IIII', freq_ranges[freq_range], power_rules[power_rule],
-+                             reg_rule.flags, reg_rule.cac_time))
- 
- 
- reg_rules_collections = {}
-diff --git a/dbparse.py b/dbparse.py
-index b735b6a..d54311f 100755
---- a/dbparse.py
-+++ b/dbparse.py
-@@ -77,12 +77,13 @@ class FlagError(Exception):
-         self.flag = flag
- 
- class Permission(object):
--    def __init__(self, freqband, power, flags):
-+    def __init__(self, freqband, power, flags, cac_time):
-         assert isinstance(freqband, FreqBand)
-         assert isinstance(power, PowerRestriction)
-         self.freqband = freqband
-         self.power = power
-         self.flags = 0
-+        self.cac_time = cac_time
-         for flag in flags:
-             if not flag in flag_definitions:
-                 raise FlagError(flag)
-@@ -90,7 +91,7 @@ class Permission(object):
-         self.textflags = flags
- 
-     def _as_tuple(self):
--        return (self.freqband, self.power, self.flags)
-+        return (self.freqband, self.power, self.flags, self.cac_time)
- 
-     def __cmp__(self, other):
-         if not isinstance(other, Permission):
-@@ -254,6 +255,7 @@ class DBParser(object):
-         self._comments = []
- 
-     def _parse_country_item(self, line):
-+        cac_time = 0
-         if line[0] == '(':
-             try:
-                 band, line = line[1:].split('),', 1)
-@@ -282,7 +284,14 @@ class DBParser(object):
-                 flags = []
-             else:
-                 pname = items[0]
--                flags = items[1].split(',')
-+                pcac = items[1]
-+                if pcac[0] == '(':
-+                    cac, flags = pcac.split('),', 1)
-+                    flags = flags.split(',')
-+                    cac_time = int(cac[1:])
-+                else:
-+                    flags = items[1].split(',')
++	if (rule->dfs_cac_ms)
++		NLA_PUT_U32(msg, NL80211_ATTR_DFS_CAC_TIME,	rule->dfs_cac_ms);
 +
-             power = pname[1:]
-             pname = 'UNNAMED %d' % self._lineno
-             self._parse_power_def(pname, power, dupwarn=False)
-@@ -303,7 +312,7 @@ class DBParser(object):
-         b = self._bands[bname]
-         p = self._power[pname]
-         try:
--            perm = Permission(b, p, flags)
-+            perm = Permission(b, p, flags, cac_time)
-         except FlagError, e:
-             self._syntax_error("Invalid flag '%s'" % e.flag)
-         for cname, c in self._current_countries.iteritems():
+ 	return 0;
+ 
+ nla_put_failure:
+diff --git a/regdb.h b/regdb.h
+index 3ffb781..e7b7ab6 100644
+--- a/regdb.h
++++ b/regdb.h
+@@ -21,7 +21,7 @@
+  * to have some more magic. We still consider this to be
+  * "Version 1" of the file.
+  */
+-#define REGDB_VERSION	19
++#define REGDB_VERSION	20
+ 
+ /*
+  * The signature at the end of the file is an RSA-signed
+@@ -107,6 +107,7 @@ struct regdb_file_reg_rule {
+ 	uint32_t	power_rule_ptr; /* pointer to a struct regdb_file_power_rule */
+ 	/* rule flags using enum reg_rule_flags */
+ 	uint32_t flags;
++	uint32_t dfs_cac_ms;
+ };
+ 
+ struct regdb_file_reg_rules_collection {
+@@ -143,7 +144,7 @@ static inline void check_db_binary_structs(void)
+ 	CHECK_STRUCT(regdb_file_header, 20);
+ 	CHECK_STRUCT(regdb_file_freq_range, 12);
+ 	CHECK_STRUCT(regdb_file_power_rule, 8);
+-	CHECK_STRUCT(regdb_file_reg_rule, 12);
++	CHECK_STRUCT(regdb_file_reg_rule, 16);
+ 	CHECK_STRUCT(regdb_file_reg_rules_collection, 4);
+ 	CHECK_STRUCT(regdb_file_reg_country, 8);
+ }
+diff --git a/reglib.c b/reglib.c
+index 3deca4a..beddecd 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -326,6 +326,7 @@ static void reg_rule2rd(uint8_t *db, size_t dblen,
+ 	rd_power_rule->max_eirp = ntohl(power->max_eirp);
+ 
+ 	rd_reg_rule->flags = ntohl(rule->flags);
++	rd_reg_rule->dfs_cac_ms = ntohl(rule->dfs_cac_ms);
+ 
+ 	if (rd_reg_rule->flags & RRF_NO_IR_ALL)
+ 		rd_reg_rule->flags |= RRF_NO_IR_ALL;
+@@ -734,6 +735,9 @@ static void print_reg_rule(const struct ieee80211_reg_rule *rule)
+ 	else
+ 		printf("N/A)");
+ 
++	if ((rule->flags & RRF_DFS) && rule->dfs_cac_ms)
++		printf(", (%u)", rule->dfs_cac_ms);
++
+ 	if (rule->flags & RRF_NO_OFDM)
+ 		printf(", NO-OFDM");
+ 	if (rule->flags & RRF_NO_CCK)
+@@ -826,6 +830,7 @@ reglib_parse_rule_simple(char *line, struct ieee80211_reg_rule *reg_rule)
+ 		REGLIB_DBM_TO_MBM(max_eirp);
+ 
+ 	reg_rule->flags = 0;
++	reg_rule->dfs_cac_ms = 0;
+ 
+ 	if (debug)
+ 		printf("reglib_parse_rule_simple(): %d line: %s", hits, line);
+@@ -861,6 +866,7 @@ reglib_parse_rule_simple_mw(char *line, struct ieee80211_reg_rule *reg_rule)
+ 		REGLIB_MW_TO_MBM(max_eirp);
+ 
+ 	reg_rule->flags = 0;
++	reg_rule->dfs_cac_ms = 0;
+ 
+ 	if (debug)
+ 		printf("reglib_parse_rule_simple_mw(): %d line: %s",
+@@ -920,6 +926,8 @@ reglib_parse_rule_args(char *line, struct ieee80211_reg_rule *reg_rule)
+ 	for (i = 0; i < 8; i++)
+ 		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
+ 
++	reg_rule->dfs_cac_ms = 0;
++
+ 	if (debug)
+ 		printf("reglib_parse_rule_args(): %d flags: %d, line: %s",
+ 		       hits, reg_rule->flags, line);
+@@ -982,6 +990,8 @@ reglib_parse_rule_args_mw(char *line, struct ieee80211_reg_rule *reg_rule)
+ 	for (i = 0; i < 8; i++)
+ 		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
+ 
++	reg_rule->dfs_cac_ms = 0;
++
+ 	if (debug)
+ 		printf("reglib_parse_rule_args_mw(): %d flags: %d, line: %s",
+ 		       hits, reg_rule->flags, line);
+@@ -989,6 +999,130 @@ reglib_parse_rule_args_mw(char *line, struct ieee80211_reg_rule *reg_rule)
+ #undef IGNORE_COMMA_OR_SPACE
+ }
+ 
++static int
++reglib_parse_rule_args_mw_cac(char *line, struct ieee80211_reg_rule *reg_rule)
++{
++#define IGNORE_COMMA_OR_SPACE "%*[ ,]"
++	int hits;
++	char flag_list[9][100];
++	unsigned int i = 0, dfs_cac_ms;
++	char mw[3];
++	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
++
++	for (i = 0; i < 9; i++)
++		memset(flag_list[i], 0, sizeof(flag_list[i]));
++
++	hits = sscanf(line, "\t(%f - %f @ %f), (%f %2[mW]), (%u),"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s",
++		      &start_freq_khz,
++		      &end_freq_khz,
++		      &max_bandwidth_khz,
++		      &max_eirp,
++		      mw,
++		      &dfs_cac_ms,
++		      flag_list[0],
++		      flag_list[1],
++		      flag_list[2],
++		      flag_list[3],
++		      flag_list[4],
++		      flag_list[5],
++		      flag_list[6],
++		      flag_list[7],
++		      flag_list[8]);
++
++	if (hits < 6)
++		return -EINVAL;
++
++	reg_rule->freq_range.start_freq_khz =
++		REGLIB_MHZ_TO_KHZ(start_freq_khz);
++	reg_rule->freq_range.end_freq_khz =
++		REGLIB_MHZ_TO_KHZ(end_freq_khz);
++	reg_rule->freq_range.max_bandwidth_khz =
++		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
++	reg_rule->power_rule.max_eirp =
++		REGLIB_MW_TO_MBM(max_eirp);
++
++	for (i = 0; i < 8; i++)
++		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
++
++	reg_rule->dfs_cac_ms = dfs_cac_ms;
++
++	if (debug)
++		printf("reglib_parse_rule_args_mw_cac(): %d flags: %d, line: %s",
++		       hits, reg_rule->flags, line);
++	return 0;
++#undef IGNORE_COMMA_OR_SPACE
++}
++
++static int
++reglib_parse_rule_args_cac(char *line, struct ieee80211_reg_rule *reg_rule)
++{
++#define IGNORE_COMMA_OR_SPACE "%*[ ,]"
++	int hits;
++	char flag_list[9][100];
++	unsigned int i = 0, dfs_cac_ms;
++	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
++
++	for (i = 0; i < 9; i++)
++		memset(flag_list[i], 0, sizeof(flag_list[i]));
++
++	hits = sscanf(line, "\t(%f - %f @ %f), (%f), (%u)"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s"
++		      IGNORE_COMMA_OR_SPACE "%s",
++		      &start_freq_khz,
++		      &end_freq_khz,
++		      &max_bandwidth_khz,
++		      &max_eirp,
++		      &dfs_cac_ms,
++		      flag_list[0],
++		      flag_list[1],
++		      flag_list[2],
++		      flag_list[3],
++		      flag_list[4],
++		      flag_list[5],
++		      flag_list[6],
++		      flag_list[7],
++		      flag_list[8]);
++
++	if (hits < 6)
++		return -EINVAL;
++
++	reg_rule->freq_range.start_freq_khz =
++		REGLIB_MHZ_TO_KHZ(start_freq_khz);
++	reg_rule->freq_range.end_freq_khz =
++		REGLIB_MHZ_TO_KHZ(end_freq_khz);
++	reg_rule->freq_range.max_bandwidth_khz =
++		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
++	reg_rule->power_rule.max_eirp =
++		REGLIB_DBM_TO_MBM(max_eirp);
++
++	for (i = 0; i < 8; i++)
++		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
++
++	reg_rule->dfs_cac_ms = dfs_cac_ms;
++
++	if (debug)
++		printf("reglib_parse_rule_args_cac(): %d flags: %d, line: %s",
++		       hits, reg_rule->flags, line);
++
++	return 0;
++#undef IGNORE_COMMA_OR_SPACE
++}
+ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
+ {
+ 	char line[1024];
+@@ -997,24 +1131,27 @@ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
+ 	int r = 0;
+ 	struct reglib_rule_parse_list *reglib_rule_parsers;
+ 	size_t size_parsers = sizeof(struct reglib_rule_parse_list) + 
+-				4 * sizeof(int (*)(char *, struct ieee80211_reg_rule *));
++				6 * sizeof(int (*)(char *, struct ieee80211_reg_rule *));
+ 
+ 	reglib_rule_parsers = malloc(size_parsers);
+ 	if (!reglib_rule_parsers)
+ 		return -EINVAL;
+ 	memset(reglib_rule_parsers, 0, size_parsers);
+ 
+-	reglib_rule_parsers->n_parsers = 4;
++	reglib_rule_parsers->n_parsers = 6;
++
+ 
+ 	/*
+ 	 * XXX: sscanf() is a bit odd with picking up mW
+ 	 * case over the simple one, this order however works,
+ 	 * gotta figure out how to be more precise.
+ 	 */
+-	reglib_rule_parsers->rule_parsers[0] = reglib_parse_rule_args_mw;
+-	reglib_rule_parsers->rule_parsers[1] = reglib_parse_rule_args;
+-	reglib_rule_parsers->rule_parsers[2] = reglib_parse_rule_simple;
+-	reglib_rule_parsers->rule_parsers[3] = reglib_parse_rule_simple_mw;
++	reglib_rule_parsers->rule_parsers[0] = reglib_parse_rule_args_mw_cac;
++	reglib_rule_parsers->rule_parsers[1] = reglib_parse_rule_args_cac;
++	reglib_rule_parsers->rule_parsers[2] = reglib_parse_rule_args_mw;
++	reglib_rule_parsers->rule_parsers[3] = reglib_parse_rule_args;
++	reglib_rule_parsers->rule_parsers[4] = reglib_parse_rule_simple;
++	reglib_rule_parsers->rule_parsers[5] = reglib_parse_rule_simple_mw;
+ 
+ 	memset(line, 0, sizeof(line));
+ 	line_p = fgets(line, sizeof(line), fp);
+diff --git a/reglib.h b/reglib.h
+index afd5ef6..77aa42a 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -28,6 +28,7 @@ struct ieee80211_reg_rule {
+ 	struct ieee80211_freq_range freq_range;
+ 	struct ieee80211_power_rule power_rule;
+ 	uint32_t flags;
++	uint32_t dfs_cac_ms;
+ };
+ 
+ struct ieee80211_regdomain {
 -- 
 1.7.9.5
 
