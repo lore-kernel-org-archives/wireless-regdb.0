@@ -1,18 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1WmSL7-0004tp-Aw for
- wireless-regdb@lists.infradead.org; Mon, 19 May 2014 18:31:09 +0000
-Date: Mon, 19 May 2014 14:15:02 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20140519181502.GF7650@tuxdriver.com>
-References: <D0D2EC853BFD0147A005CC7FAC0E4A53A196FC4D@AKI2K113.wd.govt.nz>
+Received: from canardo.mork.no ([2001:4641::1])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1WjrCh-0002rZ-5g
+ for wireless-regdb@lists.infradead.org; Mon, 12 May 2014 14:27:45 +0000
+From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+Date: Mon, 12 May 2014 16:26:52 +0200
+Message-Id: <1399904812-22753-1-git-send-email-bjorn@mork.no>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <D0D2EC853BFD0147A005CC7FAC0E4A53A196FC4D@AKI2K113.wd.govt.nz>
-Subject: Re: [wireless-regdb] New Zealand regulatory update 5 GHz
- channelling
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update NO's regulatory
+	rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -22,78 +19,78 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-To: Peter Gent <Peter.Gent@mbie.govt.nz>
-Cc: "aenertia@aenertia.net" <aenertia@aenertia.net>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Content-Transfer-Encoding: 8bit
+To: linville@tuxdriver.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-I don't suppose that anyone would care to translate this into a patch again=
-st db.txt?
+This aligns the regdb entry with the current Norwegian
+regulations.
 
-On Mon, Feb 03, 2014 at 01:02:29AM +0000, Peter Gent wrote:
-> Hi,
->=20
-> I've recently been made aware that the current regulatory database for 5 =
-GHz channelling is not up to date for New Zealand. Therefore we would like =
-to suggest the following changes=20
->=20
-> 5150 - 5250 MHz (indoor use only) 200 mW
-> 5250 - 5350 MHz (indoor use only) 200 mW DFS enabled and Transmitter powe=
-r control enabled=20
-> 5250 - 5350 MHz (outdoor use) 1 W DFS enabled and Transmitter power contr=
-ol enabled
-> 5470 - 5725 MHz 500 mW, transmitter power control not enabled
-> 5470 - 5725 MHz 1 Watt, DFS enabled and transmitter power control enabled
-> 5725 - 5875 MHz 1 Watt DFS not enabled
-> 5725 - 5875 MHZ 4 Watts DFS enabled=20
->=20
-> There are no restrictions on channel size however power densities are spe=
-cified. Therefore 40 MHz channelling is allowed (up from the current state =
-of 20 MHz channelling) at a minimum and all power values are given as EIRP =
-in Watts include the gain of the system antenna
->=20
-> Regards
->=20
-> Peter Gent
->=20
-> Peter Gent
-> Planning Analyst=20
-> Radio Spectrum Policy & Planning=20
-> Ministry of Business, Innovation & Employment
-> DDI: +64 4 462 4279=A0=20
-> 33 Bowen Street, PO Box 1473, Wellington 6140
->=20
->=20
->=20
-> http://newzealand.govt.nz/ - connecting you to New Zealand central & loca=
-l government services
->=20
-> Any opinions expressed in this message are not necessarily those of the M=
-inistry of Business, Innovation and Employment. This message and any files =
-transmitted with it are confidential and solely for the use of the intended=
- recipient. If you are not the intended recipient or the person responsible=
- for delivery to the intended recipient, be advised that you have received =
-this message in error and that any use is strictly prohibited. Please conta=
-ct the sender and delete the message and any attachment from your computer.
->=20
->=20
->=20
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
->=20
+ o Adding a reference to the authoritative source
 
---=20
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+ o Adding a note about TPC
+
+ o Adjusting band edges to match the text of the regulations,
+   except for merging 5470 - 5725 and 5725 – 5795 MHz using
+   the lowest common EIRP limit
+
+ o Syncronizing EIRP limits with the regulation text, fixing
+   values, using mW instead of dBm, and adjusting for "no TPC"
+   where applicable
+
+ o Adding the bands 5710 – 5795 MHz, 5815 – 5850 MHz and
+   17.1 - 17.3 GHz
+
+An unofficial English translation of the regulations is available
+from (attachment link on the right):
+http://eng.npt.no/technical/frequency-management/frequency-licenses/permission-to-use-radio-frequencies
+The relevant part is "Section 11. Wireless networks"
+
+The reference in the db.txt comment is the actual authoritative
+publication of these regulations, in Norwegian only.
+
+Signed-off-by: Bjørn Mork <bjorn@mork.no>
+---
+ db.txt | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index fcab208..9d32643 100644
+--- a/db.txt
++++ b/db.txt
+@@ -579,11 +579,18 @@ country NL: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
++# Data from http://www.lovdata.no/dokument/SF/forskrift/2012-01-19-77
++# Power at 5250 - 5350 MHz, 5470 - 5725 MHz and 5815 – 5850 MHz can
++# be doubled if TPC is implemented.
++# Up to 2W (or 4W with TPC) is allowed in the 5725 – 5795 MHz band
++# which has been merged with 5470 - 5725 MHz to allow wide channels
+ country NO: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20)
+-	(5250 - 5330 @ 80), (20), DFS
+-	(5490 - 5710 @ 80), (27), DFS
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (200 mW)
++	(5250 - 5350 @ 80), (100 mW), DFS
++	(5470 - 5795 @ 80), (500 mW), DFS
++	(5815 - 5850 @ 35), (2000 mW), DFS
++	(17100 - 17300 @ 200), (100 mW)
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-- 
+2.0.0.rc2
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
