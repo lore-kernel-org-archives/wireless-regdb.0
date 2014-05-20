@@ -1,23 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ee0-x22d.google.com ([2a00:1450:4013:c00::22d])
+Received: from mail-la0-x232.google.com ([2a00:1450:4010:c03::232])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WigKv-0007wH-KL
- for wireless-regdb@lists.infradead.org; Fri, 09 May 2014 08:39:22 +0000
-Received: by mail-ee0-f45.google.com with SMTP id d49so2415694eek.4 for
- <wireless-regdb@lists.infradead.org>; Fri, 09 May 2014 01:38:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google; h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ebHpUMnzpc7Cr1OfSwrtf4VOlv9VYbxzi68yVWhf6+E=;
- b=pwfqiwnJM7+wlZQY+8HpvLVGbq5BIgTINHyr02AUsuMfRXXM2TQ+6AJh7HH8W/jiDt
- Tg/MxVwBm3JygQqih7Cwisv8x6RP5k6iMaJDlFpSwupHvRRD6PLK7BSNwYKRHdgWTuIc
- IdolmVDNjiW2C236YGB7DIa19OHjjFprzSmKs=
-From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Date: Fri,  9 May 2014 10:38:43 +0200
-Message-Id: <1399624723-9167-3-git-send-email-janusz.dziedzic@tieto.com>
+ id 1Wmey8-0002gu-7r
+ for wireless-regdb@lists.infradead.org; Tue, 20 May 2014 08:00:17 +0000
+Received: by mail-la0-f50.google.com with SMTP id b8so81251lan.9 for
+ <wireless-regdb@lists.infradead.org>; Tue, 20 May 2014 00:59:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=6XT0vDBNRYxSD2Tk/sjqbEs16k88gGDRXEmxD3a3TLM=;
+ b=eJwHhPHk9YGSDsIL7i3I03icCCSzXKyBIdf6lTb9LP86GhnmLPjPPHRTgxb+dz/4Ph
+ fdP9bMN3+f8Ie2K7ON2yvmgF7yvGgQwzrTUffBfJcTLsIrKVGvw9YrNghvnu8FxADI2Z
+ qPAkRJTDNC2aLbgUEVfc2V8g7iOVhsZ1PI0YG91nZ/IMf/ts1oNpBwZIFa5JiQCT0PuQ
+ mwkLNe767fxW96lzLXFJKrlN12/4B7JHbPwiIzvJKW9yZGDeLIO52In3ebPQMr+kfS/1
+ fG+jGdIv1NwCIm9mLeoB/JLYb9sj0DSqVaThGHpz2MowiGAiGYyX9mtFpeBk3YNX5gtg oMuQ==
+MIME-Version: 1.0
 In-Reply-To: <1399624723-9167-1-git-send-email-janusz.dziedzic@tieto.com>
 References: <1399624723-9167-1-git-send-email-janusz.dziedzic@tieto.com>
-Subject: [wireless-regdb] [PATCH 2/2] crda: add AUTO-BW rule flag support
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Tue, 20 May 2014 00:59:29 -0700
+Message-ID: <CAB=NE6X76jCotGR+61wPxyu0treDTebXsxu-inU7xWJnMRLevA@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add AUTO-BW rule flag
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,59 +32,29 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless@vger.kernel.org, mcgrof@do-not-panic.com
+To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
----
- regdb.h  |    1 +
- reglib.c |    4 ++++
- 2 files changed, 5 insertions(+)
+On Fri, May 9, 2014 at 1:38 AM, Janusz Dziedzic
+<janusz.dziedzic@tieto.com> wrote:
+> Sync with latest nl80211.h and add AUTO-BW flag.
+> If this flag set, maximum available bandwidth should
+> be calculated base on contiguous rules and wider channels
+> will be allowed to cross multiple contiguous/overlapping
+> frequency ranges.
+>
+> Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 
-diff --git a/regdb.h b/regdb.h
-index 20f29e9..3ffb781 100644
---- a/regdb.h
-+++ b/regdb.h
-@@ -81,6 +81,7 @@ enum reg_rule_flags {
- 					 * Point links */
- 	RRF_NO_IR		= 1<<7, /* do not initiate radiation */
- 	__RRF_NO_IBSS		= 1<<8, /* old no-IBSS rule, maps to no-ir */
-+	RRF_AUTO_BW		= 1<<11, /* Auto BW calculations */
- };
- 
- #define RRF_NO_IR_ALL	(RRF_NO_IR | __RRF_NO_IBSS)
-diff --git a/reglib.c b/reglib.c
-index 1e57634..3deca4a 100644
---- a/reglib.c
-+++ b/reglib.c
-@@ -750,6 +750,8 @@ static void print_reg_rule(const struct ieee80211_reg_rule *rule)
- 		printf(", PTMP-ONLY");
- 	if (rule->flags & RRF_NO_IR_ALL)
- 		printf(", NO-IR");
-+	if (rule->flags & RRF_AUTO_BW)
-+		printf(", AUTO-BW");
- 
- 	printf("\n");
- }
-@@ -793,6 +795,8 @@ static uint32_t reglib_parse_rule_flag(char *flag_s)
- 		return RRF_PTMP_ONLY;
- 	if (strncmp(flag_s, "NO-IR", 5) == 0)
- 		return RRF_NO_IR;
-+	if (strncmp(flag_s, "AUTO-BW", 7) == 0)
-+		return RRF_AUTO_BW;
- 
- 	return 0;
- }
--- 
-1.7.9.5
+Once John merges this I'll merge on CRDA, just as with the DFS CAC
+patch, please do let me know if and when that happens.
 
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
