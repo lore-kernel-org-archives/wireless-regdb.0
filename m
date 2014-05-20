@@ -1,27 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x231.google.com ([2a00:1450:4010:c03::231])
+Received: from mail-lb0-x22a.google.com ([2a00:1450:4010:c04::22a])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WmeZH-0008D2-4B
- for wireless-regdb@lists.infradead.org; Tue, 20 May 2014 07:34:36 +0000
-Received: by mail-la0-f49.google.com with SMTP id pv20so54421lab.36 for
- <wireless-regdb@lists.infradead.org>; Tue, 20 May 2014 00:34:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:sender:in-reply-to:references:from:date:message-id
- :subject:to:cc:content-type;
- bh=jAKVB7GXAACas7hCSrfmduJo1WNdAFSisklBD439dr4=;
- b=xzRp9OwSgjA4ocaTbCUlaT+UOGLc2CxiGcG2HRlovU8Tt6zOt7VnaWijlGlXJtqHFP
- QXck5lm/tIEfc2RcTF01KdpfA8pr2Fthq8DPeebab14vZy/yYmsrIonJxU/Kpim76WUj
- h3F2LOr0PuhUE65ohhBNeCVG6TfDxuVB+O/8oCZhp7D495P0N3ymdtuim3o5kOPSpOTG
- u1WAhUprt59HSBvw10nJsdpA7lYXWgrtzpTVWeVz4a7PuNmJBKM30Q4nsNmBTFr7vBsh
- p6nIrS52ttMGNhPUi+YMiaAGYdDSbupdIw09RB6t6BkhojcCMfz5Ss/ixUns0a4ZqZLI eZLg==
+ id 1Wmk4a-0002el-Rb
+ for wireless-regdb@lists.infradead.org; Tue, 20 May 2014 13:27:18 +0000
+Received: by mail-lb0-f170.google.com with SMTP id w7so389973lbi.29 for
+ <wireless-regdb@lists.infradead.org>; Tue, 20 May 2014 06:26:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
+ s=google;
+ h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+ :cc:content-type; bh=DHP4Tf3ET6tRZlzL3ZP21M/nXL6K5w1kMmCpYnbescY=;
+ b=rJL3Ct+J7V/pip1RukKEv2ZKZ9O8C5aveiw5I+5hdyuGJMNzz8jKgxgt3ZOVJ4sSwJ
+ NlIJCwpA54HgNZXN2WJ+967rRkOVaU3w2Z/WcRpil8QDSWakpY+SBabmGQNFsdaHNqJa
+ S+aXcdQxTfyTJmlCirWBMKz6CAvlsBGaFB10Q=
 MIME-Version: 1.0
-In-Reply-To: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
+In-Reply-To: <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>
 References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 20 May 2014 00:33:51 -0700
-Message-ID: <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>
+ <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>
+Date: Tue, 20 May 2014 15:26:48 +0200
+Message-ID: <CALhHN=rLpBt-aTNDSbO6BO-TwFYuHf79=rpsTetysBrW_D47cA@mail.gmail.com>
+From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add DFS CAC time
 	parameter
 List-Unsubscribe: 
@@ -38,25 +36,36 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, May 9, 2014 at 1:40 AM, Janusz Dziedzic
-<janusz.dziedzic@tieto.com> wrote:
-> Introduce support for setting DFS CAC time
-> in milliseconds.
+On 20 May 2014 09:33, Luis R. Rodriguez <mcgrof@do-not-panic.com> wrote:
+> On Fri, May 9, 2014 at 1:40 AM, Janusz Dziedzic
+> <janusz.dziedzic@tieto.com> wrote:
+>> Introduce support for setting DFS CAC time
+>> in milliseconds.
+>>
+>> Eg.
+>> (5250 - 5330 @ AUTO), (20), (60000), DFS
+>>
+>> will setup CAC 60 seconds CAC time.
 >
-> Eg.
-> (5250 - 5330 @ AUTO), (20), (60000), DFS
+> Can you elaborate whether or not this will require a bump on CRDA  and
+> issuing of two new wireless-regdb files for the different versions on
+> the commit log?
 >
-> will setup CAC 60 seconds CAC time.
+Yes, sure - will add this.
 
-Can you elaborate whether or not this will require a bump on CRDA  and
-issuing of two new wireless-regdb files for the different versions on
-the commit log?
+BTW, probably you know, why we decide to split usermode regulatory
+code into crda, regdb? This required binary interface between them and
+a lot of "not needed" code? Why we don't simply zip/sign db.tx code
+and parse this direrctly in crda and use just one user mode project
+for that.
+What was the reason for have regulatory in binary file?
 
- Luis
+BR
+Janusz
 
 _______________________________________________
 wireless-regdb mailing list
