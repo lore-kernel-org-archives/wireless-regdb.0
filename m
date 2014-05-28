@@ -1,23 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WpZvE-0007H7-UH
- for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:13:21 +0000
+ id 1WpZsc-0005uu-Vj
+ for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:10:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401268401; x=1432804401;
+ s=qcdkim; t=1401268238; x=1432804238;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=zzqNI/b5M5kX9cetImxTEqwGEIYETOdVNGhC7Se58oY=;
- b=SroTGM2I1d/auzb0BLMOKvB7vBtsg49ZoP9LGOmsjpGn2Xcu1tdlDu5a
- sYlaaaFDknZX5hkyjLD38/RCkVhAGkHt0EsqIO4t+XEE1mrqOc2QazAQo
- 9nVtQC7cx0GGIFcPLXnH95sfeIMgEa4F8KCmFok8VHJdEBwXcYv/E8ShF s=;
-Date: Wed, 28 May 2014 12:12:52 +0300
+ bh=GQw4SIKKHnrgq2fPeliIkv8h3tPAM7FEt0G+Ze0DDUc=;
+ b=jPZ2LvuXRnpsp0Uakb8mMnM9SK0jQI0Wo2Z5SJ4NA61ORXc/HuCs1i72
+ 5KNypav5DLkbd6w4Cr+LraW/2rUOVkkqxZ8yODfol6AljIChf4a3Cs1LR
+ MUmYLMOaqPZCs908HGvv5bEeuo1xFpyKPP9QAEt3saufzm20/pxEpPcZn s=;
+Date: Wed, 28 May 2014 12:09:26 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140528091252.GA14620@jouni.qca.qualcomm.com>
+Message-ID: <20140528090926.GA14400@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 3/9] wireless-regdb: Add Bhutan (BT)
+Subject: [wireless-regdb] [PATCH 2/9] wireless-regdb: Add Afghanistan (AF)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -37,32 +37,31 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source: http://www.bicma.gov.bt/paper/publication/nrrpart4.pdf
+Source is QCA's regulatory team's efforts and correspondence with
+Telecom agency (TRA)
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 6435c54..df92842 100644
+index be552d0..6435c54 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -145,6 +145,14 @@ country BR: DFS-FCC
+@@ -28,6 +28,12 @@ country AE: DFS-FCC
  	(5490 - 5730 @ 80), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
-+# Source:
-+# http://www.bicma.gov.bt/paper/publication/nrrpart4.pdf
-+country BT: DFS-ETSI
++country AF: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20)
 +	(5250 - 5330 @ 80), (20), DFS
 +	(5490 - 5710 @ 80), (27), DFS
 +
- country BY: DFS-ETSI
+ country AL: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20)
+ 	(5170 - 5250 @ 80), (20.00)
 -- 
 1.9.1
 
