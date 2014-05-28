@@ -1,23 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
+Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WpZwj-0007ft-Sa
- for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:14:55 +0000
+ id 1WpZvp-0007SH-AK
+ for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:13:59 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401268493; x=1432804493;
+ s=qcdkim; t=1401268437; x=1432804437;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=vb630dbjQSkqc3ASPa2b3dttzCd0enBsVBgrIBY3gjI=;
- b=xlIW5gzI3S5Wf/iVyVd+s32OclVnQOM3SNl2JArf1Cq1Z0JMAOERGMAr
- ib0s1YW7vq6TxMOhpl7oKhQFf9T0O9x9+X1JMLO9uM0+hgu4ecIEpRa2c
- N2neNCIq1N+35+NC4q8olBm+YqZyFgr5UenrPhUJzJVLW5GdFmnksZC9/ o=;
-Date: Wed, 28 May 2014 12:14:26 +0300
+ bh=IhONnmdRvcTM9CN2oBQ6Vz2pkP+2tIt2HwXkwluhvCo=;
+ b=i4WbmmWQnULpGsybEmw5lht5Lnn2SRW4qaYydurHx7djCO8xGQ1lDlEW
+ Ism6wKxWWCA8hl0S9nc3uB07PLmbTfWJTzBlGfRHBHEWmt/1xTXspgubh
+ FNIGzVlcxhfMKmuYh1c3DFaheCSHDy5tXSwkq2r/OW5IR4p2VIq3ymMGc A=;
+Date: Wed, 28 May 2014 12:13:30 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140528091426.GA14657@jouni.qca.qualcomm.com>
+Message-ID: <20140528091330.GA14638@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 5/9] wireless-regdb: Add Montenegro (ME)
+Subject: [wireless-regdb] [PATCH 4/9] wireless-regdb: Add Mauritania (MR)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -38,7 +38,7 @@ Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 Source:
-http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
+http://www.are.mr/pdfs/telec_freq_TNAbf_2010.pdf
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
@@ -46,24 +46,24 @@ Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
  1 file changed, 8 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index fe27301..6621681 100644
+index df92842..fe27301 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -556,6 +556,14 @@ country MA: DFS-ETSI
- 	(5170 - 5250 @ 80), (20)
- 	(5250 - 5330 @ 80), (20), DFS
+@@ -570,6 +570,14 @@ country MK: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
 +# Source:
-+# http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
-+country ME: DFS-ETSI
++# http://www.are.mr/pdfs/telec_freq_TNAbf_2010.pdf
++country MR: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20)
 +	(5250 - 5330 @ 80), (20), DFS
 +	(5490 - 5710 @ 80), (27), DFS
 +
- country MO:
+ country MT: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 40), (23)
+ 	(5170 - 5250 @ 80), (20)
 -- 
 1.9.1
 
