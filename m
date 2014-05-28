@@ -2,22 +2,22 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WpZzA-0000lo-9h
- for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:17:25 +0000
+ id 1WpZyL-0000YY-Ja
+ for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:16:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401268645; x=1432804645;
+ s=qcdkim; t=1401268594; x=1432804594;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=+GKoCiPkwAowdmkHeQDsQ77iHP/8lbQtFlpRe7qCYEs=;
- b=TWIElSEr2J1eBXbL+JD9DG7/QtLTnhK4//W1pHkcrUom6rFQCYqcqkLD
- hcyrZd6tZve4ECnQwodiyBAXfNRe+C8U3Na6gNKpn9K3FH4RmTJJR2XYf
- F7W/RTNQFmxf20w0qRtDO9XzAyQBO2GNQxhqRPsI/iCfaUMt45IjzI+xr g=;
-Date: Wed, 28 May 2014 12:16:58 +0300
+ bh=MyaBpmF2QsIGjspAH08xRh8XelmeF1/w+ALDzvur2vo=;
+ b=VsBBY7qSDFmpyY2/qv2Ia/iiq/wkqDGROTCkXz3eqHkGPc1As4FCkzbh
+ +8wEOVr3QU09TwDqrn1jm6BiH1lYryBTekpPRpQ5XkNXsDPksusTkhDXX
+ moeITey+YJjdY6z6REs6TE3ede/C51QOw2ZcvwG65lVKBRikb2Mc9SITQ M=;
+Date: Wed, 28 May 2014 12:16:07 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140528091658.GA14748@jouni.qca.qualcomm.com>
+Message-ID: <20140528091607.GA14718@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 9/9] wireless-regdb: Update Venezuela (VE)
+Subject: [wireless-regdb] [PATCH 8/9] wireless-regdb: Add Guyana (GY)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -37,36 +37,30 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source:
-Official Gazette (Gaceta Oficial) concerning Unlicensed transmitter use
-(10 June 2013)
-http://www.conatel.gob.ve/
+Source is QCA's regulatory team's efforts and email confirmation from
+ministry that spectrum rules are based upon FCC 15.247 for bands
+2400-2483.5 MHz and 5725-5850 MHz. NFMU.Gov.GY
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ db.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 9864027..2854eec 100644
+index b06fb2b..9864027 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -874,9 +874,13 @@ country UZ: DFS-ETSI
- 	(5170 - 5250 @ 80), (20)
- 	(5250 - 5330 @ 80), (20), DFS
- 
-+# Source:
-+# Official Gazette (Gaceta Oficial) concerning Unlicensed transmitter use
-+# (10 June 2013)
-+# http://www.conatel.gob.ve/
- country VE: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (17)
-+	(2402 - 2482 @ 40), (30)
-+	(5170 - 5250 @ 80), (23)
- 	(5250 - 5330 @ 80), (23), DFS
+@@ -366,6 +366,10 @@ country GU: DFS-FCC
+ 	(5490 - 5730 @ 80), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
++country GY:
++	(2402 - 2482 @ 40), (30)
++	(5735 - 5835 @ 80), (30)
++
+ country HN: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (17)
 -- 
 1.9.1
 
