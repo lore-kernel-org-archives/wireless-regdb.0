@@ -1,23 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine02.qualcomm.com ([199.106.114.251])
+Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WpZx9-0007kA-MG
- for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:15:20 +0000
+ id 1WpZwj-0007ft-Sa
+ for wireless-regdb@lists.infradead.org; Wed, 28 May 2014 09:14:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401268519; x=1432804519;
+ s=qcdkim; t=1401268493; x=1432804493;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=kBPTk28P09hIRqtx2lL0+HQQjWarXMLTTb9MAn1hvow=;
- b=FIfUCMvRwuLLbJUJGkwx0z2BOARQF5l28lHHB7to6IXYT2fxbcYk2jaN
- mWytIvEirItOs1uoGKMhpXjR4qmhD9w7dEoNXgy0zQnX4ZzJvFo0rS5aP
- 4KBcGXFv4cjd5uERPpOr3mhV98x4hqh1w+AiVsAyRclOh621t8puLaWWl 4=;
-Date: Wed, 28 May 2014 12:14:53 +0300
+ bh=vb630dbjQSkqc3ASPa2b3dttzCd0enBsVBgrIBY3gjI=;
+ b=xlIW5gzI3S5Wf/iVyVd+s32OclVnQOM3SNl2JArf1Cq1Z0JMAOERGMAr
+ ib0s1YW7vq6TxMOhpl7oKhQFf9T0O9x9+X1JMLO9uM0+hgu4ecIEpRa2c
+ N2neNCIq1N+35+NC4q8olBm+YqZyFgr5UenrPhUJzJVLW5GdFmnksZC9/ o=;
+Date: Wed, 28 May 2014 12:14:26 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140528091453.GA14675@jouni.qca.qualcomm.com>
+Message-ID: <20140528091426.GA14657@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 6/9] wireless-regdb: Add Togo (TG)
+Subject: [wireless-regdb] [PATCH 5/9] wireless-regdb: Add Montenegro (ME)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -37,31 +37,33 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source is QCA's regulatory team's efforts and correspondence with
-Telecom agency (ARTP).
+Source:
+http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+ db.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 6621681..887902e 100644
+index fe27301..6621681 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -785,6 +785,12 @@ country SV: DFS-FCC
- country SY:
- 	(2402 - 2482 @ 40), (20)
+@@ -556,6 +556,14 @@ country MA: DFS-ETSI
+ 	(5170 - 5250 @ 80), (20)
+ 	(5250 - 5330 @ 80), (20), DFS
  
-+country TG: DFS-ETSI
++# Source:
++# http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
++country ME: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
-+	(5170 - 5250 @ 40), (20)
-+	(5250 - 5330 @ 40), (20), DFS
-+	(5490 - 5710 @ 40), (27), DFS
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5490 - 5710 @ 80), (27), DFS
 +
- country TW: DFS-JP
- 	(2402 - 2472 @ 40), (30)
- 	(5270 - 5330 @ 40), (17), DFS
+ country MO:
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 40), (23)
 -- 
 1.9.1
 
