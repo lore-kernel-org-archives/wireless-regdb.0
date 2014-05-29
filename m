@@ -1,15 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1Wq4dJ-0007N7-Bo for
- wireless-regdb@lists.infradead.org; Thu, 29 May 2014 18:00:57 +0000
-Date: Thu, 29 May 2014 13:59:34 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20140529175934.GD3542@tuxdriver.com>
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1Wq3Kg-0000yy-G2
+ for wireless-regdb@lists.infradead.org; Thu, 29 May 2014 16:37:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1401381454; x=1432917454;
+ h=date:from:to:cc:subject:message-id:mime-version;
+ bh=yVqdVWPcwKQACoCs2f2PG4RUpItZG8PEYZlurgJEOMo=;
+ b=ipB1ej8CtFiD/7aMBkeDmVT6KlxGCKEm7H0zBgAUMHtpXHH9PaGlwgmR
+ R2l5+50pJBBNskH2rxLbwUGXnPQ/B/w5C9PQj5R9bjIPqHt7jDvVQdSc6
+ /JQw4JD04VFGo9qY6pVsGTNsC2XRcqEePP6DSHX1/X7Dga2M996C3Sked Y=;
+Date: Thu, 29 May 2014 19:37:06 +0300
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Message-ID: <20140529163706.GA28051@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2014-05-29
+Subject: [wireless-regdb] [PATCH 8/8] wireless-regdb: Update Haiti (HT)
+	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,34 +33,47 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2014-05-29) is available at:
+Source is QCA's regulatory team's efforts and email confirmation from
+ministry. 2.4 & 5 GHz limits and RF channels used in Haiti are same as
+FCC. Conseil National des Telecommunications
 
-http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2014.05.29.tar.gz
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
-Here is the short log of the changes included since the 2014-05-19
-release:
+diff --git a/db.txt b/db.txt
+index 769826c..31e8394 100644
+--- a/db.txt
++++ b/db.txt
+@@ -429,11 +429,12 @@ country HR: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-country HT: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20)
+-	(5250 - 5330 @ 80), (20), DFS
+-	(5490 - 5710 @ 80), (27), DFS
++country HT: DFS-FCC
++	(2402 - 2472 @ 40), (30)
++	(5170 - 5250 @ 80), (24)
++	(5250 - 5330 @ 80), (24), DFS
++	(5490 - 5730 @ 80), (24), DFS
++	(5735 - 5835 @ 80), (30)
+ 
+ country HU: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-- 
+1.9.1
 
-John W. Linville (1):
-      wireless-regdb: update regulatory.bin based on preceding changes.
 
-Jouni Malinen (9):
-      wireless-regdb: Update Uzbekistan (UZ) regulatory rules
-      wireless-regdb: Add Afghanistan (AF) regulatory rules
-      wireless-regdb: Add Bhutan (BT) regulatory rules
-      wireless-regdb: Add Mauritania (MR) regulatory rules
-      wireless-regdb: Add Montenegro (ME) regulatory rules
-      wireless-regdb: Add Togo (TG) regulatory rules
-      wireless-regdb: Add Chad (TD) regulatory rules
-      wireless-regdb: Add Guyana (GY) regulatory rules
-      wireless-regdb: Update Venezuela (VE) regulatory rules
-
---
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+-- 
+Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 wireless-regdb mailing list
