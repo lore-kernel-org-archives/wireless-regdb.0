@@ -1,24 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine01.qualcomm.com ([199.106.114.254])
+Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Wq3Kg-0000yy-G2
- for wireless-regdb@lists.infradead.org; Thu, 29 May 2014 16:37:34 +0000
+ id 1Wq3Jv-0000OJ-EU
+ for wireless-regdb@lists.infradead.org; Thu, 29 May 2014 16:36:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401381454; x=1432917454;
+ s=qcdkim; t=1401381407; x=1432917407;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=yVqdVWPcwKQACoCs2f2PG4RUpItZG8PEYZlurgJEOMo=;
- b=ipB1ej8CtFiD/7aMBkeDmVT6KlxGCKEm7H0zBgAUMHtpXHH9PaGlwgmR
- R2l5+50pJBBNskH2rxLbwUGXnPQ/B/w5C9PQj5R9bjIPqHt7jDvVQdSc6
- /JQw4JD04VFGo9qY6pVsGTNsC2XRcqEePP6DSHX1/X7Dga2M996C3Sked Y=;
-Date: Thu, 29 May 2014 19:37:06 +0300
+ bh=FauafAjhk+Go90dZz9VPAe8ildmmjlsIL6gVVOJwzMg=;
+ b=ONqc3uN803yZnitocayry1yBivPd+0vvUlKnEq27uH6CL9G7jZIR6Hcg
+ szXWTBoVkPipJDxVCVDcGCpUd5YqRqM/RcpkmuETOOPMz8zQh34dTY70K
+ xm640Khq+n6L/mgYThQqf7h7XiY55N/qbjMIcNVNqAARW2HXEMkMp1gbj E=;
+Date: Thu, 29 May 2014 19:36:21 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140529163706.GA28051@jouni.qca.qualcomm.com>
+Message-ID: <20140529163621.GA28020@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 8/8] wireless-regdb: Update Haiti (HT)
-	regulatory rules
+Subject: [wireless-regdb]
+ =?utf-8?q?=5BPATCH_7/8=5D_wireless-regdb=3A_Add_?=
+ =?utf-8?q?C=C3=B4te__d=27Ivoire_=28CI=29_regulatory_rules?=
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,36 +39,31 @@ Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 Source is QCA's regulatory team's efforts and email confirmation from
-ministry. 2.4 & 5 GHz limits and RF channels used in Haiti are same as
-FCC. Conseil National des Telecommunications
+ministry. ATCI.CI
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ db.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 769826c..31e8394 100644
+index 83a3af4..769826c 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -429,11 +429,12 @@ country HR: DFS-ETSI
+@@ -194,6 +194,13 @@ country CH: DFS-ETSI
  	# 60 gHz band channels 1-4, ref: Etsi En 302 567
  	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
  
--country HT: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20)
--	(5250 - 5330 @ 80), (20), DFS
--	(5490 - 5710 @ 80), (27), DFS
-+country HT: DFS-FCC
-+	(2402 - 2472 @ 40), (30)
-+	(5170 - 5250 @ 80), (24)
++country CI: DFS-FCC
++	(2402 - 2482 @ 40), (20)
++	(5170 - 5250 @ 80), (17)
 +	(5250 - 5330 @ 80), (24), DFS
 +	(5490 - 5730 @ 80), (24), DFS
 +	(5735 - 5835 @ 80), (30)
- 
- country HU: DFS-ETSI
++
+ country CL: DFS-JP
  	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
 -- 
 1.9.1
 
