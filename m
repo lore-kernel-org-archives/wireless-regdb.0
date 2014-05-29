@@ -1,23 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Wq3Fm-0006Ne-Ug
- for wireless-regdb@lists.infradead.org; Thu, 29 May 2014 16:32:32 +0000
+ id 1Wq3FL-0006H2-GE
+ for wireless-regdb@lists.infradead.org; Thu, 29 May 2014 16:32:04 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1401381150; x=1432917150;
+ s=qcdkim; t=1401381124; x=1432917124;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=OtkFoZcEsypYgnu9O4QTSfQKiR8oSF0wYHwyTY8BwfU=;
- b=FeUbBXKVY28jiHV2iA6bLIm7aKXYYHzyYX/c1d1krHAS8tOzomKjGeGV
- hsCmBmUM3yCO7EUMgNM3yxPJj3q5PZdVwc/d8E1J6gWPQOPVK8FdVvZFI
- SoCY9jqEIuKRkfaV7G5uxs0vHveRHDWWpUz5kx+uuY8M+MWht7iXCdwMS 8=;
-Date: Thu, 29 May 2014 19:32:04 +0300
+ bh=GZ59+1aFTGbigaqn0MS+MFigSbjkRYugeoBMoAgnyX4=;
+ b=v/5sPL6Xth1dAfzlsJSbUuCbFzT+DPXyTdrUysorTEgc4uqjbba6wf0f
+ iDwNKY9hA/lCNoK3kTow34xFatSlbi6+eoXGiyabhZhuOOyzlFPWYb54j
+ /get+wgOR5R0iXOuZFqEtnOId7WmOdpdLpLZIStNUkkK2JOF7M45FieEd Q=;
+Date: Thu, 29 May 2014 19:31:36 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140529163204.GA27929@jouni.qca.qualcomm.com>
+Message-ID: <20140529163136.GA27910@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 2/8] wireless-regdb: Add Burkina Faso (BF)
+Subject: [wireless-regdb] [PATCH 1/8] wireless-regdb: Add Ghana (GH)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -37,8 +37,8 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source is QCA's regulatory team's efforts and correspondence with
-Telecom agency (ARCE).
+Source is QCA's regulatory team's efforts and correspondence with Ghana
+National Communication Authority (NCA).
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
@@ -46,21 +46,21 @@ Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
  1 file changed, 7 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 50f1bc6..c957b1d 100644
+index 2854eec..50f1bc6 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -110,6 +110,13 @@ country BE: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+@@ -339,6 +339,13 @@ country GD: DFS-FCC
+ 	(5490 - 5730 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
-+country BF: DFS-FCC
++country GH: DFS-FCC
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (17)
 +	(5250 - 5330 @ 80), (24), DFS
 +	(5490 - 5730 @ 80), (24), DFS
 +	(5735 - 5835 @ 80), (30)
 +
- country BG: DFS-ETSI
+ country GR: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
  	(5170 - 5250 @ 80), (20)
 -- 
