@@ -1,17 +1,19 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1Wi3Zl-0004tV-Lx for
- wireless-regdb@lists.infradead.org; Wed, 07 May 2014 15:16:06 +0000
-From: "John W. Linville" <linville@tuxdriver.com>
-Date: Wed,  7 May 2014 11:02:00 -0400
-Message-Id: <1399474920-19147-1-git-send-email-linville@tuxdriver.com>
-In-Reply-To: <20140507150032.GB20432@tuxdriver.com>
-References: <20140507150032.GB20432@tuxdriver.com>
+Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1Wrx2s-0005ps-9y
+ for wireless-regdb@lists.infradead.org; Tue, 03 Jun 2014 22:19:03 +0000
+Date: Wed, 4 Jun 2014 00:18:37 +0200
+From: "Luis R. Rodriguez" <mcgrof@suse.com>
+Message-ID: <20140603221837.GU26450@wotan.suse.de>
+References: <1401468984-24575-1-git-send-email-rostislav.lisovy@fel.cvut.cz>
+ <1401468984-24575-2-git-send-email-rostislav.lisovy@fel.cvut.cz>
+ <1401825693.4157.44.camel@jlt4.sipsolutions.net>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: correct some flag
- damage...
+In-Reply-To: <1401825693.4157.44.camel@jlt4.sipsolutions.net>
+Subject: Re: [wireless-regdb] [RFC 1/4] cfg80211: Add channel flags
+ limiting availability to	OCB mode only
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -21,106 +23,139 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: multipart/mixed; boundary="===============2953245047053074531=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: =?UTF-8?q?Christian=20S=C3=BCnkenberg?= <christian.suenkenberg@hfg-karlsruhe.de>, linux-wireless@vger.kernel.org, "John W. Linville" <linville@tuxdriver.com>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: Johannes Berg <johannes@sipsolutions.net>, Liraz Perelmooter <liraz.perelmooter@intel.com>
+Cc: wireless-regdb@lists.infradead.org, jan-niklas.meier@volkswagen.de, linux-wireless@vger.kernel.org, "John W. Linville" <linville@tuxdriver.com>, linux-kernel@vger.kernel.org, Rostislav Lisovy <lisovy@gmail.com>, s.sander@nordsys.de, Rostislav Lisovy <rostislav.lisovy@fel.cvut.cz>, green@qti.qualcomm.com, Michal Sojka <sojkam1@fel.cvut.cz>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-It seems that commit e56cd9618e3e ("wireless-regdb: remove antenna
-gain") accidentally dropped anything beyond the first flag in an entry.
-Subsequently, commit d806b5e3ba73 ("wireless-regdb: optimize two of
-DE's rules"), commit 788445b48c2e ("wireless-regdb: optimize two of
-IL's rules"), and commit 13286f2c259b ("wireless-regdb: optimize two
-of NL's rules") dutifully combined the newly/incorrectly compatible
-rules with their neighbors...
+--===============2953245047053074531==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="ALfTUftag+2gvp1h"
+Content-Disposition: inline
 
-FWIW, this one-liner was used to find the entries that lost flags:
 
-git show e56cd9618e3e | grep -n '^-[^,]*,[^,]*,[^,]*,[^,]*,'
+--ALfTUftag+2gvp1h
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-This patch corrects the damage above, including what is essentially
-a revert of the latter three commits.
+On Tue, Jun 03, 2014 at 10:01:33PM +0200, Johannes Berg wrote:
+> On Fri, 2014-05-30 at 18:56 +0200, Rostislav Lisovy wrote:
+> > IEEE 802.11p operates in its own 5.9GHz band. When there will
+> > be a record for the 5.9GHz band in the regulatory daemon,
+> > it must be limited to the OCB mode only -- using the newly
+> > added flags.
+>=20
+> Is this really a *regulatory* limitation? Rather than a limitation
+> elsewhere, e.g. the spec?
 
-Reported-by: Christian Sünkenberg <christian.suenkenberg@hfg-karlsruhe.de>
-Cc: Luis R. Rodriguez <mcgrof@do-not-panic.com>
-Signed-off-by: John W. Linville <linville@tuxdriver.com>
----
- db.txt | 18 +++++++++++-------
- 1 file changed, 11 insertions(+), 7 deletions(-)
+Our engaged and capable *real* regulatory folks in the community are:
 
-diff --git a/db.txt b/db.txt
-index fcab208d1813..f4749c228cea 100644
---- a/db.txt
-+++ b/db.txt
-@@ -4,7 +4,7 @@ country 00:
- 	# Channel 12 - 13.
- 	(2457 - 2482 @ 40), (20), NO-IR
- 	# Channel 14. Only JP enables this and for 802.11b only
--	(2474 - 2494 @ 20), (20), NO-IR
-+	(2474 - 2494 @ 20), (20), NO-IR, NO-OFDM
- 	# Channel 36 - 48
- 	(5170 - 5250 @ 80), (20), NO-IR
- 	# NB: 5260 MHz - 5700 MHz requies DFS
-@@ -207,7 +207,7 @@ country CY: DFS-ETSI
- country CZ: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
- 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
--	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS
- 	(5470 - 5725 @ 80), (500 mW), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
-@@ -227,8 +227,10 @@ country CZ: DFS-ETSI
- country DE: DFS-ETSI
- 	# entries 279004 and 280006
- 	(2400 - 2483.5 @ 40), (100 mW)
--	# entry 303005, 304002 and 305002
--	(5150 - 5350 @ 80), (100 mW), NO-OUTDOOR
-+	# entry 303005
-+	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR
-+	# entries 304002 and 305002
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS
- 	# entries 308002, 309001 and 310003
- 	(5470 - 5725 @ 80), (500 mW), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
-@@ -277,7 +279,7 @@ country EG: DFS-ETSI
- country ES: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
- 	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR
--	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS
- 	(5470 - 5725 @ 80), (500 mW), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
-@@ -398,7 +400,8 @@ country IE: DFS-ETSI
- 
- country IL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5150 - 5350 @ 80), (200 mW), NO-OUTDOOR
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
-+	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS
- 
- country IN: DFS-JP
- 	(2402 - 2482 @ 40), (20)
-@@ -574,7 +577,8 @@ country MX: DFS-FCC
- 
- country NL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5330 @ 80), (20), NO-OUTDOOR
-+	(5170 - 5250 @ 80), (20), NO-OUTDOOR
-+	(5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS
- 	(5490 - 5710 @ 80), (27), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
--- 
-1.9.0
+  * Liraz Perelmooter <liraz.perelmooter@intel.com>
+  * Michael Green <green@qti.qualcomm.com>
 
+Additionally we have the wireless-regdb mailing list [0] which we should
+Cc for inquiries and verification on things like this. We hope for their
+participation as they are our real experts who grind away at the specs.
+
+Rostislav, can you provide documentation references which would clarify
+the stance on 802.11p and restrictions for only allowing  OCB mode?
+Also your patches seem to refer to the 802.11p ammendment work to 802.11,
+but it is now merged as of IEEE 802.11-2012 as per Jouni's last update to us
+on the standards work [1]. As per Jouni's slides 802.11p-2010 made it as an
+ammendment into 802.11-2012 and this work is rerrred to as "Wireless  Access
+for the Vehicular Environent". It would be *useful* if you'd refer to the I=
+EEE
+802.11-2012 standard then and document as part of your patches the exact
+sections and references that about Wireless Access for the Vehicular
+Environment.
+
+For reference to others this comes in as a full patch series by Rostislav
+to add some form of "802.11p" support using OCB (Outside the Context of BSS)
+mode. This mode of operation allows devices to send frames not connected
+to a BSS. The patch in question above is for the regulatory flag that is
+being proposed to be added, the full series of the other patches can be
+seen on the mailing list archive [2]. Rostislav clarifies that when OCB
+mode is used all the STAs communicate with each other without the need
+for a coordinator. The 5.9 GHz band is being clarified to be used for 802.1=
+1p,
+the patch series also is specifying that when 5.9 GHz is enabled only
+OCB mode of operation is allowed on that band. No references are made to
+the specific 802.11 ammendment / IEEE 802.11 sections or more importantly i=
+t is
+not being made clear if the OCB mode is something that differs depending
+on regulatory bodies at this point.
+
+Since 802.11p was designed for cars in mind I suspect regulatory bodies
+likely do want proper rules followed, but its unclear what countries
+that follow either IEEE 802.11 or the ISO equivalent want OCB mode of
+operation and if they also have the same restrictions of only allowing
+5.9 GHz operation only for OCB. I can also imagine for example of regulatory
+bodies that may want to allow 5.9 GHz for non OCB mode, specially if they
+need the spectrum. One particular use case which provides a compromise
+could be for example to have APs/P2P GOs look for OCB communication and
+if its detected to disallow it. Not like I would recommend this given
+that it would then introduce crazy regulatory compliance silliness
+such as seen with DFS and that pushed crazy implementation and designs,
+but -- its certainly possible.
+
+So is this an IEEE compliance thing or regulatory thing? If its a generally
+accepted IEEE compliance thing for 802.11-2012 then I don't see why we
+don't just hard code this restriction on cfg80211 for the band. That
+after all would be the much more saner thing to do than all the silly
+mess of discrepencies betwen regulatory bodies. After all cfg80211 is for
+802.11, and if we follow the specs and if its mentioned clearly there I
+see no resason why not to hard code this. If folks want to override this
+(I envision university environments doing research on this) the patch can
+add a Kconfig option that depends on CONFIG_CFG80211_CERTIFICATION_ONUS
+which will make the check permissive on 5.9 GHz instead of fully enforced.
+
+[0] http://lists.infradead.org/mailman/listinfo/wireless-regdb
+[1] http://wireless.kernel.org/en/developers/Summits/Barcelona-2012?action=
+=3DAttachFile&do=3Dview&target=3Dieee80211-barcelona-2012.pdf
+[2] http://comments.gmane.org/gmane.linux.kernel.wireless.general/121022
+
+  Luis
+
+--ALfTUftag+2gvp1h
+Content-Type: application/pgp-signature
+Content-Disposition: inline
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.9 (GNU/Linux)
+
+iQIcBAEBAgAGBQJTjkm9AAoJEPep4JnvMe6zlAgQAK9cqZAghwqYaOMzrKgHKGDV
+3LNyzwoYpOq17xJQ9/75y2ePrjhIo0eYtBu9wjdoYtUXdP6IoTZkRhi6fMLOIrQW
+45jeO8gL0rlkarsb5Ydp2q8VVvlsdbgkcn4Vk8Cz6a4HqZPITJLBDCmDUrCZUkKQ
+AEcBh1rhejtengnAKkUUww1Q89AdjJld1cLD7mHPSm3P4u/lAVRdTjm1qhEbQU8p
+6JFZGNWnjxrD+oQQW+s3ow+KKxJO2xG9/yJiBab4XTN7jRxB7NUlBmKruQ82lmy2
+fXUt37p0gsqkkQ/TpbGHBQn0t89lKIwdxMfE5VKyB2SIeEBfr5xaweElF+YYLyqN
+XpaowWl09hhl6bZQNWfSK1jfB2k0y49Soxga41QjUMPDat7kl34wOjmHJ/Xpu7hC
+y4vcd4dkaZQqsOJv3dTdUpdqHMcFPie1pAVGe8ZS/PGOCpAmCZGFKT3MqhDUw1GA
+Tzo0fJi4kINsH7/4PI+0qgJhGUr16/kScxe+MG+zamIq6t9V3iK8j1jbe4egaO/h
+2LqzVJSfkhk5Mtze5LkzVWzigy+MkdohaQDpdfDcrreHD+Rmh3Y6o0Ten0wH14b+
+1tLdB58z/R0t5GLVJORHX5eYaf74Z4ClBuqc01LyQ4GaSKSg0fMVlPo07E9S9pJT
+R+JhVaXOl1d7bCZJQkEh
+=Alqy
+-----END PGP SIGNATURE-----
+
+--ALfTUftag+2gvp1h--
+
+
+--===============2953245047053074531==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============2953245047053074531==--
+
+
