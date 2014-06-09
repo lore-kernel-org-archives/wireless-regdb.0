@@ -1,22 +1,32 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from nbd.name ([46.4.11.11])
+Received: from mail-qc0-x230.google.com ([2607:f8b0:400d:c01::230])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WtuVp-0008Ox-Li
- for wireless-regdb@lists.infradead.org; Mon, 09 Jun 2014 08:01:02 +0000
-Message-ID: <53956986.8070603@openwrt.org>
-Date: Mon, 09 Jun 2014 10:00:06 +0200
-From: Felix Fietkau <nbd@openwrt.org>
+ id 1Wtwiy-0008C7-Oa
+ for wireless-regdb@lists.infradead.org; Mon, 09 Jun 2014 10:22:45 +0000
+Received: by mail-qc0-f176.google.com with SMTP id r5so422851qcx.7 for
+ <wireless-regdb@lists.infradead.org>; Mon, 09 Jun 2014 03:22:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
+ s=google;
+ h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+ :cc:content-type; bh=LSWHFqpQBJuFsn4v6lAPC9+kSEkRpv95bDJiKK4S2Qg=;
+ b=Brq49aiLkTM2UHS1d9Tqjc/+oatQ1gfI3a4Rb9cm28vXiBULd40R2aPXGa5HgozC1Z
+ Tcfkm5tA/YIRm5pqhHRa+G4jmC2I+bBDPd4wm64NArNHn6zFR4YMMcMkt8kqyT0TS0VI
+ 4u1bbRwlM3d/qMDmpQT3P9eKcvjl4Ny5EwPkM=
 MIME-Version: 1.0
-References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>	
- <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>	
- <20140520142453.GB13981@tuxdriver.com>	
- <CALhHN=qtxwww9hQ7XxK8tan3+4eSoXo3D_g9YLD0QhQDPcDUmg@mail.gmail.com>	
- <20140520180832.GD13981@tuxdriver.com>	
- <1400610273.4474.6.camel@jlt4.sipsolutions.net>	
- <CAB=NE6WiuydxR62dvua_OEyV+sqxvH8aOUHOBLS3ePz1dGCLAw@mail.gmail.com>	
+In-Reply-To: <53956986.8070603@openwrt.org>
+References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
+ <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>
+ <20140520142453.GB13981@tuxdriver.com>
+ <CALhHN=qtxwww9hQ7XxK8tan3+4eSoXo3D_g9YLD0QhQDPcDUmg@mail.gmail.com>
+ <20140520180832.GD13981@tuxdriver.com>
+ <1400610273.4474.6.camel@jlt4.sipsolutions.net>
+ <CAB=NE6WiuydxR62dvua_OEyV+sqxvH8aOUHOBLS3ePz1dGCLAw@mail.gmail.com>
  <1400688233.4136.8.camel@jlt4.sipsolutions.net>
-In-Reply-To: <1400688233.4136.8.camel@jlt4.sipsolutions.net>
+ <53956986.8070603@openwrt.org>
+Date: Mon, 9 Jun 2014 12:22:21 +0200
+Message-ID: <CALhHN=pRskkXn_Li2n+hOM24t1QHwHi_E_ozc726Gh0jnuc5=w@mail.gmail.com>
+From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add DFS CAC time
 	parameter
 List-Unsubscribe: 
@@ -33,40 +43,46 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
+To: Felix Fietkau <nbd@openwrt.org>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, Johannes Berg <johannes@sipsolutions.net>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 2014-05-21 18:03, Johannes Berg wrote:
-> On Tue, 2014-05-20 at 11:48 -0700, Luis R. Rodriguez wrote:
-> 
->> > I think we should, but if we can't then at least can we cut to an
->> > extensible format?
-> 
-> I don't see any way to extend the format right now.
-> 
-> There's a wrinkle with making it more extensible too though - if we do
-> that then we must be extremely careful that future older crda versions
-> (i.e. the next version that we're about to write) will not parse a newer
-> extended file more permissively, so our extensions are limited anyway.
-> 
-> Looks like the format update really is needed, which probably means we
-> should change the scripts to generate two databases and change the
-> filename, or so?
-How about making the format properly extensible by reusing what we're
-already doing to keep the kernel ABI stable? For example, we could store
-the database in a netlink-like attribute format, with some changes to
-make it fixed endian.
-I'm already doing just that for a few things in OpenWrt, so I have
-working C code for writing and parsing such a format.
+On 9 June 2014 10:00, Felix Fietkau <nbd@openwrt.org> wrote:
+> On 2014-05-21 18:03, Johannes Berg wrote:
+>> On Tue, 2014-05-20 at 11:48 -0700, Luis R. Rodriguez wrote:
+>>
+>>> > I think we should, but if we can't then at least can we cut to an
+>>> > extensible format?
+>>
+>> I don't see any way to extend the format right now.
+>>
+>> There's a wrinkle with making it more extensible too though - if we do
+>> that then we must be extremely careful that future older crda versions
+>> (i.e. the next version that we're about to write) will not parse a newer
+>> extended file more permissively, so our extensions are limited anyway.
+>>
+>> Looks like the format update really is needed, which probably means we
+>> should change the scripts to generate two databases and change the
+>> filename, or so?
+> How about making the format properly extensible by reusing what we're
+> already doing to keep the kernel ABI stable? For example, we could store
+> the database in a netlink-like attribute format, with some changes to
+> make it fixed endian.
+> I'm already doing just that for a few things in OpenWrt, so I have
+> working C code for writing and parsing such a format.
+>
+> Another nice feature would be to indicate in the attributes if crda is
+> required to understand them, or if it can just continue with a warning.
+>
+> If done right, I think we can probably make this the last time we change
+> the format version.
+>
+What kind of benefit we have having binary format between crda <->
+wireless-regd (nl-based or current regulatory.bin)?
+This is additional code/work to do - why we need that?
 
-Another nice feature would be to indicate in the attributes if crda is
-required to understand them, or if it can just continue with a warning.
-
-If done right, I think we can probably make this the last time we change
-the format version.
-
-- Felix
+BR
+Janusz
 
 _______________________________________________
 wireless-regdb mailing list
