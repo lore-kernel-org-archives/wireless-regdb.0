@@ -1,25 +1,22 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from s3.sipsolutions.net ([5.9.151.49] helo=sipsolutions.net)
+Received: from nbd.name ([46.4.11.11])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WuPBW-0001wk-LL
- for wireless-regdb@lists.infradead.org; Tue, 10 Jun 2014 16:46:08 +0000
-Message-ID: <1402418724.4152.3.camel@jlt4.sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 10 Jun 2014 18:45:24 +0200
-In-Reply-To: <CALhHN=qZuPMjQMWGf0+J0ZKnj=5EGtfC=nWjJAYj2YWu=TTYLg@mail.gmail.com>
-References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>
- <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>
- <20140520142453.GB13981@tuxdriver.com>
- <CALhHN=qtxwww9hQ7XxK8tan3+4eSoXo3D_g9YLD0QhQDPcDUmg@mail.gmail.com>
- <20140520180832.GD13981@tuxdriver.com>
- <1400610273.4474.6.camel@jlt4.sipsolutions.net>
- <CAB=NE6WiuydxR62dvua_OEyV+sqxvH8aOUHOBLS3ePz1dGCLAw@mail.gmail.com>
+ id 1WtuVp-0008Ox-Li
+ for wireless-regdb@lists.infradead.org; Mon, 09 Jun 2014 08:01:02 +0000
+Message-ID: <53956986.8070603@openwrt.org>
+Date: Mon, 09 Jun 2014 10:00:06 +0200
+From: Felix Fietkau <nbd@openwrt.org>
+MIME-Version: 1.0
+References: <1399624824-9204-1-git-send-email-janusz.dziedzic@tieto.com>	
+ <CAB=NE6UuZFDLdA-KW=ohaFwXjj_3wSY84cj3-KPO7HoKREPHOA@mail.gmail.com>	
+ <20140520142453.GB13981@tuxdriver.com>	
+ <CALhHN=qtxwww9hQ7XxK8tan3+4eSoXo3D_g9YLD0QhQDPcDUmg@mail.gmail.com>	
+ <20140520180832.GD13981@tuxdriver.com>	
+ <1400610273.4474.6.camel@jlt4.sipsolutions.net>	
+ <CAB=NE6WiuydxR62dvua_OEyV+sqxvH8aOUHOBLS3ePz1dGCLAw@mail.gmail.com>	
  <1400688233.4136.8.camel@jlt4.sipsolutions.net>
- <20140521180020.GA13656@tuxdriver.com>
- <1400699356.4136.13.camel@jlt4.sipsolutions.net>
- <CALhHN=qZuPMjQMWGf0+J0ZKnj=5EGtfC=nWjJAYj2YWu=TTYLg@mail.gmail.com>
-Mime-Version: 1.0
+In-Reply-To: <1400688233.4136.8.camel@jlt4.sipsolutions.net>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add DFS CAC time
 	parameter
 List-Unsubscribe: 
@@ -36,21 +33,40 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: Johannes Berg <johannes@sipsolutions.net>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2014-06-09 at 09:33 +0200, Janusz Dziedzic wrote:
+On 2014-05-21 18:03, Johannes Berg wrote:
+> On Tue, 2014-05-20 at 11:48 -0700, Luis R. Rodriguez wrote:
+> 
+>> > I think we should, but if we can't then at least can we cut to an
+>> > extensible format?
+> 
+> I don't see any way to extend the format right now.
+> 
+> There's a wrinkle with making it more extensible too though - if we do
+> that then we must be extremely careful that future older crda versions
+> (i.e. the next version that we're about to write) will not parse a newer
+> extended file more permissively, so our extensions are limited anyway.
+> 
+> Looks like the format update really is needed, which probably means we
+> should change the scripts to generate two databases and change the
+> filename, or so?
+How about making the format properly extensible by reusing what we're
+already doing to keep the kernel ABI stable? For example, we could store
+the database in a netlink-like attribute format, with some changes to
+make it fixed endian.
+I'm already doing just that for a few things in OpenWrt, so I have
+working C code for writing and parsing such a format.
 
-> Why not just skip this binary interface between regdb --> crda and use
-> signed db.txt file?
+Another nice feature would be to indicate in the attributes if crda is
+required to understand them, or if it can just continue with a warning.
 
-I fail to see how that's any better? If anything, it seems to me that it
-would be *harder* to keep the database text format parseable to old CRDA
-versions when making changes.
+If done right, I think we can probably make this the last time we change
+the format version.
 
-johannes
-
+- Felix
 
 _______________________________________________
 wireless-regdb mailing list
