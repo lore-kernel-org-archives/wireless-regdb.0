@@ -1,29 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x22a.google.com ([2a00:1450:4010:c03::22a])
+Received: from mail-lb0-x22d.google.com ([2a00:1450:4010:c04::22d])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1WuUGt-0007HM-8e
- for wireless-regdb@lists.infradead.org; Tue, 10 Jun 2014 22:11:59 +0000
-Received: by mail-la0-f42.google.com with SMTP id el20so4391988lab.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 10 Jun 2014 15:11:16 -0700 (PDT)
+ id 1WuUEw-00064R-0J
+ for wireless-regdb@lists.infradead.org; Tue, 10 Jun 2014 22:10:01 +0000
+Received: by mail-lb0-f173.google.com with SMTP id 10so4337869lbg.18 for
+ <wireless-regdb@lists.infradead.org>; Tue, 10 Jun 2014 15:09:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=mime-version:sender:in-reply-to:references:from:date:message-id
  :subject:to:cc:content-type;
- bh=4IfxWQsX6KkR9tclw3U82vlTL2nXwYQPv+2yovCOlTo=;
- b=y9Jy5kC1rTfiB5pFm467wG+d+rn/VViPV/Amd00bbho2+wJsg+Vsk04781/pqD/Qyn
- jtnTuXjWYRQ9T2t1NSJWanMjTgw2IAJQ4r9Y4d7qRSxsjnqxegkhD2ZVZTTcoXSAKf9Y
- xooDBoxIHBWo6q/p9DE3BpJl6wunGb4+IMb8QsMsN/wa8SfoFIHW0tAXqo2IqzZ3jz9Q
- 0l06e/dx2KzmtxXkhWWJ1vUnnnApNy/zHYkz99/UHJu5P5wpd1dlZrvuE2HzZY4h0bI/
- v4VSWayB4WbrfaUh0+siacEdK8UNJefkLb+T7vcOsASY6mV85t8vVUY4wCT+GPJNVL08 PoXA==
+ bh=tLRVUU5iVvFziyWMfzVoTlXJpm9RBvrJxqg7Hb5+3dA=;
+ b=yYVzFg+oEwN1bqDYnklmJLiuMkBdWTt6schVSCuj8wNmMIh5NJSeSUjhafd6oXdKMS
+ 8dutDS7y30MpCEE+kX/MIaGD2MuMFrqG4BtytPwmfux1IytGzG6EVQb/eEW0GplfqSIJ
+ ZJwFOC1GKl7U7/Ped8hR0wdtu+8DI8D5/3pPV88CiH0Mdjo+x5OAVQuDTON1eYwT9oc5
+ cIWdmZHDaQWEx4JbHjH5sAEVHptyyDqnubGcZQhWam1ECO/0PTcrvYk2ch0QlCy88Bsi
+ L8LqoBJ9VoJ0g/HexfsctJOUWUZKwzJshlT+eGOqnaT2ww3Kt+jpmbIDg1stni3mav8h DF8g==
 MIME-Version: 1.0
-In-Reply-To: <1402385153-5056-2-git-send-email-janusz.dziedzic@tieto.com>
+In-Reply-To: <1402385153-5056-1-git-send-email-janusz.dziedzic@tieto.com>
 References: <1402385153-5056-1-git-send-email-janusz.dziedzic@tieto.com>
- <1402385153-5056-2-git-send-email-janusz.dziedzic@tieto.com>
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue, 10 Jun 2014 15:10:56 -0700
-Message-ID: <CAB=NE6X=Uzu_SQbaHuA-uVoU+tdz=yW6PuBOgDyB75VOG1EFOw@mail.gmail.com>
-Subject: Re: [wireless-regdb] [RFC 2/2] crda: add crda_tiny implementation
+Date: Tue, 10 Jun 2014 15:09:13 -0700
+Message-ID: <CAB=NE6VZs7d2bJNW0cp7NhPUMKr=bHn+pKwhvtk2U71rno4VMA@mail.gmail.com>
+Subject: Re: [wireless-regdb] [RFC 1/2] crda: simplify text parsing for
+	country/rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,29 +44,11 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 On Tue, Jun 10, 2014 at 12:25 AM, Janusz Dziedzic
 <janusz.dziedzic@tieto.com> wrote:
-> add crda_tiny and crda.sh implementation.
-> This implementation base on db.txt file
-> signed via PGP. Next crda.sh do db.txt veryfication.
-> crda_tiny as a input get regulatory domain
-> in text format, parse this and send using
-> nl80211 to the kernel.
-> This implementation skip regulatory.bin file and
-> works directly on signed db.txt file.
+> Remove strange parsers.
 >
-> Added gpg directory with db_signed.txt file and public key
-> required for veryfication.
->
-> crda.sh require installed gpg.
->
-> To test just run:
-> - make && make install
-> - sh gpg/install.sh
-> - cp /sbin/crda.sh /sbin/crda (or change udev rule)
->
-> All logs will be available in /tmp/crda.err file
+> Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 
-It seems Felix had some other ideas on how to scale binary
-compatibility, this doesn't seem to care for it.
+Did you test this with the different types of accepted rules?
 
   Luis
 
