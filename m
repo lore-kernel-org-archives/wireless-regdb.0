@@ -1,25 +1,17 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-qc0-x230.google.com ([2607:f8b0:400d:c01::230])
+Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Wunzr-0002j5-1t
- for wireless-regdb@lists.infradead.org; Wed, 11 Jun 2014 19:15:44 +0000
-Received: by mail-qc0-f176.google.com with SMTP id r5so328567qcx.21 for
- <wireless-regdb@lists.infradead.org>; Wed, 11 Jun 2014 12:15:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google;
- h=mime-version:in-reply-to:references:date:message-id:subject:from:to
- :cc:content-type:content-transfer-encoding;
- bh=2voAONOPgNDSb2QnRemSYwLyCz0RG36M4VikrHCQKMg=;
- b=38ilr7wV39s4uOD9bMg3moTykdfUTMzWmh+Q47Q3drTvJ2Pg/NwxQWe62qkM4RNXeX
- /rgePZc8fe34cxVebk0jrNxKZUz87pT+YqGNawvSAiYbZSz7r5dArseP5sBGz/EgtRwK
- bo2u9K4tt8vIxnweCQbjW0cov7sWuWBiTnz7I=
-MIME-Version: 1.0
-In-Reply-To: <20140519185046.GH7650@tuxdriver.com>
+ id 1WupLr-0002Sz-Jq
+ for wireless-regdb@lists.infradead.org; Wed, 11 Jun 2014 20:42:33 +0000
+Date: Wed, 11 Jun 2014 22:42:07 +0200
+From: "Luis R. Rodriguez" <mcgrof@suse.com>
+Message-ID: <20140611204207.GD6042@wotan.suse.de>
 References: <20140519185046.GH7650@tuxdriver.com>
-Date: Wed, 11 Jun 2014 21:15:19 +0200
-Message-ID: <CALhHN=pEo5H4AnWpOAhPs8LyK35wyhGJyvHTrh12nauQ-tOpDg@mail.gmail.com>
-From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+ <CALhHN=pEo5H4AnWpOAhPs8LyK35wyhGJyvHTrh12nauQ-tOpDg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CALhHN=pEo5H4AnWpOAhPs8LyK35wyhGJyvHTrh12nauQ-tOpDg@mail.gmail.com>
 Subject: Re: [wireless-regdb] [ANN] wireless-regdb: master-2014-05-19
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -30,58 +22,42 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="iso-8859-1"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless@vger.kernel.org
+Content-Transfer-Encoding: quoted-printable
+To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Cc: linux-wireless@vger.kernel.org, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 19 May 2014 20:50, John W. Linville <linville@tuxdriver.com> wrote:
-> A new release of wireless-regdb (master-2014-05-19) is available at:
->
-> http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2014.05.19.tar.gz
->
-> Here is the short log of the changes included since the 2013-11-27
-> release:
->
-> Bjørn Mork (1):
->       wireless-regdb: update NO's regulatory rules
->
-> Janusz Dziedzic (3):
->       wireless-regdb: allow max bandwidth to be AUTO calculated
->       wireless-regdb: set AUTO bandwidth for world regulatory
-This two above should not be merged. That was first version of auto
-bandwidth calculation, we skip :)
+On Wed, Jun 11, 2014 at 09:15:19PM +0200, Janusz Dziedzic wrote:
+> On 19 May 2014 20:50, John W. Linville <linville@tuxdriver.com> wrote:
+> > A new release of wireless-regdb (master-2014-05-19) is available at:
+> >
+> > http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regd=
+b-2014.05.19.tar.gz
+> >
+> > Here is the short log of the changes included since the 2013-11-27
+> > release:
+> >
+> > Bj=F8rn Mork (1):
+> >       wireless-regdb: update NO's regulatory rules
+> >
+> > Janusz Dziedzic (3):
+> >       wireless-regdb: allow max bandwidth to be AUTO calculated
+> >       wireless-regdb: set AUTO bandwidth for world regulatory
+> This two above should not be merged. That was first version of auto
+> bandwidth calculation, we skip :)
 
->       wireless-regdb: add AUTO-BW rule flag
->
-> Johannes Berg (1):
->       regdb: Republic of Korea: fix double rule
->
-> John W. Linville (2):
->       wireless-regdb: correct some flag damage...
->       wireless-regdb: update regulatory.bin based on preceding changes.
->
-> Luis R. Rodriguez (1):
->       wireless-regdb: embrace the Developer Certificate of Origin for contributions
->
-> Ronald Wahl (1):
->       wireless-regdb: add channels 52..64 and 100..144 to world regdom
->
-> --
-> John W. Linville                Someday the world will need a hero, and you
-> linville@tuxdriver.com                  might be all we have.  Be ready.
->
->
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
+How about on CRDA? Can you check if I merged the wrong stuff as I already
+pushed as well? This also currently breaks the parses are there is no
+support for the auto stuff yet.
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
