@@ -1,21 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x22f.google.com ([2a00:1450:400c:c05::22f])
+Received: from mail-la0-x22a.google.com ([2a00:1450:4010:c03::22a])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Wuycn-0006jk-CN
- for wireless-regdb@lists.infradead.org; Thu, 12 Jun 2014 06:36:38 +0000
-Received: by mail-wi0-f175.google.com with SMTP id r20so980617wiv.14 for
- <wireless-regdb@lists.infradead.org>; Wed, 11 Jun 2014 23:36:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google; h=from:to:cc:subject:date:message-id;
- bh=156ST3tcKds1GeQL5ys/QNDeOV85pSo1drQQ1al+Nzg=;
- b=ER4k+RCSXnpOhkuanBOp++eeOr7pDnoRUAl3q/tDm89tagUFY3XKK+nOWkoh02GfaK
- y06C/DdvIsuZ/RxavkqpzoF50HJoFKjh9C+f+kk3w9lEsdfkm0ajZ06ede6pe1Af8rgs
- oex0VeIKAHq5t7g60lDwT+lqy7nnF2gm5/XWY=
-From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Date: Thu, 12 Jun 2014 08:35:38 +0200
-Message-Id: <1402554938-4495-1-git-send-email-janusz.dziedzic@tieto.com>
-Subject: [wireless-regdb] [PATCH v2] crda: simplify text parsing for
+ id 1WxN0z-0004ay-6K
+ for wireless-regdb@lists.infradead.org; Wed, 18 Jun 2014 21:03:30 +0000
+Received: by mail-la0-f42.google.com with SMTP id pn19so904662lab.1 for
+ <wireless-regdb@lists.infradead.org>; Wed, 18 Jun 2014 14:03:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=WcheGezxMok5UCCPQ6NoluXOn8Gpt92URlU6AjeeZIc=;
+ b=eAtfwKaEkmC1OTJj9HdgAFTMp7kLg2fsq6TB+0IUvL/SQwZlVI9fHBcA3j/gQwbkOm
+ kW6j/2qyCGgz3h7swmulWSClBwvKKzVfIfmvdTSqo6Lnf4Yv3xUHo7DBJtiUjF5GGp+O
+ zF8Hb8wLJ13EGUcqu9t3+3gNdONkab8KNm9trM6lDd1VdMh+vc36YC4jLuEHpO0ioysn
+ 0SEihRaEcxIeVB8wQCSUXDDau/m0UE3iXfM/1ngTDJOfD82PpM6TbIJCmKEC0fJ4GzKr
+ XdCbodHy6+stz3Ev+iHWFMGrdjP7AMvvYreFN2qoZeM2+Q9bY/nIv+EhbR3ZjHFe8JvB G1eQ==
+MIME-Version: 1.0
+In-Reply-To: <1402554938-4495-1-git-send-email-janusz.dziedzic@tieto.com>
+References: <1402554938-4495-1-git-send-email-janusz.dziedzic@tieto.com>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Wed, 18 Jun 2014 14:02:45 -0700
+Message-ID: <CAB=NE6UeSD29K9FuzAtvH08WqM7HEeobEw9TbLpGMpf+caGQvQ@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH v2] crda: simplify text parsing for
 	country/rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -26,471 +33,25 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless@vger.kernel.org, linville@tuxdriver.com, mcgrof@do-not-panic.com
+To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "John W. Linville" <linville@tuxdriver.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Remove strange parsers.
+On Wed, Jun 11, 2014 at 11:35 PM, Janusz Dziedzic
+<janusz.dziedzic@tieto.com> wrote:
+> Remove strange parsers.
+>
+> Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 
-Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
----
-*V2: rebased on master
 
- reglib.c |  355 +++++++++++---------------------------------------------------
- 1 file changed, 62 insertions(+), 293 deletions(-)
+Applied and pushed, thanks!
 
-diff --git a/reglib.c b/reglib.c
-index 3deca4a..6db3e75 100644
---- a/reglib.c
-+++ b/reglib.c
-@@ -40,17 +40,6 @@
- 
- int debug = 0;
- 
--struct reglib_rule_parse_list {
--	int n_parsers;
--	int (*rule_parsers[])(char *line, struct ieee80211_reg_rule *reg_rule);
--};
--
--struct reglib_country_parse_list {
--	int n_parsers;
--	int (*country_parsers[])(char *line, struct ieee80211_regdomain *rd);
--};
--
--
- void *
- reglib_get_file_ptr(uint8_t *db, size_t dblen, size_t structlen, uint32_t ptr)
- {
-@@ -768,206 +757,63 @@ void reglib_print_regdom(const struct ieee80211_regdomain *rd)
- 
- static unsigned int reglib_parse_dfs_region(char *dfs_region)
- {
--	if (strncmp(dfs_region, "DFS-FCC", 7) == 0)
-+	if (!dfs_region)
-+		return REGDB_DFS_UNSET;
-+
-+	if (strstr(dfs_region, "DFS-FCC"))
- 		return REGDB_DFS_FCC;
--	if (strncmp(dfs_region, "DFS-ETSI", 8) == 0)
-+	if (strstr(dfs_region, "DFS-ETSI"))
- 		return REGDB_DFS_ETSI;
--	if (strncmp(dfs_region, "DFS-JP", 6) == 0)
-+	if (strstr(dfs_region, "DFS-JP"))
- 		return REGDB_DFS_JP;
- 	return REGDB_DFS_UNSET;
- }
- 
- static uint32_t reglib_parse_rule_flag(char *flag_s)
- {
--	if (strncmp(flag_s, "NO-OFDM", 7) == 0)
--		return RRF_NO_OFDM;
--	if (strncmp(flag_s, "NO-CCK", 6) == 0)
--		return RRF_NO_CCK;
--	if (strncmp(flag_s, "NO-INDOOR", 9) == 0)
--		return RRF_NO_INDOOR;
--	if (strncmp(flag_s, "NO-OUTDOOR", 10) == 0)
--		return RRF_NO_OUTDOOR;
--	if (strncmp(flag_s, "DFS", 3) == 0)
--		return RRF_DFS;
--	if (strncmp(flag_s, "PTP-ONLY", 8) == 0)
--		return RRF_PTP_ONLY;
--	if (strncmp(flag_s, "PTMP-ONLY", 9) == 0)
--		return RRF_PTMP_ONLY;
--	if (strncmp(flag_s, "NO-IR", 5) == 0)
--		return RRF_NO_IR;
--	if (strncmp(flag_s, "AUTO-BW", 7) == 0)
--		return RRF_AUTO_BW;
--
--	return 0;
--}
--
--static int
--reglib_parse_rule_simple(char *line, struct ieee80211_reg_rule *reg_rule)
--{
--	int hits;
--	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
--
--	hits = sscanf(line, "\t(%f - %f @ %f), (%f)\n",
--		      &start_freq_khz,
--		      &end_freq_khz,
--		      &max_bandwidth_khz,
--		      &max_eirp);
--
--	if (hits != 4)
--		return -EINVAL;
--
--	reg_rule->freq_range.start_freq_khz =
--		REGLIB_MHZ_TO_KHZ(start_freq_khz);
--	reg_rule->freq_range.end_freq_khz =
--		REGLIB_MHZ_TO_KHZ(end_freq_khz);
--	reg_rule->freq_range.max_bandwidth_khz =
--		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
--	reg_rule->power_rule.max_eirp =
--		REGLIB_DBM_TO_MBM(max_eirp);
--
--	reg_rule->flags = 0;
--
--	if (debug)
--		printf("reglib_parse_rule_simple(): %d line: %s", hits, line);
--
--
--	return 0;
-+	uint32_t flags = 0;
-+
-+	if (strstr(flag_s, "NO-OFDM"))
-+		flags |= RRF_NO_OFDM;
-+	if (strstr(flag_s, "NO-CCK"))
-+		flags |= RRF_NO_CCK;
-+	if (strstr(flag_s, "NO-INDOOR"))
-+		flags |= RRF_NO_INDOOR;
-+	if (strstr(flag_s, "NO-OUTDOOR"))
-+		flags |= RRF_NO_OUTDOOR;
-+	if (strstr(flag_s, "DFS"))
-+		flags |= RRF_DFS;
-+	if (strstr(flag_s, "PTP-ONLY"))
-+		flags |= RRF_PTP_ONLY;
-+	if (strstr(flag_s, "PTMP-ONLY"))
-+		flags |= RRF_PTMP_ONLY;
-+	if (strstr(flag_s, "NO-IR"))
-+		flags |= RRF_NO_IR;
-+	if (strstr(flag_s, "AUTO-BW"))
-+		flags |= RRF_AUTO_BW;
-+
-+	return flags;
- }
- 
--static int
--reglib_parse_rule_simple_mw(char *line, struct ieee80211_reg_rule *reg_rule)
-+static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
- {
--	int hits;
-+	char line[1024];
-+	char *line_p;
-+	int hits, r = 0;
- 	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
--	char mw[3];
--
--	hits = sscanf(line, "\t(%f - %f @ %f), (%f %2[mW])\n",
--		      &start_freq_khz,
--		      &end_freq_khz,
--		      &max_bandwidth_khz,
--		      &max_eirp, mw);
- 
--	if (hits != 4)
-+	memset(line, 0, sizeof(line));
-+	line_p = fgets(line, sizeof(line), fp);
-+	if (line_p != line)
- 		return -EINVAL;
- 
--
--	reg_rule->freq_range.start_freq_khz =
--		REGLIB_MHZ_TO_KHZ(start_freq_khz);
--	reg_rule->freq_range.end_freq_khz =
--		REGLIB_MHZ_TO_KHZ(end_freq_khz);
--	reg_rule->freq_range.max_bandwidth_khz =
--		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
--	reg_rule->power_rule.max_eirp =
--		REGLIB_MW_TO_MBM(max_eirp);
--
--	reg_rule->flags = 0;
--
--	if (debug)
--		printf("reglib_parse_rule_simple_mw(): %d line: %s",
--		       hits, line);
--
--	return 0;
--}
--
--static int
--reglib_parse_rule_args(char *line, struct ieee80211_reg_rule *reg_rule)
--{
--#define IGNORE_COMMA_OR_SPACE "%*[ ,]"
--	int hits;
--	char flag_list[9][100];
--	unsigned int i = 0;
--	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
--
--	for (i = 0; i < 9; i++)
--		memset(flag_list[i], 0, sizeof(flag_list[i]));
--
--	hits = sscanf(line, "\t(%f - %f @ %f), (%f)"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s",
-+	/* First get start, end and bandwidth */
-+	hits = sscanf(line_p, "\t(%f - %f @ %f),",
- 		      &start_freq_khz,
- 		      &end_freq_khz,
--		      &max_bandwidth_khz,
--		      &max_eirp,
--		      flag_list[0],
--		      flag_list[1],
--		      flag_list[2],
--		      flag_list[3],
--		      flag_list[4],
--		      flag_list[5],
--		      flag_list[6],
--		      flag_list[7],
--		      flag_list[8]);
--
--	if (hits < 5)
--		return -EINVAL;
--
--	reg_rule->freq_range.start_freq_khz =
--		REGLIB_MHZ_TO_KHZ(start_freq_khz);
--	reg_rule->freq_range.end_freq_khz =
--		REGLIB_MHZ_TO_KHZ(end_freq_khz);
--	reg_rule->freq_range.max_bandwidth_khz =
--		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
--	reg_rule->power_rule.max_eirp =
--		REGLIB_DBM_TO_MBM(max_eirp);
--
--	for (i = 0; i < 8; i++)
--		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
--
--	if (debug)
--		printf("reglib_parse_rule_args(): %d flags: %d, line: %s",
--		       hits, reg_rule->flags, line);
--
--	return 0;
--#undef IGNORE_COMMA_OR_SPACE
--}
--
-+		      &max_bandwidth_khz);
- 
--static int
--reglib_parse_rule_args_mw(char *line, struct ieee80211_reg_rule *reg_rule)
--{
--#define IGNORE_COMMA_OR_SPACE "%*[ ,]"
--	int hits;
--	char flag_list[9][100];
--	unsigned int i = 0;
--	char mw[3];
--	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
--
--	for (i = 0; i < 9; i++)
--		memset(flag_list[i], 0, sizeof(flag_list[i]));
--
--	hits = sscanf(line, "\t(%f - %f @ %f), (%f %2[mW])"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s"
--		      IGNORE_COMMA_OR_SPACE "%s",
--		      &start_freq_khz,
--		      &end_freq_khz,
--		      &max_bandwidth_khz,
--		      &max_eirp,
--		      mw,
--		      flag_list[0],
--		      flag_list[1],
--		      flag_list[2],
--		      flag_list[3],
--		      flag_list[4],
--		      flag_list[5],
--		      flag_list[6],
--		      flag_list[7],
--		      flag_list[8]);
--
--	if (hits < 5)
-+	if (hits != 3)
- 		return -EINVAL;
- 
- 	reg_rule->freq_range.start_freq_khz =
-@@ -976,60 +822,32 @@ reglib_parse_rule_args_mw(char *line, struct ieee80211_reg_rule *reg_rule)
- 		REGLIB_MHZ_TO_KHZ(end_freq_khz);
- 	reg_rule->freq_range.max_bandwidth_khz =
- 		REGLIB_MHZ_TO_KHZ(max_bandwidth_khz);
--	reg_rule->power_rule.max_eirp =
--		REGLIB_MW_TO_MBM(max_eirp);
--
--	for (i = 0; i < 8; i++)
--		reg_rule->flags |= reglib_parse_rule_flag(flag_list[i]);
- 
--	if (debug)
--		printf("reglib_parse_rule_args_mw(): %d flags: %d, line: %s",
--		       hits, reg_rule->flags, line);
--	return 0;
--#undef IGNORE_COMMA_OR_SPACE
--}
--
--static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
--{
--	char line[1024];
--	char *line_p;
--	unsigned int i;
--	int r = 0;
--	struct reglib_rule_parse_list *reglib_rule_parsers;
--	size_t size_parsers = sizeof(struct reglib_rule_parse_list) + 
--				4 * sizeof(int (*)(char *, struct ieee80211_reg_rule *));
--
--	reglib_rule_parsers = malloc(size_parsers);
--	if (!reglib_rule_parsers)
--		return -EINVAL;
--	memset(reglib_rule_parsers, 0, size_parsers);
--
--	reglib_rule_parsers->n_parsers = 4;
--
--	/*
--	 * XXX: sscanf() is a bit odd with picking up mW
--	 * case over the simple one, this order however works,
--	 * gotta figure out how to be more precise.
--	 */
--	reglib_rule_parsers->rule_parsers[0] = reglib_parse_rule_args_mw;
--	reglib_rule_parsers->rule_parsers[1] = reglib_parse_rule_args;
--	reglib_rule_parsers->rule_parsers[2] = reglib_parse_rule_simple;
--	reglib_rule_parsers->rule_parsers[3] = reglib_parse_rule_simple_mw;
--
--	memset(line, 0, sizeof(line));
--	line_p = fgets(line, sizeof(line), fp);
--	if (line_p != line) {
--		free(reglib_rule_parsers);
-+	/* Next get eirp */
-+	strsep(&line_p, ",");
-+	if (!line_p) {
-+		fprintf(stderr, "not found eirp in line: %s\n", line);
- 		return -EINVAL;
- 	}
- 
--	for (i = 0; i < reglib_rule_parsers->n_parsers; i++) {
--		r = reglib_rule_parsers->rule_parsers[i](line, reg_rule);
--		if (r == 0)
--			break;
-+	if (strstr(line_p, "mW")) {
-+		hits = sscanf(line_p, " (%f mW)", &max_eirp);
-+		if (hits != 1)
-+			return -EINVAL;
-+		reg_rule->power_rule.max_eirp =
-+			REGLIB_MW_TO_MBM(max_eirp);
-+	} else {
-+		hits = sscanf(line_p, " (%f)", &max_eirp);
-+		if (hits != 1)
-+			return -EINVAL;
-+		reg_rule->power_rule.max_eirp =
-+			REGLIB_DBM_TO_MBM(max_eirp);
- 	}
- 
--	free(reglib_rule_parsers);
-+	/* Next get optional arguments (flags ...) */
-+	strsep(&line_p, ",");
-+	if (line_p)
-+		reg_rule->flags = reglib_parse_rule_flag(line_p);
- 
- 	return r;
- }
-@@ -1124,29 +942,6 @@ reglib_parse_rules(FILE *fp, struct ieee80211_regdomain *trd)
- 	return rd;
- }
- 
--static int
--reglib_parse_country_simple(char *line, struct ieee80211_regdomain *rd)
--{
--	char dfs_region_alpha[9];
--	char alpha2[2];
--	int hits;
--
--	memset(rd, 0, sizeof(*rd));
--	memset(alpha2, 0, sizeof(alpha2));
--	memset(dfs_region_alpha, 0, sizeof(dfs_region_alpha));
--
--	hits = sscanf(line, "country %2[a-zA-Z0-9]:",
--		      alpha2);
--
--	if (hits != 1)
--		return -EINVAL;
--
--	rd->alpha2[0] = alpha2[0];
--	rd->alpha2[1] = alpha2[1];
--
--	return 0;
--}
--
- static int reglib_parse_country_dfs(char *line, struct ieee80211_regdomain *rd)
- {
- 	char dfs_region_alpha[9];
-@@ -1163,10 +958,6 @@ static int reglib_parse_country_dfs(char *line, struct ieee80211_regdomain *rd)
- 	if (hits <= 0)
- 		return -EINVAL;
- 
--	if (hits != 2)
--		return -EINVAL;
--
--
- 	rd->alpha2[0] = alpha2[0];
- 	rd->alpha2[1] = alpha2[1];
- 	rd->dfs_region = reglib_parse_dfs_region(dfs_region_alpha);
-@@ -1180,22 +971,7 @@ struct ieee80211_regdomain *__reglib_parse_country(FILE *fp)
- 	struct ieee80211_regdomain tmp_rd;
- 	char line[1024];
- 	char *line_p;
--	unsigned int i;
- 	int r = 0;
--	struct reglib_country_parse_list *reglib_country_parsers;
--	size_t size_of_parsers = sizeof(struct reglib_country_parse_list) +
--					2 * sizeof(int (*)(char *, struct ieee80211_regdomain *));
--
--	reglib_country_parsers = malloc(size_of_parsers);
--	if (!reglib_country_parsers)
--		return NULL;
--	memset(reglib_country_parsers, 0, size_of_parsers);
--
--	reglib_country_parsers->n_parsers = 2;
--	reglib_country_parsers->country_parsers[0] =
--			reglib_parse_country_dfs;
--	reglib_country_parsers->country_parsers[1] =
--			reglib_parse_country_simple;
- 
- 	memset(&tmp_rd, 0, sizeof(tmp_rd));
- 	memset(line, 0, sizeof(line));
-@@ -1203,26 +979,19 @@ struct ieee80211_regdomain *__reglib_parse_country(FILE *fp)
- 	line_p = fgets(line, sizeof(line), fp);
- 
- 	if (line_p != line) {
--		free(reglib_country_parsers);
- 		return NULL;
- 	}
- 
--	for (i = 0; i < reglib_country_parsers->n_parsers; i++) {
--		r = reglib_country_parsers->country_parsers[i](line, &tmp_rd);
--		if (r == 0)
--			break;
--	}
--
-+	/* Country */
-+	r = reglib_parse_country_dfs(line_p, &tmp_rd);
- 	if (r != 0) {
- 		fprintf(stderr, "Invalid country line: %s", line);
--		free(reglib_country_parsers);
- 		return NULL;
- 	}
- 
-+	/* Rules */
- 	rd = reglib_parse_rules(fp, &tmp_rd);
- 
--	free(reglib_country_parsers);
--
- 	return rd;
- }
- 
--- 
-1.7.9.5
-
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
