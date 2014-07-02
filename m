@@ -1,35 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x236.google.com ([2a00:1450:4010:c03::236])
- by merlin.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1VS9L9-0002eO-VE
- for wireless-regdb@lists.infradead.org; Fri, 04 Oct 2013 17:39:00 +0000
-Received: by mail-la0-f54.google.com with SMTP id ea20so3596856lab.27 for
- <wireless-regdb@lists.infradead.org>; Fri, 04 Oct 2013 10:38:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:sender:in-reply-to:references:from:date:message-id
- :subject:to:cc:content-type:content-transfer-encoding;
- bh=+Bp/I19zsRjtSeLuCxhDE1Gn9KLriyHRN7Q74QpFr4o=;
- b=n3JySdSBDAtwUDn918sIQ7RJkynKIMfOhIiHYCBF2/CTRVYl4N38DYh69Wm5w6RZVI
- pIt5z9avI1vrfoXDWdc2yPBzS1c3Kp7a6p+E88ch28+bdyoaBCA9xM20JWBXSsCtkeL0
- w96lQ7NvwdDpE2eFG89vpF4oFebNaVr1PeeCC89efgC5RGjfli6zHJbC/57AzEXFTAY3
- 0dbQMhoUJ10jps8BM6bqGkb4XeeTIkbAq60j5PA/Uwz1UiZRfkyYLk5iCAfZmPDmfan8
- 9hHhOu8i4OhdcRiNl2fw6BygeaQFW44CJVqWNx0sZKz8xH6oRpEyZ4VzcWIo70EDNa42 IyCw==
-MIME-Version: 1.0
-In-Reply-To: <CAB=NE6Vcqrs-US-HJzxcnFhjF0-dsnvPdcWoUpuo-UDV_5cReQ@mail.gmail.com>
-References: <1372768095-26053-1-git-send-email-ilan.peer@intel.com>
- <1372768095-26053-4-git-send-email-ilan.peer@intel.com>
- <CAB=NE6VQXQPRK9_Q-Nh+ripRa+PdCd=4_EZvPxeghBjc32ejyQ@mail.gmail.com>
- <CB3B3D4774441E42AA3EA0E1BA8230A01AD2DFC5@HASMSX106.ger.corp.intel.com>
- <CAB=NE6WY43BYDehH5-MyF0GQORC1dTrNToUsRVC-Q5bDwcna3A@mail.gmail.com>
- <CB3B3D4774441E42AA3EA0E1BA8230A01AD31E3C@HASMSX106.ger.corp.intel.com>
- <CAB=NE6Vcqrs-US-HJzxcnFhjF0-dsnvPdcWoUpuo-UDV_5cReQ@mail.gmail.com>
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Fri, 4 Oct 2013 10:38:16 -0700
-Message-ID: <CAB=NE6WmEQg68BViF9v+2D__p8Gc_5bCFUkBMfTz0A96C1jyDw@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH 3/3] [RFC] cfg80211: Enable GO
-	operation on additional channels
+Received: from mail-wi0-x232.google.com ([2a00:1450:400c:c05::232])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1X2JKP-0000Y2-Lm
+ for wireless-regdb@lists.infradead.org; Wed, 02 Jul 2014 12:07:58 +0000
+Received: by mail-wi0-f178.google.com with SMTP id n15so331715wiw.17 for
+ <wireless-regdb@lists.infradead.org>; Wed, 02 Jul 2014 05:07:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
+ s=google; h=from:to:cc:subject:date:message-id;
+ bh=SIWOeOow15NIKEjuNyBpEnNCO2oSBUIrKnMwSYAnxj0=;
+ b=cfrdwKVE+MRWnOrvujxvpLpPEeW/TcnN2euoHfhIIDwOr43XQemG8eSkoynIZLyBFF
+ iTjyceeKSahLbDgjaualy5IXPd6zOvSQSvmJhBOztmtt0AHdDc/K+MdEGoYNVOTjPGuK
+ wwiEHeGu3iTb3629TsRj3imKeUMEbE/NiSmvc=
+From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Date: Wed,  2 Jul 2014 14:02:11 +0200
+Message-Id: <1404302531-18132-1-git-send-email-janusz.dziedzic@tieto.com>
+Subject: [wireless-regdb] [PATCH] crda: db2rd, parse/print CAC time
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,35 +25,95 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Peer, Ilan" <ilan.peer@intel.com>, Jeff Johnson <jjohnson@qca.qualcomm.com>
-Cc: "Shalev, Oz" <oz.shalev@intel.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Jouni Malinen <j@w1.fi>, linux-wireless <linux-wireless@vger.kernel.org>, "Ginsburg, Noam" <noam.ginsburg@intel.com>, "Perelmooter,
- Liraz" <liraz.perelmooter@intel.com>, "Spinadel,
- David" <david.spinadel@intel.com>, Michael Green <green@qca.qualcomm.com>
+To: wireless-regdb@lists.infradead.org
+Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless@vger.kernel.org, mcgrof@do-not-panic.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 18, 2013 at 4:34 PM, Luis R. Rodriguez
-<mcgrof@do-not-panic.com> wrote:
-> On Wed, Jul 17, 2013 at 12:15 PM, Peer, Ilan <ilan.peer@intel.com> wrote:
->>> It was unclear for what exact channels you needed to deal with here.
->>> Given review so far wouldn't it just be DFS flagged channels on some UNII
->>> bands ? Then again if the indoor flag needs to be pegged to to a specific UNII
->>> band and we can do that on wireless-regdb do we even need the UNII band
->>> check routine helper?
->>>
->>
->> Generally it is possible that the indoor property is not pegged to the 'other_channel', or it is possible that it is pegged but they are not in the same UNII band, so the verification is still needed. I guess that once I get the list you requested things will be clearer :)
->
-> OK so there are exceptions to the indoor flag affecting GO under these
-> rules or not. Looking forward to the respin.
+db2rd, parse and print DFS CAC time
 
-Anxiously looking forward to the respin :D
+Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+---
+ crda.c   |    3 +++
+ reglib.c |   15 ++++++++++++++-
+ reglib.h |    1 +
+ 3 files changed, 18 insertions(+), 1 deletion(-)
 
-  Luis
+diff --git a/crda.c b/crda.c
+index 4751a39..f40131f 100644
+--- a/crda.c
++++ b/crda.c
+@@ -131,6 +131,9 @@ static int put_reg_rule(const struct ieee80211_reg_rule *rule, struct nl_msg *ms
+ 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_ANT_GAIN,	power_rule->max_antenna_gain);
+ 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_EIRP,	power_rule->max_eirp);
+ 
++	if (rule->dfs_cac_ms)
++		NLA_PUT_U32(msg, NL80211_ATTR_DFS_CAC_TIME, rule->dfs_cac_ms);
++
+ 	return 0;
+ 
+ nla_put_failure:
+diff --git a/reglib.c b/reglib.c
+index 6db3e75..e00e9b8 100644
+--- a/reglib.c
++++ b/reglib.c
+@@ -723,6 +723,11 @@ static void print_reg_rule(const struct ieee80211_reg_rule *rule)
+ 	else
+ 		printf("N/A)");
+ 
++	if (rule->dfs_cac_ms)
++		printf(", (%u)", rule->dfs_cac_ms);
++	else
++		printf(", (N/A)");
++
+ 	if (rule->flags & RRF_NO_OFDM)
+ 		printf(", NO-OFDM");
+ 	if (rule->flags & RRF_NO_CCK)
+@@ -801,6 +806,7 @@ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
+ 	char *line_p;
+ 	int hits, r = 0;
+ 	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
++	unsigned int dfs_cac_ms = 0;
+ 
+ 	memset(line, 0, sizeof(line));
+ 	line_p = fgets(line, sizeof(line), fp);
+@@ -846,8 +852,15 @@ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
+ 
+ 	/* Next get optional arguments (flags ...) */
+ 	strsep(&line_p, ",");
+-	if (line_p)
++	if (line_p) {
++		/* Check DFS CAC time */
++		hits = sscanf(line_p, " (%u)", &dfs_cac_ms);
++		if (hits == 1)
++			reg_rule->dfs_cac_ms = dfs_cac_ms;
++
++		/* Check flags */
+ 		reg_rule->flags = reglib_parse_rule_flag(line_p);
++	}
+ 
+ 	return r;
+ }
+diff --git a/reglib.h b/reglib.h
+index afd5ef6..77aa42a 100644
+--- a/reglib.h
++++ b/reglib.h
+@@ -28,6 +28,7 @@ struct ieee80211_reg_rule {
+ 	struct ieee80211_freq_range freq_range;
+ 	struct ieee80211_power_rule power_rule;
+ 	uint32_t flags;
++	uint32_t dfs_cac_ms;
+ };
+ 
+ struct ieee80211_regdomain {
+-- 
+1.7.9.5
+
 
 _______________________________________________
 wireless-regdb mailing list
