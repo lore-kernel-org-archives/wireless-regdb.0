@@ -1,21 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x232.google.com ([2a00:1450:400c:c05::232])
+Received: from mail-lb0-x231.google.com ([2a00:1450:4010:c04::231])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1X2JKP-0000Y2-Lm
- for wireless-regdb@lists.infradead.org; Wed, 02 Jul 2014 12:07:58 +0000
-Received: by mail-wi0-f178.google.com with SMTP id n15so331715wiw.17 for
- <wireless-regdb@lists.infradead.org>; Wed, 02 Jul 2014 05:07:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
- s=google; h=from:to:cc:subject:date:message-id;
- bh=SIWOeOow15NIKEjuNyBpEnNCO2oSBUIrKnMwSYAnxj0=;
- b=cfrdwKVE+MRWnOrvujxvpLpPEeW/TcnN2euoHfhIIDwOr43XQemG8eSkoynIZLyBFF
- iTjyceeKSahLbDgjaualy5IXPd6zOvSQSvmJhBOztmtt0AHdDc/K+MdEGoYNVOTjPGuK
- wwiEHeGu3iTb3629TsRj3imKeUMEbE/NiSmvc=
-From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Date: Wed,  2 Jul 2014 14:02:11 +0200
-Message-Id: <1404302531-18132-1-git-send-email-janusz.dziedzic@tieto.com>
-Subject: [wireless-regdb] [PATCH] crda: db2rd, parse/print CAC time
+ id 1X2SgE-0005Ig-7U
+ for wireless-regdb@lists.infradead.org; Wed, 02 Jul 2014 22:07:07 +0000
+Received: by mail-lb0-f177.google.com with SMTP id u10so8275241lbd.8 for
+ <wireless-regdb@lists.infradead.org>; Wed, 02 Jul 2014 15:06:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=RV0p5hdlaTl3EITnJyVV7a2vVx/IrAEl0ujUz+YDAW0=;
+ b=1F1F6B7pzsVboeO1AoOqKHUZSoGjw83MzBphniDCZEVGkblt5HZB0pN3VfBL6fmEsF
+ XrwpmNKNkSBmUAxxEJYqzGNYAxkGx7jenDrWWQ5DxvwbbtSETQZ5vARtrHu6q7AXZoFw
+ Jk9gH0gGXhWxWRpK5e1AxwkFAHj+kFehoNcR9Vy8bN/S6sFzU8Y/ajUKFs6BVX1fWmXG
+ dr2QmcPVVSEFgSexqmW+tlVKhBNMNVPtrEYRdOHWuTPsjqasLBR1NHjbtYYo+/PH90sl
+ 9qFNfRhbLPT35M4bjd9BFQ6FLrJ3iGWPaClpWfUbVv0c5OZxWqrpsrlFZsmZjd8dNyYx 8ppg==
+MIME-Version: 1.0
+In-Reply-To: <1404302531-18132-1-git-send-email-janusz.dziedzic@tieto.com>
+References: <1404302531-18132-1-git-send-email-janusz.dziedzic@tieto.com>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Wed, 2 Jul 2014 15:06:22 -0700
+Message-ID: <CAB=NE6WN=6cu1rfHjLV32bvwAY6tnW9wrpVx5WHfdu0SJMvC0A@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] crda: db2rd, parse/print CAC time
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -25,95 +32,27 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, linux-wireless@vger.kernel.org, mcgrof@do-not-panic.com
+To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-db2rd, parse and print DFS CAC time
+On Wed, Jul 2, 2014 at 5:02 AM, Janusz Dziedzic
+<janusz.dziedzic@tieto.com> wrote:
+> db2rd, parse and print DFS CAC time
+>
+> Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
 
-Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
----
- crda.c   |    3 +++
- reglib.c |   15 ++++++++++++++-
- reglib.h |    1 +
- 3 files changed, 18 insertions(+), 1 deletion(-)
 
-diff --git a/crda.c b/crda.c
-index 4751a39..f40131f 100644
---- a/crda.c
-+++ b/crda.c
-@@ -131,6 +131,9 @@ static int put_reg_rule(const struct ieee80211_reg_rule *rule, struct nl_msg *ms
- 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_ANT_GAIN,	power_rule->max_antenna_gain);
- 	NLA_PUT_U32(msg, NL80211_ATTR_POWER_RULE_MAX_EIRP,	power_rule->max_eirp);
- 
-+	if (rule->dfs_cac_ms)
-+		NLA_PUT_U32(msg, NL80211_ATTR_DFS_CAC_TIME, rule->dfs_cac_ms);
-+
- 	return 0;
- 
- nla_put_failure:
-diff --git a/reglib.c b/reglib.c
-index 6db3e75..e00e9b8 100644
---- a/reglib.c
-+++ b/reglib.c
-@@ -723,6 +723,11 @@ static void print_reg_rule(const struct ieee80211_reg_rule *rule)
- 	else
- 		printf("N/A)");
- 
-+	if (rule->dfs_cac_ms)
-+		printf(", (%u)", rule->dfs_cac_ms);
-+	else
-+		printf(", (N/A)");
-+
- 	if (rule->flags & RRF_NO_OFDM)
- 		printf(", NO-OFDM");
- 	if (rule->flags & RRF_NO_CCK)
-@@ -801,6 +806,7 @@ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
- 	char *line_p;
- 	int hits, r = 0;
- 	float start_freq_khz, end_freq_khz, max_bandwidth_khz, max_eirp;
-+	unsigned int dfs_cac_ms = 0;
- 
- 	memset(line, 0, sizeof(line));
- 	line_p = fgets(line, sizeof(line), fp);
-@@ -846,8 +852,15 @@ static int reglib_parse_rule(FILE *fp, struct ieee80211_reg_rule *reg_rule)
- 
- 	/* Next get optional arguments (flags ...) */
- 	strsep(&line_p, ",");
--	if (line_p)
-+	if (line_p) {
-+		/* Check DFS CAC time */
-+		hits = sscanf(line_p, " (%u)", &dfs_cac_ms);
-+		if (hits == 1)
-+			reg_rule->dfs_cac_ms = dfs_cac_ms;
-+
-+		/* Check flags */
- 		reg_rule->flags = reglib_parse_rule_flag(line_p);
-+	}
- 
- 	return r;
- }
-diff --git a/reglib.h b/reglib.h
-index afd5ef6..77aa42a 100644
---- a/reglib.h
-+++ b/reglib.h
-@@ -28,6 +28,7 @@ struct ieee80211_reg_rule {
- 	struct ieee80211_freq_range freq_range;
- 	struct ieee80211_power_rule power_rule;
- 	uint32_t flags;
-+	uint32_t dfs_cac_ms;
- };
- 
- struct ieee80211_regdomain {
--- 
-1.7.9.5
+This doesn't print the DFS CAC if its a in a line like this:
 
+(5250 - 5330 @ 0), (20), (60000), DFS, AUTO-BW
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
