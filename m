@@ -1,20 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-yh0-f49.google.com ([209.85.213.49])
+Received: from mail-wi0-x22f.google.com ([2a00:1450:400c:c05::22f])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XMZ3y-00080y-GT
- for wireless-regdb@lists.infradead.org; Wed, 27 Aug 2014 08:58:43 +0000
-Received: by mail-yh0-f49.google.com with SMTP id b6so13255073yha.36 for
- <wireless-regdb@lists.infradead.org>; Wed, 27 Aug 2014 01:58:20 -0700 (PDT)
+ id 1XGpgM-0005Ys-LJ
+ for wireless-regdb@lists.infradead.org; Mon, 11 Aug 2014 13:30:39 +0000
+Received: by mail-wi0-f175.google.com with SMTP id ho1so4239157wib.8 for
+ <wireless-regdb@lists.infradead.org>; Mon, 11 Aug 2014 06:30:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=from:to:cc:subject:date:message-id:mime-version:content-type
+ :content-transfer-encoding;
+ bh=9J6OF+L/evG+Hc4uuYaDpbf1HcU1rrfIUKekt7zMa4Q=;
+ b=VzVn7OzIpqaOTLwZqiCJ46PSaO7IOWTayHB+gQrW9eEOYtCgU0OaLq73kxoTLDKjGg
+ 6xnE3QgwIDJIe924cKKoj8zLVPgvgX2CsKlQQMbLmW7QYwTnH0Ji3j3vHyqTR971ZmOO
+ ePxEe9v026+VVrik9Zkn37Z0lXkPgJNG2pLhMl/gUqFfBa0issavoCe2PNA53JmRgJX7
+ QW9nvFRT0WYGpaTqcsaSPQDFXFoWndQC6Qq2mjZZ87iuSGFYM46LB1FO38TeJL51NcWd
+ JyuZXk9Z+HHEP4WkzVqlUY8bxSjgTL9S50GuqruqQA46xJwcU+HfyXDzgafodpnPEVz/ J/3A==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Mon, 11 Aug 2014 15:29:55 +0200
+Message-Id: <1407763795-8571-1-git-send-email-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20140519203644.GL7650@tuxdriver.com>
-References: <5367850A.7060600@gmail.com>
- <CALf=PEYzpx_EcqMEGRTHYkmR-92qEzKL2jDM0tRPEkdcpuAz9g@mail.gmail.com>
- <20140519203644.GL7650@tuxdriver.com>
-Date: Wed, 27 Aug 2014 01:58:20 -0700
-Message-ID: <CALf=PEZWTmjb0De4m6UXg_PEh5beLk-O40_HXve273mC6ikcVQ@mail.gmail.com>
-From: Daiwei Li <daiweili@suitabletech.com>
-Subject: Re: [wireless-regdb] KR Country Code Allowed Frequencies
+Subject: [wireless-regdb] [PATCH try2] wireless-regdb: change to 200mW
+	Max_EIRP in 5150-5250 for ES (Spain)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,87 +30,74 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Xose Vazquez Perez <xose.vazquez@gmail.com>
+Cc: "Luis R. Rodriguez" <mcgrof@frijolero.org>, wireless-regdb@lists.infradead.org, Xose Vazquez Perez <xose.vazquez@gmail.com>, "John W. Linville" <linville@tuxdriver.com>, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Resending, as my previous e-mail got rejected due to HTML content.
-Here's a patch:
+http://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-4845
+http://www.boe.es/boe/dias/2013/05/09/pdfs/BOE-A-2013-4845.pdf
 
-wireless-regdb: Update KR rule to include 5825MHz
+--cut--
+UN – 128 RLANs en 5 GHz
 
-The Juniper WLA532-WW allows the setting of channel 165
-for country code KR. Various Cisco documentation sources [1],[2]
-state that 5825 MHz is allowed for country code KR. Aruba's documentation [3]
-states the same.
+[...]
+Banda 5150 – 5350 MHz: En esta banda el uso por el servicio móvil en sistemas de
+acceso inalámbrico incluyendo comunicaciones electrónicas y redes de área local, se
+restringe para su utilización únicamente en el interior de recintos. La potencia isotrópica
+radiada equivalente máxima será de 200 mW (p.i.r.e.), siendo la densidad máxima de
+p.i.r.e. media de 10 mW/MHz en cualquier banda de 1 MHz. Este valor se refiere a la
+potencia promediada sobre una ráfaga de transmisión ajustada a la máxima potencia.
 
-Perhaps someone can also confirm that the KCC documentation matches [4].
+Adicionalmente, en la banda 5250-5350 MHz el transmisor deberá emplear técnicas de
+control de potencia (TPC) que permitan como mínimo un factor de reducción de 3 dB de la
+potencia de salida. En caso de no usar estas técnicas, la potencia isotrópica radiada
+equivalente máxima deberá ser de 100 mW (p.i.r.e). Resto de características técnicas han
+de ajustarse a las indicadas en la Decisión de la CEPT ECC/DEC(04)08.
+Estas utilizaciones son de uso común, por lo que no se garantiza la protección frente a
+otros servicios legalmente autorizados ni puede causar perturbaciones a los mismos.
+[...]
+--end--
 
-[1]: http://www.intermec.com/public-files/product-profiles/en/Cisco1230AGAP_spec_web.pdf
-[2]: http://www.cisco.com/c/en/us/td/docs/wireless/wcs/3-2/configuration/guide/wcscfg32/wcscod.html
-[3]: http://www.arubanetworks.com/vrd/OutdoorMIMOVRD/wwhelp/wwhimpl/common/html/wwhelp.htm#context=OutdoorMIMOVRD&file=AppA.html
-[4]: http://rra.go.kr/board/law/view.jsp?lw_seq=187&lw_type=3
+Cc: John W. Linville <linville@tuxdriver.com>
+Cc: Luis R. Rodriguez <mcgrof@frijolero.org>
+Cc: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+---
+ db.txt | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/db.txt b/db.txt
-index 3d15930..19fd209 100644
+index 3d15930..92573d1 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -533,7 +533,7 @@ country KR: DFS-JP
-        (5170 - 5250 @ 80), (20)
-        (5250 - 5330 @ 80), (20), DFS
-        (5490 - 5710 @ 80), (30), DFS
--       (5735 - 5815 @ 80), (30)
-+       (5735 - 5835 @ 80), (30)
+@@ -316,9 +316,16 @@ country EG: DFS-ETSI
+ 	(5170 - 5250 @ 80), (20)
+ 	(5250 - 5330 @ 80), (20), DFS
+ 
++# Orden IET/787/2013, de 25 de abril, por la que se aprueba
++# el cuadro nacional de atribución de frecuencias.
++# http://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-4845
++#
++# more info at "Cuadro nacional de atribución de frecuencias (CNAF)":
++# http://www.minetur.gob.es/telecomunicaciones/espectro/paginas/cnaf.aspx
++
+ country ES: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (100 mW)
+-	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR
++	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
+ 	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS
+ 	(5470 - 5725 @ 80), (500 mW), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+-- 
+1.9.3
 
- country KW: DFS-ETSI
-        (2402 - 2482 @ 40), (20)
-
-
-On Mon, May 19, 2014 at 1:36 PM, John W. Linville
-<linville@tuxdriver.com> wrote:
->
-> On Tue, May 06, 2014 at 12:31:01AM -0700, Daiwei Li wrote:
-> > Hi Xose,
-> >
-> > Thanks for correcting my URL. I remember getting it from this page:
-> > http://wireless.kernel.org/en/developers/Regulatory/wireless-regdb
-> > although the links there are now the same as what you sent. I
-> > downloaded the latest release:
-> > https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.11.27.tar.gz
-> > and am still seeing the same frequencies for country code KR:
-> >
-> > daiweili@jfl: ~/wireless-regdb-2013.11.27 $ regdbdump regulatory.bin |
-> > less | grep KR  -A 10
-> > country KR:
-> > (2402.000 - 2482.000 @ 20.000), (N/A, 20.00)
-> > (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
-> > (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
-> > (5250.000 - 5330.000 @ 80.000), (N/A, 20.00), DFS
-> > (5490.000 - 5710.000 @ 80.000), (N/A, 30.00), DFS
-> > (5735.000 - 5815.000 @ 80.000), (N/A, 30.00)
-> >
-> > country KW:
-> > (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
-> > (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
-> >
-> > Should I submit a patch for review, or can I expect someone from this
-> > mailing list to validate my finding?
->
-> Let's have a patch, and maybe we can validate.  Can you identify your
-> source of information?
->
-> John
-> --
-> John W. Linville                Someday the world will need a hero, and you
-> linville@tuxdriver.com                  might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
