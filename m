@@ -1,20 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+Received: from mail-yh0-f49.google.com ([209.85.213.49])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1X2j3Q-0007bK-MV
- for wireless-regdb@lists.infradead.org; Thu, 03 Jul 2014 15:36:09 +0000
-Date: Thu, 3 Jul 2014 17:35:44 +0200
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
-Message-ID: <20140703153544.GC27687@wotan.suse.de>
-References: <1404302531-18132-1-git-send-email-janusz.dziedzic@tieto.com>
- <CAB=NE6WN=6cu1rfHjLV32bvwAY6tnW9wrpVx5WHfdu0SJMvC0A@mail.gmail.com>
- <CALhHN=pfaLS_Axuky82QkUy1yaJw7qd+_Sss5h3nti9Li2g1Fw@mail.gmail.com>
- <CALhHN=oDHmz4Y4ZZUbyCU=gsM5_J=X7GH90qpCA_nqsjv9eK+A@mail.gmail.com>
+ id 1XMZ3y-00080y-GT
+ for wireless-regdb@lists.infradead.org; Wed, 27 Aug 2014 08:58:43 +0000
+Received: by mail-yh0-f49.google.com with SMTP id b6so13255073yha.36 for
+ <wireless-regdb@lists.infradead.org>; Wed, 27 Aug 2014 01:58:20 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALhHN=oDHmz4Y4ZZUbyCU=gsM5_J=X7GH90qpCA_nqsjv9eK+A@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] crda: db2rd, parse/print CAC time
+In-Reply-To: <20140519203644.GL7650@tuxdriver.com>
+References: <5367850A.7060600@gmail.com>
+ <CALf=PEYzpx_EcqMEGRTHYkmR-92qEzKL2jDM0tRPEkdcpuAz9g@mail.gmail.com>
+ <20140519203644.GL7650@tuxdriver.com>
+Date: Wed, 27 Aug 2014 01:58:20 -0700
+Message-ID: <CALf=PEZWTmjb0De4m6UXg_PEh5beLk-O40_HXve273mC6ikcVQ@mail.gmail.com>
+From: Daiwei Li <daiweili@suitabletech.com>
+Subject: Re: [wireless-regdb] KR Country Code Allowed Frequencies
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,51 +29,79 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Xose Vazquez Perez <xose.vazquez@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 03, 2014 at 08:34:37AM +0200, Janusz Dziedzic wrote:
-> On 3 July 2014 08:26, Janusz Dziedzic <janusz.dziedzic@tieto.com> wrote:
-> > On 3 July 2014 00:06, Luis R. Rodriguez <mcgrof@do-not-panic.com> wrote:
-> >> On Wed, Jul 2, 2014 at 5:02 AM, Janusz Dziedzic
-> >> <janusz.dziedzic@tieto.com> wrote:
-> >>> db2rd, parse and print DFS CAC time
-> >>>
-> >>> Signed-off-by: Janusz Dziedzic <janusz.dziedzic@tieto.com>
-> >>
-> >>
-> >> This doesn't print the DFS CAC if its a in a line like this:
-> >>
-> >> (5250 - 5330 @ 0), (20), (60000), DFS, AUTO-BW
-> >>
-> > will check this, BTW BW=0 is not allowed I think.
+Resending, as my previous e-mail got rejected due to HTML content.
+Here's a patch:
+
+wireless-regdb: Update KR rule to include 5825MHz
+
+The Juniper WLA532-WW allows the setting of channel 165
+for country code KR. Various Cisco documentation sources [1],[2]
+state that 5825 MHz is allowed for country code KR. Aruba's documentation [3]
+states the same.
+
+Perhaps someone can also confirm that the KCC documentation matches [4].
+
+[1]: http://www.intermec.com/public-files/product-profiles/en/Cisco1230AGAP_spec_web.pdf
+[2]: http://www.cisco.com/c/en/us/td/docs/wireless/wcs/3-2/configuration/guide/wcscfg32/wcscod.html
+[3]: http://www.arubanetworks.com/vrd/OutdoorMIMOVRD/wwhelp/wwhimpl/common/html/wwhelp.htm#context=OutdoorMIMOVRD&file=AppA.html
+[4]: http://rra.go.kr/board/law/view.jsp?lw_seq=187&lw_type=3
+
+diff --git a/db.txt b/db.txt
+index 3d15930..19fd209 100644
+--- a/db.txt
++++ b/db.txt
+@@ -533,7 +533,7 @@ country KR: DFS-JP
+        (5170 - 5250 @ 80), (20)
+        (5250 - 5330 @ 80), (20), DFS
+        (5490 - 5710 @ 80), (30), DFS
+-       (5735 - 5815 @ 80), (30)
++       (5735 - 5835 @ 80), (30)
+
+ country KW: DFS-ETSI
+        (2402 - 2482 @ 40), (20)
+
+
+On Mon, May 19, 2014 at 1:36 PM, John W. Linville
+<linville@tuxdriver.com> wrote:
+>
+> On Tue, May 06, 2014 at 12:31:01AM -0700, Daiwei Li wrote:
+> > Hi Xose,
 > >
-> 
-> Did such test:
-> country AE: DFS-FCC
->         (2402 - 2482 @ 40), (20)
->         (5170 - 5250 @ 80), (17)
->         (5250 - 5330 @ 0), (24), (60000), DFS, AUTO-BW
->         (5490 - 5730 @ 80), (24), DFS
->         (5735 - 5835 @ 80), (30)
-> 
-> And get:
-> ./db2rd < db.txt
-> 
-> country AE: DFS-FCC
->     (2402.000 - 2482.000 @ 40.000), (20.00), (N/A)
->     (5170.000 - 5250.000 @ 80.000), (17.00), (N/A)
->     (5250.000 - 5330.000 @ 0.000), (24.00), (60000), DFS, AUTO-BW
->     (5490.000 - 5730.000 @ 80.000), (24.00), (N/A), DFS
->     (5735.000 - 5835.000 @ 80.000), (30.00), (N/A)
-> 
-> Seems works fine. Did you install reglib, could be you are using old one?
-> I am using x86_64.
-
-Heh yeah that's the issue, sorry, patch pushed!
-
-  Luis
+> > Thanks for correcting my URL. I remember getting it from this page:
+> > http://wireless.kernel.org/en/developers/Regulatory/wireless-regdb
+> > although the links there are now the same as what you sent. I
+> > downloaded the latest release:
+> > https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2013.11.27.tar.gz
+> > and am still seeing the same frequencies for country code KR:
+> >
+> > daiweili@jfl: ~/wireless-regdb-2013.11.27 $ regdbdump regulatory.bin |
+> > less | grep KR  -A 10
+> > country KR:
+> > (2402.000 - 2482.000 @ 20.000), (N/A, 20.00)
+> > (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
+> > (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
+> > (5250.000 - 5330.000 @ 80.000), (N/A, 20.00), DFS
+> > (5490.000 - 5710.000 @ 80.000), (N/A, 30.00), DFS
+> > (5735.000 - 5815.000 @ 80.000), (N/A, 30.00)
+> >
+> > country KW:
+> > (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
+> > (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
+> >
+> > Should I submit a patch for review, or can I expect someone from this
+> > mailing list to validate my finding?
+>
+> Let's have a patch, and maybe we can validate.  Can you identify your
+> source of information?
+>
+> John
+> --
+> John W. Linville                Someday the world will need a hero, and you
+> linville@tuxdriver.com                  might be all we have.  Be ready.
 
 _______________________________________________
 wireless-regdb mailing list
