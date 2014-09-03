@@ -1,27 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XPAYy-0008KZ-8I
- for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:25:28 +0000
+ id 1XPARC-0002qY-7y
+ for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:17:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1409750729; x=1441286729;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=nrRaWogxwjX2501+FQs/Pf3rS0KyLMOiXQJcXNkyqiI=;
- b=oArtuPLj4E6grQPNMae6JWLWWyyADra3zIHyBdJdHaTwXED6iKaEo8yl
- unWaP76rqe/Afnbo1B4VEgBFA5+N6/jQbqD1gB323K4ovRfWEK9r9tPSh
- 3t63PRdmkU/i5LyRLlfo0ShU37mC/CWK074MipKVK25d8J7KHsTYU6qzi k=;
-Date: Wed, 3 Sep 2014 16:25:01 +0300
+ s=qcdkim; t=1409750246; x=1441286246;
+ h=date:from:to:cc:subject:message-id:mime-version;
+ bh=iHPyNEY50RYZ4zTWYmlwvNxPl+Xovx4UU+ejJ1h5RbE=;
+ b=uJGV1z0OST5HNJRSCpH7qm9NHoLYOsVF3Tuf92H2MxkdHmROKFPIvr3U
+ OoBBsqgzPokApIxXyEBHeSw0a9SyVTkdwDIWgz3OLTYo7RCdXnub5cgzI
+ riAmM7w6U5iHmdI4RSh+IMHWLRbzkEz+DIl0VxaK/MgzarNMSppQua71h k=;
+Date: Wed, 3 Sep 2014 16:17:00 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140903132501.GA15621@jouni.qca.qualcomm.com>
-References: <20140903131329.GA16147@jouni.qca.qualcomm.com>
+Message-ID: <20140903131700.GA16284@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20140903131329.GA16147@jouni.qca.qualcomm.com>
-Subject: [wireless-regdb] [PATCH v2 05/12] wireless-regdb: Update Saint
- Barthelemy (BL) regulatory rules
+Subject: [wireless-regdb] [PATCH 12/12] wireless-regdb: Add Wallis and
+ Futuna (WF) regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,39 +34,33 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: "John W. Linville" <linville@tuxdriver.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 French Jurisdiction, follows ETSI rules per R&TTE Directive.
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
-
-v2: Looks like something did not exactly like the non-ASCII character in
-the subject, so lets try with ASCII-only..
-
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index c1c70cc..980b193 100644
+index fab91f2..757040b 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -138,10 +138,11 @@ country BH: DFS-JP
- 	(5250 - 5330 @ 80), (20), DFS
- 	(5735 - 5835 @ 80), (20)
+@@ -1034,6 +1034,12 @@ country VU: DFS-FCC
+ 	(5490 - 5730 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
--country BL:
-+country BL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 40), (18)
--	(5250 - 5330 @ 40), (18), DFS
++country WF: DFS-ETSI
++	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20)
 +	(5250 - 5330 @ 80), (20), DFS
 +	(5490 - 5710 @ 80), (27), DFS
- 
- country BN: DFS-JP
++
+ country YE:
  	(2402 - 2482 @ 40), (20)
+ 
 -- 
 1.9.1
 
