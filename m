@@ -1,24 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
+Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XPARC-0002qY-7y
- for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:17:26 +0000
+ id 1XPAQq-0002k4-Nu
+ for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:17:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1409750246; x=1441286246;
+ s=qcdkim; t=1409750226; x=1441286226;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=iHPyNEY50RYZ4zTWYmlwvNxPl+Xovx4UU+ejJ1h5RbE=;
- b=uJGV1z0OST5HNJRSCpH7qm9NHoLYOsVF3Tuf92H2MxkdHmROKFPIvr3U
- OoBBsqgzPokApIxXyEBHeSw0a9SyVTkdwDIWgz3OLTYo7RCdXnub5cgzI
- riAmM7w6U5iHmdI4RSh+IMHWLRbzkEz+DIl0VxaK/MgzarNMSppQua71h k=;
-Date: Wed, 3 Sep 2014 16:17:00 +0300
+ bh=NVk0/m02LkUGp6mgz21dhgCvzJ1cc/n42/TDW+VcjXM=;
+ b=u8SHVsY0psLrzDMT9lZXil1TRyPfomE1Y9j/gEGALfb1H0EzTazZPr6U
+ G5x8ZynegyKT/cXS3L+ttqndanBdAvxFKjENdYWoBjAsD8/R4cOElt6PH
+ joCTmMJaLNMlCNE9YPcV5krW+9UFsuBkeBCOdK4HN9BB/Woip6LkV7Vw9 c=;
+Date: Wed, 3 Sep 2014 16:16:38 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140903131700.GA16284@jouni.qca.qualcomm.com>
+Message-ID: <20140903131604.GA16255@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 12/12] wireless-regdb: Add Wallis and
- Futuna (WF) regulatory rules
+Subject: [wireless-regdb] [PATCH 11/12] wireless-regdb: Add Turks and
+ Caicos (TC) regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,30 +37,34 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-French Jurisdiction, follows ETSI rules per R&TTE Directive.
+Source:
+http://www.telecommission.tc/Spectrum-plan20110324-101210.html
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 6 ++++++
- 1 file changed, 6 insertions(+)
+ db.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index fab91f2..757040b 100644
+index 2d60241..fab91f2 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1034,6 +1034,12 @@ country VU: DFS-FCC
- 	(5490 - 5730 @ 80), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+country WF: DFS-ETSI
-+	(2402 - 2482 @ 40), (20)
-+	(5170 - 5250 @ 80), (20)
-+	(5250 - 5330 @ 80), (20), DFS
-+	(5490 - 5710 @ 80), (27), DFS
-+
- country YE:
+@@ -906,6 +906,15 @@ country SV: DFS-FCC
+ country SY:
  	(2402 - 2482 @ 40), (20)
  
++# Source:
++# http://www.telecommission.tc/Spectrum-plan20110324-101210.html
++country TC: DFS-FCC
++	(2402 - 2482 @ 40), (20)
++	(5170 - 5250 @ 80), (24)
++	(5250 - 5330 @ 80), (24), DFS
++	(5490 - 5730 @ 80), (24), DFS
++	(5735 - 5835 @ 80), (30)
++
+ country TD: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
 -- 
 1.9.1
 
