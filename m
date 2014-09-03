@@ -2,23 +2,23 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XPAPw-0002VC-W2
- for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:16:09 +0000
+ id 1XPAPF-0001uq-K1
+ for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:15:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1409750169; x=1441286169;
+ s=qcdkim; t=1409750125; x=1441286125;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=3tHO0ht3r34afcHEBqu+cqs4a9bxUhURiqT7o1BPpLw=;
- b=Y+qDgH00d9e1bnzmrI6bgD2dIWtAYUOIkZata31wSshsemrWomdozdQx
- zHcZuh1ajWqGBKy+XzCQilX6Rt3oE7NqozXl23NbWdxwDQUs3SlQ+n9ii
- oMzHsxaikSJlqger3j7l4JafbPkWG7LIHAOlaFpnlN/biJWgQQk6UFz9n 4=;
-Date: Wed, 3 Sep 2014 16:15:42 +0300
+ bh=1BKXMpFEzG3VnwS2M6enFqZlXrgWLbXh5is/gV321GM=;
+ b=E/0w+MoSPIa/Nvrr/pja1L7diCVoJ027T1D/UD3X3eBwZygfAVsj/nm7
+ w0irbR0WRBFjp4TvU9Ef5HLPERTtBxwF0MMpDL8svRJ0is+or/nw+pgsS
+ x+X7AmasZzRY8J6xn523PAfwL6cJ573nF2l3ApMLpQqKJPA6qsFH3kEUU U=;
+Date: Wed, 3 Sep 2014 16:14:58 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140903131542.GA16237@jouni.qca.qualcomm.com>
+Message-ID: <20140903131458.GA16201@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 10/12] wireless-regdb: Add Saint Vincent
- and the Grenadines (VC) regulatory rules
+Subject: [wireless-regdb] [PATCH 08/12] wireless-regdb: Add Saint Kitts and
+ Nevis (KN) regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,32 +38,33 @@ Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 Source:
-http://www.ntrc.vc/regulations/Jun_2006_Spectrum_Managment_Regulations.pdf
+http://ntrc.kn/?page_id=7
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ db.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 2d0988a..2d60241 100644
+index 7e34611..77b1773 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -992,6 +992,14 @@ country UZ: DFS-ETSI
+@@ -538,6 +538,15 @@ country KH: DFS-ETSI
  	(5250 - 5330 @ 80), (20), DFS
+ 	(5490 - 5710 @ 80), (27), DFS
  
- # Source:
-+# http://www.ntrc.vc/regulations/Jun_2006_Spectrum_Managment_Regulations.pdf
-+country VC: DFS-ETSI
++# Source
++# http://ntrc.kn/?page_id=7
++country KN: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20)
 +	(5250 - 5330 @ 80), (20), DFS
-+	(5490 - 5710 @ 80), (27), DFS
++	(5490 - 5710 @ 80), (30), DFS
++	(5735 - 5815 @ 80), (30)
 +
-+# Source:
- # Official Gazette (Gaceta Oficial) concerning Unlicensed transmitter use
- # (10 June 2013)
- # http://www.conatel.gob.ve/
+ country KP: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
 -- 
 1.9.1
 
