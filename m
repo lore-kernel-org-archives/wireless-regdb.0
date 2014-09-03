@@ -2,22 +2,22 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XPANR-0000ga-CU
- for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:13:34 +0000
+ id 1XPAL5-0000Fb-4T
+ for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:11:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1409750014; x=1441286014;
+ s=qcdkim; t=1409749868; x=1441285868;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=AP7wB0QHvV+15sABEFGOB0U0e16PNYbLDdnrTc+N9iI=;
- b=TCcF5HRO8YnmLnmP/n3Bf6kFA3C7u6dO09ts/k2v7AquqTzv+xRvb5bF
- 4rusooaVt6aPEZh/mIPDyy193yyFyrQCaPYXtJfxtX6gVqcfAiKfvOHnW
- IeNOsJMQAS+lWEJBCPBlgglKqtxM7tHO9gRmK0ec9cc4mpVR7ozYrmDac E=;
-Date: Wed, 3 Sep 2014 16:13:07 +0300
+ bh=Ygtf3m9CO4pVkCLZaAkdlvBt/Ykhg83F9naFkZOTdB4=;
+ b=Z5DrUC/vHeFFPs3cLST4HUYMV8o/Kns2WIIGUOP/5O1k000a+fPzZLeh
+ ccx4kmdRFPrVaYRpg4+EUA2fU36fDl7moYP9YFwirrPIPSHn13gP1Iiq2
+ rsDNFleACfWay0F01NiV6AAs8dRqyFcDM5YRDhoWFIfr7e3FlicyQFsYd Q=;
+Date: Wed, 3 Sep 2014 16:10:39 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20140903131307.GA16129@jouni.qca.qualcomm.com>
+Message-ID: <20140903131039.GA15922@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH 04/12] wireless-regdb: Add Moldova (MD)
+Subject: [wireless-regdb] [PATCH 03/12] wireless-regdb: Add Lesotho (LS)
 	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -38,7 +38,7 @@ Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 Source:
-http://www.cnfr.md/index.php?pag=sec&id=117&l=en
+http://lca.org.ls/images/documents/lesotho_national_frequency_allocation_plan.pdf
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
@@ -46,24 +46,24 @@ Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
  1 file changed, 8 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 90ed48b..c1c70cc 100644
+index 1327e60..90ed48b 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -623,6 +623,14 @@ country MA: DFS-ETSI
- 	(5250 - 5330 @ 80), (20), DFS
+@@ -579,6 +579,14 @@ country LK: DFS-FCC
+ 	(5490 - 5730 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
- # Source:
-+# http://www.cnfr.md/index.php?pag=sec&id=117&l=en
-+country MD: DFS-ETSI
++# Source:
++# http://lca.org.ls/images/documents/lesotho_national_frequency_allocation_plan.pdf
++country LS: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20)
 +	(5250 - 5330 @ 80), (20), DFS
 +	(5490 - 5710 @ 80), (27), DFS
 +
-+# Source:
- # http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
- country ME: DFS-ETSI
+ country LT: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20)
 -- 
 1.9.1
 
