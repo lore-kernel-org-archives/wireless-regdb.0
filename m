@@ -1,21 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XPaTD-0000Gm-Hh
- for wireless-regdb@lists.infradead.org; Thu, 04 Sep 2014 17:05:18 +0000
-Date: Thu, 4 Sep 2014 19:04:51 +0200
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
-Message-ID: <20140904170451.GX3347@wotan.suse.de>
-References: <20140903131518.GA16219@jouni.qca.qualcomm.com>
- <1409817831.16449.5.camel@jlt4.sipsolutions.net>
- <20140904101727.GA3498@jouni.qca.qualcomm.com>
- <1409826220.16449.6.camel@jlt4.sipsolutions.net>
+ id 1XPAO1-0000oC-7c
+ for wireless-regdb@lists.infradead.org; Wed, 03 Sep 2014 13:14:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1409750049; x=1441286049;
+ h=date:from:to:cc:subject:message-id:mime-version;
+ bh=MF6YzliqNPyYB0GN9mqYYnUgx0ZzjYFu+OkWx7Kf+p8=;
+ b=qLfdfKXndZyps9gQ1akAvEhgCI/oCVtSpDpX3Gbq5BPCMDb7372FaRxw
+ +fWkWg1pDje0QVX1oSjlDnU0d3QT9KbEFraH7HoPRKNEZuXT874lONbIv
+ wDyHr9hapMqYTawX6vj9rN1c0NcTXutbtMmEYAbQb29/z0qYBWUjngjZ2 0=;
+Date: Wed, 3 Sep 2014 16:13:29 +0300
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Message-ID: <20140903131329.GA16147@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1409826220.16449.6.camel@jlt4.sipsolutions.net>
-Subject: Re: [wireless-regdb] [PATCH 09/12] wireless-regdb: Add Saint
-	Lucia	(LC) regulatory rules
+Subject: [wireless-regdb] [PATCH
+ 05/12]=?UTF-8?q?wireless-regdb:=20Update=20Saint=20Barth?=
+ =?UTF-8?q?=C3=A9lemy=20(BL)=20regulatory=20rules?=
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,35 +34,42 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: linux-wireless@vger.kernel.org, Jouni Malinen <jouni@qca.qualcomm.com>, "John W. Linville" <linville@tuxdriver.com>, wireless-regdb@lists.infradead.org
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Sep 04, 2014 at 12:23:40PM +0200, Johannes Berg wrote:
-> On Thu, 2014-09-04 at 13:17 +0300, Jouni Malinen wrote:
-> > On Thu, Sep 04, 2014 at 10:03:51AM +0200, Johannes Berg wrote:
-> > > On Wed, 2014-09-03 at 16:15 +0300, Jouni Malinen wrote:
-> > > > Source:
-> > > > http://www.ntrc.org.lc/operational_structures.htm
-> > > 
-> > > Out of curiosity, I clicked the URL, but it seems empty/dead? :)
-> > 
-> > Hmm.. It looks like all of www.ntrc.org.lc is in somewhat strange state
-> > at the moment. If I remember correctly, I did test this link earlier
-> > myself and it worked, so that may be a temporary issue (it returns a
-> > somewhat interesting javascript design to display ads or domain parking
-> > info, etc., and that does clearly work either; anyway, not something
-> > that one would hope to see from a regulatory commission website). I'd
-> > hope that this gets resolved eventually, but if desired, I can remove
-> > that source link as well based on its current state.
-> 
-> Yes, indeed, it does seem to be messed up completely. I think leaving
-> the link is fine - for now at least archive.org has a copy so knowing
-> where it was is still useful.
+French Jurisdiction, follows ETSI rules per R&TTE Directive.
 
-Did Putin invade?
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-  Luis
+diff --git a/db.txt b/db.txt
+index c1c70cc..980b193 100644
+--- a/db.txt
++++ b/db.txt
+@@ -138,10 +138,11 @@ country BH: DFS-JP
+ 	(5250 - 5330 @ 80), (20), DFS
+ 	(5735 - 5835 @ 80), (20)
+ 
+-country BL:
++country BL: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 40), (18)
+-	(5250 - 5330 @ 40), (18), DFS
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5490 - 5710 @ 80), (27), DFS
+ 
+ country BN: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+-- 
+1.9.1
+
+
+-- 
+Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 wireless-regdb mailing list
