@@ -1,26 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wi0-x22f.google.com ([2a00:1450:400c:c05::22f])
+Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XGpgM-0005Ys-LJ
- for wireless-regdb@lists.infradead.org; Mon, 11 Aug 2014 13:30:39 +0000
-Received: by mail-wi0-f175.google.com with SMTP id ho1so4239157wib.8 for
- <wireless-regdb@lists.infradead.org>; Mon, 11 Aug 2014 06:30:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=from:to:cc:subject:date:message-id:mime-version:content-type
- :content-transfer-encoding;
- bh=9J6OF+L/evG+Hc4uuYaDpbf1HcU1rrfIUKekt7zMa4Q=;
- b=VzVn7OzIpqaOTLwZqiCJ46PSaO7IOWTayHB+gQrW9eEOYtCgU0OaLq73kxoTLDKjGg
- 6xnE3QgwIDJIe924cKKoj8zLVPgvgX2CsKlQQMbLmW7QYwTnH0Ji3j3vHyqTR971ZmOO
- ePxEe9v026+VVrik9Zkn37Z0lXkPgJNG2pLhMl/gUqFfBa0issavoCe2PNA53JmRgJX7
- QW9nvFRT0WYGpaTqcsaSPQDFXFoWndQC6Qq2mjZZ87iuSGFYM46LB1FO38TeJL51NcWd
- JyuZXk9Z+HHEP4WkzVqlUY8bxSjgTL9S50GuqruqQA46xJwcU+HfyXDzgafodpnPEVz/ J/3A==
-From: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Date: Mon, 11 Aug 2014 15:29:55 +0200
-Message-Id: <1407763795-8571-1-git-send-email-xose.vazquez@gmail.com>
+ id 1XQ1Qh-0008EY-RJ
+ for wireless-regdb@lists.infradead.org; Fri, 05 Sep 2014 21:52:30 +0000
+Date: Fri, 5 Sep 2014 23:52:03 +0200
+From: "Luis R. Rodriguez" <mcgrof@suse.com>
+Message-ID: <20140905215203.GF17986@wotan.suse.de>
+References: <1401468984-24575-1-git-send-email-rostislav.lisovy@fel.cvut.cz>
+ <1401468984-24575-2-git-send-email-rostislav.lisovy@fel.cvut.cz>
+ <1401825693.4157.44.camel@jlt4.sipsolutions.net>
+ <20140603221837.GU26450@wotan.suse.de> <1402323702.11505.18.camel@umadbro>
+ <CAB=NE6Wi+SLPSuGiGeFpJO4FVHfHpSpsDfsccAi9cPyhmL6NwQ@mail.gmail.com>
+ <8761iccnst.fsf@steelpick.2x.cz>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH try2] wireless-regdb: change to 200mW
-	Max_EIRP in 5150-5250 for ES (Spain)
+Content-Disposition: inline
+In-Reply-To: <8761iccnst.fsf@steelpick.2x.cz>
+Subject: Re: [wireless-regdb] Regulatory of 5.9 GHz band and OCB mode (was:
+	[RFC 1/4]	cfg80211: Add channel flags limiting availability
+	to OCB mode only)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,67 +33,213 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-Cc: "Luis R. Rodriguez" <mcgrof@frijolero.org>, wireless-regdb@lists.infradead.org, Xose Vazquez Perez <xose.vazquez@gmail.com>, "John W. Linville" <linville@tuxdriver.com>, linux-wireless@vger.kernel.org
+To: Michal Sojka <sojkam1@fel.cvut.cz>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Emmanuel Thierry <emmanuel.thierry@yogoko.fr>, jan-niklas.meier@volkswagen.de, linux-wireless <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "John W.
+ Linville" <linville@tuxdriver.com>, Liraz Perelmooter <liraz.perelmooter@intel.com>, Rostislav Lisovy <lisovy@gmail.com>, s.sander@nordsys.de, Rostislav Lisovy <rostislav.lisovy@fel.cvut.cz>, Thierry Ernst <thierry.ernst@yogoko.fr>, Johannes Berg <johannes@sipsolutions.net>, Michael Green <green@qti.qualcomm.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-http://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-4845
-http://www.boe.es/boe/dias/2013/05/09/pdfs/BOE-A-2013-4845.pdf
+On Fri, Aug 01, 2014 at 04:00:34PM +0200, Michal Sojka wrote:
+> Dear Luis and others,
+> 
+> I work with Rostislav on the Linux support of ITS-G5. I did some
+> research on the regulatory staff for 5.9 GHz band. See my findings below
+> and sorry for long delay of my reply.
 
---cut--
-UN – 128 RLANs en 5 GHz
+I'm a bit late on mine as well.
 
-[...]
-Banda 5150 – 5350 MHz: En esta banda el uso por el servicio móvil en sistemas de
-acceso inalámbrico incluyendo comunicaciones electrónicas y redes de área local, se
-restringe para su utilización únicamente en el interior de recintos. La potencia isotrópica
-radiada equivalente máxima será de 200 mW (p.i.r.e.), siendo la densidad máxima de
-p.i.r.e. media de 10 mW/MHz en cualquier banda de 1 MHz. Este valor se refiere a la
-potencia promediada sobre una ráfaga de transmisión ajustada a la máxima potencia.
+> On Tue, Jun 10 2014, Luis R. Rodriguez wrote:
+> > On Mon, Jun 9, 2014 at 7:21 AM, Rostislav Lisovy <lisovy@gmail.com> wrote:
+> >> Dear Luis;
+> >> Thank you for the introduction in the wireless-regdb mailing-list.
+> >>
+> >> On Wed, 2014-06-04 at 00:18 +0200, Luis R. Rodriguez wrote:
+> >>> Rostislav, can you provide documentation references which would
+> >>> clarify
+> >>> the stance on 802.11p and restrictions for only allowing  OCB mode?
+> >>
+> >> If I may cite the 802.11-2012 standard:
+> >> -- 1st Quote
+> >> 4.3.11 STA transmission of data frames outside the context of a BSS
+> >>
+> >> Communication of data frames when dot11OCBActivated is true might take
+> >> place in a frequency band that is dedicated for its use, and such a band
+> >> might require licensing depending on the regulatory domain. A STA for
+> >> which dot11OCBActivated is true initially transmits and receives on a
+> >> channel known in advance, either through regulatory designation or some
+> >> other out-of-band communication.
+> >> -- End of quote
+> >
+> > OK the spec does not rule out communication on that special band for
+> > regular operation as such that special band is mentioned in the
+> > context of OCB communication, but it does say that the frequency range
+> > may be licensed. As it stands the public wireless-regdb only covers
+> > unlicensed frequency ranges, but it obviously can support licensed
+> > frequency ranges, just that the distribution mechanism and integration
+> > of the wireless-regdb files then would have to be done separately
+> > through separate distributors -- ie, not upstream. If the OCB bands
+> > are unlicensed then we can surely add them to wireless-regdb, however
+> > it remains unclear if those bands are unlicensed if we can use them
+> > for regular non OCB communication.
+> >
+> > Follow this logic to move forward then:
+> >
+> >   * Poke folks to see if the US band for OCB is licensed or unlicensed
+> >   * Poke folks to see if the EU band for OCB is licensed or unlicensed
+> 
+> I only researched status in the EU. In summary, the band is unlicensed.
+> 
+> The relevant document for Europe is 2008/671/EC (see below). This was
+> confirmed to us by Czech Telecommunication Office which is responsible
+> for the administration of radio frequencies in the Czech republic.
+> 
+> The document can be found at
+> http://www.erodocdb.dk/docs/doc98/official/pdf/2008671EC.pdf and its
+> full name is "2008/671/EC, Commission Decision of 5 August 2008 on the
+> harmonised use of radio spectrum in the 5 875-5 905 MHz frequency band
+> for safety-related applications of Intelligent Transport Systems (ITS)".
+> 
+>   Few quotes from the document:
+> 
+>   Article 3 §1:
+> 
+>         Member States shall, not later than six months after entry
+>         into force of this Decision, designate the frequency band
+>         5 875-5 905 MHz for Intelligent Transport Systems and, as
+>         soon as reasonably practicable following such designation,
+>         make that frequency band available on a non-exclusive
+>         basis.
+> 
+>         Such designation shall be in compliance with the
+>         parameters set out in the Annex.
+> 
+>   Annex:
+> 
+>         Maximum spectral power density (mean e.i.r.p.): 23 dBm/MHz
+>         Maximum total transmit power (mean e.i.r.p.):   33 dBm
+>         Channel access and occupation rules:
+> 
+>             Techniques to mitigate interference that provide at least
+>             equivalent performance to the techniques described in
+>             harmonised standards adopted under Directive 1999/5/EC
+>             must be used. These require a transmitter power control
+>             (TPC) range of at least 30 dB.
+> 
+>   Intro (8):
+> 
+>         Harmonised standard EN 302 571 [...], thus ensuring that
+>         compliant ITS equipment avoids causing harmful interference.
+> 
+>   The EN 302 571 standard describes in detail the technical parameters
+>   mentioned above. See
+>   http://www.etsi.org/deliver/etsi_en/302500_302599/302571/01.01.01_60/en_302571v010101p.pdf
+> 
+>   This all means that the band in unlicensed and can be used by anybody
+>   compliant with the annex parameters. This interpretation was explicitly
+>   confirmed by Czech Telecommunication Office.
+> 
+> I've also found the document ECC/DEC/(08)01 (see below) which predates
+> 2008/671/EC, but since it also mentions 2008/671/EC it seems it is
+> basically the same thing.
+> 
+> ECC Decision of 14 March 2008 on the harmonised use of the 5875-5925
+> MHz frequency band for Intelligent Transport Systems (ITS)
+> 
+>   (ECC/DEC/(08)01) (2008/671/EC)
+> 
+>   [http://www.erodocdb.dk/docs/doc98/official/Pdf/ECCDec0801.pdf]
+> 
+>   The document, among others, says:
+> 
+>   3. that CEPT administrations shall designate the frequency sub-band
+>      5875-5905 MHz on a non-exclusive basis for ITS road safety
+>      applications;
+> 
+>   8. that CEPT administrations shall exempt in-vehicle ITS equipment
+>      from individual licensing;
 
-Adicionalmente, en la banda 5250-5350 MHz el transmisor deberá emplear técnicas de
-control de potencia (TPC) que permitan como mínimo un factor de reducción de 3 dB de la
-potencia de salida. En caso de no usar estas técnicas, la potencia isotrópica radiada
-equivalente máxima deberá ser de 100 mW (p.i.r.e). Resto de características técnicas han
-de ajustarse a las indicadas en la Decisión de la CEPT ECC/DEC(04)08.
-Estas utilizaciones son de uso común, por lo que no se garantiza la protección frente a
-otros servicios legalmente autorizados ni puede causar perturbaciones a los mismos.
-[...]
---end--
+Awesome work
 
-Cc: John W. Linville <linville@tuxdriver.com>
-Cc: Luis R. Rodriguez <mcgrof@frijolero.org>
-Cc: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
----
- db.txt | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+> >   * If the bands are *not licensed* there is one corner case that I
+> > still think should be reviewed by regulatory folks: having an OCB
+> > frequency range unlicensed under the current reading of the
+> > specification of 802.11-2012 means that 802.11 devices *can* use them
+> > for OCB, however if OCB is not enabled on the device it seems to be
+> > that OCB bands can be used for non OCB communication. Furthermore
+> > 4.3.11 seems to be saying that it is only optional to use a dedicated
+> > frequency for OCB, OCB can happen on other frequency ranges.
+> 
+> I see it similarly.
+> 
+> The use of OCB is not a regulatory requirement. As it was mentioned by
+> Rostislav, IEEE 802.11-2012 specifies in section "E.2.4 5.9 GHz band in
+> Europe (5.855–5.925 GHz)":
+> 
+>     STAs shall have dot11OCBActivated set to true.
+> 
+> Section 4.3.11 then reads:
+> 
+>     When dot11OCBActivated is true, a STA is not a member of a BSS and
+>     it does not utilize the IEEE 802.11 authentication, association,
+>     or data confidentiality services.
+> 
+> Note that magic words like "shall" or "should" are not present in this
+> text.
+> 
+> I would interpret this as that OCB mode should be forced in the
+> 5.855–5.925 GHz band (i.e. hard-coded in the Linux kernel) and that no
+> other modes should be allowed there.
 
-diff --git a/db.txt b/db.txt
-index 3d15930..92573d1 100644
---- a/db.txt
-+++ b/db.txt
-@@ -316,9 +316,16 @@ country EG: DFS-ETSI
- 	(5170 - 5250 @ 80), (20)
- 	(5250 - 5330 @ 80), (20), DFS
- 
-+# Orden IET/787/2013, de 25 de abril, por la que se aprueba
-+# el cuadro nacional de atribución de frecuencias.
-+# http://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-4845
-+#
-+# more info at "Cuadro nacional de atribución de frecuencias (CNAF)":
-+# http://www.minetur.gob.es/telecomunicaciones/espectro/paginas/cnaf.aspx
-+
- country ES: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
--	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
- 	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS
- 	(5470 - 5725 @ 80), (500 mW), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
--- 
-1.9.3
+There I disagree, if its not a regulatory requirement forcing something
+on Linux is prone to be hacked around, so to avoid issues also with
+regulatory bodies what we do is enable R&D folks to use certain features
+undera CONFIG_CFG80211_CERTIFICATION_ONUS so I think a reasonable compromise
+is that by default Linux ships with what you say but we enable researchers
+and developers to customie their kernels and use the OCB bands for other
+purposes. That doesn't mean we need to support it -- it just means if
+someone wants to hack on the code to do it we should give them the freedom
+to do so. That means we can ignore OCB bands for non-OCB purposes for now
+completely and just let whoever wants to do something different to use
+CONFIG_CFG80211_CERTIFICATION_ONUS. I can also see conflicts with non
+OCB devices on OCB bands so its importan for us to not fuck with that
+loosely too.
 
+> Section 10.20 uses proper words:
+> 
+>     When a STA joins a BSS, it shall set dot11OCBActivated to false. The STA
+>     shall keep dot11OCBActivated false while joined with the BSS or while
+>     the STA is the AP within a BSS. If a STA does not include the
+>     dot11OCBActivated MIB attribute, the STA shall operate as if the
+>     attribute is false.
+> 
+> The other question is whether OCB mode should be allowed in other
+> frequency bands. As far as I know, nothing prevents it.
+
+OK -- again CONFIG_CFG80211_CERTIFICATION_ONUS :) if someone decides
+to tinker lets let them. But Linux by default should be have IEEE
+compliant and regulatory compliant.
+
+> >> -- 2nd Quote
+> >> Annex E (normative) Country elements and operating classes
+> >> E.2.3 5.9 GHz band in the United States (5.850–5.925 GHz)
+> >> ...
+> >> STAs shall have dot11OCBActivated set to true.
+> >
+> > So all STAs in the US wil have OCB activated? I fail to understand how
+> > Annex E should be read in the context of operating classes.
+> >
+> >> E.2.4 5.9 GHz band in Europe (5.855–5.925 GHz)
+> >> STAs shall have dot11OCBActivated set to true.
+> >
+> > Ditto.
+> 
+> I understand that dot11OCBActivated can be changed at runtime. STAs
+> operating in the mentioned band "shall have dot11OCBActivated set to
+> true".
+
+Cool, thanks for all your work on this. Folks -- hope this helps,
+chug on.
+
+  Luis
 
 _______________________________________________
 wireless-regdb mailing list
