@@ -1,24 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XhEFQ-0004AT-QU
- for wireless-regdb@lists.infradead.org; Thu, 23 Oct 2014 08:59:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1414054797; x=1445590797;
- h=date:from:to:cc:subject:message-id:mime-version;
- bh=mKo9FifSmBasj4lwY2/trjrbv/1Veo6tUzZe9r9wBzg=;
- b=fALSdtwU1LnEadu7WdfztX/39E471C1LAQuDctKGtAi4PXcTAD1WaCbp
- Rz2BFoqwN0bIPrW5O8Y9ly+TSViQa5Ha9yCU3r6ERq/DdR4KDoRWlktG2
- ngSpEt0ZBKsv4nYCbQbw3Xcvq5pzXnlXSZrOi5q9Uds5HO2JzA3yPtR+U I=;
-Date: Thu, 23 Oct 2014 11:59:28 +0300
-From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20141023085928.GA2716@jouni.qca.qualcomm.com>
+Received: from charlotte.tuxdriver.com ([70.61.120.58]
+ helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
+ #2 (Red Hat Linux)) id 1XbVZc-0006in-4S for
+ wireless-regdb@lists.infradead.org; Tue, 07 Oct 2014 14:17:08 +0000
+Date: Mon, 6 Oct 2014 17:35:55 -0400
+From: "John W. Linville" <linville@tuxdriver.com>
+Message-ID: <20141006213555.GD25590@tuxdriver.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Fix world roaming 160 MHz
-	to use AUTO-BW
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2014-10-06
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,42 +24,40 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The cfg80211 reg.c implementation rejects rules that claim to have
-maximum bandwidth that is larger than the full range. For cases that
-need to merge two rules into a single one with extended maximum
-bandwidth, AUTO-BW should be used instead.
+A new release of wireless-regdb (master-2014-10-06) is available at:
 
-Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
----
- db.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2014.10.06.tar.gz
 
-diff --git a/db.txt b/db.txt
-index f0e4312..1e5863f 100644
---- a/db.txt
-+++ b/db.txt
-@@ -6,9 +6,9 @@ country 00:
- 	# Channel 14. Only JP enables this and for 802.11b only
- 	(2474 - 2494 @ 20), (20), NO-IR, NO-OFDM
- 	# Channel 36 - 48
--	(5170 - 5250 @ 160), (20), NO-IR
-+	(5170 - 5250 @ 80), (20), NO-IR, AUTO-BW
- 	# Channel 52 - 64
--	(5250 - 5330 @ 160), (20), NO-IR, DFS
-+	(5250 - 5330 @ 80), (20), NO-IR, DFS, AUTO-BW
- 	# Channel 100 - 144
- 	(5490 - 5730 @ 160), (20), NO-IR, DFS
- 	# Channel 149 - 165
--- 
-1.9.1
+Here is the short log of the changes included since the 2014-06-13
+release:
 
+John W. Linville (1):
+      wireless-regdb: update regulatory.bin based on preceding changes.
 
--- 
-Jouni Malinen                                            PGP id EFC895FA
+Jouni Malinen (15):
+      wireless-regdb: Add Anguilla (AI) regulatory rules
+      wireless-regdb: Add Dominica (DM) regulatory rules
+      wireless-regdb: Add Lesotho (LS) regulatory rules
+      wireless-regdb: Add Moldova (MD) regulatory rules
+      wireless-regdb: Add Saint Martin (French part) (MF) regulatory rules
+      wireless-regdb: Add Saint Pierre and Miquelon (PM) regulatory rules
+      wireless-regdb: Add Saint Kitts and Nevis (KN) regulatory rules
+      wireless-regdb: Add Saint Lucia (LC) regulatory rules
+      wireless-regdb: Add Saint Vincent and the Grenadines (VC) regulatory rules
+      wireless-regdb: Add Turks and Caicos (TC) regulatory rules
+      wireless-regdb: Add Wallis and Futuna (WF) regulatory rules
+      wireless-regdb: Update Saint Barthelemy (BL) regulatory rules
+      wireless-regdb: Add Marshall Islands (MH) regulatory rules
+      wireless-regdb: Update Bolivia (BO) regulatory rules
+      wireless-regdb: Add Andorra (AD) regulatory rules for 2.4 GHz and 5 GHz
+
+Xose Vazquez Perez (1):
+      wireless-regdb: change to 200mW Max_EIRP in 5150-5250 for ES (Spain)
+
 
 _______________________________________________
 wireless-regdb mailing list
