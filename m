@@ -1,24 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine01.qualcomm.com ([199.106.114.254])
+Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XbBBt-0004yJ-5i
- for wireless-regdb@lists.infradead.org; Mon, 06 Oct 2014 16:31:17 +0000
+ id 1Xb99Q-0007Zx-Rz
+ for wireless-regdb@lists.infradead.org; Mon, 06 Oct 2014 14:20:39 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1412613077; x=1444149077;
+ s=qcdkim; t=1412605237; x=1444141237;
  h=date:from:to:cc:subject:message-id:mime-version;
- bh=1EDOAIYGgq5rCd+4Q5PefZFUGGmkjlnh6zp6URZl83I=;
- b=ObBanD2fSnXP4655K6bcyApV251HCXk1cM4dSA6z+4MwYEZ2VBG2QDZp
- jEX2qhk+kukU5zavEsPPhXQ0gt3T9DaNCFJqnM4Wkardv5iQTmv2rF7KJ
- WQJ4Azq/Nr9I58TmUuQ18YZY6bi17fB47ZLme9fS/PI9uvgQjyfsWDgkZ 8=;
-Date: Mon, 6 Oct 2014 19:30:48 +0300
+ bh=3qigtivFoL4cYnw2B0y2nlPGSVUYqcgVrBMjxMoZc64=;
+ b=CVxyH6t7xA0Aic1lsCTUFCBjDwVHuqZ2MYirxz7cAbiLqXkn4xueLkWB
+ +gbq2ryjOcf9FO4IXBWWEtLQ3g7RNryA/fCR+tTy8rVRb1gye6LuBLyym
+ KTy4NvYb/FpPEDikk+cjuHesTCf4IPbdsiLsOQiIjVjJUe1YOcJdlFlcD s=;
+Date: Mon, 6 Oct 2014 17:19:39 +0300
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Message-ID: <20141006163048.GA17083@jouni.qca.qualcomm.com>
+Message-ID: <20141006141939.GA14053@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Add Andorra (AD)
- regulatory rules for 2.4 GHz and 5 GHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update Bolivia (BO)
+	regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,29 +37,28 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This adds ETSI rules for 2.4 GHz and 5 GHz bands in Andorra to address
-the confusing 60 GHz band only situation.
+http://www.att.gob.bo/
+National Frequency table 2012 PNF 8_11_12
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 4 ++++
- 1 file changed, 4 insertions(+)
+ db.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/db.txt b/db.txt
-index 4d467d1..8cc62ae 100644
+index 5bd9388..a08f19c 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -18,6 +18,10 @@ country 00:
+@@ -151,7 +151,8 @@ country BN: DFS-JP
+ 	(5735 - 5835 @ 80), (20)
  
- 
- country AD:
+ country BO: DFS-JP
+-	(2402 - 2482 @ 40), (30)
 +	(2402 - 2482 @ 40), (20)
-+	(5170 - 5250 @ 80), (20)
-+	(5250 - 5330 @ 80), (20), DFS
-+	(5490 - 5710 @ 80), (27), DFS
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
++	(5250 - 5330 @ 80), (30), DFS
+ 	(5735 - 5835 @ 80), (30)
  
+ country BR: DFS-FCC
 -- 
 1.9.1
 
