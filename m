@@ -1,15 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1XbVZc-0006in-4S for
- wireless-regdb@lists.infradead.org; Tue, 07 Oct 2014 14:17:08 +0000
-Date: Mon, 6 Oct 2014 17:35:55 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20141006213555.GD25590@tuxdriver.com>
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1XbBBt-0004yJ-5i
+ for wireless-regdb@lists.infradead.org; Mon, 06 Oct 2014 16:31:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1412613077; x=1444149077;
+ h=date:from:to:cc:subject:message-id:mime-version;
+ bh=1EDOAIYGgq5rCd+4Q5PefZFUGGmkjlnh6zp6URZl83I=;
+ b=ObBanD2fSnXP4655K6bcyApV251HCXk1cM4dSA6z+4MwYEZ2VBG2QDZp
+ jEX2qhk+kukU5zavEsPPhXQ0gt3T9DaNCFJqnM4Wkardv5iQTmv2rF7KJ
+ WQJ4Azq/Nr9I58TmUuQ18YZY6bi17fB47ZLme9fS/PI9uvgQjyfsWDgkZ 8=;
+Date: Mon, 6 Oct 2014 19:30:48 +0300
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Message-ID: <20141006163048.GA17083@jouni.qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2014-10-06
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Add Andorra (AD)
+ regulatory rules for 2.4 GHz and 5 GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,40 +33,39 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+To: "John W. Linville" <linville@tuxdriver.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2014-10-06) is available at:
+This adds ETSI rules for 2.4 GHz and 5 GHz bands in Andorra to address
+the confusing 60 GHz band only situation.
 
-http://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2014.10.06.tar.gz
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Here is the short log of the changes included since the 2014-06-13
-release:
+diff --git a/db.txt b/db.txt
+index 4d467d1..8cc62ae 100644
+--- a/db.txt
++++ b/db.txt
+@@ -18,6 +18,10 @@ country 00:
+ 
+ 
+ country AD:
++	(2402 - 2482 @ 40), (20)
++	(5170 - 5250 @ 80), (20)
++	(5250 - 5330 @ 80), (20), DFS
++	(5490 - 5710 @ 80), (27), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+ 
+-- 
+1.9.1
 
-John W. Linville (1):
-      wireless-regdb: update regulatory.bin based on preceding changes.
 
-Jouni Malinen (15):
-      wireless-regdb: Add Anguilla (AI) regulatory rules
-      wireless-regdb: Add Dominica (DM) regulatory rules
-      wireless-regdb: Add Lesotho (LS) regulatory rules
-      wireless-regdb: Add Moldova (MD) regulatory rules
-      wireless-regdb: Add Saint Martin (French part) (MF) regulatory rules
-      wireless-regdb: Add Saint Pierre and Miquelon (PM) regulatory rules
-      wireless-regdb: Add Saint Kitts and Nevis (KN) regulatory rules
-      wireless-regdb: Add Saint Lucia (LC) regulatory rules
-      wireless-regdb: Add Saint Vincent and the Grenadines (VC) regulatory rules
-      wireless-regdb: Add Turks and Caicos (TC) regulatory rules
-      wireless-regdb: Add Wallis and Futuna (WF) regulatory rules
-      wireless-regdb: Update Saint Barthelemy (BL) regulatory rules
-      wireless-regdb: Add Marshall Islands (MH) regulatory rules
-      wireless-regdb: Update Bolivia (BO) regulatory rules
-      wireless-regdb: Add Andorra (AD) regulatory rules for 2.4 GHz and 5 GHz
-
-Xose Vazquez Perez (1):
-      wireless-regdb: change to 200mW Max_EIRP in 5150-5250 for ES (Spain)
-
+-- 
+Jouni Malinen                                            PGP id EFC895FA
 
 _______________________________________________
 wireless-regdb mailing list
