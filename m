@@ -2,26 +2,25 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XjalB-00008a-L3
- for wireless-regdb@lists.infradead.org; Wed, 29 Oct 2014 21:26:30 +0000
+ id 1XfkKF-0005eu-It
+ for wireless-regdb@lists.infradead.org; Sun, 19 Oct 2014 06:50:47 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1414617989; x=1446153989;
+ s=qcdkim; t=1413701447; x=1445237447;
  h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version;
- bh=Yu8TKvtMhv9ngIPv03rba73RWLN7wT2mU/HqYYAHIrU=;
- b=nSpiTxhV1piHvWc9swlUp4PFylAnFQbqNwSLJ0N79EvzgK5/JGTBJuVo
- LmL1Fdt/jq67kSwN5ypy83ZT6j9cNYumXU+GY9Vb4jwvNarVYoxutm8dd
- /+nvM3Clsm+u8NZcsMTMT4E9WY/0dnBJ0UYwh68fTNAdqQEPUSsXak9jL Y=;
-From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Wed, 29 Oct 2014 23:25:44 +0200
-Message-ID: <1414617944-29966-2-git-send-email-jouni@qca.qualcomm.com>
-In-Reply-To: <1414617944-29966-1-git-send-email-jouni@qca.qualcomm.com>
-References: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
- <1414617944-29966-1-git-send-email-jouni@qca.qualcomm.com>
+ references:mime-version:content-transfer-encoding;
+ bh=X8VE6Cvg+bV1Z0pbiXT2j9Qrq6NCfgqB8QM482HztK4=;
+ b=JB22fMuOpCPkmB71MG60zzdWB49EG9O1EnpcbHlWwij4aivfWuTREoH1
+ groNsmGPU+gT7yMEgh3/zO/XabISlu/A/UeEzG5G2fcfkAnNI4IPyLttl
+ +L9DmBgkP9isCRagjpKenTz3BITo2e7DVQj9wmLjPiE2KRPQ/baOHjCmK o=;
+From: Vladimir Kondratiev <qca_vkondrat@qca.qualcomm.com>
+Date: Sun, 19 Oct 2014 09:49:52 +0300
+Message-ID: <1465375.2aSLY3brRR@lx-wigig-72>
+In-Reply-To: <543D170A.6060709@gmail.com>
+References: <543D170A.6060709@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 7/7] wireless-regdb: Add 160 MHz channel
-	bandwidth for Venezuela (VE)
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add regulatory rule
+	for ETSI members on 60GHz band
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,39 +35,19 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "John W. Linville" <linville@tuxdriver.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This extends regulatory rules for Venezuela to allow 160 MHz VHT channels
-to be used in 5.15-5.25 GHz, 5.25-5.35 GHz. Since the rules between
-5.15-5.25 and 5.25-5.35 GHz ranges are different (e.g., DFS
-requirement), the AUTO-BW flag needs to be used to allow the maximum
-channel bandwidth to be determined automatically based on two rules.
+On Tuesday, October 14, 2014 02:28:58 PM Xose Vazquez Perez wrote:
+> "(57240 - 65880 @ 2160), (40), NO-OUTDOOR" should(must) be replaced by:
+> "(57000 - 66000 @ 2160), (40)"
+> 
 
-Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
----
- db.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Yes, looks like you are right. I used draft that I don't see on its location any more,
+and final document indeed says what you wrote.
 
-diff --git a/db.txt b/db.txt
-index 499cc1b..c7854c2 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1159,8 +1159,8 @@ country VC: DFS-ETSI
- # http://www.conatel.gob.ve/
- country VE: DFS-FCC
- 	(2402 - 2482 @ 40), (30)
--	(5170 - 5250 @ 80), (23)
--	(5250 - 5330 @ 80), (23), DFS
-+	(5170 - 5250 @ 80), (23), AUTO-BW
-+	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
- 	(5735 - 5835 @ 80), (30)
- 
- country VI: DFS-FCC
--- 
-1.9.1
-
+Thanks, Vladimir.
 
 _______________________________________________
 wireless-regdb mailing list
