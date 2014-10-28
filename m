@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Xj4AY-0000X0-Io
- for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:38:31 +0000
+ id 1Xj4C3-0000nU-S4
+ for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:40:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1414492710; x=1446028710;
+ s=qcdkim; t=1414492803; x=1446028803;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=Yhkw5YLtbIwTzy+ShVJrDY44iEMpje59DfqTeqkA7xA=;
- b=i8PMn775WsDw3kb3IoAtc57CGmnBQBZZYzIp2zWRDZP7iBWF5rEqSrjD
- KVqvORZh0vypdB1R5rAWj+Z5UDQW9eQzvZrlve4yQLuQWh3TFBbpC3S51
- oGGzp4/v4HS9CuPxd9n/8zPIk7FajNBePMOL88l9jC9pGMaIJ9zLLwPDE Y=;
+ bh=4Wt4P3M3LeI0/h0ePqgevpNXFDO5va721vN7cuV1ImY=;
+ b=GH99bm52AFj/RiRmCdfjIKDxbmKDsJRCgnZiZLcEibKR3HVIw9xxcvey
+ CqNwjHU4Q/Q2v9tUG74kWtIDbr0aNFY5x6Zj9zxV3kDJmFTAnBV8wpdZw
+ JahRv4iaYLLsRx/u9wvd94+bQcFwGfRxVGqSSmcCYZrd/FjyU19p5jQ9h c=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Tue, 28 Oct 2014 12:29:20 +0200
-Message-ID: <1414492175-13830-6-git-send-email-jouni@qca.qualcomm.com>
+Date: Tue, 28 Oct 2014 12:29:21 +0200
+Message-ID: <1414492175-13830-7-git-send-email-jouni@qca.qualcomm.com>
 In-Reply-To: <1414492175-13830-1-git-send-email-jouni@qca.qualcomm.com>
 References: <1414492175-13830-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 06/21] wireless-regdb: Add regulatory
- rules for French Guiana (GF)
+Subject: [wireless-regdb] [PATCH 07/21] wireless-regdb: Add regulatory
+ rules for Guadeloupe (GP)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,20 +47,20 @@ Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
  1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 024b424..07e56d0 100644
+index 07e56d0..4ecfcf3 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -418,6 +418,12 @@ country GE: DFS-ETSI
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
- 	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
+@@ -446,6 +446,12 @@ country GH: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
-+country GF: DFS-ETSI
++country GP: DFS-ETSI
 +	(2402 - 2482 @ 40), (20)
 +	(5170 - 5250 @ 80), (20), AUTO-BW
 +	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
 +	(5490 - 5710 @ 160), (27), DFS
 +
- country GB: DFS-ETSI
+ country GR: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
  	(5170 - 5250 @ 80), (20), AUTO-BW
 -- 
