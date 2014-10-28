@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Xj4HT-0003jL-1m
- for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:45:39 +0000
+ id 1Xj4HU-0003jX-0E
+ for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:45:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
  s=qcdkim; t=1414493139; x=1446029139;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=lqvIQlqUEqSKnhr7hxmNIXfcLdQQetaNbo5bW6uKYgc=;
- b=YiXEKy3FFfPcflgkyf8XogeCQGjSjXXFmV5I4b+UQ8eYbPRvTIKZ3o9U
- 40VWZvHI6psyJ5Dc3YdMRAWBSpnB35ZplrdCzqn3Glv02HIUOHPtg49a2
- fiWYyi0poIxmSyU1nfM3Uu8u5gNuXKAS9pbYiO/xmMPPJnw5+eGdx4GDZ U=;
+ bh=mnuWgiuI+Kdgl6JpGlM5CALjmpX0BA1wWC3OiGLIqF8=;
+ b=LNOGzroltktGyEGEW04gSQ9qsvMgsg61XkVQSJSOScS6CwlKLH3kEk+M
+ 9G02PI+3Aj+laGz8YHdIxwYiP+6yEEHjbqgMFfjnuWFkWrN1rv6xLx64P
+ M7mQz+E88fDB0gIvjlG8zxaToiP/qt/AHsDR4QXjlGdWwFTT2SU2BzBLH Q=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Tue, 28 Oct 2014 12:43:00 +0200
-Message-ID: <1414492987-16118-7-git-send-email-jouni@qca.qualcomm.com>
+Date: Tue, 28 Oct 2014 12:43:01 +0200
+Message-ID: <1414492987-16118-8-git-send-email-jouni@qca.qualcomm.com>
 In-Reply-To: <1414492987-16118-1-git-send-email-jouni@qca.qualcomm.com>
 References: <1414492175-13830-1-git-send-email-jouni@qca.qualcomm.com>
  <1414492987-16118-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 14/21] wireless-regdb: Add regulatory
- rules for Nicaragua (NI)
+Subject: [wireless-regdb] [PATCH 15/21] wireless-regdb: Add regulatory
+ rules for French Polynesia (PF)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,27 +44,26 @@ Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 7 +++++++
- 1 file changed, 7 insertions(+)
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 7319579..1c9e307 100644
+index 1c9e307..640d2a7 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -812,6 +812,13 @@ country MX: DFS-FCC
+@@ -874,6 +874,12 @@ country PE: DFS-FCC
  	(5490 - 5730 @ 160), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
-+country NI: DFS-FCC
-+	(2402 - 2472 @ 40), (30)
-+	(5170 - 5250 @ 80), (24), AUTO-BW
-+	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
-+	(5490 - 5730 @ 160), (24), DFS
-+	(5735 - 5835 @ 80), (30)
++country PF: DFS-ETSI
++	(2402 - 2482 @ 40), (20)
++	(5170 - 5250 @ 80), (20), AUTO-BW
++	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
++	(5490 - 5710 @ 160), (27), DFS
 +
- country NL: DFS-ETSI
+ country PG: DFS-FCC
  	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
+ 	(5170 - 5250 @ 80), (17), AUTO-BW
 -- 
 1.9.1
 
