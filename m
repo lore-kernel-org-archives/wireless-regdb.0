@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
+Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Xj4Gw-0002WR-Hh
- for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:45:07 +0000
+ id 1Xj4H2-0002Ww-Ml
+ for wireless-regdb@lists.infradead.org; Tue, 28 Oct 2014 10:45:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1414493106; x=1446029106;
+ s=qcdkim; t=1414493114; x=1446029114;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=KxVftLkr7vqWU+AxSir1JKrjx4zktcxheyjnC7mN0Iw=;
- b=L/wb4JB3mpkv8jqykODGq4oB5rdWQM/eFL0dc5Yi9AaSf6ctd92nS4Cu
- /JbkZg95k/eV2DKdMVKY4UpaUCzgforYOqMsv9oR0ckCPShyYxMDGco37
- Iky59oCw0LyxFmNNdIPTT5HLuQMqIBsFKaPiMvesMk+DRAHZYs/sCvlsm k=;
+ bh=cfTnZPuSiozCJlvHXz/owInKa2Nf8iXxx87ppsYaHas=;
+ b=N5oOrwGl2v9uVN9QBcjbY5mxudgrKHPAi5fAA2+9XwXcVPOSm2n4LDjE
+ 4Pxn5M3wQCgjBuQBZ4sQOK5267K0uUmF8JE7fTHI4sBsX25Xmt84yX4DW
+ 6X2PrY+GQR3SJwuBvX9hh+Rhs9Q/Y8PHLEViU7FPuED7FnvDUrX6Wiasq E=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Tue, 28 Oct 2014 12:42:56 +0200
-Message-ID: <1414492987-16118-3-git-send-email-jouni@qca.qualcomm.com>
+Date: Tue, 28 Oct 2014 12:42:57 +0200
+Message-ID: <1414492987-16118-4-git-send-email-jouni@qca.qualcomm.com>
 In-Reply-To: <1414492987-16118-1-git-send-email-jouni@qca.qualcomm.com>
 References: <1414492175-13830-1-git-send-email-jouni@qca.qualcomm.com>
  <1414492987-16118-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 10/21] wireless-regdb: Add regulatory
- rules for Northern Mariana Islands (MP)
+Subject: [wireless-regdb] [PATCH 11/21] wireless-regdb: Add regulatory
+ rules for Martinique (MQ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,23 +44,22 @@ Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 7 +++++++
- 1 file changed, 7 insertions(+)
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index 04614fe..bbc7f8c 100644
+index bbc7f8c..0a507d6 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -757,6 +757,13 @@ country MN: DFS-FCC
+@@ -764,6 +764,12 @@ country MP: DFS-FCC
  	(5490 - 5730 @ 160), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
-+country MP: DFS-FCC
-+	(2402 - 2472 @ 40), (30)
-+	(5170 - 5250 @ 80), (24), AUTO-BW
-+	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
-+	(5490 - 5730 @ 160), (24), DFS
-+	(5735 - 5835 @ 80), (30)
++country MQ: DFS-ETSI
++	(2402 - 2482 @ 40), (20)
++	(5170 - 5250 @ 80), (20), AUTO-BW
++	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
++	(5490 - 5710 @ 160), (27), DFS
 +
  # Source:
  # http://www.are.mr/pdfs/telec_freq_TNAbf_2010.pdf
