@@ -1,18 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from charlotte.tuxdriver.com ([70.61.120.58]
- helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1XioMd-0005Gq-8m for
- wireless-regdb@lists.infradead.org; Mon, 27 Oct 2014 17:45:55 +0000
-Date: Mon, 27 Oct 2014 13:31:41 -0400
-From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20141027173141.GB28300@tuxdriver.com>
-References: <1413111411-29509-1-git-send-email-harmic@gmail.com>
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1Xjah6-0004cz-3i
+ for wireless-regdb@lists.infradead.org; Wed, 29 Oct 2014 21:22:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1414617736; x=1446153736;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=NHLWCAc3AQEyDZ2rri02eMrNu1iLe2jmQ9lR+CAheVo=;
+ b=AnH5cuF7n/i2+RKkTysa844tF+XBpwiT2tPf8PrJhBsFs2lIHiR5nRG+
+ NSnFZiEOTejE0HOf1yJd2pUT/KRsKf1oxGPgicaZq0qwnC6rNMF5xNBBJ
+ kNckl+x+8UgecsuD6eCf71PX9vGboZ424nimFE1qW7UdY5YAAuuig07sD E=;
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Wed, 29 Oct 2014 23:21:24 +0200
+Message-ID: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1413111411-29509-1-git-send-email-harmic@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH 1/1] wireless-regdb: Update rules for
- Australia (AU) to align with class licence
+Subject: [wireless-regdb] [PATCH 1/7] wireless-regdb: Add 160 MHz channel
+	bandwidth for Barbados (BB)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,72 +32,39 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Michael Harris <harmic@gmail.com>
+To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-I'm always a bit cautious about merging regdb patches that loosen
-the rules.  Would anyone with more expertise on such regulations care
-to comment on this one?
+This extends regulatory rules for Barbados to allow 160 MHz VHT channels
+to be used in 5.15-5.25 GHz, 5.25-5.35 GHz. Since the rules between
+5.15-5.25 and 5.25-5.35 GHz ranges are different (e.g., DFS
+requirement), the AUTO-BW flag needs to be used to allow the maximum
+channel bandwidth to be determined automatically based on two rules.
 
-On Sun, Oct 12, 2014 at 09:56:51PM +1100, Michael Harris wrote:
-> I am not sure where the existing regdb rules for Australia were derived from
-> (perhaps some default template?) but they are a lot more restrictive than the
-> actual class licence requirements.
-> 
-> I have updated to the best of my ability according to the "Radiocommunications
-> (Low Interference Potential Devices) Class Licence 2000" which can be found here:
-> 
-> http://www.acma.gov.au/Industry/Spectrum/Radiocomms-licensing/Class-licences/class-licences
-> 
-> There is also a useful FAQ for 2.4GHz WLANs here:
-> http://www.acma.gov.au/Citizen/Consumer-info/My-connected-home/Wireless-local-area-networks/wireless-lans-in-the-24-ghz-band-faqs
-> 
-> Signed-off-by: Michael Harris <harmic@gmail.com>
-> ---
->  db.txt | 20 +++++++++++++++-----
->  1 file changed, 15 insertions(+), 5 deletions(-)
-> 
-> diff --git a/db.txt b/db.txt
-> index f0e4312..94c7010 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -78,12 +78,22 @@ country AT: DFS-ETSI
->  	# 60 gHz band channels 1-4, ref: Etsi En 302 567
->  	(57240 - 65880 @ 2160), (40), NO-OUTDOOR
->  
-> +# Reference: Radiocommunications (Low Interference Potential Devices) Class Licence 2000
-> +# http://www.acma.gov.au/Industry/Spectrum/Radiocomms-licensing/Class-licences/class-licences
->  country AU:
-> -	(2402 - 2482 @ 40), (20)
-> -	(5170 - 5250 @ 80), (17)
-> -	(5250 - 5330 @ 80), (24), DFS
-> -	(5490 - 5710 @ 80), (24), DFS
-> -	(5735 - 5835 @ 80), (30)
-> +	# Item 45A
-> +	(2400 - 2483 @ 40), (36)
-> +	# Item 44
-> +	(5150 - 5250 @ 80), (23), NO-OUTDOOR
-> +	# Item 44A (assuminging no TPC implemented).
-> +	# If TPC implemented then 23dBm allowed.
-> +	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS
-> +	# Item 46 (assuming no TPC implemented)
-> +	# If TPC implemented then 30dBm allowed
-> +	(5470 - 5600 @ 80), (27), DFS
-> +	(5650 - 5725 @ 40), (27), DFS
-> +	# Item 45B
-> +	(5725 - 5850 @ 80), (36)
->  
->  country AW: DFS-ETSI
->  	(2402 - 2482 @ 40), (20)
-> -- 
-> 1.8.3.1
-> 
-> 
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
+diff --git a/db.txt b/db.txt
+index 2a54da8..8d43f45 100644
+--- a/db.txt
++++ b/db.txt
+@@ -113,8 +113,8 @@ country BA: DFS-ETSI
+ 
+ country BB: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (23)
+-	(5250 - 5330 @ 80), (23), DFS
++	(5170 - 5250 @ 80), (23), AUTO-BW
++	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
+ 	(5735 - 5835 @ 80), (30)
+ 
+ country BD: DFS-JP
 -- 
-John W. Linville		Someday the world will need a hero, and you
-linville@tuxdriver.com			might be all we have.  Be ready.
+1.9.1
+
 
 _______________________________________________
 wireless-regdb mailing list
