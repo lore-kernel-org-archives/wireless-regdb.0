@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth02.qualcomm.com ([65.197.215.38])
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1XjahE-0004sf-G5
+ id 1XjahE-0004u4-Ky
  for wireless-regdb@lists.infradead.org; Wed, 29 Oct 2014 21:22:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
  s=qcdkim; t=1414617744; x=1446153744;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=yACFASql3uWe+qrn+eqv3UeFc6b8zTP2NeWcUFUP9S8=;
- b=C0B40tb12gUq98fnsEoJBaMFqxnbhSGFY1DrO2+IStpx7a6iJt0Ej8Ne
- Us9DN+3j60n/pICCg4c8TrcEiAtwr5PU+X7ZRx1B5QHUyq3Z13cdaOJ6A
- QLE7JNAskaLLw3p8kspMKDAQJc8aBm5B5WnEyXiOZQSXfgwnONVTVqM8f 0=;
+ bh=SLfRZBGi8CVJHBkqEbhoGNxo9as+7jD1zUdwlnxXuc0=;
+ b=cf+EMYK4jgjkcoZoJ15kU46mq05d6kFqlh7iJZvD/Cu5p7sWWeeSvvTp
+ L/a6Q3e+ewgXlkjY99v4DvWOGXoB3tPHdXFKIiFPGDTzXuT1rR8ZIL+BN
+ afUVDXiQXm2Q4Bx73g6Gt2zYAtkpb0hqqLY30NjpX/tSV4roB6Qg0WUZW Y=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Wed, 29 Oct 2014 23:21:26 +0200
-Message-ID: <1414617690-29786-3-git-send-email-jouni@qca.qualcomm.com>
+Date: Wed, 29 Oct 2014 23:21:27 +0200
+Message-ID: <1414617690-29786-4-git-send-email-jouni@qca.qualcomm.com>
 In-Reply-To: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
 References: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 3/7] wireless-regdb: Add 160 MHz channel
-	bandwidth for Dominica (DM)
+Subject: [wireless-regdb] [PATCH 4/7] wireless-regdb: Add 160 MHz channel
+	bandwidth for Algeria (DZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,32 +39,38 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This extends regulatory rules for Dominica to allow 160 MHz
-VHT channels to be used in 5.15-5.25 GHz, 5.25-5.35 GHz. Since the rules
-between 5.15-5.25 and 5.25-5.35 GHz ranges are different (e.g., DFS
-requirement), the AUTO-BW flag needs to be used to allow the maximum
-channel bandwidth to be determined automatically based on two rules.
+This extends regulatory rules for Algeria to allow 160 MHz VHT channels
+to be used in 5.15-5.25 GHz, 5.25-5.35 GHz, and 5.47-5.725 GHz ranges.
+Since the rules between 5.15-5.25 and 5.25-5.35 GHz ranges are different
+in most cases (e.g., DFS requirement), the AUTO-BW flag needs to be used
+to allow the maximum channel bandwidth to be determined automatically
+based on two rules. The larger 5.47-5.725 GHz range is large enough to
+fit the full 160 MHz channel in a single rule, so that does not require
+similar handling and can just change the maximum allowed bandwidth to
+160 MHz in the rule.
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ db.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 999bc5f..d527b54 100644
+index d527b54..10aaf44 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -331,8 +331,8 @@ country DK: DFS-ETSI
- # http://www.ntrcdom.org/index.php?option=com_content&view=category&layout=blog&id=10&Itemid=55
- country DM: DFS-FCC
- 	(2402 - 2472 @ 40), (30)
--	(5170 - 5250 @ 80), (17)
--	(5250 - 5330 @ 80), (23), DFS
-+	(5170 - 5250 @ 80), (17), AUTO-BW
-+	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
- 	(5735 - 5835 @ 80), (30)
+@@ -343,9 +343,9 @@ country DO: DFS-FCC
  
- country DO: DFS-FCC
+ country DZ: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+-	(5170.000 - 5250.000 @ 80.000), (23.00)
+-	(5250.000 - 5330.000 @ 80.000), (23.00), DFS
+-	(5490.000 - 5670.000 @ 80.000), (23.00), DFS
++	(5170.000 - 5250.000 @ 80.000), (23.00), AUTO-BW
++	(5250.000 - 5330.000 @ 80.000), (23.00), DFS, AUTO-BW
++	(5490.000 - 5670.000 @ 160.000), (23.00), DFS
+ 
+ country EC: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
 -- 
 1.9.1
 
