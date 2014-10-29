@@ -2,22 +2,25 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Xjah6-0004cz-3i
- for wireless-regdb@lists.infradead.org; Wed, 29 Oct 2014 21:22:16 +0000
+ id 1Xjah9-0004rT-JW
+ for wireless-regdb@lists.infradead.org; Wed, 29 Oct 2014 21:22:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1414617736; x=1446153736;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=NHLWCAc3AQEyDZ2rri02eMrNu1iLe2jmQ9lR+CAheVo=;
- b=AnH5cuF7n/i2+RKkTysa844tF+XBpwiT2tPf8PrJhBsFs2lIHiR5nRG+
- NSnFZiEOTejE0HOf1yJd2pUT/KRsKf1oxGPgicaZq0qwnC6rNMF5xNBBJ
- kNckl+x+8UgecsuD6eCf71PX9vGboZ424nimFE1qW7UdY5YAAuuig07sD E=;
+ s=qcdkim; t=1414617739; x=1446153739;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=pmJPdykK3dHhEzeNagguzHgFcL3QnnawPy86ffHhg1o=;
+ b=L/LSK6/PPhPvaXN08sFMiRlppJZlB77IRcppdbYv7Qr7VY04Sqvqo8jk
+ h4N94fuKgUVbN4FPjyywpq2KMWmuGma+z91SKnCNnYs/YAmsLNklUWNJh
+ yDF4sqvaSNuSaoTapk/hvroj1fYR7Rcf8ugWi0xBTRU0uCHH8ly9gfXq9 k=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Wed, 29 Oct 2014 23:21:24 +0200
-Message-ID: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
+Date: Wed, 29 Oct 2014 23:21:25 +0200
+Message-ID: <1414617690-29786-2-git-send-email-jouni@qca.qualcomm.com>
+In-Reply-To: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
+References: <1414617690-29786-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 1/7] wireless-regdb: Add 160 MHz channel
-	bandwidth for Barbados (BB)
+Subject: [wireless-regdb] [PATCH 2/7] wireless-regdb: Add 160 MHz channel
+	bandwidth for Dominican Republic (DO)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,9 +39,9 @@ To: "John W. Linville" <linville@tuxdriver.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This extends regulatory rules for Barbados to allow 160 MHz VHT channels
-to be used in 5.15-5.25 GHz, 5.25-5.35 GHz. Since the rules between
-5.15-5.25 and 5.25-5.35 GHz ranges are different (e.g., DFS
+This extends regulatory rules for Dominican Republic to allow 160 MHz
+VHT channels to be used in 5.15-5.25 GHz, 5.25-5.35 GHz. Since the rules
+between 5.15-5.25 and 5.25-5.35 GHz ranges are different (e.g., DFS
 requirement), the AUTO-BW flag needs to be used to allow the maximum
 channel bandwidth to be determined automatically based on two rules.
 
@@ -48,20 +51,20 @@ Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 2a54da8..8d43f45 100644
+index 8d43f45..999bc5f 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -113,8 +113,8 @@ country BA: DFS-ETSI
+@@ -337,8 +337,8 @@ country DM: DFS-FCC
  
- country BB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (23)
+ country DO: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
+-	(5170 - 5250 @ 80), (17)
 -	(5250 - 5330 @ 80), (23), DFS
-+	(5170 - 5250 @ 80), (23), AUTO-BW
++	(5170 - 5250 @ 80), (17), AUTO-BW
 +	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
  	(5735 - 5835 @ 80), (30)
  
- country BD: DFS-JP
+ country DZ: DFS-JP
 -- 
 1.9.1
 
