@@ -2,17 +2,18 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from charlotte.tuxdriver.com ([70.61.120.58]
  helo=smtp.tuxdriver.com) by bombadil.infradead.org with esmtps (Exim 4.80.1
- #2 (Red Hat Linux)) id 1Xmr7N-0000mg-OI for
- wireless-regdb@lists.infradead.org; Fri, 07 Nov 2014 21:30:54 +0000
-Date: Fri, 7 Nov 2014 16:21:18 -0500
+ #2 (Red Hat Linux)) id 1XmqeP-000676-HM for
+ wireless-regdb@lists.infradead.org; Fri, 07 Nov 2014 21:00:58 +0000
+Date: Fri, 7 Nov 2014 15:59:58 -0500
 From: "John W. Linville" <linville@tuxdriver.com>
-Message-ID: <20141107212117.GF29733@tuxdriver.com>
-References: <D0D2EC853BFD0147A005CC7FAC0E4A53E39A56A6@AKI2K113.wd.govt.nz>
+Message-ID: <20141107205958.GE29733@tuxdriver.com>
+References: 
+	 <CADofcAWAQ9ZFLbJz3B0s8ewbNB96zpD+Jy+wDrG8pC4NOLbEVA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <D0D2EC853BFD0147A005CC7FAC0E4A53E39A56A6@AKI2K113.wd.govt.nz>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- New Zealand (NZ) on 5GHz and 60 GHz [UNCLASSIFIED]
+In-Reply-To: <CADofcAWAQ9ZFLbJz3B0s8ewbNB96zpD+Jy+wDrG8pC4NOLbEVA@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH 1/1] wireless-regdb: Update rules for
+ Australia (AU) to align with class licence
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,86 +28,94 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Peter Gent <Peter.Gent@mbie.govt.nz>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+To: Michael Harris <harmic@gmail.com>
+Cc: Jouni Malinen <jouni@qca.qualcomm.com>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Oct 28, 2014 at 01:04:10AM +0000, Peter Gent wrote:
-> Hi,
-> 
-> We wish to note the following changes should be made to the wireless regulatory database to reflect some recent changes to the 60 GHz band here in New Zealand. In additional there are some inaccuracies when compared to our current licencing for the 5 GHz "Wi-Fi" band.
-> 
-> The updated entry for New Zealand should read:
-> 
-> 5150 MHz  - 5250 MHz  80MHz channels, indoor use only at -7.0 dBW EIRP TPC enabled
-> 5250 MHz -  5350 MHz  80 MHz channels, indoor use at -7.0 dBW EIRP, outdoor use at 0 dBW EIRP with DFS and TPC enabled* 
-> 5470 MHz  - 5725 MHz  80 MHz channels, 0 dBW EIRP with DFS and TPC enabled*
-> 5725 MHz  - 5875 MHz  80 MHz channels, 6.0 dBW EIRP with frequency hopping enabled  
-> 57000 MHz - 66000 MHz, indoor use only at 13.0 dBW EIRP 
-> 
-> *if TPC is not enabled, than transmit power must be reduced by 3dB
-> 
-> Further information on SRD licencing rules can be found at http://www.rsm.govt.nz/cms/licensees/types-of-licence/general-user-licences/short-range-devices 
-> 
-> Regards
-> 
-> Peter
+Michael,
 
-Peter,
+I tried to apply your patch, but it conflicts with "wireless-regdb:
+Add 160 MHz channel bandwidth for VHT" (which I had already applied).
 
-Thanks for making us aware of this info.  I'm sorry that there has
-been no other response so far.
+It is unclear to me how to resolve the conflict, and FWIW Qualcomm
+seems to be using values very similar to what was already in the
+database.  I know that they take a strong interest in ensuring the
+accuracy of that data, so I would be extremely uncomfortable digressing
+from what is there.
 
-Changes to our regulatory rules database are typically proposed in the
-form of a patch.  This promotes specificity in making such changes.
-I suspect that you are unfamiliar with this form of change proposal,
-so I have taken a first whack at it.
+Could you work with Jouni or other interested parties to reach
+agreement on exactly what the rules for Australia should be?
 
-While I maintain the database, I am not as radio proficient as I
-perhaps should be.  I normally leave writing such patches for others,
-and wait for some level of agreement to be reached before applying
-changes.  In this case, it is quite likely that I have overlooked
-something or misinterpreted (or simply misunderstood) your change
-suggestions.
-
-I hope that you and others will take a moment to comment and/or
-suggest further changes to my proposed changes below.  Without some
-affirmative commentary I will not apply any derivative of the changes
-specified below.
-
-Thanks!
+Thanks,
 
 John
 
-diff --git a/db.txt b/db.txt
-index 6cf86e15627b..3b9db42309dc 100644
---- a/db.txt
-+++ b/db.txt
-@@ -848,12 +848,20 @@ country NP: DFS-JP
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
- 	(5735 - 5835 @ 80), (20)
- 
-+# 5150 MHz  - 5250 MHz  80MHz channels, indoor use only at -7.0 dBW EIRP TPC enabled
-+# 5250 MHz -  5350 MHz  80 MHz channels, indoor use at -7.0 dBW EIRP, outdoor use at 0 dBW EIRP with DFS and TPC enabled*
-+# 5470 MHz  - 5725 MHz  80 MHz channels, 0 dBW EIRP with DFS and TPC enabled*
-+# 5725 MHz  - 5875 MHz  80 MHz channels, 6.0 dBW EIRP with frequency hopping enabled
-+# 57000 MHz - 66000 MHz, indoor use only at 13.0 dBW EIRP
-+# *if TPC is not enabled, than transmit power must be reduced by 3dB
-+# http://www.rsm.govt.nz/cms/licensees/types-of-licence/general-user-licences/short-range-devices
- country NZ: DFS-FCC
- 	(2402 - 2482 @ 40), (30)
--	(5170 - 5250 @ 80), (17), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
--	(5735 - 5835 @ 80), (30)
-+	(5150 - 5250 @ 80), (20), AUTO-BW
-+	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
-+	(5470 - 5725 @ 160), (27), DFS
-+	(5725 - 5875 @ 80), (33)
-+	(57000 - 66000 @ 2160), (40)
- 
- country OM: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
+On Thu, Oct 23, 2014 at 05:45:06PM +1100, Michael Harris wrote:
+> I am not sure where the existing regdb rules for Australia were derived from
+> (perhaps some default template?) but they are a lot more restrictive than the
+> actual class licence requirements.
+> 
+> I have updated to the best of my ability according to the "Radiocommunications
+> (Low Interference Potential Devices) Class Licence 2000" which can be
+> found here:
+> 
+> http://www.acma.gov.au/Industry/Spectrum/Radiocomms-licensing/Class-licences/class-licences
+> 
+> There is also a useful FAQ for 2.4GHz WLANs here:
+> http://www.acma.gov.au/Citizen/Consumer-info/My-connected-home/Wireless-local-area-networks/wireless-lans-in-the-24-ghz-band-faqs
+> 
+> Signed-off-by: Michael Harris <harmic@gmail.com>
+> ---
+> NB. I am resending this message as my first attempt did not make it onto
+> wireless-regdb (although it did get to linux-wireless). I didn't
+> realize one has to
+> subscribe to wireless-regdb in order to post. Apologies in advance if anyone
+> gets unwanted multiple copies.
+> 
+>  db.txt | 20 +++++++++++++++-----
+>  1 file changed, 15 insertions(+), 5 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index f0e4312..94c7010 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -78,12 +78,22 @@ country AT: DFS-ETSI
+>         # 60 gHz band channels 1-4, ref: Etsi En 302 567
+>         (57240 - 65880 @ 2160), (40), NO-OUTDOOR
+> 
+> +# Reference: Radiocommunications (Low Interference Potential Devices)
+> Class Licence 2000
+> +# http://www.acma.gov.au/Industry/Spectrum/Radiocomms-licensing/Class-licences/class-licences
+>  country AU:
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 80), (17)
+> -       (5250 - 5330 @ 80), (24), DFS
+> -       (5490 - 5710 @ 80), (24), DFS
+> -       (5735 - 5835 @ 80), (30)
+> +       # Item 45A
+> +       (2400 - 2483 @ 40), (36)
+> +       # Item 44
+> +       (5150 - 5250 @ 80), (23), NO-OUTDOOR
+> +       # Item 44A (assuminging no TPC implemented).
+> +       # If TPC implemented then 23dBm allowed.
+> +       (5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS
+> +       # Item 46 (assuming no TPC implemented)
+> +       # If TPC implemented then 30dBm allowed
+> +       (5470 - 5600 @ 80), (27), DFS
+> +       (5650 - 5725 @ 40), (27), DFS
+> +       # Item 45B
+> +       (5725 - 5850 @ 80), (36)
+> 
+>  country AW: DFS-ETSI
+>         (2402 - 2482 @ 40), (20)
+> --
+> 1.8.3.1
+> 
+> _______________________________________________
+> wireless-regdb mailing list
+> wireless-regdb@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/wireless-regdb
+> 
 
 -- 
 John W. Linville		Someday the world will need a hero, and you
