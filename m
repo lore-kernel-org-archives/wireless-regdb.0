@@ -1,17 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f46.google.com ([209.85.218.46])
+Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YHDJJ-00075J-MJ
- for wireless-regdb@lists.infradead.org; Fri, 30 Jan 2015 15:16:42 +0000
-Received: by mail-oi0-f46.google.com with SMTP id a141so35184887oig.5 for
- <wireless-regdb@lists.infradead.org>; Fri, 30 Jan 2015 07:16:19 -0800 (PST)
-Date: Fri, 30 Jan 2015 09:16:05 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150130151605.GD124346@ubuntu-hedt>
+ id 1YEcn2-00014P-NY
+ for wireless-regdb@lists.infradead.org; Fri, 23 Jan 2015 11:52:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1422013961; x=1453549961;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=nL5ZeGzlWY9vXLh2nRyZTypOfImkWlsPujcSWhf++js=;
+ b=e6p5JLQVV/Apd+HyehRD+ARTS6NVDmVJDmGY6QHe4vu81469bWtzj1GD
+ BTqCJ8b/rCWeOkPqy9q1zFgTDd/EBqmwv5DWEudC/Vqkdj4Nq7uGblAbf
+ SZC6AB3wVAP8amDuy2IypDr/qpJjjE5hIVgdOtdZWksEj8w8DuTOJUP6t 8=;
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Fri, 23 Jan 2015 13:51:58 +0200
+Message-ID: <1422013920-9779-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2015-01-30
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules for
+	Nigeria (NG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,38 +32,35 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2015-01-30) is available at:
+Source is QCA's regulatory team's efforts.
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.01.30.tar.gz
-
-Note that this is the first release signed with my key. As of yet there
-is no release of CRDA which by default trusts a regulatory.bin signed
-with my key, but in most cases it will still trust regulatory.bin by
-virtue of having the corresponding public key installed in e.g.
-/lib/crda/pubkeys.
-
-The short log of changes included since the 2014-11-18 release is below.
-
-Seth
-
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
+ db.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-Daiwei Li (1):
-      wireless-regdb: Add back regulatory rules for US
-
-Jouni Malinen (4):
-      wireless-regdb: Disable VHT80 where 40/80 MHz on 5 GHz is not allowed
-      wireless-regdb: Add regulatory rules for Nigeria (NG)
-      wireless-regdb: Add regulatory rules for Samoa (WS)
-      wireless-regdb: Add regulatory rules for Tanzania (TZ)
-
-Seth Forshee (2):
-      wireless-regdb: Update keys and maintainer information
-      wireless-regdb: update regulatory.bin based on preceding changes
+diff --git a/db.txt b/db.txt
+index ae8a216..3ea53ec 100644
+--- a/db.txt
++++ b/db.txt
+@@ -812,6 +812,11 @@ country MY: DFS-FCC
+ 	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
+ 	(5735 - 5835 @ 80), (30)
+ 
++country NG: DFS-ETSI
++	(2402 - 2482 @ 40), (20)
++	(5250 - 5330 @ 80), (30), DFS
++	(5735 - 5835 @ 80), (30)
++
+ country NI: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
+ 	(5170 - 5250 @ 80), (24), AUTO-BW
+-- 
+1.9.1
 
 
 _______________________________________________
