@@ -1,26 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from sabertooth01.qualcomm.com ([65.197.215.72])
+Received: from mail-ob0-f176.google.com ([209.85.214.176])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YEcnU-00017r-Br
- for wireless-regdb@lists.infradead.org; Fri, 23 Jan 2015 11:53:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1422013988; x=1453549988;
- h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version;
- bh=ruBAv8Z9CXrxnFbzwCiD0Zt0K6S2Vj0Tdzx9lBP/69U=;
- b=SN/xL6g7kXTO5fBJOkoeesJiYdsYjZ952azeFF+5yQDu4oYJccFKPDuU
- VdP7PzNIDYBVyS7xeYPI6vV7WnK6qA10WAp2Ni4ylYbwbA+m6YxIB7qXe
- x2INKu0b88Lm2LITpBp9luFZSQOm+kBRKaS6qJwRc/qPDdfiQRiHUntuR I=;
-From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Fri, 23 Jan 2015 13:52:00 +0200
-Message-ID: <1422013920-9779-3-git-send-email-jouni@qca.qualcomm.com>
-In-Reply-To: <1422013920-9779-1-git-send-email-jouni@qca.qualcomm.com>
+ id 1YHCua-0001CW-UJ
+ for wireless-regdb@lists.infradead.org; Fri, 30 Jan 2015 14:51:09 +0000
+Received: by mail-ob0-f176.google.com with SMTP id va2so24217137obc.7 for
+ <wireless-regdb@lists.infradead.org>; Fri, 30 Jan 2015 06:50:47 -0800 (PST)
+Date: Fri, 30 Jan 2015 08:50:33 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20150130145033.GC124346@ubuntu-hedt>
 References: <1422013920-9779-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules for
-	Tanzania (TZ)
+Content-Disposition: inline
+In-Reply-To: <1422013920-9779-1-git-send-email-jouni@qca.qualcomm.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules
+	for Nigeria (NG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,35 +29,16 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
+To: Jouni Malinen <jouni@qca.qualcomm.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source is QCA's regulatory team's efforts.
+On Fri, Jan 23, 2015 at 01:51:58PM +0200, Jouni Malinen wrote:
+> Source is QCA's regulatory team's efforts.
+> 
+> Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 
-Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
----
- db.txt | 4 ++++
- 1 file changed, 4 insertions(+)
-
-diff --git a/db.txt b/db.txt
-index 3ea53ec..85b4bb4 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1104,6 +1104,10 @@ country TW: DFS-JP
- 	(5650 - 5710 @ 40), (30), DFS
- 	(5735 - 5835 @ 80), (30)
-  
-+country TZ:
-+	(2402 - 2482 @ 40), (20)
-+	(5735 - 5835 @ 80), (30)
-+
- # Source:
- # #914 / 06 Sep 2007: http://www.ucrf.gov.ua/uk/doc/nkrz/1196068874
- # #1174 / 23 Oct 2008: http://www.nkrz.gov.ua/uk/activities/ruling/1225269361
--- 
-1.9.1
-
+Applied all three (this one plus Samoa and Tanzania), thanks.
 
 _______________________________________________
 wireless-regdb mailing list
