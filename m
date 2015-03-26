@@ -1,20 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from dub004-omc4s27.hotmail.com ([157.55.2.102])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YR2Nb-0000qP-0r
- for wireless-regdb@lists.infradead.org; Thu, 26 Feb 2015 17:37:43 +0000
-Message-ID: <DUB408-EAS1652BC7618FD5CCB9A287D4F0140@phx.gbl>
-From: =?iso-8859-1?Q?J=FCrgen_Vogl?= <juergen.vogl@outlook.at>
-References: <DUB408-EAS367CCE6240821ED3A644E56F0140@phx.gbl>
-In-Reply-To: <DUB408-EAS367CCE6240821ED3A644E56F0140@phx.gbl>
-Date: Thu, 26 Feb 2015 18:37:18 +0100
+Received: from smtp-out04.msg.oleane.net ([62.161.7.2])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1YbC64-0002KE-Nk
+ for wireless-regdb@lists.infradead.org; Thu, 26 Mar 2015 18:01:38 +0000
+Received: from smtp06.msg.oleane.net (smtp06.mail.priv [172.17.20.115]) 
+ by smtp-out04.msg.oleane.net with ESMTP id t2QHe2Ad021561
+ for <wireless-regdb@lists.infradead.org>; Thu, 26 Mar 2015 18:40:03 +0100
+Received: from acksys.fr ([195.6.104.67]) (authenticated)
+ by smtp06.msg.oleane.net (MTA) with ESMTP id t2QHD0fp023726
+ for <wireless-regdb@lists.infradead.org>; Thu, 26 Mar 2015 18:13:01 +0100
+Content-class: urn:content-classes:message
+Date: Thu, 26 Mar 2015 18:19:02 +0100
+Message-ID: <773DB8A82AB6A046AE0195C68612A319019FF13E@sbs2003.acksys.local>
 MIME-Version: 1.0
-Content-Type: multipart/mixed;
- boundary="----=_NextPart_000_001F_01D051F3.404F8380"
-Content-Language: de-at
-Subject: [wireless-regdb] WG: [PATCH] wireless-regdb: Update Austria (AT)
-	regulatory rules
+From: "Jean-Pierre TOSONI" <jp.tosoni@acksys.fr>
+Subject: [wireless-regdb] CAC time syntax in regdb.txt
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,89 +25,35 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
+Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-------=_NextPart_000_001F_01D051F3.404F8380
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Hi list,
 
-Hello Linux-Team,
+I saw that the library in crda was updated to handle the CAC time.
+AFAICT the format is
+      (freq - freq @ bw), (eirp [mW]), [(CACtime)] [flags...]
 
-just a little Update of the Austrian regulatory rules =96 because it looks
-like the current ones are incorrect.
+but the conversion of the database from text format to bin format is
+still using a python script that crashes with this format.
+I used the
+https://git.kernel.org/cgit/linux/kernel/git/sforshee/wireless-regdb.git
+repo.
 
-Sources:
-https://www.rtr.at/en/tk/Spektrum2400MHz
-https://www.rtr.at/en/tk/Spektrum5GHz
+Is there an updated python script out there? Or a replacement tool? Or
+am I missing a something?
 
-MFG J=FCrgen Vogl
+Thanks
 
-------=_NextPart_000_001F_01D051F3.404F8380
-Content-Type: application/octet-stream;
-	name="0001-wireless-regdb-Update-Austria-AT-regulatory-rules.patch"
-Content-Transfer-Encoding: quoted-printable
-Content-Disposition: attachment;
-	filename="0001-wireless-regdb-Update-Austria-AT-regulatory-rules.patch"
-
-From 063f2f7771794478c7246fde7db89ecd2ab99208 Mon Sep 17 00:00:00 2001=0A=
-From: Juergen Vogl <juergen.vogl@outlook.at>=0A=
-Date: Thu, 26 Feb 2015 09:20:55 +0100=0A=
-Subject: [PATCH] wireless-regdb: Update Austria (AT) regulatory rules=0A=
-=0A=
-https://www.rtr.at/en/tk/Spektrum2400MHz=0A=
-https://www.rtr.at/en/tk/Spektrum5GHz=0A=
----=0A=
- db.txt | 14 +++++++++-----=0A=
- 1 file changed, 9 insertions(+), 5 deletions(-)=0A=
-=0A=
-diff --git a/db.txt b/db.txt=0A=
-index 7c6ca5d..d329e17 100644=0A=
---- a/db.txt=0A=
-+++ b/db.txt=0A=
-@@ -1,4 +1,4 @@=0A=
--# This is the world regulatory domain=0A=
-+=EF=BB=BF# This is the world regulatory domain=0A=
- country 00:=0A=
- 	(2402 - 2472 @ 40), (20)=0A=
- 	# Channel 12 - 13.=0A=
-@@ -78,10 +78,14 @@ country AS: DFS-FCC=0A=
- 	(5735 - 5835 @ 80), (30)=0A=
- =0A=
- country AT: DFS-ETSI=0A=
--	(2402 - 2482 @ 40), (20)=0A=
--	(5170 - 5250 @ 80), (20), AUTO-BW=0A=
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW=0A=
--	(5490 - 5710 @ 160), (27), DFS=0A=
-+	# EN 300 328-2=0A=
-+	(2400 - 2483.5 @ 40), (100 mW)=0A=
-+	# EN 301 893=0A=
-+	# FSB-LD061=0A=
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR=0A=
-+	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW=0A=
-+	# Sub-Class 54=0A=
-+	(5470 - 5725 @ 160), (1000 mW), DFS, AUTO-BW=0A=
- 	# 60 gHz band channels 1-4, ref: Etsi En 302 567=0A=
- 	(57000 - 66000 @ 2160), (40)=0A=
- =0A=
--- =0A=
-1.9.4.msysgit.2=0A=
-=0A=
-
-------=_NextPart_000_001F_01D051F3.404F8380
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
+Jean-Pierre Tosoni
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
-------=_NextPart_000_001F_01D051F3.404F8380--
-
 
