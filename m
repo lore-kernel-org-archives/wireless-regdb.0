@@ -1,23 +1,22 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine01.qualcomm.com ([199.106.114.254])
+Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YcWyd-0003AH-Jm
- for wireless-regdb@lists.infradead.org; Mon, 30 Mar 2015 10:31:29 +0000
+ id 1YcWy8-0002y9-CX
+ for wireless-regdb@lists.infradead.org; Mon, 30 Mar 2015 10:30:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1427711487; x=1459247487;
+ s=qcdkim; t=1427711456; x=1459247456;
  h=from:to:cc:subject:date:message-id:mime-version;
- bh=hIDbC5zVL7sra2Idlprsgb81VJiDWVHhMDVneaXj0WQ=;
- b=Ig8bIHh63+/wX6yqtf0g2KzkLeCd/OPWS4M6HbjVDYBL5Gp8GbtB3fNy
- S7sNMpNwnd2dzJa6nrdicrQD/UyqGzOgi8ElLt0mIQ2NJGniL942ob7Na
- YA/EeH5h+AC2XmAx5leFDVaZFD3P+PWNKE5C1MRNV2eQvjPus8Ffx9GdU U=;
+ bh=C9V+xmAjkAbSYiRU6A5Bu1V5gasu4A0ltubXaQfFgWI=;
+ b=tGvmUof2tr6Eow5yBeja6fzqPnQvBPwWjhnwZdVg1Gew2TAJHqfN1jzC
+ PlosxSME3eKzXdtbvz/s7b4EM19gc0kyHvv/4URZl09xZiFQu3NZTFKE/
+ ALLqF0cFHPIGDX9J6gRFozNvVNQyHjrcPP1BKXhtLQwZt+5X2w3reGzg6 g=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Mon, 30 Mar 2015 13:30:41 +0300
-Message-ID: <1427711441-4998-1-git-send-email-jouni@qca.qualcomm.com>
+Date: Mon, 30 Mar 2015 13:30:22 +0300
+Message-ID: <1427711422-4967-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules for
-	Maldives (MV)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update Macau (MO) rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,33 +35,36 @@ To: Seth Forshee <seth.forshee@canonical.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Source:
-http://www.cam.gov.mv/docs/tech_standards/TAM-TS-100-2004-WLAN.pdf
+source: http://www.dsrt.gov.mo/por/laws/198_2014.html
+on July 30, 2014
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ db.txt | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 317bfb1..ad2acf5 100644
+index dff2fba..317bfb1 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -794,6 +794,14 @@ country MU: DFS-FCC
+@@ -751,11 +751,12 @@ country MN: DFS-FCC
  	(5490 - 5730 @ 160), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
-+# Source:
-+# http://www.cam.gov.mv/docs/tech_standards/TAM-TS-100-2004-WLAN.pdf
-+country MV: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW
-+	(5725 - 5850 @ 80), (100 mW)
-+
- country MW: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20), AUTO-BW
+-country MO:
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 40), (23)
+-	(5250 - 5330 @ 40), (23), DFS
+-	(5735 - 5835 @ 40), (30)
++country MO: DFS-FCC
++	(2402 - 2482 @ 40), (23)
++	(5170 - 5250 @ 80), (23), AUTO-BW
++	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
++	(5490 - 5730 @ 160), (30), DFS
++	(5735 - 5835 @ 80), (30)
+ 
+ country MP: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
 -- 
 1.9.1
 
