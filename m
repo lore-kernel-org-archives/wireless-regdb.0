@@ -1,20 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YcgxH-00029Q-Uj
- for wireless-regdb@lists.infradead.org; Mon, 30 Mar 2015 21:10:48 +0000
-Date: Mon, 30 Mar 2015 23:10:18 +0200
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
-Message-ID: <20150330211018.GU5622@wotan.suse.de>
-References: <773DB8A82AB6A046AE0195C68612A319019FF13E@sbs2003.acksys.local>
- <20150326192532.GB61113@ubuntu-hedt>
- <20150326204221.GD5622@wotan.suse.de>
- <1427702614.26117.1.camel@sipsolutions.net>
+ id 1YcWyd-0003AH-Jm
+ for wireless-regdb@lists.infradead.org; Mon, 30 Mar 2015 10:31:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1427711487; x=1459247487;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=hIDbC5zVL7sra2Idlprsgb81VJiDWVHhMDVneaXj0WQ=;
+ b=Ig8bIHh63+/wX6yqtf0g2KzkLeCd/OPWS4M6HbjVDYBL5Gp8GbtB3fNy
+ S7sNMpNwnd2dzJa6nrdicrQD/UyqGzOgi8ElLt0mIQ2NJGniL942ob7Na
+ YA/EeH5h+AC2XmAx5leFDVaZFD3P+PWNKE5C1MRNV2eQvjPus8Ffx9GdU U=;
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Mon, 30 Mar 2015 13:30:41 +0300
+Message-ID: <1427711441-4998-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1427702614.26117.1.camel@sipsolutions.net>
-Subject: Re: [wireless-regdb] CAC time syntax in regdb.txt
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules for
+	Maldives (MV)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,36 +32,40 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: Seth Forshee <seth.forshee@canonical.com>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>, wireless-regdb@lists.infradead.org, Jean-Pierre TOSONI <jp.tosoni@acksys.fr>
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Mar 30, 2015 at 10:03:34AM +0200, Johannes Berg wrote:
-> On Thu, 2015-03-26 at 21:42 +0100, Luis R. Rodriguez wrote:
-> 
-> > This would require generating two binary files and supporting that.  This was
-> > never done. We could also try to somehow mesh both versions together with one
-> > larger file that has both and try to remain compatible. That's the ideal
-> > solution IMHO.
-> 
-> Given the file format, I don't think this will be possible.
-> 
-> > Instead of sticking to CRDA updates to rely on this for support what we really
-> > need to do is mesh in CRDA support upstream into the kernel since the kernel
-> > now supports the cryptographic needs that CRDA had. I was planning on doing
-> > this during the upcoming Hackweek at SUSE but if anyone else wants to try that
-> > before please feel free.
-> 
-> And given that we want this direction anyway, I'm not sure that the
-> multi-file-format CRDA solution will really be economical.
-> 
-> For the kernel, we should probably define an extensible file format
-> anyway, and then just do it once.
+Source:
+http://www.cam.gov.mv/docs/tech_standards/TAM-TS-100-2004-WLAN.pdf
 
-Ack. I can try to address both then during Hackweek unless someone wants
-to jump on it sooner.
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
- Luis
+diff --git a/db.txt b/db.txt
+index 317bfb1..ad2acf5 100644
+--- a/db.txt
++++ b/db.txt
+@@ -794,6 +794,14 @@ country MU: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
++# Source:
++# http://www.cam.gov.mv/docs/tech_standards/TAM-TS-100-2004-WLAN.pdf
++country MV: DFS-ETSI
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (200 mW), AUTO-BW
++	(5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW
++	(5725 - 5850 @ 80), (100 mW)
++
+ country MW: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (20), AUTO-BW
+-- 
+1.9.1
+
 
 _______________________________________________
 wireless-regdb mailing list
