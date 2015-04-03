@@ -1,18 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-am1on0144.outbound.protection.outlook.com
- ([157.56.112.144] helo=emea01-am1-obe.outbound.protection.outlook.com)
+Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YgDZA-0003wI-9t
- for wireless-regdb@lists.infradead.org; Thu, 09 Apr 2015 14:36:25 +0000
-Message-ID: <55268E40.40102@bluetown.com>
-Date: Thu, 9 Apr 2015 16:35:44 +0200
-From: Quinn Plattel <q@bluetown.com>
+ id 1Ydu8L-0001Wi-6b
+ for wireless-regdb@lists.infradead.org; Fri, 03 Apr 2015 05:27:10 +0000
+Received: by lbbug6 with SMTP id ug6so73130045lbb.3 for
+ <wireless-regdb@lists.infradead.org>; Thu, 02 Apr 2015 22:26:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tieto.com;
+ s=google;
+ h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+ :cc:content-type; bh=2gxLRqUYNFzIyC0kniiN2tyrX9fJl2omAfhJ/ciAXIA=;
+ b=qa509Ue36osOYusiHE3kxBTratKtifyUq17kPOccRO2FXS6baVB3FW4hAWcurYVj1U
+ Irk9dQ/aIo5iupcAm1IjPhqY2EisB7WHfLVubkaYR8P9TZDYd7ebk1CkqhtkXd7jeJmL
+ Zom1x65vtTKQ22FjFhLekfh30AtlOHoCsv500=
 MIME-Version: 1.0
-References: 
-	 <55B7C19249033A4482157731B0C0AF19AE215D61@banasiexm01.ASIA.ROOT.PRI>
-In-Reply-To: <55B7C19249033A4482157731B0C0AF19AE215D61@banasiexm01.ASIA.ROOT.PRI>
-Subject: Re: [wireless-regdb] Regulatory requirements for Japan/Europe
+In-Reply-To: <20150330211018.GU5622@wotan.suse.de>
+References: <773DB8A82AB6A046AE0195C68612A319019FF13E@sbs2003.acksys.local>
+ <20150326192532.GB61113@ubuntu-hedt>
+ <20150326204221.GD5622@wotan.suse.de>
+ <1427702614.26117.1.camel@sipsolutions.net>
+ <20150330211018.GU5622@wotan.suse.de>
+Date: Fri, 3 Apr 2015 07:26:40 +0200
+Message-ID: <CALhHN=qp5AeVwER6BwA4Djga2b2OVDCK7YYdDjrxqTOY0fwiLQ@mail.gmail.com>
+From: Janusz Dziedzic <janusz.dziedzic@tieto.com>
+Subject: Re: [wireless-regdb] CAC time syntax in regdb.txt
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -22,58 +33,51 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: "Luis R. Rodriguez" <mcgrof@suse.com>
+Cc: Jean-Pierre TOSONI <jp.tosoni@acksys.fr>, Seth Forshee <seth.forshee@canonical.com>, Johannes Berg <johannes@sipsolutions.net>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi,
+On 30 March 2015 at 23:10, Luis R. Rodriguez <mcgrof@suse.com> wrote:
+> On Mon, Mar 30, 2015 at 10:03:34AM +0200, Johannes Berg wrote:
+>> On Thu, 2015-03-26 at 21:42 +0100, Luis R. Rodriguez wrote:
+>>
+>> > This would require generating two binary files and supporting that.  This was
+>> > never done. We could also try to somehow mesh both versions together with one
+>> > larger file that has both and try to remain compatible. That's the ideal
+>> > solution IMHO.
+>>
+>> Given the file format, I don't think this will be possible.
+>>
+>> > Instead of sticking to CRDA updates to rely on this for support what we really
+>> > need to do is mesh in CRDA support upstream into the kernel since the kernel
+>> > now supports the cryptographic needs that CRDA had. I was planning on doing
+>> > this during the upcoming Hackweek at SUSE but if anyone else wants to try that
+>> > before please feel free.
+>>
+>> And given that we want this direction anyway, I'm not sure that the
+>> multi-file-format CRDA solution will really be economical.
+>>
+>> For the kernel, we should probably define an extensible file format
+>> anyway, and then just do it once.
+>
+> Ack. I can try to address both then during Hackweek unless someone wants
+> to jump on it sooner.
+>
 
-According to IEEE802.11-2012 standard, center frequencies 5180 -> 5300 
-are Indoor for Europe.  Center frequencies 5180 ->5320 are Indoor for 
-Brazil. Center frequencies 5745 -> 5825 are for short range devices in 
-Europe.  Center frequencies 5260 -> 5700 require DFS for USA, Europe, 
-Japan, and Australia.
+Hello Jean-Pierre,
 
-Br,
-Quinn
+Before this will be ready, you can always chek crda-tiny
+implementation, where signed db.txt file is used (skiped bin file) -
+and CAC time works fine.
+So, you can check this patch: [RFC 2/2] crda: add crda_tiny implementation .
 
-On 09/04/15 10:50, Atul Joshi wrote:
-> Hi,
-> I have a question on Regulatory requirements for Japan (and Europe)
-> According to db.txt
-> country JP: DFS-JP
->       (2402 - 2482 @ 40), (20)
->       (2474 - 2494 @ 20), (20), NO-OFDM
->       (4910 - 4990 @ 40), (23)
->       (5030 - 5090 @ 40), (23)
->       (5170 - 5250 @ 80), (20), AUTO-BW
->       (5250 - 5330 @ 80), (20), DFS, AUTO-BW
->       (5490 - 5710 @ 160), (23), DFS
->
-> But it appears that (5170 - 5250 @ 80), (20), AUTO-BW is no-outdoor.
-> Is my understanding correct?
-> Also according to http://en.wikipedia.org/wiki/List_of_WLAN_channels both the above bands (UNII-1 and UNII-2) are indoors only.
->
-> Which one is correct? Are the indoor/outdoor restriction up-to-date in db.txt?
->
-> Thanks
-> atul
->
->
->
-> Member of the CSR plc group of companies. CSR plc registered in England and Wales, registered number 4187346, registered office Churchill House, Cambridge Business Park, Cowley Road, Cambridge, CB4 0WZ, United Kingdom
-> More information can be found at www.csr.com. Keep up to date with CSR on our technical blog, www.csr.com/blog, CSR people blog, www.csr.com/people, YouTube, www.youtube.com/user/CSRplc, Facebook, www.facebook.com/pages/CSR/191038434253534, or follow us on Twitter at www.twitter.com/CSR_plc.
-> You can now access the wide range of products powered by aptX at www.aptx.com
->
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
+BR
+Janusz
 
 _______________________________________________
 wireless-regdb mailing list
