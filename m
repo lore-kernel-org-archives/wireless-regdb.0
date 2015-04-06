@@ -1,17 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ob0-f175.google.com ([209.85.214.175])
+Received: from mail-ob0-f179.google.com ([209.85.214.179])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YfCNr-0008O5-Ju
- for wireless-regdb@lists.infradead.org; Mon, 06 Apr 2015 19:08:32 +0000
-Received: by obbec2 with SMTP id ec2so54857744obb.3 for
- <wireless-regdb@lists.infradead.org>; Mon, 06 Apr 2015 12:08:10 -0700 (PDT)
-Date: Mon, 6 Apr 2015 14:08:08 -0500
+ id 1YfC6p-0002UZ-LK
+ for wireless-regdb@lists.infradead.org; Mon, 06 Apr 2015 18:50:57 +0000
+Received: by obbfy7 with SMTP id fy7so54440674obb.2 for
+ <wireless-regdb@lists.infradead.org>; Mon, 06 Apr 2015 11:50:34 -0700 (PDT)
+Date: Mon, 6 Apr 2015 13:50:32 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150406190808.GA29512@ubuntu-hedt>
+Message-ID: <20150406185032.GB28818@ubuntu-hedt>
+References: <1427711441-4998-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2015-04-06
+In-Reply-To: <1427711441-4998-1-git-send-email-jouni@qca.qualcomm.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Add regulatory rules
+	for Maldives (MV)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,27 +29,17 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: Jouni Malinen <jouni@qca.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2015-04-06) is available at:
+On Mon, Mar 30, 2015 at 01:30:41PM +0300, Jouni Malinen wrote:
+> Source:
+> http://www.cam.gov.mv/docs/tech_standards/TAM-TS-100-2004-WLAN.pdf
+> 
+> Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.04.06.tar.gz
-
-The short log of changes since the 2015-03-13 release is below.
-
-Thanks,
-Seth
-
----
-
-Jouni Malinen (2):
-      wireless-regdb: Update Macau (MO) rules
-      wireless-regdb: Add regulatory rules for Maldives (MV)
-
-Seth Forshee (1):
-      wireless-regdb: update regulatory.bin based on preceding changes
+Applied, thanks.
 
 _______________________________________________
 wireless-regdb mailing list
