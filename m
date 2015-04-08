@@ -1,22 +1,16 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from s3.sipsolutions.net ([5.9.151.49] helo=sipsolutions.net)
+Received: from mail-ob0-f169.google.com ([209.85.214.169])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Yhv5E-0002Zv-Qy
- for wireless-regdb@lists.infradead.org; Tue, 14 Apr 2015 07:16:33 +0000
-Message-ID: <1428995766.3019.0.camel@sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 14 Apr 2015 09:16:06 +0200
-In-Reply-To: <20150413195426.GB3025@ubuntu-xps13>
-References: <000601d075fe$e10e0600$a32a1200$@acksys.fr>
- <20150413162317.GA21761@ubuntu-xps13>
- <1428951396.2355.15.camel@sipsolutions.net>
- <20150413191818.GA3025@ubuntu-xps13>
- <1428953793.2355.16.camel@sipsolutions.net>
- <20150413195426.GB3025@ubuntu-xps13>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [RFC] [PATCH] crda: enforce ETSI CAC timer of
- 600s on the weather band
+ id 1YfpsJ-0007Mb-PK
+ for wireless-regdb@lists.infradead.org; Wed, 08 Apr 2015 13:18:36 +0000
+Received: by oblw8 with SMTP id w8so86336636obl.0 for
+ <wireless-regdb@lists.infradead.org>; Wed, 08 Apr 2015 06:18:11 -0700 (PDT)
+From: Seth Forshee <seth.forshee@canonical.com>
+Date: Wed,  8 Apr 2015 08:18:05 -0500
+Message-Id: <1428499085-142267-1-git-send-email-seth.forshee@canonical.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Support db.txt files with
+	DFS CAC times
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,37 +20,92 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: Jean-Pierre Tosoni <jp.tosoni@acksys.fr>, "Luis R. Rodriguez" <mcgrof@suse.com>, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
+Cc: Jean-Pierre TOSONI <jp.tosoni@acksys.fr>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2015-04-13 at 14:54 -0500, Seth Forshee wrote:
+CRDA now supports db.txt files with DFS CAC times in country
+rules, but dbparse.py chokes on such files. We can't do
+anything useful with CAC times right now since the CRDA
+binary format doesn't support them, so add code to parse CAC
+times and emit a warning that they are being ignored.
 
-> > > Yeah with AUTO-BW the bands could be broken up in db.txt, and we could
-> > > even put in the CAC times. But we still can't get the CAC times into the
-> > > current regulatory.bin format, so it doesn't really accomplish anything.
-> > 
-> > But then there's also little point in putting any code for it into the
-> > crda binary, no?
-> 
-> Just to be clear, I'm not arguing for or against the patch at all. I'm
-> only trying to explain why Jean-Pierre is proposing to change CRDA
-> rather than db.txt. Maybe I should just let him speak for himself ...
-> 
-> As I understand it Jean-Pierre is looking for a stop-gap to get CAC
-> times into the kernel until such time as we have a file format which
-> allows getting them from regulatory.bin. Chaning CRDA can accomplish
-> this, whereas modifying db.txt cannot.
+Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+---
 
-Ah, yes, I got confused here. The regdb binary format doesn't support
-it, but the kernel does.
+I'm throwing this out there in case anyone wants to build regulatory.bin
+files from their own db.txt files which contain CAC times. If so, let me
+know and I can apply this.
 
-johannes
+Jean-Pierre: This is working fine in my testing. Could you give it a try
+with your file(s) and let me know how it works?
+
+
+ dbparse.py | 33 ++++++++++++++++++++++++++-------
+ 1 file changed, 26 insertions(+), 7 deletions(-)
+
+diff --git a/dbparse.py b/dbparse.py
+index b735b6a..c740eac 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -273,23 +273,42 @@ class DBParser(object):
+ 
+         if line[0] == '(':
+             items = line.split('),', 1)
++            pname = items[0]
+             if len(items) == 1:
+-                pname = items[0]
+                 line = ''
+                 if not pname[-1] == ')':
+                     self._syntax_error("Badly parenthesised power definition")
+                 pname = pname[:-1]
+-                flags = []
+             else:
+-                pname = items[0]
+-                flags = items[1].split(',')
++                line = items[1]
+             power = pname[1:]
+             pname = 'UNNAMED %d' % self._lineno
+             self._parse_power_def(pname, power, dupwarn=False)
+         else:
+-            line = line.split(',')
+-            pname = line[0]
+-            flags = line[1:]
++            items = line.split(',', 1)
++            pname = items[0]
++            if len(items) == 1:
++                line = ''
++            else:
++                line = items[1]
++
++        if len(line) != 0 and line[0] == '(':
++            self._warn("Ignoring DFS CAC time definition")
++            items = line.split(')', 1)
++            cactime = items[0]
++            if len(items) == 1:
++                line = ''
++                if not cactime[-1] == ')':
++                    self._syntax_error("Badly parenthesised CAC time")
++                cactime = cactime[:-1]
++            else:
++                line = items[1]
++            cactime = cactime[1:]
++
++        if len(line) == 0:
++            flags = []
++        else:
++            flags = line.split(',')
+ 
+         if not bname in self._bands:
+             self._syntax_error("band does not exist")
+-- 
+1.9.1
 
 
 _______________________________________________
