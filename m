@@ -1,22 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f51.google.com ([209.85.218.51])
+Received: from cluster-g.mailcontrol.com ([208.87.233.190])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YhkZC-00022m-Ku
- for wireless-regdb@lists.infradead.org; Mon, 13 Apr 2015 20:02:47 +0000
-Received: by oiko83 with SMTP id o83so13391592oik.1 for
- <wireless-regdb@lists.infradead.org>; Mon, 13 Apr 2015 13:02:25 -0700 (PDT)
-Date: Mon, 13 Apr 2015 15:02:20 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150413200220.GC3025@ubuntu-xps13>
-References: <1428499085-142267-1-git-send-email-seth.forshee@canonical.com>
- <004b01d075c3$f240a620$d6c1f260$@acksys.fr>
- <20150413131846.GA4743@ubuntu-xps13>
+ id 1Yg8DP-0007qV-CB
+ for wireless-regdb@lists.infradead.org; Thu, 09 Apr 2015 08:53:36 +0000
+Received: from banapppus01.asia.root.pri
+ (static-42.188.93.111-tataidc.co.in [111.93.188.42] (may be forged)) by
+ rly02g.srv.mailcontrol.com (MailControl) with ESMTP id t398r2aO027451
+ (version=TLSv1/SSLv3 cipher=AES128-SHA bits=128 verify=NO) for
+ <wireless-regdb@lists.infradead.org>; Thu, 9 Apr 2015 09:53:12 +0100
+From: Atul Joshi <Atul.Joshi@csr.com>
+Date: Thu, 9 Apr 2015 08:50:58 +0000
+Message-ID: <55B7C19249033A4482157731B0C0AF19AE215D61@banasiexm01.ASIA.ROOT.PRI>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20150413131846.GA4743@ubuntu-xps13>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Support db.txt files
- with DFS CAC times
+Content-Language: en-US
+Subject: [wireless-regdb] Regulatory requirements for Japan/Europe
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -26,92 +24,48 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="iso-8859-1"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: Jean-Pierre Tosoni <jp.tosoni@acksys.fr>
-Cc: wireless-regdb@lists.infradead.org
+Content-Transfer-Encoding: quoted-printable
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Apr 13, 2015 at 08:18:46AM -0500, Seth Forshee wrote:
-> On Mon, Apr 13, 2015 at 10:29:23AM +0200, Jean-Pierre Tosoni wrote:
-> > Hi Seth,
-> > 
-> > From my testing the syntax accepted by reglib.c needs a comma after the CAC,
-> > so you should skip that comma. Below is your patch with two lines added.
-> 
-> Ah, okay, I based it off of what you said in your email, which shows no
-> comma:
-> 
->   (freq - freq @ bw), (eirp [mW]), [(CACtime)] [flags...]
-> 
-> I thought it was weird that there was no comma, should have double
-> checked against CRDA. Thanks for testing and the update, I can't try it
-> out right this moment but will do so soon.
+Hi,
+I have a question on Regulatory requirements for Japan (and Europe)
+According to db.txt
+country JP: DFS-JP
+=A0=A0=A0=A0 (2402 - 2482 @ 40), (20)
+=A0=A0=A0=A0 (2474 - 2494 @ 20), (20), NO-OFDM
+=A0=A0=A0=A0 (4910 - 4990 @ 40), (23)
+=A0=A0=A0=A0 (5030 - 5090 @ 40), (23)
+=A0=A0=A0=A0 (5170 - 5250 @ 80), (20), AUTO-BW
+=A0=A0=A0=A0 (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+=A0=A0=A0=A0 (5490 - 5710 @ 160), (23), DFS
 
-I don't think we need to consider the syntax without a comma following
-CACtime as being valid, so we can make it simpler than in your changes.
-Try the patch below, and if it works for you then I'll apply it. I'm
-also thinking about removing the warning ...
+But it appears that (5170 - 5250 @ 80), (20), AUTO-BW is no-outdoor.
+Is my understanding correct?
+Also according to http://en.wikipedia.org/wiki/List_of_WLAN_channels both t=
+he above bands (UNII-1 and UNII-2) are indoors only.
 
----
+Which one is correct? Are the indoor/outdoor restriction up-to-date in db.t=
+xt?
 
-diff --git a/dbparse.py b/dbparse.py
-index b735b6a..baca3dd 100755
---- a/dbparse.py
-+++ b/dbparse.py
-@@ -273,23 +273,42 @@ class DBParser(object):
- 
-         if line[0] == '(':
-             items = line.split('),', 1)
-+            pname = items[0]
-             if len(items) == 1:
--                pname = items[0]
-                 line = ''
-                 if not pname[-1] == ')':
-                     self._syntax_error("Badly parenthesised power definition")
-                 pname = pname[:-1]
--                flags = []
-             else:
--                pname = items[0]
--                flags = items[1].split(',')
-+                line = items[1]
-             power = pname[1:]
-             pname = 'UNNAMED %d' % self._lineno
-             self._parse_power_def(pname, power, dupwarn=False)
-         else:
--            line = line.split(',')
--            pname = line[0]
--            flags = line[1:]
-+            items = line.split(',', 1)
-+            pname = items[0]
-+            if len(items) == 1:
-+                line = ''
-+            else:
-+                line = items[1]
-+
-+        if len(line) != 0 and line[0] == '(':
-+            self._warn("Ignoring DFS CAC time definition")
-+            items = line.split('),', 1)
-+            cactime = items[0]
-+            if len(items) == 1:
-+                line = ''
-+                if not cactime[-1] == ')':
-+                    self._syntax_error("Badly parenthesised CAC time")
-+                cactime = cactime[:-1]
-+            else:
-+                line = items[1]
-+            cactime = cactime[1:]
-+
-+        if len(line) == 0:
-+            flags = []
-+        else:
-+            flags = line.split(',')
- 
-         if not bname in self._bands:
-             self._syntax_error("band does not exist")
+Thanks
+atul
+
+
+
+Member of the CSR plc group of companies. CSR plc registered in England and=
+ Wales, registered number 4187346, registered office Churchill House, Cambr=
+idge Business Park, Cowley Road, Cambridge, CB4 0WZ, United Kingdom
+More information can be found at www.csr.com. Keep up to date with CSR on o=
+ur technical blog, www.csr.com/blog, CSR people blog, www.csr.com/people, Y=
+ouTube, www.youtube.com/user/CSRplc, Facebook, www.facebook.com/pages/CSR/1=
+91038434253534, or follow us on Twitter at www.twitter.com/CSR_plc.
+You can now access the wide range of products powered by aptX at www.aptx.c=
+om
 
 _______________________________________________
 wireless-regdb mailing list
