@@ -1,20 +1,19 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-vn0-f42.google.com ([209.85.216.42])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YiNL3-0000SP-I1
- for wireless-regdb@lists.infradead.org; Wed, 15 Apr 2015 13:26:46 +0000
-Received: by vnbg62 with SMTP id g62so14944807vnb.6 for
- <wireless-regdb@lists.infradead.org>; Wed, 15 Apr 2015 06:26:23 -0700 (PDT)
-Date: Wed, 15 Apr 2015 08:26:18 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150415132618.GA5251@ubuntu-xps13>
-References: 
-	 <55B7C19249033A4482157731B0C0AF19AE253FAF@banasiexm01.ASIA.ROOT.PRI>
+Received: from smtp-out05.msg.oleane.net ([62.161.7.3])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1YhyK1-0001KG-B9
+ for wireless-regdb@lists.infradead.org; Tue, 14 Apr 2015 10:44:03 +0000
+Received: from smtp28.msg.oleane.net (smtp28.mail.priv [172.17.20.150]) 
+ by smtp-out05.msg.oleane.net with ESMTP id t3E8oHS9016312
+ for <wireless-regdb@lists.infradead.org>; Tue, 14 Apr 2015 10:50:17 +0200
+From: "Jean-Pierre Tosoni" <jp.tosoni@acksys.fr>
+Date: Tue, 14 Apr 2015 10:28:33 +0200
+Message-ID: <002801d0768c$ff2f66e0$fd8e34a0$@acksys.fr>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <55B7C19249033A4482157731B0C0AF19AE253FAF@banasiexm01.ASIA.ROOT.PRI>
-Subject: Re: [wireless-regdb] Regulatory requirements for Japan/Europe
+Content-Language: fr
+Subject: Re: [wireless-regdb] [linux-wireless] was [RFC] [PATCH] crda:
+	enforce ETSI CAC timer of 600s on the weather band
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,38 +23,69 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="iso-8859-1"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: Atul Joshi <Atul.Joshi@csr.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Content-Transfer-Encoding: quoted-printable
+To: 'Johannes Berg' <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org, "'Luis R. Rodriguez'" <mcgrof@suse.com>
+Cc: 'Seth Forshee' <seth.forshee@canonical.com>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Apr 14, 2015 at 03:17:51PM +0000, Atul Joshi wrote:
-> 
-> 
-> Hello,
-> According to the mail below The BR(Brazil) has  .  Center frequencies 5180 ->5320 are as indoors but the db.txt does not show any such restriction.
+> De=A0: Seth Forshee [mailto:seth.forshee@canonical.com] Envoy=E9=A0: lund=
+i 13
+avril 2015 21:54
+> On Mon, Apr 13, 2015 at 09:36:33PM +0200, Johannes Berg wrote:
+> > On Mon, 2015-04-13 at 14:18 -0500, Seth Forshee wrote:
+> > > On Mon, Apr 13, 2015 at 08:56:36PM +0200, Johannes Berg wrote:
+> > > > On Mon, 2015-04-13 at 11:23 -0500, Seth Forshee wrote:
+> > > > > On Mon, Apr 13, 2015 at 05:31:14PM +0200, Jean-Pierre Tosoni
+> wrote:
+> > > > > > A really weird patch that splits the U-NII-2e band into 1, 2
+> > > > > > or 3 sub-bands to enforce a CAC time of 10 minutes in the range
+> 5600-5650 MHz.
+> > > > >
+> > > > > Wrong maintainer / list. CRDA patches should be directed to Luis
+> > > > > and the linux-wireless list (feel free to Cc wireless-regdb if you
+> like).
+> > > >
+> > > > However, I'm not convinced that this actually *belongs* into the
+> > > > crda code? That seems like the wrong approach - shouldn't these
+> > > > rules be captured in the database? We do have AUTO-BW now so it
+> > > > should be possible, no?
+> > > >
+> > > > And if the timings aren't captured in the db.txt file they really
+> > > > should be.
+> > >
+> > > Yeah with AUTO-BW the bands could be broken up in db.txt, and we
+> > > could even put in the CAC times. But we still can't get the CAC
+> > > times into the current regulatory.bin format, so it doesn't really
+> accomplish anything.
+> >
+> > But then there's also little point in putting any code for it into the
+> > crda binary, no?
 
-Do you have a link to the documents which describe this requirement?
-Feel free to send a patch with the changes you believe are needed.
+I agree that this belongs to db.txt and regulatory.bin rather than crda, but
+until the problem of defining a new format for regulatory.bin is settled,
+there is no other way.
+However I am not sure my patch should go to mainstream since in my mind it
+is temporary approach. But it does enforce ETSI regulations and still allow
+using weather frequencies.
 
-> country BR: DFS-FCC
-> 	(2402 - 2482 @ 40), (20)
-> 	(5170 - 5250 @ 80), (17), AUTO-BW
-> 	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
-> 	(5490 - 5730 @ 160), (24), DFS
-> 	(5735 - 5835 @ 80), (30)
-> 
-> Am I missing something?
-> Also Can you please explain what is AUTO-BW used for? Is it for automatic selection of 20/40/80/160MHz Bandwidth selection?
+>=20
+> Just to be clear, I'm not arguing for or against the patch at all. I'm
+> only trying to explain why Jean-Pierre is proposing to change CRDA rather
+> than db.txt. Maybe I should just let him speak for himself ...
+>=20
+> As I understand it Jean-Pierre is looking for a stop-gap to get CAC times
+> into the kernel until such time as we have a file format which allows
+> getting them from regulatory.bin. Changing CRDA can accomplish this,
+> whereas modifying db.txt cannot.
 
-Wide-bandwidth channels are allowed cross contiguous frequency ranges if
-the contiguous ranges both have AUTO-BW set.
+That's exactly what I meant.
 
-Seth
+Jean-Pierre
+
 
 _______________________________________________
 wireless-regdb mailing list
