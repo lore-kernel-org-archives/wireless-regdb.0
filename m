@@ -1,16 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wn1-mbie.dmzglobal.net ([203.144.33.76])
- by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YpixS-0003o2-70
- for wireless-regdb@lists.infradead.org; Tue, 05 May 2015 19:56:48 +0000
-From: Peter Gent <Peter.Gent@mbie.govt.nz>
-Date: Tue, 5 May 2015 19:56:16 +0000
-Message-ID: <D0D2EC853BFD0147A005CC7FAC0E4A530106C09B03@AKI2K113.wd.govt.nz>
-Content-Language: en-US
-MIME-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH] Specify Australian DFS region
-	as	DFS-ETSI [UNCLASSIFIED]
+Received: from mail-lb0-x22b.google.com ([2a00:1450:4010:c04::22b])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1YpYpm-00051M-VL
+ for wireless-regdb@lists.infradead.org; Tue, 05 May 2015 09:08:11 +0000
+Received: by lbcga7 with SMTP id ga7so123357497lbc.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 02:07:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ubnt.com; s=google;
+ h=date:from:to:subject:message-id:mime-version:content-type
+ :content-transfer-encoding;
+ bh=boTyZqredEQHFjWbwMA/hPL7+buB4TlQda4brT6ZN/U=;
+ b=VAWeVlcTMppPEZn7Hd5BOJ15DSQBYGVMVI4/trcHrj+MWap+u4YxkmEXV/sdTxQh9y
+ Z6BNBSWiptyS5UAwf9DmzEF26D1BhfMUbtbb67uIS5ZOtTjAtzj+5/eagslSZOCY9HsO
+ KCjEr3g3p72A6/EclAOLcyk3L0R0vskTD3CKI=
+Received: from di ([80.233.186.214])
+ by mx.google.com with ESMTPSA id an8sm3914463lac.25.2015.05.05.02.07.46
+ for <wireless-regdb@lists.infradead.org>
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 May 2015 02:07:47 -0700 (PDT)
+Date: Tue, 5 May 2015 12:07:45 +0300
+From: Dmitry Ivanov <dmitrijs.ivanovs@ubnt.com>
+Message-Id: <20150505120745.10de808ec9e646dbbc287667@ubnt.com>
+Mime-Version: 1.0
+Subject: [wireless-regdb] [PATCH] Specify Australian DFS region as DFS-ETSI
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -20,90 +32,46 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: =?utf-8?B?QmrDuHJuIE1vcms=?= <bjorn@mork.no>, Jouni Malinen <jouni@qca.qualcomm.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi,
+Currently, DFS region for Australia is not specified. This prevents starting AP with AU country code on DFS-affected channel in 5 GHz band with latest cfg80211 and hostapd because there is an explicit check for such condition.
 
-New Zealand does have some variations to the Australian Rules, but we do look at the FCC rules in the first instance. 
-There are 2 separate general user radio licences that cover the use of Wi-FI devices at http://www.rsm.govt.nz/about-rsm/spectrum-policy/gazette/gurl/short-range-devices and http://www.rsm.govt.nz/about-rsm/spectrum-policy/gazette/gurl/fixed-radio-link-devices  
+Australian standard AS/NZS 4268 requires that DFS must be implemented in accordance to EN 301 893. Alternatively, FCC Part 15.407(h)(2) can be used.
 
-Best regards
+This patch specifies DFS region for Australia as DFS-ETSI.
 
-Peter
+Source: AS/NZS 4268 (not avilable online).
 
+Signed-off-by: Dmitry Ivanov <dima@ubnt.com>
+---
+ db.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Peter Gent
-PLANNING ANALYST
+diff --git a/db.txt b/db.txt
+index ad2acf5..057c8e6 100644
+--- a/db.txt
++++ b/db.txt
+@@ -85,7 +85,7 @@ country AT: DFS-ETSI
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57000 - 66000 @ 2160), (40)
+ 
+-country AU:
++country AU: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (17), AUTO-BW
+ 	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-- 
+2.1.4
 
-Radio Spectrum Management, Infrastructure & Resource Markets Group
-Ministry of Business, Innovation & Employment
-
-peter.gent@mbie.govt.nz | DDI:  +64 4 462 4279  |  Ext 44279  
-Free Phone: 0508 RSM INFO (776 463) | Website: www.rsm.govt.nz 
-15 Stout Street, PO Box 2847, Wellington, New Zealand
-
-
-
-
-
-
-
------Original Message-----
-From: wireless-regdb [mailto:wireless-regdb-bounces@lists.infradead.org] On Behalf Of Bjørn Mork
-Sent: Tuesday, 5 May 2015 10:59 p.m.
-To: Jouni Malinen
-Cc: wireless-regdb@lists.infradead.org; Dmitry Ivanov
-Subject: Re: [wireless-regdb] [PATCH] Specify Australian DFS region as DFS-ETSI
-
-Jouni Malinen <jouni@qca.qualcomm.com> writes:
-> On Tue, May 05, 2015 at 11:32:16AM +0300, Dmitry Ivanov wrote:
->> Currently, DFS region for Australia is not specified. This prevents starting AP with AU country code on DFS-affected channel in 5 GHz band with latest cfg80211 and hostapd because there is an explicit check for such condition.
->> 
->> This patch specifies DFS region for Australia as DFS-ETSI. Alternatively, DFS-FCC can be used.
->
-> I would have used DFS-FCC here unless you have a clear indication of 
-> DFS-ETSI being closer to requirements. In addition, there should be a
-> Signed-off-by: tag in the commit log as described in the CONTRIBUTING 
-> file.
-
-From what I can gather from
-http://www.comlaw.gov.au/Details/F2014L01253
-the details are hidden in the standard "AS/NZS 4268:2012". The scope
-here:
-  http://shop.standards.co.nz/catalog/4268:2012%28AS|NZS%29/scope?
-shows the existence of an appendix "B" titled
-
- "DYNAMIC FREQUENCY SELECTION (DFS) AND TRANSMIT POWER CONTROL (TPC)
-  REQUIREMENTS FOR RADIO LOCAL AREA NETWORK (RLAN) TRANSMITTERS
-  OPERATING IN 5250 TO 5350 MHz OR 5470 TO 5725 MHz"
-
-But I'm afraid you'll have to buy the standard to get the full details...
-
-Given hysterical raisins, and the general tendency to reference ETSI standards and ERC decisions, I'd say that DFS-ETSI is more likely.  Why would they use FCC rules?
-
-But it should probably be kept aligned with the NZ entry, which currently is DFS-FCC.  Don't know the source of that, though.  Could very well be wrong...  Ref the "EN 301 893 V1.7.1" alternative given
-here:  https://gazette.govt.nz/notice/id/2015-go694
-
-
-Bjørn
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-www.govt.nz - your guide to finding and using New Zealand government services
 
-Any opinions expressed in this message are not necessarily those of the Ministry of Business, Innovation and Employment. This message and any files transmitted with it are confidential and solely for the use
-of the intended recipient. If you are not the intended recipient or the person responsible for delivery to the intended recipient, be advised that you have received this message in error and that any use is
-strictly prohibited. Please contact the sender and delete the message and any attachment from your computer.
-_______________________________________________
-wireless-regdb mailing list
-wireless-regdb@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/wireless-regdb
