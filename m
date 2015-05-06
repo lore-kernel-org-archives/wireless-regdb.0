@@ -1,17 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mx1.redhat.com ([209.132.183.28])
+Received: from mail-ie0-x22e.google.com ([2607:f8b0:4001:c03::22e])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Yq2eU-00089d-1j
- for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 16:58:31 +0000
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <1430873070-7290-6-git-send-email-mcgrof@do-not-panic.com>
-References: <1430873070-7290-6-git-send-email-mcgrof@do-not-panic.com>
- <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+ id 1Yq3Az-0005DS-Ch
+ for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 17:32:06 +0000
+Received: by iecnq11 with SMTP id nq11so19901551iec.3 for
+ <wireless-regdb@lists.infradead.org>; Wed, 06 May 2015 10:31:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:sender:in-reply-to:references:from:date:message-id
+ :subject:to:cc:content-type;
+ bh=0SI6+0Y5B2EcFkNSoQO0n97o+aKYMOyyR+TYSheBaRY=;
+ b=n8pMHxR3BdsTGyVqGvdSu4f3dnxg9axSnDYOIAP8+ePLlhWcUpwa9baSgOSYQ0L3hj
+ mihK3q7q5bsO0arlKeq5Q38+eBuwluXwK4cssaeq1WiIV64ZAIp2lTKtLode2PbmUmD+
+ qAa01rCqnbTBWMEjIFzpMhSlFQyFkIe3bXsIBhIxBAfK3m4hPoeX78WrxtAjxH92n0RW
+ AafsslQrsP9NDxnDJlynKq76xpvOFeLTku0gU4/icQ40dGFRc2y3Wmmd+vkC2hNVcRiZ
+ F7UIbp7RMPY+Usiz4YhkJ+r3mzfSDHIkEBlISDZR5q5WzfjX+bTM+olj7w1ZaOH5Q5T/ /LYA==
 MIME-Version: 1.0
-Content-ID: <17828.1430931479.1@warthog.procyon.org.uk>
-Date: Wed, 06 May 2015 17:57:59 +0100
-Message-ID: <17829.1430931479@warthog.procyon.org.uk>
+In-Reply-To: <17829.1430931479@warthog.procyon.org.uk>
+References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+ <1430873070-7290-6-git-send-email-mcgrof@do-not-panic.com>
+ <17829.1430931479@warthog.procyon.org.uk>
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Wed, 6 May 2015 10:31:23 -0700
+Message-ID: <CAB=NE6VJX=3jERjZRHn5dDxHsPtE9fya2ukxWfENxSObd0YQVQ@mail.gmail.com>
 Subject: Re: [wireless-regdb] [RFC v1 05/12] firmware: add firmware
 	signature checking support
 List-Unsubscribe: 
@@ -28,47 +40,19 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Cc: mjg59@srcf.ucam.org, kyle@kernel.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, tiwai@suse.de, gregkh@linuxfoundation.org, ming.lei@canonical.com, rusty@rustcorp.com.au, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, dhowells@redhat.com, seth.forshee@canonical.com, casey@schaufler-ca.com, akpm@linux-foundation.org, "Luis R. Rodriguez" <mcgrof@suse.com>, jlee@suse.com
+To: David Howells <dhowells@redhat.com>
+Cc: Matthew Garrett <mjg59@srcf.ucam.org>, Kyle McMartin <kyle@kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Kees Cook <keescook@chromium.org>, Takashi Iwai <tiwai@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Ming Lei <ming.lei@canonical.com>, Rusty Russell <rusty@rustcorp.com.au>, linux-wireless <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, jlee@suse.com, Seth Forshee <seth.forshee@canonical.com>, Casey Schaufler <casey@schaufler-ca.com>, Andrew Morton <akpm@linux-foundation.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Luis R. Rodriguez <mcgrof@do-not-panic.com> wrote:
+On Wed, May 6, 2015 at 9:57 AM, David Howells <dhowells@redhat.com> wrote:
+> I'm not sure how userspace actually passes the firmware blob to the kernel,
+> but I do think that if you can, you should pass the signature separately to
+> the blob.
 
-> As with module signing, we do a very simple search for a
-> particular string appended to the firmware. There's both a
-> config option and a boot parameter which control whether we
-> accept or fail with unsigned firmware and firmware that are
-> signed with an unknown key.
-> 
-> If firmware signing is enabled, the kernel will be tainted
-> if a firmware is loaded that is unsigned or has a signature
-> for which we don't have the key.
+Thanks yeah that is what I was hoping we'd prefer to end up doing.
+Will look at your tree and see if I can base my work on that now.
 
-I think you need to be careful storing the firmware blobs on disk with
-signatures attached for two reasons:
-
- (1) There may be licensing/copyright issues on these blobs if you alter them.
-
- (2) Someone might try loading the modified blob without the signature being
-     stripped - say someone runs an old kernel or copies the blob to a
-     non-Linux system and tries to load it there.
-
-Adding the signature to the blob upon loading might be less problematic, but
-it still potentially suffers from (2) above.
-
-If you switch to PKCS#7, you can also embed the blob inside the PKCS#7
-message, so essentially the blob is unmodified and can be verified or
-extracted by any suitable PKCS#7 tool.  This is more likely to get the
-firmware rejected if the kernel isn't expecting it to be signed, I think.
-
-I'm not sure how userspace actually passes the firmware blob to the kernel,
-but I do think that if you can, you should pass the signature separately to
-the blob.
-
-With kernel modules this doesn't matter since modules are typically tied to a
-single kernel version anyway.
-
-David
+ Luis
 
 _______________________________________________
 wireless-regdb mailing list
