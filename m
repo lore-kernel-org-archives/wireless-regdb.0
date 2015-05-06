@@ -1,29 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wg0-x22f.google.com ([2a00:1450:400c:c00::22f])
+Received: from mail-pd0-x236.google.com ([2607:f8b0:400e:c02::236])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Yt0Lc-00071S-UV
- for wireless-regdb@lists.infradead.org; Thu, 14 May 2015 21:07:17 +0000
-Received: by wgin8 with SMTP id n8so89220436wgi.0 for
- <wireless-regdb@lists.infradead.org>; Thu, 14 May 2015 14:06:53 -0700 (PDT)
+ id 1YpnUN-0000tP-KC
+ for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 00:47:04 +0000
+Received: by pdbqa5 with SMTP id qa5so213396237pdb.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 17:46:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=message-id:subject:from:to:cc:date:in-reply-to:references
- :content-type:mime-version:content-transfer-encoding;
- bh=lr+cBfRlv++kzQXRYMqnw4oyD24HKunauTRoe1aZaBU=;
- b=I6KH7RQiwDMav9xz48foJGw7ecCRCljspjIktE0PZkYkm4TYamvMLD0AKWf1YpP08b
- zEdo9kMJi9oaoiOp2t/HgZVQewLvynDI8JqYjZtnqvWfHNQnhioeTO5HRhJcQ64X4yqo
- PEOypnLw+/cGme/Nlbpn5YNur19Was+/osh7cebsGRMP2ai8k8FsHc9pUpum+tM5EV1q
- CTGrcV4TgBeZYMkUd9HTX2k4wTPbjz6J+7NxnwbW6bvj0wy4vuWrXWGl+aZBi1agk2AC
- e/hBfTGNS/1yPZmKtrjpr5G/XwpZN3sHRO9wzQHGKGVMwHOrg7Qf+wBXadttKKnovClh AM9A==
-Message-ID: <1431637612.7419.33.camel@gmail.com>
-From: Petko Bordjukov <bordjukov@gmail.com>
-Date: Fri, 15 May 2015 00:06:52 +0300
-In-Reply-To: <20150514175649.GB29739@ubuntu-hedt>
-References: <1431041765-27166-1-git-send-email-bordjukov@gmail.com>
- <20150514175649.GB29739@ubuntu-hedt>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update BG rules for
- 5725 - 5875 mHz
+ s=20120113; h=sender:from:to:cc:subject:date:message-id;
+ bh=hJG2PEAnTgaITDys94uD3H0REWBNC3VtieA3klWp+sU=;
+ b=RCL1SssI8RZkJKnPBbzAklD6R2cxfoVW4DV2wQCcMD9XHyG77YHP+q40EnPiv/SGFQ
+ u6M524sTq89uRW6HVqaN+Tn+0XK+smXZhvZFNXjOh1mS75JdQKMKfWpci+QG0tHVgwS7
+ kOvGr6bC3hQ0E+alSVprTYSKMm7v3hVeOMJ0xq/Z7mC6VD5e9xj4nC+0DBcfVdQ3ERdj
+ CVc1ifzN9b9Vrw2RpBAdmrtBaQSiFL57/3B49W1l7ohnEXgbhW9sm/6PwPWoywpJTORk
+ sdJfVdrGz48IKWDtHXB00RYgX+gUfM53jN8I/Fc+8olSWOBSWQhsyGnDQv9gZ5LXOF9j wuxg==
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Tue,  5 May 2015 17:44:18 -0700
+Message-Id: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [RFC v1 00/12] kernel/firmware/wireless: firmware
+	digital signature checks
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,145 +28,133 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: wireless-regdb@lists.infradead.org
+To: rusty@rustcorp.com.au, dhowells@redhat.com, ming.lei@canonical.com, seth.forshee@canonical.com, kyle@kernel.org
+Cc: mjg59@srcf.ucam.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, tiwai@suse.de, gregkh@linuxfoundation.org, "Luis R. Rodriguez" <mcgrof@suse.com>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, jlee@suse.com, casey@schaufler-ca.com, akpm@linux-foundation.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello Seth,
+From: "Luis R. Rodriguez" <mcgrof@suse.com>
 
-Sorry for not including a translation. Here are the relevant parts of
-the Bulgarian documents and their rough translations:
+We've been discussing for a while now replacing the 802.11 Linux
+CRDA agent [0] by in-kernel functionality. This series address
+what is required to begin to take this serious. It is split by
+a few series of patches, I've linked them all as otherwise folks
+might get confused. I clarify what is what below and by a prefix
+on each patch.
 
-[1] LIST OF THE RADIO DEVICES THAT USE HARMONISED WITHIN THE CONFINES
-OF THE EU RADIO FREQUENCY BANDS, AND THE ELECTRONIC COMMUNICATIONS
-TERMINAL EQUIPMENT
+  * first set: [1-4] few fixes and core changes in order to consider digital
+    firmware signature support. Please consider these for integration. Patch
+    2 generalizes module signing as system data signing and can very likely
+    just be ignored unles the second set seems more reasonable to start
+    considering. One of these goes as a stable fix.
 
+  * second set: [5-6] kernel firmware signature support. These should be
+    considered for discussion. We need to figure out what if/how we want
+    to deal with this. Its obviously needed to replace userspace agents
+    with similar requirements, so its a requirement for the last set.
 
----- Page 2:
-43. Non-specific devices with short range of action - 5725 - 5875 MHz
+  * third set: [7-12] firmware API simplication / extensibility rewrite,
+    more for discussion than anything as we keep extending it, then it
+    starts piggy backing alternative crypto requirements. Its intended to
+    provide as an example how subsystems might differ in their requirements
+    for files in userspace. The driver changes should be completely ignored
+    as real patches -- these are just example patches of *how* to use the
+    APIs. The cfg80211 change should be reviewed as its how we could
+    end up providing optional alternative cyrpto requirements and extensions,
+    should we go down that road.
 
+I did consider LSM hooks -- but since we already have one for firmware
+and since this re-uses the firmware API, the same LSM hooks can be used
+for distributions that want that over digital signature verification
+of speficic firmware / system data files.
 
----- Page 44:
-43. Non-specific devices with short range of action:
+My own preference and recommendations:
 
-...
-7. Transmit power / power density: 25 mW e.i.r.p.
-...
-13. References: Harmonized standards: БДС EN 300 440-2, БДС EN 300
-    674-2-2. Decision of the European commission 2006/77/EO
-...
-15. Note: This category encompasses all types of radio devices 
-    independently of their application or purpose that comply with the
-    technical requirements determined for the specified frequency band.
-    They are mostly used for ..., transmission of general data, and
-    others.
-----
+This has served more as an excercise to review the firmware module code
+and to get us to more seriously consider whether or not we want
+digital firmware signature checks. I think we should seriously
+consider replacing the custom CRDA key option with kernel distribution 
+private / public keys used for module signing, and for further
+customization simply let folks use LSM hooks / LSM modules for
+customization as well as the Integrity Measurement Architecture (IMA) [1].
 
-[2] RULES FOR CARRYING OUT ELECTRONIC MESSAGES THROUGH RADIO DEVICES
-THAT USE THE RADIO FREQUENCY SPECTRE THAT IS NOT NECESSARY TO BE
-INDIVIDUALLY DEFINED /* as in assigned to a specific person */
+We *should* seriously consider digital firmware signature support,
+how we want to phase usermode helper suppport and how we want to
+enable extensions of the firmware API as the current code isn't
+practical for extensions/growth. In so far a digital firmware
+signature support I think it might be a good idea to support different
+files for signatures and request those in addition to the actual
+firmware, any reason not to do it that way?
 
----- Page 1
-Section I
+Please note that the binary firmware format still needs to be
+addresed. I don't have time for that though so I hope that this
+will help suffice to at least address the requirements to replace
+CRDA in-kernel.
 
-Article 2. (1) Electronic messages for personal needs through radio
-devices that use radio frequency spectre that that is not necessary to
-be individually defined, can be carried out freely.
+[0] https://wireless.wiki.kernel.org/en/developers/regulatory/crda
+[1] http://sourceforge.net/p/linux-ima/wiki/Home/
 
-           (2) Public electronic messages by the means of radio devices
-that make use of the radio frequency spectre that is not necessary to
-be individually defined, can be carried out after submitting a
-notification to the Communications Regulation Commission.
+Luis R. Rodriguez (12):
+  1  - kernel/params.c: export param_ops_bool_enable_only
+  2  - kernel: generalize module signing as system data signing
+  3  - crypto: qat - address recursive dependency when fw signing is enabled
+  4  - firmware: fix possible use after free on name on asynchronous request
 
+  5  - firmware: add firmware signature checking support
+  6  - firmware: generalize "firmware" as "system data" helpers
 
----- Page 2
-Section II
-...
+  7  - firmware: add generic system data helpers with signature support
+  8  - p54spi: use sysdata_file_request() for EEPROM optional system data
+  9  - p54: use sysdata_file_request() and sysdata_file_request_async()
+  10 - ath9k_htc: use sysdata_file_request() and sysdata_file_request_async()
+  11 - iwlwifi: use sysdata_file_request() and sysdata_file_request_async()
+  12 - cfg80211: request for regulatory system data file
 
-Article 11. (1) Electronic messages under article 2 are carried out by
-the means of the following radio devices:
-        1. Short range radio devices.
-        ...
-----
+ drivers/base/Kconfig                           |  16 ++
+ drivers/base/firmware_class.c                  | 318 ++++++++++++++++++++++++-
+ drivers/crypto/qat/Kconfig                     |   2 +-
+ drivers/net/wireless/ath/ath9k/hif_usb.c       |  62 +++--
+ drivers/net/wireless/iwlwifi/iwl-drv.c         |  24 +-
+ drivers/net/wireless/p54/eeprom.c              |   1 -
+ drivers/net/wireless/p54/fwio.c                |   4 +-
+ drivers/net/wireless/p54/led.c                 |   1 -
+ drivers/net/wireless/p54/main.c                |   1 -
+ drivers/net/wireless/p54/p54.h                 |   4 +-
+ drivers/net/wireless/p54/p54pci.c              |  19 +-
+ drivers/net/wireless/p54/p54pci.h              |   2 +-
+ drivers/net/wireless/p54/p54spi.c              |  68 +++---
+ drivers/net/wireless/p54/p54spi.h              |   2 +-
+ drivers/net/wireless/p54/p54usb.c              |  14 +-
+ drivers/net/wireless/p54/p54usb.h              |   2 +-
+ drivers/net/wireless/p54/txrx.c                |   1 -
+ include/linux/firmware.h                       |   1 +
+ include/linux/sysdata.h                        | 200 ++++++++++++++++
+ init/Kconfig                                   |  22 +-
+ kernel/Makefile                                |   2 +-
+ kernel/module-internal.h                       |  12 -
+ kernel/module.c                                |   4 +-
+ kernel/params.c                                |   1 +
+ kernel/{module_signing.c => sysdata_signing.c} |  77 +++---
+ kernel/system_keyring.c                        |   2 +-
+ net/wireless/Kconfig                           |  20 ++
+ net/wireless/reg.c                             |  85 +++++--
+ scripts/sign-file                              |  20 +-
+ 29 files changed, 804 insertions(+), 183 deletions(-)
+ create mode 100644 include/linux/sysdata.h
+ delete mode 100644 kernel/module-internal.h
+ rename kernel/{module_signing.c => sysdata_signing.c} (76%)
 
+-- 
+2.3.2.209.gd67f9d5.dirty
 
-About the EU standards, 300 440-1 seems to NOT be harmonized (I found
-the e.i.r.p. in it) and 300 440-2 is listed as harmonized (it lists the
-frequency band).
-
-Reference:
-http://webapp.etsi.org/workprogram/Report_WorkItem.asp?WKI_ID=33512
-http://webapp.etsi.org/workprogram/Report_WorkItem.asp?WKI_ID=33513
-
-Cheers,
-Petko
-
-On чт, 2015-05-14 at 12:56 -0500, Seth Forshee wrote:
-> On Fri, May 08, 2015 at 02:36:05AM +0300, Petko Bordjukov wrote:
-> > The ETSI EN 300 440-1 and EN 300 440-2 standards mandate the use of 
-> > the
-> > 5725mHz - 5875mHz band as follows:
-> > 
-> > Application - Generic use
-> > Maximum Radiated Power - 25mW
-> > 
-> > The Bulgarian Communications Regulations Commission has made the
-> > decision to harmonise its regulations for this band with the EU
-> > regulations [1], [2].
-> > 
-> > Based on this data, introduce the 5725mHz - 5875mHz band for the BG
-> > regulatory domain.
-> > 
-> > [1] http://crc.bg/files/_bg/Spisak_2015.pdf
-> > [2] http://crc.bg/files/_bg/Pravila_2015_resh24.pdf
-> > 
-> > Signed-off-by: Petko Bordjukov <bordjukov@gmail.com>
-> 
-> What I find odd here is that none of the other EU contries in the
-> database that I looked at include this range. Based on the google
-> translation of [1] above (I can't find any reference to this range 
-> for
-> SRDs in [2] above) and the ETSI standards it references it looks like 
-> it
-> should be okay. So I'm not sure whether I'm missing something or 
-> those
-> countries have additional rules against that range, or if other EU
-> contries could be updated similarly.
-> 
-> I'm going to leave this on the list for a bit longer to see if 
-> someone
-> with more expertise can provide clarity about this range in the EU.
-> 
-> > ---
-> >  db.txt | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> > 
-> > diff --git a/db.txt b/db.txt
-> > index ad2acf5..daa84f9 100644
-> > --- a/db.txt
-> > +++ b/db.txt
-> > @@ -141,6 +141,12 @@ country BG: DFS-ETSI
-> >     (5170 - 5250 @ 80), (20), AUTO-BW
-> >     (5250 - 5330 @ 80), (20), DFS, AUTO-BW
-> >     (5490 - 5710 @ 160), (27), DFS
-> > +        # 5 gHz Short Range Devices, ref:
-> > +        # Etsi EN 300 440-1
-> > +        # Etsi EN 300 440-2
-> > +        # http://crc.bg/files/_bg/Spisak_2015.pdf
-> > +        # http://crc.bg/files/_bg/Pravila_2015_resh24.pdf
-> > +        (5725 - 5875 @ 80), (14)
-> 
-> Please use a tab to indent rather than spaces.
-> 
-> Thanks,
-> Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
