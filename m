@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-x232.google.com ([2607:f8b0:400e:c02::232])
+Received: from mail-pa0-x230.google.com ([2607:f8b0:400e:c03::230])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YpnnM-0002uN-Aj
- for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 01:06:42 +0000
-Received: by pdea3 with SMTP id a3so214589037pde.3 for
- <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 18:06:18 -0700 (PDT)
+ id 1YpnpT-0003cE-G7
+ for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 01:08:52 +0000
+Received: by pacyx8 with SMTP id yx8so210513545pac.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 18:08:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pgXWnvnPwFi/d4pOgx7brrHuFltstJs22obQUZNmcHU=;
- b=w3i2EuV32vmMeYuvChu02gg1Jrsk9RmdfVhoheDae1wtyct4sgmbvA/9YSkfLxVA6v
- J+APxJsTxsaxWc784uenwOvGcyC7K0PIhQvjU7bA7GIp1rgvcA17t4N84qNPBpnIM3bq
- OEMLWvhT0+7HLEIfBRD9NHR5QHs1/QRorPzwPCPRgFyq4OJcta6PwibxW8DKnXipduT3
- F2EPLx5Hpk98lcFnCNPpPwUXYV3mzrkcw8JRuxFqQzsQWG2H/FEYCOgNtAB8hyOuLLPm
- yQwuDBeW29B07PfOgiSh+lOTKPkrIZg8GUa7Yy9M/ggMHDjC+Y+O6fjWFi9W0MzVYtYZ 2o0Q==
+ bh=eVVaB9C6AUcKDit+p9GISGD2RdVJ4JVRfq3NA7Yr76g=;
+ b=PHAqq756Qyiyl04VagVmXZINoU5bRtkG6BFi+3gGvUP9WmVLEeJXNuXqjONF84nDps
+ qUPJZqSaLdi4bJaX9GNrn0uNVh0N9FPwwTsvnrht0q6zdevSnNn0jbKkqJHxhfwBw0fQ
+ zqyskNcEC0t9c4MIQwaWwSAoKTDpiuCVVDivTj3w9M9Kl87kkNu+TKmT0N94Xd0chF0g
+ TDCFeOWPHeX7Qo79sm2KaCJW5wWesKsr9cPXUJZWP7AsMMVwEzjGVHZqYCLErtPbh0rZ
+ j1jI1Zm1vDxocvx/yKQV2FSF3KtYNxFq/c9dC5xv/BRtJpJv2h9g69c0m4V/lSKlfbzN qGHA==
 From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue,  5 May 2015 17:44:27 -0700
-Message-Id: <1430873070-7290-10-git-send-email-mcgrof@do-not-panic.com>
+Date: Tue,  5 May 2015 17:44:28 -0700
+Message-Id: <1430873070-7290-11-git-send-email-mcgrof@do-not-panic.com>
 In-Reply-To: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
 References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [RFC v1 09/12] p54: use sysdata_file_request()
- and sysdata_file_request_async()
+Subject: [wireless-regdb] [RFC v1 10/12] ath9k_htc: use
+	sysdata_file_request() and sysdata_file_request_async()
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,318 +43,139 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 From: "Luis R. Rodriguez" <mcgrof@suse.com>
 
-This is an example conversion of the p54 driver firmware calls
-over to sysdata_file_request() and sysdata_file_request_async().
-
 Signed-off-by: Luis R. Rodriguez <mcgrof@suse.com>
 ---
- drivers/net/wireless/p54/eeprom.c |  1 -
- drivers/net/wireless/p54/fwio.c   |  4 ++--
- drivers/net/wireless/p54/led.c    |  1 -
- drivers/net/wireless/p54/main.c   |  1 -
- drivers/net/wireless/p54/p54.h    |  4 +++-
- drivers/net/wireless/p54/p54pci.c | 19 +++++++++++++------
- drivers/net/wireless/p54/p54pci.h |  2 +-
- drivers/net/wireless/p54/p54spi.c | 25 ++++++-------------------
- drivers/net/wireless/p54/p54spi.h |  2 +-
- drivers/net/wireless/p54/p54usb.c | 14 ++++++++------
- drivers/net/wireless/p54/p54usb.h |  2 +-
- drivers/net/wireless/p54/txrx.c   |  1 -
- 12 files changed, 35 insertions(+), 41 deletions(-)
+ drivers/net/wireless/ath/ath9k/hif_usb.c | 62 +++++++++++++++++++-------------
+ 1 file changed, 38 insertions(+), 24 deletions(-)
 
-diff --git a/drivers/net/wireless/p54/eeprom.c b/drivers/net/wireless/p54/eeprom.c
-index 2fe713e..0ad3434 100644
---- a/drivers/net/wireless/p54/eeprom.c
-+++ b/drivers/net/wireless/p54/eeprom.c
-@@ -16,7 +16,6 @@
-  * published by the Free Software Foundation.
+diff --git a/drivers/net/wireless/ath/ath9k/hif_usb.c b/drivers/net/wireless/ath/ath9k/hif_usb.c
+index 8e7153b..bc7591c 100644
+--- a/drivers/net/wireless/ath/ath9k/hif_usb.c
++++ b/drivers/net/wireless/ath/ath9k/hif_usb.c
+@@ -15,6 +15,7 @@
   */
  
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <linux/sort.h>
- #include <linux/slab.h>
-diff --git a/drivers/net/wireless/p54/fwio.c b/drivers/net/wireless/p54/fwio.c
-index 5367d51..2bfe34d 100644
---- a/drivers/net/wireless/p54/fwio.c
-+++ b/drivers/net/wireless/p54/fwio.c
-@@ -17,7 +17,6 @@
-  */
- 
- #include <linux/slab.h>
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <linux/export.h>
- 
-@@ -27,8 +26,9 @@
- #include "eeprom.h"
- #include "lmac.h"
- 
--int p54_parse_firmware(struct ieee80211_hw *dev, const struct firmware *fw)
-+int p54_parse_firmware(void *context, const struct sysdata_file *fw)
- {
-+	struct ieee80211_hw *dev = context;
- 	struct p54_common *priv = dev->priv;
- 	struct exp_if *exp_if;
- 	struct bootrec *bootrec;
-diff --git a/drivers/net/wireless/p54/led.c b/drivers/net/wireless/p54/led.c
-index 1f6fd5f..96aaefb 100644
---- a/drivers/net/wireless/p54/led.c
-+++ b/drivers/net/wireless/p54/led.c
-@@ -16,7 +16,6 @@
-  * published by the Free Software Foundation.
-  */
- 
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- 
- #include <net/mac80211.h>
-diff --git a/drivers/net/wireless/p54/main.c b/drivers/net/wireless/p54/main.c
-index b9250d7..a6ade6e 100644
---- a/drivers/net/wireless/p54/main.c
-+++ b/drivers/net/wireless/p54/main.c
-@@ -17,7 +17,6 @@
-  */
- 
- #include <linux/slab.h>
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <linux/module.h>
- 
-diff --git a/drivers/net/wireless/p54/p54.h b/drivers/net/wireless/p54/p54.h
-index 40b401e..239b649 100644
---- a/drivers/net/wireless/p54/p54.h
-+++ b/drivers/net/wireless/p54/p54.h
-@@ -14,6 +14,8 @@
- #ifndef P54_H
- #define P54_H
- 
+ #include <asm/unaligned.h>
 +#include <linux/sysdata.h>
-+
- #ifdef CONFIG_P54_LEDS
- #include <linux/leds.h>
- #endif /* CONFIG_P54_LEDS */
-@@ -268,7 +270,7 @@ struct p54_common {
- /* interfaces for the drivers */
- int p54_rx(struct ieee80211_hw *dev, struct sk_buff *skb);
- void p54_free_skb(struct ieee80211_hw *dev, struct sk_buff *skb);
--int p54_parse_firmware(struct ieee80211_hw *dev, const struct firmware *fw);
-+int p54_parse_firmware(void *, const struct sysdata_file *);
- int p54_parse_eeprom(struct ieee80211_hw *dev, void *eeprom, int len);
- int p54_read_eeprom(struct ieee80211_hw *dev);
+ #include "htc.h"
  
-diff --git a/drivers/net/wireless/p54/p54pci.c b/drivers/net/wireless/p54/p54pci.c
-index 27a4906..b5deb09 100644
---- a/drivers/net/wireless/p54/p54pci.c
-+++ b/drivers/net/wireless/p54/p54pci.c
-@@ -15,7 +15,6 @@
+ /* identify firmware images */
+@@ -1079,7 +1080,8 @@ static void ath9k_hif_usb_firmware_fail(struct hif_device_usb *hif_dev)
+ 		device_unlock(parent);
+ }
  
- #include <linux/pci.h>
- #include <linux/slab.h>
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <linux/delay.h>
- #include <linux/completion.h>
-@@ -490,7 +489,7 @@ static int p54p_open(struct ieee80211_hw *dev)
+-static void ath9k_hif_usb_firmware_cb(const struct firmware *fw, void *context)
++static void ath9k_hif_usb_firmware_cb(const struct sysdata_file *fw,
++				      void *context)
+ {
+ 	struct hif_device_usb *hif_dev = context;
+ 	int ret;
+@@ -1115,7 +1117,7 @@ static void ath9k_hif_usb_firmware_cb(const struct firmware *fw, void *context)
+ 		goto err_htc_hw_init;
+ 	}
+ 
+-	release_firmware(fw);
++	release_sysdata_file(fw);
+ 	hif_dev->flags |= HIF_USB_READY;
+ 	complete_all(&hif_dev->fw_done);
+ 
+@@ -1126,7 +1128,7 @@ err_htc_hw_init:
+ err_dev_init:
+ 	ath9k_htc_hw_free(hif_dev->htc_handle);
+ err_dev_alloc:
+-	release_firmware(fw);
++	release_sysdata_file(fw);
+ err_fw:
+ 	ath9k_hif_usb_firmware_fail(hif_dev);
+ }
+@@ -1186,6 +1188,16 @@ static int send_eject_command(struct usb_interface *interface)
  	return 0;
  }
  
--static void p54p_firmware_step2(const struct firmware *fw,
-+static void p54p_firmware_step2(const struct sysdata_file *fw,
- 				void *context)
- {
- 	struct p54p_priv *priv = context;
-@@ -542,6 +541,16 @@ out:
- 	pci_dev_put(pdev);
- }
- 
-+static int p54p_request_fw_step2(struct p54p_priv *priv)
++int ath9k_hif_usb_probe_fw(struct hif_device_usb *hif_dev)
 +{
-+	const struct sysdata_file_desc p54p_fw_step2_desc = {
-+		SYSDATA_DEFAULT_ASYNC(p54p_firmware_step2, priv),
++	const struct sysdata_file_desc fw_desc = {
++		SYSDATA_DEFAULT_ASYNC(ath9k_hif_usb_firmware_cb, hif_dev),
 +	};
-+	return sysdata_file_request_async("isl3886pci",
-+					  &p54p_fw_step2_desc,
-+					  &priv->pdev->dev);
++
++	return sysdata_file_request_async(hif_dev->fw_name, &fw_desc,
++					  &hif_dev->udev->dev);
 +}
 +
- static int p54p_probe(struct pci_dev *pdev,
- 				const struct pci_device_id *id)
+ static int ath9k_hif_usb_probe(struct usb_interface *interface,
+ 			       const struct usb_device_id *id)
  {
-@@ -620,9 +629,7 @@ static int p54p_probe(struct pci_dev *pdev,
- 	spin_lock_init(&priv->lock);
- 	tasklet_init(&priv->tasklet, p54p_tasklet, (unsigned long)dev);
+@@ -1221,18 +1233,9 @@ static int ath9k_hif_usb_probe(struct usb_interface *interface,
+ 	else
+ 		hif_dev->fw_name = FIRMWARE_AR9271;
  
--	err = request_firmware_nowait(THIS_MODULE, 1, "isl3886pci",
--				      &priv->pdev->dev, GFP_KERNEL,
--				      priv, p54p_firmware_step2);
-+	err = p54p_request_fw_step2(priv);
- 	if (!err)
- 		return 0;
- 
-@@ -654,7 +661,7 @@ static void p54p_remove(struct pci_dev *pdev)
- 	priv = dev->priv;
- 	wait_for_completion(&priv->fw_loaded);
- 	p54_unregister_common(dev);
--	release_firmware(priv->firmware);
-+	release_sysdata_file(priv->firmware);
- 	pci_free_consistent(pdev, sizeof(*priv->ring_control),
- 			    priv->ring_control, priv->ring_control_dma);
- 	iounmap(priv->map);
-diff --git a/drivers/net/wireless/p54/p54pci.h b/drivers/net/wireless/p54/p54pci.h
-index 68405c1..55870bf 100644
---- a/drivers/net/wireless/p54/p54pci.h
-+++ b/drivers/net/wireless/p54/p54pci.h
-@@ -94,7 +94,7 @@ struct p54p_priv {
- 	struct pci_dev *pdev;
- 	struct p54p_csr __iomem *map;
- 	struct tasklet_struct tasklet;
--	const struct firmware *firmware;
-+	const struct sysdata_file *firmware;
- 	spinlock_t lock;
- 	struct p54p_ring_control *ring_control;
- 	dma_addr_t ring_control_dma;
-diff --git a/drivers/net/wireless/p54/p54spi.c b/drivers/net/wireless/p54/p54spi.c
-index 0950ed6..24155d2 100644
---- a/drivers/net/wireless/p54/p54spi.c
-+++ b/drivers/net/wireless/p54/p54spi.c
-@@ -23,8 +23,6 @@
- #include <linux/module.h>
- #include <linux/platform_device.h>
- #include <linux/interrupt.h>
--#include <linux/firmware.h>
--#include <linux/sysdata.h>
- #include <linux/delay.h>
- #include <linux/irq.h>
- #include <linux/spi/spi.h>
-@@ -166,22 +164,11 @@ static int p54spi_spi_write_dma(struct p54s_priv *priv, __le32 base,
- static int p54spi_request_firmware(struct ieee80211_hw *dev)
- {
- 	struct p54s_priv *priv = dev->priv;
--	int ret;
--
--	/* FIXME: should driver use it's own struct device? */
--	ret = request_firmware(&priv->firmware, "3826.arm", &priv->spi->dev);
--
--	if (ret < 0) {
--		dev_err(&priv->spi->dev, "request_firmware() failed: %d", ret);
--		return ret;
--	}
--
--	ret = p54_parse_firmware(dev, priv->firmware);
+-	ret = request_firmware_nowait(THIS_MODULE, true, hif_dev->fw_name,
+-				      &hif_dev->udev->dev, GFP_KERNEL,
+-				      hif_dev, ath9k_hif_usb_firmware_cb);
 -	if (ret) {
--		release_firmware(priv->firmware);
--		return ret;
+-		dev_err(&hif_dev->udev->dev,
+-			"ath9k_htc: Async request for firmware %s failed\n",
+-			hif_dev->fw_name);
++	ret = ath9k_hif_usb_probe_fw(hif_dev);
++	if (ret)
+ 		goto err_fw_req;
 -	}
 -
-+	const struct sysdata_file_desc p54_spi_fw = {
-+		SYSDATA_DEFAULT_SYNC(p54_parse_firmware, priv),
-+	};
-+	return sysdata_file_request("3826.arm", &p54_spi_fw,
-+				    &priv->spi->dev);
+-	dev_info(&hif_dev->udev->dev, "ath9k_htc: Firmware %s requested\n",
+-		 hif_dev->fw_name);
+ 
+ 	return 0;
+ 
+@@ -1312,12 +1315,30 @@ static int ath9k_hif_usb_suspend(struct usb_interface *interface,
  	return 0;
  }
  
-@@ -701,7 +688,7 @@ static int p54spi_remove(struct spi_device *spi)
- 
- 	gpio_free(p54spi_gpio_power);
- 	gpio_free(p54spi_gpio_irq);
--	release_firmware(priv->firmware);
-+	release_sysdata_file(priv->firmware);
- 
- 	mutex_destroy(&priv->mutex);
- 
-diff --git a/drivers/net/wireless/p54/p54spi.h b/drivers/net/wireless/p54/p54spi.h
-index dfaa62a..f4f20ff 100644
---- a/drivers/net/wireless/p54/p54spi.h
-+++ b/drivers/net/wireless/p54/p54spi.h
-@@ -119,7 +119,7 @@ struct p54s_priv {
- 	struct list_head tx_pending;
- 
- 	enum fw_state fw_state;
--	const struct firmware *firmware;
-+	const struct sysdata_file *firmware;
- };
- 
- #endif /* P54SPI_H */
-diff --git a/drivers/net/wireless/p54/p54usb.c b/drivers/net/wireless/p54/p54usb.c
-index 043bd1c..5eb1b53 100644
---- a/drivers/net/wireless/p54/p54usb.c
-+++ b/drivers/net/wireless/p54/p54usb.c
-@@ -15,7 +15,6 @@
- #include <linux/usb.h>
- #include <linux/pci.h>
- #include <linux/slab.h>
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <linux/delay.h>
- #include <linux/crc32.h>
-@@ -916,7 +915,7 @@ err_out:
- 	return ret;
- }
- 
--static void p54u_load_firmware_cb(const struct firmware *firmware,
-+static void p54u_load_firmware_cb(const struct sysdata_file *firmware,
- 				  void *context)
++static int ath9k_hif_usb_resume_fw(void *context,
++				   const struct sysdata_file *fw)
++{
++	struct hif_device_usb *hif_dev = context;
++	int ret;
++
++	hif_dev->fw_data = fw->data;
++	hif_dev->fw_size = fw->size;
++
++	ret = ath9k_hif_usb_download_fw(hif_dev);
++
++	release_sysdata_file(fw);
++
++	return ret;
++}
++
+ static int ath9k_hif_usb_resume(struct usb_interface *interface)
  {
- 	struct p54u_priv *priv = context;
-@@ -960,6 +959,9 @@ static int p54u_load_firmware(struct ieee80211_hw *dev,
- 	struct usb_device *udev = interface_to_usbdev(intf);
- 	struct p54u_priv *priv = dev->priv;
- 	struct device *device = &udev->dev;
-+	const struct sysdata_file_desc p54u_fw_desc = {
-+		SYSDATA_DEFAULT_ASYNC(p54u_load_firmware_cb, priv),
-+	};
- 	int err, i;
- 
- 	BUILD_BUG_ON(ARRAY_SIZE(p54u_fwlist) != __NUM_P54U_HWTYPES);
-@@ -973,9 +975,9 @@ static int p54u_load_firmware(struct ieee80211_hw *dev,
- 	       p54u_fwlist[i].fw);
- 
- 	usb_get_dev(udev);
--	err = request_firmware_nowait(THIS_MODULE, 1, p54u_fwlist[i].fw,
--				      device, GFP_KERNEL, priv,
--				      p54u_load_firmware_cb);
-+	err = sysdata_file_request_async(p54u_fwlist[i].fw,
-+					 &p54u_fw_desc,
-+					 device);
- 	if (err) {
- 		dev_err(&priv->udev->dev, "(p54usb) cannot load firmware %s "
- 					  "(%d)!\n", p54u_fwlist[i].fw, err);
-@@ -1073,7 +1075,7 @@ static void p54u_disconnect(struct usb_interface *intf)
- 	p54_unregister_common(dev);
- 
- 	usb_put_dev(interface_to_usbdev(intf));
--	release_firmware(priv->fw);
-+	release_sysdata_file(priv->fw);
- 	p54_free_common(dev);
- }
- 
-diff --git a/drivers/net/wireless/p54/p54usb.h b/drivers/net/wireless/p54/p54usb.h
-index a5f5f0f..9da200b 100644
---- a/drivers/net/wireless/p54/p54usb.h
-+++ b/drivers/net/wireless/p54/p54usb.h
-@@ -153,7 +153,7 @@ struct p54u_priv {
- 	spinlock_t lock;
- 	struct sk_buff_head rx_queue;
- 	struct usb_anchor submitted;
+ 	struct hif_device_usb *hif_dev = usb_get_intfdata(interface);
+ 	struct htc_target *htc_handle = hif_dev->htc_handle;
+ 	int ret;
 -	const struct firmware *fw;
-+	const struct sysdata_file *fw;
++	const struct sysdata_file_desc fw_resume_desc = {
++		SYSDATA_DEFAULT_SYNC(ath9k_hif_usb_resume_fw, hif_dev),
++	};
  
- 	/* asynchronous firmware callback */
- 	struct completion fw_wait_load;
-diff --git a/drivers/net/wireless/p54/txrx.c b/drivers/net/wireless/p54/txrx.c
-index 24e5ff9..2d9dee0 100644
---- a/drivers/net/wireless/p54/txrx.c
-+++ b/drivers/net/wireless/p54/txrx.c
-@@ -17,7 +17,6 @@
-  */
+ 	ret = ath9k_hif_usb_alloc_urbs(hif_dev);
+ 	if (ret)
+@@ -1325,15 +1346,8 @@ static int ath9k_hif_usb_resume(struct usb_interface *interface)
  
- #include <linux/export.h>
--#include <linux/firmware.h>
- #include <linux/etherdevice.h>
- #include <asm/div64.h>
- 
+ 	if (hif_dev->flags & HIF_USB_READY) {
+ 		/* request cached firmware during suspend/resume cycle */
+-		ret = request_firmware(&fw, hif_dev->fw_name,
+-				       &hif_dev->udev->dev);
+-		if (ret)
+-			goto fail_resume;
+-
+-		hif_dev->fw_data = fw->data;
+-		hif_dev->fw_size = fw->size;
+-		ret = ath9k_hif_usb_download_fw(hif_dev);
+-		release_firmware(fw);
++		ret = sysdata_file_request("3826.arm", &fw_resume_desc,
++					   &hif_dev->udev->dev);
+ 		if (ret)
+ 			goto fail_resume;
+ 	} else {
 -- 
 2.3.2.209.gd67f9d5.dirty
 
