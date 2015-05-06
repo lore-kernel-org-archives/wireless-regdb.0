@@ -1,27 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+Received: from mail-pd0-x22b.google.com ([2607:f8b0:400e:c02::22b])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YvBPD-0005Jt-QP
- for wireless-regdb@lists.infradead.org; Wed, 20 May 2015 21:20:00 +0000
-Date: Wed, 20 May 2015 23:19:30 +0200
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
-Message-ID: <20150520211930.GA23057@wotan.suse.de>
-References: <20150518200100.GY23057@wotan.suse.de>
- <1431981930.9091.29.camel@x220>
- <20150519000921.GA23057@wotan.suse.de>
- <1432022535.9091.48.camel@x220>
- <20150519154630.GB23057@wotan.suse.de>
- <20150519225945.GB5718@gondor.apana.org.au>
- <20150519230355.GA5853@gondor.apana.org.au>
- <CAB=NE6XizmKMc80rLV9YTZGtEJdZ022+0HNPxXvunp5v4BnCMw@mail.gmail.com>
- <20150520024925.GA7021@gondor.apana.org.au>
- <1432112455.21715.70.camel@x220>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1432112455.21715.70.camel@x220>
-Subject: Re: [wireless-regdb] [PATCH v1 03/12] crypto: qat - address
- recursive dependency when fw signing is enabled
+ id 1Ypncp-0005Oj-Pz
+ for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 00:55:49 +0000
+Received: by pdbnk13 with SMTP id nk13so214051291pdb.0 for
+ <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 17:55:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=AniY/6y+imOBEyLA5pUxG4LiistLQp9gLryS587Zc8Y=;
+ b=vE6pyCr54UIkPM2/j3s6j2ROrEm5n9jVavby+dxqWcDD556pbN/FhShk3pAtxeePRE
+ IqeD3ecYWK2y4R1t9+aWBtPNBkHwtOJzSC232SP/4P3MLQtkwLNG0TchBHkyuO7Ca2gm
+ fMjJ0GN4xw9hWdudEcpqEg0s/habQFrlyL52vmTZ2Cf5jk0wrIonzZz7AqVBkeshc4dB
+ j2S8MS4VTR3T7AypomeR0SKoTu0TOsLpyb5nZEEXUy6tohItp1wVhwEon3cAD9lG2pjJ
+ G/6ez8JHiOcQocJ5zT8Sbk1bZiEl73Dt/x3osibRDGVBGAsTyUyNbPvMZoEroWKKV9+1 sqzg==
+From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Date: Tue,  5 May 2015 17:44:22 -0700
+Message-Id: <1430873070-7290-5-git-send-email-mcgrof@do-not-panic.com>
+In-Reply-To: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+Subject: [wireless-regdb] [PATCH v1 04/12] firmware: fix possible use after
+	free on name on asynchronous request
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,75 +31,251 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Paul Bolle <pebolle@tiscali.nl>
-Cc: Matthew Garrett <mjg59@srcf.ucam.org>, Kyle McMartin <kyle@kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, Herbert Xu <herbert@gondor.apana.org.au>, Tadeusz Struk <tadeusz.struk@intel.com>, Takashi Iwai <tiwai@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Ming Lei <ming.lei@canonical.com>, Rusty Russell <rusty@rustcorp.com.au>, linux-wireless <linux-wireless@vger.kernel.org>, "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, John Griffin <john.griffin@intel.com>, David Howells <dhowells@redhat.com>, Seth Forshee <seth.forshee@canonical.com>, Bruce Allan <bruce.w.allan@intel.com>, Casey Schaufler <casey@schaufler-ca.com>, Andrew Morton <akpm@linux-foundation.org>, jlee@suse.com, Kees Cook <keescook@chromium.org>
+To: rusty@rustcorp.com.au, dhowells@redhat.com, ming.lei@canonical.com, seth.forshee@canonical.com, kyle@kernel.org
+Cc: mjg59@srcf.ucam.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, tiwai@suse.de, gregkh@linuxfoundation.org, "Luis R. Rodriguez" <mcgrof@suse.com>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, stable@vger.kernel.org, jlee@suse.com, casey@schaufler-ca.com, akpm@linux-foundation.org, cocci@systeme.lip6.fr
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, May 20, 2015 at 11:00:55AM +0200, Paul Bolle wrote:
-> On Wed, 2015-05-20 at 10:49 +0800, Herbert Xu wrote:
-> > On Tue, May 19, 2015 at 04:05:43PM -0700, Luis R. Rodriguez wrote: 
-> > > Well that's be true if FW_LOADER was easy to disable, but its not. You
-> > > really gotta try hard to disable it. Not only does it require EXPERT
-> > > but also EMBEDDED.
-> 
-> How does that require EMBEDDED?
+From: "Luis R. Rodriguez" <mcgrof@suse.com>
 
-Sorry not embedded, not sure where I got that from, for some reason
-I though you had mentioned that.
+Asynchronous firmware loading copies the pointer to the
+name passed as an argument only to be scheduled later and
+used. This behaviour works well for synchronous calling
+but in asynchronous mode there's a chance the caller could
+immediately free the passed string after making the
+asynchronous call. This could trigger a use after free
+having the kernel look on disk for arbitrary file names.
 
-> >  I think its fair to say if you disable FW_LOADER
-> > > you know what you are doing and its fair for us then to remove such
-> > > selects or depends. Thoughts?
-> > 
-> > Sure.  I can live with killing all selects/depends on FW_LOADER.
-> 
-> (Having reread my mail from the day before yesterday once more, I note
-> that my suggestion to drop the selects is rather circular. Because it's
-> the selects that also make it hard to disable FW_LOADER.)
-> 
-> So the message is something like: "If you set EXPERT and disable
-> FW_LOADER you're on your own. You have to figure out yourself whether
-> the configuration you chose builds
+In order to force-test the issue you can use a test-driver
+designed to illustrate this issue on github [0], use the
+next-20150505-fix-use-after-free branch.
 
-I think we can attest that it will build, otherwise we should fix.
+With this patch applied you get:
 
-> or actually runs correctly.
+[  283.512445] firmware name: test_module_stuff.bin
+[  287.514020] firmware name: test_module_stuff.bin
+[  287.532489] firmware found
 
-Whether it will run in this case will depend on whether or not
-the firmware was needed or not, if it was it won't. Note that
-there is a FW API call which implies "this is optional firmware",
-its the request_firmware_direct() call but this call is synchronous,
-we have no option for asynchronous behaviour. I intend to add support
-for that but that requires a bit of changes. Also, based on my review
-its a fair assumption that most calls to the FW APIs mean they need
-it. The only ones we can be sure are optional are the ones using
-request_firmware_direct().
+Without this patch applied you can end up with something such as:
 
-> Don't
-> expect us to care about the issues you run into. And that goes for
-> randconfig builds that happen to do that too."
+[  135.624216] firmware name: \xffffff80BJ
+[  135.624249] platform fake-dev.0: Direct firmware load for \xffffff80Bi failed with error -2
+[  135.624252] No firmware found
+[  135.624252] firmware found
 
-I think its fair to expect us to fix randconfig build issues, but not
-runtime issues.
+Unfortunatley in the worst and most common case however you
+can typically crash your system with a page fault by trying to
+free something which you cannot, and/or a NULL pointer
+dereference [1].
 
-> That might be an acceptable thing to say. The help for EXPERT is pretty
-> clear. But I do wonder if this is a first or if this has been done
-> before (ie, whether there's a precedent). Because, generally speaking,
-> people try rather hard to prevent pointless configurations.
+The fix and issue using schedule_work() for asynchronous
+runs is generalized in the following SmPL grammar patch,
+when applied to next-20150505 only the firmware_class
+code is affected. This grammar patch can and should further
+be generalized to vet for for other kernel asynchronous
+mechanisms.
 
-Yeah sure, we even let your system go out of regulatory compliance,
-see CFG80211_CERTIFICATION_ONUS, and CFG80211_REG_CELLULAR_HINTS.
-Then with CFG80211_INTERNAL_REGDB the parser right now lacks support
-for a few new bells and whistles and requires expert knowledge how
-to properly build and integrate all new bells and whistles. It seemed
-folks were OK with this.
+@ calls_schedule_work @
+type T;
+T *priv_work;
+identifier func, work_func;
+identifier work;
+identifier priv_name, name;
+statement S;
+expression gfp;
+@@
 
-  Luis
+ func(..., const char *name, ...)
+ {
+ 	...
+ 	priv_work = kzalloc(sizeof(T), gfp);
+ 	...
+-	priv_work->priv_name = name;
++	priv_work->priv_name = kstrdup_const(name, gfp);
+	...
+(... when any
+ 	if (...)
+ 	{
+ 		...
++ 		kfree_const(priv_work->priv_name);
+ 		kfree(priv_work);
+		...
+ 	}
+) ... when any
+ 	INIT_WORK(&priv_work->work, work_func);
+ 	...
+ 	schedule_work(&priv_work->work);
+ 	...
+ }
+
+@ the_work_func depends on calls_schedule_work @
+type calls_schedule_work.T;
+T *priv_work;
+identifier calls_schedule_work.work_func;
+identifier calls_schedule_work.priv_name;
+identifier calls_schedule_work.work;
+identifier some_work;
+@@
+
+ work_func(...)
+ {
+ 	...
+ 	priv_work = container_of(some_work, T, work);
+ 	...
++	kfree_const(priv_work->priv_name);
+ 	kfree(priv_work);
+ 	...
+ }
+
+[0] https://github.com/mcgrof/fake-firmware-test.git
+[1] The following kernel ring buffer splat:
+
+firmware name: test_module_stuff.bin
+firmware name:
+firmware found
+general protection fault: 0000 [#1] SMP
+Modules linked in: test(O) <...etc-it-does-not-matter>
+ drm sr_mod cdrom xhci_pci xhci_hcd rtsx_pci mfd_core video button sg
+CPU: 3 PID: 87 Comm: kworker/3:2 Tainted: G           O    4.0.0-00010-g22b5bb0-dirty #176
+Hardware name: LENOVO 20AW000LUS/20AW000LUS, BIOS GLET43WW (1.18 ) 12/04/2013
+Workqueue: events request_firmware_work_func
+task: ffff8800c7f8e290 ti: ffff8800c7f94000 task.ti: ffff8800c7f94000
+RIP: 0010:[<ffffffff814a586c>]  [<ffffffff814a586c>] fw_free_buf+0xc/0x40
+RSP: 0000:ffff8800c7f97d78  EFLAGS: 00010286
+RAX: ffffffff81ae3700 RBX: ffffffff816d1181 RCX: 0000000000000006
+RDX: 0001ee850ff68500 RSI: 0000000000000246 RDI: c35d5f415e415d41
+RBP: ffff8800c7f97d88 R08: 000000000000000a R09: 0000000000000000
+R10: 0000000000000358 R11: ffff8800c7f97a7e R12: ffff8800c7ec1e80
+R13: ffff88021e2d4cc0 R14: ffff88021e2dff00 R15: 00000000000000c0
+FS:  0000000000000000(0000) GS:ffff88021e2c0000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 00000000034b8cd8 CR3: 000000021073c000 CR4: 00000000001407e0
+Stack:
+ ffffffff816d1181 ffff8800c7ec1e80 ffff8800c7f97da8 ffffffff814a58f8
+ 000000000000000a ffffffff816d1181 ffff8800c7f97dc8 ffffffffa047002c
+ ffff88021e2dff00 ffff8802116ac1c0 ffff8800c7f97df8 ffffffff814a65fe
+Call Trace:
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffff814a58f8>] release_firmware+0x58/0x80
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffffa047002c>] test_mod_cb+0x2c/0x43 [test]
+ [<ffffffff814a65fe>] request_firmware_work_func+0x5e/0x80
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffff8108d23a>] process_one_work+0x14a/0x3f0
+ [<ffffffff8108d911>] worker_thread+0x121/0x460
+ [<ffffffff8108d7f0>] ? rescuer_thread+0x310/0x310
+ [<ffffffff810928f9>] kthread+0xc9/0xe0
+ [<ffffffff81092830>] ? kthread_create_on_node+0x180/0x180
+ [<ffffffff816d52d8>] ret_from_fork+0x58/0x90
+ [<ffffffff81092830>] ? kthread_create_on_node+0x180/0x180
+Code: c7 c6 dd ad a3 81 48 c7 c7 20 97 ce 81 31 c0 e8 0b b2 ed ff e9 78 ff ff ff 66 0f 1f 44 00 00 0f 1f 44 00 00 55 48 89 e5 41 54 53 <4c> 8b 67 38 48 89 fb 4c 89 e7 e8 85 f7 22 00 f0 83 2b 01 74 0f
+RIP  [<ffffffff814a586c>] fw_free_buf+0xc/0x40
+ RSP <ffff8800c7f97d78>
+---[ end trace 4e62c56a58d0eac1 ]---
+BUG: unable to handle kernel paging request at ffffffffffffffd8
+IP: [<ffffffff81093ee0>] kthread_data+0x10/0x20
+PGD 1c13067 PUD 1c15067 PMD 0
+Oops: 0000 [#2] SMP
+Modules linked in: test(O) <...etc-it-does-not-matter>
+ drm sr_mod cdrom xhci_pci xhci_hcd rtsx_pci mfd_core video button sg
+CPU: 3 PID: 87 Comm: kworker/3:2 Tainted: G      D    O    4.0.0-00010-g22b5bb0-dirty #176
+Hardware name: LENOVO 20AW000LUS/20AW000LUS, BIOS GLET43WW (1.18 ) 12/04/2013
+task: ffff8800c7f8e290 ti: ffff8800c7f94000 task.ti: ffff8800c7f94000
+RIP: 0010:[<ffffffff81092ee0>]  [<ffffffff81092ee0>] kthread_data+0x10/0x20
+RSP: 0018:ffff8800c7f97b18  EFLAGS: 00010096
+RAX: 0000000000000000 RBX: 0000000000000003 RCX: 000000000000000d
+RDX: 0000000000000003 RSI: 0000000000000003 RDI: ffff8800c7f8e290
+RBP: ffff8800c7f97b18 R08: 000000000000bc00 R09: 0000000000007e76
+R10: 0000000000000001 R11: 000000000000002f R12: ffff8800c7f8e290
+R13: 00000000000154c0 R14: 0000000000000003 R15: 0000000000000000
+FS:  0000000000000000(0000) GS:ffff88021e2c0000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: 0000000000000028 CR3: 0000000210675000 CR4: 00000000001407e0
+Stack:
+ ffff8800c7f97b38 ffffffff8108dcd5 ffff8800c7f97b38 ffff88021e2d54c0
+ ffff8800c7f97b88 ffffffff816d1500 ffff880213d42368 ffff8800c7f8e290
+ ffff8800c7f97b88 ffff8800c7f97fd8 ffff8800c7f8e710 0000000000000246
+Call Trace:
+ [<ffffffff8108dcd5>] wq_worker_sleeping+0x15/0xa0
+ [<ffffffff816d1500>] __schedule+0x6e0/0x940
+ [<ffffffff816d1797>] schedule+0x37/0x90
+ [<ffffffff810779bc>] do_exit+0x6bc/0xb40
+ [<ffffffff8101898f>] oops_end+0x9f/0xe0
+ [<ffffffff81018efb>] die+0x4b/0x70
+ [<ffffffff81015622>] do_general_protection+0xe2/0x170
+ [<ffffffff816d74e8>] general_protection+0x28/0x30
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffff814a586c>] ? fw_free_buf+0xc/0x40
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffff814a58f8>] release_firmware+0x58/0x80
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffffa047002c>] test_mod_cb+0x2c/0x43 [test]
+ [<ffffffff814a65fe>] request_firmware_work_func+0x5e/0x80
+ [<ffffffff816d1181>] ? __schedule+0x361/0x940
+ [<ffffffff8108d23a>] process_one_work+0x14a/0x3f0
+ [<ffffffff8108d911>] worker_thread+0x121/0x460
+ [<ffffffff8108d7f0>] ? rescuer_thread+0x310/0x310
+ [<ffffffff810928f9>] kthread+0xc9/0xe0
+ [<ffffffff81092830>] ? kthread_create_on_node+0x180/0x180
+ [<ffffffff816d52d8>] ret_from_fork+0x58/0x90
+ [<ffffffff81092830>] ? kthread_create_on_node+0x180/0x180
+Code: 00 48 89 e5 5d 48 8b 40 c8 48 c1 e8 02 83 e0 01 c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 44 00 00 48 8b 87 30 05 00 00 55 48 89 e5 <48> 8b 40 d8 5d c3 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 44 00 00
+RIP  [<ffffffff81092ee0>] kthread_data+0x10/0x20
+ RSP <ffff8800c7f97b18>
+CR2: ffffffffffffffd8
+---[ end trace 4e62c56a58d0eac2 ]---
+Fixing recursive fault but reboot is needed!
+
+Cc: Rusty Russell <rusty@rustcorp.com.au>
+Cc: David Howells <dhowells@redhat.com>
+Cc: Ming Lei <ming.lei@canonical.com>
+Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: Kyle McMartin <kyle@kernel.org>
+Cc: stable@vger.kernel.org
+Cc: cocci@systeme.lip6.fr
+Generated-by: Coccinelle SmPL
+Signed-off-by: Luis R. Rodriguez <mcgrof@suse.com>
+---
+ drivers/base/firmware_class.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/base/firmware_class.c b/drivers/base/firmware_class.c
+index 6c5c9ed..2e85860 100644
+--- a/drivers/base/firmware_class.c
++++ b/drivers/base/firmware_class.c
+@@ -1242,6 +1242,7 @@ static void request_firmware_work_func(struct work_struct *work)
+ 	put_device(fw_work->device); /* taken in request_firmware_nowait() */
+ 
+ 	module_put(fw_work->module);
++	kfree_const(fw_work->name);
+ 	kfree(fw_work);
+ }
+ 
+@@ -1281,7 +1282,7 @@ request_firmware_nowait(
+ 		return -ENOMEM;
+ 
+ 	fw_work->module = module;
+-	fw_work->name = name;
++	fw_work->name = kstrdup_const(name, gfp);
+ 	fw_work->device = device;
+ 	fw_work->context = context;
+ 	fw_work->cont = cont;
+@@ -1289,6 +1290,7 @@ request_firmware_nowait(
+ 		(uevent ? FW_OPT_UEVENT : FW_OPT_USERHELPER);
+ 
+ 	if (!try_module_get(module)) {
++		kfree_const(fw_work->name);
+ 		kfree(fw_work);
+ 		return -EFAULT;
+ 	}
+-- 
+2.3.2.209.gd67f9d5.dirty
+
 
 _______________________________________________
 wireless-regdb mailing list
