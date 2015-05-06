@@ -1,27 +1,19 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-pd0-x230.google.com ([2607:f8b0:400e:c02::230])
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YpnYb-0002ef-A7
- for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 00:51:26 +0000
-Received: by pdbqa5 with SMTP id qa5so213489700pdb.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 05 May 2015 17:51:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=z0EHC7Hx7WHKvEOOtVp0Y4jsp2/gMtjW9/QjPfe7XHg=;
- b=sNLMQc6i4TcdkB3wj1asDFaPqdw5OxobiP9e61sQhpCWMUDxMqwN0cdZcN+iE7OgZH
- V0+3/UWOnki+TAvEYGA5f8TpbLfI/c+U+n6s1G1V3rj4r76TYVqgNBGbJjNHNyB4OnU0
- Au+Drd3d/jkKNQOmjET2SezdKALXjMC2TdzsUCNBMCzwKpb316Mel86Bo4/kBsDFYmyy
- ZrpY5r/pxwips9yoQqFkHyIihjFww+NrQIOhI0Bp42/oQFsOigg5FokaLwEWicVcsV6m
- gH7q0GWgxi9EhKH1QgMz7Lodmh8j2g84mA75NPVN8fxKkrKd4/I2ky+HqGxERX6HwddO VWfw==
-From: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
-Date: Tue,  5 May 2015 17:44:20 -0700
-Message-Id: <1430873070-7290-3-git-send-email-mcgrof@do-not-panic.com>
-In-Reply-To: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
-References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
-Subject: [wireless-regdb] [PATCH v1 02/12] kernel: generalize module
- signing as system data signing
+ id 1Ypy8q-0007rd-NR
+ for wireless-regdb@lists.infradead.org; Wed, 06 May 2015 12:09:33 +0000
+From: David Howells <dhowells@redhat.com>
+In-Reply-To: <1430873070-7290-3-git-send-email-mcgrof@do-not-panic.com>
+References: <1430873070-7290-3-git-send-email-mcgrof@do-not-panic.com>
+ <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
+MIME-Version: 1.0
+Content-ID: <14324.1430914129.1@warthog.procyon.org.uk>
+Date: Wed, 06 May 2015 13:08:49 +0100
+Message-ID: <14325.1430914129@warthog.procyon.org.uk>
+Subject: Re: [wireless-regdb] [PATCH v1 02/12] kernel: generalize module
+	signing as system data signing
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,328 +23,36 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: rusty@rustcorp.com.au, dhowells@redhat.com, ming.lei@canonical.com, seth.forshee@canonical.com, kyle@kernel.org
-Cc: mjg59@srcf.ucam.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, tiwai@suse.de, gregkh@linuxfoundation.org, "Luis R. Rodriguez" <mcgrof@suse.com>, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, jlee@suse.com, casey@schaufler-ca.com, akpm@linux-foundation.org
+To: "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: mjg59@srcf.ucam.org, kyle@kernel.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, tiwai@suse.de, gregkh@linuxfoundation.org, ming.lei@canonical.com, rusty@rustcorp.com.au, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, dhowells@redhat.com, seth.forshee@canonical.com, casey@schaufler-ca.com, akpm@linux-foundation.org, "Luis R. Rodriguez" <mcgrof@suse.com>, jlee@suse.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
+Luis R. Rodriguez <mcgrof@do-not-panic.com> wrote:
 
-This generalizes the module signing code as helpers, we do
-this as we'll later re-use this same code for firmware and
-other system data signing.
+> This generalizes the module signing code as helpers, we do
+> this as we'll later re-use this same code for firmware and
+> other system data signing.
 
-Cc: Rusty Russell <rusty@rustcorp.com.au>
-Cc: David Howells <dhowells@redhat.com>
-Cc: Ming Lei <ming.lei@canonical.com>
-Cc: Seth Forshee <seth.forshee@canonical.com>
-Cc: Kyle McMartin <kyle@kernel.org>
-Signed-off-by: Luis R. Rodriguez <mcgrof@suse.com>
----
- init/Kconfig                                     | 22 ++++---
- kernel/Makefile                                  |  2 +-
- kernel/module.c                                  |  4 +-
- kernel/{module-internal.h => sysdata-internal.h} |  4 +-
- kernel/{module_signing.c => sysdata_signing.c}   | 76 ++++++++++++------------
- kernel/system_keyring.c                          |  2 +-
- 6 files changed, 57 insertions(+), 53 deletions(-)
- rename kernel/{module-internal.h => sysdata-internal.h} (79%)
- rename kernel/{module_signing.c => sysdata_signing.c} (76%)
+I'm trying to move us to the use of PKCS#7 certificates as module signatures.
+See here:
 
-diff --git a/init/Kconfig b/init/Kconfig
-index f5dbc6d..862d5ad7 100644
---- a/init/Kconfig
-+++ b/init/Kconfig
-@@ -1769,6 +1769,18 @@ config BASE_SMALL
- 	default 0 if BASE_FULL
- 	default 1 if !BASE_FULL
- 
-+config SYSDATA_SIG
-+	def_bool y
-+	select SYSTEM_TRUSTED_KEYRING
-+	select KEYS
-+	select CRYPTO
-+	select ASYMMETRIC_KEY_TYPE
-+	select ASYMMETRIC_PUBLIC_KEY_SUBTYPE
-+	select PUBLIC_KEY_ALGO_RSA
-+	select ASN1
-+	select OID_REGISTRY
-+	select X509_CERTIFICATE_PARSER
-+
- menuconfig MODULES
- 	bool "Enable loadable module support"
- 	option modules
-@@ -1842,15 +1854,7 @@ config MODULE_SRCVERSION_ALL
- config MODULE_SIG
- 	bool "Module signature verification"
- 	depends on MODULES
--	select SYSTEM_TRUSTED_KEYRING
--	select KEYS
--	select CRYPTO
--	select ASYMMETRIC_KEY_TYPE
--	select ASYMMETRIC_PUBLIC_KEY_SUBTYPE
--	select PUBLIC_KEY_ALGO_RSA
--	select ASN1
--	select OID_REGISTRY
--	select X509_CERTIFICATE_PARSER
-+	select SYSDATA_SIG
- 	help
- 	  Check modules for valid signatures upon load: the signature
- 	  is simply appended to the module. For more information see
-diff --git a/kernel/Makefile b/kernel/Makefile
-index 1408b33..e24c9d6 100644
---- a/kernel/Makefile
-+++ b/kernel/Makefile
-@@ -45,7 +45,7 @@ endif
- obj-$(CONFIG_UID16) += uid16.o
- obj-$(CONFIG_SYSTEM_TRUSTED_KEYRING) += system_keyring.o system_certificates.o
- obj-$(CONFIG_MODULES) += module.o
--obj-$(CONFIG_MODULE_SIG) += module_signing.o
-+obj-$(CONFIG_SYSDATA_SIG) += sysdata_signing.o
- obj-$(CONFIG_KALLSYMS) += kallsyms.o
- obj-$(CONFIG_BSD_PROCESS_ACCT) += acct.o
- obj-$(CONFIG_KEXEC) += kexec.o
-diff --git a/kernel/module.c b/kernel/module.c
-index 23b2b65..eb61c10 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -60,7 +60,7 @@
- #include <linux/pfn.h>
- #include <linux/bsearch.h>
- #include <uapi/linux/module.h>
--#include "module-internal.h"
-+#include "sysdata-internal.h"
- 
- #define CREATE_TRACE_POINTS
- #include <trace/events/module.h>
-@@ -2404,7 +2404,7 @@ static int module_sig_check(struct load_info *info)
- 	    memcmp(mod + info->len - markerlen, MODULE_SIG_STRING, markerlen) == 0) {
- 		/* We truncate the module to discard the signature */
- 		info->len -= markerlen;
--		err = mod_verify_sig(mod, &info->len);
-+		err = sysdata_verify_sig(mod, &info->len);
- 	}
- 
- 	if (!err) {
-diff --git a/kernel/module-internal.h b/kernel/sysdata-internal.h
-similarity index 79%
-rename from kernel/module-internal.h
-rename to kernel/sysdata-internal.h
-index 915e123..0aa573e 100644
---- a/kernel/module-internal.h
-+++ b/kernel/sysdata-internal.h
-@@ -1,4 +1,4 @@
--/* Module internals
-+/* System Data internals
-  *
-  * Copyright (C) 2012 Red Hat, Inc. All Rights Reserved.
-  * Written by David Howells (dhowells@redhat.com)
-@@ -9,4 +9,4 @@
-  * 2 of the Licence, or (at your option) any later version.
-  */
- 
--extern int mod_verify_sig(const void *mod, unsigned long *_modlen);
-+extern int sysdata_verify_sig(const void *data, unsigned long *_len);
-diff --git a/kernel/module_signing.c b/kernel/sysdata_signing.c
-similarity index 76%
-rename from kernel/module_signing.c
-rename to kernel/sysdata_signing.c
-index be5b8fa..8ba09aa 100644
---- a/kernel/module_signing.c
-+++ b/kernel/sysdata_signing.c
-@@ -1,4 +1,4 @@
--/* Module signature checker
-+/* System Data signature checker
-  *
-  * Copyright (C) 2012 Red Hat, Inc. All Rights Reserved.
-  * Written by David Howells (dhowells@redhat.com)
-@@ -15,10 +15,10 @@
- #include <crypto/hash.h>
- #include <keys/asymmetric-type.h>
- #include <keys/system_keyring.h>
--#include "module-internal.h"
-+#include "sysdata-internal.h"
- 
- /*
-- * Module signature information block.
-+ * System Data signature information block.
-  *
-  * The constituents of the signature section are, in order:
-  *
-@@ -27,7 +27,7 @@
-  *	- Signature data
-  *	- Information block
-  */
--struct module_signature {
-+struct sysdata_signature {
- 	u8	algo;		/* Public-key crypto algorithm [enum pkey_algo] */
- 	u8	hash;		/* Digest algorithm [enum hash_algo] */
- 	u8	id_type;	/* Key identifier type [enum pkey_id_type] */
-@@ -38,11 +38,11 @@ struct module_signature {
- };
- 
- /*
-- * Digest the module contents.
-+ * Digest the system data contents.
-  */
--static struct public_key_signature *mod_make_digest(enum hash_algo hash,
--						    const void *mod,
--						    unsigned long modlen)
-+static struct public_key_signature *data_make_digest(enum hash_algo hash,
-+						    const void *data,
-+						    unsigned long len)
- {
- 	struct public_key_signature *pks;
- 	struct crypto_shash *tfm;
-@@ -51,7 +51,7 @@ static struct public_key_signature *mod_make_digest(enum hash_algo hash,
- 	int ret;
- 
- 	pr_devel("==>%s()\n", __func__);
--	
-+
- 	/* Allocate the hashing algorithm we're going to need and find out how
- 	 * big the hash operational data will be.
- 	 */
-@@ -82,7 +82,7 @@ static struct public_key_signature *mod_make_digest(enum hash_algo hash,
- 	if (ret < 0)
- 		goto error;
- 
--	ret = crypto_shash_finup(desc, mod, modlen, pks->digest);
-+	ret = crypto_shash_finup(desc, data, len, pks->digest);
- 	if (ret < 0)
- 		goto error;
- 
-@@ -105,8 +105,8 @@ error_no_pks:
-  *
-  * RSA signatures only have one MPI, so currently we only read one.
-  */
--static int mod_extract_mpi_array(struct public_key_signature *pks,
--				 const void *data, size_t len)
-+static int data_extract_mpi_array(struct public_key_signature *pks,
-+				  const void *data, size_t len)
- {
- 	size_t nbytes;
- 	MPI mpi;
-@@ -161,7 +161,7 @@ static struct key *request_asymmetric_key(const char *signer, size_t signer_len,
- 	key = keyring_search(make_key_ref(system_trusted_keyring, 1),
- 			     &key_type_asymmetric, id);
- 	if (IS_ERR(key))
--		pr_warn("Request for unknown module key '%s' err %ld\n",
-+		pr_warn("Request for unknown system data key '%s' err %ld\n",
- 			id, PTR_ERR(key));
- 	kfree(id);
- 
-@@ -182,58 +182,58 @@ static struct key *request_asymmetric_key(const char *signer, size_t signer_len,
- }
- 
- /*
-- * Verify the signature on a module.
-+ * Verify the signature on system data.
-  */
--int mod_verify_sig(const void *mod, unsigned long *_modlen)
-+int sysdata_verify_sig(const void *data, unsigned long *_len)
- {
- 	struct public_key_signature *pks;
--	struct module_signature ms;
-+	struct sysdata_signature ds;
- 	struct key *key;
- 	const void *sig;
--	size_t modlen = *_modlen, sig_len;
-+	size_t len = *_len, sig_len;
- 	int ret;
- 
--	pr_devel("==>%s(,%zu)\n", __func__, modlen);
-+	pr_devel("==>%s(,%zu)\n", __func__, len);
- 
--	if (modlen <= sizeof(ms))
-+	if (len <= sizeof(ds))
- 		return -EBADMSG;
- 
--	memcpy(&ms, mod + (modlen - sizeof(ms)), sizeof(ms));
--	modlen -= sizeof(ms);
-+	memcpy(&ds, data + (len - sizeof(ds)), sizeof(ds));
-+	len -= sizeof(ds);
- 
--	sig_len = be32_to_cpu(ms.sig_len);
--	if (sig_len >= modlen)
-+	sig_len = be32_to_cpu(ds.sig_len);
-+	if (sig_len >= len)
- 		return -EBADMSG;
--	modlen -= sig_len;
--	if ((size_t)ms.signer_len + ms.key_id_len >= modlen)
-+	len -= sig_len;
-+	if ((size_t)ds.signer_len + ds.key_id_len >= len)
- 		return -EBADMSG;
--	modlen -= (size_t)ms.signer_len + ms.key_id_len;
-+	len -= (size_t)ds.signer_len + ds.key_id_len;
- 
--	*_modlen = modlen;
--	sig = mod + modlen;
-+	*_len = len;
-+	sig = data + len;
- 
- 	/* For the moment, only support RSA and X.509 identifiers */
--	if (ms.algo != PKEY_ALGO_RSA ||
--	    ms.id_type != PKEY_ID_X509)
-+	if (ds.algo != PKEY_ALGO_RSA ||
-+	    ds.id_type != PKEY_ID_X509)
- 		return -ENOPKG;
- 
--	if (ms.hash >= PKEY_HASH__LAST ||
--	    !hash_algo_name[ms.hash])
-+	if (ds.hash >= PKEY_HASH__LAST ||
-+	    !hash_algo_name[ds.hash])
- 		return -ENOPKG;
- 
--	key = request_asymmetric_key(sig, ms.signer_len,
--				     sig + ms.signer_len, ms.key_id_len);
-+	key = request_asymmetric_key(sig, ds.signer_len,
-+				     sig + ds.signer_len, ds.key_id_len);
- 	if (IS_ERR(key))
- 		return PTR_ERR(key);
- 
--	pks = mod_make_digest(ms.hash, mod, modlen);
-+	pks = data_make_digest(ds.hash, data, len);
- 	if (IS_ERR(pks)) {
- 		ret = PTR_ERR(pks);
- 		goto error_put_key;
- 	}
- 
--	ret = mod_extract_mpi_array(pks, sig + ms.signer_len + ms.key_id_len,
--				    sig_len);
-+	ret = data_extract_mpi_array(pks, sig + ds.signer_len + ds.key_id_len,
-+				     sig_len);
- 	if (ret < 0)
- 		goto error_free_pks;
- 
-@@ -246,5 +246,5 @@ error_free_pks:
- error_put_key:
- 	key_put(key);
- 	pr_devel("<==%s() = %d\n", __func__, ret);
--	return ret;	
-+	return ret;
- }
-diff --git a/kernel/system_keyring.c b/kernel/system_keyring.c
-index 875f64e..1eb0c86 100644
---- a/kernel/system_keyring.c
-+++ b/kernel/system_keyring.c
-@@ -16,7 +16,7 @@
- #include <linux/err.h>
- #include <keys/asymmetric-type.h>
- #include <keys/system_keyring.h>
--#include "module-internal.h"
-+#include "sysdata-internal.h"
- 
- struct key *system_trusted_keyring;
- EXPORT_SYMBOL_GPL(system_trusted_keyring);
--- 
-2.3.2.209.gd67f9d5.dirty
+	http://git.kernel.org/cgit/linux/kernel/git/dhowells/linux-fs.git/log/?h=modsign-pkcs7
 
+I would suggest you use this as a base.
+
+Also, I would suggest, if you can manage it, either:
+
+ (1) Keep the signature and the firmware blobs separate on disk for copyright
+     and/or licensing purposes.
+
+ (2) Put the firmware blob inside the PKCS#7 message as the embedded data.
+
+David
 
 _______________________________________________
 wireless-regdb mailing list
