@@ -1,14 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ob0-f180.google.com ([209.85.214.180])
+Received: from mail-ob0-f176.google.com ([209.85.214.176])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YqM0F-0008TC-MS
- for wireless-regdb@lists.infradead.org; Thu, 07 May 2015 13:38:16 +0000
-Received: by obblk2 with SMTP id lk2so31504462obb.0 for
- <wireless-regdb@lists.infradead.org>; Thu, 07 May 2015 06:37:53 -0700 (PDT)
-Date: Thu, 7 May 2015 08:37:31 -0500
+ id 1YtF3R-0004nI-99
+ for wireless-regdb@lists.infradead.org; Fri, 15 May 2015 12:49:29 +0000
+Received: by obblk2 with SMTP id lk2so77134641obb.0 for
+ <wireless-regdb@lists.infradead.org>; Fri, 15 May 2015 05:49:07 -0700 (PDT)
+Date: Fri, 15 May 2015 07:48:58 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150507133731.GA2208@ubuntu-hedt>
+Message-ID: <20150515124858.GA52538@ubuntu-hedt>
 References: <20150505113216.90f7fdbceca7565206599b83@ubnt.com>
  <20150505084821.GA26349@jouni.qca.qualcomm.com>
  <87d22f8f4d.fsf@nemi.mork.no> <20150505210924.GB109672@ubuntu-hedt>
@@ -43,8 +43,8 @@ On Thu, May 07, 2015 at 11:16:19AM +0300, Dmitry Ivanov wrote:
 > 
 > Signed-off-by: Dmitry Ivanov <dima@ubnt.com>
 
-Thanks Dmitry. I'll let this sit for a few days to see if there's any
-more feedback.
+Applied, with the addition the source line from your previous patches to
+the commit message. Thanks!
 
 Seth
 
