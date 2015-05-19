@@ -2,13 +2,12 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from helcar.hengli.com.au ([209.40.204.226])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YuqVF-0007uM-5I
- for wireless-regdb@lists.infradead.org; Tue, 19 May 2015 23:00:50 +0000
-Date: Wed, 20 May 2015 06:59:45 +0800
+ id 1YuqZ2-0008Nz-H3
+ for wireless-regdb@lists.infradead.org; Tue, 19 May 2015 23:04:45 +0000
+Date: Wed, 20 May 2015 07:03:55 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
-Message-ID: <20150519225945.GB5718@gondor.apana.org.au>
-References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
- <1430873070-7290-4-git-send-email-mcgrof@do-not-panic.com>
+Message-ID: <20150519230355.GA5853@gondor.apana.org.au>
+References: <1430873070-7290-4-git-send-email-mcgrof@do-not-panic.com>
  <20150506033330.GA16470@gondor.apana.org.au>
  <1430988137.8171.58.camel@x220> <1431021995.8171.97.camel@x220>
  <20150518200100.GY23057@wotan.suse.de>
@@ -16,9 +15,10 @@ References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
  <20150519000921.GA23057@wotan.suse.de>
  <1432022535.9091.48.camel@x220>
  <20150519154630.GB23057@wotan.suse.de>
+ <20150519225945.GB5718@gondor.apana.org.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20150519154630.GB23057@wotan.suse.de>
+In-Reply-To: <20150519225945.GB5718@gondor.apana.org.au>
 Subject: Re: [wireless-regdb] [PATCH v1 03/12] crypto: qat - address
  recursive dependency when fw signing is enabled
 List-Unsubscribe: 
@@ -40,17 +40,14 @@ Cc: mjg59@srcf.ucam.org, Paul Bolle <pebolle@tiscali.nl>, kyle@kernel.org, wirel
  Rodriguez" <mcgrof@do-not-panic.com>, tiwai@suse.de, gregkh@linuxfoundation.org, ming.lei@canonical.com, rusty@rustcorp.com.au, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, Tadeusz Struk <tadeusz.struk@intel.com>, John Griffin <john.griffin@intel.com>, dhowells@redhat.com, seth.forshee@canonical.com, Bruce Allan <bruce.w.allan@intel.com>, casey@schaufler-ca.com, akpm@linux-foundation.org, jlee@suse.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, May 19, 2015 at 05:46:30PM +0200, Luis R. Rodriguez wrote:
->
-> Instead of depends on we should just drop it and and issues arise we
-> should fix them provided an allyesconfig and allmodconfig work when
-> FW_LOADER is disabled. That was the approach I wanted to take at
-> least. To make this easier to phase we can break it down by subsystem.
+On Wed, May 20, 2015 at 06:59:45AM +0800, Herbert Xu wrote:
+> 
+> If you disable FW_LOADER then every case will result in a build
+> failure.  So you must either have a select or a depends on.
 
-Modules select FW_LOADER because they call request_firmware.
-
-If you disable FW_LOADER then every case will result in a build
-failure.  So you must either have a select or a depends on.
+OK I was wrong.  It should still compile.  So I guess you only
+need the depends on/select for those that won't work without the
+firmware.
 
 Cheers,
 -- 
