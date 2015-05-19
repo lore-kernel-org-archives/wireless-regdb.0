@@ -1,12 +1,12 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from cantor2.suse.de ([195.135.220.15] helo=mx2.suse.de)
+Received: from helcar.hengli.com.au ([209.40.204.226])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YujjN-0001hl-8n
- for wireless-regdb@lists.infradead.org; Tue, 19 May 2015 15:46:59 +0000
-Date: Tue, 19 May 2015 17:46:30 +0200
-From: "Luis R. Rodriguez" <mcgrof@suse.com>
-Message-ID: <20150519154630.GB23057@wotan.suse.de>
+ id 1YuqVF-0007uM-5I
+ for wireless-regdb@lists.infradead.org; Tue, 19 May 2015 23:00:50 +0000
+Date: Wed, 20 May 2015 06:59:45 +0800
+From: Herbert Xu <herbert@gondor.apana.org.au>
+Message-ID: <20150519225945.GB5718@gondor.apana.org.au>
 References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
  <1430873070-7290-4-git-send-email-mcgrof@do-not-panic.com>
  <20150506033330.GA16470@gondor.apana.org.au>
@@ -15,9 +15,10 @@ References: <1430873070-7290-1-git-send-email-mcgrof@do-not-panic.com>
  <1431981930.9091.29.camel@x220>
  <20150519000921.GA23057@wotan.suse.de>
  <1432022535.9091.48.camel@x220>
+ <20150519154630.GB23057@wotan.suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1432022535.9091.48.camel@x220>
+In-Reply-To: <20150519154630.GB23057@wotan.suse.de>
 Subject: Re: [wireless-regdb] [PATCH v1 03/12] crypto: qat - address
  recursive dependency when fw signing is enabled
 List-Unsubscribe: 
@@ -34,49 +35,28 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Paul Bolle <pebolle@tiscali.nl>
-Cc: mjg59@srcf.ucam.org, kyle@kernel.org, wireless-regdb@lists.infradead.org, Herbert Xu <herbert@gondor.apana.org.au>, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>, tiwai@suse.de, gregkh@linuxfoundation.org, ming.lei@canonical.com, rusty@rustcorp.com.au, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, Tadeusz Struk <tadeusz.struk@intel.com>, John Griffin <john.griffin@intel.com>, dhowells@redhat.com, seth.forshee@canonical.com, Bruce Allan <bruce.w.allan@intel.com>, casey@schaufler-ca.com, akpm@linux-foundation.org, jlee@suse.com, keescook@chromium.org
+To: "Luis R. Rodriguez" <mcgrof@suse.com>
+Cc: mjg59@srcf.ucam.org, Paul Bolle <pebolle@tiscali.nl>, kyle@kernel.org, wireless-regdb@lists.infradead.org, keescook@chromium.org, "Luis R.
+ Rodriguez" <mcgrof@do-not-panic.com>, tiwai@suse.de, gregkh@linuxfoundation.org, ming.lei@canonical.com, rusty@rustcorp.com.au, linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org, Tadeusz Struk <tadeusz.struk@intel.com>, John Griffin <john.griffin@intel.com>, dhowells@redhat.com, seth.forshee@canonical.com, Bruce Allan <bruce.w.allan@intel.com>, casey@schaufler-ca.com, akpm@linux-foundation.org, jlee@suse.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, May 19, 2015 at 10:02:15AM +0200, Paul Bolle wrote:
-> On Tue, 2015-05-19 at 02:09 +0200, Luis R. Rodriguez wrote:
-> > On Mon, May 18, 2015 at 10:45:30PM +0200, Paul Bolle wrote:
-> > > [...] so, probably, almost
-> > > all .config files have FW_LOADER set. So I think, except for some corner
-> > > cases, either converting all "select FW_LOADER" to "depends on
-> > > FW_LOADER" or simply dropping  "select FW_LOADER" all together, should
-> > > be fine.
-> > 
-> > Well, that makes sense. I just dropped all "select FW_LOADER" entries
-> > on next-20150518, then I enabled everything with 'make allyesconfig'
-> > and then went into menuconfig to disable FW_LOADER. The build worked.
-> > 
-> > Going to try a few more build matrix combinations and send patches to
-> > do away with this.
-> > 
-> > > Those corner cases should then be handled on a case by case basis. 
-> 
-> Having slept on this, it occurred to me a randconfig could hit those
-> corner cases. (Make that will hit them, actually.) Of course, one might
-> argue that randconfig and EXPERT's advice, "Only use this if you really
-> know what you are doing.", are at odds. Which opens another can of
-> worms: how much do we care about .config files in which randconfig
-> visited the kernels darker corners? Just enough, I'm afraid.
-> 
-> So it seems I've wasted your time by suggesting to drop those selects.
+On Tue, May 19, 2015 at 05:46:30PM +0200, Luis R. Rodriguez wrote:
+>
+> Instead of depends on we should just drop it and and issues arise we
+> should fix them provided an allyesconfig and allmodconfig work when
+> FW_LOADER is disabled. That was the approach I wanted to take at
+> least. To make this easier to phase we can break it down by subsystem.
 
-IMHO not at all.
+Modules select FW_LOADER because they call request_firmware.
 
-> And now I wonder what trouble using "depends on" will generate here...
+If you disable FW_LOADER then every case will result in a build
+failure.  So you must either have a select or a depends on.
 
-Instead of depends on we should just drop it and and issues arise we
-should fix them provided an allyesconfig and allmodconfig work when
-FW_LOADER is disabled. That was the approach I wanted to take at
-least. To make this easier to phase we can break it down by subsystem.
-
-Thoughts?
-
- Luis
+Cheers,
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 wireless-regdb mailing list
