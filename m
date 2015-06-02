@@ -1,18 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f53.google.com ([209.85.218.53])
+Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1YznP5-0005lG-SD
- for wireless-regdb@lists.infradead.org; Tue, 02 Jun 2015 14:42:56 +0000
-Received: by oihb142 with SMTP id b142so127078417oih.3 for
- <wireless-regdb@lists.infradead.org>; Tue, 02 Jun 2015 07:42:35 -0700 (PDT)
-Date: Tue, 2 Jun 2015 09:42:31 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150602144231.GA31648@ubuntu-hedt>
+ id 1Yzo37-0002xO-SM
+ for wireless-regdb@lists.infradead.org; Tue, 02 Jun 2015 15:24:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1433258657; x=1464794657;
+ h=from:cc:to:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=lKm7mwAnHCbk8v3IGTjPQvDnhk86eY5djxY4efJoO1M=;
+ b=VVagLHvPIIzHHMYhxYzXPSedFPVKEFD52GkSlrR9aAinkUy4KHtYZfJL
+ 0ldSoUXYkdltcXooiVy8a8Neon/QGgPRDNvjz8ovi6hQNK2QGDMb3xy6h
+ hkfgE0k7A/21chqikoD2TyoPhn16XnSpd4qOaqOJ+Eq8frooWTUdB9hsN Q=;
+From: Vladimir Kondratiev <QCA_vkondrat@QCA.qualcomm.com>
+Date: Tue,  2 Jun 2015 18:23:46 +0300
+Message-Id: <1433258628-7047-1-git-send-email-qca_vkondrat@qca.qualcomm.com>
+In-Reply-To: <20150602144231.GA31648@ubuntu-hedt>
+References: <20150602144231.GA31648@ubuntu-hedt>
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Add 60GHz regulatory
- rules for Russia (RU)
+Subject: [wireless-regdb] [PATCH v3 0/2] 60 GHz rules update
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -22,49 +29,33 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Vladimir Kondratiev <QCA_vkondrat@QCA.qualcomm.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, "John W . Linville" <linville@tuxdriver.com>
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: Vladimir Kondratiev <QCA_vkondrat@QCA.qualcomm.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Jun 02, 2015 at 05:04:09PM +0300, Vladimir Kondratiev wrote:
-> Source is document named
-> Changes to NLA 124_Order №129_22042015.pdf
-> 
-> Signed-off-by: Vladimir Kondratiev <qca_vkondrat@qca.qualcomm.com>
-> ---
->  db.txt | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/db.txt b/db.txt
-> index f361030..79dac92 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -978,6 +978,8 @@ country RU: DFS-ETSI
->  	(5250 - 5330 @ 80), (20), DFS
->  	(5650 - 5730 @ 80), (30), DFS
->  	(5735 - 5835 @ 80), (30)
-> +	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order №129_22042015.pdf
-> +	(57000 - 66000 @ 2160), (40)
+Update for the 60 GHz rules for 2 countries - Japan and Russia.
 
-It looks like your tree is out of date and missing:
+Rebase and re-sending to the right maintainer, thus mark as "v3"
+to avoid mis-interpretation
 
-  aa1d66d wireless-regdb: Disable VHT80 where 40/80 MHz on 5 GHz is not allowed
+Vladimir Kondratiev (2):
+  wireless-regdb: Add 60GHz regulatory rules for Japan (JP)
+  wireless-regdb: Add 60GHz regulatory rules for Russia (RU)
 
-I see that you directed the patch at John, so I'm guessing that you're
-still using his tree. I took over maintainership of the database in
-December, and you should be using this repo for new work:
+ db.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git
+-- 
+2.1.4
 
-Thanks,
-Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
