@@ -1,20 +1,16 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f53.google.com ([209.85.218.53])
+Received: from mail.neratec.com ([46.140.151.2])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZAfXc-0005AU-R1
- for wireless-regdb@lists.infradead.org; Thu, 02 Jul 2015 14:32:41 +0000
-Received: by oigx81 with SMTP id x81so57081069oig.1 for
- <wireless-regdb@lists.infradead.org>; Thu, 02 Jul 2015 07:32:19 -0700 (PDT)
-Date: Thu, 2 Jul 2015 09:31:44 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150702143144.GB40677@ubuntu-hedt>
-References: <CAHr=Vq=hJr6WUQgFXftMSG2zYgwtCXgoTaXBzRfM8-kQa2-K2w@mail.gmail.com>
- <20150702134801.GA40677@ubuntu-hedt>
- <CAHr=Vqn8LzpsbAk=V2yC3Q0Xd5DHqfuSCW4G6vs1vZqBG-VSMw@mail.gmail.com>
+ id 1ZAyya-0003bm-Ks
+ for wireless-regdb@lists.infradead.org; Fri, 03 Jul 2015 11:17:50 +0000
+Message-ID: <55966D1B.1040603@neratec.com>
+Date: Fri, 03 Jul 2015 13:08:11 +0200
+From: Zefir Kurtisi <zefir.kurtisi@neratec.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHr=Vqn8LzpsbAk=V2yC3Q0Xd5DHqfuSCW4G6vs1vZqBG-VSMw@mail.gmail.com>
+References: 
+	 <CAHr=Vq=hJr6WUQgFXftMSG2zYgwtCXgoTaXBzRfM8-kQa2-K2w@mail.gmail.com>
+In-Reply-To: <CAHr=Vq=hJr6WUQgFXftMSG2zYgwtCXgoTaXBzRfM8-kQa2-K2w@mail.gmail.com>
 Subject: Re: [wireless-regdb] wireless-regdb: update CA rules for 5600 -
 	5650 mHz
 List-Unsubscribe: 
@@ -26,36 +22,67 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Wei Zhong <wzhong@google.com>
+To: Wei Zhong <wzhong@google.com>, seth.forshee@canonical.com
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 02, 2015 at 07:21:30AM -0700, Wei Zhong wrote:
-> Thanks for the reply. I'll fix the format and re-submit.
-
-Thanks.
-
-> > Why isn't 80MHz channel bandwidth allowed in the 5650-5730 range?
+On 07/02/2015 07:44 AM, Wei Zhong wrote:
+> commit 2fef4cad8a1bd9cbbf178e59a1b3ca672b057095
+> Author: Wei Zhong <wzhong@google.com>
+> Date:   Wed Jul 1 22:39:09 2015 -0700
 > 
-> It could. But since the entire band is only 80 MHz, in practice, not a single
-> center_freq, channel 136 or140 for example, can utilities 80 MHz, right?
+>     wireless-regdb: update CA rules for 5600 - 5650 mHz
+> 
+>     Related regulation:
+>     http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html#s6.2.3
+> 
+>     Frequency Bands 5470-5600 MHz and 5650-5725 MHz
+>     Until further notice, devices subject to this section [i.e. Wifi device
+>     supporting 5 GHz bands] shall not be capable of transmitting in the band
+>     5600-5650 MHz. This restriction is for the protection of Environment
+>     Canada’s weather radars operating in this band.
+> 
+> diff --git a/db.txt b/db.txt
+> index 809cd3c..da0cfad 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -216,7 +216,8 @@ country CA: DFS-FCC
+>         (2402 - 2472 @ 40), (30)
+>         (5170 - 5250 @ 80), (17), AUTO-BW
+>         (5250 - 5330 @ 80), (24), DFS, AUTO-BW
+> -       (5490 - 5730 @ 160), (24), DFS
+> +       (5490 - 5600 @ 80), (24), DFS
+> +       (5650 - 5730 @ 40), (24), DFS
+>         (5735 - 5835 @ 80), (30)
+> 
+>  # Source:
+> --
 
-I don't know, that's why I asked :-)
+I believe this could also be interpreted differently. If the change is only about
+removing the weather radar band (5600-5650), the change should be
 
-I actually haven't read up yet on how VHT80 is done in practice. I was
-just curious why an 80 MHz channel wouldn't be possible when there's the
-space for it.
+ -       (5490 - 5730 @ 160), (24), DFS
+ +       (5490 - 5570 @ 80), (24), DFS
+ +       (5570 - 5590 @ 20), (24), DFS
+ +       (5650 - 5730 @ 80), (24), DFS
 
-Thanks,
-Seth
+The second rule explicitly states that channel 116 remains available for HT20. If
+this level of strict correctness is not needed, rule 1 and 2 combined would be
+
+ -       (5490 - 5730 @ 160), (24), DFS
+ +       (5490 - 5590 @ 80), (24), DFS
+ +       (5650 - 5730 @ 80), (24), DFS
+
+
+Cheers
+Zefir
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
