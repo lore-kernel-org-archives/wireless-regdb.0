@@ -1,24 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f46.google.com ([209.85.218.46])
+Received: from mail-ob0-f175.google.com ([209.85.214.175])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZMcPs-0006jt-CG
- for wireless-regdb@lists.infradead.org; Tue, 04 Aug 2015 13:38:05 +0000
-Received: by oihn130 with SMTP id n130so5063316oih.2 for
- <wireless-regdb@lists.infradead.org>; Tue, 04 Aug 2015 06:37:42 -0700 (PDT)
-Date: Tue, 4 Aug 2015 08:37:12 -0500
+ id 1ZMKfY-0006d2-7K
+ for wireless-regdb@lists.infradead.org; Mon, 03 Aug 2015 18:41:05 +0000
+Received: by obnw1 with SMTP id w1so105442249obn.3 for
+ <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 11:40:43 -0700 (PDT)
+Date: Mon, 3 Aug 2015 13:40:15 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150804133712.GA78399@ubuntu-hedt>
+Message-ID: <20150803184015.GE21180@ubuntu-hedt>
 References: <1437622380-4154-1-git-send-email-wens@csie.org>
- <1437622380-4154-2-git-send-email-wens@csie.org>
- <20150803182730.GC21180@ubuntu-hedt>
- <CAGb2v66U87FeBvE+PDAhz11=knyGBwaztoqqwcNQeceQsSN3pg@mail.gmail.com>
- <CAGb2v667QvWzFvrYBWwZU8eGxMHfgh2LmsQUoYziD6UhEuQk3A@mail.gmail.com>
+ <1437622380-4154-4-git-send-email-wens@csie.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAGb2v667QvWzFvrYBWwZU8eGxMHfgh2LmsQUoYziD6UhEuQk3A@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v2 1/5] wireless-regdb: Update
- U-NII-2c (5470 ~ 5725 MHz) rules for Taiwan (TW)
+In-Reply-To: <1437622380-4154-4-git-send-email-wens@csie.org>
+Subject: Re: [wireless-regdb] [PATCH v2 3/5] wireless-regdb: Add U-NII-1
+ (5150 ~ 5250 MHz) band for Taiwan (TW)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -34,97 +31,54 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: Chen-Yu Tsai <wens@csie.org>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb <wireless-regdb@lists.infradead.org>, Jouni Malinen <jouni@qca.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Aug 04, 2015 at 09:55:06AM +0800, Chen-Yu Tsai wrote:
-> On Tue, Aug 4, 2015 at 9:26 AM, Chen-Yu Tsai <wens@csie.org> wrote:
-> > On Tue, Aug 4, 2015 at 2:27 AM, Seth Forshee <seth.forshee@canonical.com> wrote:
-> >> On Thu, Jul 23, 2015 at 11:32:56AM +0800, Chen-Yu Tsai wrote:
-> >>> Taiwan's Ministry of Transportation and Communications revised its
-> >>> frequency allocation rules [1] on 2014/11/17, allowing usage of 5600 ~
-> >>> 5650 MHz, previously allocated to weather radars, to U-NII applications
-> >>> with DFS support.
-> >>>
-> >>> Also, the technical regulations [2] show that for 5470 ~ 5725 MHz U-NII
-> >>> applications, the peak transmit power shall not exceed the lesser of
-> >>> 250 mW (slightly less than 24 dBm) or 11 dBm + 10log B, where B is the
-> >>> 26dB emission bandwidth in MHz. This is slightly more than 23 dBm for
-> >>> 20 MHz channels.
-> >>>
-> >>> This patch updates both. Also add links to the two documents into the
-> >>> database.
-> >>>
-> >>> [1] http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc&filedisplay=Table+of+radio+frequency+allocation.doc
-> >>> [2] http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
-> >>>
-> >>> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-> >>
-> >> Sorry for the slow response to these patches.
-> >>
-> >>> ---
-> >>>  db.txt | 10 ++++++++--
-> >>>  1 file changed, 8 insertions(+), 2 deletions(-)
-> >>>
-> >>> diff --git a/db.txt b/db.txt
-> >>> index 982db34..5114557 100644
-> >>> --- a/db.txt
-> >>> +++ b/db.txt
-> >>> @@ -1118,11 +1118,17 @@ country TT: DFS-FCC
-> >>>       (5490 - 5730 @ 160), (24), DFS
-> >>>       (5735 - 5835 @ 80), (30)
-> >>>
-> >>> +# Source:
-> >>> +# Table of Frequency Allocations of Republic of China (Taiwan) / Nov 2014:
-> >>> +#   http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc& \
-> >>> +#      filedisplay=Table+of+radio+frequency+allocation.doc
-> >>> +# LP0002 Low-power Radio-frequency Devices Technical Regulations / 28 Jun 2011:
-> >>> +#   http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
-> >>> +#   (section 3.10.1, 4.7)
-> >>>  country TW: DFS-JP
-> >>>       (2402 - 2472 @ 40), (30)
-> >>>       (5270 - 5330 @ 40), (17), DFS
-> >>> -     (5490 - 5590 @ 80), (30), DFS
-> >>> -     (5650 - 5710 @ 40), (30), DFS
-> >>> +     (5470 - 5725 @ 160), (23), DFS
-> >>
-> >> Based on [2], it looks like this range requires TPC, in which case the
-> >> power limit should be dropped by 3 dB on account of our not supporting
-> >> TPC.
-> >
-> > Will fix.
-> >
-> > Is there any plan to support multiple rules per band? Such as different
-> > power limits with vs without TPC, or something like DFS vs indoor only?
-
-Not that I know of. Currently the binary database format is a constraint
-on doing anything like that.
-
-> BTW, this band has the exact same restrictions as the US, as specified
-> by the FCC. The relevant rules were added in
+On Thu, Jul 23, 2015 at 11:32:58AM +0800, Chen-Yu Tsai wrote:
+> Taiwan's Ministry of Transportation and Communications revised its
+> frequency allocation rules [1] on 2014/11/17, opening up 5150 ~ 5250
+> MHz to U-NII applications.
 > 
->     f894543 wireless-regdb: Add back regulatory rules for US
+> Taiwan's regulatory body, NCC, officially stated [3][4] that until
+> the technical regulatory standard [2] are updated to cover this part
+> of the spectrum, FCC rules (part 15E, 15.407, effective 2014/06/02)
+> shall serve in its place.
 > 
-> and expanded to cover the whole band in
+> Also add AUTO-BW to this and the next (5250 ~ 5350 MHz) rule, so the
+> system can actually use VHT160 channels spanning these two rules.
 > 
->     3c61549 wireless-regdb: Update 5GHz rules for US
+> [1] http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc&filedisplay=Table+of+radio+frequency+allocation.doc
+> [2] http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
+> [3] http://www.rheintech.com/our-blog/item/585-taiwan-ncc-opens-5150-5250-mhz-for-wireless-devices
+> [4] Proposal #10312260 (p.6, Chinese),
+>     http://www.etc.org.tw/_library/K00/%E9%9B%BB%E4%BF%A1%E7%B5%82%E7%AB%AF%E8%A8%AD%E5%82%99%E5%AF%A9%E9%A9%97/1031223_nccqa56.pdf
 > 
-> These show the power limit at 23 dBm as well. Any comments on this?
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  db.txt | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 8a05c57..cadd52c 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -1127,7 +1127,8 @@ country TT: DFS-FCC
+>  #   (section 3.10.1, 4.7)
+>  country TW: DFS-JP
+>  	(2400 - 2483.5 @ 40), (30)
+> -	(5250 - 5350 @ 80), (17), DFS
+> +	(5150 - 5250 @ 80), (30), AUTO-BW
+> +	(5250 - 5350 @ 80), (17), DFS, AUTO-BW
 
-Good question. Afaict this probably originates with commit 31dc1c5e
-which defines the limit for 5250-5330 MHz in the US, then using the same
-limit for the 5490-5730 MHz rule seemed logical. The 5250-5330 MHz rule
-came from QCA then. Adding Jouni to the Cc to see if he can help clarify
-how they arrived at 23 dBm.
+It would really make more sense for an update to the US power limit in
+5150-5250 to precede this one if you're using the US rules as the
+justification for the power limit here. Going through these patches in
+order, I was initially confused here why it didn't match the US rule
+until I looked at the next patch.
 
-Hmm, I see now that 15.407(h)(1) says that TPC is not required for
-systems with an EIRP of less than 500 mW. In that case I guess maybe we
-don't need to drop the power limit by 3 dB, so in light of that 23 dBm
-does make sense. The documents you linked to say the same, seemingly
-word-for-word, so in all likelihood 23 dBm is actually okay.
-
-Thanks,
-Seth
+But, as I mentioned in the reply to that patch, I think the change to
+the US power limit is incorrect, thus this one would be incorrect as
+well.
 
 _______________________________________________
 wireless-regdb mailing list
