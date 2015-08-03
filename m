@@ -1,16 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from s3.sipsolutions.net ([5.9.151.49] helo=sipsolutions.net)
+Received: from mail-oi0-f52.google.com ([209.85.218.52])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZUGQ6-0001Si-UQ
- for wireless-regdb@lists.infradead.org; Tue, 25 Aug 2015 15:45:56 +0000
-Message-ID: <1440517529.2192.42.camel@sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Tue, 25 Aug 2015 17:45:29 +0200
-In-Reply-To: <10D0CC65D322B8498995F168AE8D89DA011E83929D@MUCSE037.lantiq.com>
-References: <10D0CC65D322B8498995F168AE8D89DA011E83929D@MUCSE037.lantiq.com>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] Incorrect power for United Kingdom 5GHz?
+ id 1ZMKTF-0000Me-D0
+ for wireless-regdb@lists.infradead.org; Mon, 03 Aug 2015 18:28:24 +0000
+Received: by oig1 with SMTP id 1so41214884oig.0 for
+ <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 11:27:58 -0700 (PDT)
+Date: Mon, 3 Aug 2015 13:27:30 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20150803182730.GC21180@ubuntu-hedt>
+References: <1437622380-4154-1-git-send-email-wens@csie.org>
+ <1437622380-4154-2-git-send-email-wens@csie.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1437622380-4154-2-git-send-email-wens@csie.org>
+Subject: Re: [wireless-regdb] [PATCH v2 1/5] wireless-regdb: Update
+ U-NII-2c (5470 ~ 5725 MHz) rules for Taiwan (TW)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -25,36 +30,61 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Arnon.Meydav@lantiq.com, wireless-regdb@lists.infradead.org
+To: Chen-Yu Tsai <wens@csie.org>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, 2015-08-25 at 15:27 +0000, Arnon.Meydav@lantiq.com wrote:
-> Hi,
-> In the latest released regulatory database (http://kernel.org/pub/sof
-> tware/network/wireless-regdb/wireless-regdb-2015.04.06.tar.xz), 
-> the transmit power of GB is 20dBm, even for the lower 5GHz channels 
-> (e.g. channel 36).
+On Thu, Jul 23, 2015 at 11:32:56AM +0800, Chen-Yu Tsai wrote:
+> Taiwan's Ministry of Transportation and Communications revised its
+> frequency allocation rules [1] on 2014/11/17, allowing usage of 5600 ~
+> 5650 MHz, previously allocated to weather radars, to U-NII applications
+> with DFS support.
 > 
-> country GB:
->         (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
->         (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
->         (5250.000 - 5330.000 @ 80.000), (N/A, 20.00), DFS
->         (5490.000 - 5710.000 @ 160.000), (N/A, 27.00), DFS
->         (57000.000 - 66000.000 @ 2160.000), (N/A, 40.00)
+> Also, the technical regulations [2] show that for 5470 ~ 5725 MHz U-NII
+> applications, the peak transmit power shall not exceed the lesser of
+> 250 mW (slightly less than 24 dBm) or 11 dBm + 10log B, where B is the
+> 26dB emission bandwidth in MHz. This is slightly more than 23 dBm for
+> 20 MHz channels.
 > 
-> From my understanding, and from what I see in:
-> http://www.digitalairwireless.com/wireless-blog/recent/quick-guide-to
-> -5ghz-uk-part-1.html
+> This patch updates both. Also add links to the two documents into the
+> database.
 > 
-> The transmit power should be 23.
+> [1] http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc&filedisplay=Table+of+radio+frequency+allocation.doc
+> [2] http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
 > 
-> Is this a bug in the database, or was this restricted intentionally?
-> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 
-A lot of the values like that were halved due to indoor/outdoor or TPC
-requirements - I don't know if that's the case here though.
+Sorry for the slow response to these patches.
 
-johannes
+> ---
+>  db.txt | 10 ++++++++--
+>  1 file changed, 8 insertions(+), 2 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 982db34..5114557 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -1118,11 +1118,17 @@ country TT: DFS-FCC
+>  	(5490 - 5730 @ 160), (24), DFS
+>  	(5735 - 5835 @ 80), (30)
+>  
+> +# Source:
+> +# Table of Frequency Allocations of Republic of China (Taiwan) / Nov 2014:
+> +#   http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc& \
+> +#      filedisplay=Table+of+radio+frequency+allocation.doc
+> +# LP0002 Low-power Radio-frequency Devices Technical Regulations / 28 Jun 2011:
+> +#   http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
+> +#   (section 3.10.1, 4.7)
+>  country TW: DFS-JP
+>  	(2402 - 2472 @ 40), (30)
+>  	(5270 - 5330 @ 40), (17), DFS
+> -	(5490 - 5590 @ 80), (30), DFS
+> -	(5650 - 5710 @ 40), (30), DFS
+> +	(5470 - 5725 @ 160), (23), DFS
+
+Based on [2], it looks like this range requires TPC, in which case the
+power limit should be dropped by 3 dB on account of our not supporting
+TPC.
 
 _______________________________________________
 wireless-regdb mailing list
