@@ -1,21 +1,21 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ob0-f175.google.com ([209.85.214.175])
+Received: from mail-ob0-f182.google.com ([209.85.214.182])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZMKfY-0006d2-7K
- for wireless-regdb@lists.infradead.org; Mon, 03 Aug 2015 18:41:05 +0000
-Received: by obnw1 with SMTP id w1so105442249obn.3 for
- <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 11:40:43 -0700 (PDT)
-Date: Mon, 3 Aug 2015 13:40:15 -0500
+ id 1ZMKZr-0002Vw-P7
+ for wireless-regdb@lists.infradead.org; Mon, 03 Aug 2015 18:35:12 +0000
+Received: by obnw1 with SMTP id w1so105322620obn.3 for
+ <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 11:34:50 -0700 (PDT)
+Date: Mon, 3 Aug 2015 13:34:22 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150803184015.GE21180@ubuntu-hedt>
+Message-ID: <20150803183422.GD21180@ubuntu-hedt>
 References: <1437622380-4154-1-git-send-email-wens@csie.org>
- <1437622380-4154-4-git-send-email-wens@csie.org>
+ <1437622380-4154-5-git-send-email-wens@csie.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1437622380-4154-4-git-send-email-wens@csie.org>
-Subject: Re: [wireless-regdb] [PATCH v2 3/5] wireless-regdb: Add U-NII-1
- (5150 ~ 5250 MHz) band for Taiwan (TW)
+In-Reply-To: <1437622380-4154-5-git-send-email-wens@csie.org>
+Subject: Re: [wireless-regdb] [PATCH v2 4/5] wireless-regdb: Update 5GHz
+	rules for US
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -34,51 +34,35 @@ To: Chen-Yu Tsai <wens@csie.org>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 23, 2015 at 11:32:58AM +0800, Chen-Yu Tsai wrote:
-> Taiwan's Ministry of Transportation and Communications revised its
-> frequency allocation rules [1] on 2014/11/17, opening up 5150 ~ 5250
-> MHz to U-NII applications.
+On Thu, Jul 23, 2015 at 11:32:59AM +0800, Chen-Yu Tsai wrote:
+> The FCC increased the maximum conducted transmission power for the
+> U-NII-1 (5150 ~ 5250 MHz) band to 30 dBm or 1 W for master devices
+> and 24 dBm or 250 mW for mobile/portable devices.
 > 
-> Taiwan's regulatory body, NCC, officially stated [3][4] that until
-> the technical regulatory standard [2] are updated to cover this part
-> of the spectrum, FCC rules (part 15E, 15.407, effective 2014/06/02)
-> shall serve in its place.
+> Effective 6/2/2014.
 > 
-> Also add AUTO-BW to this and the next (5250 ~ 5350 MHz) rule, so the
-> system can actually use VHT160 channels spanning these two rules.
-> 
-> [1] http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc&filedisplay=Table+of+radio+frequency+allocation.doc
-> [2] http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
-> [3] http://www.rheintech.com/our-blog/item/585-taiwan-ncc-opens-5150-5250-mhz-for-wireless-devices
-> [4] Proposal #10312260 (p.6, Chinese),
->     http://www.etc.org.tw/_library/K00/%E9%9B%BB%E4%BF%A1%E7%B5%82%E7%AB%AF%E8%A8%AD%E5%82%99%E5%AF%A9%E9%A9%97/1031223_nccqa56.pdf
+> See FCC KDB 905462 D06.
 > 
 > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 > ---
->  db.txt | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
+>  db.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 > diff --git a/db.txt b/db.txt
-> index 8a05c57..cadd52c 100644
+> index cadd52c..29ba4b6 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -1127,7 +1127,8 @@ country TT: DFS-FCC
->  #   (section 3.10.1, 4.7)
->  country TW: DFS-JP
->  	(2400 - 2483.5 @ 40), (30)
-> -	(5250 - 5350 @ 80), (17), DFS
-> +	(5150 - 5250 @ 80), (30), AUTO-BW
-> +	(5250 - 5350 @ 80), (17), DFS, AUTO-BW
+> @@ -1160,7 +1160,7 @@ country UG: DFS-FCC
+>  
+>  country US: DFS-FCC
+>  	(2402 - 2472 @ 40), (30)
+> -	(5170 - 5250 @ 80), (17), AUTO-BW
+> +	(5170 - 5250 @ 80), (30), AUTO-BW
 
-It would really make more sense for an update to the US power limit in
-5150-5250 to precede this one if you're using the US rules as the
-justification for the power limit here. Going through these patches in
-order, I was initially confused here why it didn't match the US rule
-until I looked at the next patch.
-
-But, as I mentioned in the reply to that patch, I think the change to
-the US power limit is incorrect, thus this one would be incorrect as
-well.
+The 30 dB limit is for devices in master mode, for clients the limit
+seems to be 250 mW (about 24 dB). Given the TPC requirement for U-NII
+devices the most it could be bumped up to is 21 dB, unless there's some
+other reason I don't know about to keep it at 17 dB.
 
 _______________________________________________
 wireless-regdb mailing list
