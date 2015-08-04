@@ -1,20 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f50.google.com ([209.85.218.50])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZMKmd-0001F3-AX
- for wireless-regdb@lists.infradead.org; Mon, 03 Aug 2015 18:48:23 +0000
-Received: by oibv126 with SMTP id v126so17551596oib.3 for
- <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 11:48:02 -0700 (PDT)
-Date: Mon, 3 Aug 2015 13:47:34 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150803184734.GF21180@ubuntu-hedt>
+Received: from smtp.csie.ntu.edu.tw ([140.112.30.61])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1ZMR5w-0001cK-CX
+ for wireless-regdb@lists.infradead.org; Tue, 04 Aug 2015 01:32:45 +0000
+Received: from mail-ig0-f176.google.com (mail-ig0-f176.google.com
+ [209.85.213.176]) (Authenticated sender: b93043) by smtp.csie.ntu.edu.tw
+ (Postfix) with ESMTPSA id 57D752387A for
+ <wireless-regdb@lists.infradead.org>; Tue,  4 Aug 2015 09:32:19 +0800 (CST)
+Received: by igbij6 with SMTP id ij6so65450281igb.1 for
+ <wireless-regdb@lists.infradead.org>; Mon, 03 Aug 2015 18:32:17 -0700 (PDT)
+MIME-Version: 1.0
+In-Reply-To: <20150803183422.GD21180@ubuntu-hedt>
 References: <1437622380-4154-1-git-send-email-wens@csie.org>
  <1437622380-4154-5-git-send-email-wens@csie.org>
  <20150803183422.GD21180@ubuntu-hedt>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20150803183422.GD21180@ubuntu-hedt>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 4 Aug 2015 09:31:58 +0800
+Message-ID: <CAGb2v650TmbAtkvK8YWQvzcoxkgB21=Lr6LXZ4uOZe9OGzqSpw@mail.gmail.com>
 Subject: Re: [wireless-regdb] [PATCH v2 4/5] wireless-regdb: Update 5GHz
 	rules for US
 List-Unsubscribe: 
@@ -31,43 +34,48 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Chen-Yu Tsai <wens@csie.org>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>, wireless-regdb <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Aug 03, 2015 at 01:34:22PM -0500, Seth Forshee wrote:
+On Tue, Aug 4, 2015 at 2:34 AM, Seth Forshee <seth.forshee@canonical.com> wrote:
 > On Thu, Jul 23, 2015 at 11:32:59AM +0800, Chen-Yu Tsai wrote:
-> > The FCC increased the maximum conducted transmission power for the
-> > U-NII-1 (5150 ~ 5250 MHz) band to 30 dBm or 1 W for master devices
-> > and 24 dBm or 250 mW for mobile/portable devices.
-> > 
-> > Effective 6/2/2014.
-> > 
-> > See FCC KDB 905462 D06.
-> > 
-> > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-> > ---
-> >  db.txt | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/db.txt b/db.txt
-> > index cadd52c..29ba4b6 100644
-> > --- a/db.txt
-> > +++ b/db.txt
-> > @@ -1160,7 +1160,7 @@ country UG: DFS-FCC
-> >  
-> >  country US: DFS-FCC
-> >  	(2402 - 2472 @ 40), (30)
-> > -	(5170 - 5250 @ 80), (17), AUTO-BW
-> > +	(5170 - 5250 @ 80), (30), AUTO-BW
-> 
+>> The FCC increased the maximum conducted transmission power for the
+>> U-NII-1 (5150 ~ 5250 MHz) band to 30 dBm or 1 W for master devices
+>> and 24 dBm or 250 mW for mobile/portable devices.
+>>
+>> Effective 6/2/2014.
+>>
+>> See FCC KDB 905462 D06.
+>>
+>> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+>> ---
+>>  db.txt | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/db.txt b/db.txt
+>> index cadd52c..29ba4b6 100644
+>> --- a/db.txt
+>> +++ b/db.txt
+>> @@ -1160,7 +1160,7 @@ country UG: DFS-FCC
+>>
+>>  country US: DFS-FCC
+>>       (2402 - 2472 @ 40), (30)
+>> -     (5170 - 5250 @ 80), (17), AUTO-BW
+>> +     (5170 - 5250 @ 80), (30), AUTO-BW
+>
 > The 30 dB limit is for devices in master mode, for clients the limit
 > seems to be 250 mW (about 24 dB). Given the TPC requirement for U-NII
 > devices the most it could be bumped up to is 21 dB, unless there's some
 > other reason I don't know about to keep it at 17 dB.
 
-Oops, looks like I was mistaken, this range does not require TPC. 30 dBm
-still seems to be incorrect however.
+I suppose we have no way to differentiate between master mode and clients?
+I'll drop it down to 24 dBm and add a comment above it.
+
+As for 17 dB, that was the original limit prior to the bump, as seen in
+the FCC KDB attachment "905462 D05 802.11 Channel Plans Old Rules v01".
+
+ChenYu
 
 _______________________________________________
 wireless-regdb mailing list
