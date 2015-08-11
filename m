@@ -1,20 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-f54.google.com ([209.85.218.54])
+Received: from mail-wi0-x22a.google.com ([2a00:1450:400c:c05::22a])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZAjBx-00079p-HL
- for wireless-regdb@lists.infradead.org; Thu, 02 Jul 2015 18:26:34 +0000
-Received: by oihr66 with SMTP id r66so6347695oih.2 for
- <wireless-regdb@lists.infradead.org>; Thu, 02 Jul 2015 11:26:12 -0700 (PDT)
-Date: Thu, 2 Jul 2015 13:25:36 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150702182536.GC40677@ubuntu-hedt>
-References: <1435857276-19209-1-git-send-email-wzhong@google.com>
+ id 1ZP9dY-0001lJ-P7
+ for wireless-regdb@lists.infradead.org; Tue, 11 Aug 2015 13:30:41 +0000
+Received: by wicja10 with SMTP id ja10so75348999wic.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 11 Aug 2015 06:30:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=from:to:cc:subject:date:message-id:mime-version:content-type
+ :content-transfer-encoding;
+ bh=ZVKd2ZTyK7yEBv+iyF9SahgiWvFCHfnSr2nSvBvaxpU=;
+ b=k3QbeJVJZImw6KxW1ZCF3dD5hGiY8eLpHz4WfHRMhl4KDJpFbTLcz93Oy/FHDqMYRC
+ TpTQu23Dfuxn88eHzLBRquip2TjziZ+2hiyg9AEoeZZaPu+Gux60wfsjTRV3fyDazaPH
+ dX9XLLFHK/8BiA5YCSZ3LAp8h/V9Bp1v2n/gAdhHdFoKAZXFDa5xqOmAFgpxkbqfDvCu
+ CxDCYG/7YqjghW012nqpAiT+5T6ouTJ6FRYuVr7w3THl+vFr+fzzZi9WWR4EPmNQ8ZsW
+ ETR7a2PJYdgDOYOdPBb0VHrmd7tGPq8/TL/fZPGGGDIcF2vnuPk1RlBJ/noUQI7XCrH+ 3Lug==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Tue, 11 Aug 2015 15:29:55 +0200
+Message-Id: <1439299795-17359-1-git-send-email-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1435857276-19209-1-git-send-email-wzhong@google.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update CA rules for
-	5600 - 5650 mHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: add 2.4GHz regulatory
+	rules for Cuba (CU)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,27 +35,40 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Wei Zhong <wzhong@google.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Jul 02, 2015 at 10:14:36AM -0700, Wei Zhong wrote:
-> Related regulation:
-> http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html#s6.2.3
-> 
-> Frequency Bands 5470-5600 MHz and 5650-5725 MHz
-> Until further notice, devices subject to this section [i.e. Wifi device
-> supporting 5 GHz bands] shall not be capable of transmitting in the band
-> 5600-5650 MHz. This restriction is for the protection of Environment
-> Canada’s weather radars operating in this band.
-> 
-> Signed-off-by: Wei Zhong <wzhong@google.com>
+Resolución 127, 2011 - Reglamento Banda 2,4 GHz.:
+http://www.mincom.gob.cu/sites/default/files/marcoregulatorio/R%20127-11%20Reglamento%20banda%202,4%20GHz.pdf
 
-That looks better, thanks. I'll leave some time for others to comment
-before applying, but this looks okay to me.
+Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+---
+ db.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Thanks,
-Seth
+diff --git a/db.txt b/db.txt
+index 982db34..2edbf90 100644
+--- a/db.txt
++++ b/db.txt
+@@ -275,6 +275,13 @@ country CR: DFS-FCC
+ 	(5490 - 5730 @ 20), (24), DFS
+ 	(5735 - 5835 @ 20), (30)
+ 
++# http://www.mincom.gob.cu/?q=marcoregulatorio
++# - Redes Informáticas
++# Resolución 127, 2011 - Reglamento Banda 2,4 GHz.
++country CU: DFS-FCC
++	(2400 - 2456 @ 40), (200 mW)
++	(2456 - 2483.5 @ 40), (200 mW)
++
+ country CX: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (24), AUTO-BW
+-- 
+2.4.3
 
 _______________________________________________
 wireless-regdb mailing list
