@@ -1,20 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ig0-f173.google.com ([209.85.213.173])
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZPtYb-00022y-58
- for wireless-regdb@lists.infradead.org; Thu, 13 Aug 2015 14:32:37 +0000
-Received: by igui7 with SMTP id i7so393385igu.0 for
- <wireless-regdb@lists.infradead.org>; Thu, 13 Aug 2015 07:32:14 -0700 (PDT)
-Date: Thu, 13 Aug 2015 09:31:54 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150813143154.GA121347@ubuntu-hedt>
-References: <1439299795-17359-1-git-send-email-xose.vazquez@gmail.com>
+Received: from smtp1.lantiq.com ([195.219.66.200])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1ZUG8t-00067X-Fq
+ for wireless-regdb@lists.infradead.org; Tue, 25 Aug 2015 15:28:08 +0000
+From: <Arnon.Meydav@lantiq.com>
+Date: Tue, 25 Aug 2015 15:27:44 +0000
+Message-ID: <10D0CC65D322B8498995F168AE8D89DA011E83929D@MUCSE037.lantiq.com>
+Content-Language: en-US
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1439299795-17359-1-git-send-email-xose.vazquez@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add 2.4GHz regulatory
-	rules for Cuba (CU)
+Subject: [wireless-regdb] Incorrect power for United Kingdom 5GHz?
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -24,51 +19,38 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Aug 11, 2015 at 03:29:55PM +0200, Xose Vazquez Perez wrote:
-> Resolución 127, 2011 - Reglamento Banda 2,4 GHz.:
-> http://www.mincom.gob.cu/sites/default/files/marcoregulatorio/R%20127-11%20Reglamento%20banda%202,4%20GHz.pdf
-> 
-> Cc: Seth Forshee <seth.forshee@canonical.com>
-> Cc: linux-wireless@vger.kernel.org
-> Cc: wireless-regdb@lists.infradead.org
-> Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
-> ---
->  db.txt | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/db.txt b/db.txt
-> index 982db34..2edbf90 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -275,6 +275,13 @@ country CR: DFS-FCC
->  	(5490 - 5730 @ 20), (24), DFS
->  	(5735 - 5835 @ 20), (30)
->  
-> +# http://www.mincom.gob.cu/?q=marcoregulatorio
-> +# - Redes Informáticas
-> +# Resolución 127, 2011 - Reglamento Banda 2,4 GHz.
-> +country CU: DFS-FCC
-> +	(2400 - 2456 @ 40), (200 mW)
-> +	(2456 - 2483.5 @ 40), (200 mW)
-> +
+Hi,
+In the latest released regulatory database (http://kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.04.06.tar.xz), 
+the transmit power of GB is 20dBm, even for the lower 5GHz channels (e.g. channel 36).
 
-Based on the Google translation of the document you linked to, I don't
-see anything which would prevent merging these rules into one rule. Am I
-missing something?
+country GB:
+        (2402.000 - 2482.000 @ 40.000), (N/A, 20.00)
+        (5170.000 - 5250.000 @ 80.000), (N/A, 20.00)
+        (5250.000 - 5330.000 @ 80.000), (N/A, 20.00), DFS
+        (5490.000 - 5710.000 @ 160.000), (N/A, 27.00), DFS
+        (57000.000 - 66000.000 @ 2160.000), (N/A, 40.00)
+
+From my understanding, and from what I see in:
+http://www.digitalairwireless.com/wireless-blog/recent/quick-guide-to-5ghz-uk-part-1.html
+
+The transmit power should be 23.
+
+Is this a bug in the database, or was this restricted intentionally?
 
 Thanks,
-Seth
+Arnon Meydav
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
