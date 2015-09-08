@@ -1,23 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ob0-f172.google.com ([209.85.214.172])
+Received: from mail-wi0-x230.google.com ([2a00:1450:400c:c05::230])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZMcVl-00016j-6J
- for wireless-regdb@lists.infradead.org; Tue, 04 Aug 2015 13:44:10 +0000
-Received: by obre1 with SMTP id e1so7254632obr.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 04 Aug 2015 06:43:47 -0700 (PDT)
-Date: Tue, 4 Aug 2015 08:43:17 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20150804134317.GB78399@ubuntu-hedt>
-References: <1437622380-4154-1-git-send-email-wens@csie.org>
- <1437622380-4154-5-git-send-email-wens@csie.org>
- <20150803183422.GD21180@ubuntu-hedt>
- <CAGb2v650TmbAtkvK8YWQvzcoxkgB21=Lr6LXZ4uOZe9OGzqSpw@mail.gmail.com>
+ id 1ZZJRM-0001Yl-Re
+ for wireless-regdb@lists.infradead.org; Tue, 08 Sep 2015 14:00:05 +0000
+Received: by wicfx3 with SMTP id fx3so121419587wic.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 08 Sep 2015 06:59:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=subject:to:references:cc:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding;
+ bh=8XpFDssbfrHAoSSW8biy7Q5MFnmlL2zZO7DYZcuZJvU=;
+ b=F9zVsPn+/0qh55UZUmwnowEXkNtpfJ3Q6+HsSdsQ+KMZgujpiKWmBpmoSFHCeDNJsl
+ E6sNtbtYBBcptALzbXCtPt2/wb82gLT2KJ3VyJHf1HcReFMcWs5CTjidnDhJp4nT1y8k
+ YUOHaKPVcSB91DAVIO/oSTmcbJ3qBLiGmeb0M73jDgwOMQChWW6qrDF+QPueno5wkrpJ
+ sYtFM7vU7ALwWsC1yd7WgPYM/q3iKKRMX3cdWZYyo/FiMvwnvkQTIxC3VhGVy33qjemw
+ jXg+nNwxC12vPDiJni8yJiJXcbJSEOv9/L79+4BCV4+6ahwSnl67uh/ruKvCKUhdL1T3 J9qw==
+References: <1439299795-17359-1-git-send-email-xose.vazquez@gmail.com>
+ <20150813143154.GA121347@ubuntu-hedt>
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Message-ID: <55EEE9CA.5010309@gmail.com>
+Date: Tue, 8 Sep 2015 15:59:38 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGb2v650TmbAtkvK8YWQvzcoxkgB21=Lr6LXZ4uOZe9OGzqSpw@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v2 4/5] wireless-regdb: Update 5GHz
-	rules for US
+In-Reply-To: <20150813143154.GA121347@ubuntu-hedt>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add 2.4GHz regulatory
+	rules for Cuba (CU)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,67 +33,64 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Chen-Yu Tsai <wens@csie.org>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb <wireless-regdb@lists.infradead.org>
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Aug 04, 2015 at 09:31:58AM +0800, Chen-Yu Tsai wrote:
-> On Tue, Aug 4, 2015 at 2:34 AM, Seth Forshee <seth.forshee@canonical.com> wrote:
-> > On Thu, Jul 23, 2015 at 11:32:59AM +0800, Chen-Yu Tsai wrote:
-> >> The FCC increased the maximum conducted transmission power for the
-> >> U-NII-1 (5150 ~ 5250 MHz) band to 30 dBm or 1 W for master devices
-> >> and 24 dBm or 250 mW for mobile/portable devices.
-> >>
-> >> Effective 6/2/2014.
-> >>
-> >> See FCC KDB 905462 D06.
-> >>
-> >> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
-> >> ---
-> >>  db.txt | 2 +-
-> >>  1 file changed, 1 insertion(+), 1 deletion(-)
-> >>
-> >> diff --git a/db.txt b/db.txt
-> >> index cadd52c..29ba4b6 100644
-> >> --- a/db.txt
-> >> +++ b/db.txt
-> >> @@ -1160,7 +1160,7 @@ country UG: DFS-FCC
-> >>
-> >>  country US: DFS-FCC
-> >>       (2402 - 2472 @ 40), (30)
-> >> -     (5170 - 5250 @ 80), (17), AUTO-BW
-> >> +     (5170 - 5250 @ 80), (30), AUTO-BW
-> >
-> > The 30 dB limit is for devices in master mode, for clients the limit
-> > seems to be 250 mW (about 24 dB). Given the TPC requirement for U-NII
-> > devices the most it could be bumped up to is 21 dB, unless there's some
-> > other reason I don't know about to keep it at 17 dB.
+On 08/13/2015 04:31 PM, Seth Forshee wrote:
+
+> On Tue, Aug 11, 2015 at 03:29:55PM +0200, Xose Vazquez Perez wrote:
+>> Resolución 127, 2011 - Reglamento Banda 2,4 GHz.:
+>> http://www.mincom.gob.cu/sites/default/files/marcoregulatorio/R%20127-11%20Reglamento%20banda%202,4%20GHz.pdf
+>>
+>> Cc: Seth Forshee <seth.forshee@canonical.com>
+>> Cc: linux-wireless@vger.kernel.org
+>> Cc: wireless-regdb@lists.infradead.org
+>> Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+>> ---
+>>  db.txt | 7 +++++++
+>>  1 file changed, 7 insertions(+)
+>>
+>> diff --git a/db.txt b/db.txt
+>> index 982db34..2edbf90 100644
+>> --- a/db.txt
+>> +++ b/db.txt
+>> @@ -275,6 +275,13 @@ country CR: DFS-FCC
+>>  	(5490 - 5730 @ 20), (24), DFS
+>>  	(5735 - 5835 @ 20), (30)
+>>  
+>> +# http://www.mincom.gob.cu/?q=marcoregulatorio
+>> +# - Redes Informáticas
+>> +# Resolución 127, 2011 - Reglamento Banda 2,4 GHz.
+>> +country CU: DFS-FCC
+>> +	(2400 - 2456 @ 40), (200 mW)
+>> +	(2456 - 2483.5 @ 40), (200 mW)
+>> +
 > 
-> I suppose we have no way to differentiate between master mode and clients?
-> I'll drop it down to 24 dBm and add a comment above it.
+> Based on the Google translation of the document you linked to, I don't
+> see anything which would prevent merging these rules into one rule. Am I
+> missing something?
 
-We don't have any way to specify differing rules for APs and clients
-today.
+from http://www.mincom.gob.cu/sites/default/files/marcoregulatorio/R%20127-11%20Reglamento%20banda%202,4%20GHz.pdf
+page 7:
 
-Probably the limit should be 23 dBm instead, since 250 mW comes out to
-just less than 24 dBm. Better to be conservative, and besides that is
-consistent with other ranges which have a 250 mW limit.
+Artículo 4: Disposiciones de carácter técnico
+[..]
+4.3.- No obstante lo anterior, los equipos que operen en las frecuencias entre 2456 y
+2483,5 MHz pueden emplear valores de p.i.r.e superiores, cuando ello se justifique en
+beneficio de objetivos de interés nacional [...]
+4.4.- Para estos casos es necesario obtener una autorización expresa de la Agencia
+[...]
 
-> As for 17 dB, that was the original limit prior to the bump, as seen in
-> the FCC KDB attachment "905462 D05 802.11 Channel Plans Old Rules v01".
+If you grant an authorization, for 2456-2483.5 pire can be increased.
 
-Ah, okay.
-
-Thanks,
-Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
