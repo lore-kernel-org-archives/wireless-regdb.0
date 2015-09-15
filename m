@@ -1,24 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-la0-x233.google.com ([2a00:1450:4010:c03::233])
+Received: from mail-io0-f180.google.com ([209.85.223.180])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZbngN-0001wX-2r
- for wireless-regdb@lists.infradead.org; Tue, 15 Sep 2015 10:41:51 +0000
-Received: by lamp12 with SMTP id p12so103309773lam.0 for
- <wireless-regdb@lists.infradead.org>; Tue, 15 Sep 2015 03:41:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:date:message-id:subject:from:to:content-type;
- bh=cHU22IiAObkgN+DjDdIa359ffAH4y4ZP31uk/tP1k4U=;
- b=mkufV6mciJ9/r25zlVqqqGub43+50IYq2lvw9pfd3RwGOWzUXLZTbrlD4XNby3qfhQ
- G+bNGQCuxmSP6Dlsb/dqn/gJvNZ9q9sk1sUi/h/BEsEgcAYvHV9xnBOtpnQsfI5wndwn
- Sm5nZv6gY0F7rap4JRxq03NDas5V70iKELgT6MILsUN6JUgBVi4id55Y/co4OSwvl8Zo
- iCOHTj39OcbG64SWzPevAEnckn/njiJGnydZ0yO/Qws2fnDS8hx6apucRzzR0lRE1IBA
- V/IhigQ0f5mS3cusJvXEr2u6Fg8vaEjPe7HqS59+g1Auv998NE66VBfEIPXJv+zeP6Oe APzg==
+ id 1ZbtLW-0005V5-0v
+ for wireless-regdb@lists.infradead.org; Tue, 15 Sep 2015 16:44:42 +0000
+Received: by iofb144 with SMTP id b144so206058259iof.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 15 Sep 2015 09:44:20 -0700 (PDT)
+Date: Tue, 15 Sep 2015 11:43:46 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20150915164346.GC146373@ubuntu-hedt>
+References: 
+	 <CAH9F5rkwnYRerb=y2tQudYq-UwBdHcf0nwA9aAugOmBhWhKnzg@mail.gmail.com>
 MIME-Version: 1.0
-Date: Tue, 15 Sep 2015 16:11:27 +0530
-Message-ID: <CAH9F5rkwnYRerb=y2tQudYq-UwBdHcf0nwA9aAugOmBhWhKnzg@mail.gmail.com>
-From: Atul Joshi <atul.suresh.joshi@gmail.com>
-Subject: [wireless-regdb] Regulatory Domain for Hong Kong
+Content-Disposition: inline
+In-Reply-To: <CAH9F5rkwnYRerb=y2tQudYq-UwBdHcf0nwA9aAugOmBhWhKnzg@mail.gmail.com>
+Subject: Re: [wireless-regdb] Regulatory Domain for Hong Kong
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,59 +29,65 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Atul Joshi <atul.suresh.joshi@gmail.com>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello,
+On Tue, Sep 15, 2015 at 04:11:27PM +0530, Atul Joshi wrote:
+> Hello,
+> 
+> We are trying to find out which regulatory domain HK falls under.
+> 
+> From db.txt
+> 
+> country HK:
+> 
+>                 (2402 - 2482 @ 40), (20)
+> 
+>                 (5170 - 5250 @ 80), (17)
+> 
+>                 (5250 - 5330 @ 80), (24), DFS
+> 
+>                 (5490 - 5710 @ 80), (24), DFS
+> 
+>                 (5735 - 5835 @ 80), (30)
+> 
+> 
+> 
+> So the DFS regulatory domain is not specified hence We will not be
+> able to start the AP on the DFS channel.
+> 
+> Can somebody please clarify?
+> 
+> In other cases e.g. GB
+> 
+> country GB: DFS-ETSI
+> 
+>                 (2402 - 2482 @ 40), (20)
+> 
+>                 (5170 - 5250 @ 80), (20)
+> 
+>                 (5250 - 5330 @ 80), (20), DFS, NO-OUTDOOR
+> 
+>                 (5490 - 5710 @ 80), (27), DFS
+> 
+>                 # 60 gHz band channels 1-4, ref: Etsi En 302 567
+> 
+>                 (57240 - 65880 @ 2160), (40), NO-OUTDOOR
+> 
+> 
+> 
+> The regulatory domain is specified.
+> 
+> So does HK fall under DFS-FCC or DFS-ETSI?
 
-We are trying to find out which regulatory domain HK falls under.
+Based on [1] it sounds like it should be DFS-ETSI. Do you want to send a
+patch? Otherwise I can update the database.
 
-From db.txt
+Thanks,
+Seth
 
-country HK:
-
-                (2402 - 2482 @ 40), (20)
-
-                (5170 - 5250 @ 80), (17)
-
-                (5250 - 5330 @ 80), (24), DFS
-
-                (5490 - 5710 @ 80), (24), DFS
-
-                (5735 - 5835 @ 80), (30)
-
-
-
-So the DFS regulatory domain is not specified hence We will not be
-able to start the AP on the DFS channel.
-
-Can somebody please clarify?
-
-In other cases e.g. GB
-
-country GB: DFS-ETSI
-
-                (2402 - 2482 @ 40), (20)
-
-                (5170 - 5250 @ 80), (20)
-
-                (5250 - 5330 @ 80), (20), DFS, NO-OUTDOOR
-
-                (5490 - 5710 @ 80), (27), DFS
-
-                # 60 gHz band channels 1-4, ref: Etsi En 302 567
-
-                (57240 - 65880 @ 2160), (40), NO-OUTDOOR
-
-
-
-The regulatory domain is specified.
-
-So does HK fall under DFS-FCC or DFS-ETSI?
-
-Thanks
-
-atul
+[1] http://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkta1039.pdf
 
 _______________________________________________
 wireless-regdb mailing list
