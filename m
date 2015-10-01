@@ -2,15 +2,15 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from smtp.csie.ntu.edu.tw ([140.112.30.61])
  by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZhXor-0005yX-0a
- for wireless-regdb@lists.infradead.org; Thu, 01 Oct 2015 06:58:22 +0000
+ id 1ZhXoq-0005yW-BF
+ for wireless-regdb@lists.infradead.org; Thu, 01 Oct 2015 06:58:21 +0000
 From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu,  1 Oct 2015 14:57:44 +0800
-Message-Id: <1443682667-29814-3-git-send-email-wens@csie.org>
+Date: Thu,  1 Oct 2015 14:57:45 +0800
+Message-Id: <1443682667-29814-4-git-send-email-wens@csie.org>
 In-Reply-To: <1443682667-29814-1-git-send-email-wens@csie.org>
 References: <1443682667-29814-1-git-send-email-wens@csie.org>
-Subject: [wireless-regdb] [PATCH v3 2/5] wireless-regdb: Update regulatory
-	rule boundary frequencies for Taiwan (TW)
+Subject: [wireless-regdb] [PATCH v3 3/5] wireless-regdb: Update 5GHz rules
+	for US
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,44 +30,37 @@ To: seth.forshee@canonical.com
 Cc: linux-wireless@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Taiwan's frequency allocation rules [1] list the following frequency
-ranges available for low power RF devices:
+The FCC increased the maximum conducted transmission power for the
+U-NII-1 (5150 ~ 5250 MHz) band to 30 dBm or 1 W for master devices
+and 24 dBm or 250 mW for mobile/portable
+devices.
 
-  - 2400 ~ 2483.5 MHz
-  - 5150 ~ 5250 MHz
-  - 5250 ~ 5350 MHz
-  - 5470 ~ 5725 MHz
-  - 5725 ~ 5850 MHz
+Since 250 mW is slightly lower than 24 dBm, set the power limit to
+a conservative value of 23 dBm.
 
-Update the rules to match. Since 5250 ~ 5350 MHz is wide enough for
-VHT80, and there are no regulations against it, enable it as well.
+Effective 6/2/2014.
 
-[1] http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc&filedisplay=Table+of+radio+frequency+allocation.doc
-[2] http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
+See FCC KDB 905462 D06.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- db.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ db.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/db.txt b/db.txt
-index e081634..f6607bc 100644
+index f6607bc..ee6eaad 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1126,10 +1126,10 @@ country TT: DFS-FCC
- #   http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
- #   (section 3.10.1, 4.7)
- country TW: DFS-JP
--	(2402 - 2472 @ 40), (30)
--	(5270 - 5330 @ 40), (17), DFS
-+	(2400 - 2483.5 @ 40), (30)
-+	(5250 - 5350 @ 80), (17), DFS
- 	(5470 - 5725 @ 160), (23), DFS
--	(5735 - 5835 @ 80), (30)
-+	(5725 - 5850 @ 80), (30)
-  
- country TZ:
- 	(2402 - 2482 @ 40), (20)
+@@ -1159,7 +1159,8 @@ country UG: DFS-FCC
+ 
+ country US: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
++	# 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
++	(5170 - 5250 @ 80), (23), AUTO-BW
+ 	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
+ 	(5490 - 5730 @ 160), (23), DFS
+ 	(5735 - 5835 @ 80), (30)
 -- 
 2.5.3
 
