@@ -1,16 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from smtp.csie.ntu.edu.tw ([140.112.30.61])
- by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZhXpC-00065g-0o
- for wireless-regdb@lists.infradead.org; Thu, 01 Oct 2015 06:58:43 +0000
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Thu,  1 Oct 2015 14:57:47 +0800
-Message-Id: <1443682667-29814-6-git-send-email-wens@csie.org>
-In-Reply-To: <1443682667-29814-1-git-send-email-wens@csie.org>
+Received: from mail-io0-f169.google.com ([209.85.223.169])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1ZhlNM-0002Fs-Bj
+ for wireless-regdb@lists.infradead.org; Thu, 01 Oct 2015 21:26:53 +0000
+Received: by ioiz6 with SMTP id z6so100566245ioi.2 for
+ <wireless-regdb@lists.infradead.org>; Thu, 01 Oct 2015 14:26:30 -0700 (PDT)
+Date: Thu, 1 Oct 2015 16:26:01 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20151001212601.GE101875@ubuntu-hedt>
 References: <1443682667-29814-1-git-send-email-wens@csie.org>
-Subject: [wireless-regdb] [PATCH v3 5/5] wireless-regdb: Update 5 GHz rules
-	for Taiwan (TW) to follow US
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1443682667-29814-1-git-send-email-wens@csie.org>
+Subject: Re: [wireless-regdb] [PATCH v3 0/5] wireless-regdb: Update TW and
+ US rules to latest regulations
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -20,56 +24,62 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
-Cc: linux-wireless@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>, wireless-regdb@lists.infradead.org
+To: Chen-Yu Tsai <wens@csie.org>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Following the amendment of FCC part 15E and U-NII regulations effective
-2014/06/02, and the opening up of 5150 ~ 5250 MHz and 5600 ~ 5650 MHz
-spectrum in Taiwan, vendors have asked whether Taiwan's regulations
-would be updated to match the new FCC rules, when this would happen,
-and what to do in the interim.
+On Thu, Oct 01, 2015 at 02:57:42PM +0800, Chen-Yu Tsai wrote:
+> Hi Seth,
+> 
+> This is v3 of my TW/US 5GHz updates series. Sorry for the long delay.
+> 
+> Changes since v2:
+> 
+>   - Moved the US U-NII-1 (5150 ~ 5250 MHz) patch in front of the TW patch
+> 
+>   - Drop U-NII-1 power limit from 24 dBm to 23 dBm, to be on the safe
+>     side of 250mW
+> 
+> 
+> Patch 1 updates the 5470 ~ 5725 MHz rules for Taiwan, specifically
+> the opening up of 5600 ~ 5650 MHz spectrum previously allocated to
+> weather radars. The transmission power limit is also corrected to
+> match the regulations.
+> 
+> Patch 2 changes the boundary frequencies for each rule for Taiwan to
+> match the frequency allocation table. The "regulation" database shouldn't
+> care about artificial channel boundaries.
+> 
+> Patch 3 updates the transmission power limits for 5150 ~ 5250 MHz for
+> the US.
+> 
+> Patch 4 adds the previously unusable 5150 ~ 5250 MHz band for Taiwan.
+> 
+> Patch 5 updates the transmission power limits for Taiwan, per the NCC's
+> official reply. This patch may be slightly controversial, as there is
+> no official English document. Either someone will have to independently
+> verify this, or translate the Chinese document.
 
-The NCC, Taiwan's regulatory body has officially replied that new
-amendments are under way, and the goal is to match the FCC rules.
-Until the amendments come through, vendors are free to test and
-submit applications using the new FCC rules for transmission power
-limits and DFS requirements, though unintended / unwanted emissions
-must still conform to the current standard, LP0002. [1][2]
+This description doesn't quite match the patches. Patch 4 both adds the
+5150-5250 MHz band and increases the power limits for 5250-5350 MHz,
+whereas patch 5 changes the DFS master region to DFS-FCC. Previously the
+increased power limit for 5250-5350 MHz was part of patch 5 - perhaps
+you accidentally moved that part to patch 4 when you were updating the
+patches?
 
-This has been confirmed via a phone call to the NCC.
+So patches 1-3 look fine to me. I suspect you'll want to move the power
+limit increase from patch 4 to 5. I'm also going to take a look at a
+machine translation of the Chinese document, and if that looks to be in
+agreement with your patches then I should be able to apply them next
+week sometime.
 
-[1] http://www.rheintech.com/our-blog/item/585-taiwan-ncc-opens-5150-5250-mhz-for-wireless-devices
-[2] Proposal #10312260 (p.6, Chinese),
-    http://www.etc.org.tw/_library/K00/%E9%9B%BB%E4%BF%A1%E7%B5%82%E7%AB%AF%E8%A8%AD%E5%82%99%E5%AF%A9%E9%A9%97/1031223_nccqa56.pdf
-
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index 3f5268b..4409516 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1125,7 +1125,7 @@ country TT: DFS-FCC
- # LP0002 Low-power Radio-frequency Devices Technical Regulations / 28 Jun 2011:
- #   http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
- #   (section 3.10.1, 4.7)
--country TW: DFS-JP
-+country TW: DFS-FCC
- 	(2400 - 2483.5 @ 40), (30)
- 	# Follow US 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
- 	(5150 - 5250 @ 80), (23), AUTO-BW
--- 
-2.5.3
-
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
