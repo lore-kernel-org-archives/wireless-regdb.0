@@ -1,19 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ig0-f179.google.com ([209.85.213.179])
+Received: from sabertooth02.qualcomm.com ([65.197.215.38])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZmmvF-00004y-UX
- for wireless-regdb@lists.infradead.org; Thu, 15 Oct 2015 18:06:38 +0000
-Received: by igbkq10 with SMTP id kq10so20069697igb.0 for
- <wireless-regdb@lists.infradead.org>; Thu, 15 Oct 2015 11:06:15 -0700 (PDT)
-Date: Thu, 15 Oct 2015 13:06:11 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20151015180611.GB31612@ubuntu-hedt>
-References: <1444918759-21559-1-git-send-email-johannes@sipsolutions.net>
+ id 1ZjBC8-0006Kz-FH
+ for wireless-regdb@lists.infradead.org; Mon, 05 Oct 2015 19:13:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1444072388; x=1475608388;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=hjWtH281p4/Nsu9aCdQyf5H3NTbsV2FGrDWDnoKPCy4=;
+ b=eHdaiD/xvhERUI7CDoHymksFz6C14lqLU5y0DH2x5SukAUod3N3BnhTs
+ 6yWSgVdb+eI4gQ1WhEPMSFMiOOnU+NPYK7y6x6y4aTcK6Ft62VBjJ+hVS
+ GLZJ0R0/JWfvxXHikHWvwDA8v0RxT14Z8xa1phGGb39h6mp/hup84YWmv w=;
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Mon, 5 Oct 2015 22:11:57 +0300
+Message-ID: <1444072321-20728-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1444918759-21559-1-git-send-email-johannes@sipsolutions.net>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: fix gHz to GHz
+Subject: [wireless-regdb] [PATCH 1/5] wireless-regdb: Add 160 MHz channel
+	bandwidth for Greenland (GL)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -28,18 +32,39 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Johannes Berg <johannes.berg@intel.com>
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Oct 15, 2015 at 04:19:19PM +0200, Johannes Berg wrote:
-> From: Johannes Berg <johannes.berg@intel.com>
-> 
-> There's no "g" prefix, only "G" (1e9) that was clearly intended here.
-> 
-> Signed-off-by: Johannes Berg <johannes.berg@intel.com>
+This extends regulatory rules for Greenland to allow 160 MHz VHT
+channels. This was missed in the earlier set of patches that added 160
+MHz for large number of countries.
 
-Applied, thanks.
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index d57ea84..226057e 100644
+--- a/db.txt
++++ b/db.txt
+@@ -455,9 +455,9 @@ country GH: DFS-FCC
+ 
+ country GL: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20)
+-	(5250 - 5330 @ 80), (20), DFS
+-	(5490 - 5710 @ 80), (27), DFS
++	(5170 - 5250 @ 80), (20), AUTO-BW
++	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
++	(5490 - 5710 @ 160), (27), DFS
+ 
+ country GP: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-- 
+1.9.1
+
 
 _______________________________________________
 wireless-regdb mailing list
