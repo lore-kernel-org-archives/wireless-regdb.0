@@ -1,17 +1,14 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-f181.google.com ([209.85.223.181])
- by merlin.infradead.org with esmtps (Exim 4.85 #2 (Red Hat Linux))
- id 1Zm4gZ-0001ju-Kx
- for wireless-regdb@lists.infradead.org; Tue, 13 Oct 2015 18:52:31 +0000
-Received: by ioii196 with SMTP id i196so31240952ioi.3 for
- <wireless-regdb@lists.infradead.org>; Tue, 13 Oct 2015 11:52:09 -0700 (PDT)
-Date: Tue, 13 Oct 2015 13:50:55 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20151013185055.GD50632@ubuntu-hedt>
-MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2015-10-13
+Received: from smtp.csie.ntu.edu.tw ([140.112.30.61])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1Zj8QK-0001zg-8b
+ for wireless-regdb@lists.infradead.org; Mon, 05 Oct 2015 16:15:37 +0000
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue,  6 Oct 2015 00:14:53 +0800
+Message-Id: <1444061698-16384-1-git-send-email-wens@csie.org>
+Subject: [wireless-regdb] [PATCH v4 0/5] wireless-regdb: Update TW and US
+	rules to latest regulations
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -21,42 +18,72 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2015-10-13) is available at:
+Hi Seth,
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.10.13.tar.gz
+This is v4 of my TW/US 5GHz updates series. Hopefully this one will go
+in without further work.
 
-The short log of changes since the 2015-09-25 release is below.
+Changes since v3:
 
-Thanks,
-Seth
+  - Moved power limit increase of 5250 ~ 5350 MHz band from patch 4 to
+    patch 5.
 
----
+Changes since v2:
+
+  - Moved the US U-NII-1 (5150 ~ 5250 MHz) patch in front of the TW patch
+
+  - Drop U-NII-1 power limit from 24 dBm to 23 dBm, to be on the safe
+    side of 250mW
+
+
+Patch 1 updates the 5470 ~ 5725 MHz rules for Taiwan, specifically
+the opening up of 5600 ~ 5650 MHz spectrum previously allocated to
+weather radars. The transmission power limit is also corrected to
+match the regulations.
+
+Patch 2 changes the boundary frequencies for each rule for Taiwan to
+match the frequency allocation table. The "regulation" database shouldn't
+care about artificial channel boundaries.
+
+Patch 3 updates the transmission power limits for 5150 ~ 5250 MHz for
+the US.
+
+Patch 4 adds the previously unusable 5150 ~ 5250 MHz band for Taiwan.
+
+Patch 5 updates the transmission power limits for Taiwan, per the NCC's
+official reply. This patch may be slightly controversial, as there is
+no official English document. Either someone will have to independently
+verify this, or translate the Chinese document.
+
+
+Regards
+ChenYu
+
 
 Chen-Yu Tsai (5):
-      wireless-regdb: Update U-NII-2c (5470 ~ 5725 MHz) rules for Taiwan (TW)
-      wireless-regdb: Update regulatory rule boundary frequencies for Taiwan (TW)
-      wireless-regdb: Update 5GHz rules for US
-      wireless-regdb: Add U-NII-1 (5150 ~ 5250 MHz) band for Taiwan (TW)
-      wireless-regdb: Update 5 GHz rules for Taiwan (TW) to follow US
+  wireless-regdb: Update U-NII-2c (5470 ~ 5725 MHz) rules for Taiwan
+    (TW)
+  wireless-regdb: Update regulatory rule boundary frequencies for Taiwan
+    (TW)
+  wireless-regdb: Update 5GHz rules for US
+  wireless-regdb: Add U-NII-1 (5150 ~ 5250 MHz) band for Taiwan (TW)
+  wireless-regdb: Update 5 GHz rules for Taiwan (TW) to follow US
 
-Jouni Malinen (4):
-      wireless-regdb: Update regulatory rules for Uruguay (UY)
-      wireless-regdb: Add VHT channel bandwidth for Russia (RU)
-      wireless-regdb: Add VHT channel bandwidth for Ukraine (UA)
-      wireless-regdb: Update regulatory rules for Malaysia (MY)
+ db.txt | 23 ++++++++++++++++-------
+ 1 file changed, 16 insertions(+), 7 deletions(-)
 
-Seth Forshee (2):
-      wireless-regdb: Update ZA rules for 5490-5710 MHz
-      wireless-regdb: update regulatory.bin based on preceding changes
+-- 
+2.5.3
 
 
 _______________________________________________
