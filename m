@@ -1,26 +1,26 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine02.qualcomm.com ([199.106.114.251])
+Received: from sabertooth01.qualcomm.com ([65.197.215.72])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZjBC0-0006GE-HY
- for wireless-regdb@lists.infradead.org; Mon, 05 Oct 2015 19:13:00 +0000
+ id 1ZjBCc-0006bh-4z
+ for wireless-regdb@lists.infradead.org; Mon, 05 Oct 2015 19:13:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1444072380; x=1475608380;
+ s=qcdkim; t=1444072418; x=1475608418;
  h=from:to:cc:subject:date:message-id:in-reply-to:
- references:mime-version;
- bh=72FcNbViF/iIYCDPmymuV7jwuIjSAyeiaCuJcR9eO7U=;
- b=eKg9eNOILpRoz93UH1t7yKACPW1mO8bpWaVdc5OQJKSUVDn9NlzKC0wJ
- kC+Xm5YT3NWVfgIiVlGlv1ZdXDbIn/tyEOCUqXR6rlXM2nf2pNpZeJdxy
- mrkqRJ2oxcU9dcinjpnJ0WzhOA2wRLz/aGMjN6j9p6kA4EpNRwC1cBZXz M=;
+ references:mime-version:content-transfer-encoding;
+ bh=OWoy9iVyuYg+PqLHwLSFIWC5qpgzf03DMPxwEQUe3Gc=;
+ b=RdzDDeYccyTsQg4XgzL/bf7mKWKSwdSTss/PYfR/6gH37jtsvaMNkH82
+ 4TMOdXIX4EpzXTZBWyvdATnwO/t/mLJfgot7wLTWiVujXQOeeOGZ0+Jwl
+ 7ZREVGQbbIcFuqAwA8MCn5UFf5VyyddMmBizTuSKWjU/eSUToEvtQmqd7 k=;
 From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Mon, 5 Oct 2015 22:11:58 +0300
-Message-ID: <1444072321-20728-2-git-send-email-jouni@qca.qualcomm.com>
+Date: Mon, 5 Oct 2015 22:11:59 +0300
+Message-ID: <1444072321-20728-3-git-send-email-jouni@qca.qualcomm.com>
 In-Reply-To: <1444072321-20728-1-git-send-email-jouni@qca.qualcomm.com>
 References: <1444072321-20728-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH 2/5] wireless-regdb: Update regulatory
-	rules for Uruguay (UY)
+Subject: [wireless-regdb] [PATCH 3/5] wireless-regdb: Add VHT channel
+	bandwidth for Russia (RU)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -30,7 +30,7 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
@@ -43,25 +43,28 @@ Source is QCA's regulatory team's efforts.
 
 Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 ---
- db.txt | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ db.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 226057e..2f2e460 100644
+index 2f2e460..93242ec 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1164,9 +1164,8 @@ country US: DFS-FCC
+@@ -995,10 +995,10 @@ country RS: DFS-ETSI
  
- country UY: DFS-FCC
+ country RU: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (17), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
-+	(5170 - 5250 @ 80), (23), AUTO-BW
-+	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
- 	(5735 - 5835 @ 80), (30)
+-	(5170 - 5250 @ 40), (20)
+-	(5250 - 5330 @ 40), (20), DFS
+-	(5650 - 5730 @ 40), (30), DFS
+-	(5735 - 5835 @ 40), (30)
++	(5170 - 5250 @ 80), (20), AUTO-BW
++	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
++	(5650 - 5730 @ 80), (30), DFS
++	(5735 - 5835 @ 80), (30)
+ 	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order №129_22042015.pdf
+ 	(57000 - 66000 @ 2160), (40)
  
- # Source:
 -- 
 1.9.1
 
@@ -70,4 +73,3 @@ _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
