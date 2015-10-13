@@ -1,31 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-x229.google.com ([2607:f8b0:4001:c06::229])
+Received: from mail-wi0-x22e.google.com ([2a00:1450:400c:c05::22e])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ZpKwr-0001bc-T5
- for wireless-regdb@lists.infradead.org; Thu, 22 Oct 2015 18:50:50 +0000
-Received: by ioll68 with SMTP id l68so101933325iol.3 for
- <wireless-regdb@lists.infradead.org>; Thu, 22 Oct 2015 11:50:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical_com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-type:content-disposition:in-reply-to:user-agent;
- bh=sHPW/ZL8ci1PIZQjWvUL77OGbJyDZbqwNf4dCx2iBks=;
- b=AysHgTN7uUt1Qhs7RMpLkWXLDdbbfRbVHAHnRMbdxrNbDcBDjBBd1sLdKoaccvf+B7
- EY8TIsbo83bTinDneU1RFi1aIymsZg8gHk+Tx3teK9g3fa20yRRDZjz+BX+oaSvzM82l
- TAsmsdaICo/i4Zip5IJMtcWTNigShn1nlYAXPzkL+LeeHhEIORDxFnOvulZlAAMwOB8Y
- VqEOlMsnJblYWK9M0GaR3egWBipNKplVCUvq2htQe72Fywq9Srq9DeI7LE2dretR0SWN
- zNNWG16ThFCt03ZwufmepyJO7wz2DHBZGSFZ3dAV4VnPFl5Q66HKmbaNyi0N2e8SOLof
- Boxg==
-Date: Thu, 22 Oct 2015 13:50:06 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20151022185006.GC116932@ubuntu-hedt>
-References: <20151022152316.GA6944@ubuntu-xps13> <562915D0.1050506@gmail.com>
- <20151022181104.GB116932@ubuntu-hedt> <56292BE6.80908@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <56292BE6.80908@gmail.com>
-Subject: Re: [wireless-regdb] [ANN] wireless-regdb: master-2015-10-22
+ id 1Zm4N1-0000PX-6i
+ for wireless-regdb@lists.infradead.org; Tue, 13 Oct 2015 18:32:20 +0000
+Received: by wicge5 with SMTP id ge5so70550446wic.0 for
+ <wireless-regdb@lists.infradead.org>; Tue, 13 Oct 2015 11:31:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=from:to:cc:subject:date:message-id;
+ bh=Rc1hojBqzwqpPiJXiaX9C2RderLfq0K/Ub32zNIhMH8=;
+ b=jmAWtS2LZyhIO01RYoue/H6y5Z4SqblmOLWKGTls5+3zB2i0EPk4X4rNcTGwut9GVT
+ tEDnHBE+CaHKbEkUzRHPm8qzzEs+WI/2hPTugKWjOgtulo6ONaCQQ1UXAiTlaUhKl3aM
+ Sj404XrlMe2p24hgY8Wj/ygIkwNwi4ITTNksdGcKOk9ep9n6p8sPuzHgDs2r8FthmG9G
+ H9z+xbDZ0j2/YsH3PktiHCtOSYhmInaKPyGU216ZPSfaheJVjyjsy6JWq0/TSZNWLbUD
+ HcFFbDrbcvc0sA93EGQaVf5f93qoeZWCG/H1rPWU42JLZbb8qs9c0f9nroZ13NBTLGWR xX5w==
+From: Andrej Vlasic <andrej.vlasic0@gmail.com>
+Date: Tue, 13 Oct 2015 20:31:24 +0200
+Message-Id: <1444761084-4399-1-git-send-email-andrej.vlasic0@gmail.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+	for Croatia (HR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -35,32 +28,56 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Rick Farina <sidhayn@gmail.com>
-Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Andrej Vlasic <andrej.vlasic0@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Oct 22, 2015 at 02:33:10PM -0400, Rick Farina wrote:
-> On 10/22/2015 02:11 PM, Seth Forshee wrote:
-> > On Thu, Oct 22, 2015 at 12:58:56PM -0400, Rick Farina wrote:
-> >> For automated testing, is there a way to test read the database to make
-> >> sure the key works and the db isn't corrupt? I read the docs but I don't
-> >> see anything like this.
-> > 
-> > I always sanity check that using regdbdump from CRDA.
-> 
-> Thanks.  Unfortunately the format doesn't at all match db.txt, and
-> regdbdump exits 0 for every file I run it on.  Do you think it might be
-> worth fixing regdbdump to exit 1 if the file parsed isn't a regdb, as
-> well as exit 1 on error?
+Update frequency allocation rules to mach data from table [1].
 
-+Cc Luis Rodriguez, he maintains CRDA.
+Also increase allowed power limit for range 5150-5250 Mhz to 200mW.
 
-Seth
+[1] http://tablice.hakom.hr:8280/vis?lang=en
+
+Signed-off-by: Andrej Vlasic <andrej.vlasic0@gmail.com>
+---
+ db.txt | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index d57ea84..3b36616 100644
+--- a/db.txt
++++ b/db.txt
+@@ -504,11 +504,17 @@ country HN: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
++# Data from table of frequency allocations: http://tablice.hakom.hr:8280/vis?lang=en
++# For 5ghz range see http://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_85.pdf
++# and http://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_86.pdf
++# and http://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_87.pdf
++# TPC devices on range 5250-5350 can use 200mW, and 1W on range 5470-5725.
++
+ country HR: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20), AUTO-BW
+-	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+-	(5490 - 5710 @ 160), (27), DFS
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
++	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
++	(5470 - 5725 @ 160), (500 mW), DFS
+ 	# 60 gHz band channels 1-4, ref: Etsi En 302 567
+ 	(57000 - 66000 @ 2160), (40)
+ 
+-- 
+2.6.1
+
 
 _______________________________________________
 wireless-regdb mailing list
