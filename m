@@ -1,16 +1,19 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-f181.google.com ([209.85.223.181])
+Received: from mail-io0-f177.google.com ([209.85.223.177])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1Zj6M6-0001YG-PE
- for wireless-regdb@lists.infradead.org; Mon, 05 Oct 2015 14:03:07 +0000
-Received: by iofh134 with SMTP id h134so186550041iof.0 for
- <wireless-regdb@lists.infradead.org>; Mon, 05 Oct 2015 07:02:45 -0700 (PDT)
+ id 1Zm4Sv-0003MG-PF
+ for wireless-regdb@lists.infradead.org; Tue, 13 Oct 2015 18:38:27 +0000
+Received: by ioii196 with SMTP id i196so30822436ioi.3 for
+ <wireless-regdb@lists.infradead.org>; Tue, 13 Oct 2015 11:38:04 -0700 (PDT)
+Date: Tue, 13 Oct 2015 13:37:03 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Date: Mon,  5 Oct 2015 09:02:02 -0500
-Message-Id: <1444053722-33852-1-git-send-email-seth.forshee@canonical.com>
+Message-ID: <20151013183703.GA50632@ubuntu-hedt>
+References: <1444053722-33852-1-git-send-email-seth.forshee@canonical.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Update ZA rules for
+Content-Disposition: inline
+In-Reply-To: <1444053722-33852-1-git-send-email-seth.forshee@canonical.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update ZA rules for
 	5490-5710 MHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -27,38 +30,21 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
-Cc: Seth Forshee <seth.forshee@canonical.com>, linux-wireless@vger.kernel.org, =?UTF-8?q?Karl=20M=C3=B6ller?= <karl@excors.net>
+Cc: linux-wireless@vger.kernel.org, Karl =?utf-8?Q?M=C3=B6ller?= <karl@excors.net>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The Radio Frequency Spectrum Regulations 2015 [1] drops the
-requirement for DFS and TPC in the 5490-5710 MHz range. Update
-the database to remove DFS for this range and remove the 3dB drop
-in the transmit power limit for TPC.
+On Mon, Oct 05, 2015 at 09:02:02AM -0500, Seth Forshee wrote:
+> The Radio Frequency Spectrum Regulations 2015 [1] drops the
+> requirement for DFS and TPC in the 5490-5710 MHz range. Update
+> the database to remove DFS for this range and remove the 3dB drop
+> in the transmit power limit for TPC.
+> 
+> [1] http://www.ellipsis.co.za/wp-content/uploads/2014/12/Radio-Frequency-Spectrum-Regulations-2015.pdf
+> 
+> Cc: Karl Möller <karl@excors.net>
+> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 
-[1] http://www.ellipsis.co.za/wp-content/uploads/2014/12/Radio-Frequency-Spectrum-Regulations-2015.pdf
-
-Cc: Karl Möller <karl@excors.net>
-Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
----
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index d57ea84..721b081 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1242,7 +1242,7 @@ country ZA: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5490 - 5710 @ 160), (30)
- 
- country ZW: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--- 
-1.9.1
-
+Applied.
 
 _______________________________________________
 wireless-regdb mailing list
