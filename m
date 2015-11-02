@@ -2,15 +2,14 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 Received: from max.feld.cvut.cz ([147.32.192.36])
  by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
- id 1a0vr7-0005U3-9d
- for wireless-regdb@lists.infradead.org; Mon, 23 Nov 2015 18:28:51 +0000
+ id 1ZtCH3-0007rs-27
+ for wireless-regdb@lists.infradead.org; Mon, 02 Nov 2015 10:23:40 +0000
 From: Michal Sojka <sojkam1@fel.cvut.cz>
-Date: Mon, 23 Nov 2015 19:27:21 +0100
-Message-Id: <1448303241-27747-9-git-send-email-sojkam1@fel.cvut.cz>
-In-Reply-To: <1448303241-27747-1-git-send-email-sojkam1@fel.cvut.cz>
-References: <1448303241-27747-1-git-send-email-sojkam1@fel.cvut.cz>
-Subject: [wireless-regdb] [PATCH v2 8/8] ath9k: Add support for ITS-G5 band
-	(5.9 GHz)
+Date: Mon,  2 Nov 2015 11:22:57 +0100
+Message-Id: <1446459777-5944-1-git-send-email-sojkam1@fel.cvut.cz>
+MIME-Version: 1.0
+Subject: [wireless-regdb] [PATCH v2] ath9k: Add support for ITS-G5 band
+ (5.9 GHz)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -20,8 +19,7 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
@@ -30,17 +28,61 @@ To: linux-wireless@vger.kernel.org
 Cc: =?UTF-8?q?Jan=20Kaisrl=C3=ADk?= <kaisrja1@fel.cvut.cz>, wireless-regdb@lists.infradead.org, ath9k-devel@qca.qualcomm.com, ath9k-devel@lists.ath9k.org, bernd.lehmann@volkswagen.de, s.sander@nordsys.de, Michal Sojka <sojkam1@fel.cvut.cz>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The patch adds support for Intelligent Transportation System (ITS-G5)
-band to the ath9k driver. The corresponding channels are allowed only if
-CONFIG_CFG80211_REG_ITSG5_BAND is set and if the user provides custom
-regulatory database. In addition, the band is limited to OCB mode.
+From: Jan Kaisrlik <kaisrja1@fel.cvut.cz>
 
-Signed-off-by: Michal Sojka <sojkam1@fel.cvut.cz>
+The patch adds support for Intelligent Transportation System (ITS-G5)
+band to the ath9k driver.
+
+Signed-off-by: Jan Kaisrlik <kaisrja1@fel.cvut.cz>
+Cc: Michal Sojka <sojkam1@fel.cvut.cz>
 ---
+
+Hi all,
+
+in this second version of the patch we removed dependency on
+CFG80211_CERTIFICATION_ONUS as suggested by Johannes. We are, however,
+not sure whether this is the right thing to do.
+
+The problem is that ath9k uses (REGULATORY_STRICT_REG |
+REGULATORY_CUSTOM_REG), which means that in order to use the 5.9 GHz
+band, ath9k's private regdomain has to be extended. This in turn means
+that the 5.9 GHz band is enabled by default in many configurations. It
+can be disabled if one sends a regulatory hint and has valid regdb in
+user space, but this cannot be relied upon.
+
+As I already wrote, I don't think that regulatory documents allow such
+behavior:
+
+  In EU, regulatory (ECC Decision (08)01) reads:
+
+    ... decides ... that CEPT administrations shall designate the
+    frequency sub-band 5875-5905 MHz on a non-exclusive basis for ITS
+    traffic safety applications;
+
+  I understand this that the band can be used only by "traffic safety
+  applications" and not by random laptops running Linux.
+
+  In US, regulatory (FCC 03-324) says among others:
+
+    § 95.603 (h) Each Dedicated Short-Range Communications Service
+    On-Board Unit (DSRCS-OBU) that operates or is intended to operate
+    in the DSRCS (5.850-5.925 GHz) must be certified in accordance
+    with subpart L of this part and subpart J of part 2 of this
+    chapter.
+
+Especially the US regulatory suggests that using
+CFG80211_CERTIFICATION_ONUS might have sense (see the previous version
+http://www.mail-archive.com/linux-wireless@vger.kernel.org/msg15228.html).
+What do you think?
+
+Thanks.
+-Michal & Jan
+
+
  drivers/net/wireless/ath/ath9k/common-init.c | 19 +++++++++++++++++++
  drivers/net/wireless/ath/ath9k/hw.h          |  2 +-
- drivers/net/wireless/ath/regd.c              | 23 ++++++++++++++++++-----
- 3 files changed, 38 insertions(+), 6 deletions(-)
+ drivers/net/wireless/ath/regd.c              | 17 ++++++++++++-----
+ 3 files changed, 32 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/net/wireless/ath/ath9k/common-init.c b/drivers/net/wireless/ath/ath9k/common-init.c
 index a006c14..0b61c63 100644
@@ -73,7 +115,7 @@ index a006c14..0b61c63 100644
  
  /* Atheros hardware rate code addition for short premble */
 diff --git a/drivers/net/wireless/ath/ath9k/hw.h b/drivers/net/wireless/ath/ath9k/hw.h
-index 831a544..cb126ff 100644
+index e8454db..debf609 100644
 --- a/drivers/net/wireless/ath/ath9k/hw.h
 +++ b/drivers/net/wireless/ath/ath9k/hw.h
 @@ -73,7 +73,7 @@
@@ -86,25 +128,19 @@ index 831a544..cb126ff 100644
  /* Register read/write primitives */
  #define REG_WRITE(_ah, _reg, _val) \
 diff --git a/drivers/net/wireless/ath/regd.c b/drivers/net/wireless/ath/regd.c
-index 06ea6cc..38706ff 100644
+index 444bd28..1f8b209 100644
 --- a/drivers/net/wireless/ath/regd.c
 +++ b/drivers/net/wireless/ath/regd.c
-@@ -50,6 +50,14 @@ static int __ath_regd_init(struct ath_regulatory *reg);
+@@ -50,6 +50,8 @@ static int __ath_regd_init(struct ath_regulatory *reg);
  #define ATH9K_5GHZ_5725_5850	REG_RULE(5725-10, 5850+10, 80, 0, 30,\
  					 NL80211_RRF_NO_IR)
  
-+#ifdef CONFIG_CFG80211_REG_ITSG5_BAND
-+#define ATH9K_5GHZ_ITSG5	REG_RULE(5850, 5925, 10, 0, 33, \
-+					 NL80211_RRF_USER_REGD_NEEDED | \
-+					 NL80211_RRF_OCB_ONLY)
-+#else
-+#define ATH9K_5GHZ_ITSG5	{} /* Empty rule does not match any channel */
-+#endif
++#define ATH9K_5GHZ_ITSG5	REG_RULE(5855-5, 5925+5, 10, 0, 33, 0)
 +
  #define ATH9K_2GHZ_ALL		ATH9K_2GHZ_CH01_11, \
  				ATH9K_2GHZ_CH12_13, \
  				ATH9K_2GHZ_CH14
-@@ -64,53 +72,58 @@ static int __ath_regd_init(struct ath_regulatory *reg);
+@@ -64,53 +66,58 @@ static int __ath_regd_init(struct ath_regulatory *reg);
  /* Can be used for:
   * 0x60, 0x61, 0x62 */
  static const struct ieee80211_regdomain ath_world_regdom_60_61_62 = {
@@ -176,4 +212,3 @@ _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
