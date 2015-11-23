@@ -1,18 +1,16 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from s3.sipsolutions.net ([5.9.151.49] helo=sipsolutions.net)
- by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1a1zhc-0000BL-Cw
- for wireless-regdb@lists.infradead.org; Thu, 26 Nov 2015 16:47:25 +0000
-Message-ID: <1448556415.2167.22.camel@sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Thu, 26 Nov 2015 17:46:55 +0100
-In-Reply-To: <1448303241-27747-3-git-send-email-sojkam1@fel.cvut.cz>
+Received: from max.feld.cvut.cz ([147.32.192.36])
+ by bombadil.infradead.org with esmtp (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1a0vql-0005G9-8Z
+ for wireless-regdb@lists.infradead.org; Mon, 23 Nov 2015 18:28:30 +0000
+From: Michal Sojka <sojkam1@fel.cvut.cz>
+Date: Mon, 23 Nov 2015 19:27:16 +0100
+Message-Id: <1448303241-27747-4-git-send-email-sojkam1@fel.cvut.cz>
+In-Reply-To: <1448303241-27747-1-git-send-email-sojkam1@fel.cvut.cz>
 References: <1448303241-27747-1-git-send-email-sojkam1@fel.cvut.cz>
- <1448303241-27747-3-git-send-email-sojkam1@fel.cvut.cz>
-Mime-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH v2 2/8] cfg80211: Remove unused
- cfg80211_can_use_iftype_chan()
+Subject: [wireless-regdb] [PATCH v2 3/8] cfg80211: reg: Refactor
+ calculation of bandwidth flags
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -22,25 +20,159 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Michal Sojka <sojkam1@fel.cvut.cz>, linux-wireless@vger.kernel.org
-Cc: Jan =?ISO-8859-1?Q?Kaisrl=EDk?= <kaisrja1@fel.cvut.cz>, wireless-regdb@lists.infradead.org, ath9k-devel@qca.qualcomm.com, ath9k-devel@lists.ath9k.org, bernd.lehmann@volkswagen.de, s.sander@nordsys.de
+To: linux-wireless@vger.kernel.org
+Cc: =?UTF-8?q?Jan=20Kaisrl=C3=ADk?= <kaisrja1@fel.cvut.cz>, wireless-regdb@lists.infradead.org, ath9k-devel@qca.qualcomm.com, ath9k-devel@lists.ath9k.org, bernd.lehmann@volkswagen.de, s.sander@nordsys.de, Michal Sojka <sojkam1@fel.cvut.cz>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, 2015-11-23 at 19:27 +0100, Michal Sojka wrote:
-> Last caller of this function was removed in 3.17 in commit
-> 97dc94f1d933c9df2c0b327066ea130c0e92083f.
-> 
-Heh.
+The same piece of code appears at two places. Make a function from it.
 
-I've applied the first two patches for now - will review the others in
-more detail later.
+Signed-off-by: Michal Sojka <sojkam1@fel.cvut.cz>
+---
+ net/wireless/reg.c | 91 ++++++++++++++++++++++--------------------------------
+ 1 file changed, 37 insertions(+), 54 deletions(-)
 
-johannes
+diff --git a/net/wireless/reg.c b/net/wireless/reg.c
+index 43b3e57..0a4f548 100644
+--- a/net/wireless/reg.c
++++ b/net/wireless/reg.c
+@@ -1166,6 +1166,41 @@ static void chan_reg_rule_print_dbg(const struct ieee80211_regdomain *regd,
+ #endif
+ }
+ 
++static uint32_t reg_rule_to_chan_bw_flags(const struct ieee80211_regdomain *regd,
++					  const struct ieee80211_reg_rule *reg_rule,
++					  const struct ieee80211_channel *chan)
++{
++	const struct ieee80211_freq_range *freq_range = NULL;
++	u32 max_bandwidth_khz, bw_flags = 0;
++
++	freq_range = &reg_rule->freq_range;
++
++	max_bandwidth_khz = freq_range->max_bandwidth_khz;
++	/* Check if auto calculation requested */
++	if (reg_rule->flags & NL80211_RRF_AUTO_BW)
++		max_bandwidth_khz = reg_get_max_bandwidth(regd, reg_rule);
++
++	/* If we get a reg_rule we can assume that at least 5Mhz fit */
++	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
++			     MHZ_TO_KHZ(10)))
++		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
++	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
++			     MHZ_TO_KHZ(20)))
++		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
++
++	if (max_bandwidth_khz < MHZ_TO_KHZ(10))
++		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
++	if (max_bandwidth_khz < MHZ_TO_KHZ(20))
++		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
++	if (max_bandwidth_khz < MHZ_TO_KHZ(40))
++		bw_flags |= IEEE80211_CHAN_NO_HT40;
++	if (max_bandwidth_khz < MHZ_TO_KHZ(80))
++		bw_flags |= IEEE80211_CHAN_NO_80MHZ;
++	if (max_bandwidth_khz < MHZ_TO_KHZ(160))
++		bw_flags |= IEEE80211_CHAN_NO_160MHZ;
++	return bw_flags;
++}
++
+ /*
+  * Note that right now we assume the desired channel bandwidth
+  * is always 20 MHz for each individual channel (HT40 uses 20 MHz
+@@ -1178,11 +1213,9 @@ static void handle_channel(struct wiphy *wiphy,
+ 	u32 flags, bw_flags = 0;
+ 	const struct ieee80211_reg_rule *reg_rule = NULL;
+ 	const struct ieee80211_power_rule *power_rule = NULL;
+-	const struct ieee80211_freq_range *freq_range = NULL;
+ 	struct wiphy *request_wiphy = NULL;
+ 	struct regulatory_request *lr = get_last_request();
+ 	const struct ieee80211_regdomain *regd;
+-	u32 max_bandwidth_khz;
+ 
+ 	request_wiphy = wiphy_idx_to_wiphy(lr->wiphy_idx);
+ 
+@@ -1223,31 +1256,7 @@ static void handle_channel(struct wiphy *wiphy,
+ 	chan_reg_rule_print_dbg(regd, chan, reg_rule);
+ 
+ 	power_rule = &reg_rule->power_rule;
+-	freq_range = &reg_rule->freq_range;
+-
+-	max_bandwidth_khz = freq_range->max_bandwidth_khz;
+-	/* Check if auto calculation requested */
+-	if (reg_rule->flags & NL80211_RRF_AUTO_BW)
+-		max_bandwidth_khz = reg_get_max_bandwidth(regd, reg_rule);
+-
+-	/* If we get a reg_rule we can assume that at least 5Mhz fit */
+-	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
+-			     MHZ_TO_KHZ(10)))
+-		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
+-	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
+-			     MHZ_TO_KHZ(20)))
+-		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
+-
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(10))
+-		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(20))
+-		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(40))
+-		bw_flags |= IEEE80211_CHAN_NO_HT40;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(80))
+-		bw_flags |= IEEE80211_CHAN_NO_80MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(160))
+-		bw_flags |= IEEE80211_CHAN_NO_160MHZ;
++	bw_flags = reg_rule_to_chan_bw_flags(regd, reg_rule, chan);
+ 
+ 	if (lr->initiator == NL80211_REGDOM_SET_BY_DRIVER &&
+ 	    request_wiphy && request_wiphy == wiphy &&
+@@ -1760,8 +1769,6 @@ static void handle_channel_custom(struct wiphy *wiphy,
+ 	u32 bw_flags = 0;
+ 	const struct ieee80211_reg_rule *reg_rule = NULL;
+ 	const struct ieee80211_power_rule *power_rule = NULL;
+-	const struct ieee80211_freq_range *freq_range = NULL;
+-	u32 max_bandwidth_khz;
+ 	u32 bw;
+ 
+ 	for (bw = MHZ_TO_KHZ(20); bw >= MHZ_TO_KHZ(5); bw = bw / 2) {
+@@ -1786,31 +1793,7 @@ static void handle_channel_custom(struct wiphy *wiphy,
+ 	chan_reg_rule_print_dbg(regd, chan, reg_rule);
+ 
+ 	power_rule = &reg_rule->power_rule;
+-	freq_range = &reg_rule->freq_range;
+-
+-	max_bandwidth_khz = freq_range->max_bandwidth_khz;
+-	/* Check if auto calculation requested */
+-	if (reg_rule->flags & NL80211_RRF_AUTO_BW)
+-		max_bandwidth_khz = reg_get_max_bandwidth(regd, reg_rule);
+-
+-	/* If we get a reg_rule we can assume that at least 5Mhz fit */
+-	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
+-			     MHZ_TO_KHZ(10)))
+-		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
+-	if (!reg_does_bw_fit(freq_range, MHZ_TO_KHZ(chan->center_freq),
+-			     MHZ_TO_KHZ(20)))
+-		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
+-
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(10))
+-		bw_flags |= IEEE80211_CHAN_NO_10MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(20))
+-		bw_flags |= IEEE80211_CHAN_NO_20MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(40))
+-		bw_flags |= IEEE80211_CHAN_NO_HT40;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(80))
+-		bw_flags |= IEEE80211_CHAN_NO_80MHZ;
+-	if (max_bandwidth_khz < MHZ_TO_KHZ(160))
+-		bw_flags |= IEEE80211_CHAN_NO_160MHZ;
++	bw_flags = reg_rule_to_chan_bw_flags(regd, reg_rule, chan);
+ 
+ 	chan->dfs_state_entered = jiffies;
+ 	chan->dfs_state = NL80211_DFS_USABLE;
+-- 
+2.5.3
+
 
 _______________________________________________
 wireless-regdb mailing list
