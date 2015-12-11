@@ -1,28 +1,13 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-ig0-x22f.google.com ([2607:f8b0:4001:c05::22f])
+Received: from s3.sipsolutions.net ([5.9.151.49] helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1a8WVr-0001OD-9Q
- for wireless-regdb@lists.infradead.org; Mon, 14 Dec 2015 17:02:19 +0000
-Received: by mail-ig0-x22f.google.com with SMTP id ph11so87373277igc.1 for
- <wireless-regdb@lists.infradead.org>; Mon, 14 Dec 2015 09:01:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-type
- :content-disposition:user-agent;
- bh=gpq+uDGCSAxUb63ilyagdEIP8kkxIcpn3hGwEjtakg4=;
- b=dMnnqoRG7oT94v7ahGbvw6kLWE/0xF8LorInUrE4+fH9fITMK+Re5GFTTu5K8etmf6
- 9/mSbBu3qJa3CdyUOP0bocYkdUrJWgHqogJ4nk5Z41XYAMRZgRM7KtDIBI0zLFaGVRiN
- TKyjf4Ue5RMckoskzOj3AypPWxdTdx2f2qHZfJ2UXYAqlYFh2DrU/+SUzJEGe5DEfNVc
- lxzluo8w5B52SOaUVdRZdtFnBx70qhoSKOb/JF7RtLRNyDWiVeCu2Lz2gh0xFyZfpY1x
- NP1Xll4qTiqHkV53jW7lBUjrVz3zNUfGgkB7YIAOH5DFFWy4XhzTCjDWzfxJm3tg5JH0
- 5XoQ==
-Date: Mon, 14 Dec 2015 10:59:57 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20151214165957.GC146390@ubuntu-hedt>
-MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2015-12-14
+ id 1a7QpE-0004vr-2L
+ for wireless-regdb@lists.infradead.org; Fri, 11 Dec 2015 16:45:44 +0000
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Fri, 11 Dec 2015 17:45:19 +0100
+Message-Id: <1449852319-27189-1-git-send-email-johannes@sipsolutions.net>
+Subject: [wireless-regdb] [PATCH] regulatory: fix world regdomain
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -32,34 +17,68 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Cc: Janusz Dziedzic <janusz.dziedzic@tieto.com>, j@w1.fi, Johannes Berg <johannes.berg@intel.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2015-12-14) is available at:
+From: Johannes Berg <johannes.berg@intel.com>
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.12.14.tar.gz
+Back in 2012, in commit 6d87df6f9657 ("regdb: allow 40 MHz on world
+roaming channels 12/13") I evidently broke the world regulatory data
+to the point where it was always discarded by the kernel because the
+40 MHz bandwidth doesn't fit into the rule range.
 
-The short log of changes since the 2015-10-22 release is below.
+Around the same time, I updated the in-kernel regulatory domain with
+the same mistake, but unlike the userspace data, the in-kernel data
+isn't actually checked for validity.
 
-Thanks,
-Seth
+The end result was that the (inconsequentially invalid) data in the
+kernel was always used because the userspace data was rejected.
 
+Fix this by changing the rule to 20 MHz and adding the AUTO-BW flag.
+It seems that Janusz had made a similar change in commit 5cfc8073ce35
+("wireless-regdb: set AUTO bandwidth for world regulatory"), but it
+was reverted for unknown reasons a little less than half a year later
+(commit cfa3734b11b2).
+
+The kernel uses very similar invalid rules, but it never checks them
+for validity and just uses them, so HT40- ends up getting enabled on
+these channels. Thus, when the kernel requests the world regdomain
+from userspace, gets the invalid data and rejects it, it falls back
+to using the built-in data which is very similar and not validated.
+
+I've tested this now, and the ruleset is now accepted by the kernel
+and results in the correct data.
+
+This also means that Jouni's 160 MHz fixes were inconsequentialy and
+only the corresponding kernel changes could have been used.
+
+Signed-off-by: Johannes Berg <johannes.berg@intel.com>
 ---
+ db.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Anssi Hannula (1):
-      wireless-regdb: Update regulatory rules for Finland (FI)
-
-Johannes Berg (1):
-      regulatory: fix world regdomain
-
-Seth Forshee (1):
-      wireless-regdb: update regulatory.bin based on preceding changes
+diff --git a/db.txt b/db.txt
+index a6eb033db25d..13cc7ada23d9 100644
+--- a/db.txt
++++ b/db.txt
+@@ -2,7 +2,7 @@
+ country 00:
+ 	(2402 - 2472 @ 40), (20)
+ 	# Channel 12 - 13.
+-	(2457 - 2482 @ 40), (20), NO-IR
++	(2457 - 2482 @ 20), (20), NO-IR, AUTO-BW
+ 	# Channel 14. Only JP enables this and for 802.11b only
+ 	(2474 - 2494 @ 20), (20), NO-IR, NO-OFDM
+ 	# Channel 36 - 48
+-- 
+2.6.2
 
 
 _______________________________________________
