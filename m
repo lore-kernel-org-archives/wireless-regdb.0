@@ -1,20 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail.w1.fi ([212.71.239.96]
- helo=li674-96.members.linode.com) by bombadil.infradead.org with esmtp
- (Exim 4.80.1 #2 (Red Hat Linux)) id 1ZtKKZ-0001Gq-P3 for
- wireless-regdb@lists.infradead.org; Mon, 02 Nov 2015 18:59:48 +0000
-Date: Mon, 2 Nov 2015 20:59:23 +0200
-From: Jouni Malinen <j@w1.fi>
-Message-ID: <20151102185923.GA3707@w1.fi>
-References: <1446459777-5944-1-git-send-email-sojkam1@fel.cvut.cz>
- <20151102165516.GA817@w1.fi> <87k2q0qpae.fsf@steelpick.2x.cz>
- <20151102174637.GA2350@w1.fi> <87h9l4qm9q.fsf@steelpick.2x.cz>
+Received: from mail-ig0-x22f.google.com ([2607:f8b0:4001:c05::22f])
+ by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
+ id 1a8WVr-0001OD-9Q
+ for wireless-regdb@lists.infradead.org; Mon, 14 Dec 2015 17:02:19 +0000
+Received: by mail-ig0-x22f.google.com with SMTP id ph11so87373277igc.1 for
+ <wireless-regdb@lists.infradead.org>; Mon, 14 Dec 2015 09:01:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=canonical-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:mime-version:content-type
+ :content-disposition:user-agent;
+ bh=gpq+uDGCSAxUb63ilyagdEIP8kkxIcpn3hGwEjtakg4=;
+ b=dMnnqoRG7oT94v7ahGbvw6kLWE/0xF8LorInUrE4+fH9fITMK+Re5GFTTu5K8etmf6
+ 9/mSbBu3qJa3CdyUOP0bocYkdUrJWgHqogJ4nk5Z41XYAMRZgRM7KtDIBI0zLFaGVRiN
+ TKyjf4Ue5RMckoskzOj3AypPWxdTdx2f2qHZfJ2UXYAqlYFh2DrU/+SUzJEGe5DEfNVc
+ lxzluo8w5B52SOaUVdRZdtFnBx70qhoSKOb/JF7RtLRNyDWiVeCu2Lz2gh0xFyZfpY1x
+ NP1Xll4qTiqHkV53jW7lBUjrVz3zNUfGgkB7YIAOH5DFFWy4XhzTCjDWzfxJm3tg5JH0
+ 5XoQ==
+Date: Mon, 14 Dec 2015 10:59:57 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20151214165957.GC146390@ubuntu-hedt>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87h9l4qm9q.fsf@steelpick.2x.cz>
-Subject: Re: [wireless-regdb] [PATCH v2] ath9k: Add support for ITS-G5 band
-	(5.9 GHz)
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2015-12-14
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -29,41 +37,30 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Michal Sojka <sojkam1@fel.cvut.cz>
-Cc: Jan =?utf-8?B?S2Fpc3Jsw61r?= <kaisrja1@fel.cvut.cz>, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, ath9k-devel@qca.qualcomm.com, ath9k-devel@lists.ath9k.org, bernd.lehmann@volkswagen.de, s.sander@nordsys.de
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Nov 02, 2015 at 07:38:57PM +0100, Michal Sojka wrote:
-> We discussed that about a year ago [1]. The thing is that regulatory
-> documents do not talk about modes (at least in Europe). They only talk
-> about channel widths, EIRP etc. and say that the band is designated for
-> Intelligent Transportation System (ITS) applications. Only the ITS
-> standards (e.g. ETSI EN 302 663) talk about OCB mode. From the last
-> year's discussion I took away that we should not restrict these bands to
-> OCB only, because regulatory documents do not require it. But I might
-> get it wrong.
-> 
-> [1] http://www.mail-archive.com/linux-kernel@vger.kernel.org/msg656581.html
+A new release of wireless-regdb (master-2015-12-14) is available at:
 
-In some sense, I agree with that, but taken into account that I'm much
-more concerned about accidentally using this band, I think there is
-justification for adding that extra constraint of allowing only the OCB
-mode to be used even if the regulatory requirements may not explicitly
-say so. Especially the behavior of including these channels with active
-scanning allowed in all full scans is something that really must not be
-enabled.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2015.12.14.tar.gz
 
-> Hmm, ath9k is the hardware that we can currently play with. Can you
-> suggest another hardware that supports 5.9 GHz and a driver that would
-> be more convenient to develop with?
+The short log of changes since the 2015-10-22 release is below.
 
-I don't think there is any hardware alternative that would be more
-convenient for this type of efforts than chips supported by ath9k. It is
-just that the needs of this project are somewhat in conflict with the
-needs of regulatory rule enforcement for most other use cases.. :)
+Thanks,
+Seth
 
--- 
-Jouni Malinen                                            PGP id EFC895FA
+---
+
+Anssi Hannula (1):
+      wireless-regdb: Update regulatory rules for Finland (FI)
+
+Johannes Berg (1):
+      regulatory: fix world regdomain
+
+Seth Forshee (1):
+      wireless-regdb: update regulatory.bin based on preceding changes
+
 
 _______________________________________________
 wireless-regdb mailing list
