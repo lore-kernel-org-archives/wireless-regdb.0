@@ -1,33 +1,24 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x22c.google.com ([2607:f8b0:4003:c06::22c])
+Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ajUL6-0001EE-Cy
- for wireless-regdb@lists.infradead.org; Fri, 25 Mar 2016 16:11:57 +0000
-Received: by mail-oi0-x22c.google.com with SMTP id r187so102812235oih.3 for
- <wireless-regdb@lists.infradead.org>; Fri, 25 Mar 2016 09:11:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=dB/hADM0nISJ4OPTn3Y+Xl2kwWayBgX0nRJAkafFy9M=;
- b=IpY9XyiGQn51CxUuuP1FNeHZdXMbi12kYNOWIbsxj4pt8Zc0Ux0W3+Y5uzVBpnzLPk
- Z4EgAs/Lk01iOgGRg0tHFCyu4SOHGN/syafdikiB+HbSbCavhH1Vg8FbcUQBDOCbgM3W
- /4cbhW2dCsIOkGWOfL5rmB03dzt1ixZ3g7D8siHBLHanLhuXEBwf9ChJw7p2uyMKOCEG
- lAQFj57w2JNTenUtOBuleoWHxxVBre5pWPQAoGUTZChaA5MuVT0LnxESHLSjIwcdjrrN
- 8SeDPsjR35/GPwA649NIOifIDW7A2wC4wT9JFcD3MSlITIZWcDfgtXreGJzjouQ+tJFl
- uTTw==
-Date: Fri, 25 Mar 2016 11:11:00 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20160325161100.GA112464@ubuntu-hedt>
-References: <b7a3a22077814e7da4e94a61e59c585d@ausx13mpc122.AMER.DELL.COM>
- <20160325135147.GA27324@ubuntu-xps13>
- <215edc732bbb4c8aa7b38dd1273f372a@ausx13mpc122.AMER.DELL.COM>
+ id 1ahsvM-0007jn-UW
+ for wireless-regdb@lists.infradead.org; Mon, 21 Mar 2016 06:02:45 +0000
+Received: by mail-lb0-x230.google.com with SMTP id bc4so120409221lbc.2 for
+ <wireless-regdb@lists.infradead.org>; Sun, 20 Mar 2016 23:02:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=mime-version:date:message-id:subject:from:to;
+ bh=yAwXoXKL4Ko2rYArKTW5ZOwTebbXL8BiNyIOnfC+Aks=;
+ b=BlI+GM0RBqKitUerlle6q/nxEAAXXrja61AsrjTtoqdghH/5N/JyaPbp29uFobAZtg
+ +JRfW6V34l+FYSP93QZaU5DDbZlYbXB/gYlyLzMoC2onMobJcxV3lrHsNWkSY1Y3Khk+
+ mLCfxha523KocgqLUnI+SOl1LhTKdVLfEAmXniOCngNPkM//a4/2oQcbODCbeoudHmD5
+ IbF0WWJGO3MLnMIcouurfty7xhpNp/P2KSpD7xh6gFNnkD31cEgQV60WBCd6uBojuc2R
+ rAt0knu382hihiHPnwimOz+NtfE7PKuMJb6t2JXE19kg+NGhXhIEOwxmG1tZBjLVZoWb 1pJA==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <215edc732bbb4c8aa7b38dd1273f372a@ausx13mpc122.AMER.DELL.COM>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Russia (RU) on 5735-5835 MHz band
+Date: Mon, 21 Mar 2016 11:32:21 +0530
+Message-ID: <CAH9F5rmgEZXjDnWRUjMmMdW8obvKbkeEtciMLtiNYEGoX4AZsg@mail.gmail.com>
+From: Atul Joshi <atul.suresh.joshi@gmail.com>
+Subject: [wireless-regdb] US Disabling 11d?
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,38 +28,49 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Thanh_Nguyen@Dell.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Mar 25, 2016 at 03:59:30PM +0000, Thanh_Nguyen@Dell.com wrote:
-> Seth,
-> The sources I am using are also unofficial:
-> 
-> o   Broadcom’s document showing Russia allow 2.400-2.4835 (Ch 1-13), 5.15-5.25GHz (Ch 36-48), 5.25-5.35GHz (Ch 52-64), 5.470-5.725GHz (Ch 100-140)
-> 
-> o   Wi-Fi Russian Certificates that Broadcom and Intel (and some other major suppliers) provided to Dell don’t cover 5735-5835 MHz band
-> I will try to obtain official documentation of Russia's regulations.
+Hi,
+This is in response to the below mail from Guy.
+I am trying to find out what does it mean to clients/stations.
+1. Does it mean, AP can advertise non-US country but then STA needs to
+have some way to validate that ?
+2. Does it mean AP can not send country IE at all?
+3. How does FCC keep tab on rogue APs which can advertise non-US
+country in US? (does it mean user setting the country is disabled?)
+There are many questions around this..  it will be great if we can get
+clarifications on the changes needed in AP and STA mode.
 
-Thanks, that would be helpful. All I could turn up was a document
-regarding fixed wireless installations, in which the 5375-5835 MHz range
-was allowed.
+thanks
+atul
 
-> Regarding the Patch, I am new to Linux and I am not sure what that is. It will be great if you can make one or guide me how to do it.
 
-Let's hold off a bit. That will give you some time to look for some
-official sources, and I'd also like to leave a little time to see if QCA
-has any comments since the rules we currently have for Russia came from
-them.
+Hi All,
 
-Seth
+Recently I ran into this FCC new rule:
+
+FCC will disallow 802.11d after January 01, 2015
+After January 01, 2015, the FCC will not allow the use of 802.11d. The
+client cannot rely on the Access Point to ensure compliance to the FCC
+certified frequency bands. For example today, a non-U.S. AP can be
+used in the US, which will allow transmitting on channels 12 & 13 with
+unapproved power output in the 2.4 GHz band, or channels 120, 124 &
+128 which are prohibited in the 5 GHz band. This will not be the case
+once FCC enforces the new rule
+
+Does anyone know if there was any work done to support this?
+
+BR,
+Guy Mishol
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
