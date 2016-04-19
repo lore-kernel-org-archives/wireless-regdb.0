@@ -1,27 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wm0-x235.google.com ([2a00:1450:400c:c09::235])
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1atsy5-00012w-3W
- for wireless-regdb@lists.infradead.org; Sat, 23 Apr 2016 08:31:10 +0000
-Received: by mail-wm0-x235.google.com with SMTP id u206so57182273wme.1 for
- <wireless-regdb@lists.infradead.org>; Sat, 23 Apr 2016 01:30:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com;
- s=google; h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=AWolPhqHCKSzCSxXlc+4WxYRjwmAnKL9Z/kz39swLjY=;
- b=ENXKKlmPlfPUrAdvfXaQNlhUSnrg/SgGUkEGcV0oifHem+R8U4lLN3asx/Awo2IVJt
- jPPy/xqNSWL6jGFPut2gT0eOXPssy1D47R7coL/Oe/DkW7by0B3b/AE9hlHq6ZIHogCL
- hyXPeWsD878IMX7nkRpIUPfsUYPujXQI1ob3k=
-References: <20160422123614.2B4EC2063D@density.slowthinkers.net>
- <20160422135529.GA109717@ubuntu-hedt>
-From: Arend van Spriel <arend.vanspriel@broadcom.com>
-Message-ID: <571B32B5.1040601@broadcom.com>
-Date: Sat, 23 Apr 2016 10:30:45 +0200
+ id 1asa04-00038O-SP
+ for wireless-regdb@lists.infradead.org; Tue, 19 Apr 2016 18:03:50 +0000
+From: Maximilian Engelhardt <engelhardt@perisens.de>
+Date: Tue, 19 Apr 2016 20:03:16 +0200
+Message-ID: <1958820.LBuzOElZFT@perisens15>
 MIME-Version: 1.0
-In-Reply-To: <20160422135529.GA109717@ubuntu-hedt>
-Subject: Re: [wireless-regdb] Update regulatory rules for NL as per ETSI EN
-	300 440-1
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for
+	Germany (DE) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,80 +19,145 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="windows-1252"
+Content-Type: multipart/mixed; boundary="===============2140798148781056965=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-To: Seth Forshee <seth.forshee@canonical.com>, Anne Marcel Roorda <marcel@slowthinkers.net>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, maxi@daemonizer.de, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 22-04-16 15:55, Seth Forshee wrote:
-> On Fri, Apr 22, 2016 at 02:36:13PM +0200, Anne Marcel Roorda wrote:
->>
->> Hi,
->>
->>   Below the patch to include SRD as per ETSI EN 300 440-1
->> for NL.
->>
->> Thanks,
->>
->> - marcel
->>
->> Signed-off-by: Anne Marcel Roorda <marcel@slowthinkers.net>
->>
->> diff --git a/db.txt b/db.txt
->> index e9ba21a..738e412 100644
->> --- a/db.txt
->> +++ b/db.txt
->> @@ -850,11 +850,18 @@ country NI: DFS-FCC
->>  	(5490 - 5730 @ 160), (24), DFS
->>  	(5735 - 5835 @ 80), (30)
->> =20
->> +# Regulation on the use of frequency space without a license and=20
->> +# without notification 2015
->> +#
->> +# http://wetten.overheid.nl/BWBR0036378/2015-03-05
->> +
->>  country NL: DFS-ETSI
->>  	(2402 - 2482 @ 40), (20)
->>  	(5170 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
->>  	(5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
->>  	(5490 - 5710 @ 160), (27), DFS
->> +	# short range devices (ETSI EN 300 440-1)
->> +	(5725 - 5875 @ 80), (25 mW)
->>  	# 60 GHz band channels 1-4, ref: Etsi En 302 567
->>  	(57000 - 66000 @ 2160), (40)
->=20
-> I'm looking at the document you reference as translated by Google, and
-> I'm not seeing anything there to support these changes. I can't find any
-> reference to ETSI 300 440-1. The section which would appear to apply
-> here (article 2 paragraph o) references Annex 11 for permitted frequency
-> bands, and this does not include the range that you're adding.
+--===============2140798148781056965==
+Content-Type: multipart/signed; boundary="nextPart1540866.hqEZiY0n9z"; micalg="pgp-sha512"; protocol="application/pgp-signature"
 
-It does. In Annex 11, subcat 1, there is entry J that specifies the range:
 
-J	5725 =96 5875 MHz		25 mW e.i.r.p.
+--nextPart1540866.hqEZiY0n9z
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"
 
-Regards,
-Arend
+Hi,
 
-> I didn't read the document in its entirety though, so I may have missed
-> something. If so, could you please point me to the specific section
-> which would permit operation in that range?
->=20
-> Thanks,
-> Seth
-> --
-> To unsubscribe from this list: send the line "unsubscribe linux-wireless"=
- in
-> the body of a message to majordomo@vger.kernel.org
-> More majordomo info at  http://vger.kernel.org/majordomo-info.html
->=20
+In Europe ETSI standardized the used for short range devices (SRD) [1] =
+in ETSI=20
+EN 300 440-1 [2].
+According to this standard generic use equipment is allowed to transmit=
+ in the=20
+frequency range form 5725 MHz to 5875 MHz with a maximum output power o=
+f=20
+25 mW e.i.r.p. This generic allocation also allows transmission of 802.=
+11=20
+devices.
+
+[3] has a list of countries and their status about the implementation o=
+f the=20
+SRD frequency bands. For the 5 GHz band this can be seen on page 38 in =
+the=20
+paragraph ANNEX 1 and the entry Annex j.
+
+Attached is a patch that adds the 5 GHz SRD band to db.txt for Germany.=
+
+
+If it is acceptable I can provide a patch adding the 5 GHz SRD band for=
+ the=20
+other countries listed in [3].
+
+Thanks,
+Maxi
+
+
+[1] http://www.etsi.org/technologies-clusters/technologies/radio/short-=
+range-devices
+[2] http://www.etsi.org/deliver/etsi_en/300400_300499/30044001/01.06.01=
+_60/en_30044001v010601p.pdf
+[3] http://www.erodocdb.dk/Docs/doc98/official/pdf/REC7003e.pdf
+
+
+diff --git a/db.txt b/db.txt
+index e9ba21a..38a9340 100644
+=2D-- a/db.txt
++++ b/db.txt
+@@ -319,6 +319,9 @@ country CZ: DFS-ETSI
+ # limit is used here as the non-interference with radar and satellite
+ # apps relies on the attenuation by the building walls only in the
+ # absence of DFS; the neighbour countries have 100mW limit here as wel=
+l.
++# The ETSI EN 300 440-1 standard for short range devices in the 5 GHz =
+band has
++# been implemented in Germany:
++# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
+/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
+ungen/2014_69_SRD_pdf.pdf
+=20
+ country DE: DFS-ETSI
+        # entries 279004 and 280006
+@@ -329,6 +332,8 @@ country DE: DFS-ETSI
+        (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+        # entries 308002, 309001 and 310003
+        (5470 - 5725 @ 160), (500 mW), DFS
++       # short range devices (ETSI EN 300 440-1)
++       (5725 - 5875 @ 80), (25 mW)
+        # 60 GHz band channels 1-4, ref: Etsi En 302 567
+        (57000 - 66000 @ 2160), (40)
+
+
+
+=2D-=20
+Maximilian Engelhardt
+Dipl.-Ing. (Univ.)
+=20
+perisens GmbH
+Lichtenbergstra=DFe 8
+85748 Garching bei M=FCnchen
+
+tel:    +49 89 2155203-10
+fax:    +49 89 2155203-19
+web:    http://www.perisens.de/
+_____________
+
+perisens GmbH
+Gesch=E4ftsf=FChrer: Dr. Florian Pfeiffer=20
+Sitz und Registergericht: M=FCnchen HRB 181857
+USt-ID: DE-267481419
+
+--nextPart1540866.hqEZiY0n9z
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAABCgAGBQJXFnLoAAoJECiijTBlkGWF4PoP/3cGHg6wr4vnEvvF5C2cOJIn
+yzbekDRWD2moHg4JnhdNgds6Su8vmtwzafgXN3PneK+BqgDHRSf6mH3Z2hWTUY3l
+NZ0ZH6RB2Z7vIhWoY/JqZ7A7hScOgpAUJYBiTt6s8+KIUkWMjJCLFQIhYeOL4lFp
+wJP1KblZHJfywTPIELXPKs0NCP6WOOMUdmEGxxDhlEdArulvCn6qoRHQQORztCf1
+e90IRu7csduRgRxw8gQj6czXAuM2fmjN90Az+1YKQ1LthrKrDfdxl9idJl77DA91
+G6ssdLYo+8qbap81bd1H0i1gyfJVCuyTQBTOHw65vs7gaQBeA+oHIFHRTi9OKiw6
+xXkAnvIMAAGw8EDm0IJP6VDD75dNvRSZgP81UDkoxmOLbCYf0pjXwI3TqPfPG3yY
+DP9QegKeEJD8iFVEIwv33p7lmIp2lYckZhfw2W5P4/sdeXsRXIrUq/eHHVRzgqwn
+Jm7lby2YDVXcnvWDdZ3bWO0VRHSwUk7hDguDQOGqEBQGEep7MfH1tMwtkpHOTS67
+dgwhrfG/o/Z6GfQESwm1aV+L1Ftmjt+xHloOFvKwCXmfEh2J6opOMTCXrs3+um/x
+Tm/rvC9fTH8Kuawi/rU3v9AxGL7wfzZoVVTkQUKY3mYHuauChwpJ63R3FonUi5nI
+icDYVCQlTNQ5jxL46y1E
+=kKJ4
+-----END PGP SIGNATURE-----
+
+--nextPart1540866.hqEZiY0n9z--
+
+
+
+--===============2140798148781056965==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============2140798148781056965==--
+
+
 
