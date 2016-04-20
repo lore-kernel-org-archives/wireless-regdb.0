@@ -1,15 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mout.kundenserver.de ([212.227.126.187])
+Received: from mail-wm0-x22b.google.com ([2a00:1450:400c:c09::22b])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1augHM-000173-2K
- for wireless-regdb@lists.infradead.org; Mon, 25 Apr 2016 13:10:21 +0000
-From: Maximilian Engelhardt <engelhardt@perisens.de>
-Date: Mon, 25 Apr 2016 15:09:48 +0200
-Message-ID: <1627007.Hvd6lR1COR@perisens15>
-MIME-Version: 1.0
-Subject: [wireless-regdb] wireless-regdb: Update regulatory references for
-	Germany (DE)
+ id 1asgFv-0001NM-By
+ for wireless-regdb@lists.infradead.org; Wed, 20 Apr 2016 00:44:36 +0000
+Received: by mail-wm0-x22b.google.com with SMTP id n3so56231942wmn.0 for
+ <wireless-regdb@lists.infradead.org>; Tue, 19 Apr 2016 17:44:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=from:to:cc:subject:date:message-id;
+ bh=jK8HyFDK7RAqrvoS7lWUYcKBNBcgycVJmR2vTMKA96I=;
+ b=iLxGdmTe4PdP5BRiUM0vdRCuEZQ96axrxS1t/nSbmMhI+MOKuagxjEwDLAMJP6jt3K
+ 31g7laJnXkfIne9rTKFGX9Bk42gIyBaNlmnbbqAUgRtf1rS06PL1RtF6RuynqkBCiBSv
+ wcMNc/7bLKVJlRtl3ER8DbFn8akLR2G/pL6g39/BvCj4RrdCjRKM9zdRZF5fc9er3/qM
+ m0wkKl9CNr8Eup8R9UOx5z/k7k7pR8PfFwUcZsXdE5NIBbKQZVm5xBqd5kyQXYGX/t3M
+ OCaGY8LWZ2zDgdPvIqeTV4RnUqYJa7OYKV9HhIuOEFXZk9j7gUH4tmJgTW4Bba10I/GR 0U/Q==
+From: Petko Bordjukov <bordjukov@gmail.com>
+Date: Wed, 20 Apr 2016 03:44:02 +0300
+Message-Id: <1461113043-30102-1-git-send-email-bordjukov@gmail.com>
+Subject: [wireless-regdb] Updates for the regulatory rules for Bulgaria
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -19,195 +27,72 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============4708787224256485763=="
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-To: seth.forshee@canonical.com
-Cc: linux-wireless@vger.kernel.org, maxi@daemonizer.de, wireless-regdb@lists.infradead.org
+Content-Transfer-Encoding: 8bit
+To: wireless-regdb@lists.infradead.org
+Cc: bordjukov@gmail.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
---===============4708787224256485763==
-Content-Type: multipart/signed; boundary="nextPart1816405.RaMNMoAWtq"; micalg="pgp-sha512"; protocol="application/pgp-signature"
+Hello,
 
+There seem to be discrepancies between the current regulatory
+rules for Bulgaria (BG) and what has been mandated by the
+Communications Regulation Commission.
 
---nextPart1816405.RaMNMoAWtq
-Content-Transfer-Encoding: quoted-printable
-Content-Type: text/plain; charset="utf-8"
+First, the maximum e.i.r.p. for all the bands in the 5170 MHz to
+5710 MHz range seems to be 3 dBm lower than what's permitted by
+the CRC. This change was introduced with commit
+236efecf6685f917baa26aa0108b1eebce910bf3 and is attributed to
+QCA's regulatory team's efforts. I'd be grateful if the QCA
+regulatory team reviews my patch just in case I'm missing
+something.
 
-Hi,
+Here's what I'm getting from the CRC's EU-harmonized frequency
+list[1]:
 
-The "Frequenznutzungsplan" is not really a good reference as it's a lis=
-t
-of all frequency allocations and does only list basic information about=
+WDTS 2400-2483.5 MHz
+100 mW maximum e.i.r.p.
+10 mW/MHz maximum e.i.r.p. spectral density
 
-the allocation. This patch changes the comments to reference directly
-the corresponding documents which provide all information about the
-allocation.
+WAS/RLANs 5470-5725 MHz
+1 W maximum mean e.i.r.p.
+50 mW/MHz maximum spectral density of the mean e.i.r.p.
+Comment: The devices must use TPC that ensures average reduction
+of 3 dB of the maximum transmit power of the system. In case TPC
+is not used, the maximum mean e.i.r.p and maximum density of the
+mean e.i.r.p. are lowered by 3 dB.
 
-This patch does only change comments, all entries have been left
-unchanged. However the entries have been verified to match the mentione=
-d
-documents.
+WAS/RLANs 5150-5250 MHz
+200 mW maximum mean e.i.r.p.
+10 mW/MHz maximum spectral density of the mean e.i.r.p.
 
-This patch is based on my last path that adds the short range devices b=
-and for=20
-Germany.
+WAS/RLANs 5250-5350 MHz
+200 mW maximum mean e.i.r.p.
+10 mW/MHz maximum spectral density of the mean e.i.r.p.
+Comment: The devices must use TPC that ensures average reduction
+of 3 dB of the maximum transmit power of the system. In case TPC
+is not used, the maximum mean e.i.r.p and maximum density of the
+mean e.i.r.p. are lowered by 3 dB.
 
-Thanks,
-Maxi
+Second, the CRC mandates that the 60 GHz RLAN frequencies are
+only for indoor use. As a side note, the last version of the ETSI
+EN 302 561 standard mandates that the appropriate National
+Administrations are to state the maximum permitted output power,
+which as I see it is in conflict with the current state of most
+of the regdb, at least concerning the EU countries.
 
+[1] http://crc.bg/files/_bg/Spisak_09-06-2015.pdf
 
-Signed-off-by: Maximilian Engelhardt <engelhardt@perisens.de>
-=2D--
- db.txt | 34 +++++++++++++++++++++-------------
- 1 file changed, 21 insertions(+), 13 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index 38a9340..7870dd6 100644
-=2D-- a/db.txt
-+++ b/db.txt
-@@ -308,33 +308,41 @@ country CZ: DFS-ETSI
- =09# 60 GHz band channels 1-4, ref: Etsi En 302 567
- =09(57000 - 66000 @ 2160), (40)
-=20
-=2D# Data from "Frequenznutzungsplan" (as published in April 2008), downl=
-oaded from
-=2D# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38448/public=
-ationFile/2659/Frequenznutzungsplan2008_Id17448pdf.pdf
-=2D# For the 5GHz range also see
-=2D# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38216/public=
-ationFile/6579/WLAN5GHzVfg7_2010_28042010pdf.pdf
-=2D# The values have been reduced by a factor of 2 (3db) for non TPC devi=
-ces
-=2D# (in other words: devices with TPC can use twice the tx power of this=
- table).
-=2D# Note that the docs do not require TPC for 5150--5250; the reduction =
-to
-=2D# 100mW thus is not strictly required -- however the conservative 100m=
-W
-+# Allocation for the 2.4 GHz band (Vfg 10 / 2013, Allgemeinzuteilung v=
-on
-+# Frequenzen f=C3=BCr die Nutzung in lokalen Netzwerken; Wireless Loca=
-l Area
-+# Networks (WLAN-Funkanwendungen).
-+# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
-/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
-ungen/2013_10_WLAN_2,4GHz_pdf.pdf
-+#
-+# Allocation for the 5 GHz band (Vfg. 7 / 2010, Allgemeinzuteilung von=
-
-+# Frequenzen in den Bereichen 5150 MHz - 5350 MHz und 5470 MHz - 5725 =
-MHz f=C3=BCr
-+# Funkanwendungen zur breitbandigen Daten=C3=BCbertragung, WAS/WLAN (=E2=
-=80=9EWireless
-+# Access Systems including Wireless Local Area Networks=E2=80=9C).
-+# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
-/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
-ungen/2010_07_WLAN_5GHz_pdf.pdf
-+# The values for the 5 GHz have been reduced by a factor of 2 (3db) fo=
-r non TPC
-+# devices (in other words: devices with TPC can use twice the tx power=
- of this
-+# table). Note that the docs do not require TPC for 5150--5250; the re=
-duction
-+# to 100mW thus is not strictly required -- however the conservative 1=
-00mW
- # limit is used here as the non-interference with radar and satellite
- # apps relies on the attenuation by the building walls only in the
- # absence of DFS; the neighbour countries have 100mW limit here as wel=
-l.
-+#
- # The ETSI EN 300 440-1 standard for short range devices in the 5 GHz =
-band has
- # been implemented in Germany:
- # https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
-/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
-ungen/2014_69_SRD_pdf.pdf
-+#
-+# Allocation for the 60 GHz band (Allgemeinzuteilung von Frequenzen im=
-
-+# Bereich 57 GHz - 66 GHz f=C3=BCr Funkanwendungen f=C3=BCr weitbandig=
-e
-+# Daten=C3=BCbertragungssysteme; =E2=80=9EMultiple Gigabit WAS/RLAN Sy=
-stems (MGWS)=E2=80=9C).
-+# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
-/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
-ungen/2011_08_MGWS_pdf.pdf
-=20
- country DE: DFS-ETSI
-=2D=09# entries 279004 and 280006
- =09(2400 - 2483.5 @ 40), (100 mW)
-=2D=09# entry 303005
- =09(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW
-=2D=09# entries 304002 and 305002
- =09(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
-=2D=09# entries 308002, 309001 and 310003
- =09(5470 - 5725 @ 160), (500 mW), DFS
- =09# short range devices (ETSI EN 300 440-1)
- =09(5725 - 5875 @ 80), (25 mW)
-=2D=09# 60 GHz band channels 1-4, ref: Etsi En 302 567
-+=09# 60 GHz band channels 1-4 (ETSI EN 302 567)
- =09(57000 - 66000 @ 2160), (40)
-=20
- country DK: DFS-ETSI
-=2D-=20
-Maximilian Engelhardt
-Dipl.-Ing. (Univ.)
-=20
-perisens GmbH
-Lichtenbergstra=C3=9Fe 8
-85748 Garching bei M=C3=BCnchen
-
-tel:    +49 89 2155203-10
-fax:    +49 89 2155203-19
-web:    http://www.perisens.de/
-_____________
-
-perisens GmbH
-Gesch=C3=A4ftsf=C3=BChrer: Dr. Florian Pfeiffer=20
-Sitz und Registergericht: M=C3=BCnchen HRB 181857
-USt-ID: DE-267481419
-
---nextPart1816405.RaMNMoAWtq
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part.
-Content-Transfer-Encoding: 7Bit
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v2
-
-iQIcBAABCgAGBQJXHhcgAAoJECiijTBlkGWF1kwP/jzzcdpA2ecMsYz9WEGdaYd9
-2GgAuxzBRRv1aH/5SRGwAJj5GiBBeuv0f5muWYkzQ4GxvdAghJdh6oNTuF39iEI0
-K46tDI3rLEFdqdRrA/Yc6tDMRgQn04RNoQUTHrC0aYXrIg6X4T9Htc+Gm8od6dBr
-FaDlZ+kzLGCQi7F5OApW85JwbMpMJU08NarabYMh+OvM3+7v+h33HbahkqMd39YE
-PkfZF/9Ews9JW9DWwjAESSMZZESHVyiFJqq7/BsbspzodhIpaCgMgEZwN3z+W6jn
-ne26LHRotJ+yNAgSP5tOMISqgQw1aqZdbT8uxiZs5SzmWGl7+9LSAdJw3jhFos8T
-zUgYjCm8ZUG1zONAZ8btnA6kTXybVFhrDAk6BheBUYkXBEU4OfcTzqbHFcL1UI/y
-vzlYeZu4tK2O3xzdc93N1fAHe3Ocg9oPqnRR4dRTouJ6h86usjC0BOO2cny6I+VJ
-s0AQ4wPv+3/wCxaKaJh9QCuKbuW1gQEjEWJstt2NrAHNWjmbbVHx3PgXGibCBxkL
-A0XtSUB468I6j3KC3ILM+vkvl8Oy9WZxz3RQs8HD1wSMX+Uuxdh5VEJ5Z6V/1Sg5
-Jdqv7QoI88TsirB03Fbae8Hl50bfvd9VEzuE9M9xqWhq+1kCekdVWIqK5OkPq96S
-14Qqkx9hxfsriSRfXQQ6
-=mSPE
------END PGP SIGNATURE-----
-
---nextPart1816405.RaMNMoAWtq--
-
-
-
---===============4708787224256485763==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
+-
+Regards,
+P.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
---===============4708787224256485763==--
-
-
 
