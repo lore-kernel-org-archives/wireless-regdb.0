@@ -1,25 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-wm0-x236.google.com ([2a00:1450:400c:c09::236])
+Received: from mail-wm0-x243.google.com ([2a00:1450:400c:c09::243])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1atX4U-000310-3c
- for wireless-regdb@lists.infradead.org; Fri, 22 Apr 2016 09:08:19 +0000
-Received: by mail-wm0-x236.google.com with SMTP id n3so16597913wmn.0 for
- <wireless-regdb@lists.infradead.org>; Fri, 22 Apr 2016 02:07:57 -0700 (PDT)
+ id 1atbBF-0004ap-0f
+ for wireless-regdb@lists.infradead.org; Fri, 22 Apr 2016 13:31:33 +0000
+Received: by mail-wm0-x243.google.com with SMTP id e201so4293636wme.2 for
+ <wireless-regdb@lists.infradead.org>; Fri, 22 Apr 2016 06:31:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20120113; h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=cUslfg3NLH3/FPWwWW84+OBrCEoXQxztsDgKPIaK6r8=;
- b=atIG0ld38r/LAK6UwqLEEvmfpkPxWyJEfub0AdO6U05x3mLa6kqKm6PZs3gFeFlg4Q
- a5YbaKA735Y3eix6vZB53PBGxVJRKT5bC4yhopw+CTqDgKarjvbl6PX/2/UTYKl7yQw7
- b8hSYblU2WJVAX39klPbGJkxFnm39yl7OVrh8o2xKD5xyeaDKbsv3c6khMt52zo8Gicu
- 1ObI2QJswpgxYHhOEbERdCy6sID0mWOEeNdeosT/Zv3TP8euV5fTnPncg3y1/6g93PjN
- 0xvXEqPlLI5ymb0lafB6GT1/47lXgT0i5Z4Zgr45RH2E3nPBVukl4p6Pgh8MJ3mzubac Gs3g==
+ bh=ln8WZJi+Yy0RjohT+890DIUFrPJDws90yEUM0N4jY08=;
+ b=IjyQ7Bx9kDEq9D1/VOWG2YbPfJo3yJ6QJRjuNnlPP3gW54nW4+mrQX0UYAHfPYeFbe
+ sC02YNPH7JETnlW4c54SWa05Lqnbnu8PqNXPID80/bBhbYUOGc6noAoQtkwnvrbe4Adu
+ vgqg7P095xkowTBaOaitRAyAo68P9VHXJfCyju94XZX49DvPltIwlm/LwvY97kOmNvOx
+ ycvXKhUKPJIauAWOXDdSqi+Dx2TjgCmkBYRdUSfM1BdCUC7covjnx/fG87WIeXMOLe7Q
+ aI3KxLD+zP5xXJS01o9iMTEhO4J1fVUa+PoF177tSJ+5T5LHBE5SCjBp4TrmJ/3YbthE cbUQ==
 From: Petko Bordjukov <bordjukov@gmail.com>
-Date: Fri, 22 Apr 2016 12:07:50 +0300
-Message-Id: <1461316070-32666-1-git-send-email-bordjukov@gmail.com>
-In-Reply-To: <1461258158-16699-1-git-send-email-bordjukov@gmail.com>
-References: <1461258158-16699-1-git-send-email-bordjukov@gmail.com>
-Subject: [wireless-regdb] [PATCH v3] Update the regulatory rules for
+Date: Fri, 22 Apr 2016 16:31:07 +0300
+Message-Id: <1461331867-29322-1-git-send-email-bordjukov@gmail.com>
+In-Reply-To: <1461316070-32666-1-git-send-email-bordjukov@gmail.com>
+References: <1461316070-32666-1-git-send-email-bordjukov@gmail.com>
+Subject: [wireless-regdb] [PATCH v4] Update the regulatory rules for
 	Bulgaria (BG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -42,21 +42,22 @@ List-ID: <wireless-regdb@lists.infradead.org>
 
 Make sure the rules reflect exatly the contents of the List of Radio
 Equipment That Uses Harmonized Within the European Union Bands and
-Electronic Communications Terminal Equipment[1] and add proper
-references.
+Electronic Communications Terminal Equipment[1], add proper references
+and document the power reduction in the 5250-5350 MHz and 5470-5725 MHz
+bands with a note.
 
 [1] http://www.crc.bg/files/_bg/Spisak_2015.pdf
 
 Signed-off-by: Petko Bordjukov <bordjukov@gmail.com>
 ---
- db.txt | 29 +++++++++++++++++++++--------
- 1 file changed, 21 insertions(+), 8 deletions(-)
+ db.txt | 32 ++++++++++++++++++++++++--------
+ 1 file changed, 24 insertions(+), 8 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index e9ba21a..19b9417 100644
+index e9ba21a..e976204 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -136,19 +136,32 @@ country BF: DFS-FCC
+@@ -136,19 +136,35 @@ country BF: DFS-FCC
  	(5490 - 5730 @ 160), (24), DFS
  	(5735 - 5835 @ 80), (30)
  
@@ -70,6 +71,9 @@ index e9ba21a..19b9417 100644
 +# List of radio equipment that uses harmonized within the European Union bands
 +# and electronic communications terminal equipment (the List):
 +# http://www.crc.bg/files/_bg/Spisak_2015.pdf
++#
++# Note: The transmit power limits in the 5250-5350 MHz and 5470-5725 MHz bands
++# can be raised by 3 dBm if TPC is enabled. Refer to BDS EN 301 893 for details.
  country BG: DFS-ETSI
 +	# Wideband data transmission systems (WDTS) in the 2.4GHz ISM band, ref:
 +	# I.22 of the List, BDS EN 300 328
