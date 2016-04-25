@@ -1,24 +1,15 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-lb0-x230.google.com ([2a00:1450:4010:c04::230])
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1ahsvM-0007jn-UW
- for wireless-regdb@lists.infradead.org; Mon, 21 Mar 2016 06:02:45 +0000
-Received: by mail-lb0-x230.google.com with SMTP id bc4so120409221lbc.2 for
- <wireless-regdb@lists.infradead.org>; Sun, 20 Mar 2016 23:02:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:date:message-id:subject:from:to;
- bh=yAwXoXKL4Ko2rYArKTW5ZOwTebbXL8BiNyIOnfC+Aks=;
- b=BlI+GM0RBqKitUerlle6q/nxEAAXXrja61AsrjTtoqdghH/5N/JyaPbp29uFobAZtg
- +JRfW6V34l+FYSP93QZaU5DDbZlYbXB/gYlyLzMoC2onMobJcxV3lrHsNWkSY1Y3Khk+
- mLCfxha523KocgqLUnI+SOl1LhTKdVLfEAmXniOCngNPkM//a4/2oQcbODCbeoudHmD5
- IbF0WWJGO3MLnMIcouurfty7xhpNp/P2KSpD7xh6gFNnkD31cEgQV60WBCd6uBojuc2R
- rAt0knu382hihiHPnwimOz+NtfE7PKuMJb6t2JXE19kg+NGhXhIEOwxmG1tZBjLVZoWb 1pJA==
+ id 1augHM-000173-2K
+ for wireless-regdb@lists.infradead.org; Mon, 25 Apr 2016 13:10:21 +0000
+From: Maximilian Engelhardt <engelhardt@perisens.de>
+Date: Mon, 25 Apr 2016 15:09:48 +0200
+Message-ID: <1627007.Hvd6lR1COR@perisens15>
 MIME-Version: 1.0
-Date: Mon, 21 Mar 2016 11:32:21 +0530
-Message-ID: <CAH9F5rmgEZXjDnWRUjMmMdW8obvKbkeEtciMLtiNYEGoX4AZsg@mail.gmail.com>
-From: Atul Joshi <atul.suresh.joshi@gmail.com>
-Subject: [wireless-regdb] US Disabling 11d?
+Subject: [wireless-regdb] wireless-regdb: Update regulatory references for
+	Germany (DE)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -28,49 +19,195 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: multipart/mixed; boundary="===============4708787224256485763=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, maxi@daemonizer.de, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
+--===============4708787224256485763==
+Content-Type: multipart/signed; boundary="nextPart1816405.RaMNMoAWtq"; micalg="pgp-sha512"; protocol="application/pgp-signature"
+
+
+--nextPart1816405.RaMNMoAWtq
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
 Hi,
-This is in response to the below mail from Guy.
-I am trying to find out what does it mean to clients/stations.
-1. Does it mean, AP can advertise non-US country but then STA needs to
-have some way to validate that ?
-2. Does it mean AP can not send country IE at all?
-3. How does FCC keep tab on rogue APs which can advertise non-US
-country in US? (does it mean user setting the country is disabled?)
-There are many questions around this..  it will be great if we can get
-clarifications on the changes needed in AP and STA mode.
 
-thanks
-atul
+The "Frequenznutzungsplan" is not really a good reference as it's a lis=
+t
+of all frequency allocations and does only list basic information about=
+
+the allocation. This patch changes the comments to reference directly
+the corresponding documents which provide all information about the
+allocation.
+
+This patch does only change comments, all entries have been left
+unchanged. However the entries have been verified to match the mentione=
+d
+documents.
+
+This patch is based on my last path that adds the short range devices b=
+and for=20
+Germany.
+
+Thanks,
+Maxi
 
 
-Hi All,
+Signed-off-by: Maximilian Engelhardt <engelhardt@perisens.de>
+=2D--
+ db.txt | 34 +++++++++++++++++++++-------------
+ 1 file changed, 21 insertions(+), 13 deletions(-)
 
-Recently I ran into this FCC new rule:
+diff --git a/db.txt b/db.txt
+index 38a9340..7870dd6 100644
+=2D-- a/db.txt
++++ b/db.txt
+@@ -308,33 +308,41 @@ country CZ: DFS-ETSI
+ =09# 60 GHz band channels 1-4, ref: Etsi En 302 567
+ =09(57000 - 66000 @ 2160), (40)
+=20
+=2D# Data from "Frequenznutzungsplan" (as published in April 2008), downl=
+oaded from
+=2D# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38448/public=
+ationFile/2659/Frequenznutzungsplan2008_Id17448pdf.pdf
+=2D# For the 5GHz range also see
+=2D# http://www.bundesnetzagentur.de/cae/servlet/contentblob/38216/public=
+ationFile/6579/WLAN5GHzVfg7_2010_28042010pdf.pdf
+=2D# The values have been reduced by a factor of 2 (3db) for non TPC devi=
+ces
+=2D# (in other words: devices with TPC can use twice the tx power of this=
+ table).
+=2D# Note that the docs do not require TPC for 5150--5250; the reduction =
+to
+=2D# 100mW thus is not strictly required -- however the conservative 100m=
+W
++# Allocation for the 2.4 GHz band (Vfg 10 / 2013, Allgemeinzuteilung v=
+on
++# Frequenzen f=C3=BCr die Nutzung in lokalen Netzwerken; Wireless Loca=
+l Area
++# Networks (WLAN-Funkanwendungen).
++# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
+/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
+ungen/2013_10_WLAN_2,4GHz_pdf.pdf
++#
++# Allocation for the 5 GHz band (Vfg. 7 / 2010, Allgemeinzuteilung von=
 
-FCC will disallow 802.11d after January 01, 2015
-After January 01, 2015, the FCC will not allow the use of 802.11d. The
-client cannot rely on the Access Point to ensure compliance to the FCC
-certified frequency bands. For example today, a non-U.S. AP can be
-used in the US, which will allow transmitting on channels 12 & 13 with
-unapproved power output in the 2.4 GHz band, or channels 120, 124 &
-128 which are prohibited in the 5 GHz band. This will not be the case
-once FCC enforces the new rule
++# Frequenzen in den Bereichen 5150 MHz - 5350 MHz und 5470 MHz - 5725 =
+MHz f=C3=BCr
++# Funkanwendungen zur breitbandigen Daten=C3=BCbertragung, WAS/WLAN (=E2=
+=80=9EWireless
++# Access Systems including Wireless Local Area Networks=E2=80=9C).
++# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
+/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
+ungen/2010_07_WLAN_5GHz_pdf.pdf
++# The values for the 5 GHz have been reduced by a factor of 2 (3db) fo=
+r non TPC
++# devices (in other words: devices with TPC can use twice the tx power=
+ of this
++# table). Note that the docs do not require TPC for 5150--5250; the re=
+duction
++# to 100mW thus is not strictly required -- however the conservative 1=
+00mW
+ # limit is used here as the non-interference with radar and satellite
+ # apps relies on the attenuation by the building walls only in the
+ # absence of DFS; the neighbour countries have 100mW limit here as wel=
+l.
++#
+ # The ETSI EN 300 440-1 standard for short range devices in the 5 GHz =
+band has
+ # been implemented in Germany:
+ # https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
+/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
+ungen/2014_69_SRD_pdf.pdf
++#
++# Allocation for the 60 GHz band (Allgemeinzuteilung von Frequenzen im=
 
-Does anyone know if there was any work done to support this?
++# Bereich 57 GHz - 66 GHz f=C3=BCr Funkanwendungen f=C3=BCr weitbandig=
+e
++# Daten=C3=BCbertragungssysteme; =E2=80=9EMultiple Gigabit WAS/RLAN Sy=
+stems (MGWS)=E2=80=9C).
++# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete=
+/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteil=
+ungen/2011_08_MGWS_pdf.pdf
+=20
+ country DE: DFS-ETSI
+=2D=09# entries 279004 and 280006
+ =09(2400 - 2483.5 @ 40), (100 mW)
+=2D=09# entry 303005
+ =09(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW
+=2D=09# entries 304002 and 305002
+ =09(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+=2D=09# entries 308002, 309001 and 310003
+ =09(5470 - 5725 @ 160), (500 mW), DFS
+ =09# short range devices (ETSI EN 300 440-1)
+ =09(5725 - 5875 @ 80), (25 mW)
+=2D=09# 60 GHz band channels 1-4, ref: Etsi En 302 567
++=09# 60 GHz band channels 1-4 (ETSI EN 302 567)
+ =09(57000 - 66000 @ 2160), (40)
+=20
+ country DK: DFS-ETSI
+=2D-=20
+Maximilian Engelhardt
+Dipl.-Ing. (Univ.)
+=20
+perisens GmbH
+Lichtenbergstra=C3=9Fe 8
+85748 Garching bei M=C3=BCnchen
 
-BR,
-Guy Mishol
+tel:    +49 89 2155203-10
+fax:    +49 89 2155203-19
+web:    http://www.perisens.de/
+_____________
+
+perisens GmbH
+Gesch=C3=A4ftsf=C3=BChrer: Dr. Florian Pfeiffer=20
+Sitz und Registergericht: M=C3=BCnchen HRB 181857
+USt-ID: DE-267481419
+
+--nextPart1816405.RaMNMoAWtq
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part.
+Content-Transfer-Encoding: 7Bit
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQIcBAABCgAGBQJXHhcgAAoJECiijTBlkGWF1kwP/jzzcdpA2ecMsYz9WEGdaYd9
+2GgAuxzBRRv1aH/5SRGwAJj5GiBBeuv0f5muWYkzQ4GxvdAghJdh6oNTuF39iEI0
+K46tDI3rLEFdqdRrA/Yc6tDMRgQn04RNoQUTHrC0aYXrIg6X4T9Htc+Gm8od6dBr
+FaDlZ+kzLGCQi7F5OApW85JwbMpMJU08NarabYMh+OvM3+7v+h33HbahkqMd39YE
+PkfZF/9Ews9JW9DWwjAESSMZZESHVyiFJqq7/BsbspzodhIpaCgMgEZwN3z+W6jn
+ne26LHRotJ+yNAgSP5tOMISqgQw1aqZdbT8uxiZs5SzmWGl7+9LSAdJw3jhFos8T
+zUgYjCm8ZUG1zONAZ8btnA6kTXybVFhrDAk6BheBUYkXBEU4OfcTzqbHFcL1UI/y
+vzlYeZu4tK2O3xzdc93N1fAHe3Ocg9oPqnRR4dRTouJ6h86usjC0BOO2cny6I+VJ
+s0AQ4wPv+3/wCxaKaJh9QCuKbuW1gQEjEWJstt2NrAHNWjmbbVHx3PgXGibCBxkL
+A0XtSUB468I6j3KC3ILM+vkvl8Oy9WZxz3RQs8HD1wSMX+Uuxdh5VEJ5Z6V/1Sg5
+Jdqv7QoI88TsirB03Fbae8Hl50bfvd9VEzuE9M9xqWhq+1kCekdVWIqK5OkPq96S
+14Qqkx9hxfsriSRfXQQ6
+=mSPE
+-----END PGP SIGNATURE-----
+
+--nextPart1816405.RaMNMoAWtq--
+
+
+
+--===============4708787224256485763==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============4708787224256485763==--
+
+
 
