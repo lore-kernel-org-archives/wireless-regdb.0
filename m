@@ -1,27 +1,31 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x22e.google.com ([2607:f8b0:4003:c06::22e])
+Received: from mail-oi0-x22d.google.com ([2607:f8b0:4003:c06::22d])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1axEMG-0005QP-Ce
- for wireless-regdb@lists.infradead.org; Mon, 02 May 2016 13:57:57 +0000
-Received: by mail-oi0-x22e.google.com with SMTP id v145so156778836oie.0 for
- <wireless-regdb@lists.infradead.org>; Mon, 02 May 2016 06:57:36 -0700 (PDT)
+ id 1axE8z-0006Yb-2f
+ for wireless-regdb@lists.infradead.org; Mon, 02 May 2016 13:44:13 +0000
+Received: by mail-oi0-x22d.google.com with SMTP id k142so189667690oib.1 for
+ <wireless-regdb@lists.infradead.org>; Mon, 02 May 2016 06:43:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=mK5D2Xm0HzHcDpmmUSaNl4yUyNsOS/mC/PNcZEiXWoY=;
- b=LDjurOKZlc6AyHu0+GOBJew42BNMFEpcfUZzvaK37U+J7yrVq7FZ755aHyDiUgNOeu
- j6Xv0ru3bDyTmVnNO+ZXdCgj0NkPLiZi6QbhsA9/T6OvOuUjsosj35LjzuNGpxQ+DVx8
- dc4o7Cxfm9y5ncKwFyBMx39/FxnllGniByUQEy4++wbOr/NjVU4SymLvdydIQp0c7KY4
- 7uanKEa+r69pNZpF+iyJANmW8yFBLhEgHZ3eCJbYWlHC8MXATdqGy2zXtKlLhe6d22FQ
- +HBOb1I2fNGkZCIWYg7qmmqsnsqX+ZJAW8zhDFGqpAiZhSaJUPvUJVpnqWp2yWcX1oPv
- Snkg==
-Date: Mon, 2 May 2016 08:57:34 -0500
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rMLnuEiUzbyOLq2Iwv+9lg0n19dN3ZJCTRWFh4Gy8tQ=;
+ b=oZ9+l+Lhr4Bm4/CCBrvZjwtisKWaylP1Xfv8X4n4SS6NXaFjufLOvpmSMTbNeFp+bm
+ sqFhCerSiTv/3rlE//AuQNixdlWXL1Mcw/4eFVrwAKqwrfJZZMgyaPwSVFD5LC/BbgNs
+ MmZazDaGUWb3r+tlqbN4Xm6GGScQ+NzKNO2yHpbg3DWvwE7EEy254tFjxKUcjVkT2oNE
+ eml4rHFCA8NYDSHT+PKoOankJuGNNobh6TSyeMlSXrIxDKbrsIayddSkoQfhj7dlty5q
+ ZciUtSHqv85pPyX0Qu7NnzH4AJCPlXp13GnQvIHvQdv2qsLDUdVesd1jxmtdRcNFpI10
+ tLSQ==
+Date: Mon, 2 May 2016 08:43:50 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20160502135734.GE2714@ubuntu-hedt>
+Message-ID: <20160502134350.GD2714@ubuntu-hedt>
+References: <1627007.Hvd6lR1COR@perisens15>
 MIME-Version: 1.0
 Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2016-05-02
+In-Reply-To: <1627007.Hvd6lR1COR@perisens15>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory references
+	for Germany (DE)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,34 +40,33 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: Maximilian Engelhardt <engelhardt@perisens.de>
+Cc: linux-wireless@vger.kernel.org, maxi@daemonizer.de, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2016-05-02) is available at:
+On Mon, Apr 25, 2016 at 03:09:48PM +0200, Maximilian Engelhardt wrote:
+> Hi,
+> 
+> The "Frequenznutzungsplan" is not really a good reference as it's a list
+> of all frequency allocations and does only list basic information about
+> the allocation. This patch changes the comments to reference directly
+> the corresponding documents which provide all information about the
+> allocation.
+> 
+> This patch does only change comments, all entries have been left
+> unchanged. However the entries have been verified to match the mentioned
+> documents.
+> 
+> This patch is based on my last path that adds the short range devices band for 
+> Germany.
+> 
+> Thanks,
+> Maxi
+> 
+> 
+> Signed-off-by: Maximilian Engelhardt <engelhardt@perisens.de>
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2016.05.02.tar.gz
-
-The short log of changes since the 2015-02-08 release is below.
-
-Thanks,
-Seth
-
----
-
-Anne Marcel Roorda (1):
-      Update regulatory rules for NL as per ETSI EN 300 440-1
-
-Maximilian Engelhardt (2):
-      wireless-regdb: Update regulatory rules for Germany (DE) on 5GHz
-      wireless-regdb: Update regulatory references for Germany (DE)
-
-Petko Bordjukov (1):
-      Update the regulatory rules for Bulgaria (BG)
-
-Seth Forshee (1):
-      wireless-regdb: update regulatory.bin based on preceding changes
-
+Applied, thanks.
 
 _______________________________________________
 wireless-regdb mailing list
