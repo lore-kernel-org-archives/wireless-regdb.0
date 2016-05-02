@@ -1,31 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x235.google.com ([2607:f8b0:4003:c06::235])
+Received: from mail-oi0-x22e.google.com ([2607:f8b0:4003:c06::22e])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1b7iu7-0000qH-Vg
- for wireless-regdb@lists.infradead.org; Tue, 31 May 2016 12:36:17 +0000
-Received: by mail-oi0-x235.google.com with SMTP id j1so297373112oih.3 for
- <wireless-regdb@lists.infradead.org>; Tue, 31 May 2016 05:35:52 -0700 (PDT)
+ id 1axEMG-0005QP-Ce
+ for wireless-regdb@lists.infradead.org; Mon, 02 May 2016 13:57:57 +0000
+Received: by mail-oi0-x22e.google.com with SMTP id v145so156778836oie.0 for
+ <wireless-regdb@lists.infradead.org>; Mon, 02 May 2016 06:57:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=iufn1Ee4sP05Lne5U0x64fR3cyfRw4so10hditLz3+I=;
- b=xTj8ErdEyKCXpDficLoegJe6xMwaXgIBkL8yL6ZI0Ys38CFI2GeH+wpgNdy5jum2Gi
- e2/yp+aURT6dWOidyStvov9k+ibOXpLOIfrAOMTyQ6dynm7pAMYk37DtCGij9Lrt6s3q
- YFmi8AePjqmNmC9UvtWh7D9q9OBDkrwo8Dpn4aLHYWud05MlMX9k5PplzDJ7xlnmjhfh
- UA6aCr7brTxM5HGRUOO6jXXEv1WEmqpXU8p2+hWQKPViQqQwIVLUoY1acDL3fic4R7iI
- OoKfFJt4R0DTMpYWMuq0QDxHPpCGGtnH0cpyI9Bs6I8922RXq5qrqmdoHxz4SEUYz49K
- r0qw==
-Date: Tue, 31 May 2016 07:35:50 -0500
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=mK5D2Xm0HzHcDpmmUSaNl4yUyNsOS/mC/PNcZEiXWoY=;
+ b=LDjurOKZlc6AyHu0+GOBJew42BNMFEpcfUZzvaK37U+J7yrVq7FZ755aHyDiUgNOeu
+ j6Xv0ru3bDyTmVnNO+ZXdCgj0NkPLiZi6QbhsA9/T6OvOuUjsosj35LjzuNGpxQ+DVx8
+ dc4o7Cxfm9y5ncKwFyBMx39/FxnllGniByUQEy4++wbOr/NjVU4SymLvdydIQp0c7KY4
+ 7uanKEa+r69pNZpF+iyJANmW8yFBLhEgHZ3eCJbYWlHC8MXATdqGy2zXtKlLhe6d22FQ
+ +HBOb1I2fNGkZCIWYg7qmmqsnsqX+ZJAW8zhDFGqpAiZhSaJUPvUJVpnqWp2yWcX1oPv
+ Snkg==
+Date: Mon, 2 May 2016 08:57:34 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20160531123550.GA93568@ubuntu-hedt>
-References: <1463822708-20053-1-git-send-email-qca_merez@qca.qualcomm.com>
+Message-ID: <20160502135734.GE2714@ubuntu-hedt>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1463822708-20053-1-git-send-email-qca_merez@qca.qualcomm.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Republic of Korea:
- Add 60GHz regulatory rules
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2016-05-02
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,41 +36,33 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Maya Erez <qca_merez@qca.qualcomm.com>
-Cc: wil6210@qca.qualcomm.com, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, May 21, 2016 at 12:25:08PM +0300, Maya Erez wrote:
-> Add 60GHz regulatory rules for Korea (KR).
-> Source is
-> http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
-> 
-> Signed-off-by: Maya Erez <qca_merez@qca.qualcomm.com>
-> ---
->  db.txt | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/db.txt b/db.txt
-> index da16f7c..143f915 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -664,6 +664,10 @@ country KR: DFS-JP
->  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
->  	(5490 - 5710 @ 160), (30), DFS
->  	(5735 - 5835 @ 80), (30)
-> +	# 60 GHz band channels 1-4,
-> +	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
-> +	(57000 - 66000 @ 2160), (57)
-> +
+A new release of wireless-regdb (master-2016-05-02) is available at:
 
-Thanks for the patch. I wanted to double check with you that the power
-limit is correct though, since it seems extremely high (an order of
-magnitude higher than what we have for any other country in fact). I
-can't make out much of anything from the link, and I can't even run it
-through google translate since it's composed of images rather than text.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2016.05.02.tar.gz
+
+The short log of changes since the 2015-02-08 release is below.
 
 Thanks,
 Seth
+
+---
+
+Anne Marcel Roorda (1):
+      Update regulatory rules for NL as per ETSI EN 300 440-1
+
+Maximilian Engelhardt (2):
+      wireless-regdb: Update regulatory rules for Germany (DE) on 5GHz
+      wireless-regdb: Update regulatory references for Germany (DE)
+
+Petko Bordjukov (1):
+      Update the regulatory rules for Bulgaria (BG)
+
+Seth Forshee (1):
+      wireless-regdb: update regulatory.bin based on preceding changes
 
 
 _______________________________________________
