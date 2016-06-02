@@ -1,27 +1,22 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x234.google.com ([2607:f8b0:4003:c06::234])
+Received: from wolverine02.qualcomm.com ([199.106.114.251])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1bBMDW-0006hN-G3
- for wireless-regdb@lists.infradead.org; Fri, 10 Jun 2016 13:11:19 +0000
-Received: by mail-oi0-x234.google.com with SMTP id p204so111137582oih.3 for
- <wireless-regdb@lists.infradead.org>; Fri, 10 Jun 2016 06:10:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=yhy9voXkk5WgNtYiftlju1qEngnzksLKEaBukpmr0Uw=;
- b=fPdzEdvLREsgc/9JjMCQF90ongge85MzJkzWkmSEGM2JZ5NpF0SW6COtuaX7xcaVWJ
- ucvr66FoPA5mVyF4XkCve4jW2+Rz1YIiBt64GHxRy+5j9hCGi7HqPMt9++pgRpgiEDQ5
- VruqwurxOpCC3rKyHzHvYGghey4h5aWac1ytzsf4yneQkxVxrEl+81QVvsnjmJwmDVqj
- T3oS803gi4e5wWLuN0gel+TVQ+ERB35x+b2yq+1gblXXMlqkdtTJ/ezLWeXppcvYUW0R
- M4e4kbS7YeTVSF5T4n1YGmcpDJBJ3mml6zCLQMtoV7e9nzpINs0z7iFbYv8/oNHLn9Nd
- n32g==
-Date: Fri, 10 Jun 2016 08:10:55 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20160610131055.GB78484@ubuntu-hedt>
-MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2016-06-10
+ id 1b8YN7-0008EL-PF
+ for wireless-regdb@lists.infradead.org; Thu, 02 Jun 2016 19:33:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qualcomm.com; i=@qualcomm.com; q=dns/txt; s=qcdkim;
+ t=1464896017; x=1496432017;
+ h=from:cc:to:subject:date:message-id:x-mailer;
+ bh=egTtJfoEvDgeNCrvYbezQDWiecyN6FuJU0bqDuDH0Ko=;
+ b=Gkg8uisWcxfdy+5gCWcbzxBNr39TSx/r0pnLEMVTh/5mO/s6/2LEe842
+ zX2NfwO4mSgOCtzdBuciJSg2OBp/6K14qY4luAVetzR13Lz8HoFP1WMiG
+ AOmgehsGYs0y4mBXCflO73BDfPA6xrcZUkrSZeQ4FY8elzjp+yidI3bB9 g=;
+From: Maya Erez <qca_merez@qualcomm.com>
+Date: Thu,  2 Jun 2016 22:33:05 +0300
+Message-Id: <1464895985-7182-1-git-send-email-qca_merez@qca.qualcomm.com>
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Republic of Korea: Add
+	60GHz regulatory rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -31,31 +26,42 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: Maya Erez <qca_merez@qualcomm.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, wil6210@qualcomm.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2016-06-10) is available at:
+Add 60GHz regulatory rules for Korea (KR).
+Source is
+http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2016.06.10.tar.gz
-
-The short log of changes since the 2015-05-02 release is below.
-
-Thanks,
-Seth
-
+Signed-off-by: Maya Erez <qca_merez@qca.qualcomm.com>
 ---
+ db.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Maya Erez (1):
-      wireless-regdb: Republic of Korea: Add 60GHz regulatory rules
-
-Seth Forshee (1):
-      wireless-regdb: update regulatory.bin based on preceding changes
+diff --git a/db.txt b/db.txt
+index da16f7c..48df9a5 100644
+--- a/db.txt
++++ b/db.txt
+@@ -664,6 +664,10 @@ country KR: DFS-JP
+ 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+ 	(5490 - 5710 @ 160), (30), DFS
+ 	(5735 - 5835 @ 80), (30)
++	# 60 GHz band channels 1-4,
++	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
++	(57000 - 66000 @ 2160), (43)
++
+ 
+ country KW: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-- 
+1.8.5.2
 
 
 _______________________________________________
