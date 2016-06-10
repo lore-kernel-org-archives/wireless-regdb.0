@@ -1,33 +1,27 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x231.google.com ([2607:f8b0:4003:c06::231])
+Received: from mail-oi0-x234.google.com ([2607:f8b0:4003:c06::234])
  by bombadil.infradead.org with esmtps (Exim 4.80.1 #2 (Red Hat Linux))
- id 1axE7e-0005hw-8p
- for wireless-regdb@lists.infradead.org; Mon, 02 May 2016 13:42:50 +0000
-Received: by mail-oi0-x231.google.com with SMTP id k142so189614314oib.1 for
- <wireless-regdb@lists.infradead.org>; Mon, 02 May 2016 06:42:28 -0700 (PDT)
+ id 1bBMDW-0006hN-G3
+ for wireless-regdb@lists.infradead.org; Fri, 10 Jun 2016 13:11:19 +0000
+Received: by mail-oi0-x234.google.com with SMTP id p204so111137582oih.3 for
+ <wireless-regdb@lists.infradead.org>; Fri, 10 Jun 2016 06:10:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=ELp0qdi2Q8EYCYprjX8VTd4BjiqTddBOG5R0ZVB80fc=;
- b=WzP+5YcJ19svD8fVYihSxDEMXBJF73qMcKh8oHuvg2AlVN9vuEuRqwgzYKEPluCxjD
- 49rOhMHL0eC2iNQYQBj5DNlwmuDI5Cb9glG1nxgNGHqO1Kcod0eRSoRElR29m15d+Tr/
- nioSE7CuncydshG20XQYw4vvL/2HzDCor+u/zSC46YM55K0HStXSiMEbjxbo+Y0RewXM
- 0bIee+cUw1QWHzu8isxdjlGChtYVBB52NAMjw/E/HZxkx9eZviKO5fJLsFLBVkuIyCH/
- jolLEgs29XDqX69I1p5H3sX2e5dkqzcclhCOodxSKlXGeD926tvkFumcbwqoqEERXa0X
- LDOA==
-Date: Mon, 2 May 2016 08:42:26 -0500
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=yhy9voXkk5WgNtYiftlju1qEngnzksLKEaBukpmr0Uw=;
+ b=fPdzEdvLREsgc/9JjMCQF90ongge85MzJkzWkmSEGM2JZ5NpF0SW6COtuaX7xcaVWJ
+ ucvr66FoPA5mVyF4XkCve4jW2+Rz1YIiBt64GHxRy+5j9hCGi7HqPMt9++pgRpgiEDQ5
+ VruqwurxOpCC3rKyHzHvYGghey4h5aWac1ytzsf4yneQkxVxrEl+81QVvsnjmJwmDVqj
+ T3oS803gi4e5wWLuN0gel+TVQ+ERB35x+b2yq+1gblXXMlqkdtTJ/ezLWeXppcvYUW0R
+ M4e4kbS7YeTVSF5T4n1YGmcpDJBJ3mml6zCLQMtoV7e9nzpINs0z7iFbYv8/oNHLn9Nd
+ n32g==
+Date: Fri, 10 Jun 2016 08:10:55 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20160502134226.GA2714@ubuntu-hedt>
-References: <1958820.LBuzOElZFT@perisens15>
- <20160421131938.GA95003@ubuntu-hedt>
- <2919568.ssjlN6KUVX@perisens15>
+Message-ID: <20160610131055.GB78484@ubuntu-hedt>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2919568.ssjlN6KUVX@perisens15>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
-	Germany (DE) on 5GHz
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2016-06-10
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,76 +31,35 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Maximilian Engelhardt <engelhardt@perisens.de>
-Cc: linux-wireless@vger.kernel.org, maxi@daemonizer.de, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Apr 21, 2016 at 08:08:46PM +0200, Maximilian Engelhardt wrote:
-> On Thursday 21 April 2016 08:19:38 Seth Forshee wrote:
-> > On Tue, Apr 19, 2016 at 08:03:16PM +0200, Maximilian Engelhardt wrote:
-> > > Hi,
-> > > 
-> > > In Europe ETSI standardized the used for short range devices (SRD) [1] in
-> > > ETSI EN 300 440-1 [2].
-> > > According to this standard generic use equipment is allowed to transmit in
-> > > the frequency range form 5725 MHz to 5875 MHz with a maximum output power
-> > > of 25 mW e.i.r.p. This generic allocation also allows transmission of
-> > > 802.11 devices.
-> > > 
-> > > [3] has a list of countries and their status about the implementation of
-> > > the SRD frequency bands. For the 5 GHz band this can be seen on page 38
-> > > in the paragraph ANNEX 1 and the entry Annex j.
-> > > 
-> > > Attached is a patch that adds the 5 GHz SRD band to db.txt for Germany.
-> > > 
-> > > If it is acceptable I can provide a patch adding the 5 GHz SRD band for
-> > > the
-> > > other countries listed in [3].
-> > 
-> > The changes seem okay as far as I can tell. You do need to include your
-> > signed-off-by tag on the patch however, see
-> > https://git.kernel.org/cgit/linux/kernel/git/sforshee/wireless-regdb.git/tre
-> > e/CONTRIBUTING.
-> > 
-> > Thanks,
-> > Seth
-> 
-> Hi Seth,
-> 
-> Thanks for your reply. You can find my signed-off-by tag below together with 
-> the unchanged patch.
-> 
-> I can affirm I did check this carefully with the official documents of the 
-> German administration for radio equipment (Bundesnetzagentur für Elektrizität, 
-> Gas, Telekommunikation, Post und Eisenbahnen).
-> 
-> I noticed that the links to the other entries for Germany are broken, as the 
-> website design was changed and thus all old link became non functional. I can 
-> provide a patch fixing this if it is something that's considered useful.
-> 
-> 
-> The comments to my initial mail indicated that the statement in the ERC 
-> recommendation I linked are alone not enough to add this frequency ranges for 
-> other countries. Unfortunately I don't have the possibility to do these checks 
-> for countries other than Germany.
-> 
-> If there is anything I can do to help adding the SRD entries for more 
-> countries please let me know.
-> 
-> Thanks,
-> Maxi
-> 
-> 
-> Signed-off-by: Maximilian Engelhardt <engelhardt@perisens.de>
+A new release of wireless-regdb (master-2016-06-10) is available at:
 
-Applied, thanks.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2016.06.10.tar.gz
+
+The short log of changes since the 2015-05-02 release is below.
+
+Thanks,
+Seth
+
+---
+
+Maya Erez (1):
+      wireless-regdb: Republic of Korea: Add 60GHz regulatory rules
+
+Seth Forshee (1):
+      wireless-regdb: update regulatory.bin based on preceding changes
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
