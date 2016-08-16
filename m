@@ -1,29 +1,20 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-yw0-x22f.google.com ([2607:f8b0:4002:c05::22f])
+Received: from champagne.comp.nus.edu.sg ([137.132.80.90])
  by bombadil.infradead.org with esmtps (Exim 4.85_2 #1 (Red Hat Linux))
- id 1bf1Qh-0007XT-HF
- for wireless-regdb@lists.infradead.org; Wed, 31 Aug 2016 09:03:32 +0000
-Received: by mail-yw0-x22f.google.com with SMTP id z8so26934604ywa.1 for
- <wireless-regdb@lists.infradead.org>; Wed, 31 Aug 2016 02:03:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
- bh=1YrcWJIQZcjnzBtQsvBquVplWjiTqSGCWsOi72xZCpc=;
- b=BMrQtac43BZE6KuTIKrvnZj0QqrmUlLsSw0cpgps8QQjAk0YoX8iMqYxFSJqFAKvmz
- gd+BYFBoQj+V1cvUHpxzPV02i4oDOHVY2VRsGaJgngr4EHg6gh1/vLn6RXAGgH4zDt9g
- TwPds7pfepLKY9/+lVpTAYz3DID4aCpZ9b5HCpF6Yh//h+4VrmTSVzKTHQTbeJLo3lfr
- EBuiJ5i4YxnEau3h+p0MRjvvmVwH/15zm8Pz7TtulYnzpIH528gmemjYD+HvI2eCgCWE
- 2WcSiFEVAfIxPUFK3JO50tVvW27xyWSV1kddmke0RUJuEaDkAAZ1+XewondU8Wm2G0qG 5gWw==
+ id 1bZfHv-00041K-Km
+ for wireless-regdb@lists.infradead.org; Tue, 16 Aug 2016 14:24:21 +0000
+Received: from mail-oi0-f72.google.com ([209.85.218.72])
+ by champagne.comp.nus.edu.sg (Exim) with esmtps (TLSv1:DES-CBC3-SHA:168)
+ id 1bZfHY-0006ca-Oe
+ for wireless-regdb@lists.infradead.org; Tue, 16 Aug 2016 22:23:57 +0800
+Received: by mail-oi0-f72.google.com with SMTP id s207so213165120oie.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 16 Aug 2016 07:23:56 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CABPxzY+na77=379E2tRDnbDzE=LOrz9ObahLTLoBTg+hhd8DBw@mail.gmail.com>
-References: 
-	 <CABPxzY+na77=379E2tRDnbDzE=LOrz9ObahLTLoBTg+hhd8DBw@mail.gmail.com>
-From: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Date: Wed, 31 Aug 2016 14:32:49 +0530
-Message-ID: <CABPxzYJHMTSCvoLaLohfKxHDVR3uQk8jKGF3aDtMWJu4-fxfuw@mail.gmail.com>
-Subject: Re: [wireless-regdb] [RFD] mac80211: Handling local operating
- class in (E)CSA
+From: Raj Joshi <rajjoshi@comp.nus.edu.sg>
+Date: Tue, 16 Aug 2016 22:23:14 +0800
+Message-ID: <CA+uUJGs7HGamb3duZ_9PYfx++43F3UWE2nO4C3AN9Saen=iMrA@mail.gmail.com>
+Subject: [wireless-regdb] DFS radar pattern detection in different regions
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,28 +29,43 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
+To: ath10k <ath10k@lists.infradead.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Jul 25, 2016 at 12:56 PM, Krishna Chaitanya
-<chaitanya.mgit@gmail.com> wrote:
->
-> Hi,
->
-> Some AP's use local operating class in (E)CSA IE's. Currently
-> mac80211 fails the parsing of those IE's and results in a
-> disconnection.
->
-> What is the best way to add support for local operating classes?
->
-> a) Maintaining a per country operating class table in cfg80211
->
-> b) Embed operating class info in regdb.txt (crda)
->
-> c) Remove the usage of band to calculate frequency? I dont know
-> of a generic formula to calculate this across bands. So not possible.
->
-Any ideas?
+Hi,
+
+I am aware that DFS scan and pattern detection is possible in ath10k
+or to be precise it is implemented in the ath kernel module. From the
+source code (dfs_pattern_detector.c), I can see that there are
+patterns specific to ETSI, FCC and JP regulatory regions.
+
+I got some conceptual questions regarding the pattern detection and regulations:
+
+Q.1 For a given country, the wireless-regdb [1] specifies one of these
+3 regions for DFS. For example, "country AE: DFS-FCC" or "country AF:
+DFS-ETSI". What does this mean? Does it mean that country AE follows
+DFS rules of FCC and that country AF follows those of ETSI?
+
+Q.2 If the above is the case, then can I run ath10k "correctly" as
+well as "legally" in country AE, given that pattern detection is
+implemented for FCC? When I say "correctly", I mean that pattern
+detection will not have any false negatives. And when I say "legally",
+I mean that my ath10k device would comply with the local regulations
+of country AE, given that my device is FCC DFS compliant.
+
+It is little hard to believe that all the world's radar patterns could
+be covered by 3 regulatory standards (FCC, ETSI and JP). Also if that
+was the case, then ath10k already does a very good job with DFS
+channels and the new swanky 802.11ac devices such as [2] are simply
+not worth their price!
+
+I would appreciate if someone can provide a clarification around this.
+
+Thanks,
+Raj
+
+[1] http://git.kernel.org/cgit/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt
+[2] https://www.kickstarter.com/projects/portalwifi/portal-turbocharged-wifi/description
 
 _______________________________________________
 wireless-regdb mailing list
