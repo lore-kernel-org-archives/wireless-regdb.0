@@ -1,25 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-yw0-x242.google.com ([2607:f8b0:4002:c05::242])
+Received: from mail-yw0-x22f.google.com ([2607:f8b0:4002:c05::22f])
  by bombadil.infradead.org with esmtps (Exim 4.85_2 #1 (Red Hat Linux))
- id 1bRaI9-0005O6-Vf
- for wireless-regdb@lists.infradead.org; Mon, 25 Jul 2016 07:27:10 +0000
-Received: by mail-yw0-x242.google.com with SMTP id u134so11584414ywg.3 for
- <wireless-regdb@lists.infradead.org>; Mon, 25 Jul 2016 00:26:49 -0700 (PDT)
+ id 1bf1Qh-0007XT-HF
+ for wireless-regdb@lists.infradead.org; Wed, 31 Aug 2016 09:03:32 +0000
+Received: by mail-yw0-x22f.google.com with SMTP id z8so26934604ywa.1 for
+ <wireless-regdb@lists.infradead.org>; Wed, 31 Aug 2016 02:03:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20120113; h=mime-version:from:date:message-id:subject:to;
- bh=FvcTB5m2aVqjHN1c+uelUqQzPEQ6RWGgup+6t5oh+nw=;
- b=RcSpZpmlbCfOz2Ny6gkMKWdo7DNmpk8eVSaOEn309cyJvMbjwz9BpmzD4RsXl7ozh4
- RropBCkAZDO4HATHwHbg9uFljVC8CJzOPEVSx0CrnNaXVrMgY79PVe4jg6tkfJeffscB
- h0Ag/B8Ob+LDb1xJzXhDox9raCBkLc7iEb8hSgIuRiPo6CpfWazaHuPSpWMULN4T4PvL
- vgT4AketgshegWDKAZVMsqm2UGdERjCP82kwAmMhbLK1cDXor5UJOHP2BG2jelv6zVHm
- 0vZVxoFkbggnF2Og5mFKVUpAdaEQDgjUEcHUvvNMA2zHJp5hdhwJ3YGkET8nFl3IlCzk Zcbw==
+ s=20120113;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+ bh=1YrcWJIQZcjnzBtQsvBquVplWjiTqSGCWsOi72xZCpc=;
+ b=BMrQtac43BZE6KuTIKrvnZj0QqrmUlLsSw0cpgps8QQjAk0YoX8iMqYxFSJqFAKvmz
+ gd+BYFBoQj+V1cvUHpxzPV02i4oDOHVY2VRsGaJgngr4EHg6gh1/vLn6RXAGgH4zDt9g
+ TwPds7pfepLKY9/+lVpTAYz3DID4aCpZ9b5HCpF6Yh//h+4VrmTSVzKTHQTbeJLo3lfr
+ EBuiJ5i4YxnEau3h+p0MRjvvmVwH/15zm8Pz7TtulYnzpIH528gmemjYD+HvI2eCgCWE
+ 2WcSiFEVAfIxPUFK3JO50tVvW27xyWSV1kddmke0RUJuEaDkAAZ1+XewondU8Wm2G0qG 5gWw==
 MIME-Version: 1.0
+In-Reply-To: <CABPxzY+na77=379E2tRDnbDzE=LOrz9ObahLTLoBTg+hhd8DBw@mail.gmail.com>
+References: 
+	 <CABPxzY+na77=379E2tRDnbDzE=LOrz9ObahLTLoBTg+hhd8DBw@mail.gmail.com>
 From: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Date: Mon, 25 Jul 2016 12:56:28 +0530
-Message-ID: <CABPxzY+na77=379E2tRDnbDzE=LOrz9ObahLTLoBTg+hhd8DBw@mail.gmail.com>
-Subject: [wireless-regdb] [RFD] mac80211: Handling local operating class in
-	(E)CSA
+Date: Wed, 31 Aug 2016 14:32:49 +0530
+Message-ID: <CABPxzYJHMTSCvoLaLohfKxHDVR3uQk8jKGF3aDtMWJu4-fxfuw@mail.gmail.com>
+Subject: Re: [wireless-regdb] [RFD] mac80211: Handling local operating
+ class in (E)CSA
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,26 +41,25 @@ Content-Transfer-Encoding: 8bit
 To: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi,
-
-Some AP's use local operating class in (E)CSA IE's. Currently
-mac80211 fails the parsing of those IE's and results in a
-disconnection.
-
-What is the best way to add support for local operating classes?
-
-a) Maintaining a per country operating class table in cfg80211
-
-b) Embed operating class info in regdb.txt (crda)
-
-c) Remove the usage of band to calculate frequency? I dont know
-of a generic formula to calculate this across bands. So not possible.
-
-
--- 
-Thanks,
-Regards,
-Chaitanya T K.
+On Mon, Jul 25, 2016 at 12:56 PM, Krishna Chaitanya
+<chaitanya.mgit@gmail.com> wrote:
+>
+> Hi,
+>
+> Some AP's use local operating class in (E)CSA IE's. Currently
+> mac80211 fails the parsing of those IE's and results in a
+> disconnection.
+>
+> What is the best way to add support for local operating classes?
+>
+> a) Maintaining a per country operating class table in cfg80211
+>
+> b) Embed operating class info in regdb.txt (crda)
+>
+> c) Remove the usage of band to calculate frequency? I dont know
+> of a generic formula to calculate this across bands. So not possible.
+>
+Any ideas?
 
 _______________________________________________
 wireless-regdb mailing list
