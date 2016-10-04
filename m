@@ -1,18 +1,25 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-From: Peter Oh <ebmajor@live.com>
-Date: Mon, 22 Aug 2016 16:42:38 +0000
-Message-ID: <221398f0d39e4869bec507f12c5fe230700ab28c645e429c96253f60b17f9f9528663b9fd8c1489ba855dc8546949494BY2PR20MB02484FF3083D9915E53E396BDFE80@BY2PR20MB0248.namprd20.prod.outlook.com>
-References: <CA+uUJGs7HGamb3duZ_9PYfx++43F3UWE2nO4C3AN9Saen=iMrA@mail.gmail.com>
- <CA+uUJGvb6sUXywTvtnyigrkrGSeVEp-2KbndQ_5k5_RxdKgV-Q@mail.gmail.com>
- <CAJ-Vmo=xh3ij6n1UHH=jC8W1mdsn+kWg9SroSKdm_F6tLMKsDA@mail.gmail.com>,
- <CA+uUJGs=aZQ+oRJeHJO92UTg94vhvyYVVn5pKD+=N37bfY_evA@mail.gmail.com>
-In-Reply-To: <CA+uUJGs=aZQ+oRJeHJO92UTg94vhvyYVVn5pKD+=N37bfY_evA@mail.gmail.com>
-Content-Language: en-US
-Content-ID: <03C8A46EC0845D4F838E8F3C2F13BC0F@namprd20.prod.outlook.com>
+Received: from mail-io0-x235.google.com ([2607:f8b0:4001:c06::235])
+ by bombadil.infradead.org with esmtps (Exim 4.85_2 #1 (Red Hat Linux))
+ id 1brToV-0000vr-Bn
+ for wireless-regdb@lists.infradead.org; Tue, 04 Oct 2016 17:47:36 +0000
+Received: by mail-io0-x235.google.com with SMTP id j37so66904502ioo.3 for
+ <wireless-regdb@lists.infradead.org>; Tue, 04 Oct 2016 10:47:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113; h=mime-version:from:date:message-id:subject:to;
+ bh=iD20s3xk7bf0/jSPXbfD86j0Uviz96hG+F2rf57HaEs=;
+ b=aCRTgIawjo543mrfDswPGUTZvy8lg2N3HUIA/iXcrXV1uh3GmyJ0yFiDqsfJJiyKK7
+ 5Q7Vf40ZG0hn838fc9IxSV9e5FkIyLQ0yftpzv0CKRAdDYJ3vONqYPBiUEv0KekXhQKF
+ TNMJ5yQ17YMWBMgnyd4f21JvH02SMeS19yCUiIzu24WEzn8bis+RGVsX8HT2WrJOcT5H
+ k8cfA2b/woOG08wzph/ZC68lv2CNCE7jEfyqQFJOkgZ1MHAdtmgeF0iSfMWvIvzhQyxW
+ 4tFHShXdFbe2iyrs/gEcs4vmK+ut6W1Z3CTxAZPtcgK9LUcD+OqmgtupPsK4KrFW1tpi 1ElQ==
 MIME-Version: 1.0
-Subject: Re: [wireless-regdb] DFS radar pattern detection in different
-	regions
+From: Teoh Han Hui <teohhanhui@gmail.com>
+Date: Wed, 5 Oct 2016 01:46:53 +0800
+Message-ID: <CAOSyk=Jch5pz7pzDuHSyv=eiNXf81Wk2hA+o2yov9sQfkC_tWg@mail.gmail.com>
+Subject: [wireless-regdb] Wrong / outdated regulatory information for
+	Malaysia
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -22,42 +29,31 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-To: Raj Joshi <rajjoshi@comp.nus.edu.sg>, Adrian Chadd <adrian@freebsd.org>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, ath10k <ath10k@lists.infradead.org>
+Content-Transfer-Encoding: 8bit
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-re-send in plain text mode.
+There seems to be a mismatch between what's in wireless-regdb and the
+actual regulations in Malaysia.
 
->=A0I am just confused by the output of "iw reg get", which outputs lines
+See http://www.skmm.gov.my/skmmgovmy/files/attachments/WiFi%20Guideline-Final%20V.pdf
 
+Direct clarification might be needed from the Regulatory Division of
+the Malaysian Communications and Multimedia Commission.
+Contact information can be found in the PDF.
 
+Values reproduced below:
 
->=A0from the db.txt of wireless-regdb [1]. For example,  the first lines of
->=A0the output for some countries read like the following:
->=A0country AE: DFS-FCC
->=A0country AF: DFS-ETSI
->=A0country BD: DFS-JP
->=A0
->=A0What is that supposed to mean? These lines seem to allow using DFS
->=A0channels in these countries as long as DFS is enabled in kernel
->=A0config, although this won't be "right" ?!
-FCC, ETSI, and JP are DFS regulatory domains which have their own radar pat=
-tern definitions and requirements, so that=A0many countries are adapting an=
-d following.
-If countries do not fall into one of=A0the 3 regulatory domains, ath10k DFS=
- detector could not detect DFS radar since the DFS pattern detectors are de=
-signed for those 3.
-If you want to support the countries that do not follow those 3 domains, th=
-en you need to add new pattern detector and use the phy error data reported=
- from firmware.
+Frequency Bands | Max EIRP (Watts) | Max EIRP (dBm)
+--------------- | ---------------- | --------------
+2400 MHz to 2500 MHz | 500 milliWatts | 27 dBm
+5250 MHz to 5350 MHz | 1 Watt | 30 dBm
+5725 MHz to 5875 MHz | 1 Watt | 30 dBm
 
-
-Peter    =20
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
