@@ -1,32 +1,28 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-oi0-x229.google.com ([2607:f8b0:4003:c06::229])
+Received: from mail-wm0-x22a.google.com ([2a00:1450:400c:c09::22a])
  by bombadil.infradead.org with esmtps (Exim 4.85_2 #1 (Red Hat Linux))
- id 1brV9k-0001Iv-Lm
- for wireless-regdb@lists.infradead.org; Tue, 04 Oct 2016 19:13:37 +0000
-Received: by mail-oi0-x229.google.com with SMTP id r126so246049372oib.0 for
- <wireless-regdb@lists.infradead.org>; Tue, 04 Oct 2016 12:13:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DnpnnvPfTrBNp5obQ9c8Pqdwc3XS7Sdq/PQ1chjGfw0=;
- b=RuM3ijFDMFtJ4/UuOLMiiya2pHetdUBQfxH7uLjcc5dCC77MDX+a4WPJYlqIQ//2Y8
- 3IVFxpZzR89smvWoQcPZQnPJg4Z7ENy17dqzrmbOlOAccxDF+B5a+ybh4FgW55ol9epK
- PT/wxxtsa0Y0Cq0jlhiJG78mQKJCZHPL87e1ZNqtGsSlu0y+Fe5UnruiWaXzvv48tAt/
- mF4dIOEz/mTpFKZcZxRrwmjSsBTFrSyLp2ErE/M/gqad4Gi47CSmINvDDd4HCthd7e+O
- HnGPsiMw3pc43Fp/fja2KGN1U427j1u+LHnwffPW2VvjoCwTemJNaV3sLQ+ByMW1D6Hq
- vtMA==
-Date: Tue, 4 Oct 2016 14:13:13 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20161004191313.GB132934@ubuntu-hedt>
-References: 
-	 <CAOSyk=Jch5pz7pzDuHSyv=eiNXf81Wk2hA+o2yov9sQfkC_tWg@mail.gmail.com>
+ id 1c7Ow6-0004nc-PY
+ for wireless-regdb@lists.infradead.org; Thu, 17 Nov 2016 15:49:15 +0000
+Received: by mail-wm0-x22a.google.com with SMTP id a197so318576551wmd.0 for
+ <wireless-regdb@lists.infradead.org>; Thu, 17 Nov 2016 07:48:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20120113;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+ bh=+wilwee8vDiumHleD8u9XEjwGfkrwx+mnFPPquWJ5RU=;
+ b=yyf99F3SxQYCd8imRvlHLguYtdf4PHYbh55FKxxCX3b8ONi1H684+M16b69/LXznFM
+ J/rfZEO3a5SPTls2QG/n2qk+6yxXdTunPN38GEtLMMph1Cx5FsCiyNFqUk+jcPiMwjXL
+ nP2NcpKA3rV+uds4Eu+lTiqkwfURI53YDrSUXx/DTz1dSNMvAKJdvj5ZN1NOrhDBfi8d
+ O51pWifwN8kVimYTeRmjauUX4cb4oynu71p63GxnnWpDPc5Bjk2n68lFBjn76hqOsjrG
+ c8Tz9sRIInGaSEnHY+HQbcAQ2uXvVskn1k4va0mjr2PGGifG5afjYxsScvSovPuz8KAS Qz9g==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOSyk=Jch5pz7pzDuHSyv=eiNXf81Wk2hA+o2yov9sQfkC_tWg@mail.gmail.com>
-Subject: Re: [wireless-regdb] Wrong / outdated regulatory information for
- Malaysia
+In-Reply-To: <CAC1jSDQsTir3v0zWSdvpd3He-ERDDLLFMhKQbd=Vc-PfEkAcTQ@mail.gmail.com>
+References: 
+	 <CAC1jSDQsTir3v0zWSdvpd3He-ERDDLLFMhKQbd=Vc-PfEkAcTQ@mail.gmail.com>
+From: Manuel Cuadrado <manuel.cuadrado@gmail.com>
+Date: Thu, 17 Nov 2016 16:48:51 +0100
+Message-ID: <CAC1jSDQV3oP=dvD863dGGzPYwz6LyCANXb_sbrPOr5i+nLxFOg@mail.gmail.com>
+Subject: Re: [wireless-regdb] 5 Ghz regulation in QATAR need to be updated
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,48 +37,22 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Teoh Han Hui <teohhanhui@gmail.com>
-Cc: wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Oct 05, 2016 at 01:46:53AM +0800, Teoh Han Hui wrote:
-> There seems to be a mismatch between what's in wireless-regdb and the
-> actual regulations in Malaysia.
-> 
-> See http://www.skmm.gov.my/skmmgovmy/files/attachments/WiFi%20Guideline-Final%20V.pdf
-> 
-> Direct clarification might be needed from the Regulatory Division of
-> the Malaysian Communications and Multimedia Commission.
-> Contact information can be found in the PDF.
-> 
-> Values reproduced below:
-> 
-> Frequency Bands | Max EIRP (Watts) | Max EIRP (dBm)
-> --------------- | ---------------- | --------------
-> 2400 MHz to 2500 MHz | 500 milliWatts | 27 dBm
-> 5250 MHz to 5350 MHz | 1 Watt | 30 dBm
-> 5725 MHz to 5875 MHz | 1 Watt | 30 dBm
+Hi,
 
-The document you link to seems like a summary that may not have all the
-details we would want. For instance, I note that the rules in the
-database right now include DFS for most of the 5 GHz rules but the
-document makes no mention of it.
+according to this official document from the communications regulatory
+authority  http://www.ictqatar.qa/sites/default/files/qatar_national_frequency_allocation_table_qnfat_0.pdf,
+bands (U-NII-1 & U-NII-2A) are also authorized in Qatar , so  and
+updated in the db is required
 
-I found the following document which "recommends" both TPC and DFS for
-the 5150 - 5350 MHz range (and for ranges which require TPC we cut the
-maximum EIRP in half):
 
-http://www.skmm.gov.my/skmmgovmy/files/attachments/SRSP534WLAN.pdf
 
-I haven't yet tracked down anything similar for the other ranges, but I
-would like to so that we'll have a full picture of the requirements. I
-did find another "guideline" document with a similar summary table which
-also includes the 5470 - 5650 MHz range:
-
-http://www.skmm.gov.my/skmmgovmy/media/General/pdf/Guideline_WirelessLAN.pdf
-
-Thanks,
-Seth
+     # Follow US 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
+     (5150 - 5250 @ 80), (23), AUTO-BW
+-    (5250 - 5350 @ 80), (17), DFS, AUTO-BW
++    (5250 - 5350 @ 80), (23), DFS, AUTO-BW
 
 _______________________________________________
 wireless-regdb mailing list
