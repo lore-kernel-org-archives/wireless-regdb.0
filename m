@@ -1,31 +1,23 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-x232.google.com ([2607:f8b0:4001:c06::232])
- by bombadil.infradead.org with esmtps (Exim 4.85_2 #1 (Red Hat Linux))
- id 1c8ow8-0002Jt-EX
- for wireless-regdb@lists.infradead.org; Mon, 21 Nov 2016 13:47:10 +0000
-Received: by mail-io0-x232.google.com with SMTP id c21so39867828ioj.1 for
- <wireless-regdb@lists.infradead.org>; Mon, 21 Nov 2016 05:46:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=TUyLGQ1g3uipoAOOHS6G7KCqf1K5Pz/Wpx+m0mSYEbw=;
- b=Fsyr6L1Pf52dTBK8FgzW35wASDPK+rOouwHdmUrvp0DA8AP4LfDOdh1HBiAJMHO60Q
- L69yK01o9fEhQM5eHXaeo9ZEN3tPF+eCUWR/umsk28Zyh2DtwYxQppDvN4L9dVlM8Sul
- aGoaTRW6BsSeBV5ajmGJ9quIpPuyKzq/Fyne4G0ncK55b+/USNV4V90zdJ8PZ1pZwZiR
- m8Rjfj/Oc5SDCdpBeac2VNYdCeI89+llxiMlfkvrgzMqzR0I0mu9iadU/JPLADvGKs8J
- R7dS8LMHzicbX0+TA8OLwyNTe0+p4Yu4EKxQIIF/OJTuxNz5jJGy3pdXwjjM5gqkC47n
- yQ8Q==
-Date: Mon, 21 Nov 2016 07:46:44 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20161121134644.GA28887@ubuntu-hedt>
-References: <CAC1jSDQsTir3v0zWSdvpd3He-ERDDLLFMhKQbd=Vc-PfEkAcTQ@mail.gmail.com>
- <CAC1jSDQV3oP=dvD863dGGzPYwz6LyCANXb_sbrPOr5i+nLxFOg@mail.gmail.com>
+Received: from wolverine01.qualcomm.com ([199.106.114.254])
+ by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
+ id 1cYAln-0008Oj-ME
+ for wireless-regdb@lists.infradead.org; Mon, 30 Jan 2017 12:09:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
+ s=qcdkim; t=1485778155; x=1517314155;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=kUhsIVma3QgKURCydMaKCPWQwua4jrNMAbKQdOivIqA=;
+ b=Pk7Dkquon80jzMPklF/4qXy8yL7UmTDhNjptH4CWExZf9pKx7fHsSDEC
+ 2ruoNTSJoNvlYze/fhNHqgNzU4BpjMzYTvOyFaZcWzgNNVRbtPB0eulCx
+ quUOepHGjB/Nf23aXq1rHgf9bb+39Rr095lQ382VqBdoffFO7hLKTqtLl Y=;
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Mon, 30 Jan 2017 14:08:32 +0200
+Message-ID: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAC1jSDQV3oP=dvD863dGGzPYwz6LyCANXb_sbrPOr5i+nLxFOg@mail.gmail.com>
-Subject: Re: [wireless-regdb] 5 Ghz regulation in QATAR need to be updated
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Remove DFS requirement
+ for India (IN)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,29 +32,49 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Manuel Cuadrado <manuel.cuadrado@gmail.com>
-Cc: wireless-regdb@lists.infradead.org
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Nov 17, 2016 at 04:48:51PM +0100, Manuel Cuadrado wrote:
-> Hi,
-> 
-> according to this official document from the communications regulatory
-> authority  http://www.ictqatar.qa/sites/default/files/qatar_national_frequency_allocation_table_qnfat_0.pdf,
-> bands (U-NII-1 & U-NII-2A) are also authorized in Qatar , so  and
-> updated in the db is required
-> 
-> 
-> 
->      # Follow US 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
->      (5150 - 5250 @ 80), (23), AUTO-BW
-> -    (5250 - 5350 @ 80), (17), DFS, AUTO-BW
-> +    (5250 - 5350 @ 80), (23), DFS, AUTO-BW
+The "Indoor Use of low power wireless equipment in the frequency band 5
+GHz (Exemption from Licensing Requirement) Rules, 2005" notification by
+Ministry of Communications and Information Technology (Wireless Planning
+and Coordination Wing) (New Delhi, the 28th January 2005) does not
+mandate use of DFS, so remove the DFS flag from the 5250-5330 MHz band
+in India.
 
-Care to send this as a patch?
+In addition, increase the TX power limit to 23 dBm to match the 200 mW
+maximum mentioned in the same notification. Also use the exact ranges
+from that notification and enable use of 160 MHz channels in the
+5150-5350 MHz band.
 
-Thanks,
-Seth
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ db.txt | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 7964cfb..05108e0 100644
+--- a/db.txt
++++ b/db.txt
+@@ -580,11 +580,10 @@ country IL: DFS-ETSI
+ 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
+ 	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS, AUTO-BW
+ 
+-country IN: DFS-JP
++country IN:
+ 	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20), AUTO-BW
+-	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+-	(5735 - 5835 @ 80), (20)
++	(5150 - 5350 @ 160), (23)
++	(5725 - 5875 @ 80), (23)
+ 
+ country IR: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+-- 
+2.7.4
+
 
 _______________________________________________
 wireless-regdb mailing list
