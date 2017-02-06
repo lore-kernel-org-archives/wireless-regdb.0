@@ -1,30 +1,29 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-f196.google.com ([209.85.223.196])
+Received: from mail-io0-f181.google.com ([209.85.223.181])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1capEM-00054t-Gi
- for wireless-regdb@lists.infradead.org; Mon, 06 Feb 2017 19:45:45 +0000
-Received: by mail-io0-f196.google.com with SMTP id 101so10563886iom.0 for
- <wireless-regdb@lists.infradead.org>; Mon, 06 Feb 2017 11:45:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025;
- h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
- bh=LouECJhrN5+JEjcK1sZG14pqvxHPj0xq4Pnr1GlkjKY=;
- b=PxsKFWDwP45UWlhP/H/W+CayWtLTTW9GJNcIGTwY89ue6PBStBdfH14Xq2VN91UFif
- ncAkqiBbKuUY30OJFfAXX4s4vudlGqjbHrwQgkrNao4s/TAjvgnYBE3m9PTpIXCImYUa
- zO7FYpwVPB1uP2rBsSPX5OYwJrCh6A9lrKc3DQ7MnFNMOmVlIygI+U2Suuz3OzozYyvv
- Nl4OwyQjtH0GwIcdCeF1Ugu6pPi6jgwicWAwRg92eWrue+i2folNsMygQVu7N0Cv7tVD
- JYDc32ROZKyFQikvRNeLsyNuirpCjbKonv4VC3jsSds4HO3LUf8H9/yMDYgoKZ9o494/ 1gVA==
-MIME-Version: 1.0
-In-Reply-To: <20170206193931.GC4004@ubuntu-hedt>
-References: <CAPw1JcdLDkW9xEUfh-764kuC643DAJ+qWNf4RxmoyUXbpc-D5w@mail.gmail.com>
- <CAPw1Jcfg3r9ezm2b9cpXfouxzjPY1hDnWYO4J6Gm8yf6xWKweg@mail.gmail.com>
- <20170206193931.GC4004@ubuntu-hedt>
-From: cory novak <cory.novak@gmail.com>
-Date: Mon, 6 Feb 2017 11:44:21 -0800
-Message-ID: <CAPw1Jcc1X+K7nr1Om=+uQZ7M0H1pfoFbX4H65sMN0wLgmUnfFA@mail.gmail.com>
-Subject: Re: [wireless-regdb] Fwd: possible mismatch Canadian regulatory
- info
+ id 1caqGS-0006eW-Nd
+ for wireless-regdb@lists.infradead.org; Mon, 06 Feb 2017 20:51:59 +0000
+Received: by mail-io0-f181.google.com with SMTP id j13so75042783iod.3 for
+ <wireless-regdb@lists.infradead.org>; Mon, 06 Feb 2017 12:51:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=canonical-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=eEnIrdGjhBksgy1Cc5QHWdkVihe6gU0vEfDUybxW358=;
+ b=0+d0OChzgbPnoHGpDv4CEJgLKW6C0Y2Lk3x7HZC2E9wRZwSk9JhWB0IG1qeYxtqgNX
+ EKIFDwvr8lm1vvZzIFYtseFYpl0r1T9ZJedrAxHABsS53npMoWPlC9T+rYq5PPk1l9Ya
+ Rlpmcdxry0AhhQhCVr4DpZniyTEVRG7rRJnQhh+IvxEp6aZDKTknjOokj5zafWjg5v89
+ +fOixkboKW1s8zxjqUflLBAJck3xjvnFJ2iE//oP6/Ot7V5VFTw6NoNjo4swz+5OxQXH
+ LahaA47oMk5uUWHnL8Vymhh4dsXZCj1BSBSqOC5y/H6HVYMu2/5m2ML7dWhf6v96Oc1s
+ LPJQ==
+From: Seth Forshee <seth.forshee@canonical.com>
+Date: Mon,  6 Feb 2017 14:50:34 -0600
+Message-Id: <1486414234-63497-1-git-send-email-seth.forshee@canonical.com>
+In-Reply-To: <CAPw1Jcc1X+K7nr1Om=+uQZ7M0H1pfoFbX4H65sMN0wLgmUnfFA@mail.gmail.com>
+References: 
+	 <CAPw1Jcc1X+K7nr1Om=+uQZ7M0H1pfoFbX4H65sMN0wLgmUnfFA@mail.gmail.com>
+Subject: [wireless-regdb] [RFC] wireless-regdb: Update 5 GHz rules for
+ Canada
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -34,79 +33,47 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
+Cc: cory novak <cory.novak@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Feb 6, 2017 at 11:39 AM, Seth Forshee
-<seth.forshee@canonical.com> wrote:
-> On Mon, Feb 06, 2017 at 11:12:45AM -0800, cory novak wrote:
->> (sorry if this is a duplicate, got a 'we don't accept html mails' error back)
->> ---------- Forwarded message ----------
->> From: cory novak <cory.novak@gmail.com>
->> Date: Mon, Feb 6, 2017 at 11:07 AM
->> Subject: possible mismatch Canadian regulatory info
->> To: wireless-regdb@lists.infradead.org
->>
->>
->> I really tried to use alternate mediums before bothering this list
->> with info that appears to me to be mismatched, but, could easily
->> simply be a result of my lack of knowledge.  Here's my info:
->>
->>
->> Canada values from this source:
->> http://git.kernel.org/cgit/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt?id=HEAD
->>
->> For Canada (5170 - 5250 is where I'm focusing):
->>
->> country CA: DFS-FCC
->> (2402 - 2472 @ 40), (30)
->> (5170 - 5250 @ 80), (17), AUTO-BW
->> (5250 - 5330 @ 80), (24), DFS, AUTO-BW
->> (5490 - 5600 @ 80), (24), DFS
->> (5650 - 5730 @ 80), (24), DFS
->> (5735 - 5835 @ 80), (30)
->>
->> *SEEM* to differ to my completely amateur eye vs industry canada
->> section 6.2 here:
->> http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html#s6.2
->>
->> This is the applicable text for that band:
->>
->> "The maximum e.i.r.p. shall not exceed 200 mW or 10 + 10 log10B, dBm,
->> whichever power is less. B is the 99% emission bandwidth in megahertz.
->> The e.i.r.p. spectral density shall not exceed 10 dBm in any 1.0 MHz
->> band."
->>
->> An easier source to parse for the IC data :
->> http://www.semfionetworks.com/blog/industry-canada-new-5ghz-band-regulations
->>
->> This is the output from my Archer C2600:    * 5180 MHz [36] (17.0 dBm)
->>                         * 5200 MHz [40] (17.0 dBm)
->>                         * 5220 MHz [44] (17.0 dBm)
->>                         * 5240 MHz [48] (17.0 dBm)
->>
->>
->> It appears that the 5170-5250 band is way under spec at 17dbm instead of 23dbm.
->
-> It looks to me like you are correct. Would you like to send a patch? Or
-> if you aren't familiar with patching the regulatory db I can generate
-> one.
->
-> Thanks,
-> Seth
->
+Based on the information from [1] the power limit for 5150-5250
+MHz can be increased to 23 dBm. Also update some rules to match
+exact frequency ranges given in that document.
 
-Hi Seth
+[1] http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html
 
-Just a dumb user here, I'd appreciate it if you'd go ahead.
-thanks :)
+Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+---
+ db.txt | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Cory
+diff --git a/db.txt b/db.txt
+index 05108e0d4d1c..699c1e7a713f 100644
+--- a/db.txt
++++ b/db.txt
+@@ -230,9 +230,9 @@ country BZ: DFS-JP
+ 
+ country CA: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
+-	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-	(5490 - 5600 @ 80), (24), DFS
++	(5150 - 5250 @ 80), (23), AUTO-BW
++	(5250 - 5350 @ 80), (24), DFS, AUTO-BW
++	(5470 - 5600 @ 80), (24), DFS
+ 	(5650 - 5730 @ 80), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
+-- 
+2.7.4
+
 
 _______________________________________________
 wireless-regdb mailing list
