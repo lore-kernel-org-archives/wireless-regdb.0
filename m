@@ -1,50 +1,31 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
- Message-ID:From:References:To:Reply-To:Cc:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=YgbzDc5s0/HafMJ5+NStS3zkrnpeTVwCJ0jcQB5I1/Q=;
- b=pZKStshWCocFbL
- vADWnnWTw6IjlE2+ToDc+fULN1mNj6PnydfvItSWphkHYUQNb6KduVyt2shnq2N5uljj4irI2T0oa
- BfS7kGUd1tmV92yEqOuhfbrWFm+/Z1reVEUktci1eLPd26tcJgubQeozrXEn1KUGN5MDbB2qlNeOR
- gp+YCLHCGmt/jKhRMm+T+dC/BQGkZU4G4Les//52e+1flI6OJ5QUgf+2fqlWvrHuwLIG0zbzkUaxV
- UGe0RHOx+YzoWfj3yI4S0vWO10rWUHR/SYCSVlshymxcWyqmsyzV+tQrJjKna7pmGjCd+j4DxEZ+L
- yus1cGlpwUtEKW1wjiyQ==;
-Received: from mail.neratec.com ([46.140.151.2])
+Received: from mail-io0-f181.google.com ([209.85.223.181])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1cdH9b-0006Ay-DH
- for wireless-regdb@lists.infradead.org; Mon, 13 Feb 2017 13:58:58 +0000
-Received: from localhost (localhost [127.0.0.1]) by mail.neratec.com
- (Postfix) with ESMTP id 74A3ECE0326 for
- <wireless-regdb@lists.infradead.org>; Mon, 13 Feb 2017 14:58:29 +0100 (CET)
-Received: from mail.neratec.com ([127.0.0.1])
- by localhost (mail.neratec.com [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id wgO5jlYMTjwZ for <wireless-regdb@lists.infradead.org>;
- Mon, 13 Feb 2017 14:58:29 +0100 (CET)
-Received: from localhost (localhost [127.0.0.1]) by mail.neratec.com
- (Postfix) with ESMTP id 5022DCE034A for
- <wireless-regdb@lists.infradead.org>; Mon, 13 Feb 2017 14:58:29 +0100 (CET)
-Received: from mail.neratec.com ([127.0.0.1])
- by localhost (mail.neratec.com [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id rKZMtaXRgV5s for <wireless-regdb@lists.infradead.org>;
- Mon, 13 Feb 2017 14:58:29 +0100 (CET)
-Received: from [192.168.11.50] (unknown [192.168.11.50]) by
- mail.neratec.com (Postfix) with ESMTPSA id 32B12CE0326 for
- <wireless-regdb@lists.infradead.org>; Mon, 13 Feb 2017 14:58:29 +0100 (CET)
-References: <CAPw1Jcc1X+K7nr1Om=+uQZ7M0H1pfoFbX4H65sMN0wLgmUnfFA@mail.gmail.com>
- <1486414234-63497-1-git-send-email-seth.forshee@canonical.com>
- <1486453950.2643.1.camel@sipsolutions.net>
- <20170207140434.GA109741@ubuntu-hedt>
-From: Matthias May <matthias.may@neratec.com>
-Message-ID: <a79eaf02-b384-4c5b-3116-c1386ef98850@neratec.com>
-Date: Mon, 13 Feb 2017 14:58:28 +0100
+ id 1caotL-0001a8-3G
+ for wireless-regdb@lists.infradead.org; Mon, 06 Feb 2017 19:24:00 +0000
+Received: by mail-io0-f181.google.com with SMTP id l66so73369126ioi.1 for
+ <wireless-regdb@lists.infradead.org>; Mon, 06 Feb 2017 11:23:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=canonical-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=uzGOk77Vd4c5JfSZW8hpuhgRUfySHkxt0ALdhbrp3ug=;
+ b=AGN/SB51qPOO2PWie7xM9+o/FJE9g+5sCV/sfqhUoWo8e5Xc8g0VwDkMMzqr4FVwU6
+ LNKjTiUQ9yHCfGsVbL4hTGro7jDbynRBgkq/k9EEAsYiNampnedR0KdDBFrKPjoT5W+A
+ CmZWRSdeDARfJuZg9DtJ3YauBEmoIa+ffBvruSTqDjG8x/W0QETpH0bkd8ihPAE5Xkhn
+ 6aRzZgN5oJQcg8hE11cnrULLnoq2fHAePSqlBYnGe1y2SJEpx5Re8hHdBkJIhgbGRP12
+ eqsBvmVinRazNbQVMaZEYh47GBemTdTovI8lej09+UtRw6yBY9NOzZ7gG6V+Neno4/Ft
+ HbfQ==
+Date: Mon, 6 Feb 2017 13:22:35 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20170206192235.GB4004@ubuntu-hedt>
+References: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
 MIME-Version: 1.0
-In-Reply-To: <20170207140434.GA109741@ubuntu-hedt>
-Subject: Re: [wireless-regdb] [RFC] wireless-regdb: Update 5 GHz rules for
- Canada
+Content-Disposition: inline
+In-Reply-To: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Remove DFS
+ requirement for India (IN)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -59,59 +40,26 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Jouni Malinen <jouni@qca.qualcomm.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On 07/02/17 15:04, Seth Forshee wrote:
-> On Tue, Feb 07, 2017 at 08:52:30AM +0100, Johannes Berg wrote:
->> On Mon, 2017-02-06 at 14:50 -0600, Seth Forshee wrote:
->>> +	(5150 - 5250 @ 80), (23), AUTO-BW
->>
->> For 20 MHz this is right, since the document says:
->>
->>     The maximum e.i.r.p. shall not exceed 200 mW or 10 + 10 log10 B,
->>     dBm, whichever power is less. B is the 99% emission bandwidth in
->>     megahertz. The e.i.r.p. spectral density shall not exceed 10 dBm in
->>     any 1.0 MHz band.
->>
->> However, for < 20 MHz, like 5 or 10, which we in theory do support, you
->> can't use that much due to the spectral density requirement. It seems
->> possible that that's where the 17 dBm came from, since 10 + 10 log10(5)
->> is about 17.
+On Mon, Jan 30, 2017 at 02:08:32PM +0200, Jouni Malinen wrote:
+> The "Indoor Use of low power wireless equipment in the frequency band 5
+> GHz (Exemption from Licensing Requirement) Rules, 2005" notification by
+> Ministry of Communications and Information Technology (Wireless Planning
+> and Coordination Wing) (New Delhi, the 28th January 2005) does not
+> mandate use of DFS, so remove the DFS flag from the 5250-5330 MHz band
+> in India.
 > 
-> Yes, thanks. I had forgotten to consider bandwidths less than 20 MHz.
+> In addition, increase the TX power limit to 23 dBm to match the 200 mW
+> maximum mentioned in the same notification. Also use the exact ranges
+> from that notification and enable use of 160 MHz channels in the
+> 5150-5350 MHz band.
 > 
-> Seth
-> 
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
-> 
+> Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
 
-According to  .../include/net/cfg80211.h
-
->static inline int
->ieee80211_chandef_max_power(struct cfg80211_chan_def *chandef)
->{
->	switch (chandef->width) {
->	case NL80211_CHAN_WIDTH_5:
->		return min(chandef->chan->max_reg_power - 6,
->			   chandef->chan->max_power);
->	case NL80211_CHAN_WIDTH_10:
->		return min(chandef->chan->max_reg_power - 3,
->			   chandef->chan->max_power);
->	default:
->		break;
->	}
->	return chandef->chan->max_power;
->}
-
-This looks to me like it already handles the reduction of power
-according to bandwidth.
-
-BR
-Matthias
+Applied, thanks.
 
 _______________________________________________
 wireless-regdb mailing list
