@@ -1,23 +1,39 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from wolverine01.qualcomm.com ([199.106.114.254])
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=2T3aAEo+O/xB1vSxT5zbhlABla4M3yQGAtRkxXTSZ9I=;
+ b=Jz0rxL5EwsVkXs
+ zr5EMt0+E3p4T6/wsy+jS3BK8i7cd+U6/xiQszJriY+z7f7h6Ie3DK5xX2mjpj7qODsCiaF3VDAWH
+ pHq3XPGUxNyXaFpB/SdRvVB4F3HQfyRK13WaIwZPYd2WWSdgCOH3w2aM7JaMBRCmo6gj6MfarFEhb
+ tpd4vnj0pQ1jihz2xoukqob6ODFVEo7mqpHm0iFIDQjCqBRLkBq3w/iLnLO06/4bofVkxU9fI/HrD
+ pOvEq0MkW0XTxHhRzjDOI9MEcblERFSBSv/+IVhPehx1YxsQaNzlU/sijVmtFap6Bux9M8ZsJ3Z7m
+ T95CZZGLTKBbnWSj0e2w==;
+Received: from mail-pg0-x241.google.com ([2607:f8b0:400e:c05::241])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1cYAln-0008Oj-ME
- for wireless-regdb@lists.infradead.org; Mon, 30 Jan 2017 12:09:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=qca.qualcomm.com; i=@qca.qualcomm.com; q=dns/txt;
- s=qcdkim; t=1485778155; x=1517314155;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=kUhsIVma3QgKURCydMaKCPWQwua4jrNMAbKQdOivIqA=;
- b=Pk7Dkquon80jzMPklF/4qXy8yL7UmTDhNjptH4CWExZf9pKx7fHsSDEC
- 2ruoNTSJoNvlYze/fhNHqgNzU4BpjMzYTvOyFaZcWzgNNVRbtPB0eulCx
- quUOepHGjB/Nf23aXq1rHgf9bb+39Rr095lQ382VqBdoffFO7hLKTqtLl Y=;
-From: Jouni Malinen <jouni@qca.qualcomm.com>
-Date: Mon, 30 Jan 2017 14:08:32 +0200
-Message-ID: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
-MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Remove DFS requirement
- for India (IN)
+ id 1ceydt-0003lF-3H
+ for wireless-regdb@lists.infradead.org; Sat, 18 Feb 2017 06:37:15 +0000
+Received: by mail-pg0-x241.google.com with SMTP id y6so5610143pgy.2 for
+ <wireless-regdb@lists.infradead.org>; Fri, 17 Feb 2017 22:35:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mounce.com.au; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=JUhNv6EtYIqKYpkpdVs+LbUeDFkTJ/66rSkpsDsN8nc=;
+ b=q/uaVubsn2PJqk0SELdGE6D+I5QapHOwNUVUTmQfQPAZbrmGRoUnMqDO6LtlFgxmd/
+ UzHEzf5g8QoWPwadn0FIMRXDhwM7CyT1lJzGYOigI8yjlv/dQaDHtHoPCEmYiIvFDACV
+ gcoQ7ezt4mDqgaz+IAz/K4InhCUcZGqSSC9kJCYlMGAzgCvIsLGm4RBs1VruvQ/puA+l
+ feL0pNX/S8uyPYyUhiJRhLHbDrl4A6j9/iWO+VLWQewcsmQKoe9An8s87gCe+CduRaR+
+ o06I7L3DYtezzl4zk6tsrbgvEKsdULf7OTNfCsNyVgcRpA0NE21uvNDqpNyz9J1Tz9uE
+ S0fg==
+From: Ryan Mounce <ryan@mounce.com.au>
+Date: Sat, 18 Feb 2017 17:05:15 +1030
+Message-Id: <20170218063515.16071-1-ryan@mounce.com.au>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update rules for
+ Australia (AU) and add 60GHz rules
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -27,53 +43,56 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
+To: seth.forshee@canonical.com
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The "Indoor Use of low power wireless equipment in the frequency band 5
-GHz (Exemption from Licensing Requirement) Rules, 2005" notification by
-Ministry of Communications and Information Technology (Wireless Planning
-and Coordination Wing) (New Delhi, the 28th January 2005) does not
-mandate use of DFS, so remove the DFS flag from the 5250-5330 MHz band
-in India.
+Sourced from the latest legislation at
+https://www.legislation.gov.au/Details/F2016C0043
 
-In addition, increase the TX power limit to 23 dBm to match the 200 mW
-maximum mentioned in the same notification. Also use the exact ranges
-from that notification and enable use of 160 MHz channels in the
-5150-5350 MHz band.
+The current rules exceed legal limits between 5250-5330MHz, and permit
+illegal operation in 5600-5650MHz (reserved for weather radar).
 
-Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+Signed-off-by: Ryan Mounce <ryan@mounce.com.au>
 ---
- db.txt | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+ db.txt | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 7964cfb..05108e0 100644
+index 05108e0..b951e0c 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -580,11 +580,10 @@ country IL: DFS-ETSI
- 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
- 	(5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS, AUTO-BW
+@@ -85,12 +85,17 @@ country AT: DFS-ETSI
+ 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+ 	(57000 - 66000 @ 2160), (40)
  
--country IN: DFS-JP
-+country IN:
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5735 - 5835 @ 80), (20)
-+	(5150 - 5350 @ 160), (23)
-+	(5725 - 5875 @ 80), (23)
++# Source:
++# https://www.legislation.gov.au/Details/F2016C00432
++# Both DFS-ETSI and DFS-FCC are acceptable per AS/NZS 4268 Appendix B
+ country AU: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
+-	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-	(5490 - 5710 @ 160), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(2402 - 2482 @ 40), (36)
++	(5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
++	(5250 - 5330 @ 80), (23), NO-OUTDOOR, AUTO-BW, DFS
++	(5490 - 5590 @ 80), (30), DFS
++	(5650 - 5730 @ 80), (30), DFS
++	(5735 - 5835 @ 80), (36)
++	(57000 - 66000 @ 2160), (43), NO-OUTDOOR
  
- country IR: DFS-JP
+ country AW: DFS-ETSI
  	(2402 - 2482 @ 40), (20)
 -- 
-2.7.4
+2.11.0
 
 
 _______________________________________________
