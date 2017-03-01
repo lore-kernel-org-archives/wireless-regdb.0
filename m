@@ -6,40 +6,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=l2wtuw+kzhYM561mLPMGLkmZoWzKrgil8kyKbgoF3AY=;
- b=pImWJEwuIKOAr8
- rmDApz+dVbew0ZjlfqbWDodnTGPdQ3lT66zbrGdITtMdDKMtpROLBnvamlm0qziYM1Ondgh9BE30c
- q02ZJP96mYg2S3eRcv/YvcJDQ1V/HvrVpmXLBP03Pwzcc8hRLwk57RG2R6Iw7LJohhAUuk5SyugYE
- K4tSf/0AjY3rSmxKr8ROyvat9x/r75rY1o9cN/BljLpVWK8Nxr97+Si583mpLwjDAkZ9H0D0nSeIM
- H11OCOpSxBNcxIYnFjVJ8sOXsCz4e+nDx0cAOZ/ViNm308UYJIFmXf0ftg2AHJX/gTjgzX3a5GDlW
- JeSAToxkDG+R1r2dRIJQ==;
-Received: from mail-it0-x233.google.com ([2607:f8b0:4001:c0b::233])
+ List-Owner; bh=+B1REWjsQZdPZ6fhkABWd06NcS1fSTXCsMyyhNeDZQ0=;
+ b=cc1lptqAVXxUNm
+ EMK/dSQQtiGBCadJ7vjqtTzowlTi+9WC18aecUliPQ+z/ht7VLKLnIxq84IRZER1AEYEkY9LbVYDM
+ nKquckimYs2uCrvGhLkpSdhaG07mm4h5fcdg0h0dpl60Vop5qsNl7C/OQ6amwvAIrGjodEUfuGoc8
+ JpvphRvfp6DJk1dZwjC+2JPpFjRI6QJ8cy3Ypc0xJVQ/C4QqoH7GGedNUMPyWUYFno8kddxM0+R8X
+ vxwfXYejYrvMSB79uu0Q9finX2M6XsYQzRcV2gsrBTLegf1A2T0qlMBzpQScFewVsG202VvLZx+A3
+ WF03zQU1/dGBjz6txlVA==;
+Received: from mail-io0-x22e.google.com ([2607:f8b0:4001:c06::22e])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1clEuc-0000iU-6p
- for wireless-regdb@lists.infradead.org; Tue, 07 Mar 2017 13:12:24 +0000
-Received: by mail-it0-x233.google.com with SMTP id m27so10786759iti.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 07 Mar 2017 05:11:59 -0800 (PST)
+ id 1cj5rX-0005vE-W1
+ for wireless-regdb@lists.infradead.org; Wed, 01 Mar 2017 15:08:22 +0000
+Received: by mail-io0-x22e.google.com with SMTP id f84so31655889ioj.0 for
+ <wireless-regdb@lists.infradead.org>; Wed, 01 Mar 2017 07:07:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=pd6wRrpG7u+X9Nwnz6FSz51OnC65qpXxMdbK3rgcZNU=;
- b=GKCPSKE0Z96H7xgHXYhW91mwISI8bBXphhFTWJ9Hjvq/wAv99Tog7vv8+mIuUA5hhE
- cNIk727q4S9eYKbI709rlWehGaK4cYCOtD1ImP2fTKqoKBxE+3+Y9DbcuV6EJ8cq+Y89
- IJJxJAAPh6HN7DeENjzHzMAF9dso3oMV3R8imkeY+h9sqkP4FY2cY0/9bLRyDrPJF6bR
- agoTqU41hPK3INx31MVOfCMXAZUMXkoR/l8otzWJfYVVpIn1TxsPwO0n/qT4o+FtCSPb
- UfpquRv6JX6Hghs8Jhl4IZxhuEB12GgArE0QbT52KALDHfewK1QLcrjsyWd4DPLGKuvy
- xWMQ==
-Date: Tue, 7 Mar 2017 07:11:56 -0600
+ bh=8axJIvO0UJGR36YsDyTj1ATpEOJZRBKE36hzCe5U/dc=;
+ b=jjUzI4ZuzW5/UHb/tUHSOyykZjPiqIpcj36VU+FtehFpUapnQPKPm6iSDv9AAz30uj
+ QZpmohp28mg4B0K0KA9vSaXUXo4ec+rwZfSuWy8PzpPLGwfBRWjRxhwZ8LhyF0KJuXrm
+ cxAf5HKXPrtlP/s0B/ur8cRIJJgYNCq0fkLx0J1HJZurrruGEVSAXbCWosp+mJUi0LUH
+ IUNSxEDxMoLvxpRPFg2e+OGmkkwuyKfbhLHFHKux4sEnU5Rzkqn1/Uhwx+xa/yZz0FyP
+ gQGGBUOa0PRa5+7h/65p+DspvsWY8ELevD+KAxgngUq7C/Xl0AdtNCZ/Ef6lEj70lYxm
+ jAhg==
+Date: Wed, 1 Mar 2017 09:07:57 -0600
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170307131156.GB5500@ubuntu-hedt>
-References: <20170224145519.GD3479@ubuntu-hedt>
- <20170225031027.7871-1-ryan@mounce.com.au>
+Message-ID: <20170301150757.GL122517@ubuntu-hedt>
+References: <CAPw1Jcc1X+K7nr1Om=+uQZ7M0H1pfoFbX4H65sMN0wLgmUnfFA@mail.gmail.com>
+ <1486414234-63497-1-git-send-email-seth.forshee@canonical.com>
+ <1486453950.2643.1.camel@sipsolutions.net>
+ <20170207140434.GA109741@ubuntu-hedt>
+ <a79eaf02-b384-4c5b-3116-c1386ef98850@neratec.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20170225031027.7871-1-ryan@mounce.com.au>
-Subject: Re: [wireless-regdb] [PATCH v3] wireless-regdb: Update rules for
- Australia (AU) and add 60GHz rules
+In-Reply-To: <a79eaf02-b384-4c5b-3116-c1386ef98850@neratec.com>
+Subject: Re: [wireless-regdb] [RFC] wireless-regdb: Update 5 GHz rules for
+ Canada
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -54,29 +57,67 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Ryan Mounce <ryan@mounce.com.au>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Matthias May <matthias.may@neratec.com>, Johannes Berg <johannes@sipsolutions.net>
+Cc: cory novak <cory.novak@gmail.com>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Feb 25, 2017 at 01:40:27PM +1030, Ryan Mounce wrote:
-> Sourced from the current legislation at
-> https://www.legislation.gov.au/Details/F2016C00432
-> 
-> The current rules exceed legal limits between 5250-5330MHz, and permit
-> illegal operation in 5600-5650MHz (disallowed regardless of DFS).
-> 
-> Frequency ranges and EIRP limits for all ranges have been updated to
-> match items 59-63, 65 in the linked document. As the rules for AU have
-> never previously mirrored local regulations, changes include a
-> significant increase in the allowable 2.4GHz EIRP and smaller increases
-> in most other bands.
-> 
-> In order to allow 80MHz operation between 5650-5730MHz (bordering two
-> bands) the lower, more restrictive band has been rounded up by 5MHz.
-> 
-> Signed-off-by: Ryan Mounce <ryan@mounce.com.au>
+There were some replies to this, but I just noticed that the mailing
+list somehow got dropped. Bringing the discussion back to the list.
 
-Applied, thanks.
+On Mon, Feb 13, 2017 at 02:58:28PM +0100, Matthias May wrote:
+> On 07/02/17 15:04, Seth Forshee wrote:
+> > On Tue, Feb 07, 2017 at 08:52:30AM +0100, Johannes Berg wrote:
+> >> On Mon, 2017-02-06 at 14:50 -0600, Seth Forshee wrote:
+> >>> +	(5150 - 5250 @ 80), (23), AUTO-BW
+> >>
+> >> For 20 MHz this is right, since the document says:
+> >>
+> >>     The maximum e.i.r.p. shall not exceed 200 mW or 10 + 10 log10 B,
+> >>     dBm, whichever power is less. B is the 99% emission bandwidth in
+> >>     megahertz. The e.i.r.p. spectral density shall not exceed 10 dBm in
+> >>     any 1.0 MHz band.
+> >>
+> >> However, for < 20 MHz, like 5 or 10, which we in theory do support, you
+> >> can't use that much due to the spectral density requirement. It seems
+> >> possible that that's where the 17 dBm came from, since 10 + 10 log10(5)
+> >> is about 17.
+> > 
+> > Yes, thanks. I had forgotten to consider bandwidths less than 20 MHz.
+> > 
+> > Seth
+> > 
+> > _______________________________________________
+> > wireless-regdb mailing list
+> > wireless-regdb@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/wireless-regdb
+> > 
+> 
+> According to  .../include/net/cfg80211.h
+> 
+> >static inline int
+> >ieee80211_chandef_max_power(struct cfg80211_chan_def *chandef)
+> >{
+> >	switch (chandef->width) {
+> >	case NL80211_CHAN_WIDTH_5:
+> >		return min(chandef->chan->max_reg_power - 6,
+> >			   chandef->chan->max_power);
+> >	case NL80211_CHAN_WIDTH_10:
+> >		return min(chandef->chan->max_reg_power - 3,
+> >			   chandef->chan->max_power);
+> >	default:
+> >		break;
+> >	}
+> >	return chandef->chan->max_power;
+> >}
+> 
+> This looks to me like it already handles the reduction of power
+> according to bandwidth.
+
+Johannes, just wanted to confirm that based on this you no longer have
+any objection to the changes.
+
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
