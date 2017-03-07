@@ -2,39 +2,39 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=yPeN2rc/tJ2RdJqewTSdfZh2OdFTlqi92HJThuRXVis=;
- b=GT0
- SExC6jh+EOhm5awO0u37PnO5yIRkgAWqc3fhYYKkZhSoXx+GcIrbU20ZwHEvNjh8VVaOQmYmcTMOT
- 351EezNeOcs0Hx5CYB0PJn43JA/DEXYPe6HzTF7Fr2y3IrQz5asvLOKpJ12kpzdzzuUaAt3tgeifu
- 4uS5Euom80Q2eZfWfEkSORHIbEoo7WLq7S84ogDqic0jdkHN/jl75FK0liIgbcHTGJpdNIki9B+5V
- 1hFmFLOu0i0u8FZvxjX4+rc5GqMrwCYBM62L4CSud5opBZF5xyIRJbS9kN7i8AvKX/U3xFrG1qLUX
- npjppX708fP6dAoPv/fnnP/X+CxTUfg==;
-Received: from mail-yw0-x230.google.com ([2607:f8b0:4002:c05::230])
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+ :Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=rRepeReJgCkjRODrOwmoQ/3Jt6Kf8G7BDQh2jV2y9mM=;
+ b=r4RyeiIfPGM87T
+ 7FmeyfAMDVJaUWuKrc036cwdhJXAXr3L5RX9wnQwyAKNoA8YjFKpEDi0RszfKhr1k5P9U+l8gkKEx
+ tlgqBMsEKvz/sanDiJHm0nqO5O1U4V2ZBDerzz7JQGh8L46h9zCcUY3wlrzKTUW9Z4otWeHyd0C1p
+ ptz78Lg6pfOCvkVgUNhz/UEqVhszXcL36ZOw+1laNoPD0XcfUcgw4j6rr/QI3Z28D4SbWRJdk+Wqw
+ /ehqPq3/t/oYEuV91wGe7K9cYtugyttaClAOKZPZevaNOy39ZwJGDTko5v+QFtdx1NOBJcjNRgtpE
+ kv6WuLmwDqmeqBTVkwww==;
+Received: from mail-io0-x232.google.com ([2607:f8b0:4001:c06::232])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1ctlwI-0001Xq-Gr
- for wireless-regdb@lists.infradead.org; Fri, 31 Mar 2017 02:05:24 +0000
-Received: by mail-yw0-x230.google.com with SMTP id d191so32595419ywe.2 for
- <wireless-regdb@lists.infradead.org>; Thu, 30 Mar 2017 19:05:02 -0700 (PDT)
+ id 1clFAY-0006zJ-IG
+ for wireless-regdb@lists.infradead.org; Tue, 07 Mar 2017 13:28:52 +0000
+Received: by mail-io0-x232.google.com with SMTP id l7so3218089ioe.3 for
+ <wireless-regdb@lists.infradead.org>; Tue, 07 Mar 2017 05:28:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=logitech-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=aRxr34axpEvvr3HGDw3prf6AGwxvRf4xnwictobJf0o=;
- b=Q/nqqorC4ZvGuojzgW/Tw/eq/gfJUrkQW0E2FqzWu2uz5K0HOkqDqOL7yNpv3P25/R
- PsbYspxY2zi8orI4g4u6k+bcb/7LRlt0fxaTX23MXmP6V3HmaSSg6a5+Ynhq8Tev3FHY
- DzSDmtu94dS5EyEL4VpZvDHPyjUjPCLfECNJqCXTaz4GBXCxB+XH0aG0fDJtbx8ExAeu
- FSa9KJ375ol5kJJ4mYSAX1kVNB6zf+f4bGftRlu4s+AyYW07PRKCW9lsmUtdbJuYCLTM
- XafRNgB8EVcb3RtMnWqQwYkZGjY9I4leDq8PdB97kiItEI7qVAJgXSgHzEbmanJkXLIU
- wEBQ==
+ d=canonical-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=evrFBP0huxe0apjVovKighGxsSjPabH+7xfI516DvlI=;
+ b=BLKGnWkJQ18uqhFqCAFGmJ0pQlLykqcWJDTwzamZ5gZKSgjwBNwEW2vs/AQAifvAFA
+ loVNT1MTMTh8Sojh2eo24eK5TSTu9DTjyc/yZL8/YEA5l2kMiFD3JJUrNw3iMw+QxZ13
+ KxdzUk62QdzTU0NbBnZ4B5K4SNqc2autXC39p0jArTXD3UgjihvcV80wh0YW3KsCSZlu
+ d63ZqQvq7KxGyHRalSl4pTXnpt9cEotQtfS9glxM76ZIzLIO3GYWfrf1m6tQSGbwvPtS
+ Tvb2iamIVftZ4aTor1YG6pRRxdu4l4KcuTaKmpGuPZPa1x8JWVyHD2zDBoEbx3rSpkht
+ +8Bg==
+Date: Tue, 7 Mar 2017 07:28:28 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20170307132828.GC5500@ubuntu-hedt>
 MIME-Version: 1.0
-From: Aron Rosenberg <arosenberg@logitech.com>
-Date: Thu, 30 Mar 2017 19:04:39 -0700
-Message-ID: <CA+XFNZ6WnzJhegQfo-zRk2bbVOT9U4tPHYmPhYdwOXjBSknP0g@mail.gmail.com>
-Subject: [wireless-regdb] [PATCH] Set NO-OUTDOOR Flag on Canada 5Ghz 5150
- to 5250
+Content-Disposition: inline
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2017-03-07
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,33 +50,29 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-wireless-db: Update rules for Canada 5ghz to add NO-OUTDOOR
+A new release of wireless-regdb (master-2017-03-07) is available at:
 
-According to [1] Canada requires NO-OUTDOOR to set be on 5150 to 5250
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2017.03.07.tar.gz
 
-[1] http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html Section 6.2.1
+The short log of changes since the 2016-06-10 release is below.
 
-Signed-off-by: Aron Rosenberg <arosenberg@logitech.com>
+Thanks,
+Seth
 
-diff --git a/db.txt b/db.txt
-index 88444a0..0bc068e 100644
---- a/db.txt
-+++ b/db.txt
-@@ -236,9 +236,11 @@ country BZ: DFS-JP
-        (2402 - 2482 @ 40), (30)
-        (5735 - 5835 @ 80), (30)
+---
 
-+# Source:
-+# https://www.ic.gc.ca/eic/site/smt-gst.nsf/vwapj/rss-247-i2-e.pdf/$file/rss-247-i2-e.pdf
- country CA: DFS-FCC
-        (2402 - 2472 @ 40), (30)
--       (5150 - 5250 @ 80), (23), AUTO-BW
-+       (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
-        (5250 - 5350 @ 80), (24), DFS, AUTO-BW
-        (5470 - 5600 @ 80), (24), DFS
-        (5650 - 5730 @ 80), (24), DFS
+Jouni Malinen (1):
+      wireless-regdb: Remove DFS requirement for India (IN)
+
+Ryan Mounce (1):
+      wireless-regdb: Update rules for Australia (AU) and add 60GHz rules
+
+Seth Forshee (2):
+      wireless-regdb: Update 5 GHz rules for Canada
+      wireless-regdb: update regulatory.bin based on preceding changes
 
 _______________________________________________
 wireless-regdb mailing list
