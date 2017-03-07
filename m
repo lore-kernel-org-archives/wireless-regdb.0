@@ -6,33 +6,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=pVsPw7L/hmRJvfKeBGL650q4mhopUTa/cWSPFGAXTPc=;
- b=CztBJADXoj1xs5
- sLZqzMW5EnuyzTgC5N0TWgCHKJczkXTTuBjAcsSwWplaZaZYSQcZ0orl0tFGgc9WI4azAoPwpC7GX
- Ruv8/UaUAj8lPvWXmxW5ou7xaJIe9DiegWGHrnkd2mzex+Cbffgr8gPBtWEzK/kCfRcBxQfagnNWI
- y2Mcs20JFBp2+qkQyjjoTlzAsssWhM/A7BrQgdjruz4R0u5pJ3z0BQ20R5xkuSClYszqVfS8QVwqf
- vPXl+j28I4g2xZ6zoAHQ65XnaroC0EYwpw8tyvZxFfol+1Olx8qfghw5MlUh2TqhifIriE6lC3wF2
- uNDsA9iIwN0Kn2wpTEng==;
-Received: from mail-io0-x231.google.com ([2607:f8b0:4001:c06::231])
+ List-Owner; bh=l2wtuw+kzhYM561mLPMGLkmZoWzKrgil8kyKbgoF3AY=;
+ b=pImWJEwuIKOAr8
+ rmDApz+dVbew0ZjlfqbWDodnTGPdQ3lT66zbrGdITtMdDKMtpROLBnvamlm0qziYM1Ondgh9BE30c
+ q02ZJP96mYg2S3eRcv/YvcJDQ1V/HvrVpmXLBP03Pwzcc8hRLwk57RG2R6Iw7LJohhAUuk5SyugYE
+ K4tSf/0AjY3rSmxKr8ROyvat9x/r75rY1o9cN/BljLpVWK8Nxr97+Si583mpLwjDAkZ9H0D0nSeIM
+ H11OCOpSxBNcxIYnFjVJ8sOXsCz4e+nDx0cAOZ/ViNm308UYJIFmXf0ftg2AHJX/gTjgzX3a5GDlW
+ JeSAToxkDG+R1r2dRIJQ==;
+Received: from mail-it0-x233.google.com ([2607:f8b0:4001:c0b::233])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1cj5jX-0000Za-4A
- for wireless-regdb@lists.infradead.org; Wed, 01 Mar 2017 15:00:06 +0000
-Received: by mail-io0-x231.google.com with SMTP id 90so32600625ios.1 for
- <wireless-regdb@lists.infradead.org>; Wed, 01 Mar 2017 06:59:40 -0800 (PST)
+ id 1clEuc-0000iU-6p
+ for wireless-regdb@lists.infradead.org; Tue, 07 Mar 2017 13:12:24 +0000
+Received: by mail-it0-x233.google.com with SMTP id m27so10786759iti.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 07 Mar 2017 05:11:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Z3XPvvpFodkxbmFPO/o3lFskpD3rKM4xUXaRrM5TGXU=;
- b=OxMiMAe3BGXcfWjOdIFx2xy+1e/jcNRJe6jGhFxxXgfFrFQI8lCqnA5xAyInqe7e9q
- O14aX0agrDk6bUh3ZBnMejFfH2M4OccvGDJk39O6W7OXUgvSCczWS3M13bS4JJQuvgZt
- AJLbUKD4OgBEny71ssjpNa26kJwX1PF1VG3rLyWjLpOZnzkkurkr8JMQku4h4dwZPwBA
- DeNBgXf8TfolwhkBTl1t2ygOYeNBIieyf8X97Li+omk26qaytBtnxp7S3hnNSic1qEbS
- +ZZYNy4aYnDhEXSUl+PKstWWRQfktxhFLKczl4yFxkXP+h+2Khj2GCEz3HwoqZXJl6ib
- ge8g==
-Date: Wed, 1 Mar 2017 08:59:38 -0600
+ bh=pd6wRrpG7u+X9Nwnz6FSz51OnC65qpXxMdbK3rgcZNU=;
+ b=GKCPSKE0Z96H7xgHXYhW91mwISI8bBXphhFTWJ9Hjvq/wAv99Tog7vv8+mIuUA5hhE
+ cNIk727q4S9eYKbI709rlWehGaK4cYCOtD1ImP2fTKqoKBxE+3+Y9DbcuV6EJ8cq+Y89
+ IJJxJAAPh6HN7DeENjzHzMAF9dso3oMV3R8imkeY+h9sqkP4FY2cY0/9bLRyDrPJF6bR
+ agoTqU41hPK3INx31MVOfCMXAZUMXkoR/l8otzWJfYVVpIn1TxsPwO0n/qT4o+FtCSPb
+ UfpquRv6JX6Hghs8Jhl4IZxhuEB12GgArE0QbT52KALDHfewK1QLcrjsyWd4DPLGKuvy
+ xWMQ==
+Date: Tue, 7 Mar 2017 07:11:56 -0600
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170301145938.GK122517@ubuntu-hedt>
+Message-ID: <20170307131156.GB5500@ubuntu-hedt>
 References: <20170224145519.GD3479@ubuntu-hedt>
  <20170225031027.7871-1-ryan@mounce.com.au>
 MIME-Version: 1.0
@@ -76,11 +76,7 @@ On Sat, Feb 25, 2017 at 01:40:27PM +1030, Ryan Mounce wrote:
 > 
 > Signed-off-by: Ryan Mounce <ryan@mounce.com.au>
 
-This looks good to me. I'll give it a few more days to see if anyone
-else has comments.
-
-Thanks,
-Seth
+Applied, thanks.
 
 _______________________________________________
 wireless-regdb mailing list
