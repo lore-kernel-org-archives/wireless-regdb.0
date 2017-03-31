@@ -1,31 +1,40 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
-Received: from mail-io0-f181.google.com ([209.85.223.181])
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=yPeN2rc/tJ2RdJqewTSdfZh2OdFTlqi92HJThuRXVis=;
+ b=GT0
+ SExC6jh+EOhm5awO0u37PnO5yIRkgAWqc3fhYYKkZhSoXx+GcIrbU20ZwHEvNjh8VVaOQmYmcTMOT
+ 351EezNeOcs0Hx5CYB0PJn43JA/DEXYPe6HzTF7Fr2y3IrQz5asvLOKpJ12kpzdzzuUaAt3tgeifu
+ 4uS5Euom80Q2eZfWfEkSORHIbEoo7WLq7S84ogDqic0jdkHN/jl75FK0liIgbcHTGJpdNIki9B+5V
+ 1hFmFLOu0i0u8FZvxjX4+rc5GqMrwCYBM62L4CSud5opBZF5xyIRJbS9kN7i8AvKX/U3xFrG1qLUX
+ npjppX708fP6dAoPv/fnnP/X+CxTUfg==;
+Received: from mail-yw0-x230.google.com ([2607:f8b0:4002:c05::230])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1caotL-0001a8-3G
- for wireless-regdb@lists.infradead.org; Mon, 06 Feb 2017 19:24:00 +0000
-Received: by mail-io0-f181.google.com with SMTP id l66so73369126ioi.1 for
- <wireless-regdb@lists.infradead.org>; Mon, 06 Feb 2017 11:23:37 -0800 (PST)
+ id 1ctlwI-0001Xq-Gr
+ for wireless-regdb@lists.infradead.org; Fri, 31 Mar 2017 02:05:24 +0000
+Received: by mail-yw0-x230.google.com with SMTP id d191so32595419ywe.2 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 Mar 2017 19:05:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=uzGOk77Vd4c5JfSZW8hpuhgRUfySHkxt0ALdhbrp3ug=;
- b=AGN/SB51qPOO2PWie7xM9+o/FJE9g+5sCV/sfqhUoWo8e5Xc8g0VwDkMMzqr4FVwU6
- LNKjTiUQ9yHCfGsVbL4hTGro7jDbynRBgkq/k9EEAsYiNampnedR0KdDBFrKPjoT5W+A
- CmZWRSdeDARfJuZg9DtJ3YauBEmoIa+ffBvruSTqDjG8x/W0QETpH0bkd8ihPAE5Xkhn
- 6aRzZgN5oJQcg8hE11cnrULLnoq2fHAePSqlBYnGe1y2SJEpx5Re8hHdBkJIhgbGRP12
- eqsBvmVinRazNbQVMaZEYh47GBemTdTovI8lej09+UtRw6yBY9NOzZ7gG6V+Neno4/Ft
- HbfQ==
-Date: Mon, 6 Feb 2017 13:22:35 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170206192235.GB4004@ubuntu-hedt>
-References: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
+ d=logitech-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=aRxr34axpEvvr3HGDw3prf6AGwxvRf4xnwictobJf0o=;
+ b=Q/nqqorC4ZvGuojzgW/Tw/eq/gfJUrkQW0E2FqzWu2uz5K0HOkqDqOL7yNpv3P25/R
+ PsbYspxY2zi8orI4g4u6k+bcb/7LRlt0fxaTX23MXmP6V3HmaSSg6a5+Ynhq8Tev3FHY
+ DzSDmtu94dS5EyEL4VpZvDHPyjUjPCLfECNJqCXTaz4GBXCxB+XH0aG0fDJtbx8ExAeu
+ FSa9KJ375ol5kJJ4mYSAX1kVNB6zf+f4bGftRlu4s+AyYW07PRKCW9lsmUtdbJuYCLTM
+ XafRNgB8EVcb3RtMnWqQwYkZGjY9I4leDq8PdB97kiItEI7qVAJgXSgHzEbmanJkXLIU
+ wEBQ==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1485778112-11236-1-git-send-email-jouni@qca.qualcomm.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Remove DFS
- requirement for India (IN)
+From: Aron Rosenberg <arosenberg@logitech.com>
+Date: Thu, 30 Mar 2017 19:04:39 -0700
+Message-ID: <CA+XFNZ6WnzJhegQfo-zRk2bbVOT9U4tPHYmPhYdwOXjBSknP0g@mail.gmail.com>
+Subject: [wireless-regdb] [PATCH] Set NO-OUTDOOR Flag on Canada 5Ghz 5150
+ to 5250
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,26 +49,34 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Jouni Malinen <jouni@qca.qualcomm.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Jan 30, 2017 at 02:08:32PM +0200, Jouni Malinen wrote:
-> The "Indoor Use of low power wireless equipment in the frequency band 5
-> GHz (Exemption from Licensing Requirement) Rules, 2005" notification by
-> Ministry of Communications and Information Technology (Wireless Planning
-> and Coordination Wing) (New Delhi, the 28th January 2005) does not
-> mandate use of DFS, so remove the DFS flag from the 5250-5330 MHz band
-> in India.
-> 
-> In addition, increase the TX power limit to 23 dBm to match the 200 mW
-> maximum mentioned in the same notification. Also use the exact ranges
-> from that notification and enable use of 160 MHz channels in the
-> 5150-5350 MHz band.
-> 
-> Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+wireless-db: Update rules for Canada 5ghz to add NO-OUTDOOR
 
-Applied, thanks.
+According to [1] Canada requires NO-OUTDOOR to set be on 5150 to 5250
+
+[1] http://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html Section 6.2.1
+
+Signed-off-by: Aron Rosenberg <arosenberg@logitech.com>
+
+diff --git a/db.txt b/db.txt
+index 88444a0..0bc068e 100644
+--- a/db.txt
++++ b/db.txt
+@@ -236,9 +236,11 @@ country BZ: DFS-JP
+        (2402 - 2482 @ 40), (30)
+        (5735 - 5835 @ 80), (30)
+
++# Source:
++# https://www.ic.gc.ca/eic/site/smt-gst.nsf/vwapj/rss-247-i2-e.pdf/$file/rss-247-i2-e.pdf
+ country CA: DFS-FCC
+        (2402 - 2472 @ 40), (30)
+-       (5150 - 5250 @ 80), (23), AUTO-BW
++       (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
+        (5250 - 5350 @ 80), (24), DFS, AUTO-BW
+        (5470 - 5600 @ 80), (24), DFS
+        (5650 - 5730 @ 80), (24), DFS
 
 _______________________________________________
 wireless-regdb mailing list
