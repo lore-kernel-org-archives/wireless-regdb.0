@@ -3,41 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=ORPVd6YzqwhlX+DMR++vZVV/r1YW01VBuh9JBzcx8yw=;
- b=DqB2wPLfwzh6g3
- s/2aueT/JVVsYyHKvRq0JgmrQ6+41dT7cejgahm9Kadx+xXhsY3KJPs0LGqE5oh5UtGIGj+vabZa1
- LxfkbTLAPGk+ErpUuNnlPIlhVBkLbK64eZHX9/aXOps1hOukW7VkDCO7N1foSBlq1hNYTg2kbwS0N
- DfVeGFfiZHLHAkY1ZZ7+/aEt/upxNpBeLkP3NW9+HHzhS0sJjIq+MNQqgeZZb6hXTO0yMSnIBAVZY
- 0flLplHFZAQ+7qyijaUl5A+KDQ/RUz+/oRXenaFGmz2F3wotSw0MN8Yn85qePnvz5oGOnMhOtRMbC
- tPs9OMkleT0ze/dMQUHQ==;
-Received: from mail-oi0-x231.google.com ([2607:f8b0:4003:c06::231])
+ List-Owner; bh=k/5H4uoIfgVRXWF/sNK/g9HQDV0AvnszrRvAB6RBmeg=;
+ b=M2W/NIRi7WdEpF
+ WExf2Y7XJz07CkD3d+aJLsa9zzGDRBtZlqdJxLYfCu0VB4Hywm/L0pL41TOOhrBwyJKFPHNnb//52
+ 53plx+mdXTovJGRxltroaMFb4UB/ro6sw7F+zYxnbDA6hJ8M5ru9z5I+Zg9lxvCXDgnRMlbdyfeA1
+ T8+iOBWzNxd98bi5QbW3Lt6TZBOXP/3x5Wu1ex9Sb+xWvQGqLLGor2rUV3jZ9ns6sfKcR4jAsB1qz
+ f+99hPiB8dbx3iOb485SQMMfgsJgurKjEIHK3y1Hpa53Y7bxuN7tXLrFJC+KufSMmRpOWsfThiM75
+ Fzg8s1TMgQf+MVr0DIgQ==;
+Received: from mail-oi0-x235.google.com ([2607:f8b0:4003:c06::235])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dFgAC-0007QD-Ag
- for wireless-regdb@lists.infradead.org; Tue, 30 May 2017 12:22:18 +0000
-Received: by mail-oi0-x231.google.com with SMTP id b204so108628664oii.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 30 May 2017 05:21:54 -0700 (PDT)
+ id 1dFgW4-00006x-L1
+ for wireless-regdb@lists.infradead.org; Tue, 30 May 2017 12:44:54 +0000
+Received: by mail-oi0-x235.google.com with SMTP id b204so109322724oii.1 for
+ <wireless-regdb@lists.infradead.org>; Tue, 30 May 2017 05:44:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=canonical-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=4nBqfTWwMqmkdeXWVcaAt/XWtBMI39/wK8NEF964mhs=;
- b=HNHVl9EpcWqpKj5ndvR1GOyYIzzb6PB6iPxnjw1c75/D/C3vbXV09OPHdawxNGHMt4
- a8cF7xI3Mw3r5UUJloLkymqUU9ixmt7O2mCgKyl0l5TmtjlNNSdftgu36b756INpcjKa
- wWFOtHLblofIRqzlj+uyvUg6Lr72BDECU4mKfUdXXLx3k8KZxJhy4xj6dwilWQKLCuZ2
- uJXwJYHv0wT0dCYTxbBHl7f/arc9eFOckmpYTGlC/Uzo+VJsjPLUEdPXRlxzFiuo3vJD
- liVF/IPLw9oYzhuKr+n4ZT8e628R196gcEFMgj2oRlzkFnKPYR7dsy4woEkORZDtbQvi
- hIrw==
-Date: Tue, 30 May 2017 07:21:51 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170530122151.rms4qp6q4nmd6wwp@ubuntu-xps13>
-References: 
-	 <CAOjtFLk8yPzHP2zUhEB=nY636K1NRxT8z8oonv7K3ibSHZ-G9A@mail.gmail.com>
+ d=hrt-email.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=RY7HKLBwNY55xxz6NY1xr4PqTZA5KCowMXxWE/SHcGw=;
+ b=pJvcfLAluu+i2oj7HD0LJ+mYZofNfVHagf9O01jRDefqBsEOFMHpDyqSr7VixDJ67Y
+ YkaSWDTi8+RvhmcGn/lk8R2dS6MEjn+WfjqjVifduKjZhmGIEKPo4gAaGZPn8DoVR9aE
+ PM/SaDvtL6ACyVV+PnJrT9TnpLaWBT4XFrYHl9lupynPyShqubf02Njtrq/7b6OYevDa
+ F1OwV9QTPOkv4v9bUOVCyCp2k+Lb0eOK1PWFscwf6AoD5QDeHEFU0/dfq10uJHiaV36N
+ edW0oyjxe9SX/0e+9aiTmVDKSJbOst1GE59FEfMGS08xLJ85NfuEf0/f2iQvFDZGaXF6
+ nofw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOjtFLk8yPzHP2zUhEB=nY636K1NRxT8z8oonv7K3ibSHZ-G9A@mail.gmail.com>
+In-Reply-To: <20170530122151.rms4qp6q4nmd6wwp@ubuntu-xps13>
+References: <CAOjtFLk8yPzHP2zUhEB=nY636K1NRxT8z8oonv7K3ibSHZ-G9A@mail.gmail.com>
+ <20170530122151.rms4qp6q4nmd6wwp@ubuntu-xps13>
+From: Mauro Barbieri <mb@hrt.email>
+Date: Tue, 30 May 2017 14:44:29 +0200
+Message-ID: <CAOjtFLn5fbYOxmsBKRnyr+pVrPQCddeyiYP1JW--A8+J3AyDvw@mail.gmail.com>
 Subject: Re: [wireless-regdb] Official vs latest releases
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -53,29 +52,34 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Mauro Barbieri <mb@hrt.email>
+To: Seth Forshee <seth.forshee@canonical.com>
 Cc: wireless-regdb@lists.infradead.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, May 30, 2017 at 11:49:27AM +0200, Mauro Barbieri wrote:
-> Hello everybody,
-> 
-> Please excuse me for this newcomer question. I googled around without
-> finding the answer:
-> 
-> I found the official wireless-regdb
-> (http://drvbp1.linux-foundation.org/~mcgrof/rel-html/wireless-regdb/)
-> and many updated releases
-> (https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git).
-> Do you know what “official” means ?
+Many Thanks.
 
-This is the actual official location for wireless-regdb releases:
+Mauro
 
-https://www.kernel.org/pub/software/network/wireless-regdb/
-
-The other page is owned by Luis and seems to be quite out of date.
-
-Seth
+2017-05-30 14:21 GMT+02:00 Seth Forshee <seth.forshee@canonical.com>:
+> On Tue, May 30, 2017 at 11:49:27AM +0200, Mauro Barbieri wrote:
+>> Hello everybody,
+>>
+>> Please excuse me for this newcomer question. I googled around without
+>> finding the answer:
+>>
+>> I found the official wireless-regdb
+>> (http://drvbp1.linux-foundation.org/~mcgrof/rel-html/wireless-regdb/)
+>> and many updated releases
+>> (https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git).
+>> Do you know what “official” means ?
+>
+> This is the actual official location for wireless-regdb releases:
+>
+> https://www.kernel.org/pub/software/network/wireless-regdb/
+>
+> The other page is owned by Luis and seems to be quite out of date.
+>
+> Seth
 
 _______________________________________________
 wireless-regdb mailing list
