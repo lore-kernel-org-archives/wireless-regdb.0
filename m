@@ -3,36 +3,43 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=3ltGY2WQEIzV7Ay6uUUu66og0OossiFl69BRNfrhvg8=;
- b=MJZ5FiyK8pLOgT
- nVA9/Y03eKZDsnnGad2rFvKMkvwz7tk59NXLMmakQfri3/106G5BKHz4Ar7lrSG9bT5wlsGTBEosr
- l/KwJ/BpzD+cNVNEGoFItNbg9ys/7XgVkkboQ6ph8r5qtrrNgbV34rX4AUhFNfL70a2G1zz400s94
- HSJD6QypNYGu97c9v8/vp87gr6KlU8YL3fJZ0txTmevbVIBIyXjeJlunwdfZKCLd+1r8sc92KpxCw
- X+GLE6/sxH3B2MCtg/UgCmUZhZrJFSqc/jdrTELWUrYVdkIbvKEq8LMDyxp2OSWKLswor4nA91kus
- nKf6ZvCjDAe5+obZ1FLQ==;
-Received: from mail-qt0-x229.google.com ([2607:f8b0:400d:c0d::229])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=NDtWKTiw9L2XWaV6moEJa81RH2Cn8fadBoXvp4AS9dU=;
+ b=jbZSaK3jqTcQUP
+ ZsZsQ33hN/FaTkU2kmxJX/rrNE+K0f67qQASqs4qqTKIXk4/jtnZnS1vc1/+r/xtWRiBV7m6DOkKT
+ vSbCG8Ho5/ME9N2/tw9RKhxyOoarUX6lTu7eQf3p/NqiZaciwYorAozztStyQAC2iXowa+IQkG976
+ jIul7ohw9R3VAGfjw6v2BoLGE0mEuIJh460UmvMDqDCrLBNhnlLbL0QPORrSFIzs58DJvNJN3aHuj
+ /Bow314L+eE5O9rNLMYN6V7/bA+814XwbicU8Dt/QG+Bz5QyO8U+yeCP/c5/oGAEtVYazRMI17q+n
+ /TrFTDCEx82ljYUZSkxA==;
+Received: from mail-it0-x22c.google.com ([2607:f8b0:4001:c0b::22c])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dPLCV-0002LF-FW
- for wireless-regdb@lists.infradead.org; Mon, 26 Jun 2017 04:00:37 +0000
-Received: by mail-qt0-x229.google.com with SMTP id i2so67258268qta.3 for
- <wireless-regdb@lists.infradead.org>; Sun, 25 Jun 2017 21:00:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=mime-version:from:date:message-id:subject:to:cc;
- bh=ET2ArHRi6wwzaysSKa5dTllCwW7ZBapGjV/NLRh6oBU=;
- b=cNRHfW8dFrEBMLAC/guJqjz9k7L7dQn5kJPCExnsicmk0WnCb/28t41hYyfv9Ijr4L
- ZliPQDv8lKPNUVXf0mBR5RE8G49u/N+CPp16uKB+I8eMx8A81kl80RhNJcVnFLyU9BPq
- T2SIC9cXiN7wxECubn3AYUkmBHJcXjFo0sQQHyW+CQU/+TjclgC/XuqsVK3hWplJkkIA
- Kj/IDmrK+S3F0fMKN4p+RSx6WkfYESiXRkESxUhp555FFL40Z79XfKLdiX+GYUtarKFD
- /3mHGzUeMolUuShYrOfk/Nut3nPyqWC/YPAzSM0Aby4Yh3+7bo4kI17ifhTAItRR2+M9 K6Yg==
+ id 1dGpfK-0007VV-D0
+ for wireless-regdb@lists.infradead.org; Fri, 02 Jun 2017 16:43:12 +0000
+Received: by mail-it0-x22c.google.com with SMTP id w68so9403537itc.0 for
+ <wireless-regdb@lists.infradead.org>; Fri, 02 Jun 2017 09:42:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=canonical-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=qxaI2b5tngi+AL3H0PiWE/NR2xynl3umN1cPNkZlS9A=;
+ b=bVvx+yzlWgrdPy7M/0+PQXm6AHxTtrkt6rzPuq1KCt5n2GyH+zZTGXEYbrUh56mp7S
+ gM9Fq24QNqAdXjgBSBzRgzntANdVgdrLV/OuKI1iuZc8N/lFU3OeoM0+bPHR9cPNITtX
+ fIVNKL9SSXJyJf2IkjH2oEkx+5EK0HoIn2qRlMycsz6SIkwS8ugtoev4ZmdvtozpPwpT
+ QCP19ess+evjeErXMUWF5SeI5X5tfWcxVBqFQn97qdyjSTOtVqEownVu8AuXB9PCCBVe
+ rHZ9KlXfL+/IhWVBsNktH5uaRtVbywDsQt6Ew2+bAZ3xgTw2QaCSmCNiZJ73YUJWEna2
+ pgBA==
+Date: Fri, 2 Jun 2017 11:42:46 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20170602164246.5fqimhbu5wdkrfur@ubuntu-xps13>
+References: 
+	 <263AD8850614FC4380385C9D709C29D71C4E5307@DGGEMA503-MBS.china.huawei.com>
 MIME-Version: 1.0
-From: Vasiliy Safronov <vvsprog@gmail.com>
-Date: Mon, 26 Jun 2017 10:00:13 +0600
-Message-ID: <CALfe80gmDFDnvT=MvN8891wudBEAmeQpH1X1_wNzQpkhbLSOVQ@mail.gmail.com>
-Subject: [wireless-regdb] Update regulatory rules for Kazakhstan (KZ) on
- 5GHz
+Content-Disposition: inline
+In-Reply-To: <263AD8850614FC4380385C9D709C29D71C4E5307@DGGEMA503-MBS.china.huawei.com>
+Subject: Re: [wireless-regdb] Some questions for country code with their
+ bandwidth.
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,29 +49,36 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: liruide <liruide@huawei.com>
+Cc: "linux-wireless@vger.kernel.or" <linux-wireless@vger.kernel.or>, "Huyufeng (A)" <wolf.huyufeng@huawei.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "ankang (A)" <ankang.an@huawei.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Please add support 5ghz for Kazakhstan.
-In Kazakhstan there are no restrictions up to 100mW
-country KZ: DFS-ETSI
- (2402 - 2482 @ 40), (20)
- (5170 - 5250 @ 80), (20), AUTO-BW
- (5250 - 5330 @ 80), (20), DFS, AUTO-BW
- (5650 - 5730 @ 80), (30), DFS
- (5735 - 5835 @ 80), (30)
+On Thu, Jun 01, 2017 at 11:11:24AM +0000, liruide wrote:
+> Hello
+> 
+> There are some questions about country code with their bandwidth.
+> Like this:
+> [cid:image001.png@01D2DB0A.DB092050]
+> [cid:image002.png@01D2DB0A.DB092050]
+> I want to why the BH or CR and some other countries with 5G channel are only 20M bandwidth. They don’t have 40M or 80M bandwidth.
 
-http://adilet.zan.kz/rus/docs/P000001379_
-S 5.282 etc
+I guess some countries could have bandwidth restrictions, or it's
+possible that they just need to be updated.
+
+> Can you give me all the country code with their bandwidth and channels?
+
+The best I can offer is this.
+
+https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt
+
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
