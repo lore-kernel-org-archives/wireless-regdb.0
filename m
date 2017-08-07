@@ -2,43 +2,40 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
- :Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=WJTQDAX2W1Qj8vXKfi5gMLMwRTmwwc3cxLhXuTGms10=;
- b=DAisW4GNm5l8Ug
- 0U7lkaA5eQt9TmlVKIQgs23Km6JDPpPzGWABjh1zrXJRv2eqajH1YYqJddxsNyeaf8mrBOVu+rdbB
- nUVcRrTHxhP1UrWgDdngHBB4bxptUx+JOoBXHEOJMHGFxaCrz9kh58BHXEVS35J4T4ddoR3bPvtqi
- 9wfQBejZNbCZZkIuvsvApLQd44Z/gQeU31CrVllB6GzhJyxijPxxWU8rxshNX/oPzd6cnB2IJ5P6k
- A8e20Z/ROpgLaNNcALP4k5InRlATaL7asIW5DKIYD0ks28JTchr5/l3VK5c1OPRbZk6F6otFynEgu
- KEDLjgn4JdEKhZJJtNiw==;
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+ List-Owner; bh=JcbUQhVWvhbDJoBVv4J0vwJpfAdqik3MHWl+xSRPr2o=;
+ b=qZj4yl5TnIgVzv
+ iC0F2lmv/3gy+KJAf751ltgAhibozOWEh1vEs2F6FZmbKSdWZbqnjm3tFLk7lFBuMcFRGfJeh1hFc
+ BjFzMDnVvDDCnI1NONsWueOWJHI8oe7DAxGzkCSG1THsRbnJITN5pLyi4bkyhz+2hEAwRFnj9vMuv
+ IRU6G+bLXh0tcFJzqVBYVM2Nu0eJVEc/1gqyfU6HRmL+WXjo6ji4Q2ARmAwUOpXOwWWkDmHY7tivt
+ Y1isEmRhV3Y5RlZokNbMnI6QGkKUYk1N27XzJXfbQxxXYL5wyN4X4/EjNXU1sz6247UO3zL2E0M/m
+ +Zhq5IHZROyY17dc9YPw==;
+Received: from mail-qt0-x22f.google.com ([2607:f8b0:400d:c0d::22f])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dl94e-0000kK-R5
- for wireless-regdb@lists.infradead.org; Fri, 25 Aug 2017 07:30:40 +0000
-Received: from compute7.internal (compute7.nyi.internal [10.202.2.47]) by
- mailout.nyi.internal (Postfix) with ESMTP id 52ADC2105A for
- <wireless-regdb@lists.infradead.org>; Fri, 25 Aug 2017 03:30:11 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:message-id
- :mime-version:subject:to:x-me-sender:x-me-sender:x-sasl-enc
- :x-sasl-enc; s=fm1; bh=VjwaqKA51wYUS61EkgdXhhxnhf3R2XjcgC/5NN3Ob
- hU=; b=fWqSY1a8mP/KT5l9S3pw1U48ZFk0mMTmA6Uk/riXL2gd7gmF09YJIhMwQ
- fAzS+bhuV3HN1aicjNnGwAHzD71cuVMnPfD20phctv2WqYzCCd5rep6meXPIzByl
- nZZ1/eEJzHuov01oaBIL4lFTC+fGD1PUOiTfeuDiXidZBzmfpIAHt7Ls2sYhx2LX
- 87pSnalgAroh4WQN6Vf3E+WJ2qXOKkPr/FL3ANo9wHUsxCet4DVNbKYxiSiGqWVM
- hsdDnkyffVUGjos8udXDScGWFnDDQwLLbu5Xzpt4DVj7WRMAr6Pbs2mICoTmg0VN
- 5nXoJ9oohoG27H7hD+1OSewl2lJ/w==
-Received: from localhost (110-175-0-221.tpgi.com.au [110.175.0.221]) by
- mail.messagingengine.com (Postfix) with ESMTPA id 5D276247A2 for
- <wireless-regdb@lists.infradead.org>; Fri, 25 Aug 2017 03:30:10 -0400 (EDT)
-Date: Wed, 23 Aug 2017 18:11:00 +1000
-From: Edwin Steele <edwin@wordspeak.org>
-Message-ID: <20170823081100.GB44003@mercury.local>
+ id 1dedH1-0004rc-DP
+ for wireless-regdb@lists.infradead.org; Mon, 07 Aug 2017 08:20:29 +0000
+Received: by mail-qt0-x22f.google.com with SMTP id p3so36426227qtg.2 for
+ <wireless-regdb@lists.infradead.org>; Mon, 07 Aug 2017 01:20:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=openmesh-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=oI6q8Q8qfB06k4GTyLFgfz3TV9FNk+qvzswkjEjxOtU=;
+ b=uvcfLZ8FEee3GQemEIqhuOPjNFznwEG7aa5hlfKaWyQGcZRUpz70hE+c3pA4lfMm8r
+ eYtkEIqGnZlURRL0jXWYxyFFC4lRqBDPNNW+ZO8LykA4lhJ7Od7LTG2LcLct7OQ2cDtf
+ nNfbH2utP3L4f6+tRo4kUtPjpfiZxgyzyLMmLLW4klh+mqjlfbu5t3f7ZDU8+uW5tOjH
+ /x+v653mdj2Vp8pJNDMDi5dOcRaxwzbvfE9uwmTs2yZ2SCJpQopVJXgQvrv9u2r6pX0K
+ GxolHYpZAEzg8xHgmjyumGpltGtCo6inAxB8+wTojQ5MJocAJ01e/JdMQBLVkIbPEGyf
+ k4Bg==
+From: Sven Eckelmann <sven.eckelmann@openmesh.com>
+Date: Mon,  7 Aug 2017 10:19:50 +0200
+Message-Id: <20170807081950.13327-1-sven.eckelmann@openmesh.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [PATCH] Update rules for Turkey 5ghz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Singapore (SG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,56 +45,60 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Sven Eckelmann <sven.eckelmann@openmesh.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
+2.4GHz and the lower 5GHz band can now be use with up to 23dBm. But the DFS
+channels in general require TPC to be usable. Only 5150 - 5250 has an
+exception which allows the use of it without TPC when reducing the power to
+20 dBm.
 
-Update rules for Turkey 5ghz
+Signed-off-by: Sven Eckelmann <sven.eckelmann@openmesh.com>
+---
+Please check this twice because this is my first attempt in converting an
+official regulatory document to an wireless-regdb entry.
 
-Based on the information from [1] the power limit for 5Ghz channels
-can be increased. Additionally 5170-5330Mhz are restricted to indoor
-use.
+ db.txt | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
-There are references to e.i.r.p density in [1] that will affect the
-power available for wide channels, but they are not reflected in
-this change as it's unclear how they would be specified.
-
-[1] https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
-Signed-off-by: Edwin Steele <edwin at wordspeak.org>
-
-diff --git a/db.txt b/db.txt                         
-index 0bc068e..9a1192f 100644                        
---- a/db.txt                                         
-+++ b/db.txt                                         
-@@ -1158,11 +1158,15 @@ country TN: DFS-ETSI         
-        (5170 - 5250 @ 80), (20), AUTO-BW            
-        (5250 - 5330 @ 80), (20), DFS, AUTO-BW       
-                                                     
-+# Source:                                           
-+# By-Law on Short Range Radio Devices (SRD) Oct 2015
-+# https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
-+# Article 8                                         
- country TR: DFS-ETSI                                
--       (2402 - 2482 @ 40), (20)                     
--       (5170 - 5250 @ 80), (20), AUTO-BW            
--       (5250 - 5330 @ 80), (20), DFS, AUTO-BW       
--       (5490 - 5710 @ 160), (27), DFS               
-+       (2400 - 2483.5 @ 40), (20)                   
-+       (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
-+       (5250 - 5330 @ 80), (23), DFS, NO-OUTDOOR, AUTO-BW                                                
-+       (5470 - 5725 @ 160), (30), DFS               
-        # 60 GHz band channels 1-4, ref: Etsi En 302 567                                                  
-        (57000 - 66000 @ 2160), (40)                 
-                                                     
+diff --git a/db.txt b/db.txt
+index 0bc068e..df30f37 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1078,12 +1078,17 @@ country SE: DFS-ETSI
+ 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+ 	(57000 - 66000 @ 2160), (40)
+ 
++# Source
++# https://www.imda.gov.sg/~/media/imda/files/regulation%20licensing%20and%20consultations/ict%20standards/telecommunication%20standards/radio-comms/imdatssrd.pdf?la=en
++# page 12-14
++# The EIRP for 5250 – 5350 can be increased by 3dB if TPC is implemented.
+ country SG: DFS-FCC
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
+-	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-	(5490 - 5730 @ 160), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(2400 - 2483.5 @ 40), (23)
++	(5150 - 5250 @ 80), (23), AUTO-BW
++	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
++	# 5470 - 5725 is only allowed when TPC is implemented
++	# (5470 - 5725 @ 160), (30), DFS
++	(5725 - 5850 @ 80), (30)
+ 
+ country SI: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-- 
+2.11.0
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
