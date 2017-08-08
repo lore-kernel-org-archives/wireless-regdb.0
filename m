@@ -2,39 +2,26 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=9I3JqZEXpgBgB40lbxY2AnV96sfVaR3bBF5utR0MlXw=;
- b=kFpdPnqNRAMHF7
- xkYMyRh5dr5YArl166fa2te8y28ZnS7VVl90NqBD7J0sUp/PpXuAMnlN1Gf3aBpdhuE3p28INGgBY
- HutkWXTrppEaZSYsRABNPHYUJr/Nt/crpev2+1ZxEBw0HY1AfPTHTpFtMCYU4U2PtDxYOQHdOdpeU
- ADWBxS2TGTJHiU8NJf4b4tqcvMnB4ZXIPg2D+c6eK5gjAvQ0owUob9IcnSUti8W6vRQXOzwPkkbCV
- LZmBuqmAvxCTBfyipVoDdLEHhpWqfJ5rljyf5DOzjS8t3ktSiiHfn7o1wYKTs1WWMzB25kubmq0vk
- MiUUePaMQfXsSEaf+qJA==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=oIGl4j1MBx6fCAq7iwoWKtvPEuPdr8nXv714HBSwivQ=;
+ b=UVAaHLGZN1dS0J
+ bZGNe5f7E5zbktw7Iz6t2ztuMu1+xSny3u0RMGE040KtfwZBAT2VcTe9EaqvQBJ9g0bzZpceOlSvj
+ ernPm41lnSWwFL+rhTq9HarkdC7EcJ96e8zuLGP67eQ3I3sSfHyxhEedXDGg9zIxkNE8fbYBMcR3v
+ 00Wqd5iQ3UscliO/6ZuCG0s+9qlEZjM1lySPxZhny4AgmOfh9gENo7reI5OlltZOgv/8vf+uTVYR/
+ L2cI1iPNaSSAey9D2VLv4GdexC0x1Nw3P9JeFmrzHb9+GMXsAskq9HbeGavFwb1c3TQmGkkcginSC
+ 1pxc7uLAcbX+khaEqEaQ==;
+Received: from mirror2.csie.ntu.edu.tw ([140.112.30.76] helo=wens.csie.org)
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dkupg-0007QX-6m
- for wireless-regdb@lists.infradead.org; Thu, 24 Aug 2017 16:18:14 +0000
-Received: from mail-io0-f198.google.com ([209.85.223.198])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1dkupJ-0000wM-1a
- for wireless-regdb@lists.infradead.org; Thu, 24 Aug 2017 16:17:49 +0000
-Received: by mail-io0-f198.google.com with SMTP id q12so8682415iod.9 for
- <wireless-regdb@lists.infradead.org>; Thu, 24 Aug 2017 09:17:48 -0700 (PDT)
-Date: Thu, 24 Aug 2017 11:17:44 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170824161744.fl5fikxgqwxjfm6t@ubuntu-xps13>
-References: <20170807081950.13327-1-sven.eckelmann@openmesh.com>
- <20170823205240.ycyrszsvjugtosdi@ubuntu-xps13>
- <1684208.h1AJVyQWH7@bentobox>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1684208.h1AJVyQWH7@bentobox>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for Singapore (SG)
+ id 1devLp-0001Sl-M8
+ for wireless-regdb@lists.infradead.org; Tue, 08 Aug 2017 03:38:40 +0000
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue,  8 Aug 2017 11:38:03 +0800
+Message-Id: <20170808033804.6053-1-wens@csie.org>
+Subject: [wireless-regdb] [PATCH 1/2] wireless-regdb: Update regulatory
+ document references for Taiwan (TW)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,97 +31,71 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Sven Eckelmann <sven.eckelmann@openmesh.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, simon.wunderlich@openmesh.com
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Aug 24, 2017 at 09:13:42AM +0200, Sven Eckelmann wrote:
-> On Mittwoch, 23. August 2017 15:52:40 CEST Seth Forshee wrote:
-> [...]
-> > > +# Source
-> > > +# https://www.imda.gov.sg/~/media/imda/files/regulation%20licensing%20and%20consultations/ict%20standards/telecommunication%20standards/radio-comms/imdatssrd.pdf?la=en
-> > > +# page 12-14
-> > > +# The EIRP for 5250 – 5350 can be increased by 3dB if TPC is implemented.
-> [...]
-> > > +	# 5470 - 5725 is only allowed when TPC is implemented
-> > > +	# (5470 - 5725 @ 160), (30), DFS
-> > 
-> > I'm not sure that the lack of a specific provision for operating without
-> > TPC in this range means that it cannot be used. As I understand it, TPC
-> > would only result in a reduction in EIRP of 3 dB, so as long as we use
-> > a power limit of half of the maximum allowed we will be safe.
-> > 
-> > If this is incorrect I'd appreciate it if someone more knowledgable on
-> > the topic could chime in.
-> 
-> I would also be happy about feedback regarding this part. But my current 
-> settings are based on the document [1] mentioned in this change.
-> 
-> Let us look at the range 5250 – 5350 on page 13. There are two entries for the 
-> same frequency range.
-> 
->  * 28:
->    - up to 200 mW
->    - requires TPC for 5250 – 5350 Mhz
->  * 29:
->    - up to 100 mW
->    - requires *no* TPC for 5250 – 5350 Mhz
-> 
-> This is exactly the 3(.01029995...) dB difference which you've talked about. 
-> Now to the frequency range 5470 - 5725 MHz on page 14. 
-> 
->  * 30:
->    - up to 1000 mW
->    - requires TPC for 5470 - 5725 MHz
-> 
-> There is no extra exception rule for non-TPC mode.
-> 
-> Now let us check what IEEE 802.11h-2003 [2] says about TPC.
+Taiwan's Ministry of Transportation and Communications updated its
+frequency allocation rules again on 2017/02/22. The amended articles
+are not related to this database, but the link should be kept up to
+date, as the old one is no longer accessible.
 
-<snip detailed analysis>
+Taiwan's regulatory body, NCC, published its updated technical
+regulatory standard for low-power radio frequency devices, LP0002.
+The URL has not changed. The new standard opens up more bandwidth
+for 5g U-NII WiFi and 60g WiGig devices. Transmission power for
+5.25 ~ 5.35 GHz is also increased, but this was already covered
+in commit 9a618d9b5fb2 ("wireless-regdb: Update 5 GHz rules for
+Taiwan (TW) to follow US").
 
-> My current change now assumes following strict interpretation:
-> 
->  * Singapore provides a mitigation factor of 3 dB for 5250 – 5350 Mhz (see 
->    table entry 28 + 29)
->  * Singapore provides now mitigation factor for 5470 - 5725 MHz and requires 
->    TPC
-> 
-> I am currently unsure whether it is now valid to say that the default 
-> mitigation factor would be 3 dB and thus there is an implicit table entry (let 
-> us call it 30b) which would be:
-> 
->  * 30b:
->    - up to 500 mW
->    - requires *no* TPC for 5470 - 5725 MHz
-> 
-> Countries like AU or regions like ETSI (ETSI EN 301 893) seem to have this 
-> mitigation factor always specified in their rules. But Singapore is missing it 
-> for this specific frequency range.
+This patch updates the link and comments for the rules and standards,
+and also adds inline comments referencing the governing section of the
+LP0002 standard for each band.
 
-So on the one hand I'm in agreement, it would be good to know where the
-3 dB attenuation comes from and whether it's really universal. So far
-it's been something I've taken on faith from folks a lot more familiar
-with the subject than me.
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+ db.txt | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
-However, it seems the same lack of information would also anyone who
-does want to support TPC. The information about how much to attenuate
-must either be provided on a per-regulatory-domain basis or else it must
-be standardized somehow. If it's the former then it seems odd that
-Singapore does not include this information.
+diff --git a/db.txt b/db.txt
+index 0bc068e..d96f00e 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1174,15 +1174,16 @@ country TT: DFS-FCC
+ 	(5735 - 5835 @ 80), (30)
+ 
+ # Source:
+-# Table of Frequency Allocations of Republic of China (Taiwan) / Nov 2014:
+-#   http://www.motc.gov.tw/websitedowndoc?file=post/201411171137330.doc& \
+-#      filedisplay=Table+of+radio+frequency+allocation.doc
+-# LP0002 Low-power Radio-frequency Devices Technical Regulations / 28 Jun 2011:
++# Table of Frequency Allocations of Republic of China (Taiwan) / Feb 2017:
++#   https://www.motc.gov.tw/websitedowndoc?file=post/201702221012200.doc& \
++#	filedisplay=Table%2Bof%2Bradio%2Bfrequency%2Ballocation.doc
++# LP0002 Low-power Radio-frequency Devices Technical Regulations / 23 Aug 2016:
+ #   http://www.ncc.gov.tw/english/show_file.aspx?table_name=news&file_sn=681
+-#   (section 3.10.1, 4.7)
+ country TW: DFS-FCC
++	# 2.4g band, LP0002 section 3.10.1
+ 	(2400 - 2483.5 @ 40), (30)
+-	# Follow US 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
++	# 5g U-NII band, LP0002 section 4.7
++	# 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
+ 	(5150 - 5250 @ 80), (23), AUTO-BW
+ 	(5250 - 5350 @ 80), (23), DFS, AUTO-BW
+ 	(5470 - 5725 @ 160), (23), DFS
+-- 
+2.13.3
 
-Hopefully someone more knowledgable will chime in to help us understand
-better.
-
-Thanks,
-Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
