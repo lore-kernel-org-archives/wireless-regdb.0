@@ -6,39 +6,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=TCEShem9XXAkpUmb0UU1ATBh5B2HJ5nQ47wFKTOwrcA=;
- b=I59ucwbgwqZhwk
- AmhJB8Le0Pt4wlMDG2KJEbr0Irs14D+/o2/9DHMc/LmPdhGUom5B6+j6Z1grWJVnPMK1h0bha2jkJ
- EYoLSqi2fg4IPS9+rzIW/zXmqnMRGiZwsK1UNO67F5zJJky1EuKY5eiFUaW3v8NXu5hHamqYaAG5k
- tWaUgtcNdf0v9gl/7p+QaLIRTlA3v60og6tcLxvUChinycyWCFH8JwdCjOkVfPp1U9bKsJQ640lzg
- tHDidgIefq5U6+Pm3inPYcQLkJezz5nyGbWSwrWLyiABFs895FkIoT8t5JNXOPKwb8r7tf+4zAp5Z
- 5FjArU+4KgAG9Z+4E5pw==;
-Received: from mail-io0-x22a.google.com ([2607:f8b0:4001:c06::22a])
+ List-Owner; bh=/Oz+pJc8VesbbsHejpCe5kC0vaIBq6zpNA3KRGnUCC0=;
+ b=LhTFqfp/CJHDkQ
+ 6/LwY8mpxF351l1Q2hoWjlFx0w+LduQUnlMgF8PnBpgsA8bu8aMIGYdSclgsF3QDL6mpA+lII3QuP
+ kSXmW9ZmPRuk3xp1Xg7XCEKc170PUNfF7A90XI4yVOs+v4nFLK5tbFCWNdJFuO6ctj0E1WYSs2qq8
+ oj6SHZtwPIfwetun5kNmmwHAMkenjb6yO1sqo8pefkHIj2oeGlZHxv4COaeBW6EBwNgOc3j/pyWQ3
+ DQtA4J9++QWiXZ9M2Ecewo+pe0KA/wEezfRSOH4/c3JUtUf0tXvFh9EeFbIKmDXxRWJz8I4qNj/ez
+ KDbrCVoSgVxdS251mtdg==;
+Received: from mail-it0-x236.google.com ([2607:f8b0:4001:c0b::236])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dkcpy-0000KY-OA
- for wireless-regdb@lists.infradead.org; Wed, 23 Aug 2017 21:05:20 +0000
-Received: by mail-io0-x22a.google.com with SMTP id y4so4596317iod.4 for
- <wireless-regdb@lists.infradead.org>; Wed, 23 Aug 2017 14:04:58 -0700 (PDT)
+ id 1dfpFP-00041B-JM
+ for wireless-regdb@lists.infradead.org; Thu, 10 Aug 2017 15:19:46 +0000
+Received: by mail-it0-x236.google.com with SMTP id f16so15711939itb.0 for
+ <wireless-regdb@lists.infradead.org>; Thu, 10 Aug 2017 08:19:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=canonical-com.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=YK2nR6uO27iB2qMsofcP+w7yW889meljQz4q5ROv5mw=;
- b=rvpaCHbpWj5qZXCsKZHr66gOHC2QzjdcHZD3MZmA69xDneGMa3X2CJQvtmJPutzEQJ
- 4AOvqVcIwuGuLhSfbiQjex9eicc5NMYxKR6eFWefqqk5TUooM/VIWTIr3jfjJub7WgJk
- uRqsFwIF6KIXxoyX/Um4vkR+vb9TPC2ftRejprr6P+zCbqg1QDnOxNfqjjM3eAxQfckt
- 8KtqmZicYwXjHAVz8V3WAFwzaIu2G78Tsz6QiBbs5MPVnF0euip1rFHb2zwPbtdoRhgU
- qazj+UpT28R4ENSPh330yrRfIXBr4Db1IuWaJIyIwmXd2Mv3bAdXRWJs8ikEOI5TATiQ
- TBEg==
-Date: Wed, 23 Aug 2017 16:04:55 -0500
+ bh=LL9ncHX7pQc49cRcE+3YtiKSw32MVSfsKBjx8ADNNOI=;
+ b=yUtwiBdNX55qp5Ig8OZx59R2ds0klIUTp9NWH4s+sP+gudF2iI1mKUPMoPQlrCnRD6
+ LzeNaYVv+863NGS29pTTY5jdJyw7GaWkYyvKii6kVgJnk+BYx+4XP4PFsR4fUcfarAeR
+ RBSWGVCU/629haC2nysjufGQWEPq5C4knHQuVqWallD4ZzDpZ4xsU7zJOF3M/H/E54ds
+ hcXqrTAsPCYDm6DfMdn6HJXvCv7yJeb4dbycQunQWGlwzh3+q4qRUut+Yb/RUKjtuZVe
+ oixE/A+3YleeeNWeNmT433nMwZ1L5FVEVrNNuuluentX3NoycVLMenZ5Gg5UIWFiC1Af
+ XhSQ==
+Date: Thu, 10 Aug 2017 10:19:19 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20170823210455.3pxj4pzuuvshtsnn@ubuntu-xps13>
-References: <20170808033804.6053-1-wens@csie.org>
+Message-ID: <20170810151919.lnsserhjcw2xrgy2@ubuntu-hedt>
+References: <CALfe80gmDFDnvT=MvN8891wudBEAmeQpH1X1_wNzQpkhbLSOVQ@mail.gmail.com>
+ <20170703175055.tnnweqg2uyyw2rnc@ubuntu-xps13>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20170808033804.6053-1-wens@csie.org>
-Subject: Re: [wireless-regdb] [PATCH 1/2] wireless-regdb: Update regulatory
- document references for Taiwan (TW)
+In-Reply-To: <20170703175055.tnnweqg2uyyw2rnc@ubuntu-xps13>
+Subject: Re: [wireless-regdb] Update regulatory rules for Kazakhstan (KZ)
+ on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -53,31 +54,48 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Chen-Yu Tsai <wens@csie.org>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Vasiliy Safronov <vvsprog@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Aug 08, 2017 at 11:38:03AM +0800, Chen-Yu Tsai wrote:
-> Taiwan's Ministry of Transportation and Communications updated its
-> frequency allocation rules again on 2017/02/22. The amended articles
-> are not related to this database, but the link should be kept up to
-> date, as the old one is no longer accessible.
+On Mon, Jul 03, 2017 at 12:50:55PM -0500, Seth Forshee wrote:
+> On Mon, Jun 26, 2017 at 10:00:13AM +0600, Vasiliy Safronov wrote:
+> > Please add support 5ghz for Kazakhstan.
+> > In Kazakhstan there are no restrictions up to 100mW
+> > country KZ: DFS-ETSI
+> >  (2402 - 2482 @ 40), (20)
+> >  (5170 - 5250 @ 80), (20), AUTO-BW
+> >  (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> >  (5650 - 5730 @ 80), (30), DFS
+> >  (5735 - 5835 @ 80), (30)
+> > 
+> > http://adilet.zan.kz/rus/docs/P000001379_
+> > S 5.282 etc
 > 
-> Taiwan's regulatory body, NCC, published its updated technical
-> regulatory standard for low-power radio frequency devices, LP0002.
-> The URL has not changed. The new standard opens up more bandwidth
-> for 5g U-NII WiFi and 60g WiGig devices. Transmission power for
-> 5.25 ~ 5.35 GHz is also increased, but this was already covered
-> in commit 9a618d9b5fb2 ("wireless-regdb: Update 5 GHz rules for
-> Taiwan (TW) to follow US").
-> 
-> This patch updates the link and comments for the rules and standards,
-> and also adds inline comments referencing the governing section of the
-> LP0002 standard for each band.
-> 
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> Thanks for the submission, and apologies for the slow response. I've
+> been trying to find some time to validate the changes against the
+> document you linked to but haven't managed to get it done yet. I hope to
+> be able to take a look at this soon.
 
-Applied both patches, thanks!
+Once again sorry for the delay.
+
+I've spent some time trying to look over the document (rather a Google
+translation of the document to English). I'm not confident I understand
+it completely, and I'm also not entirely confident of the values you
+provided. If you could explain how you arrived at those values and
+answer some questions it might help.
+
+The document has two tables for each band. The first table seems to be
+the ITU regulations for the band in all three regions, and the second is
+specific to Kazakhstan. If I rely on the latter then I must conclude
+that the 5 GHz band shouldn't be included. Am I misinterpreting
+something?
+
+I also haven't been able to determine the basis for your power limits,
+can you plese specify where these came from?
+
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
