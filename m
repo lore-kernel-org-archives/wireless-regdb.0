@@ -6,27 +6,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=XfLDsaMlgDvkjI0tT87gOERlfmKyKKqqQws5aKVEIhA=;
- b=uRuXtXxrQKVm11
- 0SdiQfQE0j4Pr8vAOT4qOwtQNzZkU/Rf5a62+jU9PP0UP8i2/wGkxao+bjHBbSX03C4gVIyYk9npI
- smIisCOJzH5lthlXzFTKf0E35aGqAd4e4h9kUEl66MQwm4ajTBl5gk+uNh5nQser+gH5tTFTMV4yD
- YgDGifQl65+0MmopoBEKaYv7+XtymTtC7BpyyvazFH3JSydX+fpw0OlHBUD9SEYTVmGkT2ntM55xr
- bwwwImnbDG4C0EgZhhsAqCmT4VspMdxurypOdXfFZyDyNEGDniECDqmayub3xmP/AQ0scWldgOVL1
- nBVuXrTySwbPVdSKtrmw==;
-Received: from rhlx01.hs-esslingen.de ([2001:7c0:700::10])
+ List-Owner; bh=+/YIKTrlCEdtfTUsMW+/TODAWzsriVx7WYC+IwwLBek=;
+ b=aLll+zE5QaIfhg
+ yEmAP1oSEiV8GFLnQQjmjfKs5YK2y5KioVpigsVHHso1210xMy9A/5TP3T+J7x3oO5/KF72Z0nDi6
+ s9woem8+ZVd+KYbYRrPoa9koXNhF7GzQtMdE5S4H7C+WfJzY5z/idFrKQ7p8FsohqMNx3fTThCjIW
+ +VmH1MRWN6k8Xa+TAbou55kJUXAOJUSHOigd+8AesefLhJ6oaup6UuujJe4z+p1TrqJZoht+1JdkG
+ Oi6e524Bh7+UrkiGv7bs+1YoFlsjvjgQk7zW8EZOmZhXbMbfxD2cOiAJu7/T4Aspb76SZsPlBuRoF
+ nj9PPU4CPYV0pwkGyHyA==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dxCmk-0003UE-5t
- for wireless-regdb@lists.infradead.org; Wed, 27 Sep 2017 13:54:00 +0000
-Date: Wed, 27 Sep 2017 15:53:32 +0200
-From: Andreas Mohr <andi@lisas.de>
-Message-ID: <20170927135332.GA410@rhlx01.hs-esslingen.de>
-References: <20170914144942.GA32066@rhlx01.hs-esslingen.de>
- <20170926201657.5f4cxrh5ou2gu3m7@ubuntu-xps13>
+ id 1dnoAY-0007Fh-K7
+ for wireless-regdb@lists.infradead.org; Fri, 01 Sep 2017 15:47:45 +0000
+Received: from mail-io0-f200.google.com ([209.85.223.200])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1dnoAA-0004M1-FT
+ for wireless-regdb@lists.infradead.org; Fri, 01 Sep 2017 15:47:18 +0000
+Received: by mail-io0-f200.google.com with SMTP id 81so1518223ioj.2 for
+ <wireless-regdb@lists.infradead.org>; Fri, 01 Sep 2017 08:47:18 -0700 (PDT)
+Date: Fri, 1 Sep 2017 10:47:15 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20170901154715.hpkm4iluogxqj3lz@ubuntu-xps13>
+References: <20170823081100.GB44003@mercury.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20170926201657.5f4cxrh5ou2gu3m7@ubuntu-xps13>
-Subject: Re: [wireless-regdb] [RFC] wireless-regdb: Update rules for 2.4GHz
- limit Republic of Korea (KR)
+In-Reply-To: <20170823081100.GB44003@mercury.local>
+Subject: Re: [wireless-regdb] [PATCH] Update rules for Turkey 5ghz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,52 +41,61 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: quoted-printable
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: Andreas Mohr <andim2@users.sf.net>, wireless-regdb@lists.infradead.org
+Content-Transfer-Encoding: 8bit
+To: Edwin Steele <edwin@wordspeak.org>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello Mr. Forshee,
+On Wed, Aug 23, 2017 at 06:11:00PM +1000, Edwin Steele wrote:
+> 
+> Update rules for Turkey 5ghz
+> 
+> Based on the information from [1] the power limit for 5Ghz channels
+> can be increased. Additionally 5170-5330Mhz are restricted to indoor
+> use.
+> 
+> There are references to e.i.r.p density in [1] that will affect the
+> power available for wide channels, but they are not reflected in
+> this change as it's unclear how they would be specified.
+> 
+> [1] https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
+> Signed-off-by: Edwin Steele <edwin at wordspeak.org>
+> 
+> diff --git a/db.txt b/db.txt                         
+> index 0bc068e..9a1192f 100644                        
+> --- a/db.txt                                         
+> +++ b/db.txt                                         
+> @@ -1158,11 +1158,15 @@ country TN: DFS-ETSI         
+>         (5170 - 5250 @ 80), (20), AUTO-BW            
+>         (5250 - 5330 @ 80), (20), DFS, AUTO-BW       
+>                                                      
+> +# Source:                                           
+> +# By-Law on Short Range Radio Devices (SRD) Oct 2015
+> +# https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
+> +# Article 8                                         
+>  country TR: DFS-ETSI                                
+> -       (2402 - 2482 @ 40), (20)                     
+> -       (5170 - 5250 @ 80), (20), AUTO-BW            
+> -       (5250 - 5330 @ 80), (20), DFS, AUTO-BW       
+> -       (5490 - 5710 @ 160), (27), DFS               
+> +       (2400 - 2483.5 @ 40), (20)                   
+> +       (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
+> +       (5250 - 5330 @ 80), (23), DFS, NO-OUTDOOR, AUTO-BW                                                
+> +       (5470 - 5725 @ 160), (30), DFS               
 
-On Tue, Sep 26, 2017 at 04:16:57PM -0400, Seth Forshee wrote:
-> On Thu, Sep 14, 2017 at 04:49:42PM +0200, Andreas Mohr wrote:
-> I can't read the document you reference above, and my own searches don't
-> seem to turn up anything authoritative. I consider the source of the
-> original 20 dBm limit reliable, but it was added in 2013 so it's
-> possible things have changed since then.
+What you missed is that 5250-5350 and 5470-5725 MHz also require TPC
+which means we need to cut their power limits in half. So for these
+ranges the previous limits of 20 and 27 dBm are correct.
 
-Yes, my own Internet research didn't turn up much either.
+The other changes look correct. Could you resend with those power limits
+adjusted?
 
-
-> I'll give a few days for any other comments, and if there are none I
-> will apply the change.
-
-From my POV this is a very appreciable policy.
-
-So:
-- we've got a hard cert requirement
-- provided specs are not nearly as hard (ahem)
-- so, have it applied after some suitable complaint period
-- then, this limit will be globally in effect in certain "less decipherable=
-" countries ;-),
-  and if there happens to be a problem, the properly country-prolific users=
- there
-  will then be able to
-  provide much more precise/direct input as to
-  whether or not currently chosen regulation settings are appropriate, *and=
- why*
-
-Thank you!
-
-Andreas Mohr
-
---=20
-=BFumop apisdn upside down?
-(by daniweb.com user Bench)
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
