@@ -6,36 +6,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=sc343EjWr4WhiqvHH3GG7SyrfoQkdWbXYsZ5mzRfPko=;
- b=fh5SqvAPW0JCwT
- nY0tUElJacCwbRSCSrvGc/GUfzTPa/D08w5i8JutMgMalnyn+ksLpycmCUnbnn0e+JGXLNA3/RPQx
- Z7R1ecTU8qatkb7JdCd8bgmCiFaMYogzGJspyCPa3Zy7qG5qCFXxTqOe15lG1KhIOZJ8FDg29jaGC
- 9LJFpEMypPncAsqU5pD/bBFNiyPmcEH0RY2LSsrHM2nbqkJMvegaPU1vPuqbcnMchjH3wLanjjCF6
- zJdWpw0RiP4zxEco3bG4nfXDZ0ehJIjFo6FntldAHOQeX6AMLJJT2g380FC8kah5MfII095Gq8qNO
- Cs5DAC1GUzOt70Acj57w==;
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+ List-Owner; bh=hY+Y+jA4ZKbAhSyi6jy9FnaY5B/dtjFoxxmAotJw/uE=;
+ b=R2JyTB7XKsKT/B
+ 7It4RBS8k5QsfUqGJ78+FEsP9K5EVgFanhPPgEERUHgYi5D/UWotPSPJxu+Qp3SiZv9USL/8zGZU6
+ THzC2MIB9PiOwrttES8pHr/7N2f7P4P8OeRCOtnYYRGjCtFg3kV0aVKBVTlVAMMj1jo2SGRoa+JTO
+ 4tXnk1/3fhMpc34+1JB5BnQ2Ki8G1Ju2e9XD7D4PWsceUZaRkOmPioiferOVvCUFlmMRMdh8onTcf
+ Cga0ojj/ias886XQUspwFTCmciz6nqHqb1Y3mvqPDXwiUN2fAONYtzBprRoQvJsfywwIw+zOvd8MD
+ dKryG6lmmNlCobXlKF8Q==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1dsOgW-0001RJ-8G
- for wireless-regdb@lists.infradead.org; Thu, 14 Sep 2017 07:35:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-sender
- :x-me-sender:x-sasl-enc:x-sasl-enc; s=fm1; bh=Tau84K5DeaCIMkrPNH
- In85BPYAHlv+1CmNa0VsdnpQY=; b=EHPJq3ph9rz33tD+FpE22uYb6CLKq58zej
- xLlaaQOgavDALJqQ9iTx6y9pYsNRcIsZL+DqyUcsuxAb6+Bv/oExUvixcgg32gFD
- Qbv7biwL0ruPsZEIX4X8WlZIkXhNxcBlJTH08KlKMrNYPPWGMEzuH2OUiahCtIpn
- Wbkg8+VWDz/0Hyxh/Fvsu8LYXdaKhow61HfnpOBEGW0D74DQ8WZrnRIGPK1eKI7b
- Iw2slKEnrbvds4QOWgU+taaHHif0hhSIbH6mdlLOlyPIj5KX6DwOFYl60QfM5OSq
- nAmRtVMZIBlSRD3IAzlWmMoX6nmz4PlRt8oLtUPoNNleXPZ0VP3Q==
-Date: Thu, 14 Sep 2017 17:31:18 +1000
-From: Edwin Steele <edwin@wordspeak.org>
-Message-ID: <20170914073118.GA42838@mercury.local>
-References: <20170823081100.GB44003@mercury.local>
- <20170901154715.hpkm4iluogxqj3lz@ubuntu-xps13>
+ id 1dwvwm-0006Iu-On
+ for wireless-regdb@lists.infradead.org; Tue, 26 Sep 2017 19:55:17 +0000
+Received: from mail-qt0-f197.google.com ([209.85.216.197])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1dwvwP-00047O-J9
+ for wireless-regdb@lists.infradead.org; Tue, 26 Sep 2017 19:54:49 +0000
+Received: by mail-qt0-f197.google.com with SMTP id i50so12342899qtf.0 for
+ <wireless-regdb@lists.infradead.org>; Tue, 26 Sep 2017 12:54:49 -0700 (PDT)
+Date: Tue, 26 Sep 2017 15:54:45 -0400
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20170926195445.4hqeixicrrohpsft@ubuntu-xps13>
+References: <20170807081950.13327-1-sven.eckelmann@openmesh.com>
+ <20170823205240.ycyrszsvjugtosdi@ubuntu-xps13>
+ <1684208.h1AJVyQWH7@bentobox>
+ <20170824161744.fl5fikxgqwxjfm6t@ubuntu-xps13>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20170901154715.hpkm4iluogxqj3lz@ubuntu-xps13>
-Subject: [wireless-regdb]  [PATCH v2] Update rules for Turkey 5ghz
+In-Reply-To: <20170824161744.fl5fikxgqwxjfm6t@ubuntu-xps13>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for Singapore (SG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,55 +45,101 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: wireless-regdb@lists.infradead.org
+To: Sven Eckelmann <sven.eckelmann@openmesh.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, simon.wunderlich@openmesh.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Update rules for Turkey 5ghz
+On Thu, Aug 24, 2017 at 11:17:44AM -0500, Seth Forshee wrote:
+> On Thu, Aug 24, 2017 at 09:13:42AM +0200, Sven Eckelmann wrote:
+> > On Mittwoch, 23. August 2017 15:52:40 CEST Seth Forshee wrote:
+> > [...]
+> > > > +# Source
+> > > > +# https://www.imda.gov.sg/~/media/imda/files/regulation%20licensing%20and%20consultations/ict%20standards/telecommunication%20standards/radio-comms/imdatssrd.pdf?la=en
+> > > > +# page 12-14
+> > > > +# The EIRP for 5250 – 5350 can be increased by 3dB if TPC is implemented.
+> > [...]
+> > > > +	# 5470 - 5725 is only allowed when TPC is implemented
+> > > > +	# (5470 - 5725 @ 160), (30), DFS
+> > > 
+> > > I'm not sure that the lack of a specific provision for operating without
+> > > TPC in this range means that it cannot be used. As I understand it, TPC
+> > > would only result in a reduction in EIRP of 3 dB, so as long as we use
+> > > a power limit of half of the maximum allowed we will be safe.
+> > > 
+> > > If this is incorrect I'd appreciate it if someone more knowledgable on
+> > > the topic could chime in.
+> > 
+> > I would also be happy about feedback regarding this part. But my current 
+> > settings are based on the document [1] mentioned in this change.
+> > 
+> > Let us look at the range 5250 – 5350 on page 13. There are two entries for the 
+> > same frequency range.
+> > 
+> >  * 28:
+> >    - up to 200 mW
+> >    - requires TPC for 5250 – 5350 Mhz
+> >  * 29:
+> >    - up to 100 mW
+> >    - requires *no* TPC for 5250 – 5350 Mhz
+> > 
+> > This is exactly the 3(.01029995...) dB difference which you've talked about. 
+> > Now to the frequency range 5470 - 5725 MHz on page 14. 
+> > 
+> >  * 30:
+> >    - up to 1000 mW
+> >    - requires TPC for 5470 - 5725 MHz
+> > 
+> > There is no extra exception rule for non-TPC mode.
+> > 
+> > Now let us check what IEEE 802.11h-2003 [2] says about TPC.
+> 
+> <snip detailed analysis>
+> 
+> > My current change now assumes following strict interpretation:
+> > 
+> >  * Singapore provides a mitigation factor of 3 dB for 5250 – 5350 Mhz (see 
+> >    table entry 28 + 29)
+> >  * Singapore provides now mitigation factor for 5470 - 5725 MHz and requires 
+> >    TPC
+> > 
+> > I am currently unsure whether it is now valid to say that the default 
+> > mitigation factor would be 3 dB and thus there is an implicit table entry (let 
+> > us call it 30b) which would be:
+> > 
+> >  * 30b:
+> >    - up to 500 mW
+> >    - requires *no* TPC for 5470 - 5725 MHz
+> > 
+> > Countries like AU or regions like ETSI (ETSI EN 301 893) seem to have this 
+> > mitigation factor always specified in their rules. But Singapore is missing it 
+> > for this specific frequency range.
+> 
+> So on the one hand I'm in agreement, it would be good to know where the
+> 3 dB attenuation comes from and whether it's really universal. So far
+> it's been something I've taken on faith from folks a lot more familiar
+> with the subject than me.
+> 
+> However, it seems the same lack of information would also anyone who
+> does want to support TPC. The information about how much to attenuate
+> must either be provided on a per-regulatory-domain basis or else it must
+> be standardized somehow. If it's the former then it seems odd that
+> Singapore does not include this information.
+> 
+> Hopefully someone more knowledgable will chime in to help us understand
+> better.
 
-Based on the information from [1] the power limit for 5170-5250 Mhz
-can be increased. Additionally 5170-5330Mhz are restricted to indoor
-use.
+I was going through old messages in my inbox and realized that we've
+never done anything about this. Unless someone speaks up soon I guess
+I'll play it safe apply the patch as is, with the range commented out.
 
-There are references to e.i.r.p density in [1] that will affect the
-power available for wide channels, but they are not reflected in
-this change as it's unclear how they would be specified.
-
-[1] https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
-Signed-off-by: Edwin Steele <edwin at wordspeak.org>
-
-diff --git a/db.txt b/db.txt
-index 0bc068e..a563a54 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1158,11 +1158,15 @@ country TN: DFS-ETSI
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
- 
-+# Source:
-+# By-Law on Short Range Radio Devices (SRD) Oct 2015
-+# https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf
-+# Article 8
- country TR: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(2400 - 2483.5 @ 40), (20)
-+	(5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5330 @ 80), (20), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (27), DFS
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
