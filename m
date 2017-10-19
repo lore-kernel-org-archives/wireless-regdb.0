@@ -1,35 +1,34 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
- Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=Hta5B8x5B4G63/GVPPGflKuWdLI1vNdnR4yT8jGhDhE=;
- b=DWVDJxeiVUzefq
- s9A4U90goobeQiuJuGw1d6mpJKmVjpYf88KFpXlyqthbwxrwJab7n7YWDKEcmD66+77QDuZNpFanB
- gVuc/2JB/ExiWAVSR4LJuEabJiCXlJwoIq0/2MMxqB3lX/O9YmRmyWWjCNUONXu412ZGTa2YhITQz
- NY8DW6HwTJ0d4g0FdBmrajWNjNG1qKT5mdmgPvmekOusc8kihhQUb+Zy51ZZAdCAZqpDAOiPyd5TW
- LXY9/1S4H13YqZYR3uk/Je13fO7UpFZ2quJYpZUjnq0rfgMbvsW0GAdMjnXZ5Z+/m8rES7BJ1Ni2C
- gVAYWri2ZODBiSdH3w0A==;
-Received: from mail-ve1eur01on0082.outbound.protection.outlook.com
- ([104.47.1.82] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+ List-Owner; bh=sTJn1Z86iRBsyehII3gF7tmyWU/7+wWrfEZ3fFbrcYg=;
+ b=KO9xACaf3XE9C9
+ Aa9juTkKETiZj+9uNH8t0UgEPzDBsCHp9x017IgnfGSeHK8G15kUMDzWNYPiHIj07fZ9QpQr9MnB/
+ /8ZgxmjV/Bl758yKrvPQIiGVhXNXyp540gb5HeaYEqtez+P+mHm+h28xlS/G0anTpL5No4CZXLGjw
+ JhqUkmMyDluEOS1Ojx8iitqdFcaXIMbf4QKkhVFkP9oaTO9Rg23kRJjfmrt/Eif9b3uV2TesO/b4r
+ WVZrI7BsjjAIzSUxs0zGDuvskwTzNKowCZPQdU8ZcLOF52TIIxCATLwNg39C+9F8iH3y9TpMz3Hqa
+ VsEoxr6RYqKVeDfW2c1w==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1e6v7W-0003VC-Kl
- for wireless-regdb@lists.infradead.org; Tue, 24 Oct 2017 09:03:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aaudk.onmicrosoft.com;  s=selector1-its-aau-dk;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version;
- bh=h8tB/q2Rzvesx4QOPixd9CF0NcKQCTbApcR7cybWU9E=;
- b=BszeI5yFfyBWJc7XnTbEFj9Hdci6/UDKyxARzQ100jPwSZNJ4MYEsgODaM0VskaTxwHvMpWK3sBklpeXF0GP1rAi8srBvcZujnEFONUhjTgB7K+uZLGhhgRwmEm8BeI/8lbAb8/ThxjsVYwZks7p7HpkzWSRSbWRWZBE91TT+Rc=
-From: Per Mejdal Rasmussen <pmr@its.aau.dk>
-Message-ID: <25548470-bf47-3827-6aa3-de4684d66f12@its.aau.dk>
-Date: Tue, 24 Oct 2017 11:03:06 +0200
-MIME-Version: 1.0
-Content-Language: en-US
-Subject: [wireless-regdb] Update regulatory rules for Denmark (DK) on 2.4
- and 5GHz
+ id 1e5IWp-0007zl-H1
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 21:39:01 +0000
+Received: from mail-it0-f69.google.com ([209.85.214.69])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1e5IWT-0007XP-O9
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 21:38:37 +0000
+Received: by mail-it0-f69.google.com with SMTP id j140so8754566itj.10 for
+ <wireless-regdb@lists.infradead.org>; Thu, 19 Oct 2017 14:38:37 -0700 (PDT)
+From: Seth Forshee <seth.forshee@canonical.com>
+Date: Thu, 19 Oct 2017 16:38:34 -0500
+Message-Id: <20171019213834.23127-1-seth.forshee@canonical.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Add 5 Ghz rules for
+ Kazakhstan (KZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,104 +38,49 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Cc: =?UTF-8?q?=D0=90=D0=BD=D0=B4=D1=80=D0=B5=D0=B9=20=D0=98=D0=B2=D0=B0=D0=BD=D0=BE=D0=B2?= <wowz89@mail.ru>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi
+Add rules for 5150-5250 MHz, 5250-5350 MHz, and 5470-5725 Mhz
+based on the documents at [1] and [2].
 
-The content of db.txt for Denmark (DK) is wrong. The 5GHz is from some 
-where between 2002-2006, and the 2.4GHz has never been correct.
+[1] http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
+[2] http://adilet.zan.kz/rus/docs/P000001379_
 
-Current content of db.txt:
---------------------------
-country DK: DFS-ETSI
-	(2402 - 2482 @ 40), (20)
-	(5170 - 5250 @ 80), (20), AUTO-BW
-	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
-	(5490 - 5710 @ 160), (27), DFS
-	# 60 GHz band channels 1-4, ref: Etsi En 302 567
-	(57000 - 66000 @ 2160), (40)
+Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+---
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-
-Current free channels Denmark:
-------------------------------
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-57-66 GHz
-
-
-I suggest to copy the rules for Germany (DE) to Denmark (DK):
--------------------------------------------------------------
-country DK: DFS-ETSI
-	(2400 - 2483.5 @ 40), (100 mW)
-	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW
-	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
-	(5470 - 5725 @ 160), (500 mW), DFS
-	# short range devices (ETSI EN 300 440-1)
-	(5725 - 5875 @ 80), (25 mW)
-	# 60 GHz band channels 1-4 (ETSI EN 302 567)
-	(57000 - 66000 @ 2160), (40)
-
-
-History of free channels Denmark:
----------------------------------
-
- From 1999-09-07:
-2400,0-2483,5 MHz
-5150,0-5250,0 MHz
-
- From 2000-03-30
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-
- From 2002-12-10
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-17,1-17,3 GHz
-
- From 2006-11-07
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5925,0 MHz
-17,1-17,3 GHz
-
- From 2007-09-20
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-17,1-17,3 GHz
-
- From 2008-06-11
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-
- From 2009-11-27 (current)
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-57-66 GHz
-
-Source (search for "RLAN"):
-https://www.retsinformation.dk/Forms/R0710.aspx?id=189932
-
-
-
+diff --git a/db.txt b/db.txt
+index e48f9a619651..96d8fda44284 100644
+--- a/db.txt
++++ b/db.txt
+@@ -689,8 +689,14 @@ country KY: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
++# Source:
++# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
++# http://adilet.zan.kz/rus/docs/P000001379_
+ country KZ:
+ 	(2402 - 2482 @ 40), (20)
++	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
++	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
++	(5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
+ 
+ country LB: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
 -- 
-Per Mejdal Rasmussen
-http://personprofil.aau.dk/109070
+2.14.1
+
 
 _______________________________________________
 wireless-regdb mailing list
