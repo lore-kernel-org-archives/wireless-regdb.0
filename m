@@ -6,34 +6,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=714SlqvlcToactRMUJsOB0LFJQMuJVhzB2PDZefcHmM=;
- b=hqGbfsnucVKjsL
- 3B9cMnM5fW4ZW6kawmK+1T2dMTEzrpd6LD/Kw1yFPx68jJuXJeLHDtGQSl8z9vmUCN4yWMT4SyJIY
- iVgA0yapcfZaNE5n8+qvzVOToptEjW9ubUF12sx7gflRp0xZM1uoQQLyvGk3yDQ1LYhjA1ujReOXV
- hlp4mReivwQ0Ssc613NEAz09/98GAPvW1pl/tMVFOwlSg69U6sseaNuO1X2PMIYnDpJHnz3f9WTUL
- u7Iy+MxSNnhOqG3AUCUnF+XLIrTWUVUUnxsBfrPLJOH/SqAZmizbjz+HraUBD5nTq/j19fZYcjZ5P
- uxF4GStaWYWUwYLIfINA==;
+ List-Owner; bh=I6ALrXYj/KsvtT7NgnVvzvMb6znhM0SYRJ8KggCGq4w=;
+ b=a+PDe6W9stNN0l
+ AI+QgvSsi5hkstfPuDwmyqcx1LvNqusJUNikgWNq0mvlGVsj68UGfFZnr1xNOckf8CTtpvEVuBTNT
+ dCMqGDExrBSpJQ2hh5gkpujX5wrS5nevdIw2LiZfgH+5vFcSTcCFYc9V0W27RWmYpn5boKeD5Y5g9
+ GmNqFFh3uWSkW+kBhriMR/qm+iaBHVDV6Uct0nNHN85mpQzjNaQ19CjIfuzC4Mv3X4CAYoLwQ200n
+ 0KtRyl50aFQkogPQAYyn+0y2h/GHZK7axCKECRxWesPUXLjzJe/aWRhAQs3rUeIVxSoZOzwJ5/u9t
+ HwQ1B7z+Lf4S4QKNxgdw==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1e9b4u-0005zE-Uw
- for wireless-regdb@lists.infradead.org; Tue, 31 Oct 2017 18:15:59 +0000
-Received: from mail-io0-f200.google.com ([209.85.223.200])
+ id 1e5J9e-00054y-6M
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:19:08 +0000
+Received: from mail-io0-f198.google.com ([209.85.223.198])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1e9b4X-0005ZN-Mu
- for wireless-regdb@lists.infradead.org; Tue, 31 Oct 2017 18:15:33 +0000
-Received: by mail-io0-f200.google.com with SMTP id m16so678847iod.11 for
- <wireless-regdb@lists.infradead.org>; Tue, 31 Oct 2017 11:15:33 -0700 (PDT)
-Date: Tue, 31 Oct 2017 13:15:31 -0500
+ id 1e5J9I-0000uF-Qa
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:18:44 +0000
+Received: by mail-io0-f198.google.com with SMTP id i38so9081487iod.10 for
+ <wireless-regdb@lists.infradead.org>; Thu, 19 Oct 2017 15:18:44 -0700 (PDT)
+Date: Thu, 19 Oct 2017 17:18:41 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20171031181531.l5dzpmk2axpascsv@ubuntu-xps13>
-References: <20171020150651.32424-1-seth.forshee@canonical.com>
- <493073613.20171031233913@mail.ru>
+Message-ID: <20171019221841.peidozvacusk22py@ubuntu-hedt>
+References: <20170914144942.GA32066@rhlx01.hs-esslingen.de>
+ <20170926201657.5f4cxrh5ou2gu3m7@ubuntu-xps13>
+ <20170927135332.GA410@rhlx01.hs-esslingen.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <493073613.20171031233913@mail.ru>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Add 5 Ghz rules
- for Kazakhstan (KZ)
+In-Reply-To: <20170927135332.GA410@rhlx01.hs-esslingen.de>
+Subject: Re: [wireless-regdb] [RFC] wireless-regdb: Update rules for 2.4GHz
+ limit Republic of Korea (KR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,30 +44,47 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: =?utf-8?B?0JjQstCw0L3QvtCyINCQ0L3QtNGA0LXQuSDQktC40LrRgtC+0YDQvtCy0Lg=?= =?utf-8?B?0Yc=?= <wowz89@mail.ru>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Andreas Mohr <andi@lisas.de>
+Cc: Andreas Mohr <andim2@users.sf.net>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Oct 31, 2017 at 11:39:13PM +0600, WoWz89 wrote:
-> Здравствуйте, Seth.
+On Wed, Sep 27, 2017 at 03:53:32PM +0200, Andreas Mohr wrote:
+> Hello Mr. Forshee,
 > 
-> Вы писали 20 октября 2017 г., 21:06:51:
+> On Tue, Sep 26, 2017 at 04:16:57PM -0400, Seth Forshee wrote:
+> > On Thu, Sep 14, 2017 at 04:49:42PM +0200, Andreas Mohr wrote:
+> > I can't read the document you reference above, and my own searches don't
+> > seem to turn up anything authoritative. I consider the source of the
+> > original 20 dBm limit reliable, but it was added in 2013 so it's
+> > possible things have changed since then.
 > 
-> > Add rules for 5150-5250 MHz, 5250-5350 MHz, and 5470-5725 Mhz
-> > based on the documents at [1] and [2].
+> Yes, my own Internet research didn't turn up much either.
 > 
-> > v2: Also add DFS region
-> Good afternoon, when will the update ?
+> 
+> > I'll give a few days for any other comments, and if there are none I
+> > will apply the change.
+> 
+> From my POV this is a very appreciable policy.
+> 
+> So:
+> - we've got a hard cert requirement
+> - provided specs are not nearly as hard (ahem)
+> - so, have it applied after some suitable complaint period
+> - then, this limit will be globally in effect in certain "less decipherable" countries ;-),
+>   and if there happens to be a problem, the properly country-prolific users there
+>   will then be able to
+>   provide much more precise/direct input as to
+>   whether or not currently chosen regulation settings are appropriate, *and why*
 
-I'm planning to get anything pending applied and a new release out in
-the next couple of days.
+Applied, thanks!
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
