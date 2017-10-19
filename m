@@ -6,47 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=5wh4e0y4LYRzdCeIUAwpfeDOZHyLbnuVK5o0k3yzDwY=;
- b=nICgSBQHyZ0QNj
- EWn5z+37x84/UY62YSAJStibOxtHoBcPitMl52WhmhZTcgfZDQly3MTlNg+ZwicUfnOaqZoFSlSHN
- qSX/W8xdd0/7C0LT3spXCbh4L4y35AsamHxSmW9fpcrELjlJo9S01dTYbIko096QPwzyvR9P23PS7
- +xiDrucH7Hq9erDTiy262yxp6YzryBvMc2gdpNRqRHCsPhHlN5ZD79Dl9WDNdp8rLLdWjfU2U7FYJ
- wGTMLVgNwGPRU/ubOEcXAprtz55kNQzwvUoqd5gTon8TkV3mtrhC8iWnzvbTwjkoPkYPR5NrBOadd
- ebAqoIIZz0tIbfRrTaow==;
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209;
- h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=pcxSyonlpRtTtGH9QsgXMsViX8JYgFGu5vclyFdl7KE=;
- b=G7V7Ep3YLblOwlkF7K7jqDCb6
- jS6rVAg3y0yspcKldEcUPe8ysvHkR8aSXX39gNCX2Hpt/N47hJdS8Z27rWYixQcJSYaDtB26mF9lJ
- m+ybXg6SnK1tzC/riZdKjjNbE3nb2U1TXoaQfW5UWpZbsY7TGdqisSCFa2xSyJpCTGh17jkBOERXs
- Pi0/PU+fg18E/evJulIa2qw9+21SBlTb3Wh0CBuf5g+aDOd2QaA45WC+SUpFJlXWc18aLU4PB/w4z
- +L8XDMP2SnKkq+0yQQ6Bc20MEPHSmwKZDpLEj2KSXuo34aEPak+H9DU5kJzWGvP6z3Ntk+9zCDf0V
- BZimML0Hg==;
+ List-Owner; bh=ZJpQnl8/WVeEKjZTfZqHfx+ZMRCEYLeaJkaw5HORj8Y=;
+ b=JtPCayjx4LwhrN
+ 2wTq9HdQERMXBDmMtt7f6jGT5gX7Wb5b1/gVfvbRsAUO6N5loKmolGUJ4IqRs9rpkaP87tWhR3hHm
+ PkqQdyL/0HTJjMOvT+t7hXt2O5+72v7l8KcpHk1qNkoid1Fp2WfpKXO791+UxIXWEHXm81CMPUdzz
+ 7zez8iMHC1iy4WXzhMCOh4dZJ6Wr0rvx41vw09Tii9QFE4zpthvtQMFk+f5QgjUJ2LQqavYmvXuGj
+ BlCPAA0XH8YSEbX2hOyGCSxKi15hfcViyLvaAZ419/iTXIgbM/EOuTbERc8XMYachUzFTPscgaFCu
+ SpNS1PNh/03yn1uO2x1g==;
 Received: from youngberry.canonical.com ([91.189.89.112])
- by merlin.infradead.org with esmtp (Exim 4.87 #1 (Red Hat Linux))
- id 1e5JEB-0008UO-1b
- for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:23:48 +0000
-Received: from mail-io0-f197.google.com ([209.85.223.197])
+ by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
+ id 1e5J8n-0004SX-Ho
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:18:29 +0000
+Received: from mail-it0-f71.google.com ([209.85.214.71])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1e5JDn-0001Dv-Gk
- for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:23:23 +0000
-Received: by mail-io0-f197.google.com with SMTP id 97so9170325iok.19 for
- <wireless-regdb@lists.infradead.org>; Thu, 19 Oct 2017 15:23:23 -0700 (PDT)
-Date: Thu, 19 Oct 2017 17:23:20 -0500
+ id 1e5J8S-0000s6-4r
+ for wireless-regdb@lists.infradead.org; Thu, 19 Oct 2017 22:17:52 +0000
+Received: by mail-it0-f71.google.com with SMTP id c3so8881440itc.19 for
+ <wireless-regdb@lists.infradead.org>; Thu, 19 Oct 2017 15:17:52 -0700 (PDT)
+Date: Thu, 19 Oct 2017 17:17:49 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20171019222320.zz2qprjzxn3pyrf5@ubuntu-hedt>
-References: <20171015134637.2760-1-xose.vazquez@gmail.com>
+Message-ID: <20171019221749.okqt6y75tmnu3c4o@ubuntu-hedt>
+References: <20170823081100.GB44003@mercury.local>
+ <20170901154715.hpkm4iluogxqj3lz@ubuntu-xps13>
+ <20170914073118.GA42838@mercury.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20171015134637.2760-1-xose.vazquez@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add Short Range
- Devices (SRD) (ETSI EN 300 440) for Spain
+In-Reply-To: <20170914073118.GA42838@mercury.local>
+Subject: Re: [wireless-regdb] [PATCH v2] Update rules for Turkey 5ghz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -61,18 +48,23 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: Edwin Steele <edwin@wordspeak.org>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sun, Oct 15, 2017 at 03:46:37PM +0200, Xose Vazquez Perez wrote:
-> UN - 130 Dispositivos de corto alcance en 5 GHz :
-> https://www.boe.es/buscar/act.php?id=BOE-A-2013-4845&tn=1&p=20150410
+On Thu, Sep 14, 2017 at 05:31:18PM +1000, Edwin Steele wrote:
+> Update rules for Turkey 5ghz
 > 
-> Cc: Seth Forshee <seth.forshee@canonical.com>
-> Cc: linux-wireless@vger.kernel.org
-> Cc: wireless-regdb@lists.infradead.org
-> Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+> Based on the information from [1] the power limit for 5170-5250 Mhz
+> can be increased. Additionally 5170-5330Mhz are restricted to indoor
+> use.
+> 
+> There are references to e.i.r.p density in [1] that will affect the
+> power available for wide channels, but they are not reflected in
+> this change as it's unclear how they would be specified.
+> 
+> [1] https://www.btk.gov.tr/File/?path=ROOT%2f1%2fDocuments%2fOrdinance%2fBY%2DLAW%20ON%20SHORT%20RANGE%20DEVICES.pdf                                                                                                 
+> Signed-off-by: Edwin Steele <edwin at wordspeak.org>
 
 Applied, thanks!
 
