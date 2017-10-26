@@ -2,33 +2,35 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
- List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
- Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=pGk6LO+kNCDSOhw3YgChEgJHW8As401rRf1zGewnzpI=;
- b=E4OcDpWNnneLvw
- 3I+GWzTn7tpSMF9Ad8ngKDuXq7ynp+1Ds5pLttkVdXgGJ/4zQE5aSJNT90lO9FKDjvNsF3Kjl0Ar2
- E6MO/B661U1TlmWxNbPC/9WRi9fZxhUf8CUlGIQB0g2vl+mQOV1zqcJGXfTy177P7WhvwO6djXTbO
- lQYxLLwYlp1XKR5aqk0GMIDHAvPcEjHE42XHYiyEIG70IGdofTgJOvndCxUu6ic/ijAIozmFiALw7
- hxdgUXhXxIXrDl451/xv/hmpMdVyLXnP65s96uRoLZuhOLxH2H4OGF6cS6aY5R0xOZTqiULkPJiX6
- vOWMJbca4rUnUUNqxgaA==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+ List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:
+ References:In-Reply-To:To:Message-ID:From:Date:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Owner;
+ bh=lxQLDEAmy3Q66S725pwxa97+TxxGyQH/EPwCCpA/wCU=;
+ b=Nozqn1zSCIUSzud0bMq6Z63uRZ
+ ROV7PzND1tuw5O2fuFiOsKR8TYM6pnxR2AakLMlnZ/fCzYEQGCLimt+n+T/P4ROjFaTkm9V1YwMnb
+ 0i+G5swqLBDzfImK6wYKbEeOd65MMU0hMqfpOL9uiWIdNhE8oaoV9Wlag3szx7DLCWK3Uj22KkYiN
+ +7Yo9Hr9JpD8hgckN9DJKUa8uz7NDG3tIZX3gGXPuDZXh4EbMRv1UY2XMi3wIrszC65P6118sZa/h
+ zDhdbFT3Z+gtcYBB9NJYYJLLDz0Psb8VVnkxX5oD0qMgny33GNEAfPs1Sd/+8CnEX3+a9wGaJetXG
+ jB439DRw==;
+Received: from smtp47.i.mail.ru ([94.100.177.107])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1e5YtL-0003TE-3U
- for wireless-regdb@lists.infradead.org; Fri, 20 Oct 2017 15:07:22 +0000
-Received: from mail-io0-f200.google.com ([209.85.223.200])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1e5Ysy-0003u7-5y
- for wireless-regdb@lists.infradead.org; Fri, 20 Oct 2017 15:06:56 +0000
-Received: by mail-io0-f200.google.com with SMTP id 97so11195005iok.19 for
- <wireless-regdb@lists.infradead.org>; Fri, 20 Oct 2017 08:06:56 -0700 (PDT)
-From: Seth Forshee <seth.forshee@canonical.com>
-Date: Fri, 20 Oct 2017 10:06:51 -0500
-Message-Id: <20171020150651.32424-1-seth.forshee@canonical.com>
-Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Add 5 Ghz rules for
- Kazakhstan (KZ)
+ id 1e7krK-0005Wv-Nr
+ for wireless-regdb@lists.infradead.org; Thu, 26 Oct 2017 16:18:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mail.ru;
+ s=mail2; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Subject:To:Message-ID:Reply-To:From:Date;
+ bh=J0ciGdNK5PJYpMT7fqQaE49b64eZFO1Cm3gqd9PquYM=; 
+ b=dtmAV2u6c4v+ZUzQBXnxNLpdOmzUZw7KW6OSTxHTaWTZF1eMhk40r4lR7382V1da0j2cZwDmdMhBBKlyOzGyhA2G7FhZxztJGz5NwfX9vxxhWl5CNRDYkL5YTkq1TeGyJhfrFPWCT7wGe0Wh6Hy8XBdw2PzUf2FY6YYogg04daY=;
+Date: Thu, 26 Oct 2017 22:17:48 +0600
+From: WoWz89 <wowz89@mail.ru>
+Message-ID: <1193154645.20171026221748@mail.ru>
+In-Reply-To: <20171020150651.32424-1-seth.forshee@canonical.com>
+References: <20171020150651.32424-1-seth.forshee@canonical.com>
+MIME-Version: 1.0
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Add 5 Ghz rules
+ for Kazakhstan (KZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,55 +40,38 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: =?windows-1251?B?yOLg7e7iIMDt5PDl6SDC6Ory7vDu4uj3?= <wowz89@mail.ru>
+Content-Type: text/plain; charset="cp1251"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
-Cc: =?UTF-8?q?=D0=90=D0=BD=D0=B4=D1=80=D0=B5=D0=B9=20=D0=98=D0=B2=D0=B0=D0=BD=D0=BE=D0=B2?= <wowz89@mail.ru>
+Content-Transfer-Encoding: base64
+To: Seth Forshee <seth.forshee@canonical.com>, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Add rules for 5150-5250 MHz, 5250-5350 MHz, and 5470-5725 Mhz
-based on the documents at [1] and [2].
-
-v2: Also add DFS region
-
-[1] http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
-[2] http://adilet.zan.kz/rus/docs/P000001379_
-
-Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
----
- db.txt | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index 9d129f2e542b..10c84ee1ca5d 100644
---- a/db.txt
-+++ b/db.txt
-@@ -691,8 +691,14 @@ country KY: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
--country KZ:
-+# Source:
-+# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
-+# http://adilet.zan.kz/rus/docs/P000001379_
-+country KZ: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
-+	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
-+	(5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
- 
- country LB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--- 
-2.14.1
-
-
-_______________________________________________
-wireless-regdb mailing list
-wireless-regdb@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
+x+Tw4OLx8uLz6fLlLCBTZXRoLgoKwvsg7+jx4OvoIDIwIO7q8v/h8P8gMjAxNyDjLiwgMjE6MDY6
+NTE6Cgo+IEFkZCBydWxlcyBmb3IgNTE1MC01MjUwIE1IeiwgNTI1MC01MzUwIE1IeiwgYW5kIDU0
+NzAtNTcyNSBNaHoKPiBiYXNlZCBvbiB0aGUgZG9jdW1lbnRzIGF0IFsxXSBhbmQgWzJdLgoKPiB2
+MjogQWxzbyBhZGQgREZTIHJlZ2lvbgpIZWxsbywgeW91IG1lYW4gdGhlIHBhdGNoIGZvciBLYXph
+a2hzdGFuIGlzIG5vdCBmb3Jnb3R0ZW4gPwo+IFsxXQo+IGh0dHA6Ly9taWMuZ292Lmt6L3NpdGVz
+L2RlZmF1bHQvZmlsZXMvcGFnZXMvcHJhdmlsYV9wcmlzdm9lbml5YV9wb2xvc19jaGFzdG90X25v
+MzQucGRmCj4gWzJdIGh0dHA6Ly9hZGlsZXQuemFuLmt6L3J1cy9kb2NzL1AwMDAwMDEzNzlfCgo+
+IFNpZ25lZC1vZmYtYnk6IFNldGggRm9yc2hlZSA8c2V0aC5mb3JzaGVlQGNhbm9uaWNhbC5jb20+
+Cj4gLS0tCj4gIGRiLnR4dCB8IDggKysrKysrKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDcgaW5zZXJ0
+aW9ucygrKSwgMSBkZWxldGlvbigtKQoKPiBkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIudHh0Cj4g
+aW5kZXggOWQxMjlmMmU1NDJiLi4xMGM4NGVlMWNhNWQgMTAwNjQ0Cj4gLS0tIGEvZGIudHh0Cj4g
+KysrIGIvZGIudHh0Cj4gQEAgLTY5MSw4ICs2OTEsMTQgQEAgY291bnRyeSBLWTogREZTLUZDQwo+
+ICAgICAgICAgKDU0OTAgLSA1NzMwIEAgMTYwKSwgKDI0KSwgREZTCj4gICAgICAgICAoNTczNSAt
+IDU4MzUgQCA4MCksICgzMCkKPiAgCj4gLWNvdW50cnkgS1o6Cj4gKyMgU291cmNlOgo+ICsjCj4g
+aHR0cDovL21pYy5nb3Yua3ovc2l0ZXMvZGVmYXVsdC9maWxlcy9wYWdlcy9wcmF2aWxhX3ByaXN2
+b2VuaXlhX3BvbG9zX2NoYXN0b3Rfbm8zNC5wZGYKPiArIyBodHRwOi8vYWRpbGV0Lnphbi5rei9y
+dXMvZG9jcy9QMDAwMDAxMzc5Xwo+ICtjb3VudHJ5IEtaOiBERlMtRVRTSQo+ICAgICAgICAgKDI0
+MDIgLSAyNDgyIEAgNDApLCAoMjApCj4gKyAgICAgICAoNTE1MCAtIDUyNTAgQCA4MCksICgyMCks
+IE5PLU9VVERPT1IsIEFVVE8tQlcKPiArICAgICAgICg1MjUwIC0gNTM1MCBAIDgwKSwgKDIwKSwg
+Tk8tT1VURE9PUiwgREZTLCBBVVRPLUJXCj4gKyAgICAgICAoNTQ3MCAtIDU3MjUgQCA4MCksICgy
+MCksIE5PLU9VVERPT1IsIERGUwo+ICAKPiAgY291bnRyeSBMQjogREZTLUZDQwo+ICAgICAgICAg
+KDI0MDIgLSAyNDgyIEAgNDApLCAoMjApCgoKCi0tIArRIPPi4Obl7ejl7CwKIFdvV3o4OSAgICAg
+ICAgICAgICAgICAgICAgICAgICAgbWFpbHRvOndvd3o4OUBtYWlsLnJ1CgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Kd2lyZWxlc3MtcmVnZGIgbWFpbGlu
+ZyBsaXN0CndpcmVsZXNzLXJlZ2RiQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby93aXJlbGVzcy1yZWdkYgo=
