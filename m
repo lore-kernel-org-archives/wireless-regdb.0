@@ -2,33 +2,36 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
- List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:
- References:In-Reply-To:To:Message-ID:From:Date:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Owner;
- bh=8f+GS3Iaprzd1f7FoFr16GMwyqJUKpkwz85lO3pfa0M=;
- b=SSMUi+9KGitkA0iQtY1fder8Dl
- l5Khk8ikyvg6WXIMfjEJLYTsbn7Af2qTh/y8lShRigqpiItOia7AmF0eREMJTamdVlyeaz8hrXzP7
- QFUxfy3EJ8F/ZBZkYhd6Ya2qiQOrx7rq9P7eHHd/9K3DIrIuhU2syLDBTOWZMbse3s9yfMA3dFEWv
- +OTwA6yvMD1SfLNUCucsAkxTFULZlJwKVcAkN29qO3xybV4VDRprhqDx/8WKR6XNhBVC12gYw4JUQ
- GeRGaJ9Lac2m4YWW3w8CcA5K5gszHafDVcALTOd+RnUhNmWhacWYROGe2s9NkHUF0RuW3p70G6SIV
- 85IhLyvg==;
-Received: from smtp39.i.mail.ru ([94.100.177.99])
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=714SlqvlcToactRMUJsOB0LFJQMuJVhzB2PDZefcHmM=;
+ b=hqGbfsnucVKjsL
+ 3B9cMnM5fW4ZW6kawmK+1T2dMTEzrpd6LD/Kw1yFPx68jJuXJeLHDtGQSl8z9vmUCN4yWMT4SyJIY
+ iVgA0yapcfZaNE5n8+qvzVOToptEjW9ubUF12sx7gflRp0xZM1uoQQLyvGk3yDQ1LYhjA1ujReOXV
+ hlp4mReivwQ0Ssc613NEAz09/98GAPvW1pl/tMVFOwlSg69U6sseaNuO1X2PMIYnDpJHnz3f9WTUL
+ u7Iy+MxSNnhOqG3AUCUnF+XLIrTWUVUUnxsBfrPLJOH/SqAZmizbjz+HraUBD5nTq/j19fZYcjZ5P
+ uxF4GStaWYWUwYLIfINA==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1e9aVr-0001DI-Qw
- for wireless-regdb@lists.infradead.org; Tue, 31 Oct 2017 17:39:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mail.ru;
- s=mail2; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Subject:To:Message-ID:Reply-To:From:Date;
- bh=C3KK+JlERCkGdf55w5pUaxLXbnr6EZrlliNgICZzvSg=; 
- b=SUyn4h1dg6+8GfyMbiUaNq7lC6OwpY4ItY5xKDsXQlzzzKh0sPq654qnlgiih8E/ED/yN0fQUQKZMiZJSgtNT0FWu9IZjglhKtEdrJC6Ym7URe5EminMi3s1In77j4YNCk26r8nbClmMZMHox9axcfFd4y05szXE9pEartE076M=;
-Date: Tue, 31 Oct 2017 23:39:13 +0600
-From: WoWz89 <wowz89@mail.ru>
-Message-ID: <493073613.20171031233913@mail.ru>
-In-Reply-To: <20171020150651.32424-1-seth.forshee@canonical.com>
+ id 1e9b4u-0005zE-Uw
+ for wireless-regdb@lists.infradead.org; Tue, 31 Oct 2017 18:15:59 +0000
+Received: from mail-io0-f200.google.com ([209.85.223.200])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1e9b4X-0005ZN-Mu
+ for wireless-regdb@lists.infradead.org; Tue, 31 Oct 2017 18:15:33 +0000
+Received: by mail-io0-f200.google.com with SMTP id m16so678847iod.11 for
+ <wireless-regdb@lists.infradead.org>; Tue, 31 Oct 2017 11:15:33 -0700 (PDT)
+Date: Tue, 31 Oct 2017 13:15:31 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20171031181531.l5dzpmk2axpascsv@ubuntu-xps13>
 References: <20171020150651.32424-1-seth.forshee@canonical.com>
+ <493073613.20171031233913@mail.ru>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <493073613.20171031233913@mail.ru>
 Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Add 5 Ghz rules
  for Kazakhstan (KZ)
 List-Unsubscribe: 
@@ -40,38 +43,30 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: =?windows-1251?B?yOLg7e7iIMDt5PDl6SDC6Ory7vDu4uj3?= <wowz89@mail.ru>
-Content-Type: text/plain; charset="cp1251"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: base64
-To: Seth Forshee <seth.forshee@canonical.com>, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Content-Transfer-Encoding: 8bit
+To: =?utf-8?B?0JjQstCw0L3QvtCyINCQ0L3QtNGA0LXQuSDQktC40LrRgtC+0YDQvtCy0Lg=?= =?utf-8?B?0Yc=?= <wowz89@mail.ru>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-x+Tw4OLx8uLz6fLlLCBTZXRoLgoKwvsg7+jx4OvoIDIwIO7q8v/h8P8gMjAxNyDjLiwgMjE6MDY6
-NTE6Cgo+IEFkZCBydWxlcyBmb3IgNTE1MC01MjUwIE1IeiwgNTI1MC01MzUwIE1IeiwgYW5kIDU0
-NzAtNTcyNSBNaHoKPiBiYXNlZCBvbiB0aGUgZG9jdW1lbnRzIGF0IFsxXSBhbmQgWzJdLgoKPiB2
-MjogQWxzbyBhZGQgREZTIHJlZ2lvbgpHb29kIGFmdGVybm9vbiwgd2hlbiB3aWxsIHRoZSB1cGRh
-dGUgPwo+IFsxXQo+IGh0dHA6Ly9taWMuZ292Lmt6L3NpdGVzL2RlZmF1bHQvZmlsZXMvcGFnZXMv
-cHJhdmlsYV9wcmlzdm9lbml5YV9wb2xvc19jaGFzdG90X25vMzQucGRmCj4gWzJdIGh0dHA6Ly9h
-ZGlsZXQuemFuLmt6L3J1cy9kb2NzL1AwMDAwMDEzNzlfCgo+IFNpZ25lZC1vZmYtYnk6IFNldGgg
-Rm9yc2hlZSA8c2V0aC5mb3JzaGVlQGNhbm9uaWNhbC5jb20+Cj4gLS0tCj4gIGRiLnR4dCB8IDgg
-KysrKysrKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigt
-KQoKPiBkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIudHh0Cj4gaW5kZXggOWQxMjlmMmU1NDJiLi4x
-MGM4NGVlMWNhNWQgMTAwNjQ0Cj4gLS0tIGEvZGIudHh0Cj4gKysrIGIvZGIudHh0Cj4gQEAgLTY5
-MSw4ICs2OTEsMTQgQEAgY291bnRyeSBLWTogREZTLUZDQwo+ICAgICAgICAgKDU0OTAgLSA1NzMw
-IEAgMTYwKSwgKDI0KSwgREZTCj4gICAgICAgICAoNTczNSAtIDU4MzUgQCA4MCksICgzMCkKPiAg
-Cj4gLWNvdW50cnkgS1o6Cj4gKyMgU291cmNlOgo+ICsjCj4gaHR0cDovL21pYy5nb3Yua3ovc2l0
-ZXMvZGVmYXVsdC9maWxlcy9wYWdlcy9wcmF2aWxhX3ByaXN2b2VuaXlhX3BvbG9zX2NoYXN0b3Rf
-bm8zNC5wZGYKPiArIyBodHRwOi8vYWRpbGV0Lnphbi5rei9ydXMvZG9jcy9QMDAwMDAxMzc5Xwo+
-ICtjb3VudHJ5IEtaOiBERlMtRVRTSQo+ICAgICAgICAgKDI0MDIgLSAyNDgyIEAgNDApLCAoMjAp
-Cj4gKyAgICAgICAoNTE1MCAtIDUyNTAgQCA4MCksICgyMCksIE5PLU9VVERPT1IsIEFVVE8tQlcK
-PiArICAgICAgICg1MjUwIC0gNTM1MCBAIDgwKSwgKDIwKSwgTk8tT1VURE9PUiwgREZTLCBBVVRP
-LUJXCj4gKyAgICAgICAoNTQ3MCAtIDU3MjUgQCA4MCksICgyMCksIE5PLU9VVERPT1IsIERGUwo+
-ICAKPiAgY291bnRyeSBMQjogREZTLUZDQwo+ICAgICAgICAgKDI0MDIgLSAyNDgyIEAgNDApLCAo
-MjApCgoKCi0tIArRIPPi4Obl7ejl7CwKIFdvV3o4OSAgICAgICAgICAgICAgICAgICAgICAgICAg
-bWFpbHRvOndvd3o4OUBtYWlsLnJ1CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18Kd2lyZWxlc3MtcmVnZGIgbWFpbGluZyBsaXN0CndpcmVsZXNzLXJlZ2Ri
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby93aXJlbGVzcy1yZWdkYgo=
+On Tue, Oct 31, 2017 at 11:39:13PM +0600, WoWz89 wrote:
+> Здравствуйте, Seth.
+> 
+> Вы писали 20 октября 2017 г., 21:06:51:
+> 
+> > Add rules for 5150-5250 MHz, 5250-5350 MHz, and 5470-5725 Mhz
+> > based on the documents at [1] and [2].
+> 
+> > v2: Also add DFS region
+> Good afternoon, when will the update ?
+
+I'm planning to get anything pending applied and a new release out in
+the next couple of days.
+
+_______________________________________________
+wireless-regdb mailing list
+wireless-regdb@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/wireless-regdb
