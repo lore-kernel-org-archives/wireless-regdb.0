@@ -1,35 +1,38 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
- Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
- bh=VU8riE0roqubhmKo4izougQUeC56dFuuwmk19EafrQE=;
- b=o4B5ZgWfpdmQ23gF+6d8RSi8yr
- l8SPS6cKn6faoHHMvmkSMQj4pmoDAHT/pKA2vAq1Rp2PtJhCPl37/IgwJ64IZTBePpVzjVLbV18yn
- j94LgVL9i/QUafmfbJ65DM6U5f18iVtcPOcYFcjR9/PJMmCdZhEPlvNCLZUCYUi5pd0SEiz4puueg
- 5ZFpHWxq+MTfrsHtu9F6kS8gsYjxwshwzLxItSFyvR8hve4o6w1IMGbb1sXC9DjWYhQzk8d/wDcUY
- cC76vFAlJCGtVjLUdWk/xCvaHvVFzFQfgYjfqrE0lHySHFd1LpwWEjDMQW+yIaxJPenZfObbY/9dy
- ane9mTSA==;
-Received: from mail-ve1eur01on0051.outbound.protection.outlook.com
- ([104.47.1.51] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=L+jKdBnoAUbDjp9WOsQHHoPKym37bzIWsJHUYwSzK8A=;
+ b=agLCcmG15S5a/9
+ o3FYvfHdlCXE5+tnJFpVeNyekBnW3MulbepzrckpTIAECey+STPcmq/gL14+brr/1X4wPQBvMVhXq
+ oifqnDZX7XnfqT/08n7wtw4Hv4e38alFIfatAYB3XQTu73iGonazmDTGVFyLKBPXl+WN5AJHznavZ
+ BMLg4BI+I0b6NIlF27AO9FqqWU3Pr1nzM9qTeKjqkjOaGLQbob2W0PUIZsuD+CGwJohedji5nTtLb
+ xATduzThsr8tq1gxZiBt2C5MPPuPZy/FcLJeNB2QZzeq/Vp3kk2wBzs1kdoPyBS8tgiouIXw9XVVE
+ PgTmccQEpwTVHceCe0Cw==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1eC5B8-0002T1-Lg
- for wireless-regdb@lists.infradead.org; Tue, 07 Nov 2017 14:48:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=aaudk.onmicrosoft.com;  s=selector1-its-aau-dk;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version;
- bh=siDVNjqDvLuy8PmbYpJVARogshrYqzIMCiRgTTNTJX8=;
- b=PisFyVIcBuUh1v4B+suvBViWzJ7t/wfGm1X70KrfWrV+Y9pVLMLqivgMrabDXSyISjUqPPaAGIz0qqlYH2JEUQWrMPOPzD+gnoz8Gli0g70OrCIzALTrvXKFO9nznfyv0C9cmJzB88Nr8iMEOO3IqgcIaIEjMsuj7J/gl8zmIjs=
-From: Per Mejdal Rasmussen <pmr@its.aau.dk>
-Message-ID: <0b1762cd-761d-ebe3-a88e-4a2b1823c51f@its.aau.dk>
-Date: Tue, 7 Nov 2017 15:48:12 +0100
+ id 1eCQBI-00052I-NX
+ for wireless-regdb@lists.infradead.org; Wed, 08 Nov 2017 13:14:17 +0000
+Received: from mail-io0-f198.google.com ([209.85.223.198])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1eCQAv-0006qr-5W
+ for wireless-regdb@lists.infradead.org; Wed, 08 Nov 2017 13:13:49 +0000
+Received: by mail-io0-f198.google.com with SMTP id m81so5557548ioi.3 for
+ <wireless-regdb@lists.infradead.org>; Wed, 08 Nov 2017 05:13:49 -0800 (PST)
+Date: Wed, 8 Nov 2017 07:13:46 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20171108131346.dyn3hbhoonmbqk2d@ubuntu-xps13>
+References: <0b1762cd-761d-ebe3-a88e-4a2b1823c51f@its.aau.dk>
 MIME-Version: 1.0
-Content-Language: en-US
-Subject: [wireless-regdb] Update regulatory rules for Denmark (DK) on 2.4
- and 5GHz
+Content-Disposition: inline
+In-Reply-To: <0b1762cd-761d-ebe3-a88e-4a2b1823c51f@its.aau.dk>
+Subject: Re: [wireless-regdb] Update regulatory rules for Denmark (DK) on
+ 2.4 and 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,127 +42,29 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
+To: Per Mejdal Rasmussen <pmr@its.aau.dk>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi
+On Tue, Nov 07, 2017 at 03:48:12PM +0100, Per Mejdal Rasmussen wrote:
+> Hi
+> 
+> I have taken the time research which frequencies and power levels are
+> allowed for WiFi in Denmark. So db.txt for wireless-regdb can be updated.
 
-I have taken the time research which frequencies and power levels are 
-allowed for WiFi in Denmark. So db.txt for wireless-regdb can be updated.
+Thanks for this information. I know I've been slow to respond, but
+there's no need to keep resending them. I've been looking through the
+documents trying to validate the changes you suggested, but my time for
+doing so has been limited so I haven't finished yet. I hope to be able
+to send a detailed response soon.
 
-
-Allowed WiFi frequencies in Denmark for WiFi:
----------------------------------------------
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-57-66 GHz
-
-Source: https://www.retsinformation.dk/Forms/R0710.aspx?id=189932
-Search for "RLAN". The website is owned by the Danish government.
-
-
-Maximum transmission strength and usage
----------------------------------------
-2400-2483,5 MHz  ? mW/MHz   100 mW EIRP
-5150-5250 MHz   10 mW/MHz   200 mW EIRP    Both in/outdoor allowed
-5470-5725 MHz   50 mW/MHz     1 W EIRP     Both in/outdoor allowed
-5725-5875 MHz  200 mW/MHz     4 W EIRP     BFWA only, 5795-5815 excluded
-5725-5875 MHz    ? mW/MHz    25 mW EIRP    Short range devices
-57-66 GHz       20 mW/MHz    10 W EIRP     No fixed outdoor install
-
-DFS is required for 5250-5350, 5470-5725 and because of ETSI EN 301 893
-DFS is required for 5725-5875 for BFWA, because of ETSI EN 302 502
-
-Sources:
-5GHz: 
-https://erhvervsstyrelsen.dk/sites/default/files/007_interface-datanet_5-6_ghz.pdf.pdf
-60GHz: 
-https://erhvervsstyrelsen.dk/sites/default/files/radiograenseflader-63.pdf
-The website is owned by the Danish government.
-
-
-Outdated content of db.txt:
----------------------------
-country DK: DFS-ETSI
-     (2402 - 2482 @ 40), (20)
-     (5170 - 5250 @ 80), (20), AUTO-BW
-     (5250 - 5330 @ 80), (20), DFS, AUTO-BW
-     (5490 - 5710 @ 160), (27), DFS
-     # 60 GHz band channels 1-4, ref: Etsi En 302 567
-     (57000 - 66000 @ 2160), (40)
-
-
-Suggested fix:
---------------
-country DK: DFS-ETSI
-     (2400 - 2483.5 @ 40), (20)
-     (5150 - 5250 @ 80), (23), AUTO-BW
-     (5250 - 5350 @ 80), (23), DFS, AUTO-BW
-     (5470 - 5725 @ 160), (30), DFS
-     # Short Range Devices (ETSI EN 300 440-1)
-     (5725 - 5875 @ 80), (14)
-     # Broadband Fixed Wireless Access (ETSI EN 302 502)
-     (5725 - 5795 @ 40), (36), PTP_ONLY, DFS
-     (5815 - 5875 @ 40), (36), PTP_ONLY, DFS
-     # 60 GHz band channels 1-4 (ETSI EN 302 567)
-     (57000 - 66000 @ 2160), (40), NO-OUTDOOR
-
-
-
-History of WiFi frequencies in Denmark for WiFi:
-------------------------------------------------
- From 1999-09-07:
-2400,0-2483,5 MHz
-5150,0-5250,0 MHz
-
- From 2000-03-30
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-
- From 2002-12-10
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-17,1-17,3 GHz
-
- From 2006-11-07
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5925,0 MHz
-17,1-17,3 GHz
-
- From 2007-09-20
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-17,1-17,3 GHz
-
- From 2008-06-11
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-
- From 2009-11-27 (current)
-2400,0-2483,5 MHz
-5150,0-5350,0 MHz
-5470,0-5725,0 MHz
-5725,0-5875,0 MHz
-57-66 GHz
-
--- 
-Per Mejdal Rasmussen
-http://personprofil.aau.dk/109070
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
