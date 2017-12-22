@@ -6,31 +6,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
  In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=ALJe6g99GkbvASIFNZbpPXLyqIdQnbWaiitcaCdJ6zQ=;
- b=k9mfGzcLxiprJa
- 0vJGNLZ1jjQXho/4PsGHyTUTKd4qlNRRdVrOPU/Ka2FRxku12TI0Amebg0fIs9li3Haba9WcGj5IN
- KF0n1uoRfD3/ITnLG2u7nw1f3+6UVmlYiCg4K1HiqEAT8L5Tz05RN7osz6RcwS5Ihalb7OX6AjyGk
- c1de35GFZjbdE1BYKo8F3G6GPSMrkaqubnLR8E2MKC0BEfxIQqSAp0apeVo/vWSqvbDqo0YQMT+Fy
- GG73IjVLlQs2s+BBN1k8mq72B5yBFvs9f0nY+hIoD3I8EvL8Ck5nfM/kE4tQXDcldAFerQhMViP8S
- nGEUXB2qkkwYSQfxD/1w==;
+ List-Owner; bh=V9Nca+M19P/sL3McRjHgAiK2uuqkc94EdDZqvAeV3oM=;
+ b=lj6F2FtR6orgYQ
+ 8xYzDGeXWLAdQwVVmvoOfMs+epNP0ht+A4EinOOVtyEhTt15Q9lj0RrjIxlJW8mG7KNmIbVVSZW5t
+ yFS40GADOoBEneAVJgXTCB0REnEwpI5fVU9IRPf8WisSWBLhyAo6WbwTkx31LLeShMDWcdvfQfTas
+ BQzEpaoyUaMeFNwwuuCqBHRSTqplwJxjZAg9qmQnaesuAV7167aue25yHc6qqz2Fb6/Qmy4QrGni/
+ pUNCV2UskWThn1LpEBWDaGGiPbQzklu0t7DqnDl55Opg34k23qiY5GGKMxLMwIdTtMat3GkYnenFp
+ KnX/LnY6lEyO2+hBwTLg==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
- id 1eSGQR-0005r8-JR
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:21 +0000
-Received: from mail-io0-f198.google.com ([209.85.223.198])
+ id 1eSGQS-0005rD-16
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:24 +0000
+Received: from mail-it0-f70.google.com ([209.85.214.70])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1eSGQN-0002ep-Qh
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:15 +0000
-Received: by mail-io0-f198.google.com with SMTP id y76so18990453iod.1 for
- <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:15 -0800 (PST)
+ id 1eSGQP-0002f8-Dy
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:17 +0000
+Received: by mail-it0-f70.google.com with SMTP id z142so9804822itc.6 for
+ <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:17 -0800 (PST)
 From: Seth Forshee <seth.forshee@canonical.com>
-Date: Fri, 22 Dec 2017 00:03:02 -0600
-Message-Id: <20171222060303.14478-6-seth.forshee@canonical.com>
+Date: Fri, 22 Dec 2017 00:03:03 -0600
+Message-Id: <20171222060303.14478-7-seth.forshee@canonical.com>
 In-Reply-To: <20171222060303.14478-1-seth.forshee@canonical.com>
 References: <20171222060303.14478-1-seth.forshee@canonical.com>
-Subject: [wireless-regdb] [PATCH 5/6] wireless-regdb: Install regulatory.db
- and regulatory.db.p7s to /lib/firmware
+Subject: [wireless-regdb] [PATCH 6/6] wireless-regdb: Document
+ regulatory.db in the manual page
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,42 +50,93 @@ To: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Cc: Johannes Berg <johannes@sipsolutions.net>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-regulatory.db is being installed to the CRDA path, however the
-kernel expects it to be in /lib/firmware. Install it to the
-proper location. Also install the detached signature, which is
-needed for the kernel to check verify the database authenticity.
+Add information about regulatory.db to the regulatory.bin man
+page, and alias the regulatory.db man page to refer to the page
+for regulatory.bin.
 
 Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 ---
- Makefile | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ Makefile         |  2 +-
+ regulatory.bin.5 | 32 ++++++++++++++++++++++----------
+ regulatory.db.5  |  1 +
+ 3 files changed, 24 insertions(+), 11 deletions(-)
+ create mode 100644 regulatory.db.5
 
 diff --git a/Makefile b/Makefile
-index 044251f64785..1e8e84c64149 100644
+index 1e8e84c64149..2f1ed93e0e15 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -2,6 +2,7 @@
- PREFIX ?= /usr
- CRDA_PATH ?= $(PREFIX)/lib/crda
- CRDA_KEY_PATH ?= $(CRDA_PATH)/pubkeys
-+FIRMWARE_PATH ?= /lib/firmware
- 
- MANDIR ?= $(PREFIX)/share/man/
- 
-@@ -117,10 +118,12 @@ install-distro-key: maintainer-clean $(DISTRO_PRIVKEY)
- install: regulatory.bin.5.gz regulatory.db.5.gz
- 	install -m 755 -d $(DESTDIR)/$(CRDA_PATH)
- 	install -m 755 -d $(DESTDIR)/$(CRDA_KEY_PATH)
-+	install -m 755 -d $(DESTDIR)/$(FIRMWARE_PATH)
- 	if [ -f .custom ]; then \
- 		install -m 644 -t $(DESTDIR)/$(CRDA_KEY_PATH)/ $(shell cat .custom); \
- 	fi
- 	install -m 644 -t $(DESTDIR)/$(CRDA_KEY_PATH)/ $(REGDB_UPSTREAM_PUBKEY)
--	install -m 644 -t $(DESTDIR)/$(CRDA_PATH)/ regulatory.bin regulatory.db
-+	install -m 644 -t $(DESTDIR)/$(CRDA_PATH)/ regulatory.bin
-+	install -m 644 -t $(DESTDIR)/$(FIRMWARE_PATH) regulatory.db regulatory.db.p7s
+@@ -126,4 +126,4 @@ install: regulatory.bin.5.gz regulatory.db.5.gz
+ 	install -m 644 -t $(DESTDIR)/$(CRDA_PATH)/ regulatory.bin
+ 	install -m 644 -t $(DESTDIR)/$(FIRMWARE_PATH) regulatory.db regulatory.db.p7s
  	install -m 755 -d $(DESTDIR)/$(MANDIR)/man5/
- 	install -m 644 -t $(DESTDIR)/$(MANDIR)/man5/ regulatory.bin.5.gz
+-	install -m 644 -t $(DESTDIR)/$(MANDIR)/man5/ regulatory.bin.5.gz
++	install -m 644 -t $(DESTDIR)/$(MANDIR)/man5/ regulatory.bin.5.gz regulatory.db.5.gz
+diff --git a/regulatory.bin.5 b/regulatory.bin.5
+index 430c65c9ce6d..b1862cd1756d 100644
+--- a/regulatory.bin.5
++++ b/regulatory.bin.5
+@@ -1,6 +1,6 @@
+-.TH regulatory.bin 5 "23 January 2009" "regulatory.bin" "Linux"
++.TH regulatory.bin 5 "21 December 2017" "regulatory.bin" "Linux"
+ .SH NAME
+-regulatory.bin \- The Linux wireless regulatory database
++regulatory.bin, regulatory.db \- The Linux wireless regulatory database
+ 
+ .ad l
+ .in +8
+@@ -9,24 +9,36 @@ regulatory.bin \- The Linux wireless regulatory database
+ .SS
+ .SH Description
+ .B regulatory.bin
+-is the file used by the Linux wireless subsystem to keep its regulatory
+-database information. It is read by
++and
++.B regulatory.db
++are the files used by the Linux wireless subsystem to keep its regulatory
++database information.
++.PP
++.B regulatory.bin
++is read by
+ .B crda
+ upon the Linux kernel's request for regulatory information for a specific
+-ISO / IEC 3166 alpha2 country code. The regulatory database is kept in
+-a small binary format for size and code efficiency. The
++ISO / IEC 3166 alpha2 country code.
++.PP
++.B regulatory.db
++is a newer, extensible database format which (since Linux 4.15) is read
++by the kernel directly as a firmware file.
++
++The regulatory database is kept in a small binary format for size and code
++efficiency. The
+ .B regulatory.bin
+ file can be parsed and read in human format by using the
+ .B regdbdump
+-command. The
+-.B regulatory.bin
+-file should be updated upon regulatory changes or corrections.
++command. The regulatory database files should be updated upon regulatory
++changes or corrections.
+ 
+ .SH Upkeeping
+ The regulatory database is maintained by the community as such
+ you are encouraged to send any corrections or updates to the
+-linux-wireless mailing list:
++linux-wireless and wireless-regdb mailing lists:
+ .B linux-wireless@vger.kernel.org
++and
++.B wireless-regdb@lists.infradead.org
+ 
+ .SH SEE ALSO
+ .BR regdbdump (8)
+diff --git a/regulatory.db.5 b/regulatory.db.5
+new file mode 100644
+index 000000000000..6c8aae374621
+--- /dev/null
++++ b/regulatory.db.5
+@@ -0,0 +1 @@
++.so man5/regulatory.bin.5.gz
 -- 
 2.14.1
 
