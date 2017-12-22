@@ -6,31 +6,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
  In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=y2+2lE/PMR1+llAEF3De3K+3nSvQMGJUCJxMJGzvbb0=;
- b=Tf7uacLJOa8ZHB
- Li6ZCtSPfbTv9ru6nhJ2As4OO4qy5eR2/ZnHAZAfsryCzwZTfDbtRopXufM7sBBQ1ha/CjKY/fWtM
- zh31eCi3lMTLNRwBmBpopseebeVSHCRGth3rHI90pEwOGGoCaQknY7r8qfqs2iG9MMi+RkAvIZmdG
- fQPCpj/GLfe3oVZQsnC3OpwczKIA1A2a/4OqZbsXooPgAniZru2iMh4sl+nEmHRtg34KK+gYUlojm
- s3jIoNT0mcPrcLsKTNJGVAc+n0alGYJtCtDkiD7SDCNyQNbQsxODw6k0qBNXTt+dxmfV3/OFMi72n
- foe4Cy8helRocIDeP/Zg==;
+ List-Owner; bh=ALJe6g99GkbvASIFNZbpPXLyqIdQnbWaiitcaCdJ6zQ=;
+ b=k9mfGzcLxiprJa
+ 0vJGNLZ1jjQXho/4PsGHyTUTKd4qlNRRdVrOPU/Ka2FRxku12TI0Amebg0fIs9li3Haba9WcGj5IN
+ KF0n1uoRfD3/ITnLG2u7nw1f3+6UVmlYiCg4K1HiqEAT8L5Tz05RN7osz6RcwS5Ihalb7OX6AjyGk
+ c1de35GFZjbdE1BYKo8F3G6GPSMrkaqubnLR8E2MKC0BEfxIQqSAp0apeVo/vWSqvbDqo0YQMT+Fy
+ GG73IjVLlQs2s+BBN1k8mq72B5yBFvs9f0nY+hIoD3I8EvL8Ck5nfM/kE4tQXDcldAFerQhMViP8S
+ nGEUXB2qkkwYSQfxD/1w==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
- id 1eSGQR-0005r5-JW
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:24 +0000
-Received: from mail-it0-f70.google.com ([209.85.214.70])
+ id 1eSGQR-0005r8-JR
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:21 +0000
+Received: from mail-io0-f198.google.com ([209.85.223.198])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1eSGQL-0002eV-W6
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:14 +0000
-Received: by mail-it0-f70.google.com with SMTP id k186so9703607ith.1 for
- <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:13 -0800 (PST)
+ id 1eSGQN-0002ep-Qh
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:15 +0000
+Received: by mail-io0-f198.google.com with SMTP id y76so18990453iod.1 for
+ <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:15 -0800 (PST)
 From: Seth Forshee <seth.forshee@canonical.com>
-Date: Fri, 22 Dec 2017 00:03:01 -0600
-Message-Id: <20171222060303.14478-5-seth.forshee@canonical.com>
+Date: Fri, 22 Dec 2017 00:03:02 -0600
+Message-Id: <20171222060303.14478-6-seth.forshee@canonical.com>
 In-Reply-To: <20171222060303.14478-1-seth.forshee@canonical.com>
 References: <20171222060303.14478-1-seth.forshee@canonical.com>
-Subject: [wireless-regdb] [PATCH 4/6] wireless-regdb: Better support for
- generating public certificates
+Subject: [wireless-regdb] [PATCH 5/6] wireless-regdb: Install regulatory.db
+ and regulatory.db.p7s to /lib/firmware
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,57 +50,42 @@ To: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Cc: Johannes Berg <johannes@sipsolutions.net>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The current makefile rule for the public certificate calls for an
-openssl config file which is not provided. Let's put the pubcert
-generation into a script named gen-pubcert.sh and embed the
-openssl configuration file there.
+regulatory.db is being installed to the CRDA path, however the
+kernel expects it to be in /lib/firmware. Install it to the
+proper location. Also install the detached signature, which is
+needed for the kernel to check verify the database authenticity.
 
 Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 ---
- Makefile       |  4 +---
- gen-pubcert.sh | 18 ++++++++++++++++++
- 2 files changed, 19 insertions(+), 3 deletions(-)
- create mode 100755 gen-pubcert.sh
+ Makefile | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/Makefile b/Makefile
-index 9532c29a1dc2..044251f64785 100644
+index 044251f64785..1e8e84c64149 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -79,9 +79,7 @@ $(REGDB_PUBKEY): $(REGDB_PRIVKEY)
+@@ -2,6 +2,7 @@
+ PREFIX ?= /usr
+ CRDA_PATH ?= $(PREFIX)/lib/crda
+ CRDA_KEY_PATH ?= $(CRDA_PATH)/pubkeys
++FIRMWARE_PATH ?= /lib/firmware
  
- $(REGDB_PUBCERT): $(REGDB_PRIVKEY)
- 	@echo "Generating certificate for $(REGDB_AUTHOR)..."
--	@openssl req -config regulatory.openssl.conf \
--		-key $(REGDB_PRIVKEY) -days 36500 -utf8 -nodes -batch \
--		-x509 -outform PEM -out $(REGDB_PUBCERT)
-+	./gen-pubcert.sh $(REGDB_PRIVKEY) $(REGDB_PUBCERT)
- 	@echo $(REGDB_PUBKEY) > .custom
+ MANDIR ?= $(PREFIX)/share/man/
  
- 
-diff --git a/gen-pubcert.sh b/gen-pubcert.sh
-new file mode 100755
-index 000000000000..1a4d57999e5d
---- /dev/null
-+++ b/gen-pubcert.sh
-@@ -0,0 +1,18 @@
-+#!/bin/bash
-+
-+if [[ $# -ne 2 ]]; then
-+	echo "Usage: $0 priv-key out-file"
-+	exit 1
-+fi
-+
-+openssl req -new -key "$1" -days 36500 -utf8 -nodes -batch \
-+	-x509 -outform PEM -out "$2" \
-+	-config <(cat <<-EOF
-+		[ req ]
-+		distinguished_name = req_distinguished_name
-+		string_mask = utf8only
-+		prompt = no
-+		[ req_distinguished_name ]
-+		commonName = sforshee
-+		EOF
-+	)
+@@ -117,10 +118,12 @@ install-distro-key: maintainer-clean $(DISTRO_PRIVKEY)
+ install: regulatory.bin.5.gz regulatory.db.5.gz
+ 	install -m 755 -d $(DESTDIR)/$(CRDA_PATH)
+ 	install -m 755 -d $(DESTDIR)/$(CRDA_KEY_PATH)
++	install -m 755 -d $(DESTDIR)/$(FIRMWARE_PATH)
+ 	if [ -f .custom ]; then \
+ 		install -m 644 -t $(DESTDIR)/$(CRDA_KEY_PATH)/ $(shell cat .custom); \
+ 	fi
+ 	install -m 644 -t $(DESTDIR)/$(CRDA_KEY_PATH)/ $(REGDB_UPSTREAM_PUBKEY)
+-	install -m 644 -t $(DESTDIR)/$(CRDA_PATH)/ regulatory.bin regulatory.db
++	install -m 644 -t $(DESTDIR)/$(CRDA_PATH)/ regulatory.bin
++	install -m 644 -t $(DESTDIR)/$(FIRMWARE_PATH) regulatory.db regulatory.db.p7s
+ 	install -m 755 -d $(DESTDIR)/$(MANDIR)/man5/
+ 	install -m 644 -t $(DESTDIR)/$(MANDIR)/man5/ regulatory.bin.5.gz
 -- 
 2.14.1
 
