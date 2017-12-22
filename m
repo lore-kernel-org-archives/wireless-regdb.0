@@ -6,31 +6,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
  In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=IX7Am4I3U6DINErxsTaPV84kxMtL6IY0bY9LoZVLehE=;
- b=poHBxXfouOM5tm
- TNiHjMJOBumVogxdUADK5/prFeQ9b6Km5cOU5ThpW8KrmRCzwvNcZnPjHffuVjC/Nm1MfSqEpTf4Z
- Pujj7mHsmFXJHCWVlr6sZ7xUJK42jzY9npC/21yv24PRkmVGGD3rTOAJcKEwYpNLiajYDmEzpr8sw
- Fj4fAIOvZICb9JARgADxZZyaZBCsh1feLwiACk+F/ze4/ilL2RtnSE6tDZDBu9bKFmzMApIWbPLZz
- t7vm7h2mOd4nQm/r9JYBM3Xyaa1fOCh34mchdk2Xhp8yPb46WTQR0wH1lkqQzjFpZLBNwWx7WVvOS
- Woo+7Kpk8Me6LYOiL/CQ==;
+ List-Owner; bh=y2+2lE/PMR1+llAEF3De3K+3nSvQMGJUCJxMJGzvbb0=;
+ b=Tf7uacLJOa8ZHB
+ Li6ZCtSPfbTv9ru6nhJ2As4OO4qy5eR2/ZnHAZAfsryCzwZTfDbtRopXufM7sBBQ1ha/CjKY/fWtM
+ zh31eCi3lMTLNRwBmBpopseebeVSHCRGth3rHI90pEwOGGoCaQknY7r8qfqs2iG9MMi+RkAvIZmdG
+ fQPCpj/GLfe3oVZQsnC3OpwczKIA1A2a/4OqZbsXooPgAniZru2iMh4sl+nEmHRtg34KK+gYUlojm
+ s3jIoNT0mcPrcLsKTNJGVAc+n0alGYJtCtDkiD7SDCNyQNbQsxODw6k0qBNXTt+dxmfV3/OFMi72n
+ foe4Cy8helRocIDeP/Zg==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
- id 1eSGQR-0005qk-J2
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:21 +0000
-Received: from mail-io0-f200.google.com ([209.85.223.200])
+ id 1eSGQR-0005r5-JW
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:24 +0000
+Received: from mail-it0-f70.google.com ([209.85.214.70])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1eSGQK-0002eE-6g
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:12 +0000
-Received: by mail-io0-f200.google.com with SMTP id x62so11539711ioe.8 for
- <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:12 -0800 (PST)
+ id 1eSGQL-0002eV-W6
+ for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 06:03:14 +0000
+Received: by mail-it0-f70.google.com with SMTP id k186so9703607ith.1 for
+ <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2017 22:03:13 -0800 (PST)
 From: Seth Forshee <seth.forshee@canonical.com>
-Date: Fri, 22 Dec 2017 00:03:00 -0600
-Message-Id: <20171222060303.14478-4-seth.forshee@canonical.com>
+Date: Fri, 22 Dec 2017 00:03:01 -0600
+Message-Id: <20171222060303.14478-5-seth.forshee@canonical.com>
 In-Reply-To: <20171222060303.14478-1-seth.forshee@canonical.com>
 References: <20171222060303.14478-1-seth.forshee@canonical.com>
-Subject: [wireless-regdb] [PATCH 3/6] wireless-regdb: Add sforshee's x509
- certificate
+Subject: [wireless-regdb] [PATCH 4/6] wireless-regdb: Better support for
+ generating public certificates
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,39 +50,57 @@ To: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Cc: Johannes Berg <johannes@sipsolutions.net>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Add a x509 certificate for sforshee.key.pub.pem. This is the same
-certificate which is shipped in the kernel for validating
-regulatory database files.
+The current makefile rule for the public certificate calls for an
+openssl config file which is not provided. Let's put the pubcert
+generation into a script named gen-pubcert.sh and embed the
+openssl configuration file there.
 
 Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 ---
- sforshee.x509.pem | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
- create mode 100644 sforshee.x509.pem
+ Makefile       |  4 +---
+ gen-pubcert.sh | 18 ++++++++++++++++++
+ 2 files changed, 19 insertions(+), 3 deletions(-)
+ create mode 100755 gen-pubcert.sh
 
-diff --git a/sforshee.x509.pem b/sforshee.x509.pem
-new file mode 100644
-index 000000000000..ebd01606d057
+diff --git a/Makefile b/Makefile
+index 9532c29a1dc2..044251f64785 100644
+--- a/Makefile
++++ b/Makefile
+@@ -79,9 +79,7 @@ $(REGDB_PUBKEY): $(REGDB_PRIVKEY)
+ 
+ $(REGDB_PUBCERT): $(REGDB_PRIVKEY)
+ 	@echo "Generating certificate for $(REGDB_AUTHOR)..."
+-	@openssl req -config regulatory.openssl.conf \
+-		-key $(REGDB_PRIVKEY) -days 36500 -utf8 -nodes -batch \
+-		-x509 -outform PEM -out $(REGDB_PUBCERT)
++	./gen-pubcert.sh $(REGDB_PRIVKEY) $(REGDB_PUBCERT)
+ 	@echo $(REGDB_PUBKEY) > .custom
+ 
+ 
+diff --git a/gen-pubcert.sh b/gen-pubcert.sh
+new file mode 100755
+index 000000000000..1a4d57999e5d
 --- /dev/null
-+++ b/sforshee.x509.pem
-@@ -0,0 +1,17 @@
-+-----BEGIN CERTIFICATE-----
-+MIICpDCCAYwCCQCyjd9HrvnOpzANBgkqhkiG9w0BAQsFADATMREwDwYDVQQDDAhz
-+Zm9yc2hlZTAgFw0xNzEwMDYxOTQwMzVaGA8yMTE3MDkxMjE5NDAzNVowEzERMA8G
-+A1UEAwwIc2ZvcnNoZWUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1
-+QOOcKIQ5A/I512YsQTgVrH6lg3ElfpB8aN1vP9nXWTiffGpSwgMqLX5m9B6zEnAg
-+W9SXMj1xizsbCBcUa2HEV4uWFhz9JNULCfloEYT7ylEM0UUZ2hBEitn+dqn9YC0Y
-+CyiVsi3qiJi40VYh8FMf8QJv6Uabk18okA+sNvpoI3FXVvbM0999Ktkbc0XruieF
-+73p/pcuAxzA20lPu7Kwe5zHxNqKcY8ZlW38ldWih6tN+AFyaXtggGDJ3BykSZh42
-+c+eXBEE3sbFyK/ShKSB8lnkLK9DY3shsP5P7xe54UhEVG3r24miZ5/tGFoTjx6Hm
-+4NJG1eHEX6Bm9NrE/5UdAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAIcD2vKCwt2v
-+fEQvhtNfTJNIuf4HF7sh9yUjTqoiDBa5c66dRnx12cNJV0e/M7eX7PVAdcBGIvCg
-+XZx5E6H/uKMve44GP8i25Goo8jRcIz8ywOatD6zPVXRHc9MBhbcLIlYkfZ8JqQ6G
-+njdbnG0C2YzIUGriWfMWBuqyQrVY/rrRgVca77I4iFj2qsQui1on5KXopMpnXKxy
-+Z8NvE8MtNXnXiuf11CEwStX2o9l5VvIPEPd90FGTL0f4fUsKhFUSCn1OOx8rL/wo
-+s2k04YCAu+KvudYw8R1UhyOZn1EDTEV9AmVzq/3PlMwNOmD9PBQvFjOpIR/LULGP
-+A+6gZqkWeRQ=
-+-----END CERTIFICATE-----
++++ b/gen-pubcert.sh
+@@ -0,0 +1,18 @@
++#!/bin/bash
++
++if [[ $# -ne 2 ]]; then
++	echo "Usage: $0 priv-key out-file"
++	exit 1
++fi
++
++openssl req -new -key "$1" -days 36500 -utf8 -nodes -batch \
++	-x509 -outform PEM -out "$2" \
++	-config <(cat <<-EOF
++		[ req ]
++		distinguished_name = req_distinguished_name
++		string_mask = utf8only
++		prompt = no
++		[ req_distinguished_name ]
++		commonName = sforshee
++		EOF
++	)
 -- 
 2.14.1
 
