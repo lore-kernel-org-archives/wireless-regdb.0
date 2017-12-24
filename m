@@ -2,37 +2,34 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=1b1d2HneTnso5lf4iHmPGJPBnjtNEOJ1ncdvZihqgOM=;
- b=KvV
- gh4EQSSHRyKDeXdOB7pgEpPvAE5/H31R1WudoiSOdfQTCWtLy/ZRmaZALy2D1QJjTk8LabAMqfqBI
- FrxMDbcqnTfoLdWDLMdxOCY4eT9WidutpAZYx7PSxMQdAfLVutUxaKFwkFIpUsfd3uUwTAkxCZl2Z
- AnC5P6fGQ2TTaac0Yq7h91FNrdJcVRbTyCxWCSSMfnIsBpkEbUIZbG3+/sLdWGnh4MT15cK6U9fb/
- FjjAXAia7cUEojKcoO2G4pTA68c1rjqdYeTJzuqtbnMkzj4har8wsUidbVzJYB8R56ojlxWQ/o5Ne
- Vr4wIQoNIW600yHx2X3vfsLzEfaukaA==;
-Received: from mail-ot0-x231.google.com ([2607:f8b0:4003:c0f::231])
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+ :Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=40qJpG50hxT9ixsYQ3aYmI+FXe6oktRK4E0w60QQftM=;
+ b=eGoxqLHdKWpMGX
+ OoSqQxPrs6jPYfLXin9L3ZgkBaQlAdB/WfeTNxhj4us88Ly2peb8JgHVTkqGgj/j2LsW0j6Y1Wfo+
+ pv8+LmkJRamMyTHYKlefwCviD1E84zyDGxkl1CRVPAq+z49Uda9pgAUugWXgSWpunyjHqNNwssEps
+ IUK3yPxDO2mMHnw2G+4Al7m6y8Zw/NdPTQjbPksWyTpfH0rf6jsjvdA+Cn6gQQrtM3qtuy4AQ/r4N
+ sOdxj7tWnN0ChOd3BWlVz8ODzFrqfN3A6qATAg6Ou48E6sbxKxzrBy1A9KAO++6gA1C4KLAH/MCP3
+ /e4ydTU6+HvAPepQ6eqA==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
- id 1eUqgj-0006zo-8T
- for wireless-regdb@lists.infradead.org; Fri, 29 Dec 2017 09:10:51 +0000
-Received: by mail-ot0-x231.google.com with SMTP id a42so15005198otj.5 for
- <wireless-regdb@lists.infradead.org>; Fri, 29 Dec 2017 01:10:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=mime-version:from:date:message-id:subject:to;
- bh=nqZ8WKSvJSJhbEMVsKJUdMginhZLuby5GgEs0Y1PQO8=;
- b=qcYgfmGkjCFCQNdADgB0rr0zgY1YQHWdQ6hSlO+mfwbm3gmihcuC7qSWXOz2YiZaDX
- 1Di460F3qLADiJ5nm32BsSyUvidMKMOCPOz9yj9Y9yBKWcEX5P1jA/nh57aBH56BR0i1
- ZQvgKlcYpalmY2A3q6VVkDqVqCpoaCHfKjjeBWyIvKaC3nUg3QMxpeJ+7ublaZxRy1NZ
- 9iMeUgrhUHMDydUGCPpRGe5occ51TOoIMvpV79OrGFerptdG4dPLtceEfdXgz0k0+Gca
- nlcHJEj2zhQUVJwZq/Rj++Oh3bYeSWfz1iBUJofYgX3HDP55gKDye97Npwt9gP9MGKvd gmzA==
+ id 1eSxN9-0002pY-3J
+ for wireless-regdb@lists.infradead.org; Sun, 24 Dec 2017 03:54:48 +0000
+Received: from mail-io0-f198.google.com ([209.85.223.198])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1eSxMx-0004sr-Ih
+ for wireless-regdb@lists.infradead.org; Sun, 24 Dec 2017 03:54:35 +0000
+Received: by mail-io0-f198.google.com with SMTP id f26so5440857iob.13 for
+ <wireless-regdb@lists.infradead.org>; Sat, 23 Dec 2017 19:54:35 -0800 (PST)
+Date: Sat, 23 Dec 2017 21:54:31 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20171224035431.GA5626@ubuntu-xps13>
 MIME-Version: 1.0
-From: Faisal Abu Rayhan <faisal.wiryasantika@gmail.com>
-Date: Fri, 29 Dec 2017 12:10:36 +0300
-Message-ID: <CADGYwvBNy4T4m5+i1km4cUPJd69NfxswqkHtUD=cOt3JrNXxgA@mail.gmail.com>
-Subject: [wireless-regdb] wireless-regdb: add Short Range Devices (SRD) for
- Qatar
+Content-Disposition: inline
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2017-12-23
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,48 +45,53 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello,
+A new release of wireless-regdb (master-2017-12-23) is available at:
 
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2017.12.23.tar.gz
 
-Add Short Range Devices (SRD) for Qatar (QA).
+Note that this is the first release to include the new regulatory
+database format, supporting direct loading of the database by the
+kernel. The short log of changes since the 2017-03-07 release is below.
 
+Thanks,
+Seth
 
-Current Configuration:
+---
 
-country QA: DFS-JP
+Andreas Mohr (1):
+      wireless-regdb: reduce power level limit of KR (Korea) 802.11b/g/n to the certification-requested "20mW" (13dBm).
 
-                (2402 - 2482 @ 40), (20)
+Aron Rosenberg (1):
+      Set NO-OUTDOOR Flag on Canada 5Ghz 5150 to 5250
 
-                (5735 - 5835 @ 80), (30)
+Chen-Yu Tsai (2):
+      wireless-regdb: Update regulatory document references for Taiwan (TW)
+      wireless-regdb: Add 60 GHz rule for Taiwan (TW)
 
+Edwin Steele (1):
+      wireless-regdb: Update rules for Turkey 5ghz
 
-Revised Configuration:
+Johannes Berg (1):
+      regdb: write firmware file format (version code 20)
 
-country QA: DFS-JP
+Seth Forshee (8):
+      wireless-regdb: Add 5 Ghz rules for Kazakhstan (KZ)
+      wireless-regdb: Update rules for Denmark (DK)
+      wireless-regdb: Restore generation of old format database files
+      wireless-regdb: Add sforshee's x509 certificate
+      wireless-regdb: Better support for generating public certificates
+      wireless-regdb: Install regulatory.db and regulatory.db.p7s to /lib/firmware
+      wireless-regdb: Document regulatory.db in the manual page
+      wireless-regdb: update regulatory database based on preceding changes
 
-                (2402 - 2482 @ 40), (20)
+Sven Eckelmann (1):
+      wireless-regdb: Update regulatory rules for Singapore (SG)
 
-               (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-
-                (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
-
-                (5470 - 5725 @ 160), (500 mW), DFS
-
-                (5735 - 5835 @ 80), (30)
-
-
-Reference:
-
-http://www.motc.gov.qa/sites/default/files/qatar_national_frequency_allocation_table_qnfat_0.pdf
-- page 64.
-
-
-
-
-Best regards,
-Faisal Wiryasantika
+Xose Vazquez Perez (1):
+      wireless-regdb: add Short Range Devices (SRD) (ETSI EN 300 440) for Spain
 
 _______________________________________________
 wireless-regdb mailing list
