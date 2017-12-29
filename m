@@ -2,37 +2,37 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=0uXKzEokS+FfpHr6M8BS8B+h6HmatZiqhTSUbnNCsmg=;
- b=gwCmEm4Whd7U6u
- fpyhB/1F3GC0gleQ0i1JHTMzAQSPa7VG6KgoKKlCYVsYrATjuzya6Mev3p6WNAmON3NfBeuFG5KI2
- HZlCFKf4EUPYdksFZh5CxuglZciZmFEsBzW+8ewBMi72hUfleWnhKYHtJ3odCEZBIHGDUkJXMt63r
- HEMbCdxSuFkKChYRR4bXIKhQQeok0rF+MsgXjKsb9zXE0rRQN1oZDSksAhbWPg9JohPT9JXcrl19M
- HiDlwWZdg8SO/rlDrD21oh03K4HDEj0z586piB7cM7em1hTUFJO12RI4XZpolcwHtbo/NW4BCt1Q0
- 1G+Lp0FmVx9djoKwmIPQ==;
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.87 #1 (Red Hat Linux))
- id 1eAftp-0003EU-7z
- for wireless-regdb@lists.infradead.org; Fri, 03 Nov 2017 17:37:01 +0000
-Received: from mail-io0-f198.google.com ([209.85.223.198])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1eAftR-0001Hl-7K
- for wireless-regdb@lists.infradead.org; Fri, 03 Nov 2017 17:36:33 +0000
-Received: by mail-io0-f198.google.com with SMTP id m81so7569758ioi.15 for
- <wireless-regdb@lists.infradead.org>; Fri, 03 Nov 2017 10:36:33 -0700 (PDT)
-Date: Fri, 3 Nov 2017 12:36:30 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20171103173630.dlkvsa63e6n75wgw@ubuntu-xps13>
-References: <20171020150651.32424-1-seth.forshee@canonical.com>
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=1b1d2HneTnso5lf4iHmPGJPBnjtNEOJ1ncdvZihqgOM=;
+ b=KvV
+ gh4EQSSHRyKDeXdOB7pgEpPvAE5/H31R1WudoiSOdfQTCWtLy/ZRmaZALy2D1QJjTk8LabAMqfqBI
+ FrxMDbcqnTfoLdWDLMdxOCY4eT9WidutpAZYx7PSxMQdAfLVutUxaKFwkFIpUsfd3uUwTAkxCZl2Z
+ AnC5P6fGQ2TTaac0Yq7h91FNrdJcVRbTyCxWCSSMfnIsBpkEbUIZbG3+/sLdWGnh4MT15cK6U9fb/
+ FjjAXAia7cUEojKcoO2G4pTA68c1rjqdYeTJzuqtbnMkzj4har8wsUidbVzJYB8R56ojlxWQ/o5Ne
+ Vr4wIQoNIW600yHx2X3vfsLzEfaukaA==;
+Received: from mail-ot0-x231.google.com ([2607:f8b0:4003:c0f::231])
+ by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
+ id 1eUqgj-0006zo-8T
+ for wireless-regdb@lists.infradead.org; Fri, 29 Dec 2017 09:10:51 +0000
+Received: by mail-ot0-x231.google.com with SMTP id a42so15005198otj.5 for
+ <wireless-regdb@lists.infradead.org>; Fri, 29 Dec 2017 01:10:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=mime-version:from:date:message-id:subject:to;
+ bh=nqZ8WKSvJSJhbEMVsKJUdMginhZLuby5GgEs0Y1PQO8=;
+ b=qcYgfmGkjCFCQNdADgB0rr0zgY1YQHWdQ6hSlO+mfwbm3gmihcuC7qSWXOz2YiZaDX
+ 1Di460F3qLADiJ5nm32BsSyUvidMKMOCPOz9yj9Y9yBKWcEX5P1jA/nh57aBH56BR0i1
+ ZQvgKlcYpalmY2A3q6VVkDqVqCpoaCHfKjjeBWyIvKaC3nUg3QMxpeJ+7ublaZxRy1NZ
+ 9iMeUgrhUHMDydUGCPpRGe5occ51TOoIMvpV79OrGFerptdG4dPLtceEfdXgz0k0+Gca
+ nlcHJEj2zhQUVJwZq/Rj++Oh3bYeSWfz1iBUJofYgX3HDP55gKDye97Npwt9gP9MGKvd gmzA==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20171020150651.32424-1-seth.forshee@canonical.com>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Add 5 Ghz rules
- for Kazakhstan (KZ)
+From: Faisal Abu Rayhan <faisal.wiryasantika@gmail.com>
+Date: Fri, 29 Dec 2017 12:10:36 +0300
+Message-ID: <CADGYwvBNy4T4m5+i1km4cUPJd69NfxswqkHtUD=cOt3JrNXxgA@mail.gmail.com>
+Subject: [wireless-regdb] wireless-regdb: add Short Range Devices (SRD) for
+ Qatar
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,22 +47,49 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
-Cc: =?utf-8?B?0JDQvdC00YDQtdC5INCY0LLQsNC90L7Qsg==?= <wowz89@mail.ru>
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Oct 20, 2017 at 10:06:51AM -0500, Seth Forshee wrote:
-> Add rules for 5150-5250 MHz, 5250-5350 MHz, and 5470-5725 Mhz
-> based on the documents at [1] and [2].
-> 
-> v2: Also add DFS region
-> 
-> [1] http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
-> [2] http://adilet.zan.kz/rus/docs/P000001379_
-> 
-> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+Hello,
 
-Applied.
+
+Add Short Range Devices (SRD) for Qatar (QA).
+
+
+Current Configuration:
+
+country QA: DFS-JP
+
+                (2402 - 2482 @ 40), (20)
+
+                (5735 - 5835 @ 80), (30)
+
+
+Revised Configuration:
+
+country QA: DFS-JP
+
+                (2402 - 2482 @ 40), (20)
+
+               (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
+
+                (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+
+                (5470 - 5725 @ 160), (500 mW), DFS
+
+                (5735 - 5835 @ 80), (30)
+
+
+Reference:
+
+http://www.motc.gov.qa/sites/default/files/qatar_national_frequency_allocation_table_qnfat_0.pdf
+- page 64.
+
+
+
+
+Best regards,
+Faisal Wiryasantika
 
 _______________________________________________
 wireless-regdb mailing list
