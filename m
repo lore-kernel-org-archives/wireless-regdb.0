@@ -2,39 +2,37 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=2uGXIJumijvgo8wh+ZC9/RfcouHn7W0cUDuO0svB+3k=;
- b=QcRhJWUwd5Boow
- sVuhgzfQIYo68nnSG0VBG4zvsD9mou72VhxoATqyO+caA3U8K3d8FXxkF5cWWxUqeWWJE5wombZhu
- TXBYpJKg8c5vr/15VAM5iDnIHyA8U5jdQ+i5rWhxTlxz2gXnfziK7Bs+ECPgltmFVJlf5iNKM41Th
- kD7AFTmCazh3ep9aIuA64xS5+tZz95CSEnKqUE0FW7Ozb9MMM19gcN3H+6aUhTAKtK9SaxClOHcfD
- BVYFidDYCG8UD2rmQwD09TQH6gRMaMOBkwkX50UQQWJIxqPyyfjH2z8Mf0l17rH4/6iydrx8pb73h
- uF0eqhf85Z0lvIEreVeQ==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=liu+ajJCCke2RR/BySe1ReFYrmhEvFNo38Rv/kwmb1o=;
+ b=l4m
+ shilDpt/JdNpJsMv8gnDmooiotbXeBatpmkua3fGXWVTB326sB7pmH0+qa0SiQ4K/jgJub9E2taoV
+ UYAqNFi7F/EEyhk+9dChfVd2vJRdCZfd3DKeQeeS9X7rZ9FtnCmRzG2bpMTwD1kccWKcJGkXAMuMM
+ SO9DSNoTmZVyafW2VRFza6FeOk3CkUYnlWWUdbRBdbfqPQ1M7DsnDoq5IiI9/cZhH7kqC2WGdlhUv
+ Rmd7zZI3ZWAyqd369FPKUB5JrPN5uwknnNt8cO9AEiVtEzpmjpVXvebZEOlTPO+9RxgUhbSmA0aiw
+ mfH8WuCIs1F4SbnCXkwpIO/Vnt9pL5w==;
+Received: from mail-vk0-x232.google.com ([2607:f8b0:400c:c05::232])
  by bombadil.infradead.org with esmtps (Exim 4.89 #1 (Red Hat Linux))
- id 1eSQCK-0002T1-DY
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 16:29:26 +0000
-Received: from mail-it0-f71.google.com ([209.85.214.71])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1eSQC8-0001b5-Ku
- for wireless-regdb@lists.infradead.org; Fri, 22 Dec 2017 16:29:12 +0000
-Received: by mail-it0-f71.google.com with SMTP id g69so11060462ita.9 for
- <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2017 08:29:12 -0800 (PST)
-Date: Fri, 22 Dec 2017 10:29:09 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20171222162909.GB25425@ubuntu-xps13>
-References: <a2e41843-e5a5-25c6-fd02-47716563155a@its.aau.dk>
- <20171203165135.GA31669@ubuntu-xps13>
- <e2e75443-3ae3-8481-c2ed-96c4fac02706@its.aau.dk>
+ id 1emllK-0004i6-4i
+ for wireless-regdb@lists.infradead.org; Fri, 16 Feb 2018 19:33:55 +0000
+Received: by mail-vk0-x232.google.com with SMTP id z190so431827vkg.1 for
+ <wireless-regdb@lists.infradead.org>; Fri, 16 Feb 2018 11:33:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=mime-version:from:date:message-id:subject:to;
+ bh=afflDhwjlgUwng6akmpHrbz0RO4BfiXRp/gl7EKECF8=;
+ b=YcypO7tb19v9TorOvSuS77H+bFzzWa+OJgc35EQXUpUY57/9l+DWAzNa9CVIKu4Qjh
+ eK6miiVQ2fIQ/Yvks10vJ83CHis7eQJ745vmqSfxKiI5dCBAbFbXVKnVF3kyN5RvVSF2
+ QOFkGnJhlQr1XErMoRH3H+QrPaLUQIj6lnXqBWPrDRlNGvvjaaGo7PPiGncaCmM7GVyb
+ tLp36yoXZmbxaNwaXxetWTRguAzeJCBDP/EPkRbuK88NyIECMV6nRVGpOO8jay5+vZTi
+ 9WLjRzd5vbSzzUB7Zm8326VEXhusk1ZLxuU2m0oIx22hiNHTeGLC1MNGRujvxto7NtEO rCuw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e2e75443-3ae3-8481-c2ed-96c4fac02706@its.aau.dk>
-Subject: Re: [wireless-regdb] Update regulatory rules for Denmark (DK) on
- 2.4 and 5GHz
+From: Michael Chen <michaelchentejada@gmail.com>
+Date: Fri, 16 Feb 2018 14:33:25 -0500
+Message-ID: <CAD7otF4u6oyC4+xSZFO_taOiwkHot5MNCECByY89UMdPsjZObg@mail.gmail.com>
+Subject: [wireless-regdb] Update regulatory rules for Panama (PA) on 2.4
+ and 5 GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,37 +47,28 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Per Mejdal Rasmussen <pmr@its.aau.dk>
-Cc: wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Dec 09, 2017 at 08:43:59PM +0100, Per Mejdal Rasmussen wrote:
-> Hi, thanks for taking your time to look at this. If you apply the text below
-> for Denmark to db.txt, then it is an improvement:
-> 
-> country DK: DFS-ETSI
-> (2400 - 2483.5 @ 40), (20)
-> (5150 - 5250 @ 80), (23), AUTO-BW
-> (5250 - 5350 @ 80), (20), DFS, AUTO-BW
-> (5470 - 5725 @ 160), (27), DFS
-> # 60 GHz band channels 1-4 (ETSI EN 302 567)
-> (57000 - 66000 @ 2160), (40), NO-OUTDOOR
+Hi,
 
-No one has objected, so I'll send a patch to do this shortly.
+I've been researching which frequencies are allowed for WiFi in Panama since I
+noticed that WiFi channels 12 and 13 are currently not accesible. After some
+research, I found that there are a few discrepancies that can be corrected in
+the 2.4ghz and 5 ghz band. Furthermore, the 5470-5725 band and the 57-64 Ghz
+band were recently added to the regulation.
 
-> But I do think that Denmark has implemented "Short Range Devices (ETSI EN
-> 300 440-1)".
-> 
-> source:
-> https://www.erodocdb.dk/docs/doc98/official/pdf/rec7003e.pdf
-> (source is down at the moment, I have a copy of it on my work PC. I will
-> send it on Monday)
+Source: http://www.asep.gob.pa/images/telecomunicaciones/Anexos/PNAF-dic2015.pdf
 
-I still can't access this document, so we'll defer this one for a future
-update.
+Go to article 11.5 (pages 18, 19, and 20) for the WiFi frequencies.
 
-Thanks,
-Seth
+Allowed frequencies:
+2400 - 2483.5 MHz 30dbm - 36dbm EIRP (See article 11.5.1)
+5150 - 5250 MHz - 1W transmission - 4W EIRP (See article 11.5.2)
+5250 - 5350 MHz - .250W transmission - 1W EIRP
+5470 - 5725 MHz - .250W transmission - 1W EIRP
+5725 - 5850 MHz - 1W transmission - 4W EIRP
+57 - 64 Ghz - 27dbm transmission - 43dbm EIRP (See article 11.5.4)
 
 _______________________________________________
 wireless-regdb mailing list
