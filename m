@@ -3,25 +3,26 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
- List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
- Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=XnsTB8B975KY9bWNbta0pdKAcPEucpHaCGf+6p9H24s=;
- b=DOiip5QoOFMtAR
- w/F0bBn6idj0rsboEEs8FmSPOl+l5U1AbJMrpXjeTH43LeJ9hzsjZtvEpdrcRV703DrMF76Te12XO
- ifK7gsE/lIUbwSq8fDBtc4oXYs7Wrk22dP4nYZjK7/5qreAWhj8fTMJ1QUnonYiM7WGrAC6G4q/oI
- O4xhquQcWkFIU5JwsdgLeK+8BXBJ8BbM83jy+M8j3/JgzzryiF3tK7z/FQ4bYLfxhDxgCFWMqtrcK
- wt9XhYZWtoVY/FbJ4ZvbZg+7TFooSscaWZxj14Zfiq74TAAtfSVbno1WMHIU4Ypyt4ynUuw/FWskB
- DO91Wi7JKgdI42CjGSgA==;
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:References:
+ In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=i/MC1S62uSpHgWZ383YmGXVhL0aV+LXKFGOLyhQziVQ=;
+ b=IT526AFnWgZA7+
+ 0c8/OE23MuQX1r69uyxzzjP9uRL7/9FoMpRW8ZaiYg8X/CJ6Js3PCzvEybiJvbc7jyc0jWY6qaUTy
+ F0Hph3ByRHP9R4vdqnD1wL9MIkHf8AGEHVD+uzAi+Kt5FYhVdW90mWSwAqac/41l0xCJ3XOKC8SSN
+ grzoswbL5rKNMhEi2td2PfLX5GEZMVUA1kny6q57jiOvRr1qDjWPsYFXZ4yDZCRkKuEpxuip/L0tG
+ pWZz04hIqi35sEzXvL3+2JhGP0rw/JlS9yI9rWvRGs4H19GMEhgRgXTYmrkxkN7eemKcxPhfBhCNL
+ 2nEkcCQKMhOFRr3rnBNg==;
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fEEmt-0005k8-Dx
- for wireless-regdb@lists.infradead.org; Thu, 03 May 2018 14:00:55 +0000
+ id 1fEEmt-0005kH-DC
+ for wireless-regdb@lists.infradead.org; Thu, 03 May 2018 14:00:49 +0000
 From: Haim Dreyfuss <haim.dreyfuss@intel.com>
-Date: Thu,  3 May 2018 18:58:22 +0300
-Message-Id: <1525363103-8620-1-git-send-email-haim.dreyfuss@intel.com>
-Subject: [wireless-regdb] [PATCH v2 1/2] wireless-regdb: Add wmm rule for
- EEA and EFTA countries
+Date: Thu,  3 May 2018 18:58:23 +0300
+Message-Id: <1525363103-8620-2-git-send-email-haim.dreyfuss@intel.com>
+In-Reply-To: <1525363103-8620-1-git-send-email-haim.dreyfuss@intel.com>
+References: <1525363103-8620-1-git-send-email-haim.dreyfuss@intel.com>
+Subject: [wireless-regdb] [PATCH v2 2/2] wireless-regdb: Parse wmm rule data
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,651 +42,310 @@ To: seth.forshee@canonical.com
 Cc: Haim Dreyfuss <haim.dreyfuss@intel.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, johannes.berg@intel.com
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The ETSI EN 301 893 v211 (2017-05) standard defines a new channel
-access mechanism that all devices (WLAN and LAA) need to comply with.
-In previous versions the device was allowed by ETSI to implement
-802.11 channel access mechanism based on a set of priority classes
-which are taken from 802.11.
-According to the new standard there might be some exception
-which require the EEA and the EFTA countries, which adhere
-ETSI rules, to follow more restrictive rules.
-In order to comply with the new standard introduced by ETSI, add
-wmmrule global item with the new ETSI channel mechanism rules.
-Also add wmmrule flag to EEA and EFTA countries.
+Add code to parse wmm rule data.
+Also write it to the the regulatory.db fw file
 
 Signed-off-by: Haim Dreyfuss <haim.dreyfuss@intel.com>
 ---
- db.txt | 304 ++++++++++++++++++++++++++++++++++-------------------------------
- 1 file changed, 157 insertions(+), 147 deletions(-)
+Changes in v2:
+  - Rebase to latest master.
+  - Adapt the code according to latset changes (python 3 etc...)
+  - Remove unused function.
+---
+ db2fw.py   |  31 ++++++++++++++++--
+ dbparse.py | 109 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ 2 files changed, 134 insertions(+), 6 deletions(-)
 
-diff --git a/db.txt b/db.txt
-index 990abf9..e6cbc35 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1,3 +1,13 @@
-+wmmrule ETSI:
-+	vo_c: cw_min=3, cw_max=7, aifsn=2, cot=2
-+	vi_c: cw_min=7, cw_max=15, aifsn=2, cot=4
-+	be_c: cw_min=15, cw_max=1023, aifsn=3, cot=6
-+	bk_c: cw_min=15, cw_max=1023, aifsn=7, cot=6
-+	vo_ap: cw_min=3, cw_max=7, aifsn=1, cot=2
-+	vi_ap: cw_min=7, cw_max=15, aifsn=1, cot=4
-+	be_ap: cw_min=15, cw_max=63, aifsn=3, cot=6
-+	bk_ap: cw_min=15, cw_max=1023, aifsn=7, cot=6
+diff --git a/db2fw.py b/db2fw.py
+index 91b88d3..2693256 100755
+--- a/db2fw.py
++++ b/db2fw.py
+@@ -5,6 +5,7 @@ import struct
+ import hashlib
+ from dbparse import DBParser
+ import sys
++from math import log
+ 
+ MAGIC = 0x52474442
+ VERSION = 20
+@@ -26,6 +27,13 @@ def create_collections(countries):
+         result[(c.permissions, c.dfs_region)] = 1
+     return list(result)
+ 
++def create_wmms(countries):
++    result = {}
++    for c in countries.itervalues():
++        for rule in c.permissions:
++            if rule.wmmrule is not None:
++                result[rule.wmmrule] = 1
++    return list(result)
+ 
+ def be32(output, val):
+     output.write(struct.pack('>I', val))
+@@ -63,6 +71,8 @@ rules = create_rules(countries)
+ rules.sort()
+ collections = create_collections(countries)
+ collections.sort()
++wmms = create_wmms(countries)
++wmms.sort()
+ 
+ output = BytesIO()
+ 
+@@ -79,10 +89,19 @@ for alpha2 in countrynames:
+     country_ptrs[alpha2] = PTR(output)
+ output.write(b'\x00' * 4)
+ 
++wmmdb = {}
++for w in wmms:
++    assert output.tell() & 3 == 0
++    wmmdb[w] = output.tell() >> 2
++    for r in w._as_tuple():
++        ecw = int(log(r[0] + 1, 2)) << 4 | int(log(r[1] + 1, 2))
++        ac = (ecw, r[2],r[3])
++        output.write(struct.pack('>BBH', *ac))
 +
- # This is the world regulatory domain
- country 00:
- 	(2402 - 2472 @ 40), (20)
-@@ -19,9 +29,9 @@ country 00:
+ reg_rules = {}
+ flags = 0
+ for reg_rule in rules:
+-    freq_range, power_rule = reg_rule.freqband, reg_rule.power
++    freq_range, power_rule, wmm_rule = reg_rule.freqband, reg_rule.power, reg_rule.wmmrule
+     reg_rules[reg_rule] = output.tell()
+     assert power_rule.max_ant_gain == 0
+     flags = 0
+@@ -102,13 +121,19 @@ for reg_rule in rules:
+     cac_timeout = 0 # TODO
+     if not (flags & 1<<2):
+         cac_timeout = 0
+-    if cac_timeout:
++    if cac_timeout or wmm_rule:
++        rule_len += 2
++    if wmm_rule is not None:
+         rule_len += 2
+     output.write(struct.pack('>BBHIII', rule_len, flags, int(power_rule.max_eirp * 100),
+                              int(freq_range.start * 1000), int(freq_range.end * 1000), int(freq_range.maxbw * 1000),
+                              ))
+-    if cac_timeout:
++    if rule_len > 16:
+         output.write(struct.pack('>H', cac_timeout))
++
++    if rule_len > 18:
++        be16(output, wmmdb[wmm_rule])
++
+     while rule_len % 4:
+         output.write('\0')
+         rule_len += 1
+diff --git a/dbparse.py b/dbparse.py
+index d73d1bd..5cb8b3f 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -3,6 +3,9 @@
+ from builtins import bytes
+ from functools import total_ordering
+ import sys, math
++from math import ceil, log
++from collections import defaultdict, OrderedDict
++import attr
+ 
+ # must match <linux/nl80211.h> enum nl80211_reg_rule_flags
+ 
+@@ -28,6 +31,22 @@ dfs_regions = {
+ }
+ 
+ @total_ordering
++
++@attr.s(frozen=True)
++class WmmRule(object):
++    vo_c = attr.ib()
++    vi_c = attr.ib()
++    be_c = attr.ib()
++    bk_c = attr.ib()
++    vo_ap = attr.ib()
++    vi_ap = attr.ib()
++    be_ap = attr.ib()
++    bk_ap = attr.ib()
++
++    def _as_tuple(self):
++        return (self.vo_c, self.vi_c, self.be_c, self.bk_c,
++                self.vo_ap, self.vi_ap, self.be_ap, self.bk_ap)
++
+ class FreqBand(object):
+     def __init__(self, start, end, bw, comments=None):
+         self.start = start
+@@ -89,11 +108,13 @@ class FlagError(Exception):
+ 
+ @total_ordering
+ class Permission(object):
+-    def __init__(self, freqband, power, flags):
++    def __init__(self, freqband, power, flags, wmmrule):
+         assert isinstance(freqband, FreqBand)
+         assert isinstance(power, PowerRestriction)
++        assert isinstance(wmmrule, WmmRule) or wmmrule is None
+         self.freqband = freqband
+         self.power = power
++        self.wmmrule = wmmrule
+         self.flags = 0
+         for flag in flags:
+             if not flag in flag_definitions:
+@@ -102,7 +123,7 @@ class Permission(object):
+         self.textflags = flags
+ 
+     def _as_tuple(self):
+-        return (self.freqband, self.power, self.flags)
++        return (self.freqband, self.power, self.flags, self.wmmrule)
+ 
+     def __eq__(self, other):
+         return (self._as_tuple() == other._as_tuple())
+@@ -116,6 +137,9 @@ class Permission(object):
+     def __hash__(self):
+         return hash(self._as_tuple())
+ 
++    def __str__(self):
++        return str(self.freqband) + str(self.power) + str(self.wmmrule)
++
+ class Country(object):
+     def __init__(self, dfs_region, permissions=None, comments=None):
+         self._permissions = permissions or []
+@@ -249,6 +273,61 @@ class DBParser(object):
+         self._powerrev[p] = pname
+         self._powerline[pname] = self._lineno
+ 
++    def _parse_wmmrule(self, line):
++        regions = line[:-1].strip()
++        if not regions:
++            self._syntax_error("'wmmrule' keyword must be followed by region")
++
++        regions = regions.split(',')
++
++        self._current_regions = {}
++        for region in regions:
++            if region in self._wmm_rules:
++                self._warn("region %s was added already to wmm rules" % region)
++            self._current_regions[region] = 1
++        self._comments = []
++
++    def _validate_input(self, cw_min, cw_max, aifsn, cot):
++        if  cw_min < 1:
++            self._syntax_error("Invalid cw_min value (%d)" % cw_min)
++        if cw_max < 1:
++            self._syntax_error("Invalid cw_max value (%d)" % cw_max)
++        if cw_min > cw_max:
++            self._syntax_error("Inverted contention window (%d - %d)" %
++                    (cw_min, cw_max))
++        if not (bin(cw_min + 1).count('1') == 1 and cw_min < 2**15):
++            self._syntax_error("Invalid cw_min value should be power of 2 - 1 (%d)"
++                    % cw_min)
++        if not (bin(cw_max + 1).count('1') == 1 and cw_max < 2**15):
++            self._syntax_error("Invalid cw_max value should be power of 2 - 1 (%d)"
++                    % cw_max)
++        if aifsn < 1:
++            self._syntax_error("Invalid aifsn value (%d)" % aifsn)
++        if cot < 0:
++            self._syntax_error("Invalid cot value (%d)" % cot)
++
++
++    def _validate_size(self, var, bytcnt):
++        return bytcnt < ceil(len(bin(var)[2:]) / 8.0)
++
++    def _parse_wmmrule_item(self, line):
++        bytcnt = (2.0, 2.0, 1.0, 2.0)
++        try:
++            ac, cval = line.split(':')
++            if not ac:
++                self._syntax_error("wmm item must have ac prefix")
++        except ValueError:
++                self._syntax_error("access category must be followed by colon")
++        p = tuple([int(v.split('=', 1)[1]) for v in cval.split(',')])
++        self._validate_input(*p)
++        for v, b in zip(p, bytcnt):
++            if self._validate_size(v, b):
++                self._syntax_error("unexpected input size expect %d got %d"
++                        % (b, v))
++
++            for r in self._current_regions:
++                self._wmm_rules[r][ac] = p
++
+     def _parse_country(self, line):
+         try:
+             cname, cvals= line.split(':', 1)
+@@ -307,6 +386,15 @@ class DBParser(object):
+             line = line.split(',')
+             pname = line[0]
+             flags = line[1:]
++        w = None
++        if flags and 'wmmrule' in flags[-1]:
++            try:
++                region = flags.pop().split('=', 1)[1]
++                if region not in self._wmm_rules.keys():
++                    self._syntax_error("No wmm rule for %s" % region)
++            except IndexError:
++                self._syntax_error("flags is empty list or no region was found")
++            w = WmmRule(*self._wmm_rules[region].values())
+ 
+         if not bname in self._bands:
+             self._syntax_error("band does not exist")
+@@ -320,7 +408,7 @@ class DBParser(object):
+         b = self._bands[bname]
+         p = self._power[pname]
+         try:
+-            perm = Permission(b, p, flags)
++            perm = Permission(b, p, flags, w)
+         except FlagError as e:
+             self._syntax_error("Invalid flag '%s'" % e.flag)
+         for cname, c in self._current_countries.items():
+@@ -332,6 +420,7 @@ class DBParser(object):
+ 
+     def parse(self, f):
+         self._current_countries = None
++        self._current_regions = None
+         self._bands = {}
+         self._power = {}
+         self._countries = {}
+@@ -343,6 +432,7 @@ class DBParser(object):
+         self._powerdup = {}
+         self._bandline = {}
+         self._powerline = {}
++        self._wmm_rules = defaultdict(lambda: OrderedDict())
+ 
+         self._comments = []
+ 
+@@ -354,6 +444,7 @@ class DBParser(object):
+                 self._comments.append(line[1:].strip())
+             line = line.replace(' ', '').replace('\t', '')
+             if not line:
++                self._current_regions = None
+                 self._comments = []
+             line = line.split('#')[0]
+             if not line:
+@@ -361,17 +452,29 @@ class DBParser(object):
+             if line[0:4] == 'band':
+                 self._parse_band(line[4:])
+                 self._current_countries = None
++                self._current_regions = None
+                 self._comments = []
+             elif line[0:5] == 'power':
+                 self._parse_power(line[5:])
+                 self._current_countries = None
++                self._current_regions = None
+                 self._comments = []
+             elif line[0:7] == 'country':
+                 self._parse_country(line[7:])
+                 self._comments = []
++                self._current_regions = None
+             elif self._current_countries is not None:
++                self._current_regions = None
+                 self._parse_country_item(line)
+                 self._comments = []
++            elif line[0:7] == 'wmmrule':
++                self._parse_wmmrule(line[7:])
++                self._current_countries = None
++                self._comments = []
++            elif self._current_regions is not None:
++                self._parse_wmmrule_item(line)
++                self._current_countries = None
++                self._comments = []
+             else:
+                 self._syntax_error("Expected band, power or country definition")
  
- country AD:
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20)
--	(5250 - 5330 @ 80), (20), DFS
--	(5490 - 5710 @ 80), (27), DFS
-+	(5170 - 5250 @ 80), (20), wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, wmmrule=ETSI
-+	(5490 - 5710 @ 80), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -42,9 +52,9 @@ country AF: DFS-ETSI
- # http://pucanguilla.org/Downloads/January2005-Anguilla%20Table%20of%20Allocations.pdf
- country AI: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country AL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
-@@ -79,9 +89,9 @@ country AS: DFS-FCC
- 
- country AT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -113,9 +123,9 @@ country AZ: DFS-ETSI
- 
- country BA: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -131,9 +141,9 @@ country BD: DFS-JP
- 
- country BE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -163,10 +173,10 @@ country BG: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	# 5 GHz Radio Local Area Networks (RLANs), ref:
- 	# II.H01 of the List, BDS EN 301 893
--	(5170 - 5250 @ 80), (23), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
-+	(5170 - 5250 @ 80), (23), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
- 	# II.H01 of the List, I.54 from the List, BDS EN 301 893
--	(5490 - 5710 @ 160), (27), DFS
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# Short range devices (SRDs) in the 5725-5875 MHz frequency range, ref:
- 	# I.43 of the List, BDS EN 300 440-2, BDS EN 300 440-1
- 	(5725 - 5875 @ 80), (14)
-@@ -257,9 +267,9 @@ country CF: DFS-FCC
- 
- country CH: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -316,9 +326,9 @@ country CX: DFS-FCC
- 
- country CY: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -328,9 +338,9 @@ country CY: DFS-ETSI
- # implemented.
- country CZ: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
--	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -363,9 +373,9 @@ country CZ: DFS-ETSI
- 
- country DE: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
--	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
-@@ -376,9 +386,9 @@ country DE: DFS-ETSI
- # 60GHz: https://erhvervsstyrelsen.dk/sites/default/files/radiograenseflader-63.pdf
- country DK: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (20)
--	(5150 - 5250 @ 80), (23), AUTO-BW
--	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
--	(5470 - 5725 @ 160), (27), DFS
-+	(5150 - 5250 @ 80), (23), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
- 
-@@ -411,9 +421,9 @@ country EC: DFS-FCC
- 
- country EE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -431,9 +441,9 @@ country EG: DFS-ETSI
- 
- country ES: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
--	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# Short Range Devices (SRD) (ETSI EN 300 440)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
-@@ -447,9 +457,9 @@ country ET: DFS-ETSI
- 
- country FI: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (20)
--	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 160), (27), DFS
-+	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -462,17 +472,17 @@ country FM: DFS-FCC
- 
- country FR: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country GB: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -492,9 +502,9 @@ country GE: DFS-ETSI
- 
- country GF: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country GH: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
-@@ -505,21 +515,21 @@ country GH: DFS-FCC
- 
- country GL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country GP: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country GR: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -556,9 +566,9 @@ country HN: DFS-FCC
- 
- country HR: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (20)
--	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 160), (27), DFS
-+	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -571,9 +581,9 @@ country HT: DFS-FCC
- 
- country HU: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -584,9 +594,9 @@ country ID: DFS-JP
- 
- country IE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -606,17 +616,17 @@ country IR: DFS-JP
- 
- country IS: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country IT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -721,9 +731,9 @@ country LC: DFS-ETSI
- 
- country LI: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country LK: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
-@@ -742,25 +752,25 @@ country LS: DFS-ETSI
- 
- country LT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country LU: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country LV: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -771,9 +781,9 @@ country MA: DFS-ETSI
- 
- country MC: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- # Source:
- # http://www.cnfr.md/index.php?pag=sec&id=117&l=en
-@@ -787,15 +797,15 @@ country MD: DFS-ETSI
- # http://www.cept.org/files/1050/Tools%20and%20Services/EFIS%20-%20ECO%20Frequency%20Information%20System/National%20frequency%20tables/Montenegro%20NAFT%20-%202010.pdf
- country ME: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country MF: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country MH: DFS-FCC
- 	(2402 - 2472 @ 40), (30)
-@@ -806,9 +816,9 @@ country MH: DFS-FCC
- 
- country MK: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -835,9 +845,9 @@ country MP: DFS-FCC
- 
- country MQ: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- # Source:
- # http://www.are.mr/pdfs/telec_freq_TNAbf_2010.pdf
-@@ -849,9 +859,9 @@ country MR: DFS-ETSI
- 
- country MT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -909,9 +919,9 @@ country NI: DFS-FCC
- 
- country NL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
--	(5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
-@@ -924,9 +934,9 @@ country NL: DFS-ETSI
- # which has been merged with 5470 - 5725 MHz to allow wide channels
- country NO: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
--	(5150 - 5250 @ 80), (200 mW), AUTO-BW
--	(5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW
--	(5470 - 5795 @ 160), (500 mW), DFS
-+	(5150 - 5250 @ 80), (200 mW), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5795 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	(5815 - 5850 @ 35), (2000 mW), DFS
- 	(17100 - 17300 @ 200), (100 mW)
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
-@@ -966,9 +976,9 @@ country PE: DFS-FCC
- 
- country PF: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country PG: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
-@@ -990,17 +1000,17 @@ country PK: DFS-JP
- 
- country PL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country PM: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country PR: DFS-FCC
- 	(2402 - 2472 @ 40), (30)
-@@ -1011,9 +1021,9 @@ country PR: DFS-FCC
- 
- country PT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1037,15 +1047,15 @@ country QA: DFS-JP
- 
- country RE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country RO: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1083,9 +1093,9 @@ country SA: DFS-ETSI
- 
- country SE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1103,17 +1113,17 @@ country SG: DFS-FCC
- 
- country SI: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
- country SK: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1145,9 +1155,9 @@ country SY:
- # http://www.telecommission.tc/Spectrum-plan20110324-101210.html
- country TC: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (24), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
-+	(5170 - 5250 @ 80), (24), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (24), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5730 @ 160), (24), DFS, wmmrule=ETSI
- 	(5735 - 5835 @ 80), (30)
- 
- country TD: DFS-ETSI
-@@ -1306,9 +1316,9 @@ country VU: DFS-FCC
- 
- country WF: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country WS: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
-@@ -1321,9 +1331,9 @@ country YE:
- 
- country YT: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-+	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
-+	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
- 
- country ZA: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
 -- 
 2.7.4
 
