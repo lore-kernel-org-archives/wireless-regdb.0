@@ -2,37 +2,34 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=m0A6a165/BLLGbO++gWym+0J9ACCcK/M1SnLCKY6zRM=;
- b=TEGolz8lKJd5TG
- 8IW4t3s/McItNijE/jpjsqpvKvprGF8eBDRpT7wdLJ3s5B58Ce5QNvWDjwCUhDP0VP+nI3zLS6Q2I
- trCj8loCeiAt6yNdry3OHOwZHSsx6R2KLr6PDmaEBKkQcOUhPl7HVPU4GnA/M1Pue2/TQpTH9DKxI
- DhU12jo7fU4BShdaqFwAf0dXSHoSgG7UEzVOG8ppGtz4iRDdxelSaYD0RWnumvAXznucPy3grO4pK
- 8cfBZ/QdgIAnndh+mCfT9XxMdN15S4JD3o6n8PGSQFdq4eLJqEjEnMpz9+ItRFcQ5nVnQ3+X+Y2QZ
- bgElz6Zlr49CO2ggn0xw==;
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=/yNIMz4eZBbR+d60bgozJxPj7ZHKsrbz2LSAIfLRDG8=;
+ b=jSuN2IQ2eT+WKi
+ 8Z/zTJzEncI5FyInOimAdeKIkbgzAj6Rhl/sK9NHoon014MUYDVUi04+SaCFwxOg6yyXCm46c+PX+
+ esdDcY9ch2w/xJ8uLUoDcJN8Ua8mRFrN1t1JoZ5x8bBZU1NRJRd2xmAPl63ROFa+CsCZ56rKBqXXz
+ 60ZgDoWbhUpYanf7no5bZV76iuHoP7P+xmDvO9inWPe0vRWZY06HZeHSTcRPGOQ+IRONsg3svPp+O
+ 9awbHU7Jc4QU6fcuc6jX4XAdqKIyc5uqhf63l1aEnHJm67nq3wvsrK9fQsgE9/kBLmZ0mzJ1ni2I1
+ pDfqTObTNihWun1erAdA==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fMFfU-0002Zn-EE
- for wireless-regdb@lists.infradead.org; Fri, 25 May 2018 16:34:18 +0000
-Received: from mail-it0-f70.google.com ([209.85.214.70])
+ id 1fJgf5-0004qo-OZ
+ for wireless-regdb@lists.infradead.org; Fri, 18 May 2018 14:47:18 +0000
+Received: from mail-io0-f200.google.com ([209.85.223.200])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1fMFfT-0005Jr-1T
- for wireless-regdb@lists.infradead.org; Fri, 25 May 2018 16:34:15 +0000
-Received: by mail-it0-f70.google.com with SMTP id o189-v6so4800929itc.8 for
- <wireless-regdb@lists.infradead.org>; Fri, 25 May 2018 09:34:14 -0700 (PDT)
-Date: Fri, 25 May 2018 11:34:11 -0500
+ id 1fJgeu-0006XN-99
+ for wireless-regdb@lists.infradead.org; Fri, 18 May 2018 14:47:04 +0000
+Received: by mail-io0-f200.google.com with SMTP id u23-v6so5294129ioc.13
+ for <wireless-regdb@lists.infradead.org>; Fri, 18 May 2018 07:47:04 -0700
+ (PDT)
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20180525163411.GX3401@ubuntu-xps13>
-References: <20180518171725.28828-1-seth.forshee@canonical.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20180518171725.28828-1-seth.forshee@canonical.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Fix iteration in
- create_wmms() for python 3
+Date: Fri, 18 May 2018 09:47:01 -0500
+Message-Id: <20180518144701.25138-1-seth.forshee@canonical.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Fix comparison of WmmRule
+ with NoneType in python 3
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,6 +39,7 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
@@ -51,14 +49,59 @@ To: wireless-regdb@lists.infradead.org
 Cc: linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, May 18, 2018 at 12:17:25PM -0500, Seth Forshee wrote:
-> The iteration in this function is over countries.itervalues(),
-> which is not compatible with python 3. Switch to iterating over
-> contries.values() instead.
-> 
-> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+Python 3 gives errors as a result of the changes to add wmm
+rules since Permission.wmmrule can be set to None:
 
-Applied.
+ TypeError: '<' not supported between instances of 'WmmRule' and 'NoneType'
+
+To fix this, supply compairson methods for WmmRule instead of
+using the ones provided by attrs. Doing this means we also need
+to supply a __hash__ method.
+
+Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+---
+ dbparse.py | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/dbparse.py b/dbparse.py
+index 5cb8b3f13266..5fe752b4ff31 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -32,7 +32,7 @@ dfs_regions = {
+ 
+ @total_ordering
+ 
+-@attr.s(frozen=True)
++@attr.s(frozen=True, cmp=False)
+ class WmmRule(object):
+     vo_c = attr.ib()
+     vi_c = attr.ib()
+@@ -47,6 +47,22 @@ class WmmRule(object):
+         return (self.vo_c, self.vi_c, self.be_c, self.bk_c,
+                 self.vo_ap, self.vi_ap, self.be_ap, self.bk_ap)
+ 
++    def __eq__(self, other):
++        if other is None:
++            return False
++        return (self._as_tuple() == other._as_tuple())
++
++    def __ne__(self, other):
++        return not (self == other)
++
++    def __lt__(self, other):
++        if other is None:
++            return False
++        return (self._as_tuple() < other._as_tuple())
++
++    def __hash__(self):
++        return hash(self._as_tuple())
++
+ class FreqBand(object):
+     def __init__(self, start, end, bw, comments=None):
+         self.start = start
+-- 
+2.17.0
+
 
 _______________________________________________
 wireless-regdb mailing list
