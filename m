@@ -3,42 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
- In-Reply-To:Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=q0Ws74ZAaW/gutK2T9Wc4D6JvSB6kUU8vmGDUYaHwoE=;
- b=Z+pNb4hyV3OaTp
- JSPgd9BM95NoahxEpjHgCJ3KgCRD8IQTBGchULll704mYzAVCFm4N6jx0k1mNa6qDTnoz8Jbt1KSt
- MYLku6N8bDVmnVGkgznTTUmKcMrx0QgzTjpHPaLIkvCzp3MNAj26145ZIiJAwEuwzYFdC9oTcEYJe
- 7Q0lHUTAA9DV9+ajphPMBIvVuloON6QgOSqp1V8q1srUW+vndFcQvmmheetzMYdzly6b3pRI7VMnx
- JrlsE9FQWId6T4EfNq6wttm7gH2Im2vM9Y7s4woLuy6eB6RqzfZgEnANICLr71KAG59XLvKhTqlPS
- aUCHOUmBYHsvS6Hl8rYw==;
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=73YnL8V3OkiGc4ZkBihr2K2VEThuyBZ4ZWeg0ZhhyBU=;
+ b=hg5uuVjCo4EgsX
+ jVNees5yGOIzMPPdyIazkqDg0N9oRbrYS0QbuVEA5oeAUU/qg3EDJ4qNlD5TQ1NBaRWw0T7sL+Jft
+ szcy/PtChjw+0m4vB67u9kcSR30ijbmNPAAc/6OZzv1Tpc4Yp40jUNrvwQRszxCmIeo8xzgJn8rmq
+ P9c2DmjewXeWh4yMe2HMW+cOzQ68fnhP253INmAz4Nz8UGSstZFuzNW1Hx5El6gLQygE95tQKQDuG
+ 7SLXRPiCR9bLN/tZsuSuWPXfEW89TyZv11JHlsikU2N3scxzRt4VHXUG6GiRrKfkUqWvZrEakAWpk
+ 9X6zxq0bCITKTu2REq4w==;
+Received: from mail-qt0-x229.google.com ([2607:f8b0:400d:c0d::229])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fiSJ6-00018v-Oc
- for wireless-regdb@lists.infradead.org; Wed, 25 Jul 2018 22:30:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id t13-v6so8784117wrv.12
- for <wireless-regdb@lists.infradead.org>; Wed, 25 Jul 2018 15:30:46 -0700
+ id 1fubIm-0008G9-CD
+ for wireless-regdb@lists.infradead.org; Tue, 28 Aug 2018 10:33:50 +0000
+Received: by mail-qt0-x229.google.com with SMTP id g44-v6so1009896qtb.12
+ for <wireless-regdb@lists.infradead.org>; Tue, 28 Aug 2018 03:32:38 -0700
  (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=1bdswxYDYyen6QgkfV4xEYW5MJ3nDDJ3fE2tlu1oO7Q=;
- b=ogOullXuq7Dl9YSIXKibpw2rprdHyUMoVRh53tEBRdp2ZT2AvXT0yK9voPDfAZ+3/A
- CnnPKKsS6Xm4iqNgfqMYecEXlK8I8TYR5UCDT4P7n+abkJ5YqkkqanRQJ/3oipVGPxVD
- 2MWX8IRlKq3q4+qZncl/VwOOj6CwZvRzpydX3MMT8kA/JMc+QakTvJEiP9makRyGC1Ys
- O1n1X3tcan/v0FG6zapdS1qAzrBEGFqs1F2orU2qWsLCwFMXjwedsxkDZwQ7MkiIxkUq
- L7TjglZzjozDopww2Tftqj4vV//M385QcVgKKbA2o2l05ypX9i1Gztpa3SvUTA/dMZr9 KktQ==
-From: bkil <b.K.il.h.u+tigbuh@gmail.com>
-Date: Thu, 26 Jul 2018 00:30:37 +0200
-Message-Id: <8307609c48bf9a1755c5933e186dc8938cb6dc79.1532557837.git.b.K.il.h.u+tigbuh@gmail.com>
-In-Reply-To: <CAPuHQ=EWtsOs2naY2pLx9D-JJbDr1kc8sisd-JNHiEekJ5ijDQ@mail.gmail.com>
-References: 
-	 <CAPuHQ=EWtsOs2naY2pLx9D-JJbDr1kc8sisd-JNHiEekJ5ijDQ@mail.gmail.com>
+ s=20161025; h=mime-version:from:date:message-id:subject:to:cc
+ :content-transfer-encoding;
+ bh=k52kLzJEKHj6UH05cnYkKiOl3XiNWKYTJXj25jK3WL4=;
+ b=gYkyN8tQ8h+II2WhHDS0ZzpSqOs7uEBOFw1jDrI3n5nWaXlqWlmsh5wfa4mgRu1l+6
+ Ru9oVorq+qQZcKNMBhsmQESQzUvqZxBEpQvx0PO29D5lxssRbn6359cERAlt4s+X/H29
+ km8XZAKX7uTZuB8t9MwB8f6X3PDrJ2MPet7FHBc4OlKVxssVDBKA0lgH+16wqXKQ1usr
+ Buxah0UBpDnu+p5ZX7OqCnNAqUydAq7ducvhp0YA1Rs9DcrPlG43uzHOW4YSbuAijMBa
+ yhIeNWCuOko+dyhUOc2tsonmWcPGrcPP6oqnJqWaeu+lNkPZc/y1xI5BKVWgJ5Q6EfeS UeVQ==
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH v3] wireless-regdb: update rules for
- Hungary (HU) on 2.4/5/60G, 5725-5875MHz
+From: Jukka Pirinen <jukka.pirinen@gmail.com>
+Date: Tue, 28 Aug 2018 13:32:25 +0300
+Message-ID: <CADyz9cHb+T3dTfQGShs3oHiZagQDdJP8LRKwmWPzp1fD_EPxag@mail.gmail.com>
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Finland (FI) on 5GHz (SRD devices)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -53,70 +49,28 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
+To: seth.forshee@canonical.com
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-* 2400-2483.5M: extend bounds
-* 5150-5250M: extend bounds, add NO-OUTDOOR, no TPC so +3dB
-* 5250-5350M: extend bounds, add NO-OUTDOOR
-* 5470-5725M: extend bounds
-* 5725-5875M: introduce, as EU SRD provisions have been implemented
-* 57-66G: add NO-OUTDOOR
+Viestintävirasto 15 AM/2018 M
 
-Freely available online references have been added hosted by the regulatory
-body in Hungary, the National Media and Infocommunications Authority.
+Section 10 Non-specific short range devices
+https://www.finlex.fi/data/normit/32670/Regulation_15AM.pdf
 
-To refer to a specific section, you can grep for the frequency in question.
-
-Translation key:
-"Csak beltéri" / "Épületen belüli használatra korlátozott" = indoor only;
-"Kültéri és beltéri" = both indoor and outdoor;
-"Nem működő TPC esetén a maximális teljesítményjellemzők 3 dB-lel
-csökkennek." = reduce max power specs by 3dB in case of no TPC;
-"Rögzített kültéri telepítés nem megengedett" = no fixed outdoor install
-
-Signed-off-by: bkil <b.K.il.h.u+tigbuh@gmail.com>
----
- db.txt | 24 ++++++++++++++++++------
- 1 file changed, 18 insertions(+), 6 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 8963c01..8cf7dee 100644
+index 8cf7dee..7abb064 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -581,13 +581,25 @@ country HT: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+# http://stir.nmhh.hu/?oldal=dokumentumGeneralo&root_rendeletelem_id=3&hatalyos=1
-+# http://english.nmhh.hu/cikk/297/Eljarasi_tajekoztato_a_24_GHzes_es_az_5_GHzes_savban_mukodo_berendezesek_engedelyezeserol
-+# http://nmhh.hu/dokumentum/319/kis_hatotavolsagu_eszkozok_srdk.pdf
- country HU: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
--	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
--	# 60 GHz band channels 1-4, ref: Etsi En 302 567
--	(57000 - 66000 @ 2160), (40)
-+	# ref: 2006/771/EK, (EU) 2017/1483, MSZ EN 300 328
-+	# additionally: 100mW @ 10MHz channels, 50mW @ 5MHz (max. 10mW/MHz)
-+	(2400 - 2483.5 @ 40), (20)
-+	# ref: 2005/513/EK
-+	# note: TPC not needed @ 5150-5250
-+	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	# note: max would be +3dB with TPC @ 5250-5725
-+	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
-+	# "Short Range Devices (SRD)"
-+	# ref: 2006/771/EK, (EU) 2017/1483, MSZ EN 300 440, MSZ EN 302 064
-+	(5725 - 5875 @ 80), (25 mW)
-+	# 60 GHz band channels 1-4, "Fixed outdoor installation not allowed"
-+	# ref: 2006/771/EK, (EU) 2017/1483, MSZ EN 302 567
-+	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
- 
- country ID: DFS-JP
- 	# ref: http://www.postel.go.id/content/ID/regulasi/standardisasi/kepdir/bwa%205,8%20ghz.pdf
+@@ -460,6 +460,8 @@ country FI: DFS-ETSI
+        (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+        (5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+        (5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
++        # short range devices (ETSI EN 300 440-1)
++        (5725 - 5875 @ 80), (25 mW)
+        # 60 GHz band channels 1-4, ref: Etsi En 302 567
+        (57000 - 66000 @ 2160), (40)
 
 _______________________________________________
 wireless-regdb mailing list
