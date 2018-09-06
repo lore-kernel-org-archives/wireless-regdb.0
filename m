@@ -1,38 +1,32 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=c1J6PD8/xmIC5l+3UJocpu2xnYoKNuyGtjlaOJPGCLA=;
- b=NaErJMPQlzPWqs
- KtpU7Is6QHrJG94NOFy82zVILXYiJl+I1qoLcvarg3wgwmz2B+g2ECuSy06wFV9xQFp+GvmntF0X1
- dl7EKQsTAOH3Z3OKlXPRQZ+h8ezCL+OiNkNUFRq1aad4Vhs5sDIJwNw22IxshWCWioW+QUu7Ub9wW
- X9QPdL+9vyl6B/7nOSvbO3EiLfLtR7SX3njda0WaPsvJKj/TKpAOQU+cPDg2cADaA1zxzC2zbIFG8
- pW4Cw/fjPB9V17RWXbidwtmSvZnaLl4SH8KgTzfUoqrh0oaVBBMDwSAw1MbJsOV0A5DlXSQeBgAWI
- Jt8a9QEomrSLc4g44CSQ==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+ Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+ List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-ID:From:To:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+ bh=RYK7gTkxOIAXLG7LXPefKRe2fyieOzZHFuTr2dqTFbw=;
+ b=F2SI5zMdZIqF9IOL05g2sxPRwW
+ Lwn2Z8r77XOsmWqV9+tNqnqgNMIAv98v0HrXR7iq8N+MRnOY/PDBk35ehkAcpi0CQzKKYfAJ5p1Ea
+ ONQ+OlwNv0e6Uixuuv6iCtrACAdmGMHG2PWPQRg1X1ZMvLq5BRiqXusXf5SjHhDofC18vONkbtF0N
+ wA99V82pkqtfitA7PGVcBLECa+lQfQOah83iOfZfor551PnriDoHFXDXV8HbI6F3ckT3sQlVjURGi
+ ME0x5IOJnLdEPDqEoudPYsFIGntw3kMCt6z84e+yC80CcIZjqhRtc0vpTEwcLZ9hD3bkBAS4FgnIT
+ EYOG9ynA==;
+Received: from mail-wr1-f67.google.com ([209.85.221.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fyLPV-0002fQ-Sr
- for wireless-regdb@lists.infradead.org; Fri, 07 Sep 2018 18:23:15 +0000
-Received: from mail-yb1-f199.google.com ([209.85.219.199])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1fyLPR-0001Pz-Kn
- for wireless-regdb@lists.infradead.org; Fri, 07 Sep 2018 18:23:09 +0000
-Received: by mail-yb1-f199.google.com with SMTP id r63-v6so6022452yba.7 for
- <wireless-regdb@lists.infradead.org>; Fri, 07 Sep 2018 11:23:09 -0700 (PDT)
-Date: Fri, 7 Sep 2018 13:23:07 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20180907182307.GM4251@ubuntu-xps13>
-References: <20180907162841.11749-1-xose.vazquez@gmail.com>
+ id 1fxv2P-0006Qn-0l
+ for wireless-regdb@lists.infradead.org; Thu, 06 Sep 2018 14:13:40 +0000
+Received: by mail-wr1-f67.google.com with SMTP id v16-v6so11555174wro.11
+ for <wireless-regdb@lists.infradead.org>; Thu, 06 Sep 2018 07:13:26 -0700
+ (PDT)
+From: Henrik Laxhuber <henrik@laxhuber.com>
+Message-ID: <2441d0ea-b862-9675-9342-356606d9228d@laxhuber.com>
+Date: Thu, 6 Sep 2018 16:13:22 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20180907162841.11749-1-xose.vazquez@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update source of info
- for CU and ES
+Content-Language: en-US
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
+ for Switzerland (CH), and Liechtenstein (LI) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,25 +36,76 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"; format="flowed"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Cc: REGDB ML <wireless-regdb@lists.infradead.org>, WIRELESS ML <linux-wireless@vger.kernel.org>
+To: seth.forshee@canonical.com
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Sep 07, 2018 at 06:28:41PM +0200, Xose Vazquez Perez wrote:
-> Cc: Seth Forshee <seth.forshee@canonical.com>
-> Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
-> Cc: REGDB ML <wireless-regdb@lists.infradead.org>
-> Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Update to reflect the current data published in the 'National Frequency
+Allocation Strategy Table' [0] for Switzerland and Liechtenstein, which
+at the time of writing points to the documents [1] and [2].
 
-Applied, thanks!
+[0] https://www.ofcomnet.ch/#/fatTable
+[1] https://www.ofcomnet.ch/api/rir/1010/05
+[2] https://www.ofcomnet.ch/api/rir/1010/04
+
+Signed-off-by: Henrik Laxhuber <henrik@laxhuber.com>
+---
+  db.txt | 19 +++++++++++++++----
+  1 file changed, 15 insertions(+), 4 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 8cf7dee..69cea85 100644
+--- a/db.txt
++++ b/db.txt
+@@ -265,10 +265,14 @@ country CF: DFS-FCC
+      (5490 - 5730 @ 40), (24), DFS
+      (5735 - 5835 @ 40), (30)
+
++# Source:
++# https://www.ofcomnet.ch/#/fatTable
++# Note that the maximum transmitter power can be doubled for 
+5250-5710MHz if
++# transmitter power control is in use: 5250-5330@23db, 5490-5710@30db
+  country CH: DFS-ETSI
+      (2402 - 2482 @ 40), (20)
+-    (5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
+-    (5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
++    (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++    (5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+      (5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
+      # 60 GHz band channels 1-4, ref: Etsi En 302 567
+      (57000 - 66000 @ 2160), (40)
+@@ -743,11 +747,18 @@ country LC: DFS-ETSI
+      (5490 - 5710 @ 160), (30), DFS
+      (5735 - 5815 @ 80), (30)
+
++
++# Source:
++# https://www.ofcomnet.ch/#/fatTable
++# Note that the maximum transmitter power can be doubled for 
+5250-5710MHz if
++# transmitter power control is in use: 5250-5330@23db, 5490-5710@30db
+  country LI: DFS-ETSI
+      (2402 - 2482 @ 40), (20)
+-    (5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
+-    (5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
++    (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++    (5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+      (5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
++    # 60 GHz band channels 1-4, ref: Etsi En 302 567
++    (57000 - 66000 @ 2160), (40)
+
+  country LK: DFS-FCC
+      (2402 - 2482 @ 40), (20)
+-- 
+2.18.0
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
