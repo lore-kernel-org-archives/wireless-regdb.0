@@ -6,34 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=9FA9h/B8q6+XES/aDc+dfSZfaM7oluDEq35ew8FG3Ok=;
- b=SZbkDBGHxoBJ/d
- kLlbT9PE95oiWiR1AJFFjCcf2SCJxltanlkfBI6mZL8IogJOUq/R/Lh42rxEtMvKJTrvSbAC2v7pz
- AFENBUN+hWLBZe0kvhgUBGZrMSkYj5L3OeK4nKKCYuTrnqLa6cbOMI+FU5TXy/FWZkJ8dJPr7Mxme
- jzPwdw2x4EM13nHvp+t6SbigU+ke+DvR0xFHz1Lxq2DoefKIi8Ey739+2GEX8Eq8X56tAhqT/p+Kh
- QJ0k+KvHdUAh1kcr1WjJXPJViHmcGvIsGoq88YH5Yjp0J/zCpzVzXgUXkQARbnVF4+YO6dezuJ5g6
- B6+313u0UvgjcFEyKGTQ==;
+ List-Owner; bh=wNVHGYc+lTQjgu7VBTmZY5iAUf07ThbDCeWHfwiLiGs=;
+ b=cJlL5hL0tHO472
+ 0zldrN9mmA+AoL54216hAVVcHPsCxeRRhYLEOIZ34tSRYCIDEfVXvUznK/UF+70XzJTiZLyAaUigV
+ E/LnTDR6OFMg41rvITiKWojtmQgZCnq2l8cWeveFF6RPczyZ7JBcEAdiYTc7tQY2NMTflcSvPSMEs
+ Clyc+Jzhr/1VSFuOOehFOTGB7qm065IThMbZqX3dk8wrutP/c+RDujE13yFH8mu7OH8hIe2WCydo2
+ 5meqxp9f5sK3F/efJq8oVDpTC8TWwe9PUXx6rZa6Y4fl73kCU3lTHkK2cIbSvtI1xBHlBCFrfObeW
+ 5bf5IKHfFlvUq9O15DFw==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fxu0r-0001Go-J5
- for wireless-regdb@lists.infradead.org; Thu, 06 Sep 2018 13:07:59 +0000
-Received: from mail-yb1-f199.google.com ([209.85.219.199])
+ id 1fxtvD-0007cN-VP
+ for wireless-regdb@lists.infradead.org; Thu, 06 Sep 2018 13:02:13 +0000
+Received: from mail-yb1-f200.google.com ([209.85.219.200])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1fxu0g-0001aS-2Q
- for wireless-regdb@lists.infradead.org; Thu, 06 Sep 2018 13:07:46 +0000
-Received: by mail-yb1-f199.google.com with SMTP id m9-v6so3810951ybm.20 for
- <wireless-regdb@lists.infradead.org>; Thu, 06 Sep 2018 06:07:46 -0700 (PDT)
-Date: Thu, 6 Sep 2018 08:07:42 -0500
+ id 1fxtuz-00018s-Eo
+ for wireless-regdb@lists.infradead.org; Thu, 06 Sep 2018 13:01:53 +0000
+Received: by mail-yb1-f200.google.com with SMTP id q65-v6so3752019ybg.12
+ for <wireless-regdb@lists.infradead.org>; Thu, 06 Sep 2018 06:01:53 -0700
+ (PDT)
+Date: Thu, 6 Sep 2018 08:01:49 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20180906130742.GF4251@ubuntu-xps13>
-References: 
-	 <CADyz9cHb+T3dTfQGShs3oHiZagQDdJP8LRKwmWPzp1fD_EPxag@mail.gmail.com>
+Message-ID: <20180906130149.GE4251@ubuntu-xps13>
+References: <d7dddf8e-b434-2492-3564-6f35b558d750@laxhuber.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CADyz9cHb+T3dTfQGShs3oHiZagQDdJP8LRKwmWPzp1fD_EPxag@mail.gmail.com>
+In-Reply-To: <d7dddf8e-b434-2492-3564-6f35b558d750@laxhuber.com>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Finland (FI) on 5GHz (SRD devices)
+ Switzerland (CH), and Liechtenstein (LI) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,38 +48,103 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Jukka Pirinen <jukka.pirinen@gmail.com>
+To: Henrik Laxhuber <henrik@laxhuber.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Aug 28, 2018 at 01:32:25PM +0300, Jukka Pirinen wrote:
-> Viestintävirasto 15 AM/2018 M
-> 
-> Section 10 Non-specific short range devices
-> https://www.finlex.fi/data/normit/32670/Regulation_15AM.pdf
+On Sat, Aug 18, 2018 at 02:01:50PM +0200, Henrik Laxhuber wrote:
+> [ My previous message didn't go through because I hadn't signed up to ]
+> [   the wireless-regdb mailing list; I apologise if anyone receives   ]
+> [                         this message twice                          ]
 
-Thanks for the patch. It looks like it should be fine to add that range,
-but there are a couple of problems. First, your patch has tabs replaced
-with spaces and so it does not apply. Second, you must include a
-Signed-off-by tag as specified in the CONTRIBUTING file.
+Thanks for the patch. However you forgot to include a Signed-off-by tag
+(see the CONTRIBUTING file). Please also only include a description of
+the patch in the commit message, any additional comments/questions can
+be included in a cover letter.
+
+Also one small comment about the changes below.
+
+> As far as I could tell, the regulatory information for Switzerland and
+> Liechtenstein did not match the information published by the national
+> regulator. I have gone ahead and updated the information according to
+> the 'National Frequency Allocation Strategy Table' [0] for both
+> countries.
+> 
+> On a somewhat related note, are there any plans to properly support TPC?
+> There are quite a few entries in the database where maximum transmission
+> power could be increased when TPC is in use. Being able to set a
+> different maximum antenna gain and/or EIRP when TCP is in use could be
+> helpful in these cases. I guess what's holding this back is lacking
+> driver support?
+
+I haven't heard of any plans for supporting TPC in the kernel.
+
+> PS: Since [0] can be cumbersome to navigate, I am also providing the
+> direct links to the applicable tables. It's possible that these links
+> will rot:
+> 5150 - 5350 MHz: [1]
+> 5470 - 5725 MHz: [2]
+> 
+> [0] https://www.ofcomnet.ch/#/fatTable
+> [1] https://www.ofcomnet.ch/api/rir/1010/05
+> [2] https://www.ofcomnet.ch/api/rir/1010/04
+> ---
+>  db.txt | 19 +++++++++++++++----
+>  1 file changed, 15 insertions(+), 4 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 8cf7dee..69cea85 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -265,10 +265,14 @@ country CF: DFS-FCC
+>      (5490 - 5730 @ 40), (24), DFS
+>      (5735 - 5835 @ 40), (30)
+> 
+> +# Source:
+> +# https://www.ofcomnet.ch/#/fatTable
+> +# Note that the maximum transmitter power can be doubled for 5250-5710MHz
+> if
+> +# transmitter power control is in use: 5250-5330@23db, 5490-5710@30db
+>  country CH: DFS-ETSI
+>      (2402 - 2482 @ 40), (20)
+> -    (5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
+> -    (5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
+> +    (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+
+This should also be changed to 5150-5250.
 
 Thanks,
 Seth
 
+> +    (5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+>      (5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
+>      # 60 GHz band channels 1-4, ref: Etsi En 302 567
+>      (57000 - 66000 @ 2160), (40)
+> @@ -743,11 +747,18 @@ country LC: DFS-ETSI
+>      (5490 - 5710 @ 160), (30), DFS
+>      (5735 - 5815 @ 80), (30)
 > 
+> +
+> +# Source:
+> +# https://www.ofcomnet.ch/#/fatTable
+> +# Note that the maximum transmitter power can be doubled for 5250-5710MHz
+> if
+> +# transmitter power control is in use: 5250-5330@23db, 5490-5710@30db
+>  country LI: DFS-ETSI
+>      (2402 - 2482 @ 40), (20)
+> -    (5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
+> -    (5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
+> +    (5170 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+> +    (5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+>      (5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
+> +    # 60 GHz band channels 1-4, ref: Etsi En 302 567
+> +    (57000 - 66000 @ 2160), (40)
 > 
-> diff --git a/db.txt b/db.txt
-> index 8cf7dee..7abb064 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -460,6 +460,8 @@ country FI: DFS-ETSI
->         (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
->         (5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
->         (5470 - 5725 @ 160), (27), DFS, wmmrule=ETSI
-> +        # short range devices (ETSI EN 300 440-1)
-> +        (5725 - 5875 @ 80), (25 mW)
->         # 60 GHz band channels 1-4, ref: Etsi En 302 567
->         (57000 - 66000 @ 2160), (40)
+>  country LK: DFS-FCC
+>      (2402 - 2482 @ 40), (20)
+> -- 
+> 2.18.0
+> 
 
 _______________________________________________
 wireless-regdb mailing list
