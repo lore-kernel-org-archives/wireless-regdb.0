@@ -3,33 +3,37 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
- :Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=giUBanwQ1QzqLto8GFvyq/oSb4kj3nj36cYiMH3gi8I=;
- b=vCz8y6mleWedm4
- lSSYhwoMjfH5pYa58+LdEo+p5CoHsfA3rrSLItdiDh4PlsQkZ6se3o88RceAT686R4OV2DHXPBGeM
- MSOgIKO0O3FvZo098qP1J1A8osbfeARmzoOIIV5onA/yG4ZaNcskRxF/Qhcu9sn70qrbkujoUEBAS
- CjyGx9X73Z4igt2N15748sA7o8YgxDzmCAAh0tdsCmMeFHKnCIKRZHgsqgth3v7YSLIDORFrauZ7O
- HLdTCIkSV4awP64Y0DCA1F41AMho5D9L14L5umhOcQdi3wO/RDU2STkhpGD1Fm8000Df+rKgA8JC5
- IqYWJsf3hfUU0qXnNo1A==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Owner; bh=K63ylVIU5MlHvg9GcyOncX3ls78muKAAzs5i8VjpVFc=;
+ b=GfeXKF6Eq40E1O
+ qIaxbxKcFAMTtEOat+BSEZbPV3q6/6n0L/Ln+JoAx9ACyukAMliECjCR3rY8IxBNmTHQ2+0gRlx9L
+ NMGUFNmtpgPpgU5uOVCCTqhKfTu/BQxYryVWoJ3ZaOaS0E4UvlqIRf4HkHOzrq3y5vGhFBgA4DxP9
+ +98MSopyO7Css8opsr7moHOc8ukCSG7h6vPKCpMoAHezzQYOuc66b0Y19i5Bs+Zgtep2Bty7HzT29
+ eLdvZHq9AIbzhAFy0ZWmhAKfph8TD0dmtRKdhsmSWJmC5Noa36Wf2JAlPT+2Lt2fN7krZ9jmyHkXB
+ 5KPxttugBUY9TkacDC6A==;
+Received: from mail-wr1-f67.google.com ([209.85.221.67])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1fyM3D-0007mD-Gc
- for wireless-regdb@lists.infradead.org; Fri, 07 Sep 2018 19:04:17 +0000
-Received: from mail-yb1-f197.google.com ([209.85.219.197])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1fyM31-0003da-Ve
- for wireless-regdb@lists.infradead.org; Fri, 07 Sep 2018 19:04:04 +0000
-Received: by mail-yb1-f197.google.com with SMTP id d11-v6so6112119ybj.1 for
- <wireless-regdb@lists.infradead.org>; Fri, 07 Sep 2018 12:04:03 -0700 (PDT)
-Date: Fri, 7 Sep 2018 14:04:00 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20180907190400.GN4251@ubuntu-xps13>
+ id 1fyJfr-0000tO-Sc
+ for wireless-regdb@lists.infradead.org; Fri, 07 Sep 2018 16:32:03 +0000
+Received: by mail-wr1-f67.google.com with SMTP id w11-v6so15580438wrc.5 for
+ <wireless-regdb@lists.infradead.org>; Fri, 07 Sep 2018 09:29:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=exjHrN1awYG0a5fyFpSzB7TKWzoy8wKcbHUFRTP3vvY=;
+ b=lipqxMH5GHNqrGiWhzBXGY0QJ56KXrOHLF8/PWCpPVttJFcasbsBazJiQpfpqmcdF0
+ cfvlp2ux8aveM+YpYJJpGRfXvZdxJb6hn2P1VZ2T5MwOsOAVqdWKoupbuFqunWM0BK1k
+ RoRzEam2EHflWXmJouLdpAc6oa8AnWgARHut4DN9mRZAXmoixZ0SwqNse7auwi9qLxiz
+ ij7c5KuGCRFLfm9ZXWsCgNUNCV23GRb995zuTAe+89q+PNxFyR3oZFNnT/6yYfsVnzxi
+ qHqaFK+NgI45GQRsmiUjVal5T2fbTCpDZvcpNkRQVRgoZ2eM4DN10EHSTelA94OvJoIR Lm6w==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Fri,  7 Sep 2018 18:28:41 +0200
+Message-Id: <20180907162841.11749-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2018-09-07
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update source of info for
+ CU and ES
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,44 +43,60 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, "Luis R. Rodriguez" <mcgrof@do-not-panic.com>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2018-09-07) is available at:
-
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2018.09.07.tar.gz
-
-The short log of changes since the 2018-05-31 release is below.
-
-Thanks,
-Seth
-
+Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
+Cc: REGDB ML <wireless-regdb@lists.infradead.org>
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
 ---
+ db.txt | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
 
-Henrik Laxhuber (1):
-      wireless-regdb: update regulatory rules for Switzerland (CH), and Liechtenstein (LI) on 5GHz
-
-Jukka Pirinen (1):
-      Update regulatory rules for Finland (FI) on 5GHz (SRD devices)
-
-Seth Forshee (1):
-      wireless-regdb: update regulatory database based on preceding changes
-
-Xose Vazquez Perez (1):
-      wireless-regdb: update source of info for CU and ES
-
-bkil (1):
-      wireless-regdb: update rules for Hungary (HU) on 2.4/5/60G, 5725-5875MHz
+diff --git a/db.txt b/db.txt
+index b168f59..54479fc 100644
+--- a/db.txt
++++ b/db.txt
+@@ -311,9 +311,10 @@ country CR: DFS-FCC
+ 	(5490 - 5730 @ 20), (24), DFS
+ 	(5735 - 5835 @ 20), (30)
+ 
++# Source:
+ # http://www.mincom.gob.cu/?q=marcoregulatorio
+ # - Redes Informáticas
+-# Resolución 127, 2011 - Reglamento Banda 2,4 GHz.
++# Resolución 127- 2011 Reglamento de Banda de frecuencias de 2,4 GHz.
+ country CU: DFS-FCC
+ 	(2400 - 2483.5 @ 40), (200 mW)
+ 
+@@ -432,13 +433,9 @@ country EG: DFS-ETSI
+ 	(5170 - 5250 @ 40), (20)
+ 	(5250 - 5330 @ 40), (20), DFS
+ 
+-# Orden IET/787/2013, de 25 de abril, por la que se aprueba
+-# el cuadro nacional de atribución de frecuencias.
+-# http://www.boe.es/diario_boe/txt.php?id=BOE-A-2013-4845
+-#
+-# more info at "Cuadro nacional de atribución de frecuencias (CNAF)":
+-# http://www.minetur.gob.es/telecomunicaciones/espectro/paginas/cnaf.aspx
+-
++# Source:
++# Cuadro nacional de atribución de frecuencias (CNAF)
++# http://www.mincotur.gob.es/telecomunicaciones/espectro/paginas/cnaf.aspx
+ country ES: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (100 mW)
+ 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+-- 
+2.17.1
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
