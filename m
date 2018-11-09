@@ -6,34 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
  :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=7gHaAWoZoxVCwice7kK6JzyqvkvVr7uZC4SdpdowjPs=;
- b=P5v7tJCnkx794E
- fAnDrhOx7xLftXQeUUJVeKg169t7j2z9oo99CWKBuAnYGZhHFyPmpJr+3fP3nIGt9q3zi6ZObalt8
- kXfX8RiNXdEXjf+dltJg6qEdNVXBGyKWNODPEI9I2by29UUApJYCanXW6fDwY6r+YvpcZy6BMbhrV
- oMBNS8u/MgI2SeOd9KABej5p1ps71sGF4ycRZYZG9geTmGvjpzuVnR0kHTk6FJ/Oyi4GGd8uyYQ+u
- CFi3J9+AXnjilu+N191Lpdz5F24GpLQyJ4ZMEOyi0zfrlfhh6k1BG/kFXPe9D+TrDlnpxUjU7UYv6
- wRe3GDC3u1h5RSjQzsBg==;
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+ List-Owner; bh=79nE27DRWIeMtXis781QSXkiWVY4Pl3h5H5U33Di4SY=;
+ b=oZQqf2G0S2x5/0
+ a88JpEn82qlnleXoYmVVxp+wi+o7g76GDGahAPm33VtK9M7PtwlLseff9Ky7UbywDH2n5iOxIQ6Gr
+ gH12YSIcqRlFOY0Uv9Y7tnkQReG9H2aSV3KXCO9AHBppdt6yD77RyMQOj53z7hiIcUg+eJhC1X1I4
+ n9rah8IlHcVPOIzyxCdE0CCFk63ORCmU5Nr0dF/p/Ge2vTauYQp1EqAyS5i2BTOGBZ2o74LGg+utj
+ iBRxYvS1nlbZ0/EThDdBvvWZnrbNWJiqFQfo/jT1vwTHsNWW0lKMdrdfeTBuy5y0mLF+Jnpem0w0T
+ FTmheHHsJj7ORId/3qPg==;
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gL3xq-0001j6-PU
- for wireless-regdb@lists.infradead.org; Fri, 09 Nov 2018 10:24:36 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p2-v6so1436270wmc.2 for
- <wireless-regdb@lists.infradead.org>; Fri, 09 Nov 2018 02:24:24 -0800 (PST)
+ id 1gL9ZJ-00060g-2z
+ for wireless-regdb@lists.infradead.org; Fri, 09 Nov 2018 16:23:38 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b203-v6so2467554wme.5
+ for <wireless-regdb@lists.infradead.org>; Fri, 09 Nov 2018 08:23:26 -0800
+ (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20161025; h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=udkfn3yVvuCceV04j1gaobWyIMbXJgFe43wdapuUuMA=;
- b=eqAlwpEWY1w2BD8bTMx0QQZSowZ62pP7bHJZDLXd+mVmCKT9zzfPeGaVw1yCbbkVvJ
- EL2S+RYDhZAFQb5ed3zEmgsYLV6UYFRIwJBuKlRorHUiBdCttJonetHjMKIyU1KUqhOR
- SJP6yfg84JXuUVlE5S0GeLwsXaQdA3fwq0XSdNoslckIh+tHezTi7sZtM6dGJg7lMC4e
- JFp6iaPjQBri59mZczvIqxjLmTR81NzEq5384dMMopaX5pMRwo1FCOpRDolZkn3y/ooO
- Yb4x9T6oZaIUONslSc3Jk7ya2q9ZHJZXk4WBY6P7XaXB+CPsc8yj1Ts4uc9bUHIgldDn VNtA==
+ bh=uFNSWfjEVRjxBVi/h0p6c5lkg8AafdP2KyZdJzBrb98=;
+ b=JYNw3e4JXPurJLVbVKsKlXe4aWnP+mmgFjbPALew/gjv2XixpxlfkX6sfLc76E8nKb
+ Xyf+VBf21x80Yy+X35kN9okgvYamvvm7VjM8n++8SAOY1CJnV+4qMR505dbVr+ank8ED
+ ZKnsToQ0XofGGAbDf87NhARNitwpMhm/w2kqjFt0XaxtqM0Vmd5SzxLvglC0WrVTlpsr
+ HluLqmG7FAD4d8APdJtaKquQscmsdeiktTEpHwRHYBNyXNS4lJXdy4unF67zdSVtj6CT
+ tkE3yG3H8d6cGIALbG8k5K8Hb5RwasE8HY0+iZEdhOqN71IFYpamofwqrbC1LQR9yZK1 GPIA==
 From: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Date: Fri,  9 Nov 2018 11:24:20 +0100
-Message-Id: <20181109102420.3539-1-xose.vazquez@gmail.com>
+Date: Fri,  9 Nov 2018 17:23:23 +0100
+Message-Id: <20181109162323.25024-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: delete outdated comment
- for DE
+Subject: [wireless-regdb] [PATCH] crda: add URLs to README
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,43 +43,41 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>, Sven Eckelmann <sven.eckelmann@openmesh.com>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, "Luis R . Rodriguez" <mcgrof@kernel.org>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-d46d731c made it obsolete.
-
-Cc: Sven Eckelmann <sven.eckelmann@openmesh.com>
-Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: Luis R. Rodriguez <mcgrof@kernel.org>
 Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
 Cc: REGDB ML <wireless-regdb@lists.infradead.org>
 Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
 ---
- db.txt | 7 -------
- 1 file changed, 7 deletions(-)
+ README | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/db.txt b/db.txt
-index 8f356f7..fa5c0e0 100644
---- a/db.txt
-+++ b/db.txt
-@@ -359,13 +359,6 @@ country CZ: DFS-ETSI
- # Funkanwendungen zur breitbandigen Datenübertragung, WAS/WLAN („Wireless
- # Access Systems including Wireless Local Area Networks“).
- # https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2010_07_WLAN_5GHz_pdf.pdf
--# The values for the 5 GHz have been reduced by a factor of 2 (3db) for non TPC
--# devices (in other words: devices with TPC can use twice the tx power of this
--# table). Note that the docs do not require TPC for 5150--5250; the reduction
--# to 100mW thus is not strictly required -- however the conservative 100mW
--# limit is used here as the non-interference with radar and satellite
--# apps relies on the attenuation by the building walls only in the
--# absence of DFS; the neighbour countries have 100mW limit here as well.
- #
- # The ETSI EN 300 440-1 standard for short range devices in the 5 GHz band has
- # been implemented in Germany:
+diff --git a/README b/README
+index 5d89b83..88f2623 100644
+--- a/README
++++ b/README
+@@ -1,5 +1,6 @@
+  Central Regulatory Domain Agent (CRDA)
+ ========================================
++<https://wireless.wiki.kernel.org/en/developers/regulatory/crda>
+ 
+ This is the Central Regulatory Domain Agent for Linux. It serves one
+ purpose: tell Linux kernel what to enforce. In essence it is a udev
+@@ -46,6 +47,7 @@ with this package as regulatory.rules
+ 
+  OVERVIEW
+ ==========
++<https://wireless.wiki.kernel.org/en/developers/regulatory>
+ 
+ The database is maintained on the wireless-regdb.git tree. This git
+ tree maintains a binary regulatory database file which is produced
 -- 
 2.19.1
 
@@ -88,3 +86,4 @@ _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
