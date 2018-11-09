@@ -3,36 +3,36 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=xRQivQTtnknl86qDutpYGKhA8u03pYQjEBl2sHNzqH0=;
- b=TiSIY53hyXjw/o
- CL0RzlsPpEkQ7nc+DlYsIqC9Bt02RXxcYI0OB8xhzi2tojCwafnQ8xhtflpOUgnAQb60uaG0PrNeb
- DbRo3YFAymnHFPAshC9rxHhPYz27jlRd1KvX3ZN3HHhIjfuvZIw4T+dPQhQJDQPK2xLfZsjuH6CA0
- 51hU0CUUvS/yGFJJuNtHMPssUhLS8f8QZnh9KWtnVFa1hDps+szu2i5FHhmep7IcARBpAvfuF+eOe
- ohQib9Dp5v+1Hu+5MU4152k4svf6jAtcjd+LJs56OKUdExdXhPOdx4kCQ4jwv0+Pbs8RLyMgxAsR0
- XjNZCB5Pgk4P2YX3kH+Q==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=WxQ+32SRQq9hrDAs7EAi84l5X1TVToG8idudci+D1rs=;
+ b=BmJOhwNUsYy40d
+ k+yghcJOR6/ieZ7Cq65oh/5j39a6oYZcKbT4iC54fAUvARUxtLvmrSI+qdsdCDNlkbPVYxDDeT2JS
+ /BI7tU8GyTT6HgSzz480+/NMVTUDCf/Nw7o+Lrg3uT5bMcvY4x+a6uiVcj8gQRWN5UD/UQOkPPiJ6
+ PG96Uvvk1fGsnM9MgsVkDFJDI1x7OCZn0DhYQEOyw8DPGJHn/dW8Bl4XM4aId+RPVROdvjVomVOFa
+ B7fjh+Nf0N+qCgbf4DY3BkSOb3ueLPZNqehyS+azsC608ktwqwSMdDJXmD/uEJPTa2cQidcd6WvJD
+ bIKEpCYcxuTlRh1+/P7w==;
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gFJpK-0005J8-OT
- for wireless-regdb@lists.infradead.org; Wed, 24 Oct 2018 14:08:04 +0000
-Received: from mail-pf1-f199.google.com ([209.85.210.199])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1gFJp6-0007Ev-6q
- for wireless-regdb@lists.infradead.org; Wed, 24 Oct 2018 14:07:48 +0000
-Received: by mail-pf1-f199.google.com with SMTP id g63-v6so3548814pfc.9 for
- <wireless-regdb@lists.infradead.org>; Wed, 24 Oct 2018 07:07:48 -0700 (PDT)
-Date: Wed, 24 Oct 2018 08:07:43 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20181024140743.GC8750@ubuntu-xps13>
-References: <20181006160254.7980-1-hauke@hauke-m.de>
+ id 1gLAIT-0003b4-7f
+ for wireless-regdb@lists.infradead.org; Fri, 09 Nov 2018 17:10:18 +0000
+Received: by mail-wr1-x444.google.com with SMTP id v18-v6so2659330wrt.8 for
+ <wireless-regdb@lists.infradead.org>; Fri, 09 Nov 2018 09:10:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=bFBjKgQGl0cRNFwN3OT7IPyacTUidwjy0UJ+CuB04T0=;
+ b=cR4GtMpfByhcVDn6hVQB8o2xMkAR5KFzWXu0tRIiNh+4cJjKo4rD1loBMlMvalDRq3
+ ovsKCerWtkA5L8YvijMAzmBwkUE9spZj+y9VXNhoQsNrAFm0ZLHNK0v+5F7PZ4HcBoyF
+ Elfsk2DurLDxYhj9WpyvaXzeW7gIsrI4RkgHwgwWVanQSLIwGlD7rJlHFQxjrLVoubbb
+ lBI+b5unkpgnzeXeaeGZIp39rdup1FoG5ahfG1ZOXyoEg05VG1T2LQUj0LWZ8Kbz++Ky
+ aVfYdRo6s5piivKk5b/Z0zNVkLezAJgj22pXfRgTwT2oNxW07A+To15uY7xEZvl7pJA8 jVAA==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Fri,  9 Nov 2018 18:10:03 +0100
+Message-Id: <20181109171003.27069-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20181006160254.7980-1-hauke@hauke-m.de>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: remove dependency to
- python attr
+Subject: [wireless-regdb] [PATCH] wireless-regdb: add URLs in README
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,74 +47,56 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Hauke Mehrtens <hauke@hauke-m.de>
-Cc: linux-wireless@vger.kernel.org, haim.dreyfuss@intel.com, wireless-regdb@lists.infradead.org
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Please remember to Cc wireless-regdb@lists.infradead.org for regdb
-changes, adding now.
+Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
+Cc: REGDB ML <wireless-regdb@lists.infradead.org>
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+---
+ README | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
 
-On Sat, Oct 06, 2018 at 06:02:54PM +0200, Hauke Mehrtens wrote:
-> Commit 8607edfdb6568 ("wireless-regdb: Parse wmm rule data") introduced
-> a dependency to the python module attr which is not included by default
-> in all python installations. Replace the code with manually coding the
-> constructor instead of using attr. This makes the code also work on
-> systems without attr.
-> 
-> I would like to avoid an additional dependency in OpenWrt where we
-> compile the regulatory database inside of the build system.
-> 
-> Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+diff --git a/README b/README
+index 4028223..4a059de 100644
+--- a/README
++++ b/README
+@@ -1,3 +1,7 @@
++ wireless-regdb
++================
++<https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb>
++
+ This repository contains the plain text version of the regulatory
+ database file I maintain for use with Central Regulatory Database
+ Agent daemon.  Also included is the compiled binary version of this
+@@ -9,6 +13,7 @@ either expressed or implied.
+ Also included are the tools used to compile and sign the regulatory.bin
+ file as well as a MoinMoin macro used for viewing the database.
+ 
++
+  TECHNICAL INFORMATION
+ =======================
+ 
+@@ -21,9 +26,13 @@ to allow viewing the database for verification.
+ The dbparse module is also used by db2bin.py and db2fw.py, the `compilers'
+ that compile the database to its binary formats.
+ 
+-For more information, please see the CRDA git repository:
++For more information, please see the CRDA page:
++
++	https://wireless.wiki.kernel.org/en/developers/regulatory/crda
++
++and the full description of the Linux regulatory stack:
+ 
+-	git://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/crda.git
++	https://wireless.wiki.kernel.org/en/developers/regulatory
+ 
+ John W. Linville
+ 17 November 2008
+-- 
+2.19.1
 
-I had wonderd if this would turn out to be a problem for someone.
-Applied, thanks!
-
-> ---
->  dbparse.py | 20 ++++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
-> 
-> diff --git a/dbparse.py b/dbparse.py
-> index 5fe752b..993f757 100755
-> --- a/dbparse.py
-> +++ b/dbparse.py
-> @@ -5,7 +5,6 @@ from functools import total_ordering
->  import sys, math
->  from math import ceil, log
->  from collections import defaultdict, OrderedDict
-> -import attr
->  
->  # must match <linux/nl80211.h> enum nl80211_reg_rule_flags
->  
-> @@ -32,16 +31,17 @@ dfs_regions = {
->  
->  @total_ordering
->  
-> -@attr.s(frozen=True, cmp=False)
->  class WmmRule(object):
-> -    vo_c = attr.ib()
-> -    vi_c = attr.ib()
-> -    be_c = attr.ib()
-> -    bk_c = attr.ib()
-> -    vo_ap = attr.ib()
-> -    vi_ap = attr.ib()
-> -    be_ap = attr.ib()
-> -    bk_ap = attr.ib()
-> +
-> +    def __init__(self, vo_c, vi_c, be_c, bk_c, vo_ap, vi_ap, be_ap, bk_ap):
-> +        self.vo_c = vo_c
-> +        self.vi_c = vi_c
-> +        self.be_c = be_c
-> +        self.bk_c = bk_c
-> +        self.vo_ap = vo_ap
-> +        self.vi_ap = vi_ap
-> +        self.be_ap = be_ap
-> +        self.bk_ap = bk_ap
->  
->      def _as_tuple(self):
->          return (self.vo_c, self.vi_c, self.be_c, self.bk_c,
-> -- 
-> 2.11.0
-> 
 
 _______________________________________________
 wireless-regdb mailing list
