@@ -3,34 +3,36 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
- Message-ID:Date:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=J/tpDa8HKRS2NksZr3Mss3fq0rEfPpPCFqOLGHpZ8DI=;
- b=EX6wwv+YXXbPGZ
- iWmuTcoTUcqYgDGGSRLQAE//7QNmwpN6khUyOsciA6f2ZFYz0E0RadR2J5hLXz9Op59go9HXGEPZd
- gksIHNYUSOod8i3IQtWswRmc0KEfDOUUQsPbzbB50sErDtBOJT8Cdo/uRuWAQS81cz48CMRyOnbxZ
- 6IDUrVrqrOlkaM9iXZtr5GvY2lx3VTFMBh/qTY5B/j36tmKVwDUJ06xys5peSKbTsMnmgMoF0Fef7
- qRdHNpznjVuDeHRa2AeZ4hk2bbDrjM/NM7iivcPTEyGEh93SVpahNFWqQ+vq/PoTWbi5xKounOXiN
- 7HySYjMYVNYxwuMnUU5Q==;
-Received: from mail-bl2nam02on060d.outbound.protection.outlook.com
- ([2a01:111:f400:fe46::60d]
- helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=12zc4rI348WjSCdVvrBvRkQPeCzzRQ/93tQQOPWEyg0=;
+ b=t6tlctonBC4pdP
+ JOg4hj9PObas0oFZZIUcfKiuXFWpR6vR1eqbXtjh5MJRcnF7KPPJUFJEHGlVh3Rgh2rIT1Cnw61xU
+ EL7tuzAP0HxNFUVtmC6AcjcBMfbveQ5/OqJTrzF9vb/SED5z4gwqh7QzuGPNqijVdCOm24Yhuv+GQ
+ 8K2exG3ppYDFsnspb1uCkv0t2gPx3qTe+t3mvEmMQhtXSxAxbzgq5Dg/dg1xEYCS1oPye5oLgttau
+ WUw5TKoGDLYcLEbCqjgJpswuXVWGiOs49jbFH0zsaVIIA2wd8FoBJjwicoRWC6AyOWjz6ZFaZPVm9
+ fwFPuPBZRJNtiRX742pA==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gWXpK-0007dI-4u
- for wireless-regdb@lists.infradead.org; Tue, 11 Dec 2018 02:31:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quantenna.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mHKEjfLS3Aw2rcX3+IO1ewcW7WCpmVq+FuY7IiSpNIg=;
- b=akhqfa0V5VfCRMhA//3LBvm7OrHYTF5in+O3uJc3A5zuVrXxwfqS5sxA4F+lqjoVejwv4a5+tKpdMV9B+tHbS6K3Nt6lqKwn4bYKj0/10PoHWZ6L7Bijwxc4zr0+2LRggAZS3HeifvaQqypAP/+zAlD/ReAvTFtiVY5W8PP+BBs=
-From: Igor Mitsyanko <igor.mitsyanko.os@quantenna.com>
-Date: Tue, 11 Dec 2018 02:30:58 +0000
-Message-ID: <423eaa39-fc06-6a5a-a8fd-5e15d503dff5@quantenna.com>
-Content-Language: en-US
-Content-ID: <C1AB080D174B3C4BA18BDD7A1616AB46@namprd05.prod.outlook.com>
+ id 1gUCdO-0008RT-O5
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2018 15:29:16 +0000
+Received: from mail-yb1-f198.google.com ([209.85.219.198])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1gUCdD-0004jx-D1
+ for wireless-regdb@lists.infradead.org; Tue, 04 Dec 2018 15:29:03 +0000
+Received: by mail-yb1-f198.google.com with SMTP id a14-v6so10688706ybk.23
+ for <wireless-regdb@lists.infradead.org>; Tue, 04 Dec 2018 07:29:03 -0800
+ (PST)
+Date: Tue, 4 Dec 2018 09:29:00 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20181204152900.GE27074@ubuntu-xps13>
+References: <20181109171003.27069-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] Tx power for slave devices in ETSI DFS region
+Content-Disposition: inline
+In-Reply-To: <20181109171003.27069-1-xose.vazquez@gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add URLs in README
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,36 +47,18 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+To: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Cc: REGDB ML <wireless-regdb@lists.infradead.org>, WIRELESS ML <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello,
+On Fri, Nov 09, 2018 at 06:10:03PM +0100, Xose Vazquez Perez wrote:
+> Cc: Seth Forshee <seth.forshee@canonical.com>
+> Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
+> Cc: REGDB ML <wireless-regdb@lists.infradead.org>
+> Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
 
-according to ETSI 
-https://www.etsi.org/deliver/etsi_en/301800_301899/301893/02.01.01_60/en_301893v020101p.pdf
-section 4.2.3.2.2, table 2
-Note 3 states:
- >Slave devices without a Radar Interference Detection function shall 
- >comply with the limits for the frequency range 5 250 MHz to 5 350 MHz.
+Applied, thanks!
 
-And Tx power limits are defined as following:
-5150 to 5350: 20 dbm
-5470 to 5725: 27 dbm
-
-Which means that if STA device can not do radar detection, it must use 
-20dbm Tx powers on all channels (can not use 27 dbm limit).
-
-
-Looking at regdb 
-https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt, 
-power limit for frequency range 5470 to 5725 is defined at 27 dbm.
-
-
-Question is: does wireless core assumes that each device can do radar 
-detection in slave modes (eg acting as a STA) and it is enabled by 
-default? I couldn't find any logic in kernel which would limit 27 dbm 
-power to 20 for STA devices.
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
