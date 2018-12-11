@@ -2,36 +2,35 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
- List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
- Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
+ Message-ID:Date:To:From:Reply-To:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=ZZalb8t9E2kh1uZnHqzKO3/5c9ldvOu//OTvU6fPH4U=;
- b=IfTcC9nILVuyoB
- 5HRhjyo8AYPJJwiFT2na5EkqDKCyGLa+m5VQpyQLXQ/p67PK98hu2NkS7ZUTwuGBE9/NyyqFRxnxg
- mLOZn4juLo58TlX/69PTkaqR47unHdtfElKU1TK1ejJdwtRTu/Ef0CG4NbHx9TXjO48tX6IyMj7tk
- zi9rSLVOD7xXOk76cHXa0zVZhEGfB/a7VRAuS+dqk6EdhCnbUrctlESXwUJcB9iouDLQojMbCY7sD
- 9pYbjhkTvsKUUKwdI0DOTNqYTtrwSPXY4IE7/Uw6FRyi5jlBh8kGnfycxdDCz0dcTDlcFfkTifmcb
- Z9nTSfHtiw6z8NYwWkeQ==;
-Received: from mail-pl1-x62d.google.com ([2607:f8b0:4864:20::62d])
+ List-Owner; bh=J/tpDa8HKRS2NksZr3Mss3fq0rEfPpPCFqOLGHpZ8DI=;
+ b=EX6wwv+YXXbPGZ
+ iWmuTcoTUcqYgDGGSRLQAE//7QNmwpN6khUyOsciA6f2ZFYz0E0RadR2J5hLXz9Op59go9HXGEPZd
+ gksIHNYUSOod8i3IQtWswRmc0KEfDOUUQsPbzbB50sErDtBOJT8Cdo/uRuWAQS81cz48CMRyOnbxZ
+ 6IDUrVrqrOlkaM9iXZtr5GvY2lx3VTFMBh/qTY5B/j36tmKVwDUJ06xys5peSKbTsMnmgMoF0Fef7
+ qRdHNpznjVuDeHRa2AeZ4hk2bbDrjM/NM7iivcPTEyGEh93SVpahNFWqQ+vq/PoTWbi5xKounOXiN
+ 7HySYjMYVNYxwuMnUU5Q==;
+Received: from mail-bl2nam02on060d.outbound.protection.outlook.com
+ ([2a01:111:f400:fe46::60d]
+ helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gZAQe-0001Bg-OO
- for wireless-regdb@lists.infradead.org; Tue, 18 Dec 2018 08:09:01 +0000
-Received: by mail-pl1-x62d.google.com with SMTP id u6so7454702plm.8 for
- <wireless-regdb@lists.infradead.org>; Tue, 18 Dec 2018 00:08:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=from:to:cc:subject:date:message-id;
- bh=4R8/VLPZrJn9vSYTePrs8K5VHrnIeHZRgGlh1K7UCYI=;
- b=TQCRFpajiY/mX5yF3I+AJchM/1mAmBmFuMfQprajkZfFSEDb1VecSL/awOo7obc7nG
- VxU6R0YvhoyLkw6QlQx5Ksnxh0swsKPy5KVO+3sbnvw1035RScaQRJjZH9M+G2GwsZE9
- mM/+s694SlO5Pi9Jmmy2x0QcsEUECn9Tg+yvLZ0dwjMGRgVvt1l6+2/q+Pe/uTH99U+1
- NBPkIxdHrkGiHNiPocA7supyH64umN/lHyRc7jtI2567KDlbzbm/eGUmWLhv9zIpnxrJ
- yRCsgU7lZCZ1KrifsF6Zo4ClFthIK1YOWSiSy+UZdQ6hwPM77oxauj5Yf72xD0epIkWQ VGWw==
-From: chaitanya.mgit@gmail.com
-Date: Tue, 18 Dec 2018 13:38:15 +0530
-Message-Id: <20181218080815.19395-1-chaitanya.mgit@gmail.com>
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update 60ghz band rules
- for us
+ id 1gWXpK-0007dI-4u
+ for wireless-regdb@lists.infradead.org; Tue, 11 Dec 2018 02:31:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quantenna.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mHKEjfLS3Aw2rcX3+IO1ewcW7WCpmVq+FuY7IiSpNIg=;
+ b=akhqfa0V5VfCRMhA//3LBvm7OrHYTF5in+O3uJc3A5zuVrXxwfqS5sxA4F+lqjoVejwv4a5+tKpdMV9B+tHbS6K3Nt6lqKwn4bYKj0/10PoHWZ6L7Bijwxc4zr0+2LRggAZS3HeifvaQqypAP/+zAlD/ReAvTFtiVY5W8PP+BBs=
+From: Igor Mitsyanko <igor.mitsyanko.os@quantenna.com>
+Date: Tue, 11 Dec 2018 02:30:58 +0000
+Message-ID: <423eaa39-fc06-6a5a-a8fd-5e15d503dff5@quantenna.com>
+Content-Language: en-US
+Content-ID: <C1AB080D174B3C4BA18BDD7A1616AB46@namprd05.prod.outlook.com>
+MIME-Version: 1.0
+Subject: [wireless-regdb] Tx power for slave devices in ETSI DFS region
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,45 +40,41 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
-Cc: Chaitanya Tata <Chaitanya.Mgit@gmail.com>, linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-From: Chaitanya Tata <Chaitanya.Mgit@gmail.com>
+Hello,
 
-Include channels 4, 5 & 6 for US in 60GHz band. FCC extended the
-57-64GHz band till 71GHz with almost same rules.
----
- db.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+according to ETSI 
+https://www.etsi.org/deliver/etsi_en/301800_301899/301893/02.01.01_60/en_301893v020101p.pdf
+section 4.2.3.2.2, table 2
+Note 3 states:
+ >Slave devices without a Radar Interference Detection function shall 
+ >comply with the limits for the frequency range 5 250 MHz to 5 350 MHz.
 
-diff --git a/db.txt b/db.txt
-index fa5c0e0..ae650dd 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1280,9 +1280,9 @@ country US: DFS-FCC
- 	(5490 - 5730 @ 160), (23), DFS
- 	(5735 - 5835 @ 80), (30)
- 	# 60g band
--	# reference: http://cfr.regstoday.com/47cfr15.aspx#47_CFR_15p255
--	# channels 1,2,3, EIRP=40dBm(43dBm peak)
--	(57240 - 63720 @ 2160), (40)
-+	# reference: section IV-D https://docs.fcc.gov/public/attachments/FCC-16-89A1.pdf
-+	# channels 1-6 EIRP=40dBm(43dBm peak)
-+	(57240 - 71000 @ 2160), (40)
- 
- country UY: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--- 
-2.17.1
+And Tx power limits are defined as following:
+5150 to 5350: 20 dbm
+5470 to 5725: 27 dbm
+
+Which means that if STA device can not do radar detection, it must use 
+20dbm Tx powers on all channels (can not use 27 dbm limit).
 
 
+Looking at regdb 
+https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt, 
+power limit for frequency range 5470 to 5725 is defined at 27 dbm.
+
+
+Question is: does wireless core assumes that each device can do radar 
+detection in slave modes (eg acting as a STA) and it is enabled by 
+default? I couldn't find any logic in kernel which would limit 27 dbm 
+power to 20 for STA devices.
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
