@@ -3,37 +3,28 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ List-Archive:List-Unsubscribe:List-Id:Subject:Mime-Version:References:
+ In-Reply-To:Date:To:From:Message-ID:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=5Ie367YXQ5vhtg4Umg073Jz2ZCllc68SWDNVXtS+Zxk=;
- b=a1o1gZZSZfyKkq
- wErqdZKpLcGsYOFEWJmvAcjDt2F7fPnhGQCwEZAb2UFBOiF3tfnxXX1OuiCadqaj1tC8QXTvxqtBJ
- DleVSs56t0X7FmN4Peodrdms2eJNFPs0SYXrmA208lGZc0TlnUG5mMGbiTjnZZ6FOBdaUOhjZi4Le
- hIbyIctaYWeQYmSMmpP0ghDCCkK4mae96Lin+0CpL+aFpMFNe2WNzDhWvRAeAjll01X5CPastLCuV
- YEsLpC5/o/nA1GfoDA237ym2y6q3y2hlrNRNlE3YiAHidcoprlgKEzOwZ022ol16Rl1YIglZF9h8D
- EGMYbVb9Ny4O7CIm+htA==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Owner; bh=pH9LuDfbOLk0gdgopkESZaNHFmX18nP/xrkKNdxAZoA=;
+ b=MNM66wQxNW31Uz
+ gWPo1bLUTMlZ4jqSMC0UzYHQ4jrK3AFAOCoB7/7srYqPCyLMhXGFBdr+ljfADX3kQ8z19KH/zQ3vB
+ /dGypaO041AWCRsB4+qqN9Gwy5YTXKHtJI4NElRlq0Yy85qYOmp5BjKbSR00GlWNIEkWRyooF4lnj
+ tV5+Uvze+p+hzlbn8l1irPG25To2LihiV1to5yGoBMcViEHMsHAyoiIksndXvwUjn92zFyWSaUEJl
+ LZquTO6JM4ZdfrwHYIRMdrMjuFFq80heLC4u3w9TFJF8LkkyMVtZcQuM32iMiafAlBqmhGdVByJMs
+ joffUfUk4fV2vzqB0kiQ==;
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gm41x-0001s6-3p
- for wireless-regdb@lists.infradead.org; Tue, 22 Jan 2019 21:56:27 +0000
-Received: from mail-it1-f199.google.com ([209.85.166.199])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1gm41v-0004yE-1I
- for wireless-regdb@lists.infradead.org; Tue, 22 Jan 2019 21:56:23 +0000
-Received: by mail-it1-f199.google.com with SMTP id o205so100692itc.2 for
- <wireless-regdb@lists.infradead.org>; Tue, 22 Jan 2019 13:56:22 -0800 (PST)
-Date: Tue, 22 Jan 2019 15:56:19 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20190122215619.GX7206@ubuntu-xps13>
-References: 
-	 <CALjTZvZ6gAVH17fZwzM=PeO6CjtQCGoep=bqi6yYb6TJ6u5nfg@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALjTZvZ6gAVH17fZwzM=PeO6CjtQCGoep=bqi6yYb6TJ6u5nfg@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Add 5725-5875 MHz
- rule for Portugal (PT)
+ id 1gjP2L-0007GM-TY
+ for wireless-regdb@lists.infradead.org; Tue, 15 Jan 2019 13:45:51 +0000
+Message-ID: <03c1e278fdd880bf7409c0b1c03366178b765cda.camel@sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Tue, 15 Jan 2019 14:45:46 +0100
+In-Reply-To: <423eaa39-fc06-6a5a-a8fd-5e15d503dff5@quantenna.com>
+References: <423eaa39-fc06-6a5a-a8fd-5e15d503dff5@quantenna.com>
+Mime-Version: 1.0
+Subject: Re: [wireless-regdb] Tx power for slave devices in ETSI DFS region
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,42 +39,49 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Rui Salvaterra <rsalvaterra@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Igor Mitsyanko <igor.mitsyanko.os@quantenna.com>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Jan 12, 2019 at 09:35:11PM +0000, Rui Salvaterra wrote:
-> According to [1], SRD devices in this range are allowed in Portugal, as
-> specified in this document (page 56), and in compliance with ETSI EN 300 440-1.
-> 
-> [1] https://www.anacom.pt/streaming/25.5_10.000mhz.pdf?contentId=271706&field=ATTACHED_FILE
-> 
-> Signed-off-by: Rui Salvaterra <rsalvaterra@gmail.com>
+Hi Igor,
 
-Applied. Note though that your patch was malformed, the tabs had been
-replaced by a single space. I fixed this up manually, but in the future
-please try to ensure that your patch is not getting mangled when you
-send it. Thanks!
+On Tue, 2018-12-11 at 02:30 +0000, Igor Mitsyanko wrote:
+> Hello,
+> 
+> according to ETSI 
+> https://www.etsi.org/deliver/etsi_en/301800_301899/301893/02.01.01_60/en_301893v020101p.pdf
+> section 4.2.3.2.2, table 2
+> Note 3 states:
+>  >Slave devices without a Radar Interference Detection function shall 
+>  >comply with the limits for the frequency range 5 250 MHz to 5 350 MHz.
+> 
+> And Tx power limits are defined as following:
+> 5150 to 5350: 20 dbm
+> 5470 to 5725: 27 dbm
 
-> ---
->  db.txt | 2 ++
->  1 file changed, 2 insertions(+)
+> Which means that if STA device can not do radar detection, it must use 
+> 20dbm Tx powers on all channels (can not use 27 dbm limit).
 > 
-> diff --git a/db.txt b/db.txt
-> index fa5c0e0..66751f0 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -1044,6 +1044,8 @@ country PT: DFS-ETSI
->   (5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
->   (5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
->   (5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
-> + # short range devices (ETSI EN 300 440-1)
-> + (5725 - 5875 @ 80), (25 mW)
->   # 60 GHz band channels 1-4, ref: Etsi En 302 567
->   (57000 - 66000 @ 2160), (40)
 > 
-> -- 
-> 2.20.1
+> Looking at regdb 
+> https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt, 
+> power limit for frequency range 5470 to 5725 is defined at 27 dbm.
+
+I guess somebody misinterpreted the spec, or some countries are less
+strict?
+
+> Question is: does wireless core assumes that each device can do radar 
+> detection in slave modes (eg acting as a STA) and it is enabled by 
+> default? I couldn't find any logic in kernel which would limit 27 dbm 
+> power to 20 for STA devices.
+
+No, we shouldn't assume that it can do radar detection by itself ...
+
+I guess we should have some code? Or just fix the regdb?
+
+johannes
+
+
 
 _______________________________________________
 wireless-regdb mailing list
