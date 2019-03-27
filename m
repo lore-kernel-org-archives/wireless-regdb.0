@@ -3,38 +3,33 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=n2ZuvmE0cdSEyXwGM4MGfc/IkfTQhh6a+pLtfjYy95M=;
- b=OI7z4SuMZp8Qti
- 33nZkz4eEz2LXPv8RJ94gLYXFDSvBoy5CoR2u+xA8CXVruje3MP6iCkbmADQFBkmH/ovsB56+1ji5
- njTvDtxlPWEbB4ZguPqfMPT3jDTFZYsiKHtiR1ePbJLpRCe8kqCjS2K6kY/KIKtnn02mIpJ7oGw1n
- Ne6Qi7eMc/4H88zs9bD7XCvf0kW4QFXpSAv7LwNVCeCkpyaiig3gxgNhpaogYJ5o+luRel70eVP8j
- e37bdhkFLQIfXE5Anyb/wH2ME20NRuj4dQEEo27My6hoMlhQEb0BZkwiVrP+Qp+KYEHyuuvmPgefq
- 7Bpmf9yQY2PDNKcFnDXw==;
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1gvK5C-0002Ot-0k
- for wireless-regdb@lists.infradead.org; Sun, 17 Feb 2019 10:54:03 +0000
-Received: from mail-ed1-f72.google.com ([209.85.208.72])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1gvK56-0005SW-RZ
- for wireless-regdb@lists.infradead.org; Sun, 17 Feb 2019 10:53:56 +0000
-Received: by mail-ed1-f72.google.com with SMTP id j5so2270605edt.17 for
- <wireless-regdb@lists.infradead.org>; Sun, 17 Feb 2019 02:53:56 -0800 (PST)
-Date: Sun, 17 Feb 2019 11:53:53 +0100
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20190217105353.GA22074@ubuntu-xps13>
-References: <20181218080815.19395-1-chaitanya.mgit@gmail.com>
- <20190122211351.GW7206@ubuntu-xps13>
- <CABPxzY+jbfoVGF_fta3reHa5yngmp_+dVKCiu3DR-8WzzxAPow@mail.gmail.com>
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=QoknGujBlle84guYl8gADayhNeB2LJxVbxgkKV0NLjg=;
+ b=J4Tmhtm+hB9FVA
+ n9orIJSIn0OOpkgYGIZHYk/kXr3sdt4JqyckvXzE24yTkSxF7HGSIctL3hLs8kF/BcwVhCGWyd9Ow
+ Wya+8dosm5zzAAszQjpEHitZTW/1SK8oA7N9X57BTa4vygndWhE8NPcoGIqrjZhLNV6HrmNCt+3hM
+ u3wdpPqRmJ2+aig4Hq+SctZ0cYjYZcL4y+KWHdNI3DOnoVbYdcN60iEitW1Xa9K3JuK1z1jLBXUI1
+ L56ZmGWoyIsGSgda5sb09KMus9u+MoxxBvzN3CSMUCeDduvh7pBjrQmVQcm2zUVyDoet9ViWPMjdz
+ eeB7EpVqtKNgM3WQCoQQ==;
+Received: from mail-eopbgr80050.outbound.protection.outlook.com
+ ([40.107.8.50] helo=EUR04-VI1-obe.outbound.protection.outlook.com) by
+ bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux)) id
+ 1h9DNl-0000qs-2w for wireless-regdb@lists.infradead.org; Wed, 27 Mar 2019
+ 18:34:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bowerswilkins.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XjOKeSepVR0PgfuqP4cwrNtxLeJZBB8I83t3cDetHK8=;
+ b=tHj70jbbj0JXDw2B69W8OBbBi4r3VTECsKXTax4zNAb/GtkRncAQ5iTyTjDCwqeiFLcnFX/XkaD/KjedUgR2MJNU0/WbeN87a4hMgvUDooct9EKv+2qgZGiLe3MEUwlAtQA3ewJ81RRVkrxoeG+5Rx1lH+t2xLOyi3Qnk+aDCxo=
+From: Peter Oh <peter.oh@bowerswilkins.com>
+Date: Wed, 27 Mar 2019 18:34:29 +0000
+Message-ID: <1553711659-27600-1-git-send-email-peter.oh@bowerswilkins.com>
+Content-Language: en-US
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABPxzY+jbfoVGF_fta3reHa5yngmp_+dVKCiu3DR-8WzzxAPow@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update 60ghz band
- rules for us
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for South Korea
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,28 +44,46 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Krishna Chaitanya <chaitanya.mgit@gmail.com>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, Peter Oh <peter.oh@bowerswilkins.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Jan 23, 2019 at 04:19:26PM +0530, Krishna Chaitanya wrote:
-> On Wed, Jan 23, 2019 at 2:43 AM Seth Forshee <seth.forshee@canonical.com> wrote:
-> >
-> > On Tue, Dec 18, 2018 at 01:38:15PM +0530, chaitanya.mgit@gmail.com wrote:
-> > > From: Chaitanya Tata <Chaitanya.Mgit@gmail.com>
-> > >
-> > > Include channels 4, 5 & 6 for US in 60GHz band. FCC extended the
-> > > 57-64GHz band till 71GHz with almost same rules.
-> >
-> > This looks right to me based on my research. You're missing one thing
-> > though. You need to provide a Signed-off-by tag, please see the
-> > CONTRIBUTING file for more information. If you reply with your tag I
-> > will add it when I apply the patch. Thanks!
-> 
-> Sorry, didn't realize missed SO. You can use below. Thanks.
-> Signed-off-by: Chaitanya Tata <Chaitanya.Tata@bluwireless.co.uk>
+From: Peter Oh <peter.oh@bowerswilkins.com>
 
-Sorry for the delay. Applied now, thanks!
+Update power limit as documented in:
+https://www.rra.go.kr/FileDownSvl?file_type=LAWKR&file_parentseq=54&file_seq=27
+which revised on November 30, 2016.
+
+Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
+---
+ db.txt | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 4fb1948..52c17e9 100644
+--- a/db.txt
++++ b/db.txt
+@@ -695,11 +695,12 @@ country KP: DFS-JP
+ 	(5735 - 5815 @ 20), (30)
+ 
+ country KR: DFS-JP
+-	(2402 - 2482 @ 40), (13)
+-	(5170 - 5250 @ 80), (20), AUTO-BW
+-	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+-	(5490 - 5710 @ 160), (30), DFS
+-	(5735 - 5835 @ 80), (30)
++	# ref: https://www.rra.go.kr/ko/reference/lawList_view.do?lw_seq=54&lw_type=3&searchCon=&lw_select=ALL&lw_model=&searchTxt=
++	(2402 - 2482 @ 40), (23)
++	(5170 - 5250 @ 80), (17), AUTO-BW
++	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
++	(5490 - 5710 @ 160), (23), DFS
++	(5735 - 5835 @ 80), (23)
+ 	# 60 GHz band channels 1-4,
+ 	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
+ 	(57000 - 66000 @ 2160), (43)
+-- 
+2.7.4
+
 
 _______________________________________________
 wireless-regdb mailing list
