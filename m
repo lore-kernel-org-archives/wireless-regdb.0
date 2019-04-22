@@ -3,34 +3,35 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
+ In-Reply-To:References:Message-ID:Date:To:From:Reply-To:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=puQ7WBpFR/Z8MIkY85YyHVV3I/MBidmLcxBl9DcyPgw=;
- b=c0n2779DKCOKCz
- a9r6L3WTd7BDYinFGrN8Ps1tnOOpbQ5LU3SUWrP+4oax13Bf6yys6cy7nTyLRSly/AVL5sTUekV3n
- jCHP9x/Kts3uhg6QzxpFnbIjQAhRDpBxtOAOqGC0sXWK/SbY8thCtckyzwsw/iiLdfC2dRmOc8jHO
- joHMGNWxVCSKCWm7QukS6es8IXADXlPGeK9uof34uWhKVPQqCNmawqIgKpgKgztjFhzZmE5zy9uzh
- uB/jNplUDSb60ERIS6uOVCmOjQqaWC4lVtVRjLzGtiOKBgNI7PqaoyBZnekBU32T5IFj08OcMV0jE
- dSsiNULqnh3UIRFxpH7Q==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Owner; bh=rcfiC+DVXwj7deaMacXvz9hhx4hfQ66I2UY01MQXhDE=;
+ b=hixN7aE6jQM+NP
+ 7vHipFYG8lxOYRdKRevQgNYaSGKzv0Ouf39RfmGNZRUJCrTB1CJ6B/YBpUHvfT2X5Hu7mI9gmidCA
+ /B5LiYkONc384Ml5w+P5O21Hu+QDLDjAWxN0VPKhNdaQYERzRO0NxY5Jn6ojm8OqlBPFRDWxrQpga
+ DrhSrmeYdFsn9QgvNorNcuZEP0HluPvoz8yK5NeGjhspYMDYriZjzjLWSo/MOt7EtbdHFrHdnHwtZ
+ BS9b8Fu3u/Dbb0HrtH2SRXyEFgmZ3KxMx7C2No5XZiIJsJus+/9dJWXEFi54IHj3YAnnAZSeY2cZb
+ gBYGKsTe0Vh5U9586+5g==;
+Received: from mail-eopbgr130054.outbound.protection.outlook.com
+ ([40.107.13.54] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hDTbC-0002iY-7R
- for wireless-regdb@lists.infradead.org; Mon, 08 Apr 2019 12:42:09 +0000
-Received: from mail-yb1-f197.google.com ([209.85.219.197])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1hDTb8-0008Mm-Ga
- for wireless-regdb@lists.infradead.org; Mon, 08 Apr 2019 12:42:02 +0000
-Received: by mail-yb1-f197.google.com with SMTP id c14so10388471ybf.23 for
- <wireless-regdb@lists.infradead.org>; Mon, 08 Apr 2019 05:42:02 -0700 (PDT)
-Date: Mon, 8 Apr 2019 07:41:59 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20190408124159.GC15126@ubuntu-xps13>
+ id 1hIdIc-0006Hv-Qh
+ for wireless-regdb@lists.infradead.org; Mon, 22 Apr 2019 18:04:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bowerswilkins.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=SvTKgEK92BC1q1pkrS3ECBx/1pdFBy3+DQ4imjb6kpM=;
+ b=bR85LHdTPCELpei24BdO1JxuboeG/eSpnes4JL6bTeEmRMa8PSHz5j2aVZ+sa9FAsQiVfHaSjxjRi4yzugyM69QmtAnasBMN9yG2jdB9T9pzHmnVTQT320+bcPp62SxXg16vqwJEfNTAibKfwVhjfO4Ps6xiR5PcPJvycNxpEIo=
+From: Peter Oh <peter.oh@bowerswilkins.com>
+Date: Mon, 22 Apr 2019 18:04:09 +0000
+Message-ID: <af4d49d9-fc9e-ebe3-20ab-edef6c12a2eb@bowerswilkins.com>
 References: <1553711659-27600-1-git-send-email-peter.oh@bowerswilkins.com>
+ <20190408124159.GC15126@ubuntu-xps13>
+In-Reply-To: <20190408124159.GC15126@ubuntu-xps13>
+Content-Language: en-US
+Content-ID: <62B8A4A83EEC9847BFF09AEF38E1DBEF@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1553711659-27600-1-git-send-email-peter.oh@bowerswilkins.com>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
  rules for South Korea
 List-Unsubscribe: 
@@ -47,62 +48,32 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Peter Oh <peter.oh@bowerswilkins.com>
+To: Seth Forshee <seth.forshee@canonical.com>
 Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Mar 27, 2019 at 06:34:29PM +0000, Peter Oh wrote:
-> From: Peter Oh <peter.oh@bowerswilkins.com>
-> 
-> Update power limit as documented in:
-> https://www.rra.go.kr/FileDownSvl?file_type=LAWKR&file_parentseq=54&file_seq=27
-> which revised on November 30, 2016.
-> 
-> Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
 
-I usually try to check the changes against the documents, but in this
-case I haven't been able to get any English tranlation for the document
-(or even view the contents it in any meaningful way). I don't suppose
-you know where to find an English version of the document?
+
+On 04/08/2019 05:41 AM, Seth Forshee wrote:
+> On Wed, Mar 27, 2019 at 06:34:29PM +0000, Peter Oh wrote:
+>> From: Peter Oh <peter.oh@bowerswilkins.com>
+>>
+>> Update power limit as documented in:
+>> https://www.rra.go.kr/FileDownSvl?file_type=LAWKR&file_parentseq=54&file_seq=27
+>> which revised on November 30, 2016.
+>>
+>> Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
+> I usually try to check the changes against the documents, but in this
+> case I haven't been able to get any English tranlation for the document
+> (or even view the contents it in any meaningful way). I don't suppose
+> you know where to find an English version of the document?
+Unfortunately there is no English version of the doc. Typically I use 
+Google translation to understand foreign language, but in this case I 
+contacted that department personally via phone call and directed to the 
+doc by the responsible person from the department.
 
 Thanks,
-Seth
-
-> ---
->  db.txt | 11 ++++++-----
->  1 file changed, 6 insertions(+), 5 deletions(-)
-> 
-> diff --git a/db.txt b/db.txt
-> index 4fb1948..52c17e9 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -695,11 +695,12 @@ country KP: DFS-JP
->  	(5735 - 5815 @ 20), (30)
->  
->  country KR: DFS-JP
-> -	(2402 - 2482 @ 40), (13)
-> -	(5170 - 5250 @ 80), (20), AUTO-BW
-> -	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
-> -	(5490 - 5710 @ 160), (30), DFS
-> -	(5735 - 5835 @ 80), (30)
-> +	# ref: https://www.rra.go.kr/ko/reference/lawList_view.do?lw_seq=54&lw_type=3&searchCon=&lw_select=ALL&lw_model=&searchTxt=
-> +	(2402 - 2482 @ 40), (23)
-> +	(5170 - 5250 @ 80), (17), AUTO-BW
-> +	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
-> +	(5490 - 5710 @ 160), (23), DFS
-> +	(5735 - 5835 @ 80), (23)
->  	# 60 GHz band channels 1-4,
->  	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
->  	(57000 - 66000 @ 2160), (43)
-> -- 
-> 2.7.4
-> 
-> 
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
+Peter
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
