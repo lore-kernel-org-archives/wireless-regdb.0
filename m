@@ -3,35 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
- In-Reply-To:References:Message-ID:Date:To:From:Reply-To:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=rcfiC+DVXwj7deaMacXvz9hhx4hfQ66I2UY01MQXhDE=;
- b=hixN7aE6jQM+NP
- 7vHipFYG8lxOYRdKRevQgNYaSGKzv0Ouf39RfmGNZRUJCrTB1CJ6B/YBpUHvfT2X5Hu7mI9gmidCA
- /B5LiYkONc384Ml5w+P5O21Hu+QDLDjAWxN0VPKhNdaQYERzRO0NxY5Jn6ojm8OqlBPFRDWxrQpga
- DrhSrmeYdFsn9QgvNorNcuZEP0HluPvoz8yK5NeGjhspYMDYriZjzjLWSo/MOt7EtbdHFrHdnHwtZ
- BS9b8Fu3u/Dbb0HrtH2SRXyEFgmZ3KxMx7C2No5XZiIJsJus+/9dJWXEFi54IHj3YAnnAZSeY2cZb
- gBYGKsTe0Vh5U9586+5g==;
-Received: from mail-eopbgr130054.outbound.protection.outlook.com
- ([40.107.13.54] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+ List-Archive:List-Unsubscribe:List-Id:Subject:Message-ID:Date:From:
+ In-Reply-To:References:MIME-Version:Reply-To:To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Owner;
+ bh=El9AMqUu3FUq4BK4VjLqqt5C7z/vhlHLvpm7O4XMWsI=;
+ b=B8QXsgZ6X/IBcPRf9OmzJE40jJ
+ 4+VNJgABJjD8BL79rFhweKvDQAXOjPzNvHZ3J2FawxOy7ilmSu9naMm+m9J+R2f4nnLuY+PhKpHgx
+ UxKyZ8G6oCoi925jO9Ss1ey5zk5iyyWp2uI4ef+W8smk0knQVlwecJcJfoWbE28ZKA6tZY32O83Zr
+ CpH0uS3zmTVjzz3kzso9kgdrTgW1KCfDC0ICeBHRGLOSaqGaG1n5TaYNQnTccDMilj3o3AJrYKtiM
+ 92VmIDIvmsyRPqwA/cqNHqTkD/RdU0ijah87wl8xdKmwI1EFUTzlPLd9+olCIGZImgBBIBU0Wyi84
+ yrQ1akCw==;
+Received: from mail-ot1-x334.google.com ([2607:f8b0:4864:20::334])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hIdIc-0006Hv-Qh
- for wireless-regdb@lists.infradead.org; Mon, 22 Apr 2019 18:04:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bowerswilkins.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SvTKgEK92BC1q1pkrS3ECBx/1pdFBy3+DQ4imjb6kpM=;
- b=bR85LHdTPCELpei24BdO1JxuboeG/eSpnes4JL6bTeEmRMa8PSHz5j2aVZ+sa9FAsQiVfHaSjxjRi4yzugyM69QmtAnasBMN9yG2jdB9T9pzHmnVTQT320+bcPp62SxXg16vqwJEfNTAibKfwVhjfO4Ps6xiR5PcPJvycNxpEIo=
-From: Peter Oh <peter.oh@bowerswilkins.com>
-Date: Mon, 22 Apr 2019 18:04:09 +0000
-Message-ID: <af4d49d9-fc9e-ebe3-20ab-edef6c12a2eb@bowerswilkins.com>
+ id 1hJ2RT-0005Py-34
+ for wireless-regdb@lists.infradead.org; Tue, 23 Apr 2019 20:55:04 +0000
+Received: by mail-ot1-x334.google.com with SMTP id m10so14167440otp.2 for
+ <wireless-regdb@lists.infradead.org>; Tue, 23 Apr 2019 13:55:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:cc;
+ bh=jV4L+mmXFkqmJPU3rBnTt6VfAI3WCqS3o+AsMCIXENs=;
+ b=W1ggR+b8bphEymsuPQF9EByOgzM+JNq9Cj6vQy8SvENNp5TGE7DJZ0BfkEQlTMx7nR
+ KlFj1JQDgO0WOcBOJklKewGg3pL3evXAkKB/zu+6S7g8RvXgY51LoqhkIv/Uk4uMwbN5
+ ffnWUPc1om7PaJJPzBA00/rSvEq2geFrlDsAOED9JL/VcS9YYqXQaiIY5L0fdDPpYa0i
+ haE0R1yL7vulnOB4tOJyS4ZffjrA4A4Bsr+ytUYQmVMy6jkq52U1dpJijXrQ9/7vtZqG
+ pGydO+zsGGQMdsncz9WoYgRV32S8xcqqUPfMlQ4Z1BRnk4uS+HapfjwYx/iUOhQAHrAl fSaA==
+MIME-Version: 1.0
 References: <1553711659-27600-1-git-send-email-peter.oh@bowerswilkins.com>
  <20190408124159.GC15126@ubuntu-xps13>
-In-Reply-To: <20190408124159.GC15126@ubuntu-xps13>
-Content-Language: en-US
-Content-ID: <62B8A4A83EEC9847BFF09AEF38E1DBEF@eurprd04.prod.outlook.com>
-MIME-Version: 1.0
+ <af4d49d9-fc9e-ebe3-20ab-edef6c12a2eb@bowerswilkins.com>
+In-Reply-To: <af4d49d9-fc9e-ebe3-20ab-edef6c12a2eb@bowerswilkins.com>
+From: b.K.il.h.u+tigbuh@gmail.com
+Date: Tue, 23 Apr 2019 22:54:50 +0200
+Message-ID: <CAPuHQ=Grm6fEdP95jfj4zEXCr8be0PMOb9iv3oeYUt0y2Oeshw@mail.gmail.com>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
  rules for South Korea
 List-Unsubscribe: 
@@ -48,32 +53,42 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
+Could you please convert the document in question to a more open
+format so we could try machine translation on it? ODT, HTML, docx and
+PDF would probably work as long as copy & pasting is enabled.
 
+I found 1 offline and 2 online viewers, not sure which one works:
+https://www.hancom.com/global/cs_center/csDownload.do
+https://store.thinkfree.com/en/join
+https://nid.naver.com/user2/V2Join.nhn?m=agree&lang=en_US&cpno=
 
-On 04/08/2019 05:41 AM, Seth Forshee wrote:
-> On Wed, Mar 27, 2019 at 06:34:29PM +0000, Peter Oh wrote:
->> From: Peter Oh <peter.oh@bowerswilkins.com>
->>
->> Update power limit as documented in:
->> https://www.rra.go.kr/FileDownSvl?file_type=LAWKR&file_parentseq=54&file_seq=27
->> which revised on November 30, 2016.
->>
->> Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
-> I usually try to check the changes against the documents, but in this
-> case I haven't been able to get any English tranlation for the document
-> (or even view the contents it in any meaningful way). I don't suppose
-> you know where to find an English version of the document?
-Unfortunately there is no English version of the doc. Typically I use 
-Google translation to understand foreign language, but in this case I 
-contacted that department personally via phone call and directed to the 
-doc by the responsible person from the department.
+The trial editor may also support exporting.
 
-Thanks,
-Peter
+On Mon, Apr 22, 2019 at 8:05 PM Peter Oh <peter.oh@bowerswilkins.com> wrote:
+> On 04/08/2019 05:41 AM, Seth Forshee wrote:
+> > On Wed, Mar 27, 2019 at 06:34:29PM +0000, Peter Oh wrote:
+> >> From: Peter Oh <peter.oh@bowerswilkins.com>
+> >>
+> >> Update power limit as documented in:
+> >> https://www.rra.go.kr/FileDownSvl?file_type=LAWKR&file_parentseq=54&file_seq=27
+> >> which revised on November 30, 2016.
+> >>
+> >> Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
+> > I usually try to check the changes against the documents, but in this
+> > case I haven't been able to get any English tranlation for the document
+> > (or even view the contents it in any meaningful way). I don't suppose
+> > you know where to find an English version of the document?
+> Unfortunately there is no English version of the doc. Typically I use
+> Google translation to understand foreign language, but in this case I
+> contacted that department personally via phone call and directed to the
+> doc by the responsible person from the department.
+>
+> Thanks,
+> Peter
+
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
