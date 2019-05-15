@@ -6,32 +6,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=QZn2Vfb+pQFcu5PE6Iv8a5izd0vSSUb+SGD9BX8hXrU=;
- b=EchWSz0KSSdTba
- GGLzteqUYPBnFVfO0hZFTRAHxD1w+q4sObY2SnE2qEaGG+eFUD/yZ2gLbFvYUxtcvucRPyfk6DFss
- QHlOb78axyMBQnZvKTAGq6r9enBNSv1w6oHKYZpcP6b1qzqQvB1lOnIoVEA3d8Ow+1d1EAMSXJ0nx
- uY56l5rQMWhPx9jw3U74rC0LrplGt7h6mmbqAgyy6MJeDPAsTSZ3NbFQ2NzNXLPdqhPVYrwxVndrw
- ycY+ViccEk7X7V+gK33mKxYDqQiYDnnZlQOPNPrzkEwThULaMMmsiSjn270vrIzI+5ZYMPs893jlH
- L7wgtKhgoTrgHveFExJg==;
+ List-Owner; bh=D/J9/Q80CR8Tmbu4u7drrhbSwQazG6+9OH7/zJc6z48=;
+ b=ohO4J2yvLtGIK6
+ gJrb7SDey5r45oqJ0RbwVgmGlwEr93Buu1qmpzRDgv19F7qAQTDbR+rK2TPQh1fGq0j7+fMi0rqXW
+ osL0fVbDnAlpP7eHv0rmKXn+q/XC4GzHpwrJNaTXcXo75e/OuWQQebuYojIKjJMF3oLSgokHLuhLJ
+ iF0pJuVrTuYBhiFVZo5u/J8EgoLdVhwMwfaW2uYo0cb0vciIbf9Vrbkavd4CtYPj4SEMFfn1TyUxK
+ uHz9pKigz6Ue0cYBHoQWnw1Xr4/jfiFbnXrAEzsRrBtP349dqpbrvMOl0I2EPwdsDjKxG0E95qxG/
+ AzUuxXUBBl1UHOcWdGXg==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hVbI9-0004BS-Mi
- for wireless-regdb@lists.infradead.org; Tue, 28 May 2019 12:33:24 +0000
-Received: from mail-io1-f71.google.com ([209.85.166.71])
+ id 1hQtZS-0006B4-C8
+ for wireless-regdb@lists.infradead.org; Wed, 15 May 2019 13:03:49 +0000
+Received: from mail-it1-f199.google.com ([209.85.166.199])
  by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
  (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1hVbHX-0007fg-Ni
- for wireless-regdb@lists.infradead.org; Tue, 28 May 2019 12:32:43 +0000
-Received: by mail-io1-f71.google.com with SMTP id r27so5286878iob.14 for
- <wireless-regdb@lists.infradead.org>; Tue, 28 May 2019 05:32:43 -0700 (PDT)
-Date: Tue, 28 May 2019 07:32:40 -0500
+ id 1hQtZO-0006Rs-6g
+ for wireless-regdb@lists.infradead.org; Wed, 15 May 2019 13:03:42 +0000
+Received: by mail-it1-f199.google.com with SMTP id z125so2231062itf.4 for
+ <wireless-regdb@lists.infradead.org>; Wed, 15 May 2019 06:03:42 -0700 (PDT)
+Date: Wed, 15 May 2019 08:03:39 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20190528123240.GK4357@ubuntu-xps13>
-References: <1557948501-12579-1-git-send-email-peter.oh@bowerswilkins.com>
+Message-ID: <20190515130339.GY4357@ubuntu-xps13>
+References: <1556314283-17842-1-git-send-email-peter.oh@bowerswilkins.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1557948501-12579-1-git-send-email-peter.oh@bowerswilkins.com>
-Subject: Re: [wireless-regdb] [PATCH v3] wireless-regdb: Update regulatory
+In-Reply-To: <1556314283-17842-1-git-send-email-peter.oh@bowerswilkins.com>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
  rules for South Korea
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
@@ -51,7 +51,7 @@ To: Peter Oh <peter.oh@bowerswilkins.com>
 Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, May 15, 2019 at 07:28:29PM +0000, Peter Oh wrote:
+On Fri, Apr 26, 2019 at 09:31:31PM +0000, Peter Oh wrote:
 > From: Peter Oh <peter.oh@bowerswilkins.com>
 > 
 > Update power limit as documented in:
@@ -63,8 +63,51 @@ On Wed, May 15, 2019 at 07:28:29PM +0000, Peter Oh wrote:
 > which revised on December 27, 2018.
 > 
 > Signed-off-by: Peter Oh <peter.oh@bowerswilkins.com>
+> ---
+>  db.txt | 11 ++++++-----
+>  1 file changed, 6 insertions(+), 5 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 4fb1948..8d24305 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -695,11 +695,12 @@ country KP: DFS-JP
+>  	(5735 - 5815 @ 20), (30)
+>  
+>  country KR: DFS-JP
+> -	(2402 - 2482 @ 40), (13)
+> -	(5170 - 5250 @ 80), (20), AUTO-BW
+> -	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> -	(5490 - 5710 @ 160), (30), DFS
+> -	(5735 - 5835 @ 80), (30)
+> +	# ref: https://www.rra.go.kr
+> +	(2402 - 2482 @ 40), (23)
+> +	(5170 - 5250 @ 80), (23), AUTO-BW
+> +	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
+> +	(5490 - 5710 @ 160), (23), DFS
+> +	(5735 - 5835 @ 80), (23)
 
-Applied, thanks!
+Is there any mention of transmit power control in the document? The fact
+that some of the old limits are exactly half of they values you've given
+makes me wonder if they weren't set lower for TPC, especially for
+5250-5350 MHz where TPC is common.
+
+Since you're changing these rules, I'd also like to see the frequency
+ranges changed to match the documented ranges, i.e.:
+
+ 2400 - 2483.5
+ 5150 - 5250
+ 5250 - 5350
+ 5470 - 5710
+ 5735 - 5850
+
+I left the gap in the 5470-5850 MHz range since I can't tell exactly
+where the DFS requirement ends. Usually it seems to be 5725 MHz, but
+that is not universal. If you can determine where the break is those
+ranges could also be expanded.
+
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
