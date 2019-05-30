@@ -6,30 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
  :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=QA2G8Jm0o6RwYpE0ouauKLcgU54Bgb6N9rlmrigVdO8=;
- b=V9DAbYopigfXyv
- 0mk6hUUtZcNHydoVpdrCsu7NU8e8sx8LPJq+XEq3Vjsvo4aLp0pHexNrMaVd+MeK1u60Te3gDJNT5
- JH0682xHtK/zXkVqVdldGxDwpcy0tuitBDbJdjTOo06iJ4Di4JhvxIiyLD1XPvN9rALjYCXSXQvMh
- fqClLM7OyRsjhlVM+MmX1R+CF9PnsgdOqczvYvfaNd4sp2bam+RIDF10/o0RoFS+M+rl3rExKu2oA
- eyv7e/of4qn59LlkO1hwypOFhBpXjBH+dZ+HqwN7qef3ASRB/66Hsb1h+ozfaFT9VSqqLItZjLnO3
- hzVM1A47zVPeoJRaMcxg==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Owner; bh=NyJ2X3E58xJ8mTB4IyHKNKTcjfGW+354JqpVwRVlJMU=;
+ b=ZYYqR9Jz7JSNWP
+ 9kidLWdgs7IniqwbzpUvtIB+WGXqFgzddWjpuqY7yaOkzUBrtXqoxu0barwDriDPfGbg13j+JUUlz
+ PJNGLhrNBiY/TGK7c5Bkgimgl70aFVAfqJIh1gBzU3Pc75z4pI2P5QFaEaUqEjyMlc/b7offKam+e
+ Oyc91ktebGw7M27jRBT04Bm0pNOheBIxIMjFFd6PZ/S3oFW8+8KUbEf40dQi16JetPj3SqTXbTvh4
+ CHIUDMoWFcxb4W5oWHCucDBl+YRhPLF90Ojv+NxqO4yXkmX3XJC5lUUkr7WiqXnDcx/yf36KEANcm
+ teCMLMe6BS0IMnXu7mAg==;
+Received: from mail-wr1-x434.google.com ([2a00:1450:4864:20::434])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQtvJ-0007lc-Hv
- for wireless-regdb@lists.infradead.org; Wed, 15 May 2019 13:26:23 +0000
-Received: from mail-io1-f72.google.com ([209.85.166.72])
- by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
- (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
- id 1hQtvH-0007x2-S8
- for wireless-regdb@lists.infradead.org; Wed, 15 May 2019 13:26:20 +0000
-Received: by mail-io1-f72.google.com with SMTP id s24so1852806iot.0 for
- <wireless-regdb@lists.infradead.org>; Wed, 15 May 2019 06:26:19 -0700 (PDT)
-From: Seth Forshee <seth.forshee@canonical.com>
-Date: Wed, 15 May 2019 08:26:17 -0500
-Message-Id: <20190515132617.12852-1-seth.forshee@canonical.com>
+ id 1hWInm-0004iP-6B
+ for wireless-regdb@lists.infradead.org; Thu, 30 May 2019 11:00:55 +0000
+Received: by mail-wr1-x434.google.com with SMTP id c2so3903734wrm.8 for
+ <wireless-regdb@lists.infradead.org>; Thu, 30 May 2019 04:00:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=MGPVSvsyKkN6sDIhHTrpeJlzh0x/CzT2w7QlXH6Xvy0=;
+ b=KiaAOaDvOsiPSwH83Hpw+7stZDBgTmT5AgqYI9ExYk2RVu3jpecfhZ2PW9wf0qGP8G
+ 9TltfC/MM1+heZMb9OkVRTcX7SzJuTpkldF0zgSyXiIzcEptIGN8fpZHW4QB/3GPT7h7
+ mGuHJuGwfWn1VZ+mFAVDdlhqjdsfkjilKxr4CbGLUM21uhgZaO0kEsJsVqQ3GPO7CEpH
+ oxEx3piaksfnb5c/zkJVvElpSesTQWVkH3oHjb445r01grjfY7WrbqYRnmLUkIayQgcG
+ 3T698YqHEznrelnfEBGHj7RIc0z2jV5elKZNISsPtNsL9XKIbwVatdrP4p/HKkr8GXwb L3og==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Thu, 30 May 2019 13:00:47 +0200
+Message-Id: <20190530110047.3449-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Expand 60 GHz band for
- Japan to 57-66 GHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update source of
+ information for CU
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -39,46 +43,40 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The official documents are not feely available, but based on
-summaries such as [1] and numerous third-party resources the 60
-GHz band in Japan has been 57-66 GHz for some time now. Update
-our rules accordingly.
-
-[1] https://webstore.arib.or.jp/en/products/detail.php?product_id=288
-
-Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+Cc: Seth Forshee <seth.forshee@canonical.com>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
+Cc: REGDB ML <wireless-regdb@lists.infradead.org>
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
 ---
  db.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/db.txt b/db.txt
-index 4fb194835116..e11e0f747386 100644
+index 6b65312..3bdc7c0 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -664,7 +664,7 @@ country JP: DFS-JP
- 	(5490 - 5710 @ 160), (23), DFS
- 	# 60 GHz band channels 2-4 at 10mW,
- 	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
--	(59000 - 66000 @ 2160), (10 mW)
-+	(57000 - 66000 @ 2160), (10 mW)
+@@ -316,7 +316,7 @@ country CR: DFS-FCC
+ 	(5735 - 5835 @ 20), (30)
  
- country KE: DFS-JP
- 	(2402 - 2482 @ 40), (20)
+ # Source:
+-# http://www.mincom.gob.cu/?q=marcoregulatorio
++# https://www.mincom.gob.cu/es/marco-legal
+ # - Redes Informáticas
+ # Resolución 127- 2011 Reglamento de Banda de frecuencias de 2,4 GHz.
+ country CU: DFS-FCC
 -- 
-2.20.1
+2.21.0
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
