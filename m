@@ -3,37 +3,36 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
- :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=ePMHVrUmNOuYVIXrREctyOAw71Uyez57CjbqhAfbx4I=;
- b=tyebrdkZt2sYPw
- gw6LQcLMjijdnl7fyTq+ALzBCWWSDlrcsiSWc3gPOZwnSetnYBctWEBL48OyrEe5UPcmHJJoVNT9Y
- bQiussqkazWa2CX9J5qgUXrVZzIbAVd2Fg+JbJUNaUd9kKWTWcFIhegXV+xj/DEO5XQXytP4F1Qke
- 4KTANAi1QzAjXO5YR0lCpZSW/OVR8FBo7XYn4uejzfwQj9LE1vU4/c0+vffzUoQhFLnavF1U2UtZD
- wNVaABWKfLQ+19xQ0pJR4oXc69WG6L38QIkKFMvxHU/U6DXr/Pckv5uQ1BNaNM5pweMv59KDfAY/3
- EBf64lo/w2YfaZbZzlrg==;
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=cbaBEuyFnawNux+DhN7vAjJWJSM/f6RsVVV67CjkZZs=;
+ b=HaxCKlrlnNyA6x
+ L6824/L9foD7UdPusa0esXmaiSV6is8uOMDmCRz/c1MRy0NluXEfUkem7TNmrLkcKo9Z0F2nWn0TC
+ 9ZiTpnxfngWkWOvFy0P02dxEem6I1a7WpcYWFem6+VPFL0ii5LVA+MZOhgp18reC4GOW/ow5Q3V18
+ JXqqNLvHC0qoqlcikcCYZwyTKdgMn1gJbPtTJF/MH/WBOUeVW/vXmNPGVQi8F11IgVJmhGb7xUdCv
+ LtnrtjUVKr7wc8re+fSFlZRfkU1SSzmic/inPq2+YO5bepvyUs7D/z1SeVhKXtKgfyo8rCYJufc4s
+ TCIZGK2HPl1wzyijvtig==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3kCg-00047d-Ap
- for wireless-regdb@lists.infradead.org; Fri, 30 Aug 2019 16:56:52 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e27so7091936ljb.7 for
- <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2019 09:56:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=LqizBXax0mkO4gxIZRPwBrd4VcJG7zs6D6D/3vSkVdo=;
- b=nkQ4Em09M/EJ1BWGTo3sxQANyOOs8LboG1LQh66nOapSCQ1YakZhv/IbA8g9ZaPHBg
- sYucTURCONeFJakGGyFcE7repjibY04K7FVtdOdhB8N04pMERv8eyKJPAI/8SwLzLYGn
- 1fv/fYzgOiPpLPNswHMoMIb03fuNaaMy0PRUU6nhZjgHzhmwmAjZxBzVzyBmxniWKrqu
- JTBg43qyBex+QkAusLI/KVD8qf1qJMvBYCvmREiLDxIkQ72OgjtZ2cVXPZZKrTUi9+Re
- SOUVNg8DVETR/Z3U2mEcgdSM4RbEeS8FTxU8dfQ5RWbVDrOt98l0RsY1frDtU9lUFFJp MO7A==
-From: Dmitry Tunin <hanipouspilot@gmail.com>
-Date: Fri, 30 Aug 2019 19:56:35 +0300
-Message-Id: <1567184195-24992-1-git-send-email-hanipouspilot@gmail.com>
+ id 1i1EnS-0001E9-E8
+ for wireless-regdb@lists.infradead.org; Fri, 23 Aug 2019 19:00:28 +0000
+Received: from mail-io1-f71.google.com ([209.85.166.71])
+ by youngberry.canonical.com with esmtps (TLS1.0:RSA_AES_128_CBC_SHA1:16)
+ (Exim 4.76) (envelope-from <seth.forshee@canonical.com>)
+ id 1i1EnO-0002d9-Jn
+ for wireless-regdb@lists.infradead.org; Fri, 23 Aug 2019 19:00:22 +0000
+Received: by mail-io1-f71.google.com with SMTP id e20so12208812ioe.12 for
+ <wireless-regdb@lists.infradead.org>; Fri, 23 Aug 2019 12:00:22 -0700 (PDT)
+Date: Fri, 23 Aug 2019 14:00:19 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20190823190019.GZ3071@ubuntu-xps13>
+References: <1564427246-25592-1-git-send-email-hanipouspilot@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] =?utf-8?q?=5BPATCH=5D_wireless-regdb=3A_update_?=
- =?utf-8?q?regulatory_rulez_for_Kazak=D1=80stan_=28KZ=29?=
+Content-Disposition: inline
+In-Reply-To: <1564427246-25592-1-git-send-email-hanipouspilot@gmail.com>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: update regulatory
+ rules for Russia (RU) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,58 +42,71 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Dmitry Tunin <hanipouspilot@gmail.com>
+To: Dmitry Tunin <hanipouspilot@gmail.com>
+Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Update according to the regulatory rule of January 21, 2015
+On Mon, Jul 29, 2019 at 10:07:26PM +0300, Dmitry Tunin wrote:
+> Russian entry is incorrect. According to the last regulations document of Feb 29, 2016,
+> 160 MHz channels and 802.11ad are allowed.
+> 
+> http://rfs-rf.ru/upload/medialibrary/c1a/prilozhenie-1-k-resheniyu-gkrch-_-16_36_03.pdf
+> 
+> Note that there was never a DFS requirement in Russia, but always was
+> NO-OUTDOOR on 5GHz.
+> Maximum power is 200mW that is ~23dBm on all 5GHz channels.
+> Also Russia has never been regulated by ETSI.
+> 
+> Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+> ---
+>  db.txt | 10 ++++------
+>  1 file changed, 4 insertions(+), 6 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 37393e6..d95ed5e 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -1097,14 +1097,12 @@ country RS: DFS-ETSI
+>  	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> -country RU: DFS-ETSI
+> +country RU:
+>  	(2402 - 2482 @ 40), (20)
+> -	(5170 - 5250 @ 80), (20), AUTO-BW
+> -	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> -	(5650 - 5730 @ 80), (30), DFS
+> -	(5735 - 5835 @ 80), (30)
+> +	(5170 - 5350 @ 160), (23), NO-OUTDOOR
+> +	(5650 - 5850 @ 160), (23), NO-OUTDOOR
 
-http://egov.kz/cms/ru/law/list/V1500010730
-https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
+Based on the translation I've read of the document you've linked to as
+well as a couple of others, it sounds like the use of these ranges
+requires TPC. Since TPC is not supported in Linux, we need to reduce the
+max EIRP for these ranges to 20 dBm.
 
-No DFS or TPC is mentioned in the document. Neither is 80 MHz channel width.
+While modifying them, let's also update the 5170-5350 range to 5150-5350
+to match the regulations.
 
-Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
----
- db.txt | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+Thanks,
+Seth
 
-diff --git a/db.txt b/db.txt
-index 37393e6..491598e 100644
---- a/db.txt
-+++ b/db.txt
-@@ -717,13 +717,13 @@ country KY: DFS-FCC
- 	(5735 - 5835 @ 80), (30)
- 
- # Source:
--# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
--# http://adilet.zan.kz/rus/docs/P000001379_
--country KZ: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
--	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
--	(5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
-+# http://egov.kz/cms/ru/law/list/V1500010730
-+# https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
-+country KZ:
-+	(2400 - 2483.5 @ 40), (20)
-+	(5150 - 5350 @ 160), (23), NO-OUTDOOR
-+	(5470 - 5850 @ 160), (20), NO-OUTDOOR
-+	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
- 
- country LB: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--- 
-2.7.4
-
+>  	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order №129_22042015.pdf
+> -	(57000 - 66000 @ 2160), (40)
+> +	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+>  
+>  country RW: DFS-FCC
+>  	(2402 - 2482 @ 40), (20)
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
