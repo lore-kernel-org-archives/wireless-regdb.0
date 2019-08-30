@@ -2,45 +2,36 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:In-Reply-To:To:
- References:Date:Mime-Version:From:Reply-To:Cc:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=sKPC7GgYtqgz+7Y0vWik1dGkdjWVUoQNpnWln3VbMtk=;
- b=JjwxN2bJwpqzy3
- sQDZgGwQm7PFL01u8/fvSpG978Tswk/y/uxYEa8e1aL0DQMLv19S4pW8aagOi6wHD8wYXrsdMLxsf
- pe0+bAyc2mjH6gftSr2GvRwm7X0t5Ax9bMabRVlxgigt+WAshsbElmEP4vYZpPG8ZVSztlQphXhMv
- RCdj0gIR9eoMZ1HGYzcNwU0seEV6ojx29CBcTtisNMHovgzS/wFShJsqdBrnBFRRYSjDfFaaB+Ymq
- plAF7wZNODCxZwjtrgknmemlgPup22Sd6Og6e61l+2wrZWvO+mrKa0omQNAONIEDJ+QsAHAydjsEd
- Bxw4Rwgv7YXmgAzyRviw==;
-Received: from mail-pg1-x532.google.com ([2607:f8b0:4864:20::532])
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=ePMHVrUmNOuYVIXrREctyOAw71Uyez57CjbqhAfbx4I=;
+ b=sROp689DBGTtWf
+ RVuPG6m5xDkd2bvfHsgBvSelTq7CjaCgAoy1o6RUiegbZHcQuaLztgQDMUPEEuTp7wm9TdnvJLkjc
+ EkSalJ4PkoJMHgl6VV72sZuR8iNO3g6zfL9RVzbABi4PhoT5jeE1AO7jjDeBtvEU7JUTORzCC8axf
+ WN8bLVxicneLOhJhdbgu5YKAw7Es8X2b55ALOT57UrnM5QtebWyXzIPICo2+s2ku12iWP5cvABWap
+ hp5JLGX8OolSy9AlGHummenK0kDJ/BGC/sI0uDD5xZWDvr10cb5urVcH26Ysl9xOTOppfUpsztblO
+ aUpKiBl0ThN4sam5Sp7g==;
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i27AY-0004wm-SL
- for wireless-regdb@lists.infradead.org; Mon, 26 Aug 2019 05:03:57 +0000
-Received: by mail-pg1-x532.google.com with SMTP id k3so9808537pgb.10 for
- <wireless-regdb@lists.infradead.org>; Sun, 25 Aug 2019 22:03:53 -0700 (PDT)
+ id 1i3lZx-0006xq-UF
+ for wireless-regdb@lists.infradead.org; Fri, 30 Aug 2019 18:24:59 +0000
+Received: by mail-lf1-x141.google.com with SMTP id u29so6029095lfk.7 for
+ <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2019 11:24:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025;
- h=from:content-transfer-encoding:mime-version:subject:date:references
- :to:in-reply-to:message-id;
- bh=NvHCs4kG58XaNvTeRN+/3UyZFuSaxUHqxJJeprgoN/M=;
- b=aIJ9dn9Es3/yG7gfPYNTcszcu5QNuntRMtxhGvWSik/amrgqx8vwPXtTXqHRSt7C90
- H/FHz+PfrwhqKJ9fHD0r9uelSfjdZzuYIQqaVFJaAswIVZAcHQ8wMn0xUYuo2x9N32MK
- 8+wSKkb/sVafnIAQtOvoNA2l7XWuDfgNmXayKlyQAbKGpFeWEqq6licqks5WiJZLXNTD
- o6Tik19Gf8B9YfGq1kt4Cz7UPR826uEG8IxGBTNAdKZeRT4v0LDbLNNlZa0yyAPeyf/s
- UxLhlw6hJHp34IFZcGvl8UzIEOyQNKAuUZ140IDGi5t9IcAIzdjbhTHrkHx7VacuhF+L Ggiw==
-Received: from [10.128.5.75] ([117.20.41.9])
- by smtp.gmail.com with ESMTPSA id j1sm2595822pfh.174.2019.08.25.22.03.51
- for <wireless-regdb@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 25 Aug 2019 22:03:52 -0700 (PDT)
-From: Pandu Gunawan <pandu.gunawan@gmail.com>
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Date: Mon, 26 Aug 2019 12:03:49 +0700
-References: <F2D43387-B3E7-4A9A-A8A9-857978571C03@gmail.com>
-In-Reply-To: <F2D43387-B3E7-4A9A-A8A9-857978571C03@gmail.com>
-Message-Id: <C9888727-3107-42A4-B802-39556F4A6D7D@gmail.com>
-Subject: Re: [wireless-regdb] Update on Indonesia Regulations
+ s=20161025; h=from:to:cc:subject:date:message-id;
+ bh=LqizBXax0mkO4gxIZRPwBrd4VcJG7zs6D6D/3vSkVdo=;
+ b=OOq1vsLwa1a9i5o5V0tpumZkGA0sCFcj1LWj0yEkSAb4HA83qFOg7UWZHyvv5eJ2vb
+ lgSXy3Jb5rsM31PBYmbNQAqASqqodRziCInWPXTs5wB8wee4K9QkN1sbmJwLO8kkl9pd
+ lPDLC6bZLtwjqXyN3sF+9e678dZL23DahU1ZbOeZpthGiEZemYjgc6yZjGvqLY5DUJhp
+ AC56G+nMIUgKdO+WYrOeEnrffuLyjywDgQwt9ZGyCcinRkZxVs5/ZNf5sqgJNBoK2pWg
+ W95/GWYauCNB83WiDHqhpvZdOLzul4fuLOVRH1Jp9e0pJ8A6wsQHbikkkpXarl/uBWwn 6BTA==
+From: Dmitry Tunin <hanipouspilot@gmail.com>
+Date: Fri, 30 Aug 2019 21:24:44 +0300
+Message-Id: <1567189484-27536-1-git-send-email-hanipouspilot@gmail.com>
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: update regulatory
+ rules for Kazakhstan (KZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,41 +41,59 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Dmitry Tunin <hanipouspilot@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-sorry this is the correct link for the regulation: https://jdih.kominfo.go.id/produk_hukum/view/id/676/t/peraturan+menteri+komunikasi+dan+informatika+nomor+1+tahun+2019+tanggal+24+april+2019 
+Update according to the regulatory rule of January 21, 2015
 
-> On 26 Aug 2019, at 11:49, Pandu Gunawan <pandu.gunawan@gmail.com> wrote:
-> 
-> Hi, I subscribe to this mailing list as apparently Eero is using your database to update the frequency in their device. I notice from the db.txt that for Indonesia, it refers to the old regulation of 2010. I understand that earlier this year Indonesia Government just issued a new regulations on WLAN.
-> 
-> WLAN devices can now operate under one of two roles:
-> 
-> 	• Outdoor Systems in the bands:
-> 		• 2400-2483.5 MHz (Max EIRP 4 watt and max bandwidth 20Mhz), and
-> 		• 5725-5825 MHz (Max EIRP 4 watt and max bandwidth 20Mhz)
-> 	• Indoor systems in the bands:
-> 		• 2400-2483.5 MHz (Max EIRP 500mW and max bandwidth 40Mhz),
-> 		• 5150-5250 MHz (Max EIRP 200mW and max bandwidth 80Mhz),
-> 		• 5250-5350 MHz (Max EIRP 200mW and max bandwidth 80Mhz), and
-> 		• 5725-5825 MHz (Max EIRP 200mW and max bandwidth 80Mhz).
-> 
-> link of the news: https://nuzeal.com/index.php/2019/05/29/indonesia-changes-for-short-range-devices/ 
-> link of the regulation: https://jdih.kominfo.go.id/produk-hukum/view/676  
-> 
-> Appreciate if you help in updating this in the database. thank you.
-> 
-> Regards,
-> Pandu
+http://egov.kz/cms/ru/law/list/V1500010730
+https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
+
+No DFS or TPC is mentioned in the document. Neither is 80 MHz channel width.
+
+Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+---
+ db.txt | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 37393e6..491598e 100644
+--- a/db.txt
++++ b/db.txt
+@@ -717,13 +717,13 @@ country KY: DFS-FCC
+ 	(5735 - 5835 @ 80), (30)
+ 
+ # Source:
+-# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
+-# http://adilet.zan.kz/rus/docs/P000001379_
+-country KZ: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
+-	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
+-	(5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
++# http://egov.kz/cms/ru/law/list/V1500010730
++# https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
++country KZ:
++	(2400 - 2483.5 @ 40), (20)
++	(5150 - 5350 @ 160), (23), NO-OUTDOOR
++	(5470 - 5850 @ 160), (20), NO-OUTDOOR
++	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+ 
+ country LB: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+-- 
+2.7.4
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
