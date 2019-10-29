@@ -6,34 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=gWXB2NLqKt4F5KR3Sf/hTf2ENO+a5AHpcG35M9fMMRY=;
- b=k2D6HRoacx1VjJ
- sPrDEE7bpne2uNjVxM2GHbBwns9zL/t1gA5kTJLtiVCSxVHVN9VYMYE4IlLjQvWYyjPfHALdWVRm7
- WHX48QPxYT/tZ20EPG/om34U3X11zHkGSltqsajOboC5y4ShZgWFG45enRAG6c8i3m3TwrgE9BIW7
- 454tMcci9A+RRMvs56KW0pqwnop8SGb4c0Me3eNVf4H6+8SwvTvJ1zAxSu0MGiNPwDu0T6QwarRyv
- zd3kMADg0i4Pdr7AoQYcmvilcpdOD1GhWgCvdhEP1IktNA9/n+D4IIy8jOvdw3Oqfrns2PB6pgv5I
- 1rKjl6peVrWsAVeKzWUw==;
+ List-Owner; bh=v7erUA1MayET4d+PRFDYxuNkpB0BJ+Z6MbACsxwVKKY=;
+ b=RWLZF3oypjMOPw
+ oDa6aj8cZtFYe3GvHDtcUoPfdK3SJUuUNdFeeS0BccyibTqRXfVx6K2MJGHlvc0csz4XVVYROXnrU
+ 2MXI+NRobIbqj/z5Ukff1lVc0R5iBqgwOXsLd966fI04OILsjMd5VX2Lwdtcjmo7lMGzDwI3X35gF
+ lv2i6VUtI+c2U+NBbUhVot7D+ycWPiHr2MIzcCUzVdGZYOsCwMLBA9KxCfXY7m7ytorEBwkZqUvh0
+ pfcGm5uoYwEPE2SCtXmlXug4+3G1hNPg2YUblQhtK0mXsqOuDKkP3xX8/Szh9lZq7ToC1OUK2Ylyf
+ J1nmUTWkgyTUXRgNATcQ==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPRff-00061b-IL
- for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 13:36:29 +0000
+ id 1iPQUL-0000ki-OV
+ for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 12:20:43 +0000
 Received: from mail-yw1-f69.google.com ([209.85.161.69])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1iPRfd-0004jW-BI
- for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 13:36:25 +0000
-Received: by mail-yw1-f69.google.com with SMTP id q127so9153609ywg.22 for
- <wireless-regdb@lists.infradead.org>; Tue, 29 Oct 2019 06:36:25 -0700 (PDT)
-Date: Tue, 29 Oct 2019 08:36:21 -0500
+ (envelope-from <seth.forshee@canonical.com>) id 1iPQUG-0003pB-FP
+ for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 12:20:36 +0000
+Received: by mail-yw1-f69.google.com with SMTP id c189so9687899ywe.18 for
+ <wireless-regdb@lists.infradead.org>; Tue, 29 Oct 2019 05:20:36 -0700 (PDT)
+Date: Tue, 29 Oct 2019 07:20:33 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20191029133621.GP30813@ubuntu-xps13>
-References: <1566636490-3438-1-git-send-email-hanipouspilot@gmail.com>
+Message-ID: <20191029122033.GK30813@ubuntu-xps13>
+References: <20190726030538.16784-1-wens@kernel.org>
+ <20190809205025.GP10402@ubuntu-xps13>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566636490-3438-1-git-send-email-hanipouspilot@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v3] Russian entry is incorrect.
- According to the last regulations document of Feb 29, 2016,
- 160 MHz channels and 802.11ad are allowed.
+In-Reply-To: <20190809205025.GP10402@ubuntu-xps13>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Extend 5470-5725 MHz
+ range to 5730 MHz for Taiwan (TW)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,24 +48,32 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Dmitry Tunin <hanipouspilot@gmail.com>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>, wireless-regdb@lists.infradead.org, linux-kernel@vger.kernel.org
+To: Chen-Yu Tsai <wens@kernel.org>
+Cc: linux-wireless@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Aug 24, 2019 at 11:48:10AM +0300, Dmitry Tunin wrote:
-> http://rfs-rf.ru/upload/medialibrary/c1a/prilozhenie-1-k-resheniyu-gkrch-_-16_36_03.pdf
-> 
-> Note that there was never a DFS requirement in Russia, but always was
-> NO-OUTDOOR on 5GHz.
-> Maximum power is 200mW that is ~23dBm on all 5GHz channels.
-> Also Russia has never been regulated by ETSI.
-> 
-> EIRP has been reduced by 4dBm because of TPC requirement.
-> 
-> Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+On Fri, Aug 09, 2019 at 03:50:25PM -0500, Seth Forshee wrote:
+> On Fri, Jul 26, 2019 at 11:05:38AM +0800, Chen-Yu Tsai wrote:
+> > From: Chen-Yu Tsai <wens@csie.org>
+> > 
+> > This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
+> > The Linux kernel however does not seem capable of considering them
+> > most restrictive subset of multiple rules.
+> > 
+> > Since 5725 ~ 5730 MHz belongs to the next range which has looser
+> > requirements, we can do this manually and extend the range by 5 MHz
+> > to make the kernel happy and be able to use channel 144.
+> > 
+> > Also, looking at the US regulations, which the TW ones are based on,
+> > The DFS range ends at 5730 MHz, while the next range starts at 5735
+> > MHz. This doesn't match the actual regulations, but is skewed to meet
+> > wireless channel boundaries. I prefer the database match the law,
+> > and be adjuested only if necessary.
+> > 
+> > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 
-Sorry for the delay. Applied, with some slight adjustments to the commit
-message. Thanks!
+Sorry for the delay, applied now. Thanks!
+
 
 _______________________________________________
 wireless-regdb mailing list
