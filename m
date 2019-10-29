@@ -6,33 +6,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=MBT+onH7si536IgOt8xc+oUChJYsjk81HGDmX3KNc5M=;
- b=IlM/oDO9Mj7LUC
- ScV1/hzyKmpx3dHNEroU0cGWzgWirVcR7Mr9Zn+CaDjypW9A6BdyEDERkfU5kms+UuCBRi4yGq9E5
- ODTgdLqxpJqQQvwBydgRJ50pQq9YeSANl7e/UwIltb+qI8De7u4nX8ICN/bg1xp4+MEXUJbIWWoUp
- aslQRPPPVmOwq3d1obM2nRwFEKZw4G2t4yvnDgDEebYSW3OUJQscc3Egu949HlIseATLtA2OQRfZu
- KBJrtjdvJYTP6NPoQgxCmh+ZvTUGsqR2rHf75AeHvNadDCo7vXrxiIVUD0ANeOkEVZSimaF98p0i8
- OB/BCIO4jRcCwlUgoJkg==;
+ List-Owner; bh=SVLWKtTkZgitNnh6q9vEsLHUw6Gnvhc8jOD6CLUEHSM=;
+ b=K2COTrpLzocVBs
+ 6QDjoM80EN2H1uoDEvh3vKfCzvciStnnBTp+QMVPRXfPC4ElyLKh8KQaDtsCW5g7kPyXUssVE5nZ3
+ eirBP9RM2i4Qygv+QNDBrprOFqUmmjLqqildv4Z5WpK5xYzrA3vtsD4MZbtOYgX5sRVu9Rbia3u44
+ bFiX0DcAX+bv80F64f49LfVcPT3NyP3CYKRkY3wYHCj2pf8r7k+gAF+3f78+2hK5Vo6oD64ORm9uL
+ VwdwKReSl3XJOzi+dg7E5/TSBx/UFKBiqVGdzsACRvXiwjFIaEQDm33BU1Q/ylZDbqKaMREQYj1nY
+ 3STbmF5MtNrzBbLlK7QQ==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPSnG-0001vH-0b
- for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 14:48:24 +0000
-Received: from mail-yw1-f71.google.com ([209.85.161.71])
+ id 1iPRF3-0000mk-Kt
+ for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 13:08:59 +0000
+Received: from mail-yb1-f199.google.com ([209.85.219.199])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1iPSnD-0006vq-F4
- for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 14:48:19 +0000
-Received: by mail-yw1-f71.google.com with SMTP id 123so9919723ywq.21 for
- <wireless-regdb@lists.infradead.org>; Tue, 29 Oct 2019 07:48:19 -0700 (PDT)
-Date: Tue, 29 Oct 2019 09:48:15 -0500
+ (envelope-from <seth.forshee@canonical.com>) id 1iPRF2-0000ZH-AP
+ for wireless-regdb@lists.infradead.org; Tue, 29 Oct 2019 13:08:56 +0000
+Received: by mail-yb1-f199.google.com with SMTP id w13so10518815ybj.8 for
+ <wireless-regdb@lists.infradead.org>; Tue, 29 Oct 2019 06:08:56 -0700 (PDT)
+Date: Tue, 29 Oct 2019 08:08:53 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20191029144815.GR30813@ubuntu-xps13>
-References: <1567189484-27536-1-git-send-email-hanipouspilot@gmail.com>
+Message-ID: <20191029130853.GN30813@ubuntu-xps13>
+References: <bf327181-521b-e1ce-c5c8-81b828fc65b6@streamunlimited.com>
+ <20190907235636.GA8256@ubuntu-xps13>
+ <a5bdfce7-e974-37bb-c1d1-956d4572703c@streamunlimited.com>
+ <39933518-6a65-fab3-4a66-8f44fc319d57@streamunlimited.com>
+ <76f464e9-8806-ecbf-2dc8-67bb4190ecc7@streamunlimited.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1567189484-27536-1-git-send-email-hanipouspilot@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: update regulatory
- rules for Kazakhstan (KZ)
+In-Reply-To: <76f464e9-8806-ecbf-2dc8-67bb4190ecc7@streamunlimited.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Create entry for
+ united European region
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,91 +46,46 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Dmitry Tunin <hanipouspilot@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Emil Petersky <emil.petersky@streamunlimited.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Aug 30, 2019 at 09:24:44PM +0300, Dmitry Tunin wrote:
-> Update according to the regulatory rule of January 21, 2015
+On Tue, Sep 17, 2019 at 11:55:07AM +0200, Emil Petersky wrote:
+> Create entry for united European region, as usage of frequency bands
+> is harmonized over EU and almost all CEPT countries as well.
 > 
-> http://egov.kz/cms/ru/law/list/V1500010730
-> https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
+> All EU countries and almost all CEPT countries accepted decisions
+> 2005/513/EC (5GHz RLAN, EN 301 893)
+> and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  EU decision 2005/513/EC:
+> https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  EU decision 2006/771/EC:
+> https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> Harmonized CEPT countries:
+> https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+> Such decision make sense to create united European region (EU) in regdb
 > 
-> No DFS or TPC is mentioned in the document. Neither is 80 MHz channel width.
-> 
-> Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+> United region for EU in regdb will enable much easier handling of proper
+> wlan parameters on embedded devices sold across the Europe.
 
-Thanks for the patch. I don't agree with all of your changes though,
-please see details below.
+I'm a little curious about this one. I do agree that it would simplify
+things, but is an EU contry code something standard that wireless APs
+generally will advertise, or that clients will understand?
 
-> ---
->  db.txt | 14 +++++++-------
->  1 file changed, 7 insertions(+), 7 deletions(-)
-> 
-> diff --git a/db.txt b/db.txt
-> index 37393e6..491598e 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -717,13 +717,13 @@ country KY: DFS-FCC
->  	(5735 - 5835 @ 80), (30)
->  
->  # Source:
-> -# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
-> -# http://adilet.zan.kz/rus/docs/P000001379_
-> -country KZ: DFS-ETSI
-> -	(2402 - 2482 @ 40), (20)
-> -	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
-> -	(5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
-> -	(5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
-> +# http://egov.kz/cms/ru/law/list/V1500010730
-> +# https://tengrinews.kz/zakon/pravitelstvo_respubliki_kazahstan_premer_ministr_rk/svyaz/id-V1500010730/
-> +country KZ:
-> +	(2400 - 2483.5 @ 40), (20)
-> +	(5150 - 5350 @ 160), (23), NO-OUTDOOR
-> +	(5470 - 5850 @ 160), (20), NO-OUTDOOR
-
-The documents you provided reference this document:
-
-https://egov.kz/wps/poc?uri=mjnpa:document&language=ru&documentId=V1500010375#z7
-
-Which says that bands 5150-5350 MHz and 5470-5725 MHz should conform to
-WRC-12 resolution 229:
-
-https://www.itu.int/dms_pub/itu-r/opb/act/R-ACT-WRC.9-2012-PDF-E.pdf
-
-This indicates that 5250-5350 MHz and 5470-5725 MHz must either have TPC
-or reduce the maximum EIRP by 3 dBm, which for this database means
-reducing the maximum power by 3 dBm for these bands. It also states that
-these bands must implement the mitigation measures from ITU-R M.1652-1
-in these bands, i.e. DFS.
-
-So it appears to me that the existing DFS requirements are correct.
-I think 5150-5250 MHz can be raised to 23 dBm, and 5250-5350 MHz needs
-to remain at 20 dBm due to the TPC requirement. WRC-12 does mandate TCP
-for 5470-5725 MHz, but also a maximum EIRP of 1W, so since 100 mW is far
-less than half of that I suspect we can leave that at 20 dBm.
-
-> +	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
-
-This addition looks fine to me.
+And we do still have all the individual countries to maintain. Maybe it
+would make sense to define an EU region as rules that countries could
+inherit, and then have rules for any deviations from the common EU
+rules. Thoughts?
 
 Thanks,
 Seth
-
->  
->  country LB: DFS-FCC
->  	(2402 - 2482 @ 40), (20)
-> -- 
-> 2.7.4
-> 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
