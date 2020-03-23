@@ -6,32 +6,32 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
  :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=TtyiHOREt4WuC+pIR6HI8UsDefsSik09iCSd6AVfmak=;
- b=khtlky8A0IcnST
- Gd3SJN0iAi3eOQqcyCWVa/bkfdUw+Y186iuLykw6yAqqYv8UNbMyodOnlf9T8h3IIDmnUyERqIpTk
- s/QFFqkaKPZY3OCsI1TFQ8HtM1KqiJaL5A8VUVthUarRZGtYp7i6mtAp+SwxQ+BqSKIn9JMQzefMN
- 897PL79/DDEMJPSd2PEbM/m7FZLc4t7Mre3B5d6oFAcMtlhyzPe9rilFg4ObiXRjmEon44SeeeuJa
- EhROnEPlw9P6KcheQd0Hw5FM1etI+ZGFLsuU0s/Hotls3xiWRjTlK1+gp54VNf5ntTAYmAxHK/g1h
- NVQ7ODDicKS0I6YzW3bw==;
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ List-Owner; bh=sOVu6rpPmUGOTrkt+6+c53zP+L27aie0uCQgQ6nJTSo=;
+ b=NavcBBF0kznnUS
+ 41lkB0P6i930dLyXMc1ATYo+rn7eF52KYyV00Bl6kf7BSFx8nosyA93O/7fPJGtBFf8JRIxi3mmub
+ 4e1uZpqiQCOKjjCurGdE5wRb1uWdX6lD4BU51DKMBxAgGgp0kBK2rp1402zDpgmKn+GWKrJgYNqDf
+ LL0tlCuJc+haA+teg3VrWAG22okdH6PZX6+i9jSYKWhwzcYh7XOP6NBqTDD3jPjRWltB6wtJT0bbz
+ cxlI9uswNnLRxZLo1ac0xPQoFhtfkNqkJS5GoNMe0sm92FgbLWNbbN8/M04jtbHoogHjkAjgBXgEl
+ i5gsG3UWQOSE0rzXgEDQ==;
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGMDD-00054N-HZ
- for wireless-regdb@lists.infradead.org; Mon, 23 Mar 2020 12:29:50 +0000
-Received: by mail-pg1-x541.google.com with SMTP id d17so6554890pgo.0 for
- <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2020 05:29:47 -0700 (PDT)
+ id 1jGLxp-0005IC-5Y
+ for wireless-regdb@lists.infradead.org; Mon, 23 Mar 2020 12:13:54 +0000
+Received: by mail-pl1-x643.google.com with SMTP id x1so1820553plm.4 for
+ <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2020 05:13:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ndoo.sg; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=o1wbbJz7MAx2xmAm5RgEP8ZhBRD3a/LRA+OvfqonA7A=;
- b=SWFjDXdmWJDbG/N7usv8GQfFHqCOpbTjfT9r07HWOnlpRCUdC/QS6T4zY3PjNxclBj
- +omL1FZCjF6yFty+bqfTwjrV6rSwTx3TijOEwhGpwsWDZebHGALYWIaZlLy07AsQoeIE
- UvJhgMOLuMgMiZ1hh0hfOL0eLRQbiHRgwhY2M=
+ bh=PI/Hs35zupNyj4wCQ4EfTAQuIsQMhWoViq+8hZkz1HE=;
+ b=OSpT/l27qa+fYFmDFnmzdzbw1RJ6Ao18nNNNqm5zyWYRVArcfSB2Hc9J4zi6EHuPpm
+ gODNeb72hU9arka3zb5q5xTUOvSW2D9ogGHWppTt7c8QnEHLXXUswX5W2VWUpe7+FsY0
+ FbE8yd7FnKZ+Us9yZjdpNaUh0Ge4MsqIKGp7g=
 From: Andrew Yong <me@ndoo.sg>
-Date: Mon, 23 Mar 2020 12:29:38 +0000
-Message-Id: <20200323122938.7997-1-me@ndoo.sg>
+Date: Mon, 23 Mar 2020 12:11:47 +0000
+Message-Id: <20200323121147.6582-1-me@ndoo.sg>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
- rules for Singapore (SG)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Singapore (SG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -57,15 +57,13 @@ Changes to IDA TS SRD, Issue 1 Rev 4, Jul 09 - Table 1 (31):
 
 Harmonize 5470-5725MHz band non-TPC transmit power with other FCC Part 15 Section 15.407 and EN 301 893 domains (AU, BG)
 
-Patch v2: 5150-5250MHz does not need to observe TPC thus remains at 23dBm
-
 Signed-off-by: Andrew Yong <me@ndoo.sg>
 ---
- db.txt | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ db.txt | 22 +++++++++++++++-------
+ 1 file changed, 15 insertions(+), 7 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 9c4b447..f8b871e 100644
+index 9c4b447..1290733 100644
 --- a/db.txt
 +++ b/db.txt
 @@ -1385,17 +1385,25 @@ country SE: DFS-ETSI
@@ -85,12 +83,13 @@ index 9c4b447..f8b871e 100644
 +# 57000 - 66000 MHz: IMDA TS SRD, Table 1 (31); ETSI EN 302 567
 +# Note: 27dBm for 5470-5725MHz bands is 3dBm reduction per FCC Part 15 Section 15.407 (2) 5.47-5.725 GHz; EN 301 893 as referenced by IMDA TS SRD
 +#  AU and BG regulatory domains use the same interpretation of cited FCC and ETSI standards
-+# Note: The transmit power for 5250-5350MHz bands can be raised by 3dBm when TPC is implemented: IMDA TS SRD Table 1 (29)
++# Note: The transmit power for 5150-5350MHz bands can be raised by 3dBm when TPC is implemented: IMDA TS SRD Table 1 (29)
 +# Note: The transmit power for 5470-5725MHz bands can be raised by 3dBm when TPC is implemented: IMDA TS SRD Table 1 (30)
 +
  country SG: DFS-FCC
  	(2400 - 2483.5 @ 40), (23)
- 	(5150 - 5250 @ 80), (23), AUTO-BW
+-	(5150 - 5250 @ 80), (23), AUTO-BW
++	(5150 - 5250 @ 80), (20), AUTO-BW
  	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
 -	# 5470 - 5725 is only allowed when TPC is implemented
 -	# (5470 - 5725 @ 160), (30), DFS
