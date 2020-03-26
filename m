@@ -2,37 +2,35 @@ Return-path:
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=rC507FqQOocUJD3O3Vig8F4y2JX8jSozp2yQpF6t9sY=;
- b=Ez0
- PfBuBzvrotXNhOiJpH9ywQNIyhdpUP10wibpJPZfZgtsH5ftoQXmRt1nMvju1949suOmyTajrUnLX
- zA4uiZ+s8abOP9dfXtNUdpQL1v73LtJhH0/BeGkG/l7E0tYGxqjtKHcFRAOPG6J97ZJCUYi7Vnb1Y
- fudIRffM9iIDefOLtRjnxuzLiB806A9bt3krKLz7QFBQGjWMUgNd9jt3tY9NjhtvpkRRX5kxYyQff
- Kg4SWJVvByC5bhgIX1Sw7bA5x1wrjvMYPeklgIW1cgnmO7mRuMZGSNA/dI0CFrvZHNOecaB5fproo
- FlTYoSCnyKfV2tGoAcszywCnVepDWQw==;
-Received: from mail-il1-x135.google.com ([2607:f8b0:4864:20::135])
+ Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+ List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Message-Id:
+ Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=ZRI2me1GEwIfc13QKotR0sQi79N7O3hJwp18wWsWGIY=;
+ b=JEAug0ssuz70qh
+ dl8SawvM7ycO1tNWjuuWNHzeWSZpSCoo5GKujBNMlmDEErzsDhiNxxUuhtww0izG4FTOAlpl1crYn
+ KPMm55EuYxjR07JKG8LCNHLZ00H7cmzS/Kw0SppvQo4Ygr0Titto4W15LcFUbBV5xf1w4vOzakfqq
+ a93nWs53XlKzeLGanhbS2TN6lQ3NShnm81wmrR849dIL9hZDNgU6U71pG4sHepjq4ItTXvmuwiGtB
+ Y/ael381xth7czrkqAUnROZqQZVyZ0mhL7ELtQZO2RLJD6gUmuccnDfKY1DdTqJtGdOLmIrmDUt1n
+ g5bA4JEsw8KQNQLpXFzg==;
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j05B8-0000r8-Ss
- for wireless-regdb@lists.infradead.org; Fri, 07 Feb 2020 15:04:24 +0000
-Received: by mail-il1-x135.google.com with SMTP id s85so1926830ill.11 for
- <wireless-regdb@lists.infradead.org>; Fri, 07 Feb 2020 07:04:22 -0800 (PST)
+ id 1jHQwn-0007zP-Th
+ for wireless-regdb@lists.infradead.org; Thu, 26 Mar 2020 11:45:19 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q3so2608152pff.13 for
+ <wireless-regdb@lists.infradead.org>; Thu, 26 Mar 2020 04:45:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=mime-version:from:date:message-id:subject:to;
- bh=MBGi1cfCz6Gqa27LRzy8F8lKupJYjEcvdM7f3wUr/IY=;
- b=Gg8GCvcspgQjs4N9z8VQPPce1C6UuR12lEUYtgeF2/7CT8ETu089mYtSmJTvMlC1iE
- HWUIX3kTgVA3gxViCqQ/ZDMh+EB1XCUIzy9fL1LhEASQmBcBbl2tcWd3n2Rq32XQmmly
- ckFP1fBuouYj584qD4UMbskuthvfk82CQwUnv5bynMmAeFXMBJdLEs0uzTOJapF4AUbA
- 10Ades1791z0xFlsizftTi66X7A3UNqxqeWOj3rm6FCXrloLaiu5iCKUqGy8Llpg4g2G
- kfaz+inrFyT2r7QjxzkKLtkhmCgsKUUBEffb5NVZwC0FDocXpGlmVEww10GXeYRmj7xo yjAQ==
-MIME-Version: 1.0
-From: Zulkifli Izoel <izoel21@gmail.com>
-Date: Fri, 7 Feb 2020 22:04:10 +0700
-Message-ID: <CAKAWfyJ=H9rGaPvYvY_cBmzD+nW8ZGra5tFTBhCbZyT0BPNtjQ@mail.gmail.com>
-Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Indonesia (ID) on 2.4GHz and 5Ghz
+ s=20161025; h=from:to:cc:subject:date:message-id;
+ bh=QNc7sUitYw+STr16lrtQWpfnsD8DXSPcqt4YHYoo/vA=;
+ b=Ii+N+nH3zPPvVwnTqGDG7+afr0CZ0b58kdFhT46r2UJZcO49+8kv638i8xqsSKsVOk
+ H+lf7rtAPu4VvQKNjuEwj0YOdDCT9Ct3WNDQC7jMXWxY/XUzMcsop24gWRg9ckVeCYW1
+ Tfw1JYeTRp6ucho8i1sz4Ovm1iNqNCNCW0LlFJKKE3j3rZHSoPaxYKJWT2++RAplJCXc
+ fvDotAPc0GRnPOszJor2boD2GbSq56SsfRcI7aSVNMfKBVd2OA8fHJkpr/dCEUu0hICh
+ hxUmBKa2si3hvPKjinJ0D2fd1r2zQr0CvYYHFGC3yo7fHWXWKxYD8nprCz/zekmEh7pV llCA==
+From: chaitanya.mgit@gmail.com
+Date: Thu, 26 Mar 2020 17:15:06 +0530
+Message-Id: <20200326114506.943-1-chaitanya.mgit@gmail.com>
+Subject: [wireless-regdb] [PATCH] GB: Extend to cover DMG channels 5 & 6
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,36 +40,51 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: seth.forshee@canonical.com, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Cc: Chaitanya Tata <chaitanya.mgit@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Latest update regulatory rules for Indonesia of 2019 :
-Taken from Ministry of Communication and Information Republic of
-Indonesia Website, cancelling 2005 old regulatory.
+From: Chaitanya Tata <chaitanya.mgit@gmail.com>
 
-Ref:
-Peraturan Menteri Komunikasi dan Informatika Nomor 1 Tahun 2019
-tanggal 24 April 2019
-See Appendix II (Lampiran II), Section WLAN Telecommunication
-Equipment (Alat dan/atau Perangkat Telekomunikasi WLAN)
+OFCOM extended the DMG band to include till 71GHz.
 
-country ID:
+Signed-off-by: Chaitanya Tata <chaitanya.mgit@gmail.com>
+---
+ db.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-(2400 - 2483.5 @ 40), (500 mW)
-(5150 - 5250 @ 80), (200 mW)
-(5250 - 5350 @ 80), (200 mW)
-(5725 - 5825 @ 80), (200 mW)
-(5725 - 5825 Outdoor @ 20), (4 W)
+diff --git a/db.txt b/db.txt
+index 9c4b447..c5750f2 100644
+--- a/db.txt
++++ b/db.txt
+@@ -587,6 +587,7 @@ country FR: DFS-ETSI
+ # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+ # GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0019/136009/Ofcom-Information-Sheet-5-GHz-RLANs.pdf
+ # GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf
++# GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0013/126121/Statement_Implementing-Ofcoms-decision-on-the-57-71GHz-band.pdf
+ country GB: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (100 mW)
+ 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+@@ -594,8 +595,8 @@ country GB: DFS-ETSI
+ 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+ 	# short range devices (ETSI EN 300 440-1)
+ 	(5725 - 5875 @ 80), (25 mW)
+-	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+-	(57000 - 66000 @ 2160), (40)
++	# 60 GHz band channels 1-6
++	(57000 - 71000 @ 2160), (40)
+ 
+ country GD: DFS-FCC
+ 	(2402 - 2472 @ 40), (30)
+-- 
+2.17.1
 
-Please make correction,
-Thank You
-
-Zulkifli Yusuf Singedekane
 
 _______________________________________________
 wireless-regdb mailing list
