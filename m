@@ -6,33 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=2fpWou5Rsg4eY6yKneKN1C0EfQtafaWsdCD5ut38Ku8=;
- b=chY7+b7cxpAmzN
- sFxIulJI3d0HSOZdZ+V0HG532dPn8TR2Kp0eSBb3priYhsmgiZ+RrVFoWwaVHaTjmsEP1QI2w7SK1
- oBfjrxWtmeIQzMcnHlKFTcmnjhfAn2fjepCAvJmPGuQ69+HR8j7BnBiYkj8h29iREnxCC6EMTm8ZV
- 5OCjSLgVVkGbi5n6/7J/r+8kLhbEJOo2ygk4pnkC7T1R3AB/htHggv1ywCVxS422jsCo5nx5+309J
- PKoWQDjFBFSdS1Y77aBSn3ShaJ1Qs2QmXta0XSIybBPSN+xn0C5dGW+wn9vIMW9cVoBma3fChYgyg
- J7aPeVj9g7GheAAumcpg==;
+ List-Owner; bh=NNvJp6SWB9HA4pyRTlR10kAAdcQmsbdTcIuicG6CgR8=;
+ b=g8Y0X0y2XdWIas
+ YLcUQx4nJk5LcnPU6Xj1MJW0vkcoHZqt/JlpgkmODlNdEgv65rQB7NbOKcSU10vNiyJ2BFeyn5/5g
+ +pZQLrTWUCxbpomnhrEW5aJxi+m5OduqrQJNy1WtYONVhf7NzLU/DqFcsoFotX0TJ6bcFo11oVZ8j
+ s6IqGXWUU15dfngUdp9y30Jqf+klYiwujQpsDhWrraDhrcOjS+ZSZ1N5S1GzKhlZF1n9tSE9lpXb9
+ igSkS7A4PuZHlvy88SwPNxIussZnhHdPNCeUqUOHZZ++3oDqK/MIdqSiGt+OIk7QrNwb8kPOYNeEH
+ qazFtnWSzN/UGGzYP3pQ==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTqBx-00005w-Vw
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:15 +0000
-Received: from mail-qk1-f199.google.com ([209.85.222.199])
+ id 1jTqBe-0008OW-73
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:07:55 +0000
+Received: from mail-qt1-f200.google.com ([209.85.160.200])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1jTqBw-0004hU-KE
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:12 +0000
-Received: by mail-qk1-f199.google.com with SMTP id f132so3360452qke.11 for
- <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 10:08:12 -0700 (PDT)
-Date: Wed, 29 Apr 2020 12:08:09 -0500
+ (envelope-from <seth.forshee@canonical.com>) id 1jTqBY-0004eR-DY
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:07:48 +0000
+Received: by mail-qt1-f200.google.com with SMTP id w12so3477911qto.19 for
+ <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 10:07:48 -0700 (PDT)
+Date: Wed, 29 Apr 2020 12:07:44 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20200429170809.GR3158@ubuntu-x1>
-References: <20200323122938.7997-1-me@ndoo.sg>
+Message-ID: <20200429170744.GQ3158@ubuntu-x1>
+References: <20200127042059.GD3730@ubuntu-xps13>
+ <20200127043926.71812-1-seth.forshee@canonical.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200323122938.7997-1-me@ndoo.sg>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
- rules for Singapore (SG)
+In-Reply-To: <20200127043926.71812-1-seth.forshee@canonical.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for Indonesia (ID)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,23 +48,18 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Andrew Yong <me@ndoo.sg>
-Cc: wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
+Cc: Pandu Gunawan <pandu.gunawan@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Mar 23, 2020 at 12:29:38PM +0000, Andrew Yong wrote:
-> Add 802.11ad 60GHz band:
-> https://www.imda.gov.sg/-/media/Imda/Files/Regulation-Licensing-and-Consultations/ICT-Standards/Telecommunication-Standards/Radio-Comms/IMDATSSRD.pdf
-> Changes to IDA TS SRD, Issue 1 Rev 4, Jul 09 - Table 1 (31):
-> "The band 57 - 66 GHz at <=10W (e.i.r.p) is an additional frequency allocation for Wireless LAN / broadband access applications."
+On Sun, Jan 26, 2020 at 10:39:26PM -0600, Seth Forshee wrote:
+> Update based on new regulations released in April 2019:
 > 
-> Harmonize 5470-5725MHz band non-TPC transmit power with other FCC Part 15 Section 15.407 and EN 301 893 domains (AU, BG)
+> https://jdih.kominfo.go.id/produk_hukum/view/id/676/t/peraturan+menteri+komunikasi+dan+informatika+nomor+1+tahun+2019+tanggal+24+april+2019
 > 
-> Patch v2: 5150-5250MHz does not need to observe TPC thus remains at 23dBm
-> 
-> Signed-off-by: Andrew Yong <me@ndoo.sg>
+> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 
-Applied, thanks!
+Applied.
 
 _______________________________________________
 wireless-regdb mailing list
