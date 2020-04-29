@@ -1,36 +1,34 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
- Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:Message-ID:
- From:References:To:Reply-To:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
- bh=rb7jFNElle7u65h2J/npsVgf4CGLrK2GTr8nJXdqLpo=;
- b=klpVHCW9yNjRjbLIiJaphxxSZ
- IIUCqBndO8meWNB6bL8k/KArvvNeT1ws4VZe+IvGwBYlnaaFdLjR9hnnW5QxCUHIIPpulZVaMJ2e+
- EFU0GqbaDxeag6cyaenbkg9fb3y32x3dXL3l9Sbvx5egscs8JxUKqPWnvZCYmC9/89azM8/ofNsk7
- bMftIOzAFyf/MmelpSNURTFfODmhXiCDb4JKWMJUcU8yIh17WbgDGE/B16jolA8zNKyUP65k2hU1r
- glkIldK1vimcN643X8ZUMIqT+oHKO5zQ6zyIR3Q2oX1ejZw5dXzrg3Ww+U/YEy9C9UdgR2niPCDEt
- uB7WPBvMQ==;
-Received: from smtps.newmedia-net.de ([2a05:a1c0:0:de::167]
- helo=webmail.newmedia-net.de)
+ d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+ Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=RgI1PQGa46lywk89Hlgx1B8d35sc3JOzuTIQJWBVyno=;
+ b=ji6MTiYzi3zqEB
+ 66d7lcdfNP6+P+tIWkzpW3/cE2ooqHOsZiOlpdowWRlYuFC8dUzOeZnDVWcIJ3Ha7XWopaPyTQEZA
+ RQlS6pUgmhf228yyiZEgccdOUl262+L/3pg+MSpKxIXCsMPKcHma71PSiwOaZJ3+k3in0w4XGWjbV
+ DWWQpsT69LHH+v1aGltF9xTvqJhCk6jbpdKkJv8Y4aANyVCY6bznEo7m15iAyXw6uFllZsdPtfSp+
+ t1IzCl68R/YO3pFaNc7pSNWnUhCFPn1YT92uNvhrIEgGYMk6Ci/ciE6LtKr5tZXuzipjZUM23Dc9P
+ dK86jFg89SJgpDCiWLdg==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3L2S-0004vd-KH
- for wireless-regdb@lists.infradead.org; Sun, 16 Feb 2020 14:36:54 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=newmedia-net.de; s=mikd; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=lF1H11A4xL3IUsMYRIBxDsrUXUH8yfHXn7YDFVEYpQs=; 
- b=vpFcs00O/dphvOFx2eCniSx05u8D+v4jVIs3g3mOshpFLrHI65h3kiI08FtKaq8fT/49YW+gu5hIAMYKTVKkwCWRhC4ZzeP1oVqxI6jwJUKW3UybxOFtottijJiPdsLDdoowPRwinE3httW0rgXRb1tfVagZmlr9PV4aldiRtxc=;
-References: <1567189484-27536-1-git-send-email-hanipouspilot@gmail.com>
- <20191029144815.GR30813@ubuntu-xps13> <20200127042500.GE3730@ubuntu-xps13>
-From: Sebastian Gottschall <s.gottschall@newmedia-net.de>
-Message-ID: <1c1bda62-fec8-b30d-5300-79fbe08fc517@newmedia-net.de>
-Date: Sun, 16 Feb 2020 15:36:33 +0100
+ id 1jTtqm-00029Z-NK
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 21:02:38 +0000
+Received: from mail-qt1-f198.google.com ([209.85.160.198])
+ by youngberry.canonical.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <seth.forshee@canonical.com>) id 1jTtqk-0007Av-9r
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 21:02:34 +0000
+Received: by mail-qt1-f198.google.com with SMTP id x24so4353293qta.4 for
+ <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 14:02:34 -0700 (PDT)
+From: Seth Forshee <seth.forshee@canonical.com>
+Date: Wed, 29 Apr 2020 16:02:31 -0500
+Message-Id: <20200429210231.212762-1-seth.forshee@canonical.com>
 MIME-Version: 1.0
-In-Reply-To: <20200127042500.GE3730@ubuntu-xps13>
-Subject: [wireless-regdb] wireless regdb issue
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2020-04-29
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,24 +38,54 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-i have found something very strange in the regdb. according to various 
-sheets and document. channel 165 is not compatible with vht80
-in the fcc area. but the regdb doesnt cover this rule. the whole range 
-from 5735 - 5835 is set to vht80.
+A new release of wireless-regdb (master-2020-04-29) is available at:
 
-so what is correct?
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2020.04.29.tar.xz
 
+The short log of changes since the master-2019-06-03 release is below.
 
-Sebastian
+Thanks,
+Seth
+
+---
+
+Andrew Yong (1):
+      wireless-regdb: Update regulatory rules for Singapore (SG)
+
+Chaitanya Tata (1):
+      GB: Extend to cover DMG channels 5 & 6
+
+Chen-Yu Tsai (1):
+      wireless-regdb: Extend 5470-5725 MHz range to 5730 MHz for Taiwan (TW)
+
+Dmitry Tunin (1):
+      wireless-regdb: Update regulatory rules for Russia (RU)
+
+Emil Petersky (2):
+      wireless-regdb: Fix ranges of EU countries as they are harmonized since 2014
+      wireless-regdb: Harmonize ranges of CEPT countries (stand of July 2019)
+
+Johannes Berg (1):
+      regdb: fix compatibility with python2
+
+Martin Willi (1):
+      wireless-regdb: Fix overlapping ranges for Switzerland and Liechtenstein
+
+Seth Forshee (2):
+      wireless-regdb: Update regulatory rules for Indonesia (ID)
+      wireless-regdb: update regulatory database based on preceding changes
+
+bkil (1):
+      wireless-regdb: update rules for US on 2.4/5G
 
 
 _______________________________________________
