@@ -6,32 +6,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=9NGqGBq2hoI8ZtQWGQGm7RSPMw2hq1X4ILbTP6OxmwY=;
- b=X1jXUjCv2RwI2l
- 5Xg04Cevac2mVpTqPoqS+NN1VTVvK2AdyJDu75W+hkzHIhCXwnqcMimhXkdtD2ADaLjSoNku/Kolj
- KSDlyq0PXFeLXBSVkfasccSh6gOeJ2Wrv1CvX6Yn8I8NComelAEtvdgh0LbXwVoqCXTG0mvjINEy2
- cUZZE6JdCisNbhy5baL7mJJjIAcWothoj/kfwDh7fZYNvd97o/tXsElQDZv3qLkzFSvLiIHZEdQF6
- v3pmQfUjZGR+W81GGU9UsnDCBrq/zMjdMXwf5Jo1FhDOs6QcABo+0Vrb3yLDlR9YzxNV90jeDINFA
- CGwjjMO8KFRT2FfLF7vw==;
+ List-Owner; bh=2fpWou5Rsg4eY6yKneKN1C0EfQtafaWsdCD5ut38Ku8=;
+ b=chY7+b7cxpAmzN
+ sFxIulJI3d0HSOZdZ+V0HG532dPn8TR2Kp0eSBb3priYhsmgiZ+RrVFoWwaVHaTjmsEP1QI2w7SK1
+ oBfjrxWtmeIQzMcnHlKFTcmnjhfAn2fjepCAvJmPGuQ69+HR8j7BnBiYkj8h29iREnxCC6EMTm8ZV
+ 5OCjSLgVVkGbi5n6/7J/r+8kLhbEJOo2ygk4pnkC7T1R3AB/htHggv1ywCVxS422jsCo5nx5+309J
+ PKoWQDjFBFSdS1Y77aBSn3ShaJ1Qs2QmXta0XSIybBPSN+xn0C5dGW+wn9vIMW9cVoBma3fChYgyg
+ J7aPeVj9g7GheAAumcpg==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTqCE-0000Ck-5d
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:31 +0000
-Received: from mail-qk1-f198.google.com ([209.85.222.198])
+ id 1jTqBx-00005w-Vw
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:15 +0000
+Received: from mail-qk1-f199.google.com ([209.85.222.199])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1jTqCC-0004j1-N4
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:28 +0000
-Received: by mail-qk1-f198.google.com with SMTP id z8so3362760qki.13 for
- <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 10:08:28 -0700 (PDT)
-Date: Wed, 29 Apr 2020 12:08:25 -0500
+ (envelope-from <seth.forshee@canonical.com>) id 1jTqBw-0004hU-KE
+ for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:08:12 +0000
+Received: by mail-qk1-f199.google.com with SMTP id f132so3360452qke.11 for
+ <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 10:08:12 -0700 (PDT)
+Date: Wed, 29 Apr 2020 12:08:09 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20200429170825.GS3158@ubuntu-x1>
-References: <20200326114506.943-1-chaitanya.mgit@gmail.com>
+Message-ID: <20200429170809.GR3158@ubuntu-x1>
+References: <20200323122938.7997-1-me@ndoo.sg>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200326114506.943-1-chaitanya.mgit@gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] GB: Extend to cover DMG channels 5 & 6
+In-Reply-To: <20200323122938.7997-1-me@ndoo.sg>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
+ rules for Singapore (SG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -46,16 +47,21 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: chaitanya.mgit@gmail.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Andrew Yong <me@ndoo.sg>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Mar 26, 2020 at 05:15:06PM +0530, chaitanya.mgit@gmail.com wrote:
-> From: Chaitanya Tata <chaitanya.mgit@gmail.com>
+On Mon, Mar 23, 2020 at 12:29:38PM +0000, Andrew Yong wrote:
+> Add 802.11ad 60GHz band:
+> https://www.imda.gov.sg/-/media/Imda/Files/Regulation-Licensing-and-Consultations/ICT-Standards/Telecommunication-Standards/Radio-Comms/IMDATSSRD.pdf
+> Changes to IDA TS SRD, Issue 1 Rev 4, Jul 09 - Table 1 (31):
+> "The band 57 - 66 GHz at <=10W (e.i.r.p) is an additional frequency allocation for Wireless LAN / broadband access applications."
 > 
-> OFCOM extended the DMG band to include till 71GHz.
+> Harmonize 5470-5725MHz band non-TPC transmit power with other FCC Part 15 Section 15.407 and EN 301 893 domains (AU, BG)
 > 
-> Signed-off-by: Chaitanya Tata <chaitanya.mgit@gmail.com>
+> Patch v2: 5150-5250MHz does not need to observe TPC thus remains at 23dBm
+> 
+> Signed-off-by: Andrew Yong <me@ndoo.sg>
 
 Applied, thanks!
 
