@@ -3,37 +3,33 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20170209; h=Sender:
  Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=NNvJp6SWB9HA4pyRTlR10kAAdcQmsbdTcIuicG6CgR8=;
- b=g8Y0X0y2XdWIas
- YLcUQx4nJk5LcnPU6Xj1MJW0vkcoHZqt/JlpgkmODlNdEgv65rQB7NbOKcSU10vNiyJ2BFeyn5/5g
- +pZQLrTWUCxbpomnhrEW5aJxi+m5OduqrQJNy1WtYONVhf7NzLU/DqFcsoFotX0TJ6bcFo11oVZ8j
- s6IqGXWUU15dfngUdp9y30Jqf+klYiwujQpsDhWrraDhrcOjS+ZSZ1N5S1GzKhlZF1n9tSE9lpXb9
- igSkS7A4PuZHlvy88SwPNxIussZnhHdPNCeUqUOHZZ++3oDqK/MIdqSiGt+OIk7QrNwb8kPOYNeEH
- qazFtnWSzN/UGGzYP3pQ==;
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
+ :From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=ToYZEbmikMiQ7jRSTWnnAfuRowvvAIqtJjsttAL5J5I=;
+ b=A+aLqZolupF0Uk
+ t6NuupyDbW2zPUygTZ5IoX7dCagVbvBtRNYO14RmdxTJFdCMCmMs5+bz0lJ4LUeoaj0CZiS6kj4Sp
+ /u56UEvIm69FHF7OBc6Dh6Lac3B1Z+M4EX/7nAt9GR4IfMsNjaEPtdT8supHGrCrTe6rpCaeZKDWc
+ 7yy13/kO1BLTKuPMKRRTLczzF33q1+dxtLvcyEuwweSg44z0TPMBo0Ke+EKILqTvla81fZhKK4Dm1
+ fUv7D1dcHbLb/zyeYB7On47TZqUcgEuCsdnjAQPBufIPbboZwL52AHBoK4pfbl/NOdjSo9eybJ+OY
+ i/uvcyecVQA4CtgDvKTg==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTqBe-0008OW-73
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:07:55 +0000
-Received: from mail-qt1-f200.google.com ([209.85.160.200])
+ id 1jePjC-0003dW-7w
+ for wireless-regdb@lists.infradead.org; Thu, 28 May 2020 21:06:16 +0000
+Received: from mail-il1-f200.google.com ([209.85.166.200])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1jTqBY-0004eR-DY
- for wireless-regdb@lists.infradead.org; Wed, 29 Apr 2020 17:07:48 +0000
-Received: by mail-qt1-f200.google.com with SMTP id w12so3477911qto.19 for
- <wireless-regdb@lists.infradead.org>; Wed, 29 Apr 2020 10:07:48 -0700 (PDT)
-Date: Wed, 29 Apr 2020 12:07:44 -0500
+ (envelope-from <seth.forshee@canonical.com>) id 1jePj8-0002NE-0f
+ for wireless-regdb@lists.infradead.org; Thu, 28 May 2020 21:06:10 +0000
+Received: by mail-il1-f200.google.com with SMTP id p20so370090ili.16 for
+ <wireless-regdb@lists.infradead.org>; Thu, 28 May 2020 14:06:09 -0700 (PDT)
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20200429170744.GQ3158@ubuntu-x1>
-References: <20200127042059.GD3730@ubuntu-xps13>
- <20200127043926.71812-1-seth.forshee@canonical.com>
+Date: Thu, 28 May 2020 16:06:07 -0500
+Message-Id: <20200528210607.16154-1-seth.forshee@canonical.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200127043926.71812-1-seth.forshee@canonical.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for Indonesia (ID)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
+ for Egypt (EG)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,17 +45,42 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
-Cc: Pandu Gunawan <pandu.gunawan@gmail.com>
+Cc: Ahmed Kamal <email.ahmedkamal@googlemail.com>, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sun, Jan 26, 2020 at 10:39:26PM -0600, Seth Forshee wrote:
-> Update based on new regulations released in April 2019:
-> 
-> https://jdih.kominfo.go.id/produk_hukum/view/id/676/t/peraturan+menteri+komunikasi+dan+informatika+nomor+1+tahun+2019+tanggal+24+april+2019
-> 
-> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+Update the rules to the frequency ranges and power limits
+documented in [1], and update 5GHz rules to comply with
+EN 301 893.
 
-Applied.
+[1] https://www.tra.gov.eg/en/industry/importing-of-equipment/Pages/Regulations-for-use-of-Wireless-Networks-Devices.aspx
+
+Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+---
+ db.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index ac3248350956..699bce9fb9d8 100644
+--- a/db.txt
++++ b/db.txt
+@@ -516,10 +516,11 @@ country EE: DFS-ETSI
+ 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+ 	(57000 - 66000 @ 2160), (40)
+ 
++# https://www.tra.gov.eg/en/industry/importing-of-equipment/Pages/Regulations-for-use-of-Wireless-Networks-Devices.aspx
+ country EG: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 40), (20)
+-	(5250 - 5330 @ 40), (20), DFS
++	(2402 - 2483.5 @ 40), (20)
++	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++	(5250 - 5330 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+ 
+ # ES as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301 893)
+ # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+-- 
+2.25.1
+
 
 _______________________________________________
 wireless-regdb mailing list
