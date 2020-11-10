@@ -7,33 +7,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
  Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
- bh=RFAlr/mmhO+wSi1gkkgd1SS0O95F0xDG2qnr8GC+PLw=;
- b=Z4QEqEeU26G684KVgMXxTGWl/
- QTFp4XqEaUxXXWjeBYDXAd91NoPruv6OU1olXfKrqWlEBV3SQlqmJ0LCvNCNXi8PaSbeqt7/OUq9y
- wHYRDkxSwBXZ9UlRwLGJsn8V/36tqFdMMNDc+tQBE55MXKbJft3KkHkFzkSoui1xh0twFv4nJkMIg
- nuDTtydSKBiKSOZ0fRFCdIpwH2Ttquxn0I62CL1PzngWIYwGY5EdViDQW0L2Sj3MFBI3Zx3eg5TV+
- xGZ1G/AbRk9izJijEEpGjGz/mx7Xd47n3VfS0FlvkMJXNY49Qy5d5dRks3hLe2j/KM2USRsI8Z0tn
- hfa4KBbLg==;
+ bh=fA+cMGGu9WuRJJ7YtzlXIB4EcGdMrnictEhQ6zS66wU=;
+ b=hjxENSQ8K+GIJrzpzDtDKaqFl
+ SHTN+k1PDXGI5rFWaDxdlOaUCA3NOLLLVMJh4WWBi5QKlDw4nkiE0Cvgkz3+xydt65zpo02eEAYEL
+ yHmnbIABNwQn22DT1od5KfHsvJHg04HrE6HApV33gr8A8UymAn+C9NjL9zXjEWHAg19kKUSHY6YYF
+ +5uqEU4nTOvMjCnVS4/3RpTcTxz/Ina8TaEX1CPQq9A84lCMHwE2nLlUmlyJFlruturHLjt18DkOe
+ 3IYhwpcYg6sJrO+QYjDduFAOfL3aSYwL+oue1Zrn86X2ENw+nsMwokL+Ff41hZXjY+QINTprAkRds
+ /UAZcRKeA==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kcbO8-0001ux-GP
- for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 21:41:18 +0000
-Received: from mail-ot1-f71.google.com ([209.85.210.71])
+ id 1kcbNw-0001tK-Ni
+ for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 21:41:05 +0000
+Received: from mail-oi1-f197.google.com ([209.85.167.197])
  by youngberry.canonical.com with esmtps
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1kcbO7-0003Q2-Cv
- for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 21:41:15 +0000
-Received: by mail-ot1-f71.google.com with SMTP id l12so23343oth.16 for
- <wireless-regdb@lists.infradead.org>; Tue, 10 Nov 2020 13:41:15 -0800 (PST)
-Date: Tue, 10 Nov 2020 15:41:12 -0600
+ (envelope-from <seth.forshee@canonical.com>) id 1kcbNv-0003PE-OQ
+ for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 21:41:03 +0000
+Received: by mail-oi1-f197.google.com with SMTP id 25so32833oip.11 for
+ <wireless-regdb@lists.infradead.org>; Tue, 10 Nov 2020 13:41:03 -0800 (PST)
+Date: Tue, 10 Nov 2020 15:41:00 -0600
 From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20201110214112.GO6125@ubuntu-x1>
-References: <20201106215324.91265-1-seth.forshee@canonical.com>
+Message-ID: <20201110214100.GN6125@ubuntu-x1>
+References: <20201020181731.GA18865@leagueoflegends>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20201106215324.91265-1-seth.forshee@canonical.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update 5.8 GHz
- regulatory rule for GB
+In-Reply-To: <20201020181731.GA18865@leagueoflegends>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for Pakistan (PK) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,45 +48,40 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+To: Abdul Rauf <abdulraufmujahid@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Nov 06, 2020 at 03:53:24PM -0600, Seth Forshee wrote:
-> Based on [1], the 5.8 GHz limit for GB is 200 mW and requires DFS
-> and TPC. Update the rule accordingly.
+On Tue, Oct 20, 2020 at 11:17:31PM +0500, Abdul Rauf wrote:
+> Update range to 5.725 - 5.875 Ghz
+> as mentioned at https://fab.gov.pk/type-approval/
 > 
-> While at it, expand the 5470 - 5725 rule to 5730 as specified in
-> the same document to allow channel 144 to be used.
-> 
-> [1] https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf
-> 
-> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+> Signed-off-by: Abdul Rauf <abdulraufmujahid@gmail.com>
 
-Applied.
+Applied, thanks!
 
 > ---
->  db.txt | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  db.txt | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
 > diff --git a/db.txt b/db.txt
-> index 699bce9fb9d8..39e1928fe384 100644
+> index ac32483..ce8449c 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -593,9 +593,9 @@ country GB: DFS-ETSI
->  	(2400 - 2483.5 @ 40), (100 mW)
->  	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
->  	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-> -	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
-> +	(5470 - 5730 @ 160), (500 mW), DFS, wmmrule=ETSI
->  	# short range devices (ETSI EN 300 440-1)
-> -	(5725 - 5875 @ 80), (25 mW)
-> +	(5725 - 5875 @ 80), (100 mW), DFS
->  	# 60 GHz band channels 1-6
->  	(57000 - 71000 @ 2160), (40)
+> @@ -1243,8 +1243,10 @@ country PH: DFS-FCC
+>  	(5735 - 5835 @ 80), (30)
 >  
+>  country PK: DFS-JP
+> +	# https://fab.gov.pk/type-approval/
+> +	# https://pta.gov.pk/media/Pakistan_Table_of_Frequency_Allocations.pdf
+>  	(2402 - 2482 @ 40), (20)
+> -	(5735 - 5835 @ 80), (30)
+> +	(5725 - 5875 @ 80), (30)
+>  
+>  # PL as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301 893)
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
 > -- 
-> 2.27.0
+> 2.25.1
 > 
 
 _______________________________________________
