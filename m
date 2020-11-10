@@ -4,43 +4,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=merlin.20170209;
  h=Sender:Content-Transfer-Encoding:
  Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:In-Reply-To:
- References:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+ List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
+ Message-ID:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
- bh=K0kLQFIYQ9CeOsy9GFPq1K6QUiqmbOdIRO1tIQ2+Cg8=;
- b=i5/aiAaOjrLjOSZkHwgKeZ0ZD
- kp1caO6hj+0O4R7U2nN2f0kejUEN4MgcOpf3EYHhNAwuQD4iFFsQmxspQRr/OFCOkSkGwGi6fEok5
- 3ttKM6Xr3sAYkvclIzWjYfpDHdVlf1dmKoVvteG2UA634fdOJrm/QjdH3qszUo2VvlSS480YN/r1q
- N61eP0EgjsRgMzru5A/qtE/cJVbP2U8S7eVeUUajJQQqX7vXKPWksGXr4GPpk0YOUZXAG1rMyk/BD
- ZieObwESJULDDhoXUqBh7HREEqW2kbOp0vYWihkyFw/Ma4hF0Xo8PRboB4iB20wYwUD6Qso5NLTQa
- q+BEK00+Q==;
-Received: from mail-oi1-x230.google.com ([2607:f8b0:4864:20::230])
+ bh=v/uc0aMpTdnPqPpkE9f7g2MezQlKGRMEp++LZk4dox8=;
+ b=i9JNCQY3HfnkYWlcSGFMzr6Cc
+ 3HSWgQzOjtCX4KX/0Ly0hf5hdYbKIOuaeIOIjBYFopLKVFY7/kCjmr+9Q3WuVka9P43TUNNBQh2+e
+ bwgV8M3ykffizNAEZGtEqMKtaQFOcr//p9XjP/tChkdBhQiQXv1YN3N+SIcRKl4rRQ+l3awNywmP6
+ ELfvKaAOZElewXMeIatW5tFuaq8a6aaDT0rjUvoetimoBFw/FWYwHQsOnSjT8chAKQE7zfKWSpUdO
+ DnhqRlr0TYmppFI+QCKilAEYCwCldWB6CAlofv07v3obJZ5qal+AHI3qlF4+7X23FHhum9ipILREa
+ SCBFeHqCA==;
+Received: from youngberry.canonical.com ([91.189.89.112])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kcVTt-0003m9-H6
- for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 15:22:55 +0000
-Received: by mail-oi1-x230.google.com with SMTP id q206so14702188oif.13 for
- <wireless-regdb@lists.infradead.org>; Tue, 10 Nov 2020 07:22:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sartura-hr.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VSh8DyqrFTLGg9mOm/yZA8V8LLuXrD4eCUIgAcRxsZI=;
- b=TJLAD9oqXiWcR0372YwuJ9FVsbX5HGOw9OxafbwKSKeus6Ub8Jm7ydVq5qgpOBQEX4
- V/MwDox1Xnr32CvXuWUYQj15yleFPljnMRCVvFX+EC8XJx6kkkQPz/Lox/WbUvzypCpz
- oaU7xULjuwPHK90nZQ9M1NDcB/d+4gSzqK2imAagzDy2oW5VJi7AqjYyTgSF1P/lPwpG
- zrcKclo60zCLuTgxYHrnYxuezyxisA4Ss57PMllTA2/MhgRyFYJ5hYH3ymhX9sIQuD6T
- gBY1WokuxbHiGYEPyq3XsMinX/EebgTIcUaG0fdS6zJ4lyocj9mvseWvm+i4XQgWgOf3
- hwbQ==
+ id 1kcIg4-0001Cl-AH
+ for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 01:42:33 +0000
+Received: from mail-il1-f197.google.com ([209.85.166.197])
+ by youngberry.canonical.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <seth.forshee@canonical.com>) id 1kcIg3-00011H-ER
+ for wireless-regdb@lists.infradead.org; Tue, 10 Nov 2020 01:42:31 +0000
+Received: by mail-il1-f197.google.com with SMTP id z18so8003314ilb.12 for
+ <wireless-regdb@lists.infradead.org>; Mon, 09 Nov 2020 17:42:31 -0800 (PST)
+Date: Mon, 9 Nov 2020 19:42:28 -0600
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <20201110014228.GJ6125@ubuntu-x1>
+References: 
+	 <840438bf70c72d2ab933aee9ae5aa6985b6c1531.1601902881.git.b.K.il.h.u+tigbuh@gmail.com>
 MIME-Version: 1.0
-References: <20200913172140.66439-1-robert.marko@sartura.hr>
- <20201109231649.GH6125@ubuntu-x1>
- <CA+HBbNHfxt7pggPDtz2gTyg74OD9KmYto7-Lck3qF_pTGvuQqQ@mail.gmail.com>
- <20201110142803.GK6125@ubuntu-x1>
-In-Reply-To: <20201110142803.GK6125@ubuntu-x1>
-From: Robert Marko <robert.marko@sartura.hr>
-Date: Tue, 10 Nov 2020 16:22:36 +0100
-Message-ID: <CA+HBbNFfgCfdnikHpJeXjBrbu7FUnQ3rcDWoHrjPZg-hMmg3EQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for Croatia (HR)
+Content-Disposition: inline
+In-Reply-To: <840438bf70c72d2ab933aee9ae5aa6985b6c1531.1601902881.git.b.K.il.h.u+tigbuh@gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: restore channel 12 &
+ 13 limitation in the US
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,107 +44,74 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <seth.forshee@canonical.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Luka Perkov <luka.perkov@sartura.hr>
+To: bkil <b.K.il.h.u+tigbuh@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Nov 10, 2020 at 3:28 PM Seth Forshee <seth.forshee@canonical.com> wrote:
->
-> On Tue, Nov 10, 2020 at 11:35:38AM +0100, Robert Marko wrote:
-> > On Tue, Nov 10, 2020 at 12:16 AM Seth Forshee
-> > <seth.forshee@canonical.com> wrote:
-> > >
-> > > On Sun, Sep 13, 2020 at 07:21:40PM +0200, Robert Marko wrote:
-> > > > Croatian Regulatory Authority for Network Industries (HAKOM) has
-> > > > updated the general licenses OD-85 and OD-86 with the new OD-85a
-> > > > and OD-86a versions.
-> > > >
-> > > > These introuduce the following changes:
-> > > > * Outdoor usage for 5150-5250 and 5250-5350 MHz ranges is permitted
-> > > > * 5150-5250 MHz range TPC requirment was dropped and power output raised to 200mW
-> > > >
-> > > > OD-85a: https://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_85a.pdf
-> > > > OD-86a: https://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_86a.pdf
-> > > >
-> > > > Signed-off-by: Robert Marko <robert.marko@sartura.hr>
-> > > > Cc: Luka Perkov <luka.perkov@sartura.hr>
-> > > > ---
-> > > >  db.txt | 4 ++--
-> > > >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > > >
-> > > > diff --git a/db.txt b/db.txt
-> > > > index ac32483..52d0fab 100644
-> > > > --- a/db.txt
-> > > > +++ b/db.txt
-> > > > @@ -693,8 +693,8 @@ country HR: DFS-ETSI
-> > > >  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
-> > > >  # HR: http://tablice.hakom.hr:8080/vis?lang=en
-> > > >       (2400 - 2483.5 @ 40), (100 mW)
-> > > > -     (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-> > > > -     (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-> > > > +     (5150 - 5250 @ 80), (200 mW), AUTO-BW, wmmrule=ETSI
-> > >
-> > > Based on the translation I'm reading the 200 mW applied to elevations
-> > > from 5 degrees to 30 degrees, and for elevations above 30 degress the
-> > > limit is 125 mW. I'm not expeienced with regulations that vary with the
-> > > elevation angle. Why should we use 200 mW instead of 125 mW, which is
-> > > allowed for any elevation?
-> >
-> > You can see in the OD-86a that now 1W (30 dBm) EIRP is the maximum
-> > allowed power.
-> > Then in usage conditions, they state that if median EIRP power larger
-> > than 200mW (23 dBm) is used then the listed
-> > angle and power limits should be used.
-> > That is why I used 200mW as it has no limitations associated.
->
-> Right, but OD-86a applies to 5250-5350 MHz. I don't see this same
-> statement in OD-85a.
->
-> However, digging into it a little more, it looks like the elevation
-> restrictions come from WRC-19 resolution 229 [1], which has more detail.
-> Based on my reading of that it seems that the situation here actually is
-> similar to that for 5250-5350 MHz, i.e. that 200 mW is the general limit
-> but that operation at 1W is allowed subject to the stated elevation
-> angle restrictions. So it sounds like the 200 mW limit for 5150-5250 MHz
-> should be okay.
->
-> [1] https://www.itu.int/dms_pub/itu-r/opb/act/R-ACT-WRC.14-2019-PDF-E.pdf
+On Mon, Oct 05, 2020 at 03:01:22PM +0200, bkil wrote:
+> The precisely allowed transmission power on channel 12 & 13 is not clear.
+> 
+> I did some fact checking and document reviews in the past, but still
+> failed to come up with an exact reference or calculation regarding what TX
+> power should be allowed in general to reduce interference in the
+> neighboring restricted band 2483.5-2500 MHz and whether indoor vs. outdoor
+> and b/g/n modulation would make a difference (probably yes).
+> 
+> Existing documents that discuss this are vague and pretty much out of date:
+> https://en.wikipedia.org/wiki/List_of_WLAN_channels#endnote_B
+> 
+> Following these guidelines, I failed to come up with an approximate
+> formula that would prohibit usage of channel 12 & 13, but still allow
+> usage of channel 11 with full power, hence at least part of the argument
+> for prohibiting channel 12 & 13 needs to be refined.
+> 
+> Until further research, just to stay safe, I propose that we restore the
+> previous limitation of disabling channel 12 & 13 as before. We should
+> work towards finding a safe transmission power to use on both and specify
+> that (like 50mW on channel 13 and 100mW on channel 12?).
+> 
+> I've also started a discussion for investigation on Wikipedia:
+> https://en.wikipedia.org/wiki/Talk:List_of_WLAN_channels#Should_the_2.4GHz_channel_12_and_13_in_the_USA_need_updating?
+> 
+> Signed-off-by: bkil <b.K.il.h.u+tigbuh@gmail.com>
 
-OD-85a covers 5150-5250 MHz and power limits for it have not changed,
-they remain the same as before.
-I simply remove the no-outdoor limit as it was dropped.
->
-> > >
-> > > > +     (5250 - 5350 @ 80), (200 mW), DFS, AUTO-BW, wmmrule=ETSI
-> > >
-> > > The translation of OD-86a I'm reading says "use mostly indoors." Is that
-> > > an accurate translation? How does this compare to the language from
-> > > OD-86? I'm a little unsure how to interpret it.
-> >
-> > Yes, it's accurate.
-> > In OD-86 this was strictly written as "exclusive use indoors", Hakom
-> > even stated in their press release that the
-> > changes to OD-86 now allow outdoor usage.
-> > https://www.hakom.hr/default.aspx?id=10442
-> > It's in English.
-> >
-> > They are just trying to encourage the band to still be mostly used for
-> > indoor stuff.
->
-> Great, thanks for clarifying.
->
-> I've applied the patch. Thanks!
+I tried doing a little research, and it does appear that use of channels
+12 and 13 is more complicated than it might seem on the surface. I
+cannot find any clear guidance on power limits and lack the background
+to determine appropriate limits from the information I did find, so it
+does seem prudent to restore the previous limitation.
 
-Thanks,
-Robert
+Applied, thanks!
+
+> ---
+>  db.txt | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index ac32483..68613cf 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -1568,8 +1568,12 @@ country UG: DFS-FCC
+>  
+>  # https://www.ecfr.gov/cgi-bin/text-idx?SID=eed706a2c49fd9271106c3228b0615f3&mc=true&node=pt47.1.15&rgn=div5
+>  # Title 47 Part 15 - Radio Frequency Devices, April 2, 2020
+> +# Channels 12 and 13 are not forbidden, but are not normally used with full
+> +# power in order to avoid any potential interference in the adjacent restricted
+> +# frequency band, 2,483.5–2,500 MHz which is subject to strict emission limits
+> +# set out in 47 CFR § 15.205. TODO: reenable and specify a safe TX power here.
+>  country US: DFS-FCC
+> -	(2400 - 2483.5 @ 40), (30)
+> +	(2400 - 2472 @ 40), (30)
+>  	# 5.15 ~ 5.25 GHz: 30 dBm for master mode, 23 dBm for clients
+>  	(5150 - 5250 @ 80), (23), AUTO-BW
+>  	(5250 - 5350 @ 80), (23), DFS, AUTO-BW
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
