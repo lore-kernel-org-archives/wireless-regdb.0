@@ -4,33 +4,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=merlin.20170209;
  h=Sender:Content-Transfer-Encoding:
  Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From:Date:
+ List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:MIME-Version:
  Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
  :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
- bh=v+vOY60uk15Pfcf4rjmSOXscnWSjuHhhAaMkpJz1Emg=;
- b=AAfvXRRXe0h4arbYp+2N95ipkp
- fN9HBOLagL5b/W9jg6CKHhsZU2VV1CzHWNReHI8uFJh77nqMYQGin/KiQKXAImoffFVm1vLu6SLLn
- LDUbJZ6tq1Ixo73BnefuKeKibQ/LY23cRqG2rA6W0L5DEVqHMLuaNwSLqyTjHmndsT0qPN5rIUkvn
- PdNP7rltVD3Ol/ml5JUgZzBG7QdIOBuxSx62QbgXKE43XdxAMl3NALFbv3Lv1Iu/M87dXxqlrINJG
- 6w9+PXo/FkxcTNJ589r2GbjXndAS9jEFmwDonm6j6vzQXLZCJYx66V6CDANx7QjCl5TExMv3NbkwP
- 7h7cDFMg==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ bh=X/ERgVKXlvIxZCpfFHYlzCN8ZsglBSC3DDf7IcQ5Q2U=;
+ b=aOn5A7aS1ynsEp4O7g2xUTQbbn
+ 5hQ+1rqzrPgrr+QkrQoCbbXE8bQUQg1+l+aCWOtb+xsVSZuuSbsmxJjKCnsxhdjyDTKoSLaxXglW0
+ co3Yvwk1K9jR4ANqiyzOsAhOoExjrqdYAqK8wyD7iAJ3YolHNbfhKQnZedjapkdxOuf1yhF5Rq96B
+ vzdcF+y/ZJ0TTT3vtG6obxSFsS6MrG34Tn1LaeZcX13vq6FlkymeJBuANXm3FmgGzdxRj/oK+sFTA
+ iKQyU11cywC1zzXXmjJBOneFsgW0vvw/nL2JOjFxEaMBNab66Bky1ZPY5fnrfcbGxusLabtvM559X
+ ld6X332A==;
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kgC7l-0004zf-2r
- for wireless-regdb@lists.infradead.org; Fri, 20 Nov 2020 19:31:14 +0000
-Received: from mail-ot1-f71.google.com ([209.85.210.71])
- by youngberry.canonical.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1kgC7j-0002lb-Vw
- for wireless-regdb@lists.infradead.org; Fri, 20 Nov 2020 19:31:12 +0000
-Received: by mail-ot1-f71.google.com with SMTP id e59so4022836otb.3 for
- <wireless-regdb@lists.infradead.org>; Fri, 20 Nov 2020 11:31:11 -0800 (PST)
-Date: Fri, 20 Nov 2020 13:31:09 -0600
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <20201120193109.GP5439@ubuntu-x1>
+ id 1kcv8q-0002PI-2E
+ for wireless-regdb@lists.infradead.org; Wed, 11 Nov 2020 18:46:49 +0000
+Received: by mail-io1-xd41.google.com with SMTP id s24so3294069ioj.13 for
+ <wireless-regdb@lists.infradead.org>; Wed, 11 Nov 2020 10:46:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=mime-version:from:date:message-id:subject:to:cc
+ :content-transfer-encoding;
+ bh=iw7pd+7Piw+XxX2jyOKvkK0Mfc78jK1GM+YRGkFy7qc=;
+ b=suiiyXjw9LOtw7vaymJgX6j5gE+ceY2SMUV8TDnUdqVovYGrylT54Z+M85LGYyJjhH
+ HveeowlrPVAdd+vOm/7PhSHU72w6Y4kgmW55wexXkWpZDTmHs9u0nN8DkSFNHggYfhsS
+ PYSE1/2tLRd3tf3gcIRzhxKSaZKSNioePu0QTPXEYupsZ08iipRXTig+nPW4+zVgHA4b
+ jTdfPMQKAq9NcAFgo/8zwTqA2dF6urOWNy6/zSmedRMbfh0+Qb50tRhiHXaio5fyg6fB
+ XDn9RCyaB5IE/GUpS0QHVt3D1BGjtoqW5TkXnyrDxPhshg/bl+pOLBWNYjU3p/G5U/Bq frxA==
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2020-11-20
+From: Pavel Starosek <starosekpd@gmail.com>
+Date: Thu, 12 Nov 2020 00:46:34 +0600
+Message-ID: <CAPgWZqy_bD7KP_ONv1C7tUVw4TLw3QK_xcyYXpi_WH1=4VJwQw@mail.gmail.com>
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Kazakhstan (KZ)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -40,45 +44,56 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+To: Seth Forshee <seth.forshee@canonical.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2020-11-20) is available at:
+Based on [1]:
+* Extend 2400-2483.5 MHz range
+* 5150–5250 MHz range may be up to 200 mW
+* Add 5725-5850 MHz range for indoor usage
+* Add 57-66 GHz range.
+* In 5470-5725 range change the bandwidth from 80 to 160
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2020.11.20.tar.xz
+[1] http://adilet.zan.kz/rus/docs/V1500010730
 
-The short log of changes since the master-2020-04-29 release is below.
-
-Thanks,
-Seth
-
+Signed-off-by: Pavel Starosek <starosekpd at gmail.com>
 ---
+ db.txt | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
 
-Abdul Rauf (1):
-      wireless-regdb: Update regulatory rules for Pakistan (PK) on 5GHz
+diff --git a/db.txt b/db.txt
+index 0bf6287..c71a03a 100644
+--- a/db.txt
++++ b/db.txt
+@@ -872,13 +872,15 @@ country KY: DFS-FCC
+     (5735 - 5835 @ 80), (30)
 
-Pavel Starosek (1):
-      wireless-regdb: Update regulatory rules for Kazakhstan (KZ)
+ # Source:
+-# http://mic.gov.kz/sites/default/files/pages/pravila_prisvoeniya_polos_chastot_no34.pdf
+-# http://adilet.zan.kz/rus/docs/P000001379_
++# http://adilet.zan.kz/rus/docs/V1500010730
++# http://adilet.zan.kz/rus/docs/V1500010375
+ country KZ: DFS-ETSI
+-    (2402 - 2482 @ 40), (20)
+-    (5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
++    (2400 - 2483.5 @ 40), (20)
++    (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
+     (5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
+-    (5470 - 5725 @ 80), (20), NO-OUTDOOR, DFS
++    (5470 - 5725 @ 160), (20), NO-OUTDOOR, DFS
++    (5725 - 5850 @ 80), (20), NO-OUTDOOR
++    (57000 - 66000 @ 2160), (40)
 
-Robert Marko (1):
-      wireless-regdb: Update regulatory rules for Croatia (HR)
-
-Seth Forshee (3):
-      wireless-regdb: update regulatory rules for Egypt (EG)
-      wireless-regdb: update 5.8 GHz regulatory rule for GB
-      wireless-regdb: update regulatory database based on preceding changes
-
-bkil (1):
-      wireless-regdb: restore channel 12 & 13 limitation in the US
+ country LB: DFS-FCC
+     (2402 - 2482 @ 40), (20)
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
