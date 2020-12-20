@@ -7,34 +7,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:From:
  Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
  :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
- bh=iTz4vIqYVJSir96jOiTALmfk16hWKe53NtRG5J/3pAA=;
- b=B4WT6ZIBhckq0dyh1XX3ihf2yu
- WDDPO+rdY+lnCOqC6ODhKutCCqFcxRXoN3kOKy9C3zblt71WrHQPDmxZ9RM5HNQ0xFRm0miYqyoje
- NqjagnF2EOYuyKDCYlL/CNrMQ/KggTMIMYCLsM7gi0yefVZFXV7Sw35ZEzmCm3JH6K2plwbJCgQp9
- ya6u4x17sxo2C/YIK4M1Wa8sgjQkIY0OxIADe2o8LY+51F7fGB02MGNFXIEGbZ3DMKfbXehYYNxIM
- +/dZ00pPbcFP8mFic+u2rVP7aE23vaqpEl7NPcUMCyLgw4J+VsMIdWRbumarGjB5XnKuOjUB7TYau
- vJ0nmLOQ==;
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+ bh=VH+CtS56ndXQFwfHj4MtfhmXpY5ru7vdvbN1KWf/F0w=;
+ b=tZkGZlaBSZtXpenZQABaFs2ZfF
+ 1AcxOn0icdkalTOynwyVDbO57FhE8Yk8Weh225eowr6hUc+cWI/4bkJG4Uchad2cERYaqBTw5f2vl
+ oEFGBMHv87uzYAaZNPC8iDvmhKQFBDcADkRYdN1HCKn9n3eTUeTclNha4sSQdFnx8EXqoK11/PtZu
+ HoWAXxyCK+SxK7tR3JKsv10JpbSBLMWLcOMFZgxN95w+dW01WUn799OUYxS+fBz6B3HQO/O4PA81S
+ lo8rw69fH/MICLz+3HIXvi3/GL5rfkq5RqBIcNVhgzrqCVg+nVHD7c8TGSGz+ZQrgjOP5M9xoMFDk
+ jY0F/3Rw==;
+Received: from mail-lf1-x131.google.com ([2a00:1450:4864:20::131])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1kuLF4-0001wB-8n
- for wireless-regdb@lists.infradead.org; Tue, 29 Dec 2020 20:05:15 +0000
-Received: by mail-wr1-x433.google.com with SMTP id i9so15619100wrc.4 for
- <wireless-regdb@lists.infradead.org>; Tue, 29 Dec 2020 12:05:09 -0800 (PST)
+ id 1kr6FI-0008Gi-NK
+ for wireless-regdb@lists.infradead.org; Sun, 20 Dec 2020 21:28:06 +0000
+Received: by mail-lf1-x131.google.com with SMTP id o13so19063274lfr.3 for
+ <wireless-regdb@lists.infradead.org>; Sun, 20 Dec 2020 13:28:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20161025; h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=PPs7e52j0MruEfTDx7S6xZAJfhWHdbowdofq3XG1NZQ=;
- b=fABRlHmpWRHxp9lWlhtrIsXaPWHr9t55GQ0ampr6gozeohTJe37K9x34PQVrmL/hu5
- vrkHhtotfnE95IJW+NEyNajXDAffxzoPLGLDRwXiZQ5PzgFeJAZQ+yfmiCFp/Yg+2c18
- FAi5zHghAVZKBolEnEq3Wa/sjrP67t94oamY3Au4KeEJdx85P5sytwSm3N1Sba7HzDAL
- 1Q8vmp+26o/tIKJuPjVQAYDhZ8byvs9xLqeoCNGQpzjVIPkH7yL3hrfRemVyhX0GHdNY
- CB6YzkrtLfp8UDH5cMj5PXRGdpSejeDssWAIXjI4cbm9eUrPFNuOdlCrCExxJ/UAam1q 0geA==
-From: Xose Vazquez Perez <xose.vazquez@gmail.com>
-Date: Tue, 29 Dec 2020 21:05:04 +0100
-Message-Id: <20201229200504.6383-1-xose.vazquez@gmail.com>
+ bh=/e3jNsq3iy3v40rws4mJ4ddje4NCepqN/jkGkUQj+WE=;
+ b=IGyJLrwNPs7nGGEVHTQab82fiJjb6Idsp5s6IB1R4RaWfyeKeQXU9t3UEqBpVGkMZD
+ qgXp8QFGBZ3P4HidQCrMOA6IrDOZQiKoA8xy8w43f/dCVFRQoNda8JDbNKiT4OS1zUso
+ dfpbm6nrZJoavjjOduhKN7Cj1BFsZwkoYO53ksa94098xyxknJiiZSaXoskClm0PI5MJ
+ dVlGOVXrB7FYjTROt6AVHUX5JzymRBThW1vAsfMgCeNZiraktIlK55yVSg49HUwOaKzR
+ 7SFMGDvetsBuUQS15b0Wn7HnkOsrIGe7fappaBw6Lgpf+mRr0yO43orO0ebtKm5OzlYt hSew==
+From: Illia Volochii <illia.volochii@gmail.com>
+Date: Sun, 20 Dec 2020 23:27:21 +0200
+Message-Id: <20201220212721.22450-1-illia.volochii@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update CNAF regulation
- url for ES
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Ukraine (UA)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,32 +49,63 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-Cc: WIRELESS ML <linux-wireless@vger.kernel.org>, Seth Forshee <seth.forshee@canonical.com>, Xose Vazquez Perez <xose.vazquez@gmail.com>, REGDB ML <wireless-regdb@lists.infradead.org>
+To: seth.forshee@canonical.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, Illia Volochii <illia.volochii@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Cc: Seth Forshee <seth.forshee@canonical.com>
-Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
-Cc: REGDB ML <wireless-regdb@lists.infradead.org>
-Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+This patch is based on the latest Ukrainian norms https://zakon.rada.gov.ua/laws/show/z0201-15#n48.
+
+* Extend some frequency ranges.
+* Increase EIRP of frequency ranges.
+* Set wmmrule=ETSI to frequency ranges that are related to EN 301 893.
+* Permit outdoor usage of 2.4 GHz band channels.
+* Prohibit outdoor usage of some 5 GHz band channels.
+
+Signed-off-by: Illia Volochii <illia.volochii@gmail.com>
 ---
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ db.txt | 25 ++++++++++++-------------
+ 1 file changed, 12 insertions(+), 13 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index c71a03a..d03f3fa 100644
+index c71a03a..86073d2 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -527,7 +527,7 @@ country EG: DFS-ETSI
- #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
- #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
- # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
--# ES: https://avancedigital.gob.es/espectro/Paginas/cnaf.aspx
-+# ES: https://avancedigital.mineco.gob.es/espectro/Paginas/cnaf.aspx
- country ES: DFS-ETSI
- 	(2400 - 2483.5 @ 40), (100 mW)
- 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+@@ -1548,21 +1548,20 @@ country TZ:
+ 	(2402 - 2482 @ 40), (20)
+ 	(5735 - 5835 @ 80), (30)
+ 
+-# Source:
+-# #914 / 06 Sep 2007: http://www.ucrf.gov.ua/uk/doc/nkrz/1196068874
+-# #1174 / 23 Oct 2008: http://www.nkrz.gov.ua/uk/activities/ruling/1225269361
+-# (appendix 8)
+-# Listed 5GHz range is a lowest common denominator for all related
+-# rules in the referenced laws. Such a range is used because of
+-# disputable definitions there.
++# Source: https://zakon.rada.gov.ua/laws/show/z0201-15#n48
++# Although it is allowed to use up to 250 mW for some 5 GHz frequency ranges,
++# all of them are limited to 100 mW for IEEE 802.11n and IEEE 802.11ac.
++# 2.4 GHz band channels can be used outdoors when some requirements are met.
++# 5 GHz band channels must be used only indoors in some cases. They are neither
++# permitted nor denied outdoors in others.
+ country UA: DFS-ETSI
+-	(2400 - 2483.5 @ 40), (20), NO-OUTDOOR
+-	(5150 - 5250 @ 80), (20), NO-OUTDOOR, AUTO-BW
+-	(5250 - 5350 @ 80), (20), DFS, NO-OUTDOOR, AUTO-BW
+-	(5490 - 5670 @ 160), (20), DFS
+-	(5735 - 5835 @ 80), (20)
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (100 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++	(5470 - 5725 @ 160), (100 mW), DFS, NO-OUTDOOR, wmmrule=ETSI
++	(5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
+ 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+-	(57000 - 66000 @ 2160), (40)
++	(57000 - 66000 @ 2160), (40 mW), NO-OUTDOOR
+ 
+ country UG: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
 -- 
-2.29.2
+2.25.1
 
 
 _______________________________________________
