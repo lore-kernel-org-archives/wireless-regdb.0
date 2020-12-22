@@ -7,33 +7,33 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Unsubscribe:List-Id:Subject:MIME-Version:References:In-Reply-To:
  Message-Id:Date:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
- bh=hYA2SIsOwiAf1zmzKVwZvtRSiU7Dp78o0kv8vnZ5Kbc=;
- b=SeXXm8Id8HO9U0bGiyItQuRxB
- JaOpQd60ode5nmO8wrYfTL8bHyijlBa4/jlFOyAPaUaZkpQnGYQEpBLRRcopgAXwk1G3F6WB2rcN1
- HhCiQtxgO7JKIzAfyS3iHdtI8pKPHm5t2t8xsHDafDwLQHEC5F1Bv7EKAFhELGdTK/628aBb5lrTO
- F25yROP+XpXANaz3ZHhosKVeLE79WyNl9PAUbGa4p/w8FKBdoItSe9DL3qQvdVlmX/LUS7kxDWNTa
- fWzufn5khFPp2pkbiMS0Xx9h4GBQ5A75GysYhyYn7GxuxNbdPUEtCGXhFHtvA0EL5otLIdkqNSyjK
- ly2lv4ycQ==;
+ bh=1C1j2ZpG4d6tt5clr2KOfV0LyTqvw51P/gztswuFAgk=;
+ b=oYyQVh/LpaqXARGgcD2xa6Ob1
+ CquQikR9T4/Lpjht3k55t3aKnZxNDBJGg7Jsqt6OlTu3fWAHpbPoUqlWi/5tHng/tXHkYQk0o1vJ9
+ 6fAr8jk80zrXHGneqkTwyGvrNtcRRm3XZiscGDdUteP16mxI0yojVfMuloCmvr1MJbzCAEBoN3b3T
+ 7adly0YB4I214212eRBktdzsoHJVqUNqQvtqu3r+yyFQTxu+l1hExJdG7ZsOhG6zUotQuX6Rdx5RP
+ qrru6Ah3ulk/PD51z9a54gv5njXfC2M6xMPhUCYit6jhFB/JckiSMDnsMq0kUZSGYFs8HgSIx9B69
+ H/27GavQQ==;
 Received: from mail-lf1-x130.google.com ([2a00:1450:4864:20::130])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1krnCi-0008Cn-1Y
- for wireless-regdb@lists.infradead.org; Tue, 22 Dec 2020 19:20:17 +0000
-Received: by mail-lf1-x130.google.com with SMTP id o19so34618981lfo.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 22 Dec 2020 11:20:13 -0800 (PST)
+ id 1krnG8-0008PO-9r
+ for wireless-regdb@lists.infradead.org; Tue, 22 Dec 2020 19:23:49 +0000
+Received: by mail-lf1-x130.google.com with SMTP id m12so34564141lfo.7 for
+ <wireless-regdb@lists.infradead.org>; Tue, 22 Dec 2020 11:23:48 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20161025; h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FPuCXixP7EtqyMJX4no93jVlw3DMMt3PppG42GBfh/4=;
- b=IRGfWo+e1q6FjJdcfQClxg/M0rEaEyLJpCNsBMzqKctyYFgBxAWn9NPQXvVoYKHq+n
- 17Ssd6PA4HJO6JrXpePTUpL7kvfmQHd+K57hJEWRWY9XWL9ZyuR5NsvbB48s9my4K91Y
- NnbkDhaEA06pGLAZdlGrEK17vuxE1fvBMyX/WjKrH0e8Ge/NMHJSjNe+PXKKoG9gFQzZ
- jMET0mzJWsKX0dD8B/oSDpv8EfH6KTaAU+yoc2oS1V2Dbh4BETlZ8QEHqoQgEG08QQT7
- /RirANYKEc+bsrtPmFubaqo8umpyXgSSnuhHZ9/HSlzitDOv35aNSBvYykS/NzsN7Mkz CLnQ==
+ bh=bdK3bqAaXhjxbjLLRwmPmQtBbS0rf7DANa/y/ZggeCk=;
+ b=kdOd5IiB1Z2MgmQWRcjh2+8TvWAzJDo7Anxi9haqDGpZIULAt/d5LclHWrENhmgBAS
+ 3Jerv2vzWsK647Ud2p7Fx/MsSQIGkkSxutblvgEpF8IQcV6xNY2qXmbceg074m+lieap
+ WxLZ5DxfX8slhcyWcW1XQujyiHB6hq5zIYkagmL67z49b72i2T/07LWyNDazcMvIcGOX
+ t31bxfdG2VQ3+4FSbMHRTDpHUAZA7Ez+sPkf+CCc2SGWUxcpxQ24nifwZSuqYHIPUZj7
+ XiPoqbf/v1PBWRzQXhyN0YcWF0LrEeS4wghK5TVhscWtZO2+GG5nInlLzhGHRdkVxORF w3yA==
 From: Illia Volochii <illia.volochii@gmail.com>
-Date: Tue, 22 Dec 2020 21:17:38 +0200
-Message-Id: <20201222191738.56240-1-illia.volochii@gmail.com>
-In-Reply-To: <20201220212721.22450-1-illia.volochii@gmail.com>
-References: <20201220212721.22450-1-illia.volochii@gmail.com>
+Date: Tue, 22 Dec 2020 21:23:28 +0200
+Message-Id: <20201222192329.56983-1-illia.volochii@gmail.com>
+In-Reply-To: <20201222191738.56240-1-illia.volochii@gmail.com>
+References: <20201222191738.56240-1-illia.volochii@gmail.com>
 MIME-Version: 1.0
 Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
  for Ukraine (UA)
@@ -70,7 +70,7 @@ Signed-off-by: Illia Volochii <illia.volochii@gmail.com>
  1 file changed, 14 insertions(+), 13 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index c71a03a..eaa3ea5 100644
+index c71a03a..be6edf0 100644
 --- a/db.txt
 +++ b/db.txt
 @@ -1548,21 +1548,22 @@ country TZ:
@@ -86,7 +86,7 @@ index c71a03a..eaa3ea5 100644
 -# disputable definitions there.
 +# Source: https://zakon.rada.gov.ua/laws/show/z0201-15#n48
 +# Power limit units are the same as provided in the source (i.e., mW for
-+2.4 and 5 GHz, dbm for 60 GHz).
++# 2.4 and 5 GHz, dbm for 60 GHz).
 +# Although it is allowed to use up to 250 mW for some 5 GHz frequency ranges,
 +# all of them are limited to 100 mW for IEEE 802.11n and IEEE 802.11ac.
 +# 2.4 GHz band channels can be used outdoors when some requirements are met.
