@@ -1,29 +1,39 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=merlin.20170209;
- h=Sender:Content-Transfer-Encoding:
- Content-Type:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To:From:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
- bh=B6xg5CglkmJ9inn7I0wnz4bmKgLzhod8UnDHKS2r+Z8=;
- b=MkvTIFWbBgqS/o7DUO4JM/zEUj
- CIqPMaWGIozRqkeOSrNanDCE4bZBgiuPMNpyfAV9iFNsDclweKlRAx6rG6GLEURjx21KSEvJwLoZo
- +VZYqEQ5KE7y9ciKeF3+WSAVlw3Cik9p4zqWgyvUgFaD98J7wkQ87BbN0Fkow1ytF2eIDuCCXNNSS
- RWAcTSQQwUzvogskxai4/FylYvSJzT4YYzbwfikLB9i4LOEM3WLfYZfLEBgP5+7tank4QNRgUH9mW
- UPOfmyjj2jrrIFxRp2u7OglIjk1FvNrnrzTPZNtq7RMMGVcknWwdks3G0uE/oGGhmhFK+M9ZDJkXC
- U9naKhPg==;
-Received: from mout.kundenserver.de ([212.227.17.24])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1l85QT-00026B-CC
- for wireless-regdb@lists.infradead.org; Fri, 05 Feb 2021 18:01:50 +0000
-From: Nicolas Cavallari <nicolas.cavallari@green-communications.fr>
-Date: Fri,  5 Feb 2021 19:00:54 +0100
-Message-Id: <20210205180054.1031-1-nicolas.cavallari@green-communications.fr>
+ d=lists.infradead.org; s=desiato.20200630;
+ h=Sender:Content-Transfer-Encoding
+ :Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
+ List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
+ Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=3wcmY7R/uFmem39sLYwx5w6E1UPuBzqfGzIvAhJhUfM=;
+ b=BbQEe0elysxb2G
+ PsX9q+pC07UcFwJRM+4M1mrqg+nUS0W355/RhzTwY0I1GuSYklCQe9pHqA4TsGxY22QVkgwjAlngC
+ ctvz/SLTrL+KrR5M+9ZOND/N9z5p2v27RIN8Di/6LI6+VSQojr9rbFNsg4Mj2X/Nx1NejGTKSSr50
+ uHe9n69ZMrO3csgSJOhPZ/sEFtmMaUm9xgaN4GZxKiPGSnSzsaoT+ew5pzqYHWkVYyUGxjXBXt2aj
+ UOnxu/Ai83bd+QvmkzrRNUuJwfhpont1gvHZwbFFrQ11NgFdxGjRIOUXoE9/qxGzjCj9iYptusoTy
+ slaEqSYf0dZAxg+1lxQQ==;
+Received: from youngberry.canonical.com ([91.189.89.112])
+ by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
+ id 1lMXvj-003QkA-OU
+ for wireless-regdb@lists.infradead.org; Wed, 17 Mar 2021 15:17:54 +0000
+Received: from mail-ot1-f72.google.com ([209.85.210.72])
+ by youngberry.canonical.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <seth.forshee@canonical.com>) id 1lMXvi-00073a-JF
+ for wireless-regdb@lists.infradead.org; Wed, 17 Mar 2021 15:17:50 +0000
+Received: by mail-ot1-f72.google.com with SMTP id c6so22935609otl.14 for
+ <wireless-regdb@lists.infradead.org>; Wed, 17 Mar 2021 08:17:50 -0700 (PDT)
+Date: Wed, 17 Mar 2021 10:17:47 -0500
+From: Seth Forshee <seth.forshee@canonical.com>
+Message-ID: <YFIdm5Y+i2WRdIdU@ubuntu-x1>
+References: <002501d7066d$1a51cf50$4ef56df0$@yandex.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Do not hardcode
- 'sforshee' in the certificate commonName
+Content-Disposition: inline
+In-Reply-To: <002501d7066d$1a51cf50$4ef56df0$@yandex.com>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Cuba (CU) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,66 +43,89 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+To: Jose Daniel Rodriguez <josedanielr@yandex.com>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-gen-pubcert.sh hardcodes the 'sforshee' common name when generating the
-certificate.  Make it depend on REGDB_AUTHOR instead, which defaults to
-$(whoami).
+On Thu, Feb 18, 2021 at 10:12:45PM -0500, Jose Daniel Rodriguez wrote:
+> Hello
+> 
+> I'm sending this patch to update wireless regulations of Cuba based on the
+> linked resolution of the Ministry of Communications from 2019.
+> 
+> Best,
+> Jose D.
+> 
+> 
+> PS: The linux-wireless mailing list rejects my messages, it says: "Your
+> address is not liked source for email".
 
-Signed-off-by: Nicolas Cavallari <nicolas.cavallari@green-communications.fr>
----
- Makefile       | 2 +-
- gen-pubcert.sh | 6 +++---
- 2 files changed, 4 insertions(+), 4 deletions(-)
+Thanks for the patch. Please remember to include a Signed-off-by tag in
+patches as indicated in the CONTRIBUTING file.
 
-diff --git a/Makefile b/Makefile
-index 2f1ed93..02176ec 100644
---- a/Makefile
-+++ b/Makefile
-@@ -80,7 +80,7 @@ $(REGDB_PUBKEY): $(REGDB_PRIVKEY)
- 
- $(REGDB_PUBCERT): $(REGDB_PRIVKEY)
- 	@echo "Generating certificate for $(REGDB_AUTHOR)..."
--	./gen-pubcert.sh $(REGDB_PRIVKEY) $(REGDB_PUBCERT)
-+	./gen-pubcert.sh $(REGDB_PRIVKEY) $(REGDB_PUBCERT) $(REGDB_AUTHOR)
- 	@echo $(REGDB_PUBKEY) > .custom
- 
- 
-diff --git a/gen-pubcert.sh b/gen-pubcert.sh
-index 1a4d579..a7e8538 100755
---- a/gen-pubcert.sh
-+++ b/gen-pubcert.sh
-@@ -1,7 +1,7 @@
- #!/bin/bash
- 
--if [[ $# -ne 2 ]]; then
--	echo "Usage: $0 priv-key out-file"
-+if [[ $# -ne 3 ]]; then
-+	echo "Usage: $0 priv-key out-file common-name"
- 	exit 1
- fi
- 
-@@ -13,6 +13,6 @@ openssl req -new -key "$1" -days 36500 -utf8 -nodes -batch \
- 		string_mask = utf8only
- 		prompt = no
- 		[ req_distinguished_name ]
--		commonName = sforshee
-+		commonName = $3
- 		EOF
- 	)
--- 
-2.30.0
+Also note that there is some line wrapping in the email, which makes the
+patch fail to apply. It's easy to fix up in this case, but something to
+watch out for in the future.
 
+> 
+> 
+> ---
+>  db.txt | 7 ++++---
+>  1 file changed, 4 insertions(+), 3 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index 32d71f5..e6e26ce 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -372,11 +372,12 @@ country CR: DFS-FCC
+>  	(5735 - 5835 @ 20), (30)
+>  
+>  # Source:
+> -# https://www.mincom.gob.cu/es/marco-legal
+> -# - Redes Informáticas
+> -# Resolución 127- 2011 Reglamento de Banda de frecuencias de 2,4 GHz.
+> +#
+> https://www.mincom.gob.cu/sites/default/files/marcoregulatorio/r_98-19_regla
+> mento_redes_inalambricas.pdf
+>  country CU: DFS-FCC
+>  	(2400 - 2483.5 @ 40), (200 mW)
+> +	(5150 - 5350 @ 80), (200 mW), NO-IR, NO-OUTDOOR
+
+I'm reading a machine translation of the document, which isn't a great
+translation. There I see power limits for "Internet Service Providers to
+public" and for "Public service operators of telecommunications." Does
+this mean that private networks are not allowed in this range? If so,
+this range should probably be omitted.
+
+What provision necessitates the NO-IR flag, both here and for 5470-5725
+MHz?
+
+> +	(5470 - 5725 @ 80), (200 mW), NO-IR
+
+I don't see any EIRP limit below 250 mW for this range, so why 200 mW?
+
+Thanks,
+Seth
+
+> +	(5725 - 5850 @ 80), (200 mW)
+>  
+>  country CX: DFS-FCC
+>  	(2402 - 2482 @ 40), (20)
+> -- 
+> 2.26.0.windows.1
+> 
+> 
+> _______________________________________________
+> wireless-regdb mailing list
+> wireless-regdb@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/wireless-regdb
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
