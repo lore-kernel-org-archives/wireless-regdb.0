@@ -4,40 +4,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=desiato.20200630;
  h=Sender:Content-Transfer-Encoding
  :Content-Type:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:References:
- Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=iqHosi9kxGzR3rojXDmphCuazE6m7DI+LCwypkk+bzs=;
- b=ZDtXyGRZnO8dav
- 8UU4RJiIouJbmPIvCz7FeL1fs0Jt3unErehowJWSAeSeKPCCMIzdXKMQUdtqugyJtNsyP8W0uDYUQ
- ZBUSujB1JURBF2kYiaoal7xjbqv5yh4my1vmSh5t8+aeKNcBszHjJ1XYnVDlvxaATBU3usVubVwjN
- ydorouxs8kmRcFLBpw6mu2BaKg92p0LPs1nrSED6F2d/QzdqFpNoU9Q2V3k1NLR1CqTdXfJ2xRwyY
- l84n2w06RY2AYhWhlOitNNrBxwuDGI1tm6Qsh/XQ1n8WBL9YAp0EU0JWPxojkguF6rIf6jbnDlmPt
- WtBqU/V2xrSXE+4WN+cQ==;
-Received: from youngberry.canonical.com ([91.189.89.112])
- by desiato.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
- id 1lUBYb-005YTD-TK
- for wireless-regdb@lists.infradead.org; Wed, 07 Apr 2021 17:01:36 +0000
-Received: from mail-oi1-f199.google.com ([209.85.167.199])
- by youngberry.canonical.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <seth.forshee@canonical.com>) id 1lUBYa-0004k8-Vz
- for wireless-regdb@lists.infradead.org; Wed, 07 Apr 2021 17:01:33 +0000
-Received: by mail-oi1-f199.google.com with SMTP id x201so6666880oif.5 for
- <wireless-regdb@lists.infradead.org>; Wed, 07 Apr 2021 10:01:32 -0700 (PDT)
-Date: Wed, 7 Apr 2021 12:01:29 -0500
-From: 'Seth Forshee' <seth.forshee@canonical.com>
-Message-ID: <YG3lad3I1rJKegeb@ubuntu-x1>
-References: <002501d7066d$1a51cf50$4ef56df0$@yandex.com>
- <YFIdm5Y+i2WRdIdU@ubuntu-x1>
- <001201d71bb2$28ac7b40$7a0571c0$@yandex.com>
- <YFS3ib8XI//whLek@ubuntu-x1>
- <000b01d71da5$977e38c0$c67aaa40$@yandex.com>
-MIME-Version: 1.0
+ List-Unsubscribe:List-Id:Subject:Message-Id:MIME-Version:Date:Cc:To:From:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+ bh=NQEF3+JEiJPy/E+DpJFKwh7PzPgtSnetIIpJ/KimkwM=;
+ b=YyO7il6haJzc0lr89IFkt3rFmy
+ hDs+4joBRnW5cfT1QrMh2eb/GUE7fTqSplSEydy1khE/+3txhKM1TkGn7bilLBPo7PbyYewySD9+9
+ hXSuBQDZ9Ivwpy2xgHt5d6x+elBuNXeF8XQrRnC4bVLxmxcLXIjOIHI88kMi6XHEWF8SfE1tptJee
+ 0bQWfuH/9Xfx1rXNhbItUyiKrnG0PSaXw4wCn6r22LFaN/cLe9WsfAlD41Y7nNeX7OY0xfEZttv5C
+ mpYfTEQh4Fh/lyhu8aO1ytHYJHLC/ZV6jbU4ce5BdJ4vzISAueEOtvDc9wuCHslJo0yXrynXlsOs+
+ dhbgD7zw==;
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=bombadil.20210309; h=Message-Id:MIME-Version:
+ Content-Transfer-Encoding:Content-Type:Date:Subject:Cc:To:From:Sender:
+ Reply-To:Content-ID:Content-Description:In-Reply-To:References;
+ bh=1gCss6vfCt9tMs4NbfVodO5Xn4oR063UFqnkt85Kibw=;
+ b=xSAjplmY7fNb+yC3vg4gV/iNSy
+ zyc0n9qMhwYtU5FF5XYth0vEVKZKm32oeT0xa21nEgMMv8HlycGQoC9/1KVrAzhKdlaC+QG4/4TnQ
+ z1q8qneHxdQ8RY/dfCWjfKEqQZI8ZV2OnFp6txpPaeVa4dTIzYyIPuGkJCB3GQwoPEkd/6tuXcaXv
+ rXBah0Ew810iBXYPshkEmETid66ckl0ig1FRQevfV2HwufxpWXb80WYgzXFJ1y34yC29Ps8M/flFO
+ 4O4Kjvvc/gDnu8GzB5xbkLF4Dx1dtuomrzVHFOGKRl7tT48dssrQ03M8xVML8wK5N0XRh/l7lvTY8
+ +3+fmzuQ==;
+Received: from shout01.mail.de ([2001:868:100:600::216])
+ by bombadil.infradead.org with esmtps (Exim 4.94 #2 (Red Hat Linux))
+ id 1leyu4-006pKY-BC
+ for wireless-regdb@lists.infradead.org; Fri, 07 May 2021 11:44:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.co.uk;
+ s=mailcouk201708; t=1620387856;
+ bh=1gCss6vfCt9tMs4NbfVodO5Xn4oR063UFqnkt85Kibw=;
+ h=From:To:Cc:Subject:Date:From;
+ b=f5ASkVNVQYE+JqOzulJH9GUwGfnRqSz7sP/nme2dPdTgrfyhW9gu8BZTWU8GzeqVU
+ /0pmls5N5tYMhb0GY+418dx79V5AgGDFEIRVFeydaDcRWjTlnnmIZbRAgc9CoARtHq
+ +HfPX1HEogljhZlpq52b4V5nwMFdpFFfJvE25Bzw=
+From: mj888@mail.co.uk
+Date: Fri, 07 May 2021 13:44:15 +0200
 Content-Disposition: inline
-In-Reply-To: <000b01d71da5$977e38c0$c67aaa40$@yandex.com>
+MIME-Version: 1.0
+Message-Id: <20210507114415.C850BA03D0@smtp03.mail.de>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Cuba (CU) on 5GHz
+ Great Britian (GB) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -52,17 +57,19 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Jose Daniel Rodriguez <josedanielr@yandex.com>
-Cc: wireless-regdb@lists.infradead.org
+To: seth.forshee@canonical.com
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Mar 20, 2021 at 12:25:03PM -0400, Jose Daniel Rodriguez wrote:
-> Based on the current resolution on the use of wireless networks available at:
-> https://www.mincom.gob.cu/sites/default/files/marcoregulatorio/r_98-19_reglamento_redes_inalambricas.pdf
-> 
-> Signed-off-by: Jose Daniel Rodriguez <josedanielr@yandex.com>
-
-Applied, thanks!
+Thank you Seth, 
+Still witing for reply from Ofcom but coincidentaly (or not) they have 
+updated IR2030 last Friday (30 Apr 2021) . It does now contains 
+changes I was refering to: 
+DFS IS NOT LONGER REQUIRED ON 5.8GHZ 
+(BAND C - 5725-5850 MHZ) for unlicenced indoor use. Please see 
+https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf 
+-------------------------------------------------------------------------------------------------
+FreeMail powered by mail.co.uk
 
 _______________________________________________
 wireless-regdb mailing list
