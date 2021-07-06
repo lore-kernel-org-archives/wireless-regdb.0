@@ -3,34 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=jQqVAQk6MNJWomUyh5+hbsGz1UB55PSuIIBxQ8/kh/g=;
- b=kRLthrVoMYoenD
- k8YteGRHZyMqxPB5x+7g+y8Zeb7EEZlQ3G7bzqFS2Lz7TZJNvg9/+Lbj8Ug8QxkG2ByGWpEVdKR1a
- 9FmuyMcSAaEHgkZFivbQtPAgcNRine+B5LuBkEmUEk/752/C6W0zMy5EejHdvRE524SSEAmLHBJ1W
- l0w0WBfsJX5mysbJWEa10bHejL7pQV7LcZKVqT29KJTIHx/Atx3qB2ox9NGhBIcMpgEh6ahgK1QzP
- YHILkRxCta199CQfv0no1B3Km4DSA96LSlicDvtq8dbXVNzMaackkJuX/xjlErwGrhmVyVy6K7mXD
- EW0d7fQIGDdj1Vp7JpNQ==;
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=jd/SaXjw+YWV2bgpEhiLdm4edZXJ/e4kx8WuI1wh26Y=;
+ b=EaEepCnK1J+e7F
+ Gp9o7AadvW03rxx2a2LL70UtCnRS3+a8/3Q0imH0bPr9BKpfh5a8kur2I1cVFLTqaiuL2SslJxdJJ
+ VMjGGvgvk8/3z0eWokRx27Lre10uGe+sT7zwUsHvPMh8otnIHqEkyjJjjHSvWWtCLvu64XND/9LMq
+ vmhrLFUeNmJt+gyL6lPewp15ohLRRP3GL6ZoZMgJpeFnJP95YyDDb5rinjm+LElOna2BoErUG2dMg
+ WmZdtS5xnd9Ii2Bj8Av14zZNrM2dQgELAFBuEA6+MV2u5qtLWP9m03DksD9ZQ67IrEgxYzQI2MC//
+ 2Gq/EWoSdAspiRRSTfPw==;
 Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1lqcUE-008ojP-7J
- for wireless-regdb@lists.infradead.org; Tue, 08 Jun 2021 14:13:47 +0000
-Received: from mail-oi1-f198.google.com ([209.85.167.198])
+ id 1m0nMQ-00CBoV-0Q
+ for wireless-regdb@lists.infradead.org; Tue, 06 Jul 2021 15:51:47 +0000
+Received: from mail-oo1-f69.google.com ([209.85.161.69])
  by youngberry.canonical.com with esmtps (TLS1.2) tls
  TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <seth.forshee@canonical.com>) id 1lqcUB-0008FU-Ma
- for wireless-regdb@lists.infradead.org; Tue, 08 Jun 2021 14:13:43 +0000
-Received: by mail-oi1-f198.google.com with SMTP id
- j20-20020aca17140000b02901f3ef48ce7dso3365141oii.12 for
- <wireless-regdb@lists.infradead.org>; Tue, 08 Jun 2021 07:13:43 -0700 (PDT)
+ (envelope-from <seth.forshee@canonical.com>) id 1m0nMO-0008V5-Lr
+ for wireless-regdb@lists.infradead.org; Tue, 06 Jul 2021 15:51:44 +0000
+Received: by mail-oo1-f69.google.com with SMTP id
+ l1-20020a4ad9c10000b029024cb72acba1so10706285oou.10 for
+ <wireless-regdb@lists.infradead.org>; Tue, 06 Jul 2021 08:51:44 -0700 (PDT)
+Date: Tue, 6 Jul 2021 10:51:42 -0500
 From: Seth Forshee <seth.forshee@canonical.com>
-Date: Tue,  8 Jun 2021 09:13:41 -0500
-Message-Id: <20210608141341.86462-1-seth.forshee@canonical.com>
+Message-ID: <YOR8DtyIkVP0fg3f@ubuntu-x1>
+References: <CAPuHQ=GbacSTgyimkJtx1FXp319Df=LdrPQZ6ZDnPQ_JVXueKw@mail.gmail.com>
+ <10ffaa74a0779b7c7047de70cb1db7dfb0000022.1625068999.git.b.K.il.h.u+tigbuh@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update 5725-5850 MHz rule
- for GB
+Content-Disposition: inline
+In-Reply-To: <10ffaa74a0779b7c7047de70cb1db7dfb0000022.1625068999.git.b.K.il.h.u+tigbuh@gmail.com>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: recent FCC report
+ and order allows 5850-5895 immediately
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,37 +49,45 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: mj888@mail.co.uk, linux-wireless@vger.kernel.org
+To: bkil <b.K.il.h.u+tigbuh@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Based on the latest IR 2030 update [1], update this range to cover
-5725-5850 MHz rather than 5725-5875 MHz, increase the max EIRP to
-200 mW, remove the DFS requirement, and add NO-OUTDOOR.
+On Wed, Jun 30, 2021 at 06:03:20PM +0200, bkil wrote:
+> The new band is called U-NII-4.
+> 
+> The report recommends combining it with 5725-5895 to allow 160 MHz
+> bandwidth, but that's technically not that easy with regdb due to the
+> differing restrictions of the two parts. Marking the line for U-NII-3
+> NO-OUTDOOR and PTMP-ONLY along with extending its range would be a
+> possible workaround, but this needs to be discussed.
+> 
+> I don't see a requirement for TPC, hence reducing EIRP by 3dB is not
+> needed. I've marked it 33dBm (minus 6dB for clients) to cope with 20MHz,
+> but the band can support higher power, though the logic is complicated.
+> 
+> The upper subband (5895-5925 MHz) of the new band is reserved for ITS.
+> 
+> "We limit unlicensed use to indoor operations in recognition of the
+> potential that ITS licensees may currently be operating"
+> 
+> "We also proposed that U-NII-4 devices be permitted to operate at the same
+> power levels as U-NII-3 devices."
+> 
+> "For the U-NII-4 band, indoor access point EIRP will be limited to
+> 33 dBm/20 MHz and 36 dBm/40 MHz. When combined with U-NII-3 band spectrum,
+> indoor access point EIRP can scale to 36 dBm for 80 and 160 megahertz
+> channels."
+> 
+> "Client devices would be limited to power levels 6 dB below the power
+> limits for access points."
+> 
+> "the First Report and Order prohibit U-NII-4 client-to-client
+> communications to protect co-channel incumbent ITS"
+> 
+> Signed-off-by: bkil <b.K.il.h.u+tigbuh@gmail.com>
 
-[1] https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf
-
-Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
----
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index ddf9e1434cc7..a5829e074efd 100644
---- a/db.txt
-+++ b/db.txt
-@@ -599,7 +599,7 @@ country GB: DFS-ETSI
- 	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
- 	(5470 - 5730 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
--	(5725 - 5875 @ 80), (100 mW), DFS
-+	(5725 - 5850 @ 80), (200 mW), NO-OUTDOOR
- 	# 60 GHz band channels 1-6
- 	(57000 - 71000 @ 2160), (40)
- 
--- 
-2.31.1
-
+Applied, thanks!
 
 _______________________________________________
 wireless-regdb mailing list
