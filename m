@@ -3,38 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=7cF75PMqV4es/0BaeZ6BwozDkSn5S4bLQKH5+T0seAE=;
- b=Za7dreh3Ra3S38
- 8j+88/riSd8tywrKUoDwmJ1XWodNZKFR/2xQJGeMSnBYpIz2AnZL9yyydsGHA44fPIDGfnkOCXfnm
- jcD7sd3kDeMg+fXCh/SxG2ibGyUcP5lksUQdWPl2fP7gCmEfcG7K/RRF9G+b0fxp/j0eDfqlLeuVM
- 7P/H9vEekd5FL4x9ZA8CHGB3GE2uGNMv9HuvRy4fb+UfEOlvUmW1HAsmvE6nLkNE1x2AU62b/LC6R
- FmmSQBIxirzrr2gzpWBxZX8AfzdrfVGoDsuL/Z1HlL1Ri6HESzVJ/GpsHeR8HWF16oylLiIuCtalG
- efnioah7MVJPyQGR+Sxg==;
-Received: from mail-yb1-xb2d.google.com ([2607:f8b0:4864:20::b2d])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=hzVA/kXF5urMcwwzXyOKfDSbIzLxEyQE88gqe+8klrE=;
+ b=u7PSLFcA0zsSPd
+ xOWjo4gztJa7xLNU0CLYdSRpWzrB8ZksPaOklGxo7N5u4JZnCRf/JyZN7sFfrfsQnN5cj0nPW42OE
+ sugwTx6hyOTeOq0FShAXEKhYSjn/smclU1eSgLfsP3oYcvtnIKBOAQfbwOp+FJvv+xqZh86wALlGC
+ 96bRXNmu4uPukVlPLs3sFYYGLVBgVOnGP/JKthLVSO3vBZsn2kcL6nta5pbccdNmQutNe7FTkSnXy
+ LCZ/8BiMbecfm4lPWQHOxjtoPhObxSQJiQ1BxlSSzQX09oYJpe1sTYbt8JO0/T8u6oyLWGtUC6kaj
+ 9lcHwqE5JKKvroeDznOA==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m5H1Z-008Azt-U2
- for wireless-regdb@lists.infradead.org; Mon, 19 Jul 2021 00:20:47 +0000
-Received: by mail-yb1-xb2d.google.com with SMTP id v189so25065409ybg.3 for
- <wireless-regdb@lists.infradead.org>; Sun, 18 Jul 2021 17:20:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to :cc;
- bh=IOKhyIKX9sphpbuF3/QUSDAb1YKCTGuThTsMrD+moKI=;
- b=Y3waDBn3jf/40yjXcY00Vbz1VdxQTOdqCYyDL2ObjL1tX85o7Y2NUH3f9VcsiLHYZG
- L6NWF+N6KmGzWN8z08EBWHTACoah8K5Mi4yljLE/CbrPTf4Buu6Yc/1Z/FSXnsY0rvpY
- J4FKfERD7iJM6HQK0yXnu0bD8rM5D0uO55pzI3TXqCQMVEPoZm1uJ7864SeuzsU4rWsN
- vofH8PGWkppqvhNDygkkx9qOYkTqoO0PxALg5mJo85JJxPxvpqtCKTbrn4910MPsoGps
- WPU7oTcW969/KWAZ3kYJ4BaoZU7HmiN725j8hE/89pLttM4zRSsM7sceuJmLb0xirWBz 2eOA==
+ id 1m6DDg-00FyWt-Og
+ for wireless-regdb@lists.infradead.org; Wed, 21 Jul 2021 14:29:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1626877747;
+ bh=IegnqJKU0dxppcRpT+kLJBNKmAxlPjTzOn7xsqafSa0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=SJAxCU/qUtUx07jtTXRjXnYZ7l7OjYRRvkGHpwFU/g4BZUQ38mAvOAnVlXb4HtkdJ
+ Rbtl6tdhglsI+W6XGcdWGPjXdHt382+1ZnPGmgYZ6zxEQdfBu/0A97ZPl/IR3+pBTR
+ TveW5wanJBKYQMQuBUC0I2+bXUKhvSwCcuSRCYz2BqVWCoJR+KZhMA3SvlG9gcFCMj
+ ppR8gNBN+wdgEkEgfUqHfyGb+x988I9GlfjaX3WcoLx/udRCdtq+0BmoTiSPq9JbRV
+ LLw+gAQvTk55tNwmIydrFwBHcFl/BtAMt3EtRLMNB5UCy6hgVqjSIJ52u85jr336uM
+ K+FoL1ZYddynA==
+Date: Wed, 21 Jul 2021 09:29:06 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <YPgvMph+3vRbrol3@ubuntu-x1>
+References: <CANB4YXTf0DhJfL6kPa26ZCzj8FRwwdw_enGROzL-zXuWGyrwOQ@mail.gmail.com>
+ <CANB4YXRtyvgu946rL=gxaRqhXja1qfBQ+DSYfiMvYcax7o45EQ@mail.gmail.com>
 MIME-Version: 1.0
-References: 
-	 <CANB4YXTf0DhJfL6kPa26ZCzj8FRwwdw_enGROzL-zXuWGyrwOQ@mail.gmail.com>
-In-Reply-To: <CANB4YXTf0DhJfL6kPa26ZCzj8FRwwdw_enGROzL-zXuWGyrwOQ@mail.gmail.com>
-From: Timo Witte <timo.witte@gmail.com>
-Date: Mon, 19 Jul 2021 02:20:34 +0200
-Message-ID: <CANB4YXRtyvgu946rL=gxaRqhXja1qfBQ+DSYfiMvYcax7o45EQ@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <CANB4YXRtyvgu946rL=gxaRqhXja1qfBQ+DSYfiMvYcax7o45EQ@mail.gmail.com>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
  Germany (DE) on 6GHz
 List-Unsubscribe: 
@@ -51,28 +51,33 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: seth.forshee@canonical.com
+To: Timo Witte <timo.witte@gmail.com>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The bundesnetzagentur has assigned WiFi 6E frequencies for germany you
-this is the
-publication of that change:
-https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/MobilfunkDectWlanCBFunk/vfg552021WLAN6GHz.pdf?__blob=publicationFile&v=3
+On Mon, Jul 19, 2021 at 02:20:34AM +0200, Timo Witte wrote:
+> The bundesnetzagentur has assigned WiFi 6E frequencies for germany you
+> this is the
+> publication of that change:
+> https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/MobilfunkDectWlanCBFunk/vfg552021WLAN6GHz.pdf?__blob=publicationFile&v=3
+> 
+> Following frequencies have been assigned for general use:
+> 5945 - 6425 Mhz
+> maximum (200 mW)
+> No outdoor usage is allowed for 200mW
+> 
+> For "very low power devices" outdoor usage
+> is allowed, but only with (25 mW)
+> same frequency range 5945 - 6425
+> 
+> There is no DFS requirement.
 
-Following frequencies have been assigned for general use:
-5945 - 6425 Mhz
-maximum (200 mW)
-No outdoor usage is allowed for 200mW
+This all matches with my reading of a translated version of the
+document. Do you plan to send a patch to add this range? If not, I can
+send one.
 
-For "very low power devices" outdoor usage
-is allowed, but only with (25 mW)
-same frequency range 5945 - 6425
-
-There is no DFS requirement.
-
-Best regards,
-Timo
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
