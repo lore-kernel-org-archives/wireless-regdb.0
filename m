@@ -6,37 +6,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
  In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=7QdKBqN482/irna9zuOmS5PLhS5d+PILAwONS18XKUk=;
- b=T6R7eGhXGTxgeV
- nUdJGSsyJ6xn6sVEsfcgdwvnePKQ/8W5IS8lR15YnpRU42ZYydTzdasc0sY7hUDPRvwgKTHZ50NHO
- opg1APFQaU3DL2ZYpxQo/W2R8VgUpOUi7YkORvk7cz7HFEIEq6NfkxgmvaTgIoKywlfHJWIKW7Ge8
- ZKKJeaTJZJJMNxlJxY8RMSkkrVyTBJrCQbWyapRhcX2F0xWxOIKFgAKu2vZQ9JZIbOMViZhyrdIk0
- IAgwrkQ6du9+AKNscjeECplYO047nRgwaPvvIoPedEl0nR6TSiI50pziqfumwUdoymvFf+MMTpjL1
- J2tjeKRnHDLcbSn8enSA==;
-Received: from mail-yb1-xb33.google.com ([2607:f8b0:4864:20::b33])
+ List-Owner; bh=a+xkwB6V2N3Gwl+qrExg/3/jNnftOIB4IRaWQHykQII=;
+ b=Wsc+2o6fD93kTU
+ ykF0FDFvgHGgm0sY4h3CcVJkkX8Je77yYsBR5eAz33RJNRZKTbYODMDXXUjSaBCOD0rgglccbcuRl
+ THiXpoKV74K9EfTyFLUPJQVJ5y7haOaFqpxb0M2W2K2EsEWM9N23uOI2pm/giPgN09W4dhUjDj/xh
+ hr8mopGbtJ53nONRXdnmumwNwuSDtKZXbLrfUWaZ+HD+aHXaCYP0mKoTsepwcFllb9pK+gh1gyVWW
+ +ttWtG+tR59EB67P3mrhtCdbPw28z9kv1RWsz3AXm8+NftqkSvnAmQKa19/s3jL6lXjvp907tMzZT
+ hb94Oz06tqiR1KvwPamg==;
+Received: from mail-yb1-xb35.google.com ([2607:f8b0:4864:20::b35])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m6DdC-00G7Lu-KN
- for wireless-regdb@lists.infradead.org; Wed, 21 Jul 2021 14:55:32 +0000
-Received: by mail-yb1-xb33.google.com with SMTP id g5so3620477ybu.10 for
- <wireless-regdb@lists.infradead.org>; Wed, 21 Jul 2021 07:55:29 -0700 (PDT)
+ id 1m6Det-00G7ul-6P
+ for wireless-regdb@lists.infradead.org; Wed, 21 Jul 2021 14:57:17 +0000
+Received: by mail-yb1-xb35.google.com with SMTP id x192so3650198ybe.6 for
+ <wireless-regdb@lists.infradead.org>; Wed, 21 Jul 2021 07:57:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
  :cc:content-transfer-encoding;
- bh=UmsZjPxH8FFxWnaoHfCAeuJj3SPZVHDgTz7Y67PjsJw=;
- b=qXF6UC97hj/Wdh0m7Ge7VrRo7v5oDgIagVPIcGwkl6aYfGtlUBoH0bjq5p0rab6BHV
- O0oIHlRv2xsyWiv5e1xtyHCI3oLvjsY21U12zc5hyt3fda8T/DOCh1MPb8YaiEjR16PC
- 1TbcahEnGdE4ZQm5gXEKtaTeDdGTcvKdqKT84/muCwiNPeXTGjWSWcCSodfo4V2Sk9Ou
- 6AsvUrGseF8ehUL9LCRrbMrkg5+kfp/1zqWon2vd1LZjKB2/hZoWc7anhyY/ymuRDKGf
- PwlHRWyWNACm5bQEl0yuWNR09FG9VXQf9H3lDdpPhTWqDF2bt2RFIYQKNPb8QcbupQz/ AnaA==
+ bh=8dnBbcqLM6HFKu6k8qAqy2NQB4jOc43AcKD5Q4tuTwU=;
+ b=qtul2um0szTmZOrPf5ZtuQbmcQZtU3yRmrBHzN+qQXo33H0NRsvh8PdsZKhUDw9UWJ
+ wFWvM6r0OS4Uy4TxtvZCVkmqvomMeViBkYJSSFgEcF06qbV6sq6YV/r3+L3SejEREHBd
+ MKT4K5i/AV/sor77UmWPivsB9NxJ8nKB4FCu7F47Ho6cZJVN8pCC+buyZVx5v632jUHT
+ m2mrFTwNgXjWj389tZSgKwDBtNXXIYfsLh8tMV88kxfl5aqYMsND8ND2e9s9n33fgiEy
+ LVoN0RSCjv6jBxPkLVOvM1M+aQa11lIe0+4JJ/AeUzKoeS98dhY7ztzESlFsPcvxeQF4 IkaA==
 MIME-Version: 1.0
 References: <CANB4YXTf0DhJfL6kPa26ZCzj8FRwwdw_enGROzL-zXuWGyrwOQ@mail.gmail.com>
  <CANB4YXRtyvgu946rL=gxaRqhXja1qfBQ+DSYfiMvYcax7o45EQ@mail.gmail.com>
  <YPgvMph+3vRbrol3@ubuntu-x1>
 In-Reply-To: <YPgvMph+3vRbrol3@ubuntu-x1>
 From: Timo Witte <timo.witte@gmail.com>
-Date: Wed, 21 Jul 2021 16:55:17 +0200
-Message-ID: <CANB4YXRcr=XM00r_mz2ejAfuYwHMibffOcxNiDP=acpmFUchMA@mail.gmail.com>
+Date: Wed, 21 Jul 2021 16:57:03 +0200
+Message-ID: <CANB4YXSDuYndC26KPkV+XqPkowbN54MMceuj7MNaxh+EwLN4kw@mail.gmail.com>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
  Germany (DE) on 6GHz
 List-Unsubscribe: 
@@ -57,6 +57,11 @@ To: Seth Forshee <sforshee@kernel.org>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
+From f9a99269b00f961e40024632c7b831c615bfa392 Mon Sep 17 00:00:00 2001
+From: Timo Witte <timo.witte@gmail.com>
+Date: Wed, 21 Jul 2021 16:51:40 +0200
+Subject: [PATCH] add wifi6e for germany
+
 Signed-off-by: Timo Witte <timo.witte@gmail.com>
 ---
  db.txt | 10 ++++++++++
@@ -75,7 +80,7 @@ index 1e5ed03..411b7ac 100644
 +# Bereich 5945 MHz - 6425 MHz für drahtlose Zugangssysteme,
 +# einschließlich lokaler Funknetze WAS/WLAN („Wireless Access Systems
 +# including Wireless Local Area Networks“))
-+# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/MobilfunkDectWlanCBFunk/v>
++# https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/MobilfunkDectWlanCBFunk/vfg552021WLAN6GHz.pdf
  country DE: DFS-ETSI
         (2400 - 2483.5 @ 40), (100 mW)
         (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
