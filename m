@@ -3,42 +3,32 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=73hBXjGkkveIt2gDL86Z0QnRpnWaIyS6IfHSlZX9huw=;
- b=knUVvjHBqFAvwP
- Npm3JHnXoLtXhle92uB0vDw5tKbt7Vr3lvJgJgkzjE/egmDHrcFEKUtD/XblZEwoTbElitnAMBVEt
- RQR/m/ZAwpAqaB5OgKFX0ENGJsfToOp1XgQq0mfZxYFPhl2WS2Bf+AcCbwEQKLQVc9p58Xgdyg7tY
- 3tUN0J82kuv4VKX5oyjgW7YA9vHP2X4xhlxcNB0TY2SVqtqnn7E1QqgPLOpocQfcGLcUfgvAVWV8v
- CGV/4P84GCQV0gWIW5huvnG8hW6mfHPkXxZcPPyidPfbeljMMLCoa+50E1UvVnbAhqKNm2cDxyDIp
- o+nKz+sZpPScjrJ8JVdA==;
-Received: from mail.kernel.org ([198.145.29.99])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=dxsUQfl2Pb1Sq0GHnDjXtgQEOfhbszRS6Uvw01f2N5Y=;
+ b=HWakrCr3IK1lrO
+ +1MNaMHZrK13Il8CZHEzIfUt8Jg6gTuPHE5XZjt9m5Mmx4gWS40d9FO/C0A1ybhTbZlojo0UL0lUm
+ R8YuigdsgUHAzz6fSrMxiaggCaCa4L6DmcJAhIHu7PVJtC9/VXkyI17Px3JDDBFdJ0qV7lKB6D0ok
+ e7+3BSew98bsFSD1/dlppiNOc7ShKOJgN3ZIYPBhlCu/QvbyoQX7aiNInLy4p5a8zQ6Wc33ntiIcW
+ GaRWE9Iaf0K48X7l9RToJYvqGZ+UQKMUID3wugYYYAyo8PKnBq1FDD/l7k2xRvFG+xLUUf3a4XDAL
+ WI9928yZeRpExWUsPJcQ==;
+Received: from canardo.mork.no ([2001:4641::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mDto6-007zL1-V9
- for wireless-regdb@lists.infradead.org; Wed, 11 Aug 2021 19:22:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1628709750;
- bh=G2uRZMUVBnB65qXP4NVkE40JGyNsKNLR/ss2Ve51Iz8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PfQMhn6SlRBoqUWJhfC4FLnUwgmyOsaTe95q9Y8FgHgcwzSviiMZ5Wnjj2In73NRe
- kcUduK20Lvi8/RhIPhZp/kjTvF00XTwtVEFyC76yzeYMWSQKfLP1rFiVJwwx475pg8
- JF/ouIoLEGyYWAtmTqmz7vyxvNOGHo3aIMcJ43MZVHoW1XpntcWUKam1hC5Zs9lCiT
- WKUsBmn5FCWHemWgBZY7FFWGAg5mtlFI2sgg9/Qlo/KSSTro5gvKuBSdt7ouE8CVbn
- +/X+YZCyfS87/HjDtZGfysijqzMchJwoHZ0T6bys3ggQ6OTEcS2hx7iIPU/V8d9Hbm
- J8fRz76zzqEEw==
-Date: Wed, 11 Aug 2021 14:22:28 -0500
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <YRQjdJ05h+Vy1gjl@ubuntu-x1>
-References: <CAPuHQ=GbacSTgyimkJtx1FXp319Df=LdrPQZ6ZDnPQ_JVXueKw@mail.gmail.com>
- <10ffaa74a0779b7c7047de70cb1db7dfb0000022.1625068999.git.b.K.il.h.u+tigbuh@gmail.com>
- <YOdVFE51Wbxr80Qf@ubuntu-x1>
- <1f441ba830535161b62086c1fee0d027b36bffc6.camel@sipsolutions.net>
+ id 1mBCLc-005AlW-RA
+ for wireless-regdb@lists.infradead.org; Wed, 04 Aug 2021 08:33:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mork.no; s=b;
+ t=1628066025; bh=XvqZG4OZOMKZ3OCyYeCAI3eOAwCQRcikbumRB+Ngy6M=;
+ h=From:To:Cc:Subject:Date:Message-Id:From;
+ b=BbjE1jT+KNAIUMvUucaBZoWdAL0i8qwx2cAhAsSgpPUZcn4s0QgY1Ywe99y3qRAs2
+ LEqPXc81kEYqrP2YVxfBi+4LNx7qfZS1+41HfsQj/A9vFKcSUl3oDIJqAOy5gaSg0I
+ YlC3fw/McNV+PkztutEPNtTlQsSQ1duMn7sSA59s=
+From: =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
+Date: Wed,  4 Aug 2021 10:33:37 +0200
+Message-Id: <20210804083337.8833-1-bjorn@mork.no>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1f441ba830535161b62086c1fee0d027b36bffc6.camel@sipsolutions.net>
-Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: recent FCC report
- and order allows 5850-5895 immediately
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Norway (NO) on 6 and 60 GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,53 +38,57 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Johannes Berg <johannes@sipsolutions.net>
-Cc: bkil <b.K.il.h.u+tigbuh@gmail.com>, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: Seth Forshee <sforshee@kernel.org>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, =?UTF-8?q?Bj=C3=B8rn=20Mork?= <bjorn@mork.no>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Aug 09, 2021 at 10:06:31PM +0200, Johannes Berg wrote:
-> Hi,
-> 
-> Uh, sorry for the delay.
-> > 
-> > The first is that it seems I forgot to test build this patch before I
-> > pushed it. The PTMP-ONLY flag isn't allowed by db2fw.py. This was done
-> > by Johannes for reasons which aren't explained, so maybe he can shed
-> > some light on it. The flag doesn't appear to be used by the kernel or
-> > hostapd, so maybe it was deprecated long ago. Anyway, I've pushed a
-> > change to remove this flag.
-> 
-> I don't remember, but quite likely we decided it was just not something
-> we could implement properly or so, and never supported it? Sorry.
-> 
-> Clearly the kernel does nothing at all with NL80211_RRF_PTMP_ONLY.
-> 
-> > The second problem is more serious. I thought that we could allow 160
-> > MHz bandwidth across two AUTO-BW ranges too small for this bandwidth,
-> > but it turns out that the kernel rejects any rules with a bandwidth
-> > greater than the frequency range of the rule. I'm not sure what we can
-> > do about this. Even if the kernel were changed to support allowing
-> > greater bandwidths across combined ranges, we're going to have a
-> > backwards compatibility problem with older kernels.
-> 
-> OTOH, doesn't AUTO-BW basically ignore the max bandwidth for a given
-> range anyway, seeing the code in reg_get_max_bandwidth_from_range()? So
-> just keeping it at 80 with AUTO-BW would still result in 160 being
-> usable? I think?
+The Norwegian regulatory authority (NKOM) has updated the existing
+regulations.
 
-Yeah, I think you're right. So I guess the changes we ended up with
-should allow 160 Mz across these ranges.
+WiFi 6E is now allowed with the same restrictions as in many/most
+EU/EEA countries - i.e 200 mW indoor and 25 mW outdoor, Using the
+DE entry as a template for now, until this dual entry can be
+described in the database.
 
-Thanks,
-Seth
+The update also extended the 60 GHz band to 71 GHz.
+
+The official announcement of the regulation changes:
+https://lovdata.no/dokument/LTI/forskrift/2021-06-29-2312
+
+The existing reference in the database has been updated with these
+changes, so no new reference is needed.
+
+Signed-off-by: Bjørn Mork <bjorn@mork.no>
+---
+ db.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/db.txt b/db.txt
+index debd878f83c7..e7b11cff28b2 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1198,8 +1198,10 @@ country NO: DFS-ETSI
+ 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+ 	# short range devices (ETSI EN 300 440-1)
+ 	(5725 - 5875 @ 80), (25 mW)
++	# WiFi 6E
++	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+ 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+-	(57000 - 66000 @ 2160), (40)
++	(57000 - 71000 @ 2160), (40)
+ 
+ country NP: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+-- 
+2.30.2
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
