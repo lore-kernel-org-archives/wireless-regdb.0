@@ -3,37 +3,43 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=lU0yTTGaSNlXjog/bg/SyyOvF8hX1hZ0FUDLfq4nAEA=;
- b=dZw
- hW4EYTCIrWGgEK87jz64nhZWk0k+/1yMyx8IbMcKzETNnQv9djN4Xa9/4bQvR6UL3x7tED/NajDp2
- aNfE398tpHi4dYBM/64jzJtPKqHyx8y7XtnWwj/2eKLMAQSS+mtdysm1r7kLH48uYrA2/mS1SWAoF
- TrfIIiBytQElP40cXxK0FyjQfnFHZTM2NNBL0pHXs6UY0s0l8vMPRzBgMfcpVLmBGHlqiMB7iLVqp
- Sw4OJUtqyp5vzVafgB8bzIpImYV/tK/bPg5pB4Q0fb6zQuNWQY24QIXFMZOOanmxNS+JldZ9VqfS8
- 5awo2Qwq+92zeact2T132Y+b3kF3g7A==;
-Received: from mail-oo1-xc2d.google.com ([2607:f8b0:4864:20::c2d])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+ In-Reply-To:Date:Cc:To:From:Message-ID:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Owner;
+ bh=WuwkfYPZtV4k+zmS8czUKjkWaOqP8hNaLdssRBJk1ZE=;
+ b=3f5yUAyTU6B1RxBO3aVsoOkV9t
+ hBX6LMZAJKVMH5/7cOFhUP9WvWgV80gKDVGtN750s89CQFioKFRQX0In2sz2xEyxHBxsZnW7grsQp
+ Qgm291bnb8D8354Y4n662BD2GR53cafDOL4Xq8treUSgOQ0JuppNCWvdiOrruJ3EXouP8r8LAbH7X
+ LPIzW8VCRQ4oVeumv8WU4pw2+0z8FUbY+si6l1jklnw9UiBMgINPFY87wamhFR3sKEzNMh1nMWxaV
+ Hi/PPJsEFbW1IFaBcU9MYZSRtozBc6ssAhhEb7QXuILVdt1irnqcSz9auRlihcmYIQnQ/0+YpJEHJ
+ +641no2A==;
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net)
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mHEnS-00CKDA-TJ
- for wireless-regdb@lists.infradead.org; Sat, 21 Aug 2021 00:23:42 +0000
-Received: by mail-oo1-xc2d.google.com with SMTP id
- h7-20020a4ab4470000b0290263c143bcb2so3406538ooo.7 for
- <wireless-regdb@lists.infradead.org>; Fri, 20 Aug 2021 17:23:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20161025; h=mime-version:from:date:message-id:subject:to
- :content-transfer-encoding;
- bh=sXAyv4Dmx/KrwA77wdgByYeG+O3VgKQ5FYz93nbcR4s=;
- b=cJuba6Yjv38FfIFgQZx1/JtFp4rP5NqdADzlknmBlBn8jNS58GNNuc8X5rj+0YxXhO
- PBEZXUT2PJdwajqkxZJSBkcipgCxknfx8p5nWCdYYsrvFQfjRP8x6FV32JYygU76dR73
- fKxxaQWEC8S60szYgHdFqMSpJclEjj+0aYYzI+GOCqP8rFrqa21H4FUoJ0lYzg2FNWd/
- 7zcqmfNM2+zXP0Dz4m58RWcZE18endSwtuUGE3cv23+Vh32rke6ws/pM/c1luzzk+K28
- DECvxzCupq7C1LcRqb7l3lItgAEbH9SVCInJnoift0Z0/rsAq3N96Rc2QOd+w9N/R6JN aoAQ==
+ id 1mDBXk-001uV0-HT
+ for wireless-regdb@lists.infradead.org; Mon, 09 Aug 2021 20:06:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sipsolutions.net; s=mail; h=Content-Transfer-Encoding:MIME-Version:
+ Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+ Resent-Cc:Resent-Message-ID;
+ bh=90lz2zud1WgSXseIMdNWHlW1oOyzXVZMgq01KiaMJiw=;  t=1628539596;
+ x=1629749196; b=i2ridrsfFiF26yfWMrq8lYb+iEquBdnYAPdZXsoM6++AM5z
+ Ljogqeh6Nk3dq/JSXgfcEDzOXS6I8Cz7t5tNf6VSdVtTMtjAxdHtIpb+pOAy/LCIs32wLPkwCLSeD
+ 951y3UaumVFdD+obhlF7/PDi95A9CcXq8IfBnZENoR7RMw3XRUYhyLskiJyvzKWlwa5UI2pS61KAB
+ KzFn2LeEeoe2cBaLB9xA6XbsvOztBi0lY25Cu7cXXb6f1TLswNfr7P9vwl9QRd7dxqNqJKKUvXbVM
+ 8NHxoxbH7O7fY68oV/evQlK+mmNPqnmQryxwc4WI3S/aX2xIgg2FahpE0E1nEQrQ==;
+Message-ID: <1f441ba830535161b62086c1fee0d027b36bffc6.camel@sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Mon, 09 Aug 2021 22:06:31 +0200
+In-Reply-To: <YOdVFE51Wbxr80Qf@ubuntu-x1>
+References: <CAPuHQ=GbacSTgyimkJtx1FXp319Df=LdrPQZ6ZDnPQ_JVXueKw@mail.gmail.com>
+ <10ffaa74a0779b7c7047de70cb1db7dfb0000022.1625068999.git.b.K.il.h.u+tigbuh@gmail.com>
+ <YOdVFE51Wbxr80Qf@ubuntu-x1>
 MIME-Version: 1.0
-From: Victor Bayas <victorsbayas@gmail.com>
-Date: Fri, 20 Aug 2021 19:23:26 -0500
-Message-ID: <CAD+f0790FnHQ-=a4qO7m5Y-oD=6c=NcjHk0Fv=iF61FJJ8mhdQ@mail.gmail.com>
-Subject: [wireless-regdb] Incorrect regulatory data for Ecuador (EC)
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: recent FCC report
+ and order allows 5850-5895 immediately
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,41 +49,49 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Seth Forshee <seth.forshee@canonical.com>, bkil <b.K.il.h.u+tigbuh@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi All,
+Hi,
 
-The regulatory data for my country (Ecuador) is wrong because it is
-limiting the 5GHz WLAN operation to only 20MHz, there are no bandwidth
-limitations according to the ARCOTEL (Agencia de Regulación y Control
-de las Telecomunicaciones) which is the ecuadorian government entity
-in charge of regulating the radiofrequency spectrum and
-telecommunication services.
+Uh, sorry for the delay.
+> 
+> The first is that it seems I forgot to test build this patch before I
+> pushed it. The PTMP-ONLY flag isn't allowed by db2fw.py. This was done
+> by Johannes for reasons which aren't explained, so maybe he can shed
+> some light on it. The flag doesn't appear to be used by the kernel or
+> hostapd, so maybe it was deprecated long ago. Anyway, I've pushed a
+> change to remove this flag.
 
-The 2.4GHz, 5GHz and 60GHz spectrum fall under the Uso Determinado en
-Bandas Libres (Determined Use in Free Bands) disposition which can be
-found here:
+I don't remember, but quite likely we decided it was just not something
+we could implement properly or so, and never supported it? Sorry.
 
-https://www.arcotel.gob.ec/wp-content/uploads/2018/04/NORMA-ESPECTRO-DE-USO-LIBRE-Y-ESPECTRO-PARA-USO-DETERMINADO-EN-BANDAS-LIBRES.pdf
+Clearly the kernel does nothing at all with NL80211_RRF_PTMP_ONLY.
 
-(there is a table starting from page 19 which explains the maximum
-transmission power in mW for each frequency range)
+> The second problem is more serious. I thought that we could allow 160
+> MHz bandwidth across two AUTO-BW ranges too small for this bandwidth,
+> but it turns out that the kernel rejects any rules with a bandwidth
+> greater than the frequency range of the rule. I'm not sure what we can
+> do about this. Even if the kernel were changed to support allowing
+> greater bandwidths across combined ranges, we're going to have a
+> backwards compatibility problem with older kernels.
 
-Additional information about the radiofrequency spectrum in Ecuador is
-available from the ARCOTEL website:
+OTOH, doesn't AUTO-BW basically ignore the max bandwidth for a given
+range anyway, seeing the code in reg_get_max_bandwidth_from_range()? So
+just keeping it at 80 with AUTO-BW would still result in 160 being
+usable? I think?
 
-http://www.arcotel.gob.ec/espectro-radioelectrico-3/
+johannes
 
-Greetings,
-Victor Bayas.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
