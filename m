@@ -3,41 +3,37 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=LSDpNGYZZlNdfQbOl1wjupYB1ZIY12jk9hPcnYavQzQ=;
- b=D+h5CkzidFkPpb
- 5ZcOO0OHB19Dia6UwGz33xVQjRnqhzO9jZRaBQcZvWNE73Sj9cPNygASnF1Cxn1ciTC1YpwqQmUWp
- FY3HjIfM6uW61LbFiU/jeJYfFF+9VaqEVBh0TVlDWaHmzLY7SdFlnbS89Ury1eBZ4KVWSjb8ljTvY
- Nb/6pOVzzXNf117aOjQ2Ch1IVmLq08bRF/Cb6Tkv835ZZe+nXB7SMp943JvpK82fwXaW7GKTytu4j
- YJvCR+t/ejyDrx1GiJsf4pxigI2AAuzVMAJKnLl6k8yP+tvpksv7f/56f8pQbtuAXULnkJd2u15d1
- C0mdYVyU0nTooo3JEiHg==;
-Received: from mail.kernel.org ([198.145.29.99])
+ List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=lU0yTTGaSNlXjog/bg/SyyOvF8hX1hZ0FUDLfq4nAEA=;
+ b=dZw
+ hW4EYTCIrWGgEK87jz64nhZWk0k+/1yMyx8IbMcKzETNnQv9djN4Xa9/4bQvR6UL3x7tED/NajDp2
+ aNfE398tpHi4dYBM/64jzJtPKqHyx8y7XtnWwj/2eKLMAQSS+mtdysm1r7kLH48uYrA2/mS1SWAoF
+ TrfIIiBytQElP40cXxK0FyjQfnFHZTM2NNBL0pHXs6UY0s0l8vMPRzBgMfcpVLmBGHlqiMB7iLVqp
+ Sw4OJUtqyp5vzVafgB8bzIpImYV/tK/bPg5pB4Q0fb6zQuNWQY24QIXFMZOOanmxNS+JldZ9VqfS8
+ 5awo2Qwq+92zeact2T132Y+b3kF3g7A==;
+Received: from mail-oo1-xc2d.google.com ([2607:f8b0:4864:20::c2d])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mJK5W-00AjSv-Nq
- for wireless-regdb@lists.infradead.org; Thu, 26 Aug 2021 18:26:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1630002414;
- bh=32hkB1Jyko2pe+hQm7VRhZiAhBPBd8eLpRR+hQOOdpc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hNoeq9Umus/dho31BYfRtfnkgcSTJIRGgQC7QtnjDs6dSzYni/zJv+vsROpb4v2yO
- DFkfikQZUsFsDGDr2whHBycPQt8pueGbZkHjgS6EYq98hPPWxO0RQxJD4ZGzUwnBv1
- /2FrtOXIWJSDkoPZj2FEgfSbucMyyX4rBP3VS/jSbW1kDEDMsgfT2fOZKV7WkyF6YA
- NJlVZwombBJ+23tQxfYkQgKAf14Hg3ElYV7KMX0PSLGMAh5fbgHUzRoQKnYwP4cHTI
- wBu9UTLDmoQ74tf9yHf/BWwyfM4c1+QukqIjqiNLg8dst/vx64k/dAhKIYH3gVll7Y
- Aj3ev/A+jU6uQ==
-Date: Thu, 26 Aug 2021 13:26:53 -0500
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <YSfc7T61r/H9Tz7m@ubuntu-x1>
-References: <20210825031409.10552-1-victorsbayas@gmail.com>
- <YSemAGfADr2WTey8@ubuntu-x1>
- <CAD+f07-egB+kgjbbY2mN=0KaV+HddQfxRB019o65um3QR4ceaw@mail.gmail.com>
+ id 1mHEnS-00CKDA-TJ
+ for wireless-regdb@lists.infradead.org; Sat, 21 Aug 2021 00:23:42 +0000
+Received: by mail-oo1-xc2d.google.com with SMTP id
+ h7-20020a4ab4470000b0290263c143bcb2so3406538ooo.7 for
+ <wireless-regdb@lists.infradead.org>; Fri, 20 Aug 2021 17:23:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20161025; h=mime-version:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=sXAyv4Dmx/KrwA77wdgByYeG+O3VgKQ5FYz93nbcR4s=;
+ b=cJuba6Yjv38FfIFgQZx1/JtFp4rP5NqdADzlknmBlBn8jNS58GNNuc8X5rj+0YxXhO
+ PBEZXUT2PJdwajqkxZJSBkcipgCxknfx8p5nWCdYYsrvFQfjRP8x6FV32JYygU76dR73
+ fKxxaQWEC8S60szYgHdFqMSpJclEjj+0aYYzI+GOCqP8rFrqa21H4FUoJ0lYzg2FNWd/
+ 7zcqmfNM2+zXP0Dz4m58RWcZE18endSwtuUGE3cv23+Vh32rke6ws/pM/c1luzzk+K28
+ DECvxzCupq7C1LcRqb7l3lItgAEbH9SVCInJnoift0Z0/rsAq3N96Rc2QOd+w9N/R6JN aoAQ==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD+f07-egB+kgjbbY2mN=0KaV+HddQfxRB019o65um3QR4ceaw@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] Update regulatory rules for Ecuador
- (EC)
+From: Victor Bayas <victorsbayas@gmail.com>
+Date: Fri, 20 Aug 2021 19:23:26 -0500
+Message-ID: <CAD+f0790FnHQ-=a4qO7m5Y-oD=6c=NcjHk0Fv=iF61FJJ8mhdQ@mail.gmail.com>
+Subject: [wireless-regdb] Incorrect regulatory data for Ecuador (EC)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -52,93 +48,34 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Victor Bayas <victorsbayas@gmail.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Thu, Aug 26, 2021 at 11:22:49AM -0500, Victor Bayas wrote:
-> My apologies, I forgot to CC the mailing list in my previous reply.
-> 
-> El jue, 26 de ago. de 2021 a la(s) 09:32, Seth Forshee
-> (sforshee@kernel.org) escribió:
-> >
-> > On Tue, Aug 24, 2021 at 10:14:09PM -0500, Victor Bayas wrote:
-> > > Update the frequency ranges and power limits according to the current Ecuadorian norm [1],
-> > > corrected 5GHz maximum bandwidth since there are no legal restrictions in this subject.
-> > >
-> > > Note: 60GHz channels 1 to 3 are allowed without license for Point-to-Point links but
-> > > they aren't for Point-to-Multipoint links so they were omitted in this patch.
-> > >
-> > > [1] https://www.arcotel.gob.ec/wp-content/uploads/2018/04/NORMA-ESPECTRO-DE-USO-LIBRE-Y-ESPECTRO-PARA-USO-DETERMINADO-EN-BANDAS-LIBRES.pdf
-> > >
-> > > Signed-off-by: Victor Bayas <victorsbayas@gmail.com>
-> >
-> > Thanks for the patch! A few comments below.
-> >
-> 
-> Thank you for your feedback.
-> 
-> > > ---
-> > >  db.txt | 12 +++++++-----
-> > >  1 file changed, 7 insertions(+), 5 deletions(-)
-> > >
-> > > diff --git a/db.txt b/db.txt
-> > > index e7b11cf..4630854 100644
-> > > --- a/db.txt
-> > > +++ b/db.txt
-> > > @@ -504,12 +504,14 @@ country DZ: DFS-JP
-> > >       (5250.000 - 5330.000 @ 80.000), (23.00), DFS, AUTO-BW
-> > >       (5490.000 - 5670.000 @ 160.000), (23.00), DFS
-> > >
-> > > +# Source:
-> > > +# https://www.arcotel.gob.ec/wp-content/uploads/2018/04/NORMA-ESPECTRO-DE-USO-LIBRE-Y-ESPECTRO-PARA-USO-DETERMINADO-EN-BANDAS-LIBRES.pdf
-> > >  country EC: DFS-FCC
-> > > -     (2402 - 2482 @ 40), (20)
-> > > -     (5170 - 5250 @ 20), (17)
-> > > -     (5250 - 5330 @ 20), (24), DFS
-> > > -     (5490 - 5730 @ 20), (24), DFS
-> > > -     (5735 - 5835 @ 20), (30)
-> > > +     (2400 - 2483.5 @ 40), (1000 mW)
-> > > +     (5150 - 5250 @ 80), (50 mW), AUTO-BW
-> >
-> > It looks like 5150-5250 MHz also requires DFS.
-> 
-> Yes, I tried contacting ARCOTEL without success to get a clarification
-> from them because other countries don't require DFS for 5150-5250 MHz.
+Hi All,
 
-In the absence of any clarification we should stick with the rules as
-documented. The database can always be updated later if it turns out DFS
-is not a requirement.
+The regulatory data for my country (Ecuador) is wrong because it is
+limiting the 5GHz WLAN operation to only 20MHz, there are no bandwidth
+limitations according to the ARCOTEL (Agencia de Regulación y Control
+de las Telecomunicaciones) which is the ecuadorian government entity
+in charge of regulating the radiofrequency spectrum and
+telecommunication services.
 
-> 
-> >
-> > > +     (5250 - 5350 @ 80), (250 mW), AUTO-BW, DFS
-> > > +     (5470 - 5725 @ 160), (250 mW), DFS
-> >
-> > 5250-5350 and 5470-5725 MHz require TPC. Since Linux does not support
-> > TPC the power limits need to be reduced by 3 dBm, which puts them at 125
-> > mW.
-> 
-> Thanks for the heads up, I forgot there was a TPC requirement.
-> 
-> >
-> > I also don't see any DFS requirement for 5470-5725 MHz.
-> 
-> Section 2.1.6 says that users of 5250 - 5350 MHz and 5470 - 5725 MHz
-> should apply the interference mitigation measures mitigation measures in
-> Recommendation ITU-R M.1652 to ensure compatible behavior with
-> radiodetermination systems.
-> 
-> ITU-R M.1652 norm section 1.1 recommends the usage of DFS for
-> 5250 - 5350 MHz and 5470 - 5725 MHz, so I inferred the DFS
-> requirement for 5470 - 5725 MHz as well.
-> 
-> https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1652-1-201105-I!!PDF-E.pdf
+The 2.4GHz, 5GHz and 60GHz spectrum fall under the Uso Determinado en
+Bandas Libres (Determined Use in Free Bands) disposition which can be
+found here:
 
-Ah, yes, I missed that.
+https://www.arcotel.gob.ec/wp-content/uploads/2018/04/NORMA-ESPECTRO-DE-USO-LIBRE-Y-ESPECTRO-PARA-USO-DETERMINADO-EN-BANDAS-LIBRES.pdf
 
-Thanks,
-Seth
+(there is a table starting from page 19 which explains the maximum
+transmission power in mW for each frequency range)
+
+Additional information about the radiofrequency spectrum in Ecuador is
+available from the ARCOTEL website:
+
+http://www.arcotel.gob.ec/espectro-radioelectrico-3/
+
+Greetings,
+Victor Bayas.
 
 _______________________________________________
 wireless-regdb mailing list
