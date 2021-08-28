@@ -3,37 +3,36 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=ib7PokcmQV/HyLEMYM5ZmDFidRdVUqnXUmAlmbh52NQ=;
- b=oVf7cZ/zrKqhsj
- IsYMTfb5vEhk9uHcUv/stBaum3CdR3JQ1exu5fkkNorxFvaAHCDXBnBITiyLb7TV8tmr97HdF5nMJ
- 6ggg3A6oM79nZ/S0ZEuwjY2ExUb1SdECbrBIhq2hJ8D/DGuIs7pG6JJUG6Cnq366ET+s0xtuUoaOp
- BAvfx0ot8Z9dy4DsD8luXzea3o3L43rShvoO016cT14zvdLPcJcAqK5NK1winPkQ/xR7Fz+a7B5Th
- zLiQr9iZusbctLsmixh4xyrIVrlxJN+HdsspsNSHy9ffN3yQpc62Gipq7GyepEWgjj5YanEQRuzhj
- lr31IKgGsZJrFykJt53Q==;
-Received: from youngberry.canonical.com ([91.189.89.112])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Cc:To:
+ From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=vzdVlRvrENTJ3M7n+WmVPofSvvGRDxHcOHujA5DRsrI=;
+ b=bmgg2eFMeXaS3x
+ vSZbILnxvulgMpeYvOfWbNDBfkL06SbE7S+NK72SciTOld4YDXifdIqHasJNlwd4IYBLb9lDi2XrG
+ GcW/Yj6/RYNwxeYNcbMu00jVOAL4YJNid0cy0EWOj8spnKYc2fjUfK0CFRSVAqymyim2uHQtLMw59
+ LNtDMmIwT5C4pfQQGk6bW4UcknUSswPH8K1aRmEEFX33ScEB2LAP+LMYmn4aZUmi2DMA3DevADVQf
+ L2YqE7EwuIMUtJ3gHwMGFqMcWynCHLiT+GB4e7sTP3W1I1H6jWHJYao5wQhkv/cOvY3WmonsS2tCa
+ hFAvJwMWq4q27ABEByNg==;
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1m0nlY-00CFI1-PG
- for wireless-regdb@lists.infradead.org; Tue, 06 Jul 2021 16:17:46 +0000
-Received: from mail-il1-f198.google.com ([209.85.166.198])
- by youngberry.canonical.com with esmtps (TLS1.2) tls
- TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
- (envelope-from <seth.forshee@canonical.com>) id 1m0nlW-0002y6-Cw
- for wireless-regdb@lists.infradead.org; Tue, 06 Jul 2021 16:17:42 +0000
-Received: by mail-il1-f198.google.com with SMTP id
- a7-20020a9233070000b02901edc50cdfdcso12885405ilf.19 for
- <wireless-regdb@lists.infradead.org>; Tue, 06 Jul 2021 09:17:42 -0700 (PDT)
-Date: Tue, 6 Jul 2021 11:17:39 -0500
-From: Seth Forshee <seth.forshee@canonical.com>
-Message-ID: <YOSCI2bhylSuW8GH@ubuntu-x1>
-References: <20210608141341.86462-1-seth.forshee@canonical.com>
+ id 1mK1Yf-00EWBV-00
+ for wireless-regdb@lists.infradead.org; Sat, 28 Aug 2021 16:52:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1630169512;
+ bh=w8yxTDhsyatj2HXWsKunsFutrJSQY73FBUubuWhLb7Q=;
+ h=Date:From:To:Cc:Subject:From;
+ b=CBKG4DhrGMnb6NdF4T64ymUCl3zzDEa/VPvypctTS8izfv3djiNQsQAPnnpPj5G1g
+ rtUwxO3IqiUkXO5GgDnRwk3dkWGYCc6YC+yWuOxB3sOeBFCtiHiSwSug6+4tozci0N
+ j/zo67XZHltZoL96q4nWVTSqVPQsMvpIPJcYjoCmK2/QjWl3VGE3u5iXXVK/Rqihuo
+ ELFQfC+JV1PIUmqXdC+Y7QPpne6RkW1vvqgFwTrbGMelEPf/9c4dANC/sXLAYS9QhS
+ 4Z6PFPvxdkC09dWz8g1r3EdhDD4BCWHRYbhUqUbfXYz1+ePQlO+VWza/P2pxFl5MJn
+ p4KsjlbnRMw+Q==
+Date: Sat, 28 Aug 2021 11:51:51 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <YSppp88rcmotF5Bs@ubuntu-x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20210608141341.86462-1-seth.forshee@canonical.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update 5725-5850 MHz
- rule for GB
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2021-08-28
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -43,28 +42,39 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
-Cc: mj888@mail.co.uk, linux-wireless@vger.kernel.org
+Cc: linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Jun 08, 2021 at 09:13:41AM -0500, Seth Forshee wrote:
-> Based on the latest IR 2030 update [1], update this range to cover
-> 5725-5850 MHz rather than 5725-5875 MHz, increase the max EIRP to
-> 200 mW, remove the DFS requirement, and add NO-OUTDOOR.
-> 
-> [1] https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf
-> 
-> Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
+A new release of wireless-regdb (master-2021-08-28) is available at:
 
-Applied.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2021.08.28.tar.xz
+
+The short log of changes since the master-2021-07-14 release is below.
+
+Thanks,
+Seth
+
+---
+
+Bjørn Mork (1):
+      wireless-regdb: Update regulatory rules for Norway (NO) on 6 and 60 GHz
+
+Seth Forshee (1):
+      wireless-regdb: update regulatory database based on preceding changes
+
+Timo Witte (1):
+      wireless-regdb: Update regulatory rules for Germany (DE) on 6GHz
+
+Victor Bayas (1):
+      Update regulatory rules for Ecuador (EC)
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
