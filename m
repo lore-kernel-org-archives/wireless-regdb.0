@@ -3,41 +3,42 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Cc:To:From:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Owner;
- bh=NSqkBKtGI8AUcdjaLQwQmu6FsSoQYNnZTVLSNC9GoDk=;
- b=lkou/y1OjjmaxnlKAzbeLEPpa9
- XHvO7CvR13gnE05GBF92ZLM3hc7D4V651AnDD6X4MWH3xoNPmdvjhGckpmf1ed4+wV98ykzZOe0Nb
- v3AkYcrhRnmoPXM0pHLcHZ+02hoWaTnUr/wJm2EgKPY6kdXS51THMVS5AYHphDhlLp/l0sPf0Uiuw
- NufHcE6favzCsq7SFH2Moj7y62px+p2NIR9c8i3DUAm9OSVxoUVFMOdd3elngx30zohpOwEllZxh2
- 8CBmqvt/4APUpUeXLnhDoWejfMeQd1sg0lPC7TxMoFcIRAliYn+fyPQQk2jjASHBtm8lOGqc/2Xiq
- XXJ0OLfA==;
-Received: from mout-p-102.mailbox.org ([80.241.56.152])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Content-ID:
+ Message-ID:Date:CC:To:From:Reply-To:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=WsWv9UTA5S5/1uhr1lgyThm2JYzT3WOMhNJKwu2RMHA=;
+ b=h72
+ dHk1f9gVTVsLPywXhynUeQKcsYqBcHlerVQDbZ2vtaEWbPaLBcUsFKc1k1FN8wFxe8YTPSaeWOvKu
+ Vi37xmN/4PKXu0woTQzCWZI6V7iqiEDuvUYuYv3IZfXYNNw3z+en0YwYRa1A7ZPgNScmmBm+YFKPd
+ tmkS4fhPaZ3J4KLBUEjzAiQxG6lYmHpEf72vfijhSELz3QJQtKy4UBJrgWMi/ekgZTgVnJfX7Mv7P
+ JvWJk104DAAB7HVTMdFbnAfQW2ZEwdNH0eN2ktCqyAgHszZ6B+PkWUy9S8i+ecscwbbiYi4ecSS7S
+ ZWUcx/4/On4VV0ARLVPX8OgCUpgWR3Q==;
+Received: from alln-iport-3.cisco.com ([173.37.142.90])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1mwQf8-006k1H-LT
- for wireless-regdb@lists.infradead.org; Sun, 12 Dec 2021 15:21:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run;
- s=MBO0001;  t=1639322469;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=1YgRBDBjY9b4H++filcUM1GBouPP5nwOcGLzw/oX3kU=;
- b=xkKOhC+SAjZr6wtlboHXitofdhs+bUoQUVLZAZItqrtTwh2njsN54p6hBk9lJbk+Dpp5Z/
- np0MeLj01vJpOTAWQuprNd9h88lpD123r2wAZkPdpI2t4rVLqoj0s/52en5PWJFcOkvjir
- F9sXIdizC3U9jZ3SAaVab9iLGey9Hx21LvkDEpw1zm2VgDGKb9i5EL0oCodz2M1SV8v9DM
- OcMBScnmkNeDheFJjfWrQZ5Jzz02oesHSyeZdAyk2NPv+nmoNPtgmqzrRBDxHh5C5oMpYe
- b8WGKQr+pT0QacFseEZEOv/7iqwokkVtjMY1cfQXc/xWmr6bIMl+lG2xJsUZ0Q==
-From: Sungbo Eo <mans0n@gorani.run>
-Date: Mon, 13 Dec 2021 00:20:50 +0900
-Message-Id: <20211212152050.25962-1-mans0n@gorani.run>
-In-Reply-To: <20211024113821.51538-1-mans0n@gorani.run>
-References: <20211024113821.51538-1-mans0n@gorani.run>
+ id 1mwhUw-008acC-MH
+ for wireless-regdb@lists.infradead.org; Mon, 13 Dec 2021 09:19:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=cisco.com; i=@cisco.com; l=3958; q=dns/txt; s=iport;
+ t=1639387194; x=1640596794;
+ h=from:to:cc:subject:date:message-id:content-id:
+ content-transfer-encoding:mime-version;
+ bh=c7O5EJd7QZuVLxge+g9no7XW4gKwxq1J+Rp1pBeBir8=;
+ b=TZgXvaqpuLiq8D2nXQyaWE/iaYVVaXXG500hvzPKtd0xBp8+ZC4w2Ah0
+ vQNq39hZbeiwZSJvHsdrJynOo9xkcfPXioAJE5pOVWZByCpEoGPv/JD47
+ KdQU+LZX7yw+GLg4yze3rkRJPwTy4OuF7kY2k2FSYYOXbg9zLIiwoXVc3 o=;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=cisco.onmicrosoft.com;  s=selector2-cisco-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=c7O5EJd7QZuVLxge+g9no7XW4gKwxq1J+Rp1pBeBir8=;
+ b=a/FwAs03g1w5a4FQ5bLmkGExWRe7HJ2rPVf1FCBjZUcApKUJiEqLr3I78rTFUNWsVniBbZRe4ZErPG8v+3/qn6xN1ig2eSAFXNbH6QV7RB3ge67YbzoSvUS/53fXs/hPwaRGn4O58pSlrfbeW1z5gTrOouI3mmEtMcT53N5/bRc=
+From: "Asura Liu (asuliu)" <asuliu@cisco.com>
+Date: Mon, 13 Dec 2021 09:19:50 +0000
+Message-ID: <DM6PR11MB3116340921B7E66B0E4176A1D7749@DM6PR11MB3116.namprd11.prod.outlook.com>
+Content-Language: en-US
+Content-ID: <1D4F3AE8C17AFF4799D57C3F816BB2FF@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH v3] wireless-regdb: Update regulatory
- rules for South Korea (KR)
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for the
+ US on 6 GHz band
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,88 +48,56 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Sungbo Eo <mans0n@gorani.run>
+To: "sforshee@kernel.org" <sforshee@kernel.org>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This patch is based on MSIT Public Notification 2021-86 ("Unlicensed Radio
-Equipment Established Without Notice"), officially announced on 2021-11-29.
+From 3db25ea674232fea6a5efca292f6ed3fd8eba7a2 Mon Sep 17 00:00:00 2001
+From: Asura Liu <asuliu@cisco.com>
+Date: Mon, 13 Dec 2021 16:46:28 +0800
+Subject: [PATCH] wireless-regdb: Update regulatory rules for the US on 6 GHz
+band
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-The PSD must not exceed 2.5 mW/MHz if the frequency range includes all or
-part of 5230-5250 MHz and the bandwidth is equal to or less than 40 MHz.
-This leads to the following:
-* 5230-5250 @ 20 -> 17 dBm
-* 5210-5250 @ 40 -> 20 dBm
-Here the power limits for 80/160 MHz bandwidth are also lowered to 17/20 dBm,
-as it's not possible to set different power limits for different bandwidths
-at the moment.
+According to FCC 20-51, FCC adopts rules to unlicensed use of the 6 GHz band:
+"59. Third, the Commission limits the low-power indoor access points to lower power levels than the standard-power access points that operate under the control of an AFC. Consistent with the Commission's approach for the existing U-NII bands, the Commission specifies both a maximum power spectral density and an absolute maximum transmit power, both in terms of EIRP. Specifically, the Commission allows a maximum radiated power spectral density of 5 dBm per 1 megahertz and an absolute maximum radiated channel power of 30 dBm for the maximum permitted 320-megahertz channel (or 27 dBm for a 160-megahertz channel). In addition, to ensure that client devices remain in close proximity to the indoor access points, the Commission limits their PSD and maximum transmit power to 6 dB below the power permitted for the access points."
+See https://www.federalregister.gov/documents/2020/05/26/2020-11236/unlicensed-use-of-the-6-ghz-band
 
-Extend the last 5 GHz frequency range to 5850 MHz.
-
-WiFi 6E is now allowed with the following restrictions:
-* Indoor: the full 1.2 GHz range, up to 160 MHz bandwidth and 2 dBm/MHz PSD
-* Outdoor: the lower 500 MHz range, up to 160 MHz bandwidth and 25 mW EIRP
-Here only the latter entry is added.
-
-And also update the regulatory source links.
-
-Signed-off-by: Sungbo Eo <mans0n@gorani.run>
+And 47 CFR § 15.407 describe this as following:
+(a) (5) For an indoor access point operating in the 5.925-7.125 GHz band, the maximum power spectral density must not exceed 5 dBm e.i.r.p. in any 1-megahertz band. In addition, the maximum e.i.r.p. over the frequency band of operation must not exceed 30 dBm.
+(a) (8) For client devices operating under the control of an indoor access point in the 5.925-7.125 GHz bands, the maximum power spectral density must not exceed −1 dBm e.i.r.p. in any 1-megahertz band, and the maximum e.i.r.p. over the frequency band of operation must not exceed 24 dBm.
 ---
-v3:
-* update regulatory source to newer revision
-* replace "indoor only" 6E rule with "both indoor and outdoor" rule
-  as "indoor only" rule limits PSD instead of EIRP
-
-v2:
-* split 5150-5250 MHz band rule to accommodate the PSD limit
-* remove AUTO-BW flag from 6 GHz band rule
----
- db.txt | 17 ++++++++++++-----
- 1 file changed, 12 insertions(+), 5 deletions(-)
+db.txt | 6 ++++++
+1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index b898799..9be03ee 100644
+index b898799..c6ef9b6 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -862,15 +862,22 @@ country KP: DFS-JP
- 	(5490 - 5630 @ 20), (30), DFS
- 	(5735 - 5815 @ 20), (30)
- 
-+# Source:
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
- country KR: DFS-JP
--	# ref: https://www.rra.go.kr
- 	(2400 - 2483.5 @ 40), (23)
--	(5150 - 5250 @ 80), (23), AUTO-BW
-+	(5150 - 5210 @ 40), (23), AUTO-BW
-+	# max. PSD 2.5 mW/MHz in 5230-5250 MHz frequency range
-+	(5210 - 5230 @ 20), (20), AUTO-BW
-+	(5230 - 5250 @ 20), (17), AUTO-BW
- 	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (20), DFS
--	(5725 - 5835 @ 80), (23)
--	# 60 GHz band channels 1-4,
--	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
-+	(5725 - 5850 @ 80), (23)
-+	# 6 GHz band
-+	(5925 - 6425 @ 160), (14)
-+	# 60 GHz band channels 1-4
- 	(57000 - 66000 @ 2160), (43)
- 
- country KW: DFS-ETSI
+@@ -1606,6 +1606,12 @@ country US: DFS-FCC
+	# https://www.federalregister.gov/documents/2021/05/03/2021-08802/use-of-the-5850-5925-ghz-band
+	# max. 33 dBm AP @ 20MHz, 36 dBm AP @ 40Mhz+, 6 dB less for clients
+	(5850 - 5895 @ 40), (27), NO-OUTDOOR, AUTO-BW, NO-IR
++	# 6ghz band
++	# https://www.federalregister.gov/documents/2020/05/26/2020-11236/unlicensed-use-of-the-6-ghz-band
++	# https://docs.fcc.gov/public/attachments/FCC-20-51A1_Rcd.pdf
++	# max. 30 dBm AP @ 320MHz, 27 dBm AP @ 160MHz, 6 dB less for clients
++	(5925 - 7125 @ 320), (30), NO-OUTDOOR, AUTO-BW
++	(5925 - 7125 @ 320), (24), NO-OUTDOOR, AUTO-BW, NO-IR
+	# 60g band
+	# reference: section IV-D https://docs.fcc.gov/public/attachments/FCC-16-89A1.pdf
+	# channels 1-6 EIRP=40dBm(43dBm peak)
 -- 
-2.34.1
-
+2.30.1 (Apple Git-130)
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
