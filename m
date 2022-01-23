@@ -3,41 +3,37 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
- In-Reply-To:Message-Id:Date:Cc:To:From:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Owner;
- bh=hAbGGig0bz81g733CBBzOiLMK4M8Sv9f4DyOaEPCiJc=;
- b=ErKoYUgA9ZYiXalC5cTr157a3y
- iNjun6RyaZkQyA6FkSXPsT1fw1PWkfiFsVFyMVY6PcWO3u5d4VYgLq9wo2Cl3PsPkzQMhLnsIYeaS
- ET+1PK8ZQtNlSEU5xu0zJ14R9JArB+T1myCRt54I7o3ufDVTNVxuHUcIOtXi+IgHsx/9UlciNByik
- jRwJJz4/6lgTLLpcivwJFfZ48UFrwo+neSakwWSRdEg94kw9yRsi2ZZ0FBe2gNTx9J63iJUPC1Rkh
- WVHC8EgfUnvzhNmK/oNyVkoftEf6+dFJudIcHZ0zaYVkQf8lf0PI7O8nOEPNM26c1FVa+6cZnV4eE
- Xq1nU+IA==;
-Received: from mout-p-201.mailbox.org ([2001:67c:2050::465:201])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=pS2cCdtMsfpeEE+kUgX/4qUCkP+LlWD3qLHqzBxNva0=;
+ b=QBu9iwptiPb005
+ qjR1plPdsjHDQPosXJJnfp68LlwCzrOMibimPEaX32rNNHCuZetpo9jBnywxDuJhDhpI4FwhhSfrS
+ hGmz34EOLRRUXCRCFTldK80UwJrqGah5zUN3lhedFvKpKT41msFe0/etcpXTZVJcRg4/Q6Lzg4jCn
+ +mnj0xqrT9JgPlrftmORCvxA9WvWZf9AqiShnuC/fA4RZ0kSzAS0qSKC557u/ffz6OgRefkqQARq5
+ +5GH2zuLYFIA/2eQanRpErhrKIPEH/Ptv3SP9W2xFIanZJ4O9O/MEUKIYdwhP9NymU1RW7VLCAFvo
+ UF78hto9TI/Phh54QCkQ==;
+Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nE9eD-006Wy6-T5
- for wireless-regdb@lists.infradead.org; Sun, 30 Jan 2022 12:49:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gorani.run;
- s=MBO0001;  t=1643546973;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=yzXzlkaoOK5xu02ZaK3t0lcbzHgPPZLbGSEovmpiwXY=;
- b=cXQWQk6Hk095p56KH57f13GTjgX4JKaYDsbSKAea0jI+oGZzCo/Dz6CSadW02Tzr0tOQOB
- mj1RAMiVAMgFdb7Ii4f3yjiOZubiIJbvVg45jRaiIwUubPmNJHZ2O1LJn9XcxwMhP9XADV
- nDECR9c2CCZm0qt46+Wtkl9BbWWtW1MgijwodVIqJRIX8DoHNuM9+2UAWVWlEwkaqLkKqO
- g9AMRskUzuXHAa2SXEOwKdt8sSVWXFkIkO7KTamODNHnldeBNqKm0UflT9fUVyK02lKrAk
- 7iCrsYlony76HeR420oiMKnYpvz2d/x1MqgIkZECdPi8iQVxEj3sZxWAkzDZxA==
-From: Sungbo Eo <mans0n@gorani.run>
-Date: Sun, 30 Jan 2022 21:49:07 +0900
-Message-Id: <20220130124907.39224-1-mans0n@gorani.run>
-In-Reply-To: <20211212152050.25962-1-mans0n@gorani.run>
-References: <20211212152050.25962-1-mans0n@gorani.run>
+ id 1nBjic-001n6k-8U
+ for wireless-regdb@lists.infradead.org; Sun, 23 Jan 2022 20:44:12 +0000
+Received: by mail-wr1-x42c.google.com with SMTP id l25so9967734wrb.13 for
+ <wireless-regdb@lists.infradead.org>; Sun, 23 Jan 2022 12:44:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20210112; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/7ZBEjCn+lkjb6jeRnJ16QVEUOr4HiZcOfZUdeWEHec=;
+ b=oHbJ8xkO/Ojfj4RINLfEgVPxcYIcndQPhd9V0tZFwi9pZY5O74GuNTwar3ZSENwflH
+ xQxaFNMgNQJb8oPsNjIjoYsmWkrigHadLYN/T4PpNgidooMnJhcKhT1Pw0JHIqBpl8+v
+ k22egn6Vk8Vx098ngy/ruGz7vKxmXzMPskFLBkpSMxYaVAwR4fH5QOSB0CHIyj94yANW
+ UZ+wbuMbH2IAdHrHhTHY+vkX0orqsvPz7tL+0ulhbOgEIoCScVRuymV9Qe646Kj9fqpC
+ yOAg2H5YKr0wIDJwQh5pl4HmAhwuFOzsGS1k/VITgLSYQWwkK5PXaaRDNBlyYzaRIbFT EyRg==
+From: Romain Izard <romain.izard.pro@gmail.com>
+Date: Sun, 23 Jan 2022 21:43:46 +0100
+Message-Id: <20220123204346.14588-1-romain.izard.pro@gmail.com>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH v4] wireless-regdb: Update regulatory
- rules for South Korea (KR)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for France (FR) on 6 and 60 GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -53,81 +49,51 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Sungbo Eo <mans0n@gorani.run>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Romain Izard <romain.izard.pro@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-This patch is based on MSIT Public Notification 2021-86 ("Unlicensed Radio
-Equipment Established Without Notice"), officially announced on 2021-11-29.
+The French national agency for radio frequencies (ANFR) has published an updated
+revision of the normative radio band allocation table on 2021-12-14. It includes
+the authorization for the lower 6 GHz band for 802.11ax as prescribed by the EU
+2021/1067 decision, as well as the authorization for channels 5 and 6 in the 60
+GHz band for 802.11ay.
 
-The PSD must not exceed 2.5 mW/MHz if the frequency range includes all or
-part of 5230-5250 MHz and the bandwidth is equal to or less than 40 MHz.
-This leads to the following:
-* 5230-5250 @ 20 -> 17 dBm
-* 5210-5250 @ 40 -> 20 dBm
-Here the power limit for >20 MHz bandwidth is also lowered to 17 dBm, as
-it's not possible to set different power limits for different bandwidths
-at the moment.
+The declaration for the 6 GHz band follows the Low Power Indoor constraints.
 
-Extend the last 5 GHz frequency range to 5850 MHz.
+https://www.anfr.fr/fileadmin/mediatheque/documents/tnrbf/TNRBF_2021-12-14.pdf
 
-Wi-Fi 6E is now allowed with the following restrictions:
-* Indoor: the full 1.2 GHz range, up to 160 MHz bandwidth and 2 dBm/MHz PSD
-* Outdoor: the lower 500 MHz range, up to 160 MHz bandwidth and 25 mW EIRP
-Here only the former entry is added.
-
-And also update the regulatory source links.
-
-Signed-off-by: Sungbo Eo <mans0n@gorani.run>
+Signed-off-by: Romain Izard <romain.izard.pro@gmail.com>
 ---
-v4:
-* merge 5210-5230 MHz band rule
-* revert back to "indoor only" 6E rule as its power limit is higher
-
-v3:
-* update regulatory source to newer revision
-* replace "indoor only" 6E rule with "both indoor and outdoor" rule
-  as "indoor only" rule limits PSD instead of EIRP
-
-v2:
-* split 5150-5250 MHz band rule to accommodate the PSD limit
-* remove AUTO-BW flag from 6 GHz band rule
----
- db.txt | 16 +++++++++++-----
- 1 file changed, 11 insertions(+), 5 deletions(-)
+ db.txt | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index b898799..9b02a2c 100644
+index 6dbda3c..436d4d7 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -862,15 +862,21 @@ country KP: DFS-JP
- 	(5490 - 5630 @ 20), (30), DFS
- 	(5735 - 5815 @ 20), (30)
+@@ -585,6 +585,7 @@ country FM: DFS-FCC
+ #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+ #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+ # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
++# FR: https://www.anfr.fr/fileadmin/mediatheque/documents/tnrbf/TNRBF_2021-12-14.pdf
+ country FR: DFS-ETSI
+ 	(2400 - 2483.5 @ 40), (100 mW)
+ 	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+@@ -592,8 +593,10 @@ country FR: DFS-ETSI
+ 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+ 	# short range devices (ETSI EN 300 440-1)
+ 	(5725 - 5875 @ 80), (25 mW)
+-	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+-	(57000 - 66000 @ 2160), (40)
++	# WiFi 6E low power indoor
++	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++	# 60 GHz band channels 1-6 (ETSI EN 302 567 v2.2.1)
++	(57000 - 71000 @ 2160), (40)
  
-+# Source:
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
- country KR: DFS-JP
--	# ref: https://www.rra.go.kr
- 	(2400 - 2483.5 @ 40), (23)
--	(5150 - 5250 @ 80), (23), AUTO-BW
-+	(5150 - 5230 @ 40), (23), AUTO-BW
-+	# max. PSD 2.5 mW/MHz in 5230-5250 MHz frequency range
-+	(5230 - 5250 @ 20), (17), AUTO-BW
- 	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (20), DFS
--	(5725 - 5835 @ 80), (23)
--	# 60 GHz band channels 1-4,
--	# ref: http://www.law.go.kr/%ED%96%89%EC%A0%95%EA%B7%9C%EC%B9%99/%EB%AC%B4%EC%84%A0%EC%84%A4%EB%B9%84%EA%B7%9C%EC%B9%99
-+	(5725 - 5850 @ 80), (23)
-+	# 6 GHz band
-+	(5925 - 7125 @ 160), (15), NO-OUTDOOR
-+	# 60 GHz band channels 1-4
- 	(57000 - 66000 @ 2160), (43)
- 
- country KW: DFS-ETSI
+ # GB as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301 893)
+ # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
 -- 
-2.35.0
+2.20.1
 
 
 _______________________________________________
