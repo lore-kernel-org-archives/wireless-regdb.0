@@ -1,53 +1,39 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:Cc:To:
- MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=qIVU58Ml2u5F4Vj1HuJcINCC0q5wNRGEIQqn+R+UHnA=;
- b=xeDdkzznQ2oTRl
- qnmX6pktg8UiH0YDFsFd/nvHrWUBAKBlPkxXWaf/71dcr2rT3zOLXP2cDedXLmpYMdlQIQ2rBtYle
- EXmRpJHWAWfYxi9Tfl4gUKCroyPW0TQEBaOXUKQaXV43Xcl3Phy0MZT+d0hNYFz1pLhqYk46OJq4W
- g1eXGjkw8rjDUZV5Eev7e+2FWCnXmIY7HFe3Lrt4PZ806QaRnfdBxEQC++R43OO+/unA4OUq1eUy2
- qp7C5P7o4rwXEj0qp85LTzvz5/j92JLwpiTLY78VIi55Q8EgARrwV4AAMIUsH+vNRhztSCzl5PzUf
- sirNonu7hQS3Oit3l6nQ==;
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=+5Gvo22u9XE8wzh89PJ+FU2q8YFa5TBYe0IaeVSXhTA=;
+ b=hXPq5ei1XCg2Iw
+ t6O71J3LMwP95QGP7DVa9qxYEtSgh8a+ErXCnWKenbfPQ71o4YVkGWmzrTwnZ0/K0gxHgB8NjZgYQ
+ dIF1Q6JNbZhNxbi8oZCBVbqLLSXObw2DM2u7N2A3cp37UD7tT4vN4p9ovqQOeTDHqZzvwW0S+si/b
+ B43CwuW+F8pJfphI2WaSX4T3kV5WRVIHQCv2E8rpwgQybI6wMvftG2pcFwIZkTzaE3TIIMNdnd7ba
+ cd1BQi0zMOR2nw956dCuk4rr3jcR2Ssd9YIiKtIJZZDYJ7Uevo3o0mIBIv4qizecpGGspXWo/XT19
+ m3kP1dF1fJpUCR4rl4jg==;
+Received: from mail-wr1-x42a.google.com ([2a00:1450:4864:20::42a])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nIvCQ-00A9kc-Ox
- for wireless-regdb@lists.infradead.org; Sat, 12 Feb 2022 16:24:40 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
- cc:cc:content-transfer-encoding:content-type:date:date:from:from
- :in-reply-to:in-reply-to:message-id:mime-version:references
- :reply-to:sender:subject:subject:to:to; s=fm1; bh=NsKDjV7yozdIGo
- WYo6g6G5GVC/MAQKOf51OAj0cQcmI=; b=Visc1SxAlBGB4f3os2QUzaCgJ70doq
- yUWw4+myr59UX1/zPAzgZmPwuM7ccBBbP6x+ZjBoFz+cC0LAb3Aw0FDQ6d2fpzhH
- DrU1/qdoDww1+1pKG2R9rjsfVSEAD4gqZNEEjr098CBASq2heU4Y8jH0PheeIFck
- xdqAO3FGkce+vb5FbSLB/wd4xZMSNMzqULtTfI5Z/IO5dnA3u/SrlNgYC7mWng3i
- gfeNbN/RZc+wwUNL9yxpVIj4rUGOD0tv8RloEMWqvLiut4Fkprly0as1vupSuz3M
- c0JvOLGvIYIdH/oWJH98ix4EmB30KmUPQ5iS+CtOWMlgqXNfPh7zP3YA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:cc:content-transfer-encoding
- :content-type:date:date:from:from:in-reply-to:in-reply-to
- :message-id:mime-version:references:reply-to:sender:subject
- :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=NsKDjV7yozdIGoWYo6g6G5GVC/MAQKOf51OAj0cQc
- mI=; b=gMjAflY6L/xENzj3fAxhcDweV8V8X8erLI61x62h8UkcQ1t7Meyt+80qq
- PWe+Ip/ABLJDgf5H+wXZ3MgkUvY+J2qF4agoRO4asK2do/84ao4MPJ5lOMI07d3E
- Ec5e4Y3dm/mxCVzJ5cOmu2V4IxwQ3bXQcqxk/ooRO9RjdVPIdjlZF9pjlHSUuuuL
- P/Uapo4ok1VOfwhXcyHMdqXxXxrm8CZYP5fMPGq5lGuB0MTt6ByA+g08HSJxnZZH
- lWoCwEEJN1el1BZrPuDPMiJH21GkMWGV3AM8lsock6CXdD/9w2Pr5VkV8z6vXXin
- 2LLa6Ta7VyXZmAVPxytyTj7Ifrdug==
-Message-ID: <52607f0a-05ad-f4d2-6fb4-117f447f06cc@flygoat.com>
-Date: Sat, 12 Feb 2022 16:24:32 +0000
+ id 1nFOTp-00H2qA-Do
+ for wireless-regdb@lists.infradead.org; Wed, 02 Feb 2022 22:52:03 +0000
+Received: by mail-wr1-x42a.google.com with SMTP id h7so1333139wrc.5 for
+ <wireless-regdb@lists.infradead.org>; Wed, 02 Feb 2022 14:52:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20210112; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+Y1jPAyL1xOFLM7YyaPmwDCktPz/RiDJpfcKX/6shOE=;
+ b=MzLQPo1bVMe7ZXHrz7gLw7NxC2q8exlBDDXekuoVgoAOZhZJff7f5Az/hi/+MYsnEK
+ MRZXzREFPYyidN8sxxvnsaCKK1t5389Odl+Q672ewsl1rn+NIvqJCjLgZTwdVb5u5Lvd
+ 8OhsDBHADg46uQFKUO4Ty3B08Jrne3/TkNOvBSeHS+93TVrBfte6mFccov2XPaUNyRRe
+ gL88CxDEEIG1lgVbbb7k0RPQQ4ejaW9I3aRC0Nf+1tZ6IDx+IciUf7EE/vm0QRWdGPXP
+ +cIO+krxjWYSSeS/WvzYxHm6816D7ie0DTEkxktyuOgbvce3C+Qb6zgPo/9Brse8J73m SXlA==
+From: Xose Vazquez Perez <xose.vazquez@gmail.com>
+Date: Wed,  2 Feb 2022 23:51:57 +0100
+Message-Id: <20220202225157.91989-1-xose.vazquez@gmail.com>
 MIME-Version: 1.0
-References: <9a460b85-4e1b-40b2-8691-3f999331c76b@www.fastmail.com>
- <YgfWuV8E+xHZGeqh@ubuntu-x1>
-From: Jiaxun Yang <jiaxun.yang@flygoat.com>
-In-Reply-To: <YgfWuV8E+xHZGeqh@ubuntu-x1>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for China (CN)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Spain (ES) on 6GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -57,46 +43,67 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"; format="flowed"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <sforshee@kernel.org>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Cc: Xose Vazquez Perez <xose.vazquez@gmail.com>, Seth Forshee <sforshee@kernel.org>, WIRELESS ML <linux-wireless@vger.kernel.org>, REGDB ML <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
+Add WiFi 6E frequency band.
 
+Sources:
+(EU) 2021/1067: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32021D1067
+BOE numero 308, de 24/12/202: Orden ETD/1449/2021: CNAF-2021 (page 302): https://www.boe.es/buscar/pdf/2021/BOE-A-2021-21346-consolidado.pdf
 
-在 2022/2/12 15:48, Seth Forshee 写道:
-> On Fri, Feb 04, 2022 at 03:19:29PM +0000, Jiaxun Yang wrote:
->> China had updated regulations on ISM frequencies by
->> "工信部无〔2021〕129号".
->>
->> The new regulation effectives from Jan 1 2022.
->>
->> Update regdb accroading to it's attachment "2400MHz、5100MHz
->> 和 5800MHz 频段无线电发射设备射频技术要求".
->>
->> Announcement: https://wap.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2021/art_e4ae71252eab42928daf0ea620976e4e.html
->> Attachment: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20219/d125301b13454551b698ff5afa49ca28.pdf
->>
->> Those documents are only available in Chinese.
->>
->> Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
-> Thanks for the patch. I'm looking at a machine translation of the
-> document, and based on that I think one change needs to be made, see
-> below. If something was mistranslated or if I misunderstood, please let
-> me know.
-Thanks for pointing.
+UN-167 RLANs en 6 GHz
 
-I asked a RF expert and he adviced you're right :-)
+Aplicaciones de uso común en la banda de 5945-6425 MHz.
 
-v2 is on the way.
+De conformidad con la Decisión de Ejecución (UE) 2021/1067 de la Comisión, sobre el uso
+armonizado de la banda 5945-6425 MHz para sistemas de acceso inalámbrico, incluidas las
+redes de área local (WAS/RLAN), se permiten estas aplicaciones en la citada banda de
+frecuencias bajo la consideración de uso común con arreglo a las condiciones técnicas
+indicadas en el anexo a la citada Decisión.
 
-Thanks.
+Los dispositivos de baja potencia para uso en interiores (LPI), tendrán una potencia máxima
+de 23 dBm (p.i.r.e.), con una densidad de potencia p.i.r.e. media máxima de 10 dBm/MHz
+para las emisiones en banda y de -22 dBm/MHz para emisiones fuera de banda.
 
-- Jiaxun
+Los dispositivos de muy baja potencia para uso en interiores y en exteriores (VLP), tendrán
+una potencia máxima de 14 dBm (p.i.r.e.), con una densidad de potencia p.i.r.e. media
+máxima de 1 dBm/MHz para emisiones en banda, o hasta 10 dBm/MHz si funcionan con
+canalización que no supere los 20 MHz, y de -45 dBm/MHz para emisiones fuera de banda.
+
+En cualquier caso, estos dispositivos deberán utilizar técnicas de acceso al espectro y
+mitigación de interferencias que garanticen los requisitos esenciales de la Directiva
+2014/53/UE.
+
+Cc: Seth Forshee <sforshee@kernel.org>
+Cc: WIRELESS ML <linux-wireless@vger.kernel.org>
+Cc: REGDB ML <wireless-regdb@lists.infradead.org>
+Signed-off-by: Xose Vazquez Perez <xose.vazquez@gmail.com>
+---
+ db.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/db.txt b/db.txt
+index 6dbda3c..5e41f7d 100644
+--- a/db.txt
++++ b/db.txt
+@@ -549,6 +549,8 @@ country ES: DFS-ETSI
+ 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+ 	# short range devices (ETSI EN 300 440-1)
+ 	(5725 - 5875 @ 80), (25 mW)
++	# WiFi 6E
++	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+ 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+ 	(57000 - 66000 @ 2160), (40)
+ 
+-- 
+2.34.1
+
 
 _______________________________________________
 wireless-regdb mailing list
