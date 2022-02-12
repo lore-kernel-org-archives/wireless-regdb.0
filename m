@@ -1,39 +1,51 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=tVUh2uYDNTssZnwOT76g4LbOANjfoMot9RMhSs+uA10=;
- b=ASKIARrqAAyVt8
- Vp0OOkq+6CdDDzEKowlqtCB1rnZ4r78nfn9n08RMs6XSBl42HEULeNmZASuqcB/vUbHutnTKGAX3m
- ehDg2dPsl3DxtdRgOFFAxoq6slkPrvJcsxXC9/KGmcFSUY/kHMosycsSSIieQuMV/ZfdIecnDf9sr
- iDPIWiy2IxmJhmFS4cxG/qed41WyMx46Ni8Chhh4/YfH2TCvXonlFsvxvLZqFt6DpyQSukmdhE8Z1
- IHSk/SlQPctC+DFR1w0Qb9Y6yhfxTfL5YVvEZmBc6YJcr/1sZzdVoio2PDlIawrkK+TK6GN0PJO0L
- ACdz67/zLlgNJqhY2fQA==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+ Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+ List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:Cc:To:
+ MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=qIVU58Ml2u5F4Vj1HuJcINCC0q5wNRGEIQqn+R+UHnA=;
+ b=xeDdkzznQ2oTRl
+ qnmX6pktg8UiH0YDFsFd/nvHrWUBAKBlPkxXWaf/71dcr2rT3zOLXP2cDedXLmpYMdlQIQ2rBtYle
+ EXmRpJHWAWfYxi9Tfl4gUKCroyPW0TQEBaOXUKQaXV43Xcl3Phy0MZT+d0hNYFz1pLhqYk46OJq4W
+ g1eXGjkw8rjDUZV5Eev7e+2FWCnXmIY7HFe3Lrt4PZ806QaRnfdBxEQC++R43OO+/unA4OUq1eUy2
+ qp7C5P7o4rwXEj0qp85LTzvz5/j92JLwpiTLY78VIi55Q8EgARrwV4AAMIUsH+vNRhztSCzl5PzUf
+ sirNonu7hQS3Oit3l6nQ==;
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nIud9-00A5ea-MN
- for wireless-regdb@lists.infradead.org; Sat, 12 Feb 2022 15:48:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1644680890;
- bh=wdO2zfMgIWAo32D+i8APtdcwmrUAuCjFi5NUKDnaU3I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=eBxwkkW1G/AT9CrUYYkF1PpZt4f/V3iFAS4Om1W5shJKpkxl3AYXgwJW+3DxiN3pP
- 9ucl3JB5UdlBFo07K9YROYmqaOanuZcB8HFl7AQW2WaWoa6m2Kn+YAU52c2MBlWjH4
- OTN/R6r30Glbg5Or2HhwYrvlRk0lS9WmBMCACSu6sOe5taz/pPN5jbipQYqZn3uIQ5
- wUs3mxdeimHrM4DaV8JhpWQryZxy0FRai6DghDs/rBt0XPMbVU4fgEfrOYU8ehE7t7
- iNm9kfNIFnU2nKn2EHTeo6oVcxW+BTU0tks1PevydlDflIlog6huTVKjtCQmmMiyD7
- r76R+Rj0u6bzg==
-Date: Sat, 12 Feb 2022 09:48:09 -0600
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <YgfWuV8E+xHZGeqh@ubuntu-x1>
-References: <9a460b85-4e1b-40b2-8691-3f999331c76b@www.fastmail.com>
+ id 1nIvCQ-00A9kc-Ox
+ for wireless-regdb@lists.infradead.org; Sat, 12 Feb 2022 16:24:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
+ cc:cc:content-transfer-encoding:content-type:date:date:from:from
+ :in-reply-to:in-reply-to:message-id:mime-version:references
+ :reply-to:sender:subject:subject:to:to; s=fm1; bh=NsKDjV7yozdIGo
+ WYo6g6G5GVC/MAQKOf51OAj0cQcmI=; b=Visc1SxAlBGB4f3os2QUzaCgJ70doq
+ yUWw4+myr59UX1/zPAzgZmPwuM7ccBBbP6x+ZjBoFz+cC0LAb3Aw0FDQ6d2fpzhH
+ DrU1/qdoDww1+1pKG2R9rjsfVSEAD4gqZNEEjr098CBASq2heU4Y8jH0PheeIFck
+ xdqAO3FGkce+vb5FbSLB/wd4xZMSNMzqULtTfI5Z/IO5dnA3u/SrlNgYC7mWng3i
+ gfeNbN/RZc+wwUNL9yxpVIj4rUGOD0tv8RloEMWqvLiut4Fkprly0as1vupSuz3M
+ c0JvOLGvIYIdH/oWJH98ix4EmB30KmUPQ5iS+CtOWMlgqXNfPh7zP3YA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:cc:content-transfer-encoding
+ :content-type:date:date:from:from:in-reply-to:in-reply-to
+ :message-id:mime-version:references:reply-to:sender:subject
+ :subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=NsKDjV7yozdIGoWYo6g6G5GVC/MAQKOf51OAj0cQc
+ mI=; b=gMjAflY6L/xENzj3fAxhcDweV8V8X8erLI61x62h8UkcQ1t7Meyt+80qq
+ PWe+Ip/ABLJDgf5H+wXZ3MgkUvY+J2qF4agoRO4asK2do/84ao4MPJ5lOMI07d3E
+ Ec5e4Y3dm/mxCVzJ5cOmu2V4IxwQ3bXQcqxk/ooRO9RjdVPIdjlZF9pjlHSUuuuL
+ P/Uapo4ok1VOfwhXcyHMdqXxXxrm8CZYP5fMPGq5lGuB0MTt6ByA+g08HSJxnZZH
+ lWoCwEEJN1el1BZrPuDPMiJH21GkMWGV3AM8lsock6CXdD/9w2Pr5VkV8z6vXXin
+ 2LLa6Ta7VyXZmAVPxytyTj7Ifrdug==
+Message-ID: <52607f0a-05ad-f4d2-6fb4-117f447f06cc@flygoat.com>
+Date: Sat, 12 Feb 2022 16:24:32 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <9a460b85-4e1b-40b2-8691-3f999331c76b@www.fastmail.com>
+References: <9a460b85-4e1b-40b2-8691-3f999331c76b@www.fastmail.com>
+ <YgfWuV8E+xHZGeqh@ubuntu-x1>
+From: Jiaxun Yang <jiaxun.yang@flygoat.com>
+In-Reply-To: <YgfWuV8E+xHZGeqh@ubuntu-x1>
 Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
  rules for China (CN)
 List-Unsubscribe: 
@@ -45,71 +57,46 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="utf-8"; format="flowed"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Jiaxun Yang <jiaxun.yang@flygoat.com>
+To: Seth Forshee <sforshee@kernel.org>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Feb 04, 2022 at 03:19:29PM +0000, Jiaxun Yang wrote:
-> China had updated regulations on ISM frequencies by
-> "工信部无〔2021〕129号".
-> 
-> The new regulation effectives from Jan 1 2022.
-> 
-> Update regdb accroading to it's attachment "2400MHz、5100MHz
-> 和 5800MHz 频段无线电发射设备射频技术要求".
-> 
-> Announcement: https://wap.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2021/art_e4ae71252eab42928daf0ea620976e4e.html
-> Attachment: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20219/d125301b13454551b698ff5afa49ca28.pdf
-> 
-> Those documents are only available in Chinese.
-> 
-> Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
 
-Thanks for the patch. I'm looking at a machine translation of the
-document, and based on that I think one change needs to be made, see
-below. If something was mistranslated or if I misunderstood, please let
-me know.
 
-> ---
->  db.txt | 9 +++++----
->  1 file changed, 5 insertions(+), 4 deletions(-)
-> 
-> diff --git a/db.txt b/db.txt
-> index 6dbda3c..e6fd657 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -346,11 +346,12 @@ country CL: DFS-JP
->  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
->  	(5735 - 5835 @ 80), (20)
->  
-> +# Source:
-> +# https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20219/d125301b13454551b698ff5afa49ca28.pdf
->  country CN: DFS-FCC
-> -	(2402 - 2482 @ 40), (20)
-> -	(5170 - 5250 @ 80), (23), AUTO-BW
-> -	(5250 - 5330 @ 80), (23), DFS, AUTO-BW
-> -	(5735 - 5835 @ 80), (30)
-> +	(2400 - 2483.5 @ 40), (20)
-> +	(5150 - 5350 @ 80), (23), DFS, AUTO-BW
+在 2022/2/12 15:48, Seth Forshee 写道:
+> On Fri, Feb 04, 2022 at 03:19:29PM +0000, Jiaxun Yang wrote:
+>> China had updated regulations on ISM frequencies by
+>> "工信部无〔2021〕129号".
+>>
+>> The new regulation effectives from Jan 1 2022.
+>>
+>> Update regdb accroading to it's attachment "2400MHz、5100MHz
+>> 和 5800MHz 频段无线电发射设备射频技术要求".
+>>
+>> Announcement: https://wap.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2021/art_e4ae71252eab42928daf0ea620976e4e.html
+>> Attachment: https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20219/d125301b13454551b698ff5afa49ca28.pdf
+>>
+>> Those documents are only available in Chinese.
+>>
+>> Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
+> Thanks for the patch. I'm looking at a machine translation of the
+> document, and based on that I think one change needs to be made, see
+> below. If something was mistranslated or if I misunderstood, please let
+> me know.
+Thanks for pointing.
 
-It looks like this range requires TPC, and if TPC is not supported the
-max EIRP needs to be lowered by 3 dBm. Since Linux does not support TPC,
-we need to reduce this power limit to 20 dBm.
+I asked a RF expert and he adviced you're right :-)
 
-Thanks,
-Seth
+v2 is on the way.
 
-> +	(5725 - 5850 @ 80), (33)
->  	# 60 GHz band channels 1,4: 28dBm, channels 2,3: 44dBm
->  	# ref: http://www.miit.gov.cn/n11293472/n11505629/n11506593/n11960250/n11960606/n11960700/n12330791.files/n12330790.pdf
->  	(57240 - 59400 @ 2160), (28)
-> -- 
-> 2.34.1.windows.1
+Thanks.
+
+- Jiaxun
 
 _______________________________________________
 wireless-regdb mailing list
