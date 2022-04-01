@@ -3,41 +3,37 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=8Nl/AKVzKpmBfyA50r5DSoWaoXsVkz6dy46OLsphVrc=;
- b=MZv3mFl/J7WqYC
- 3rcCDCFnLLc0sUU78/eg7FyJni/8paGz137wrIgy9KhMMDYw7+RqvENjZHsiFbalZEwbLuRCUGPDy
- p7R8CRPZUyNIToENU4p3+vEDg8WZPzV6Nf9WSWUdDXcaCJV7gpzt3qPEayPhY7vi0hKx08/7SI/Lu
- In5uU4EG85VsMq6Url3GEEEfrzWmzHTl1Xz6PLgRpF+4djwNffBDSBaj70zBZhA35yDowS+NeiLmG
- dlPcsWJyUIZE6Tf+O+tvGxaTCVjFYX+2w6EwoIbKxmg852Ier0ZkQaLbj32EMfbHkXjjtzQ/q3D+z
- lCaO/2mO2tNH9GB+RrRg==;
-Received: from mail-yw1-x1134.google.com ([2607:f8b0:4864:20::1134])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=nCnjttTrs22OYIYXcp+xrAxRd0lAOGZxVYAlSdfUxJg=;
+ b=yjZrz3PTwkz4Yu
+ uu3Y1KM4x6nEw6z+R/ILD1RH6vj5VFQjLoHbS3eMCRRQRShwXLvlYX40wSxMoGcFt7ZOzVlHD9hB5
+ W8BlueoNu6JONx2RS991ZafgLk0Vqt6fXrxyOexg2c8NOkLvUM3g3r76YDp07/aMqYKaamM3N67wg
+ OH6Bz8/ELCOw0kIgwIUGDLoV/OPlrardAzl3R7RICnv+ievmwI4nEA8SpSZ2PK/Bc2Mn4h6zqXTgY
+ o8RZt0AYTr38cR2cYA9A2rh29l0hdBlUxDePfapSyHfPUDqA4TY5fq89JOH5MlbZe9vmDagFosax9
+ vEH+9wHchj3y0GVk0dXg==;
+Received: from mail-pg1-x52b.google.com ([2607:f8b0:4864:20::52b])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ncrLo-000Svw-Oy
- for wireless-regdb@lists.infradead.org; Fri, 08 Apr 2022 16:20:46 +0000
-Received: by mail-yw1-x1134.google.com with SMTP id
- 00721157ae682-2eb680211d9so102070517b3.9 for
- <wireless-regdb@lists.infradead.org>; Fri, 08 Apr 2022 09:20:43 -0700 (PDT)
+ id 1na7hJ-004Md5-Qs
+ for wireless-regdb@lists.infradead.org; Fri, 01 Apr 2022 03:11:39 +0000
+Received: by mail-pg1-x52b.google.com with SMTP id c11so1336291pgu.11 for
+ <wireless-regdb@lists.infradead.org>; Thu, 31 Mar 2022 20:11:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to :cc;
- bh=fwwusgA1LzFpaCXkdPk8ihdzVLfL7nW4Ue+KuTewXQY=;
- b=kPzBgF2wRAPsQq+tqyojaCZ9gC9lganp3JmpNdIgAxQ/pFLa9RWkt2+ZJC/TC90nWH
- 7FPvJErfQkMEcnh+aYLSMHoyWfbbUJpTH13wHIMc0wGCxv89PBgeB4ogyY82efEps3mT
- TxFLOpQSgDHxTfumbHkzZHW5F6mfVJmgVwjcQJJE36VIYXjjLAixEiQgXHoY2fH4KbnE
- FKXzyznCNFJ/kK81OjQwvabry+fHPa//7hAyCe8EqEIKLYbjNPP6Am87Gm5ZLywhGSe7
- xGznfQTytKplkZnT2qCJM0AMOWX2sXKJNnrfMengM6+KIjdQxKNqMle4bxyHQ/aT0r3r wy6A==
+ s=20210112; h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=yeDQ4zgJLHyjCHgAOp4dtUhvH7HBlcHTmr4EQRu/8po=;
+ b=EpVaeFRWYYMqYfUaRd2yiEFkqfxs5Fglx1vyi8nYaNbgmjDrONPElFZfrLu5Ln7G+0
+ wjO4aSXSEcp+ka0cxzqRt1hNcFXXpHoNNcBHpHlqcdIln4Xl6kDK7zwTzL43dK8C/sxI
+ z7i5tZOcDlkofPK+yfaGCpZZvSwD/HIzeXda3sLZOEGejtWc3101eXsqnxy4LSauGvM2
+ jd8nKHkZU59I57dVW0IqNoKG9G6YkddUYNVARS/eRJKHxQokKyZO7+kLOLXd+YcuSmLX
+ 8qbm1+fWeAenYpWsCsMrL5PUDlvP9FOrBuFc2EnH55HSviowu0/jNkTYtUuCARfa58gU x2Qg==
+From: Richard Huynh <voxlympha@gmail.com>
+Date: Fri,  1 Apr 2022 14:11:16 +1100
+Message-Id: <20220401031116.2195-1-voxlympha@gmail.com>
 MIME-Version: 1.0
-References: <YlBLWuf0eKyS1HL0@ubuntu-x1>
- <CAM0KTbBCeyx8TGkGcNkjJ7TYjtr6zeFY2=1TWwbzd5d3xHdZXg@mail.gmail.com>
- <YlBdVvV7NGNccysW@ubuntu-x1>
-In-Reply-To: <YlBdVvV7NGNccysW@ubuntu-x1>
-From: Sid Hayn <sidhayn@gmail.com>
-Date: Fri, 8 Apr 2022 12:20:32 -0400
-Message-ID: <CAM0KTbCvVYsatQWvT3igwKwRVCG4Q2XU7qqLJYwF-Bs0iK3Cig@mail.gmail.com>
-Subject: Re: [wireless-regdb] [ANN] wireless-regdb: master-2022-04-08
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
+ rules for Australia (AU)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -52,61 +48,47 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <sforshee@kernel.org>
-Cc: wireless-regdb@lists.infradead.org
+To: sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Richard Huynh <voxlympha@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, Apr 8, 2022 at 12:05 PM Seth Forshee <sforshee@kernel.org> wrote:
->
-> On Fri, Apr 08, 2022 at 11:37:54AM -0400, Sid Hayn wrote:
-> > Are "regulatory.db" and "regulatory.db.p7s" missing from this release
-> > on accident or no longer required?
-> >
-> > I package wireless-regdb for gentoo but I honestly haven't been
-> > following development much more closely than just bumping for
-> > releases.  For the recent releases I've been installing regulatory.bin
-> > in /usr/lib/crda and regulatory.db and regulatory.db.p7s in
-> > /lib/firmware
->
-> Oops, it looks like a typo caused them to be removed by accident. I've
-> updated the archives and the signature to contain the missing files.
-> Thanks for letting me know!
->
-And thank you for the quick fix :-)
+Changes allowing lower portion of WiFi 6E spectrum. (5925-6425)
 
-> Seth
->
-> >
-> > Thanks,
-> > Zero_Chaos
-> >
-> > On Fri, Apr 8, 2022 at 10:49 AM Seth Forshee <sforshee@kernel.org> wrote:
-> > >
-> > > A new release of wireless-regdb (master-2022-04-08) is available at:
-> > >
-> > > https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2022.04.08.tar.xz
-> > >
-> > > The short log of changes since the master-2022-02-18 release is below.
-> > >
-> > > Thanks,
-> > > Seth
-> > >
-> > > ---
-> > >
-> > > Richard Huynh (1):
-> > >       wireless-regdb: Update regulatory rules for Australia (AU)
-> > >
-> > > Roman Kunzman (1):
-> > >       wireless-regdb: Update regulatory rules for Israel (IL)
-> > >
-> > > Seth Forshee (2):
-> > >       wireless-regdb: add missing spaces for US S1G rules
-> > >       wireless-regdb: update regulatory database based on preceding changes
-> > >
-> > > _______________________________________________
-> > > wireless-regdb mailing list
-> > > wireless-regdb@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/wireless-regdb
+Amendment: https://www.legislation.gov.au/Details/F2022L00249
+Full text: https://www.legislation.gov.au/Details/F2022C00281
+
+Allows for both 250mW EIRP indoors or 25mW outdoors.
+However, only the former limit is defined in this commit.
+
+Signed-off-by: Richard Huynh <voxlympha@gmail.com>
+---
+ db.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/db.txt b/db.txt
+index e887c73..a820ec8 100644
+--- a/db.txt
++++ b/db.txt
+@@ -121,7 +121,7 @@ country AT: DFS-ETSI
+ 	(57000 - 66000 @ 2160), (40)
+ 
+ # Source:
+-# https://www.legislation.gov.au/Details/F2016C00432
++# https://www.legislation.gov.au/Details/F2022C00281
+ # Both DFS-ETSI and DFS-FCC are acceptable per AS/NZS 4268 Appendix B.
+ # The EIRP for DFS bands can be increased by 3dB if TPC is implemented.
+ # In order to allow 80MHz operation between 5650-5730MHz the upper boundary
+@@ -133,6 +133,7 @@ country AU: DFS-ETSI
+ 	(5470 - 5600 @ 80), (27), DFS
+ 	(5650 - 5730 @ 80), (27), DFS
+ 	(5730 - 5850 @ 80), (36)
++	(5925 - 6425 @ 160), (24), NO-OUTDOOR
+ 	(57000 - 66000 @ 2160), (43), NO-OUTDOOR
+ 
+ country AW: DFS-ETSI
+-- 
+2.35.1
+
 
 _______________________________________________
 wireless-regdb mailing list
