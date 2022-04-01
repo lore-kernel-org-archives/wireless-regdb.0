@@ -6,37 +6,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
  :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=PNxAHIgQPEbFnlx5aDbrepbos6+Mx45so/KMWcE+OE4=;
- b=2rAVWocWiJRtUj
- tD/EOt+0kR4ffhwEdTi0POKxf0qHn8bAMKLgm5CX5FMZTs3o6bfUo6o4JejIYQRyHLGvE2xtvXMlq
- vLPyMkx0sL2t+mKyXO5SPGkLx0N2A24efB6zH1McnnW1MARY1w5dwG/AB62LsJiDjsM8jSXn8b6eD
- 3roN7BLm7xU37aRi6CsvICkhMVpCPOghbl1QUae6nF/vC47jbJqHHrf2N2K/LQpJILm1PNGT8VIW9
- f+b0k1XQzP5i//o7eZ71pSCzgpQ1ONXGWjqZeOe+b4Han8NijvgW5fPCBSVPjj+BGFaxbcwBxubtg
- qT8/TNXFj4vAf6v0KI0A==;
-Received: from mail-oi1-x229.google.com ([2607:f8b0:4864:20::229])
+ List-Owner; bh=li7gyt8tcZdp4rCbtcq9vnjPpfMfWUDHbB9o/G0gYmQ=;
+ b=gs+5yv0Ag3e5Yq
+ nGmhZWBfvGKPIbtfgWGJIw53CMdZwvMWBn3qNIJHY4BwNj5ScdmWbaGeXYtAoipWIBJM6i/c/e+iI
+ NKoEPo4QoTh4BcB2kFrn1Bvbu36A9jVEQAzE6jpZl5F4KKtykBcHlrh63Fo4cMVjQ/2cj1x1P9DVJ
+ VMe3eHdbEB1bHn6zkywkMjt/vC4FUf9zQwqrqzl4manF/A70qG+QunbHEea1JmGbRsksdQn9S7NS9
+ jPAAKW50UxBfbBIClj+CkVLauEY3F0mhuVSGInfcxrHJyhcimk2q5kBWwLdqzcoHhXKYdgBbT9SQ+
+ OxnRzRp6NWSBwmFQbWdw==;
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1na7C2-004J8D-9N
- for wireless-regdb@lists.infradead.org; Fri, 01 Apr 2022 02:39:21 +0000
-Received: by mail-oi1-x229.google.com with SMTP id e4so1520257oif.2 for
- <wireless-regdb@lists.infradead.org>; Thu, 31 Mar 2022 19:39:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=forshee.me;
- s=google; h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=BjTHLhmpYCYQ0PpoBjmla79tTLcmiaAbrm5pPyI7YWI=;
- b=SIc+vhlOh5ttYc/ya6FB5DzsAfi6SYDUsbVbixAlfe4jzYCYfa/3ygswSRyHX8641r
- FfqYLVHK3BQ+mr9I33NY/aSjEtc86mIEIFpc86bKE/SEiFM6dw+kp1Z1g4uUwUI+gSwo
- tvOso8LxS4/5hrCzyUFmMKNSbSofwGI0dd/652XS796UWUMa/CJPZ8IHhyGgwZrDWd4W
- JeogF2Y02Lpyq86e8/Eo3yq+vxq3Irncw+z5QdeJt1SWD6MaSYsPE9muTDq7mwOsFzkr
- TXz5MQMW+pRBqTW5C/i4uJBoP7rRSqg90UTM2FIuN0b1yZj47+gXeHTJc+56f7MODWig EaEA==
-Date: Thu, 31 Mar 2022 21:39:14 -0500
-From: Seth Forshee <seth@forshee.me>
-Message-ID: <YkZl0gw40Htwpu5t@ubuntu-x1>
-References: <20220323194134.169332-1-sforshee@kernel.org>
+ id 1na7Ai-004IcK-QH
+ for wireless-regdb@lists.infradead.org; Fri, 01 Apr 2022 02:37:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1648780673;
+ bh=WlXoR074PAMbYjq1sF9KT4K76XJkp0FZ5uP8AdoG8uA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fui1IRjEXq0GmL4kKTgchTi5yC9RnVx9OvC9SZXnBKpzT2XFnFBqodB5SaGnFavyq
+ Atjg0k25moCzTnnrA7750jj1YHwaVAr5El1KhUTmBLGlJlNAB40hSflEYwbjx/3+eM
+ MzAd7EA8FrtcL8kcTBuwZeH+HNd7CFy+7DmWZ0aGYEmqGdPxvQPoU/cDRjHW9+uB5O
+ feyjr4Xvv8UCvC0gP/Nq63BItPX8W+wFEfYPApKUTDZyQhjSJU2ebnNYilk8v7gyTJ
+ owwbyHfcIm1ntwUP2U2Kn0rShvSnQyj+T0z7+WGiHZ+gUcUymIesXqcgLbg4SdmRcJ
+ qn2XZNtIjRITA==
+Date: Thu, 31 Mar 2022 21:37:52 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <YkZlgEfVfiR9EDjl@ubuntu-x1>
+References: <20220328062250.15903-1-voxlympha@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20220323194134.169332-1-sforshee@kernel.org>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add missing spaces
- for US S1G rules
+In-Reply-To: <20220328062250.15903-1-voxlympha@gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for Australia (AU)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -51,19 +50,50 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+To: Richard Huynh <voxlympha@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Mar 23, 2022 at 02:41:34PM -0500, Seth Forshee wrote:
-> The rules lack spaces in the frequency range definition, which works
-> find for building the database but causes problems for some external
-> parsers. Add the missing spaces.
+On Mon, Mar 28, 2022 at 05:22:51PM +1100, Richard Huynh wrote:
+> Changes allowing lower portion of WiFi 6E spectrum. (5925-6425)
 > 
-> Signed-off-by: Seth Forshee <sforshee@kernel.org>
+> Amendment: https://www.legislation.gov.au/Details/F2022L00249
+> Full text: https://www.legislation.gov.au/Details/F2022C00281
+> 
+> Allows for both 250mW EIRP indoors or 25mW outdoors.
+> However, only the former limit is defined in this commit.
+> 
+> Signed-off-by: Richard Huynh <voxlympha@gmail.com>
+> ---
+>  db.txt | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index e887c73..15de29f 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -121,7 +121,7 @@ country AT: DFS-ETSI
+>  	(57000 - 66000 @ 2160), (40)
+>  
+>  # Source:
+> -# https://www.legislation.gov.au/Details/F2016C00432
+> +# https://www.legislation.gov.au/Details/F2022C00281
+>  # Both DFS-ETSI and DFS-FCC are acceptable per AS/NZS 4268 Appendix B.
+>  # The EIRP for DFS bands can be increased by 3dB if TPC is implemented.
+>  # In order to allow 80MHz operation between 5650-5730MHz the upper boundary
+> @@ -133,6 +133,7 @@ country AU: DFS-ETSI
+>  	(5470 - 5600 @ 80), (27), DFS
+>  	(5650 - 5730 @ 80), (27), DFS
+>  	(5730 - 5850 @ 80), (36)
+> +	(5925 - 6425 @ 160), (24), NO-OUTDOOR, AUTO-BW
+>  	(57000 - 66000 @ 2160), (43), NO-OUTDOOR
 
-Applied.
+Thanks for the patch. One small issue though. AUTO-BW doesn't really
+make sense here since the range isn't adjacent to any other ranges.
+Otherwise it looks fine.
 
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
