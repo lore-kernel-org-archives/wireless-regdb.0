@@ -6,34 +6,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
  MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=a0g83E/oRLVXvcEQwc6zBq0rKJvpptJRlnT2DGla/+U=;
- b=s4r
- en1C9AzgcdlxXah/8AAq8xxxiC0Rk3QAgJWtWKppZBl9RPvUI9liOXZx+NNIBMGDR97jgcbJAr9Zu
- npB7XyqheLKeMqWot11xEO4RQMlxzTNnZrgdPpPFI6UBiimD0whBy5208aB41+00s/lv6I/QZkJy5
- MDWFfsOi9ceVUNuWgitCj9IcVVHVvcXYGGnybZF2h8D+LBFhYzALjiBghi4kF23zjP2G8GcJplQ5E
- msCoOROJUSxKXkdSQeHc6K7VRrTiZ/5dS+KtSsjjYjWiXpGgspVcq6mX5fAR6biFPr3SI9RguInkT
- /6HnP/cWQhkojycHc8pShtqpmLPA9XQ==;
-Received: from mail-lj1-x229.google.com ([2a00:1450:4864:20::229])
+ References:List-Owner; bh=NEmf1xpUYkaT1rxE41l19jglONZ1Iwz6p8EWA4PNuz0=;
+ b=n4z
+ wJ17HBxoI+9BkvzClrUjtmFx5DQdZaj6mHEJqtvDz1QGRry783IrDyErFtnY7kw7NJXibvH2cuV/P
+ e6tyA5HzqOqahIYyWNZUy4y3ZYqdkXnOOTxS4/9KmFfqTdePJwQyml7OMITjwzgrNX0mFPeRjAHTU
+ aio6Ho4cxo257FP0MlVjKWA0y3kCF++4G8o3APMY9qXi3sK6UTFaY1x/H0r3MOrNBDVTWdyrFa4I7
+ gyZM6bZkjbLl8t5w9V62F6WEZYYtmhwBQz2HdPXmPoD13RwulHmgVkSUWSzLKaRS2Ma2oilVq5VU8
+ rnIl+ZtccnhIgnTFmLG44qLjW1Omeug==;
+Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nhuHQ-000pBu-RJ
- for wireless-regdb@lists.infradead.org; Fri, 22 Apr 2022 14:29:07 +0000
-Received: by mail-lj1-x229.google.com with SMTP id q14so9833232ljc.12 for
- <wireless-regdb@lists.infradead.org>; Fri, 22 Apr 2022 07:29:02 -0700 (PDT)
+ id 1ngJk9-00Fe00-5X
+ for wireless-regdb@lists.infradead.org; Mon, 18 Apr 2022 05:16:12 +0000
+Received: by mail-lj1-x230.google.com with SMTP id f5so8134286ljp.8 for
+ <wireless-regdb@lists.infradead.org>; Sun, 17 Apr 2022 22:16:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=dbperformance-com.20210112.gappssmtp.com; s=20210112;
  h=mime-version:from:date:message-id:subject:to;
- bh=BpmoB83lfuAXkKGfQgqfXE5ILnRpZ6PVUg5EO6LSw0w=;
- b=qxiHopG1asdFCb26r4Fwt8tQiRKDvu3hXuRTcbSSk0Ui/mxJCqkua4Y2BXtxXp7/DS
- nxqT9NDbus1gxQ3dKuPa3Qif8Pqoudkp9vRFzd6mZd3X3us+U0LMgk8sfL8lOLal1wpJ
- 0He99Ln1Qe9SHhAD4jTlmDFePk8k+qoHjuY7kycKunVUIL0s0dRuRbOTSYZe7pQ8p61j
- O+MdYlzje2Uhxq+MC35PODHQiSfUisIDWPgD7U50BoprDZrp2atKuXdqSNLeuLNd6wOL
- /+ahm0angxDRUIH/xwsoIOZtHpbRI0PM1+h47I1R1ElY1gxjklS9tnadNy52fK24yITa
- T/+g==
+ bh=JbxQhGkL9EjPJFK+SjArLx+VG76HNDtd5f+4O/5lUnw=;
+ b=EqAKetyHpdZbvfx9FkbjqKVXJeH5dxyME9KoH046L9P+mtZK4kLPzcw+kxuvkGewHa
+ 6hmeni45rFqC7pUajGBqBRX7GQ8QruZ23l7SrHvGLOqb9yf/mD76hvQZE9Jy/SBsUhMr
+ kGBQXe7I1c31EAMgn4iy+Y1xoKBMpcvS47ME9StFFiV0GhGzjcblq2JiKNm90UvWAYsh
+ RiNVf19P8MHf5cSunyv0CkQAUtFypJRdspbenlVfuf7eGcHmGhPHNnprDs0qa969sVDe
+ az4Qdaqn8s8rMWs8exIueOak9hj+1lUjm0VvfO2rIggXnD5x/BIr8BJTYaI8AyiT94AY
+ X4+g==
 MIME-Version: 1.0
 From: Dennis Bland <dennis@dbperformance.com>
-Date: Fri, 22 Apr 2022 08:28:50 -0600
-Message-ID: <CAPRryQpwcb2B=4qbUqG8mXF_Cz3tUpESYYxvZbR60kBSbw2vsg@mail.gmail.com>
-Subject: [wireless-regdb] EU/CEPT Decision for 6 GHz usage
+Date: Sun, 17 Apr 2022 23:15:55 -0600
+Message-ID: <CAPRryQrHC2kC-dcokJyqSMiAFUjNJp2z6T9TCb=J+s0TvDzF8w@mail.gmail.com>
+Subject: [wireless-regdb] Regulatory update for 6 GHz operation in United
+ States (US)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -51,16 +52,13 @@ Content-Transfer-Encoding: 8bit
 To: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-All EU/CEPT member countries ratifying 6 GHz operation should include
-this reference:
+It seems there was an earlier request on another forum to add the 6
+GHz band for country code US:
 
-https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+https://lkml.kernel.org/linux-wireless/Yb0HabN+Js2iWnOH@ubuntu-x1/T/#t
 
-DE, ES, FR, HR, NL, NO already have 6 GHz band entries and local
-country approval references, and should include the above reference
-for completeness.  Note that the EU regulation specifies 23 dBm
-instead of 200 mW, and also includes a VLP (Very Low Power) mode that
-is permitted for outdoor and most mobile applications.
+Not sure if a variation of this patch was already applied?  If not, I
+can take a look.
 
 Best regards,
 
