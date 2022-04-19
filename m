@@ -3,38 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=bdWfxC49zTHbf6c4d0EOxcDTwUrhRcwodQsdgl7kzRk=;
- b=tPr
- ld84mASoAwmpsDFDQpAl5kXAzFcTVYp/zFB2ket3hse3IhrSKHOa0/i9IV7LQSJ6Vo/NdLT+HM6pN
- YEI81krwvOs4nVYl3HvfHF/tOtKVTbkw6eDczwcOBcPHkiF9V9BauLGDqRu+YuLPTM6eWzpFJhaAu
- 1/NvO3mWGEf8kJpbFUxWo2Mo7jTPyjG2U50T3iY6/0WSOrji4JIvPoSgdTqJduwKCcUf7/rNq+YJ8
- OvgNGBHMZSI5Hxxh0h6Yj7iwlJuwEphmuFo2gGUtv9Grot4UHtLBNxNqzRVdyX+3XWWi1iQELr+fV
- Xxda+JvEjto2sAj97sSnWKOswBCMjKg==;
-Received: from mail-lj1-x230.google.com ([2a00:1450:4864:20::230])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=9OLEiFN9LQqmUWPCihgmzAhKvwhpF+yZcIeayvKtlHM=;
+ b=yNk7yhCFQUnUhb
+ AT7ibfAGRyxwsFx7yrk6rhhikPNyl7wg4wBaSPdDA2Z7CSepcB/AQZf1bvGg8qQcXggCtAiBvhoR2
+ ShIfiCLO/rGGsyCse2ABjqBZ11lI7UtXUk3B+f6G/SIY25w+rkTByI36+U2WSHIkC6RY4kZofcNwV
+ WHPxbSiYSTQ6TV125trcZxkjFBPU5u6yIZev5/haxpWtbiVlmIxzHt+xqAc4Z9piqiZwQXWgzjGMF
+ hcApz+z8VeYOfoBjzFywUeRgNu1/rpGMCtAb7X9FYgJByHHNuduhmwtX9fOjL8PGMpvVj6lurqFzB
+ FzdkjHYGT/Uq7gNpIuPw==;
+Received: from ams.source.kernel.org ([145.40.68.75])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1ngGOD-00FEyC-Rg
- for wireless-regdb@lists.infradead.org; Mon, 18 Apr 2022 01:41:20 +0000
-Received: by mail-lj1-x230.google.com with SMTP id q14so15336848ljc.12 for
- <wireless-regdb@lists.infradead.org>; Sun, 17 Apr 2022 18:41:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=dbperformance-com.20210112.gappssmtp.com; s=20210112;
- h=mime-version:from:date:message-id:subject:to;
- bh=Ym2pVZ1cLn1R+Q09M3cvGObEjcrMglq08oNtkRaL2Nk=;
- b=jyhey//+25KmDa5F1NoF3oMw44Kb5mJtV/34muRSP/WhjbJ2v64r+EkYtHWIKWqfc5
- hCTSZ1ll64jxT/YDdtu4TbTITczgZXGEeKb8PFV7yfSk7pee/RGCkpNnDxOk+IKyWhOc
- OIdNueFLZGvyxddWz9hFI53wFP6wBlbWg37/mJgwXB1LUf9sInxHj8vcYkc38Cd4eJOA
- fNQz0JtiRmC9Anha8tDl1u4NPbG6HSqjUlod99/3rNHfBoZG+q4DDoxF/cwIph8gdaKu
- guDbY8BkUB+OL5gYmJMBYg5TLMvf7eL/LIrXxGOBRZi9Te0M6U6KCdWZVoNZ7OBW81aO
- Wctw==
+ id 1ngtue-0061aV-Gb
+ for wireless-regdb@lists.infradead.org; Tue, 19 Apr 2022 19:53:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1650398001;
+ bh=gSYhEEFw/dWokPKKIYihyqoSBII+MVe4UXBFGuIueaA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IgFKL+CRlIgph+/cwtYvCI1IWo0l0HzMndUOPEMrBz5w8kI9d9xx/BPywTIIFQtgk
+ udYp08dCnCAU7zU2IoCXibgNfJWxijDCKTo5BLqiO8UwOaO7PvMFXvGudkdIdS17ST
+ 8oANUacgmNRAJ3Ja91VFdomhZe96UmkHZkBrzOS/YPjeESwBNFo95BPq3Yb8nnFa/H
+ wCM05njsea2TLiD7app4PndePkac2w7T3kAaD666W9NNOhxA2vvVPXfBbUELVhthS5
+ 0F0ORkou0/842G23x9OkoHG5VLs029HYOQ2TXE2xpHglUcmYE2vmuWbpoB4u8NPWVx
+ ZaIop2qfCJabQ==
+Date: Tue, 19 Apr 2022 14:53:18 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <Yl8TLoePjb7eERvp@ubuntu-x1>
+References: 
+	 <CAPRryQo1mJLF0YkQH1j8N4POSyi0QzUJ=r_fedYHun_9fONyBw@mail.gmail.com>
 MIME-Version: 1.0
-From: Dennis Bland <dennis@dbperformance.com>
-Date: Sun, 17 Apr 2022 19:41:03 -0600
-Message-ID: <CAPRryQo1mJLF0YkQH1j8N4POSyi0QzUJ=r_fedYHun_9fONyBw@mail.gmail.com>
-Subject: [wireless-regdb] Regulatory update for 6 GHz operation in Canada
- (CA)
+Content-Disposition: inline
+In-Reply-To: <CAPRryQo1mJLF0YkQH1j8N4POSyi0QzUJ=r_fedYHun_9fONyBw@mail.gmail.com>
+Subject: Re: [wireless-regdb] Regulatory update for 6 GHz operation in
+ Canada (CA)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,19 +51,22 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Dennis Bland <dennis@dbperformance.com>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The technical/operational requirements have been available since November 2021:
+On Sun, Apr 17, 2022 at 07:41:03PM -0600, Dennis Bland wrote:
+> The technical/operational requirements have been available since November 2021:
+> 
+> https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf11750.html
+> 
+> If this request is not already in the submission queue, I can look at
+> submitting a patch.
 
-https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf11750.html
+We don't have any patches pending for this, so feel free to send one!
 
-If this request is not already in the submission queue, I can look at
-submitting a patch.
-
-Thanks!
-
-Dennis Bland
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
