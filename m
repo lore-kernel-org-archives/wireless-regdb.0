@@ -3,40 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=Lfoey5doAj8NI81CdvWobeDuKO9+kOHM9IuQsSbW5LE=;
- b=smS5c3AXnQGp2M
- 4xAQn/WkJ8pDU/DrsWIXsRqRQhikDxP/OZ4vlv2WVorXhKUjZn7ZLIidzt14V0Md9JE23m7/AnfKe
- Xl/mImmbJASLCBknuJOMPv9peWwhBO9GOtFoTcbxOoT9NEdnmk5Jpua5Xx0V78Dmx++wLmnZGYKeO
- Okl+eAxKQrEjug7OQcR7zL2YCN46aZbO8QCqbLg6SbmDRHNfWqdMr5vL9VrAE1SqDDeKllSzhQADD
- IWHnHQ25IL59fo97+qsZ0Sl/UzgUt7gwUhT2sAnywExzxwHKclgVKLTwoZjlYoV517DtfMsnnrXCT
- GWimDlTuXhqBc6oRjVXA==;
-Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=7cbHUjAGrPTZbqr3XE/m7K0oy9//iRGEYiy5Ir56T1A=;
+ b=R1auB/Cj9TgQob
+ 5dcxW3iHoQovEjMhgHrm70cxlxp6j0I9pUzyFJD4jBIZh2LWge23M02G1GJKUnjSikEwkK5T4t/ll
+ j1qMMe6JGN1ni5WIPCNP15X73aE0YkNm4nZsH9XBSMLpmNqgyB3TW4RPJjRq31EswApuVerVhtWZc
+ Ls3akckIJzOo8eTdw26JFcXHJcQ2UwJcJNbJT/zAGT9VhQbK4GJ5qyyO8n7RZyk+4amhANsygcs+/
+ UknK+khWnyzqJQsnEXcJXGQEa9r2k3cMwTioeX6BvnVkwEIPLaemgsetpsjkuvWEXv9hKU2yuDYwo
+ AlDJ9qstO5bOzp6de/5w==;
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
  by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nr5Bi-00G0ZI-3L
- for wireless-regdb@lists.infradead.org; Tue, 17 May 2022 21:57:08 +0000
-Received: by mail-lj1-x234.google.com with SMTP id 16so375472lju.13 for
- <wireless-regdb@lists.infradead.org>; Tue, 17 May 2022 14:56:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=dbperformance-com.20210112.gappssmtp.com; s=20210112;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8RT0g+CRyKjWNJt+QuAQjWHP+Ic1T4hoqf2FDtd5nw4=;
- b=C/ITfi731HWB+TFJSze3F/4GA0SrOgZfkBX501KG5lIP0xScDDlrXSUg2ec6HPzDQ/
- fCH4JNUL7RpgQxd6UGJytyGnR5Ps66VdqSadVDCQe4wFKojCo3EewAdHA03WbhdQOpVA
- PuSupohGOq1MaXntK1j0rAWsmc2W19UYJ+spvc7Md3CSNiR/M8+TVUSTcnJ14LQA6BUZ
- 12y1YlX72N0nqsy1sfk3vFCTvXgtRBrvcECopgUUREEa4AoaUTCrCYaLy2LLZ525UlsS
- Yhg/QHZ43jj0c2/iafbpG92BYm2Xc9ml0bqiEINLNDl7z+VUcExZzGAqhkZr7wLlhipu
- 6qtA==
+ id 1nonaX-007IBE-EC
+ for wireless-regdb@lists.infradead.org; Wed, 11 May 2022 14:45:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=k20201202; t=1652280314;
+ bh=4emqUvocU097sO9W+zS/fxWNl/kZXPaTxF/+/3aijwA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=amrvuSWON3+2a+7/nCgU7vtimYV3QJFfkUJS/dO15nhEznOHZHLXcl3rbrBkR4e2n
+ 77KM1yBJEk7ETqNXRPWoYTQ6VoQ9iIv8kkAwb8D+4hDFh7CC/1N2Sly+vhrw22jXwx
+ kKiENPOIqgJpgJ0uOtvNMWH4rY8nxSk/qfIV9fu2T/MHLJY4M7J5QiPO8aDExb6uoA
+ udZiOxh1Q3iaqAp+/rGx+tqhqAkHBonTQsWu0SGNJHZdUm7ra9Bxz29b9/sZFVNDIy
+ KPJICGmFlITRVynUeujo46hCkcstwdi/JR+0H6udpeQeNuNXMhEtvqdCvxmxRI6c8v
+ 3AaRnCx+25FwA==
+Date: Wed, 11 May 2022 09:45:13 -0500
+From: "sforshee@kernel.org" <sforshee@kernel.org>
+Message-ID: <YnvL+XqurmpV3HyN@ubuntu-x1>
+References: 
+	 <DM4PR12MB524525E824BA0B505B4E48E1BCF59@DM4PR12MB5245.namprd12.prod.outlook.com>
 MIME-Version: 1.0
-References: <CAPRryQpwcb2B=4qbUqG8mXF_Cz3tUpESYYxvZbR60kBSbw2vsg@mail.gmail.com>
- <Yn7CVWzQ38CyyOw7@ubuntu-x1>
-In-Reply-To: <Yn7CVWzQ38CyyOw7@ubuntu-x1>
-From: Dennis Bland <dennis@dbperformance.com>
-Date: Tue, 17 May 2022 14:56:46 -0700
-Message-ID: <CAPRryQpMu5pnn-AFoV5iPakVFh+MNkQOvzACDjkw9qw6on60Vg@mail.gmail.com>
-Subject: Re: [wireless-regdb] EU/CEPT Decision for 6 GHz usage
+Content-Disposition: inline
+In-Reply-To: <DM4PR12MB524525E824BA0B505B4E48E1BCF59@DM4PR12MB5245.namprd12.prod.outlook.com>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Canada (CA) on 6GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>, 
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -51,55 +51,27 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <sforshee@kernel.org>
-Cc: wireless-regdb@lists.infradead.org
+To: Claudio Menendez <cmenendez@openleanux.ca>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Here is the current list of EU Member States:
+On Wed, Apr 20, 2022 at 05:56:43PM +0000, Claudio Menendez wrote:
+> Hi Seth,
+> 
+> I tried to commit diff to add the 6Ghz band for Canada on the db.txt, but I believe I did it wrong - sorry, I am a newbie at git.
+> 
+> Anyway, below you can see the resolution from ISED to allow indoor use on the 6 GHz band to a max channel of 320 with a max e.i.r.p of 24 dBm. The radio standard specification (RSS-248) is dated last November, and I did not see it in the latest version of the DB.txt.
+> 
+> Please advise if you need any clarification.
 
-https://european-union.europa.eu/principles-countries-history/country-profiles_en
+Thanks for the messages, and sorry about the delay in responding. I just
+applied a patch to enable 6GHz in Canada. Note though that it has a
+power limit of 12 dBm as a result of the PSD limits, which are not
+currently supported directly in Linux or wireless-regdb. This is
+described in detail in the patch description.
 
-The definition of an EU Member State is:
-
-https://en.wikipedia.org/wiki/Member_state_of_the_European_Union
-
-Article 3 of Decision 2021/1067 mentions the following:
-
-"By 1 December 2021, Member States shall designate the 5 945-6 425 MHz
-frequency band and make it available on a nonexclusive,
-non-interference and non-protected basis, for the implementation of
-WAS/RLANs in accordance with the technical conditions set out in the
-Annex."
-
-In other words, EU Member States are required to follow the harmonized
-RF regulations defined by the European Commission.
-
-Best regards,
-
-Dennis
-
-
-On Fri, May 13, 2022 at 1:40 PM Seth Forshee <sforshee@kernel.org> wrote:
->
-> On Fri, Apr 22, 2022 at 08:28:50AM -0600, Dennis Bland wrote:
-> > All EU/CEPT member countries ratifying 6 GHz operation should include
-> > this reference:
-> >
-> > https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
-> >
-> > DE, ES, FR, HR, NL, NO already have 6 GHz band entries and local
-> > country approval references, and should include the above reference
-> > for completeness.  Note that the EU regulation specifies 23 dBm
-> > instead of 200 mW, and also includes a VLP (Very Low Power) mode that
-> > is permitted for outdoor and most mobile applications.
->
-> Unifying the rules for countries which have adopted the directive seems
-> like a good idea. I'm curious, are you inferring the countries which
-> have approved the directive from the rules in the database, or is there
-> some resource which shows the countries that have approved it?
->
-> Thanks,
-> Seth
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
