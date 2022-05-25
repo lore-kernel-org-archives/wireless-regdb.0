@@ -6,35 +6,31 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
  :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=L3DKVKZye20sCY1EXnh6YofTeee0sCTPCQf7U50lc3k=;
- b=bIJG5a1BiLB0XG
- HZqha3B9SDVOhIQe/3l4Qso/k5QMVm/tj7UaAREiZulM+cBRJT55p6idCDXpoOJqjDJNhByH3Mehy
- dN+AQenbUreBjnti2kCLxwzVNwXWMe4LI2FGPqF36JG5IuF3vIrjOJCEYNAMLggbRYrxJLdR3Ween
- 4ofQU9vhh9/Z4S6qtA4cW8ax+3HNW9kCHEoVzl4yhj8hbJQTxZzKZNQnWXtJ2KuMb4O5aQISh5tDT
- Ch7WuKPT35wLeHJRcI6Qp0T+X87Uz0RyXyTD85d+UWdsrYxaxN989fHgXSkjJIZdRZ1zQVt9KwLqS
- EtykI/cAvQe+Bei6t8Sg==;
-Received: from mail-ot1-x32f.google.com ([2607:f8b0:4864:20::32f])
+ List-Owner; bh=P3EDkhxtj4ikG4BkjA4UcplsO+c4bD7ZInu2xi861XQ=;
+ b=Xdak6p32owvVbN
+ hXNuCMmtd5DuOfZNY+mnM6bRSWsembnE98E8XtoF94mrDLT3Aub2JOR4dIkRQ0JkCmjabn9Ysugi+
+ Qiqcziiavm3rL1k4NSRdcS8dwET4oTlZLTecdKhIBR4sidQO9oduS9Vbk4ShtiksKMxQE0gfsLrL9
+ MDS6IDTNLb5xZvkMQMqQk/xQlPHkeOscECFfHvXgwmxL216I1ACbFSz9wyMpoQh3SxpOkjPgBVoIc
+ 346H5GIHe77UMiVb3dloC86Ju5LQyW6Dnht7JPr+ezkF+vx6un0+YqOVt1Mj9pU50ixx2hehdlVrT
+ +BwH7l8Ka4/2TqkMFMog==;
+Received: from mail.tintel.eu ([51.83.127.189])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nufgh-000qNq-EG
-	for wireless-regdb@lists.infradead.org; Fri, 27 May 2022 19:31:56 +0000
-Received: by mail-ot1-x32f.google.com with SMTP id
- t22-20020a0568301e3600b0060b333f7a1eso3607190otr.0 for
- <wireless-regdb@lists.infradead.org>; Fri, 27 May 2022 12:31:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20210112; h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=taIZOP88c/8jIq0PRDOgEnC3ZWTsJa0UDOqT7eeY5Yg=;
- b=YRFCXRG49jC29R03e9OBlcn6gW/4DEM7tk/1almo1rWuH60lgOOPuKoiLSEU9qRVFS
- bAlfeT8KUkJ35UdpSzOZFqKkH+xFsGa5y6ww5Ag7gOibl8Q2wSPerwAhTJuUe7H1Xf64
- QYow/d+oLQpMjZB2cSsDI0kkEjPJrFe5q80tfiMNq+C4+eMpPCKD901mpxCgj6o77oES
- hHieDhiRZXL1lma7NETiygbwyz89TtJozS7p3pMOeu0CQLNy0WBZ8By3kLrW91wqy+re
- GeyUcSfQugPavwWd1z3jwTWYICxI5kZvjngookkRjpB7R1CYTQP71FzXk6lRFjnSxsk4 lvHA==
-From: Seth Forshee <seth@forshee.me>
-Date: Fri, 27 May 2022 14:31:49 -0500
-Message-Id: <20220527193149.127735-1-sforshee@kernel.org>
+	id 1ntrBO-00BFpA-Dw
+	for wireless-regdb@lists.infradead.org; Wed, 25 May 2022 13:36:16 +0000
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.tintel.eu A6DC64541E34
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux-ipv6.be;
+	s=502B7754-045F-11E5-BBC5-64595FD46BE8; t=1653485770;
+	bh=h45dum25SYcDiIOd9Ov43qD2SBgSfhB7rTLuBrPU0GU=;
+	h=From:To:Date:Message-Id:MIME-Version;
+	b=rICKj1208hKZ99EaJ/CAjWnmTJOE4heTuSNEUHfX3+PApYf2jYPVVREm0kB8l2CGR
+	 S26d3WFCADezCOZgWoa/mLMPJBiw9cC25K3VuyAYZMCVcp0xN47jNy32OLbYqGh5+c
+	 QiLcdDwL2RK9zqjlZcpk9xdFhXielRuD2ZQNN2e4=
+From: Stijn Tintel <stijn@linux-ipv6.be>
+Date: Wed, 25 May 2022 16:36:09 +0300
+Message-Id: <20220525133609.1740457-1-stijn@linux-ipv6.be>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Remove AUTO-BW from 6 GHz
- rules
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
+ for Bulgaria (BG) on 6GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -44,100 +40,50 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Dennis Bland <dennis@dbperformance.com>
+To: sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Petko Bordjukov <bordjukov@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-No other bands are directly adjacent to this one, so AUTO-BW doesn't
-make sense. Remove it, and also fix a nearby whitespace mistake found
-while doing this update.
-
-Cc: Dennis Bland <dennis@dbperformance.com>
-Signed-off-by: Seth Forshee <sforshee@kernel.org>
+Reviewed-by: Petko Bordjukov <bordjukov@gmail.com>
+Signed-off-by: Stijn Tintel <stijn@linux-ipv6.be>
 ---
- db.txt | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ db.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index cf35883d1867..47850c051c9a 100644
+index fcdc74a..0d24e96 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -470,7 +470,7 @@ country DE: DFS-ETSI
+@@ -219,6 +219,10 @@ country BF: DFS-FCC
+ # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+ # BG: https://crc.bg/files/_en/Electronic_Communications_Revised_EN1.pdf
+ # BG: acceptance of 2006/771/EC https://crc.bg/files/Pravila_06_12_2018.pdf
++#
++# Amendment of the rules for free use of radio frequency spectrum
++# (Изменение и допълнение на Правилата за свободно използване на радиочестотния спектър)
++# https://dv.parliament.bg/DVWeb/showMaterialDV.jsp?idMat=168250
+ country BG: DFS-ETSI
+ 	# Wideband data transmission systems (WDTS) in the 2.4GHz ISM band, ref:
+ 	# I.22 of the List, BDS EN 300 328
+@@ -232,6 +236,8 @@ country BG: DFS-ETSI
  	# short range devices (ETSI EN 300 440-1)
+ 	# I.43 of the List, BDS EN 300 440-2, BDS EN 300 440-1
  	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++	# WiFi 6E
 +	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+ 	# II.H03 of the List, BDS EN 302 567-2
  	(57000 - 66000 @ 2160), (40)
- 
-@@ -558,7 +558,7 @@ country ES: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -582,8 +582,8 @@ country FI: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# 6 GHz band
--	(5945 - 6425 @ 160), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
--        # 60 GHz band channels 1-4 (ETSI EN 302 567)
-+	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
-+	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
- country FM: DFS-FCC
-@@ -607,7 +607,7 @@ country FR: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E low power indoor
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
- 	# 60 GHz band channels 1-6 (ETSI EN 302 567 v2.2.1)
- 	(57000 - 71000 @ 2160), (40)
- 
-@@ -732,7 +732,7 @@ country HR: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1222,7 +1222,7 @@ country NL: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1242,7 +1242,7 @@ country NO: DFS-ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
- 	# WiFi 6E
--	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 71000 @ 2160), (40)
- 
 -- 
-2.34.1
+2.35.1
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
