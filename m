@@ -6,33 +6,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
  :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=CK/ZmpS113I0qnFV0FtoXMGFzGp5Nwbn/Nh4FY5GSog=;
- b=ybCW3GX1pSmX+C
- IjAdajX9MES9Gnj2JFUn47dO/OnNPwnqpjofooKry6gbxy2vOO22jfxALG23bWp+H9WVRtS6yCc6W
- rwFjf6Y0zP/3LznoUxrAxYfqMSkWbSzuTgU6fw8EIjvz+3rkiMOC/KoSSpTyXEY04fFcRigtIeBm6
- fXHt+o6fGtZyvRf+QJWceROU3aVOBElJcF7FP7Y4R/RcdeCMq5hnBCkXLnN2BsSKNaNmGUUh7Tnr9
- +I5qgnPUcwBTXaWXxx1dJJiljlm39YKSLa8of7ATNUH7i6RS3wjIvgbRriyB0wEoLEsNMlBKkoB7B
- PK67nCkjK8djBtrCCxOw==;
-Received: from mail-oa1-f47.google.com ([209.85.160.47])
+ List-Owner; bh=1IflcSbMMBiXWxSYtjzguJrFww3tJEityNFCARZSEco=;
+ b=gRDn0xfufgNNWk
+ xNI3QL42AwONUtCrHx7GZNYhHM3eW2xhifYHL5jikDbk2RcV9GUSG2Q3d1jF2xDvfQbBflSEdwJZ1
+ vLAvMgGx4sMxG1Q9Dri43ruhThn7NotkJGazN+IPwZv4PLUlLb3LADFjmORsjkbRGWlxZZwvsMDJ0
+ U659E72F7Idb0xgk3b68ZWd1IuQjXd3vtkXktytsv/9H4YNCdXymktvK1mvxexMGJ1ik7J5gABiGJ
+ +aFecRw3XFlJLxTXJE6hQFrbhzmdTogZDBzjNwcQS/9JLZB13cMRmNKYrbqcVTdimvtH2aUC0xwZL
+ 3XmhPY/VWJju2OfshG7Q==;
+Received: from mail-oa1-f45.google.com ([209.85.160.45])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1nyDvd-001ZhH-H1
-	for wireless-regdb@lists.infradead.org; Mon, 06 Jun 2022 14:42:03 +0000
-Received: by mail-oa1-f47.google.com with SMTP id
- 586e51a60fabf-f2bb84f9edso19357048fac.10 for
- <wireless-regdb@lists.infradead.org>; Mon, 06 Jun 2022 07:42:00 -0700 (PDT)
-Date: Mon, 6 Jun 2022 09:41:58 -0500
+	id 1nyDfs-001Uve-Va
+	for wireless-regdb@lists.infradead.org; Mon, 06 Jun 2022 14:25:48 +0000
+Received: by mail-oa1-f45.google.com with SMTP id
+ 586e51a60fabf-fb6b4da1dfso1341576fac.4 for
+ <wireless-regdb@lists.infradead.org>; Mon, 06 Jun 2022 07:25:42 -0700 (PDT)
+Date: Mon, 6 Jun 2022 09:25:40 -0500
 From: Seth Forshee <seth@forshee.me>
-Message-ID: <Yp4SNofnJOeu/tB1@ubuntu-x1>
-References: <4d07581c-a3be-a3c6-bf32-7007eb45d541@wildgooses.com>
- <20201106214446.GG6125@ubuntu-x1>
- <2a710032-f2ec-d55b-5da4-d881089fe0cd@wildgooses.com>
- <20201120175444.GN5439@ubuntu-x1>
- <e7268989-03cf-ae7c-f3c6-b48fe679b790@wildgooses.com>
- <Yn7PFi556pM+r08j@ubuntu-x1>
+Message-ID: <Yp4OZCeD27E8nu9f@ubuntu-x1>
+References: <20220527202103.134799-1-sforshee@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Yn7PFi556pM+r08j@ubuntu-x1>
-Subject: Re: [wireless-regdb] Correction of wireless-regdb for GB
+In-Reply-To: <20220527202103.134799-1-sforshee@kernel.org>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Unify 6 GHz rules for
+ EU contries
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -42,100 +38,482 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Ed W <lists@wildgooses.com>
-Cc: Seth Forshee <seth.forshee@canonical.com>, wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Dennis Bland <dennis@dbperformance.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, May 13, 2022 at 04:35:18PM -0500, Seth Forshee wrote:
-> On Mon, Apr 25, 2022 at 02:17:57PM +0100, Ed W wrote:
-> > On 20/11/2020 17:54, Seth Forshee wrote:
-> > >> Signed-off-by: Ed Wildgoose <lists@wildgooses.com>
-> > >> ---
-> > >>  db.txt | 7 +++++--
-> > >>  1 file changed, 5 insertions(+), 2 deletions(-)
-> > >>
-> > >> diff --git a/db.txt b/db.txt
-> > >> index ac32483..cc5ffd0 100644
-> > >> --- a/db.txt
-> > >> +++ b/db.txt
-> > >> @@ -588,13 +588,16 @@ country FR: DFS-ETSI
-> > >>  # GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0019/136009/Ofcom-Information-Sheet-5-GHz-RLANs.pdf
-> > >>  # GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0028/84970/ir-2030.pdf
-> > >>  # GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0013/126121/Statement_Implementing-Ofcoms-decision-on-the-57-71GHz-band.pdf
-> > >> +# GB: https://www.ofcom.org.uk/__data/assets/pdf_file/0036/198927/6ghz-statement.pdf
-> > >>  country GB: DFS-ETSI
-> > >>  	(2400 - 2483.5 @ 40), (100 mW)
-> > >>  	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-> > >>  	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-> > >> -	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
-> > >> +	(5470 - 5730 @ 160), (500 mW), DFS, wmmrule=ETSI
-> > > This looks okay to me.
-> > >
-> > >>  	# short range devices (ETSI EN 300 440-1)
-> > >> -	(5725 - 5875 @ 80), (25 mW)
-> > >> +	# See UK specific notes in ir-2030.pdf, p47
-> > >> +	(5725 - 5850 @ 80), (200 mW), AUTO-BW, wmmrule=ETSI
-> > > To echo what I said above, I'm unclear whether this change is in effect
-> > > yet, and based what I've seen so far I think it would need to include
-> > > NO-OUTDOOR.
-> > >
-> > >> +	(5925 - 6425 @ 160), (250 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-> > > I'm also unclear on whether this change is in effect yet.
-> > >
-> > > Thanks,
-> > > Seth
-> > >
-> > >>  	# 60 GHz band channels 1-6
-> > >>  	(57000 - 71000 @ 2160), (40)
-> > >>  
-> > >> -- 
-> > >> 2.26.2
-> > >>
-> > 
-> > Hi all, I dropped off watching this for a while....
-> > 
-> > Seems like the update to IR2030 (GB country code regulations) was re-published last year, and the
-> > relevant sections are in pages 32 + 34-36
-> > 
-> > My reading of this is:
-> > 
-> > - Other stuff we changed 2 years ago seems ok, caveat I'm unclear when we need to state half power
-> > vs using mean EIRP?
+On Fri, May 27, 2022 at 03:21:03PM -0500, Seth Forshee wrote:
+> Article 3 of Decision (EU) 2021/1067 states that member states must
+> adopt rules for harmonised use of the 5945-6425 MHz band by Dec 1, 2021.
+> Update rules for all member states to include a reference to the
+> decision, and add the rule for countries which do not yet have it.
 > 
-> We have to use half of the maximum EIRP in cases where TPC is required
-> because Linux does not support TPC. This is why 5250-5350 and 5470-5730
-> have lower limits than what is prescribed in IR 2030.
+> Some countries currently have the power limit specified as 200 mW.
+> Update these countries to use the 23 dBm limit specified by the decision
+> instead, which is equivalent.
 > 
-> Note that many recent rules have also included power spectral density
-> (PSD) limits, which can also limit the max EIRP in the database since
-> there's currently no support for PSD limits in Linux or wireless-regdb.
-> Where specified in IR 2030 they do not impose any limit beyond the max
-> EIRP for the minimum relevant bandwidth for our purposes (20 MHz), so
-> they don't end up making any difference here.
-> 
-> > - The 5.9-6.4Ghz range is now good for use (page 35 near the bottom), perhaps add something like:
-> > 
-> > +    (5925 - 6425 @ 160), (250 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-> 
-> This looks about right. AUTO-BW isn't necessary since there are no
-> adjacent rules. It looks like this was overlooked in the beginning, then
-> the pattern was copied.
+> Suggested-by: Dennis Bland <dennis@dbperformance.com>
+> Signed-off-by: Seth Forshee <sforshee@kernel.org>
 
-I've updated all rules for this range to remove AUTO-BW. I think the GB
-rule is correct now.
+Applied.
 
-I did a quick check of the other rules versus IR 2030, and they look
-okay to me. Let me know if you see any issues I missed.
-
-Thanks,
-Seth
+> ---
+>  db.txt | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++----
+>  1 file changed, 71 insertions(+), 5 deletions(-)
+> 
+> diff --git a/db.txt b/db.txt
+> index d3555ff6e625..16b38b7cb2b2 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -107,6 +107,7 @@ country AS: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # AT: https://www.rtr.at/en/tk/Spektrum5GHz/1997_bmvit-info-052010en.pdf
+>  # AT: acceptance https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2014_II_63/BGBLA_2014_II_63.pdfsig
+> @@ -117,6 +118,8 @@ country AT: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -176,6 +179,7 @@ country BD: DFS-JP
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # BE: https://www.ibpt.be/public/files/en/21760/B03-01_2.1_EN.pdf
+>  # BE: https://www.ibpt.be/public/files/en/21761/B03-02_2.1_EN.pdf
+> @@ -188,6 +192,8 @@ country BE: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -216,6 +222,7 @@ country BF: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # BG: https://crc.bg/files/_en/Electronic_Communications_Revised_EN1.pdf
+>  # BG: acceptance of 2006/771/EC https://crc.bg/files/Pravila_06_12_2018.pdf
+> @@ -408,6 +415,7 @@ country CX: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # CY: http://www.mcw.gov.cy/mcw/dec/dec.nsf/all/292484CFC7013DD4C2256EBA0023D447/$file/Sxedio%20Radiosyxnothtwn%20ths%20Dhmokratias-3-8-2018-E2.2(English%20Unified%20Unofficial).pdf?openelement
+>  country CY: DFS-ETSI
+> @@ -417,6 +425,8 @@ country CY: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -424,6 +434,7 @@ country CY: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # CZ: https://www.ctu.cz/cs/download/vseobecna-opravneni/archiv/vo-r_12-06_2010-09.pdf
+>  # CZ: https://www.ctu.cz/sites/default/files/obsah/ctu/vseobecne-opravneni-c.vo-r/10/12.2017-10/obrazky/vo-r10-122017-10.pdf
+> @@ -434,6 +445,8 @@ country CZ: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -441,6 +454,7 @@ country CZ: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  #
+>  # Allocation for the 2.4 GHz band (Vfg 10 / 2013, Allgemeinzuteilung von
+> @@ -476,7 +490,7 @@ country DE: DFS-ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+>  	# WiFi 6E
+> -	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -484,6 +498,7 @@ country DE: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # DK: https://ens.dk/sites/ens.dk/files/Tele/frekvensplan_0.pdf
+>  # 5GHz: https://erhvervsstyrelsen.dk/sites/default/files/007_interface-datanet_5-6_ghz.pdf.pdf
+> @@ -495,6 +510,8 @@ country DK: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -531,6 +548,7 @@ country EC: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # EE: https://www.ttja.ee/et/ettevottele-organisatsioonile/sideteenused/raadioseadmed/wifi-seade
+>  # EE: https://www.itu.int/ITU-D/study_groups/SGP_1998-2002/JGRES09/pdf/estonia.pdf
+> @@ -541,6 +559,8 @@ country EE: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -554,6 +574,7 @@ country EG: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # ES: https://avancedigital.mineco.gob.es/espectro/Paginas/cnaf.aspx
+>  country ES: DFS-ETSI
+> @@ -564,7 +585,7 @@ country ES: DFS-ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+>  	# WiFi 6E
+> -	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -603,6 +624,7 @@ country FM: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # FR: https://www.anfr.fr/fileadmin/mediatheque/documents/tnrbf/TNRBF_2021-12-14.pdf
+>  country FR: DFS-ETSI
+> @@ -613,7 +635,7 @@ country FR: DFS-ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+>  	# WiFi 6E low power indoor
+> -	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-6 (ETSI EN 302 567 v2.2.1)
+>  	(57000 - 71000 @ 2160), (40)
+>  
+> @@ -679,6 +701,7 @@ country GP: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # GR: https://www.eett.gr/opencms/export/sites/default/EETT_EN/Electronic_Communications/Radio_Communications/TelecommunicationEquipment/Radio_equipment_interface_requirement_2012.pdf
+>  # GR: https://www.eett.gr/opencms/export/sites/default/EETT_EN/Electronic_Communications/Radio_Communications/TelecommunicationEquipment/Radio_equipment_interface_requirement_107.pdf
+> @@ -689,6 +712,8 @@ country GR: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -728,6 +753,7 @@ country HR: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # HR: http://tablice.hakom.hr:8080/vis?lang=en
+>  # 6E: https://www.hakom.hr/UserDocsImages/op%C4%87e%20dozvole%20prosinac%202009.g/Opca_dozvola_236.pdf
+> @@ -738,7 +764,7 @@ country HR: DFS-ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+>  	# WiFi 6E
+> -	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -753,6 +779,7 @@ country HT: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # HU: http://stir.nmhh.hu/?oldal=dokumentumGeneralo&root_rendeletelem_id=3&hatalyos=1
+>  # HU: http://english.nmhh.hu/cikk/297/Eljarasi_tajekoztato_a_24_GHzes_es_az_5_GHzes_savban_mukodo_berendezesek_engedelyezeserol
+> @@ -764,6 +791,8 @@ country HU: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -777,6 +806,7 @@ country ID: DFS-JP
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # IE: https://www.comreg.ie/publication-download/interface-requirements-for-radio-services-in-ireland
+>  # IE: https://www.comreg.ie/publication-download/permitted-short-range-devices-ireland
+> @@ -787,6 +817,8 @@ country IE: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -835,6 +867,7 @@ country IS: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  country IT: DFS-ETSI
+>  	(2400 - 2483.5 @ 40), (100 mW)
+> @@ -843,6 +876,8 @@ country IT: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -991,6 +1026,7 @@ country LS: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # LT: https://www.rrt.lt/en/radio-spectrum/frequency-management/ or direct link:
+>  # LT: https://www.e-tar.lt/portal/lt/legalAct/6e718fd037a011e69101aaab2992cbcd/dGRioCBBHb
+> @@ -1001,6 +1037,8 @@ country LT: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1008,6 +1046,7 @@ country LT: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # LU: https://assets.ilr.lu/frequences/Documents/ILRLU-1723895916-183.pdf#search=en%20300%20440
+>  country LU: DFS-ETSI
+> @@ -1017,6 +1056,8 @@ country LU: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1024,6 +1065,7 @@ country LU: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # LV: http://likumi.lv/doc.php?id=198903
+>  country LV: DFS-ETSI
+> @@ -1033,6 +1075,8 @@ country LV: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1151,6 +1195,7 @@ country MR: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # MT: https://www.mca.org.mt/sites/default/files/NFP_edition%206-1.pdf
+>  country MT: DFS-ETSI
+> @@ -1160,6 +1205,8 @@ country MT: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1214,6 +1261,7 @@ country NI: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # NL: http://wetten.overheid.nl/BWBR0036378/2015-03-05
+>  # Updated 14 december 2021 to allow the lower part of the 6GHz spectrum for WiFi 6E
+> @@ -1228,7 +1276,7 @@ country NL: DFS-ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+>  	# WiFi 6E
+> -	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1318,6 +1366,7 @@ country PK: DFS-JP
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  country PL: DFS-ETSI
+>  	(2400 - 2483.5 @ 40), (100 mW)
+> @@ -1326,6 +1375,8 @@ country PL: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1346,6 +1397,7 @@ country PR: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # PT: https://www.anacom.pt/render.jsp?categoryId=336334
+>  country PT: DFS-ETSI
+> @@ -1355,6 +1407,8 @@ country PT: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1390,6 +1444,7 @@ country RE: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # RO: http://www.ancom.org.ro/en/uploads/links_files/ordin_262_2006.pdf
+>  country RO: DFS-ETSI
+> @@ -1399,6 +1454,8 @@ country RO: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1443,6 +1500,7 @@ country SA: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # SE: https://pts.se/globalassets/startpage/dokument/legala-dokument/foreskrifter/radio/beslutade_ptsfs-2018-3-undantagsforeskrifter.pdf
+>  country SE: DFS-ETSI
+> @@ -1452,6 +1510,8 @@ country SE: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1479,6 +1539,7 @@ country SG: DFS-FCC
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # SI: https://www.akos-rs.si/bwa
+>  country SI: DFS-ETSI
+> @@ -1488,6 +1549,8 @@ country SI: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> @@ -1495,6 +1558,7 @@ country SI: DFS-ETSI
+>  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
+>  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
+>  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008D0432-20080611
+> +#  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32021D1067&from=EN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/download/25c41779-cd6e/Rec7003e.pdf
+>  # SK: https://www.teleoff.gov.sk/data/files/25911.pdf
+>  # SK: https://www.teleoff.gov.sk/data/files/41072.pdf
+> @@ -1506,6 +1570,8 @@ country SK: DFS-ETSI
+>  	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
+>  	# short range devices (ETSI EN 300 440-1)
+>  	(5725 - 5875 @ 80), (25 mW)
+> +	# 6 GHz band
+> +	(5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+>  	# 60 GHz band channels 1-4 (ETSI EN 302 567)
+>  	(57000 - 66000 @ 2160), (40)
+>  
+> -- 
+> 2.34.1
+> 
+> 
+> _______________________________________________
+> wireless-regdb mailing list
+> wireless-regdb@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/wireless-regdb
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
