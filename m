@@ -3,114 +3,82 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=YwvxWiOX74C9cCndE41BEr1BHNwMG10xGqkzWowjG80=;
- b=0DSIqzHXHA7X1v
- UFqkIneNr2pkcmWfXSO5tLi5+C/Pe9fVwT1wEjV06kfwKV/egpOkU0duZI+kyJ/0PZ8vEhMaVMvAr
- xtS5d3dBEtAH6S7NJXiZP3a6qkmo6bR3lSV3Nic/K1aT4wWVxTdkfi1LtuQ668ZvM+qmYTa3SLJd9
- FoQH6QuBRu8WlE415CVs8813B+z7dOdx8fBL98jnJkd/Hs6AneJngq+6KLLiLig/w/x8K4MTx1nZX
- sj1bAFYZ9rwZ30IgefkOiz9irT13wxcf7xvcY+TC2ylOIOJNtgJBTqCVLhoOcktqwXJFMTRJqwR8a
- ihtaCwTj75V4iTeB0Rdg==;
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
- by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
- id 1nonVQ-007GVw-PE
- for wireless-regdb@lists.infradead.org; Wed, 11 May 2022 14:40:02 +0000
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Cc:To:
+ From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=9BPNL1V3cnhydEsct1Sv2rvtHCJec9QFm5jdpCo2Nck=;
+ b=SI5+Ah/fEbpFW8
+ thztTeMQR93HsktmatpyIVKaDPBxUZZrEnoflgMvU/VfszsrpTljyttxU0QAPZI3BE2sqWEOfFpgn
+ hxONGprxO5YkY+lG0oc1rf3sHWwN1dI815o+1z4yQXYoPwaLIm/o6RJ/T1ta7i0ljQXHXQ/Aa4MxF
+ YJvF3sVoUlTGTN9MIxxhcpzNlUwerFGJQ7M+l96vIPVC071dlNHYBQu5kw51SjirYEB2rW9VYmVUu
+ eCdfEQMTBG617/ifCr6MF2xha2eNQSAwlqBMYCxAjnubnDKm2vG+YfG2g2X1wmmV1HpvV+zjyIpQV
+ 4CaZ0Rftb3JoBcLynSPQ==;
+Received: from ams.source.kernel.org ([145.40.68.75])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1nyEDE-001dub-J3
+	for wireless-regdb@lists.infradead.org; Mon, 06 Jun 2022 15:00:16 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140]) (using
+ TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client
+ certificate requested) by ams.source.kernel.org (Postfix) with ESMTPS id
+ 8558DB819F9 for <wireless-regdb@lists.infradead.org>; Mon,  6 Jun 2022
+ 15:00:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=k20201202; t=1652279997;
- bh=fl/TMMgpdvva8v2Vr9RNlzXHK9PlWeLkXAp7apKwyzo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=A3EUez888a405tIewitky/vt1a3pnseoYTN06S8bCOqat15QsJAp/UJrpVIvL8lla
- m0bOK+2cRTy8xC2AMhzKkCzXRwDYt8LfFexH8dHSIcmxItf2nMwENeDnOfWkkVic6f
- eWvnocQLC25FWKU3F2kF5xtZl4QoX1YNP74A8wBew2shrowQc5bm5XY6vIFD7JsMnn
- DOyNtt6ZZ4So5DYNBbyoP0lpxCnD0czlwvV0du5xUpJIBspccl+tB9xvrz6OMn5x9d
- /E3I27M2JYJsfc1AzPn5sh3YGrLIsTDnhclS1zKeFmnMZZjjmfCrLsC9glPNf0wK4C
- x7ZaZq2ys3M6w==
-Date: Wed, 11 May 2022 09:39:56 -0500
+	s=k20201202; t=1654527609;
+	bh=XTQKOOWd0hG8eIEvTECrPdRIqbMHxT5jlZDE4jyUDaM=;
+	h=Date:From:To:Cc:Subject:From;
+	b=GLS7SYRUVTxCkwb9Twjj+iK+DqtopInVX65M2SIs4gQMT9yfgNFlWkCf7whiUsfaV
+	 wfB/oXIeEfmMbhcMxNK1Y7txte7g7B6WUX0wgBJ4+4qa8mMaiC1LPTTEtfyXV4DOTs
+	 6Xek108I1FXvG+D1XbhB41r1Qt8BtUECBMGlN/WziRc2IUHm1x5MghNWaP6YtPFzSa
+	 +tfnhOKxlOiVZ7s65ZGyevSy7j6Yi7qXi5SBHHauucX03PB+F5qvr8e89zAE6jGTBe
+	 kZgRZHHSue6hWWXBVPtV9I588DK/DD6zggB/8Yfr2Z97pM8bjmzQnnPr9FB7k/h5lb
+	 1Bxcw3DAHdzig==
+Date: Mon, 6 Jun 2022 10:00:07 -0500
 From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <YnvKvFu/QL8ty1vX@ubuntu-x1>
-References: <CAPRryQo1mJLF0YkQH1j8N4POSyi0QzUJ=r_fedYHun_9fONyBw@mail.gmail.com>
- <Yl8TLoePjb7eERvp@ubuntu-x1>
- <CAPRryQoEAf+RUZh76tdb-_bLhc2VZpBNSp=9cd8mz8AQiB6iKg@mail.gmail.com>
+Message-ID: <Yp4Wd4NDdCaGb9d/@ubuntu-x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAPRryQoEAf+RUZh76tdb-_bLhc2VZpBNSp=9cd8mz8AQiB6iKg@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] Regulatory update for 6 GHz operation
- in Canada (CA)
+Subject: [wireless-regdb] [ANN] wireless-regdb: master-2022-06-06
 List-Unsubscribe: 
- <http://lists.infradead.org/mailman/options/wireless-regdb>, 
+ <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
 List-Archive: <http://lists.infradead.org/pipermail/wireless-regdb/>
 List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
- <http://lists.infradead.org/mailman/listinfo/wireless-regdb>, 
+ <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
 Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Dennis Bland <dennis@dbperformance.com>
-Cc: wireless-regdb@lists.infradead.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Apr 20, 2022 at 08:40:51PM -0600, Dennis Bland wrote:
-> With the 6 GHz band (U-NII-5, U-NII-6, U-NII-7, U-NII-8) in Canada, ISED
-> introduces the concept of a fixed PSD (Power Spectral Density) for all
-> supported 6 GHz channel widths.  Wider channel widths have a higher noise
-> floor, therefore specifying a fixed PSD allows wider channels to
-> operate at a higher EIRP to maintain the same S/N ratio as smaller
-> channel widths.
-> 
-> Clause 4.6.2 requires non-client (AP devices to have a maximum PSD of 5
-> dBm/MHz and a maximum EIRP of 30 dBm.  Clause 4.6.3 requires client (STA)
-> devices to have a maximum PSD of -1 dBm/MHz.  Clause 4.4 specifies a
-> maximum channel width of 320 MHz.  Clause 4.9 specifies indoor use only.
-> Operation on oil platforms, vehicles, boats, trains, and drones is
-> prohibited except on commercial aircraft above 10,000 feet altitude.
-> There is no IR (Initiate Radiation) restriction mentioned in the 6 GHz
-> specification.
-> 
-> The following equation is used to calculate the EIRP from the PSD and
-> channel width:
-> 
-> EIRP = PSD + 10*log(channel width in MHz)
-> 
-> Using the maximum PSD values of 5 and -1 for APs and STAs respectively,
-> the EIRP in dBm for a given channel width can be calculated:
-> 
-> Channel Width (MHz)     AP            STA
-> ------------------------------------------------
-> 20                      18            12
-> 40                      21            15
-> 80                      24            18
-> 160                     27            21
-> 320                     31 (max 30)   25 (max 24)
-> 
-> For channel widths up to 160 MHz, the maximum PSD is the limiting factor.
-> For the 320 MHz channel width, the maximum EIRP is the limiting factor.
-> 
-> Unfortunately, because there is currently no mechanism to specify
-> different power levels for AP and STA modes, and for different channel
-> widths, the smallest value has to be selected, which is 12 dBm.  This
-> will likely cause connectivity problems with larger channel widths until
-> these additional parameters can be added.
-> 
-> signed-off-by: Dennis Bland <dennis@dbperformance.com>
+A new release of wireless-regdb (master-2022-06-06) is available at:
 
-Sorry for the delayed response. Thanks for the patch and the detailed
-explanation. Everything here looks good to me.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2022.06.06.tar.xz
 
-The patch itself was corrupted. I fixed it up by hand, but for future
-patches you might try 'git send-email', or if that won't work with your
-email provider you can use 'git format-patch' and attach the patch file.
+The short log of changes since the master-2022-04-08 release is below.
 
-Also note that Signed-off-by should be capitalized. I fixed that when
-applying.
+Thanks,
+Seth
 
-Applied, thanks!
+---
+
+Dennis Bland (3):
+      Regulatory update for 6 GHz operation in Canada (CA)
+      Regulatory update for 6 GHz operation in United States (US)
+      Regulatory update for 6 GHz operation in FI
+
+Seth Forshee (3):
+      wireless-regdb: Remove AUTO-BW from 6 GHz rules
+      wireless-regdb: Unify 6 GHz rules for EU contries
+      wireless-regdb: update regulatory database based on preceding changes
+
+Stijn Tintel (1):
+      wireless-regdb: update regulatory rules for Bulgaria (BG) on 6GHz
 
 _______________________________________________
 wireless-regdb mailing list
