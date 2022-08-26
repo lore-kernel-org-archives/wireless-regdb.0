@@ -1,41 +1,38 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=M752Y3Zq6Wt2UwOzlU0fkV/reVT4h+LfF+tqAo/+xu8=;
- b=qWl2ZNrSrnOB0j
- YJT01UGi2b6Q4BAwOjfJS7yg+nVaJjEFFHvWzqYUukCVOk3ttbgjURxBJb+U7iUOxGa8PqHj8w/qX
- WLLgK87N2jYW4UGkGg983WLleivmTlh4eLqr50l0lfBs1M2PREY7G8DE+nG0F0c7V7lxWJnnC0YNt
- zDjU0p3UL8egse4V9bBQp9qGpIT2idd2+BGsUAcHxJH7amGvR5u1sUermBWY7SNVQXPtcNqZnTU4K
- oxab43I6HeE0tKA3ptxjwS2asggtq7DZ71DqXX6w3+OduDYeg1S7fAsWMQob6hKzHtE/+ENUGOGR7
- dTt8frDxo6+2Roag+7/g==;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+ List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+ Subject:From:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+ References:List-Owner; bh=jwu6iiuIKS6urQ77N88s80EF3S8TDCMAtL94HQYgl84=;
+ b=BxL
+ iG5U6VATwQUFXWpdhB82Nk3mi3w4aBBvrKYwdduqQAcP78XEMVUIxL2OLadFHhiUhXRYsBIua4J1H
+ +3vwZhYBeNLijRtTOcLCGSbKMiiM9FEqw0jFvYOaVau3W6q2q0qqfNhO4CdxJrZFVgLvZzxydqPez
+ RbIdtV099ZYgCFKC+AzqG4+FaSAIk9UMnGpYGTs7ngHw4txe5NvS/enqbRvOddCjZ0oXYdfIlVVfo
+ QZnN4t7CJbMMaXopL0qcJWbybLfZN/HRAZZDsmqdgcNAxZTo+MnrXGVH36F2txt87J3DCD3ZCD5Es
+ u0iXOj8JwYyLhBlmZRcIRlvPsRDLntQ==;
+Received: from mail-oi1-x233.google.com ([2607:f8b0:4864:20::233])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oT24w-00HY3g-If
-	for wireless-regdb@lists.infradead.org; Tue, 30 Aug 2022 14:19:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1661869135;
-	bh=C3esRepSdKPVLp+qFdnCtkoF1ceUqUwHJFtoqwlOh2I=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=q4hM+maTbt9et8J54Is9MKHF46kB1xzKYQI/vtMRAxRl4D72Suk6qZ20m7/EAt8tj
-	 pb2PGX5PTNzvyLeAe6HgF6PaVUFcEKwknU5VIzNVRwWoiAWGJCmikr0DEsC/JyelU+
-	 YwOqGuzTVZTd5EhXCM7GTS+2rK68B583cqtmG9iroM83w8Qu3XMbplK1gg49Myt73B
-	 YTgB63E/lg6Jkn3K/CYMXieWAzXghEiUTD80I3hsZqjGPMQjACYCSKuyR/8ATEGlib
-	 bMBl7Xm1CHohzsvkLyxjaQA7AT5IWjV+GDaBJHkR5N5Cp2rTxzNUYJ4wmILCmIfE8o
-	 dU0YYHt2YkNQg==
-Date: Tue, 30 Aug 2022 09:18:54 -0500
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <Yw4cTotCZm7CH/v7@ubuntu-x1>
-References: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
+	id 1oROAg-004sZg-IQ
+	for wireless-regdb@lists.infradead.org; Fri, 26 Aug 2022 01:30:10 +0000
+Received: by mail-oi1-x233.google.com with SMTP id n124so330294oih.7 for
+ <wireless-regdb@lists.infradead.org>; Thu, 25 Aug 2022 18:30:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=bcdonadio.com;
+ s=google; h=organization:subject:from:cc:to:content-language:user-agent
+ :mime-version:date:message-id:from:to:cc;
+ bh=yMHBcPcy7CgRvAdigu9VQJfxiESlERkodRZgdRs56PQ=;
+ b=TwafeCLJ5Mps6e2KZRDWOsi63tZwOw3P9qUaxkZAmjF/64E35Hi96ZZJyDIOuBnruU
+ f3tBRpDtsCtxhvl2V31yjSOtZZTCUDeSHjfAQ6WfDWByk+eOjRpbxXD5e4LlWpNhOuJ6
+ ll6Gj5T3kOx7DskcgySVHNCWKXabi68YDH6VQ=
+Message-ID: <b68e876e-1555-4a37-762f-3b38d383722d@bcdonadio.com>
+Date: Thu, 25 Aug 2022 22:29:58 -0300
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Brazil (BR)
+Content-Language: en-US
+From: Bernardo Donadio <bcdonadio@bcdonadio.com>
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Brazil (BR) on 6GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,177 +42,156 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: multipart/mixed; boundary="===============5915110246871851466=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+To: Seth Forshe <sforshee@kernel.org>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Aug 17, 2022 at 08:31:56PM -0300, Cesar Eduardo Barros wrote:
-> The wireless-regdb rules for Brazil in wireless-regdb have no comment
-> indicating where they came from, and haven't been updated in a long time.
-> There have been some changes to the legislation since then, including the
-> addition of the 6 GHz and 60 GHz ranges.
-> 
-> The relevant legislation can be found in the following three URLs, mostly
-> the last one:
-> 
-> https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
-> 
-> https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
-> 
-> https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
+This is a cryptographically signed message in MIME format.
 
-Thanks for the information, and sorry for the slow response. I have
-limited time to review changes, and this one took a while.
+--===============5915110246871851466==
+Content-Language: en-US
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms050807090506080407010507"
 
-I provide more detailed responses below, but in general I think your
-suggested changes look correct.
+This is a cryptographically signed message in MIME format.
 
-> In the last one, the relevant articles are:
-> 
-> * Article 10 is the classic wireless ranges (2.4 GHz, and 5 GHz channels 149
-> to 165), and the 900 MHz ranges
-> * Article 11 is the extended 5 GHz and 6 GHz ranges
-> * Article 22 is the vehicular (V2X) ranges
-> * Article 23 is the 60 GHz ranges
-> 
-> 
-> Here follows my interpretation of these rules from a wireless-regdb point of
-> view, with the relevant article number in parenthesis:
-> 
-> Other than the article 22 range (5850-5925 MHz), these rules don't mention a
-> max channel width, so VHT160 or even larger would be allowed in all ranges
-> except 5850-5925 MHz.
-> 
-> For ranges 902-907.5 MHz, 915-928 MHz, 2400-2483.5 MHz, and 5725-5850 MHz
-> (article 10.1), the maximum power output in the transmitter is 1 W (30 dBm,
-> article 10.3.2), and the maximum antenna gain is 6 dBi (article 10.5).
+--------------ms050807090506080407010507
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-Seems right.
+Hello.
 
-> For range 5150-5250 MHz (article 11.1), the maximum EIRP would be 4 W (36
-> dBm, article 11.1.1), but since the smallest channel size we use in this
-> range is 20 MHz, and the maximum EIRP spectral density is 50 mW/MHz (17
-> dBm/MHz, article 11.1.2), the maximum EIRP is 1 W (30 dBm); this range is
-> INDOOR-ONLY (article 11.1.3), and requires either TPC (article 11.5) or a
-> reduction of 3 dB (article 11.5.1).
+I would like to request the following inclusion to the BR entry in the 
+regdb, since Anatel (Brazil's telecomunication regulatory body) has 
+officially licensed the WiFi 6E band in February 26, 2021.
 
-This also seems right.
+It was defined as the 5.925 to 7.125MHz spectrum range, strictly for 
+indoor use, limited to 30dBm EIRP for AP stations and 24dBm for clients. 
+Requirement for NO-IR was explicitly waived, and no requirement for 
+AUTO-BW or DFS was made. No specific channel width was defined besides 
+the spectral power density limitation of 5dBm/MHz, so 160MHz channels 
+are allowed if my math is right (I would appreciate if someone could 
+double-check it).
 
-> For range 5250-5350 MHz (article 11.1), the maximum EIRP is 1 W (30 dBm,
-> article 11.1.1); this range is INDOOR-ONLY (article 11.1.3), requires either
-> TPC (article 11.5) or a reduction of 3 dB (article 11.5.1), and requires DFS
-> (article 11.6).
+The original publication regulating bands for local private use can be 
+found here: http://www.ncc.org.br/img/Ato%2014448.pdf
 
-Correct.
+The amendment that allowed the 6E band can be found here: 
+https://www.in.gov.br/web/dou/-/ato-n-1.306-de-26-de-fevereiro-de-2021-306493325 
+in section 11.7.
 
-> For range 5470-5725 MHz (article 11.3), the maximum power output in the
-> transmitter is 250 mW (24 dBm, article 11.3.1), the maximum EIRP is 1 W (30
-> dBm, article 11.3.2), requires either TPC (article 11.5) or a reduction of 3
-> dB (article 11.5.1), and requires DFS (article 11.6).
+Allowing outdoor use is being debated, but it hasn't been licensed yet 
+since 5G operators want to use the same slice of spectrum. There could 
+be further changes in the next year.
 
-Correct.
+Thank you.
 
-> For range 5925-7125 MHz (article 11.7), there are different rules for APs,
-> clients, and very low power devices. For APs (article 11.7.1), the maximum
-> EIRP is 30 dBm (article 11.7.1.1), and it's INDOOR-ONLY (article 11.7.1.3);
-> for clients of an indoor AP (article 11.7.2), the maximum EIRP is 24 dBm
-> (article 11.7.2.1), and it's INDOOR-ONLY (article 11.7.2.3); for very low
-> power devices (article 11.7.3), the maximum EIRP is 17 dBm (article
-> 11.7.3.1).
+-- 
+Bernardo Donadio
+Site Reliability Engineer
+https://bcdonadio.com
 
-Right, so in this case it's possible to use either 24 dBm, NO-OUTDOOR or
-17 dBm and allow outdoor use. We've used the higher, indoor-only rule in
-the past. But as you note in your replies there is a PSD limit for
-clients which limits power to 12 dBm (since PSD limits are not currently
-supported) and it needs NO-IR.
 
-> For vehicular range 5850-5925 MHz (article 22.1), the base channel width is
-> 10 MHz but they can be aggregated (article 22.1.1), the maximum EIRP is 23
-> dBm (200 mW, article 22.2), and it requires TPC (article 22.3).
+--------------ms050807090506080407010507
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
 
-Looking at the documents you provided and [1], the only allowed use of
-this range is for vehicle communication systems and not for WLAN. Unless
-I missed something, I think this range should be left out of the
-database.
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
+C70wggWlMIIEjaADAgECAhBqPzL42AO8SuNm9ZzurnikMA0GCSqGSIb3DQEBCwUAMIGWMQsw
+CQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxm
+b3JkMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0ZWQxPjA8BgNVBAMTNVNlY3RpZ28gUlNBIENs
+aWVudCBBdXRoZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTIyMDYxNTAwMDAw
+MFoXDTIzMDYxNTIzNTk1OVowgbExCzAJBgNVBAYTAkJSMRowGAYDVQQIExFSaW8gR3JhbmRl
+IGRvIFN1bDEWMBQGA1UEChMNYmNkb25hZGlvLmNvbTErMCkGA1UECxMiUGVyc29uYWwgQXV0
+aGVudGljYXRpb24gRW50ZXJwcmlzZTEZMBcGA1UEAxMQQmVybmFyZG8gRG9uYWRpbzEmMCQG
+CSqGSIb3DQEJARYXYmNkb25hZGlvQGJjZG9uYWRpby5jb20wggEiMA0GCSqGSIb3DQEBAQUA
+A4IBDwAwggEKAoIBAQDWXXoj4n9CnFRKOWg84Y707goEkr9z9QXr2IPD8bixEqivDO1ElSCd
+17SoDJAvQsho+JU3enjqIIANM/9z44Is2qDFJkdOPpx/AuvdwlsHqhqscWjM0IHPDRjpD+Nd
+RlteFLVO7H+QC+4Z6ggzFC4GRwfemFkwigb2/aqk/J85YS8KvSPxJz5lmuiT8PFxFKI/UUDk
+gq49qQSi0B6h8rXoS3z30mvJJbhb+8egiO7JD2jg7hj/SC+mE8won9dRjctyTlltEH37rHk/
+6ijDJV2kPOafk/GFiUa/ftOA4P9FGPGRri2aeRKBYlAmJ6mSmf3TOKBK+cYRmX8T8xJNZMr1
+AgMBAAGjggHQMIIBzDAfBgNVHSMEGDAWgBQJwPL8C9qU21/+K9+omULPyeCtADAdBgNVHQ4E
+FgQU24T33l8emVivwrV+t+JBhaa60WMwDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAw
+HQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMEAGA1UdIAQ5MDcwNQYMKwYBBAGyMQEC
+AQEBMCUwIwYIKwYBBQUHAgEWF2h0dHBzOi8vc2VjdGlnby5jb20vQ1BTMFoGA1UdHwRTMFEw
+T6BNoEuGSWh0dHA6Ly9jcmwuc2VjdGlnby5jb20vU2VjdGlnb1JTQUNsaWVudEF1dGhlbnRp
+Y2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcmwwgYoGCCsGAQUFBwEBBH4wfDBVBggrBgEFBQcw
+AoZJaHR0cDovL2NydC5zZWN0aWdvLmNvbS9TZWN0aWdvUlNBQ2xpZW50QXV0aGVudGljYXRp
+b25hbmRTZWN1cmVFbWFpbENBLmNydDAjBggrBgEFBQcwAYYXaHR0cDovL29jc3Auc2VjdGln
+by5jb20wIgYDVR0RBBswGYEXYmNkb25hZGlvQGJjZG9uYWRpby5jb20wDQYJKoZIhvcNAQEL
+BQADggEBAL+T0Do7Z7CeS8jz6enkrehc9Pmra10Rbl7XPrLjEyetyicys0Si6VK5TgLh5JPQ
+JpEHM7x3IPS36k7w4RMsnvJ7pVBMOCUOlNweDai4hjKwLRNdA2Drdcenkqggkan+qfJeHMXv
+4wSWW8wL6Wsn3NmpyStwD/f2xCB9EuSVd8HHUolAcfZdvhpARY9HI4BeiK0fu7UbSogEPxvv
+khSwzJKiiaScEkM8bUICCC9iDTfHdLMI+HjV7MOa1t1r8niy2O6pjOiVfvE21G8J5TVN7DHI
+RE0E79FY73UXoDMtCz3RrfyzgxhRdrbhDM202K2zEmT/lvkY+d6bWXjmt3kkVHswggYQMIID
++KADAgECAhBNlCwQ1DvglAnFgS06KwZPMA0GCSqGSIb3DQEBDAUAMIGIMQswCQYDVQQGEwJV
+UzETMBEGA1UECBMKTmV3IEplcnNleTEUMBIGA1UEBxMLSmVyc2V5IENpdHkxHjAcBgNVBAoT
+FVRoZSBVU0VSVFJVU1QgTmV0d29yazEuMCwGA1UEAxMlVVNFUlRydXN0IFJTQSBDZXJ0aWZp
+Y2F0aW9uIEF1dGhvcml0eTAeFw0xODExMDIwMDAwMDBaFw0zMDEyMzEyMzU5NTlaMIGWMQsw
+CQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxm
+b3JkMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0ZWQxPjA8BgNVBAMTNVNlY3RpZ28gUlNBIENs
+aWVudCBBdXRoZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAyjztlApB/975Rrno1jvm2pK/KxBOqhq8gr2+JhwpKirSzZxQ
+gT9tlC7zl6hn1fXjSo5MqXUfItMltrMaXqcESJuK8dtK56NCSrq4iDKaKq9NxOXFmqXX2zN8
+HHGjQ2b2Xv0v1L5Nk1MQPKA19xeWQcpGEGFUUd0kN+oHox+L9aV1rjfNiCj3bJk6kJaOPabP
+i2503nn/ITX5e8WfPnGw4VuZ79Khj1YBrf24k5Ee1sLTHsLtpiK9OjG4iQRBdq6Z/TlVx/hG
+Aez5h36bBJMxqdHLpdwIUkTqT8se3ed0PewDch/8kHPo5fZl5u1B0ecpq/sDN/5sCG52Ds+Q
+U5O5EwIDAQABo4IBZDCCAWAwHwYDVR0jBBgwFoAUU3m/WqorSs9UgOHYm8Cd8rIDZsswHQYD
+VR0OBBYEFAnA8vwL2pTbX/4r36iZQs/J4K0AMA4GA1UdDwEB/wQEAwIBhjASBgNVHRMBAf8E
+CDAGAQH/AgEAMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDARBgNVHSAECjAIMAYG
+BFUdIAAwUAYDVR0fBEkwRzBFoEOgQYY/aHR0cDovL2NybC51c2VydHJ1c3QuY29tL1VTRVJU
+cnVzdFJTQUNlcnRpZmljYXRpb25BdXRob3JpdHkuY3JsMHYGCCsGAQUFBwEBBGowaDA/Bggr
+BgEFBQcwAoYzaHR0cDovL2NydC51c2VydHJ1c3QuY29tL1VTRVJUcnVzdFJTQUFkZFRydXN0
+Q0EuY3J0MCUGCCsGAQUFBzABhhlodHRwOi8vb2NzcC51c2VydHJ1c3QuY29tMA0GCSqGSIb3
+DQEBDAUAA4ICAQBBRHUAqznCFfXejpVtMnFojADdF9d6HBA4kMjjsb0XMZHztuOCtKF+xswh
+h2GqkW5JQrM8zVlU+A2VP72Ky2nlRA1GwmIPgou74TZ/XTarHG8zdMSgaDrkVYzz1g3nIVO9
+IHk96VwsacIvBF8JfqIs+8aWH2PfSUrNxP6Ys7U0sZYx4rXD6+cqFq/ZW5BUfClN/rhk2ddQ
+Xyn7kkmka2RQb9d90nmNHdgKrwfQ49mQ2hWQNDkJJIXwKjYA6VUR/fZUFeCUisdDe/0ABLTI
++jheXUV1eoYV7lNwNBKpeHdNuO6Aacb533JlfeUHxvBz9OfYWUiXu09sMAviM11Q0DuMZ576
+0CdO2VnpsXP4KxaYIhvqPqUMWqRdWyn7crItNkZeroXaecG03i3mM7dkiPaCkgocBg0EBYsb
+ZDZ8bsG3a08LwEsL1Ygz3SBsyECa0waq4hOf/Z85F2w2ZpXfP+w8q4ifwO90SGZZV+HR/Jh6
+rEaVPDRF/CEGVqR1hiuQOZ1YL5ezMTX0ZSLwrymUE0pwi/KDaiYB15uswgeIAcA6JzPFf9pL
+kAFFWs1QNyN++niFhsM47qodx/PL+5jR87myx5uYdBEQkkDc+lKB1Wct6ucXqm2EmsaQ0M95
+QjTmy+rDWjkDYdw3Ms6mSWE3Bn7i5ZgtwCLXgAIe5W8mybM2JzGCBDIwggQuAgEBMIGrMIGW
+MQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRlciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdT
+YWxmb3JkMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0ZWQxPjA8BgNVBAMTNVNlY3RpZ28gUlNB
+IENsaWVudCBBdXRoZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhBqPzL42AO8SuNm
+9ZzurnikMA0GCWCGSAFlAwQCAQUAoIICVzAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwG
+CSqGSIb3DQEJBTEPFw0yMjA4MjYwMTI5NThaMC8GCSqGSIb3DQEJBDEiBCA/Ye9+zelUr2L0
+Q7NMWmadV++c1rqUm+lRelX5+7ZPkjBsBgkqhkiG9w0BCQ8xXzBdMAsGCWCGSAFlAwQBKjAL
+BglghkgBZQMEAQIwCgYIKoZIhvcNAwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFA
+MAcGBSsOAwIHMA0GCCqGSIb3DQMCAgEoMIG8BgkrBgEEAYI3EAQxga4wgaswgZYxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQx
+GDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE+MDwGA1UEAxM1U2VjdGlnbyBSU0EgQ2xpZW50
+IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEGo/MvjYA7xK42b1nO6ueKQw
+gb4GCyqGSIb3DQEJEAILMYGuoIGrMIGWMQswCQYDVQQGEwJHQjEbMBkGA1UECBMSR3JlYXRl
+ciBNYW5jaGVzdGVyMRAwDgYDVQQHEwdTYWxmb3JkMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0
+ZWQxPjA8BgNVBAMTNVNlY3RpZ28gUlNBIENsaWVudCBBdXRoZW50aWNhdGlvbiBhbmQgU2Vj
+dXJlIEVtYWlsIENBAhBqPzL42AO8SuNm9ZzurnikMA0GCSqGSIb3DQEBAQUABIIBAE+tQIeJ
+MzJd2QCm4bEUwmEKHDYXk4SjjfJ3ZYZigIBYPu/SJw2pY3+o6gSx5vCK3Q1seozqag3s55iH
+o/tSs30HYjYMTMQ3wPghhVYAF9qeDXgkfRzRXwO+Zi7sqeS5UUOgo3xuiyJYTnw2qwnD+EHl
+P/BRhKslQKSM15VG+rpoM6TzcAUgP7Csi7YIeB6JbH9pPFcgeV5fssAKHSMq4W6ucgYF5EJ1
+PA0EuOJD7WDghwy6Y2MfN8d1bdPqCM5iSdPeurYkgEUrred9VlGFmDKkCu85PctHorP4xJ5j
+KTHeGHm0EzV4LTmQiWNqnvjPlbIssioEzucLk77/6WOXnQAAAAAAAAA=
+--------------ms050807090506080407010507--
 
-[1] https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2020/1467-ato-4776
 
-> For range 57-71 GHz (article 23.1), the maximum EIRP is 40 dBm (article
-> 23.1.1) with maximum peak 43 dBm (article 23.1.2).
-
-Correct.
-
-> I'm unsure as how to correctly represent the rules with a maximum antenna
-> gain in wireless-regdb. My best guess as to how these rules would be
-> represented in wireless-regdb, based on the US rules which have some
-> similar-looking ranges and power limits, would be (ignoring for now the 900
-> MHz and vehicular ranges, since I'm unsure about their correct channel
-> widths):
-> 
-> # Source:
-> # https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
-> # https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
-> # https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
-> country BR: DFS-FCC
-> 	#(902 - 907.5 @ ???), (30)
-> 	#(915 - 928 @ ???), (30)
-
-For these ranges I think you should use the same bandwidth as other
-rules in the database, i.e. 2 and 16 MHz.
-
-> 	(2400 - 2483.5 @ 40), (30)
-> 	# The next three ranges have been reduced by 3dB, could be increased back
-> to 30dBm if TPC is implemented.
-> 	(5150 - 5250 @ 80), (27), NO-OUTDOOR, AUTO-BW
-> 	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
-> 	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
-> 	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
-> 	# requirements, we can extend the range by 5 MHz to make the kernel
-> 	# happy and be able to use channel 144.
-> 	(5470 - 5730 @ 160), (27), DFS
-> 	(5730 - 5850 @ 80), (30)
-> 	# This range requires TPC.
-> 	#(5850 - 5925 @ ???), (20)
-
-This rule should be omitted.
-
-> 	# AP 30dBm, client 24dBm
-> 	(5925 - 7125 @ 320), (24), NO-OUTDOOR
-
-This range needs the adjustments from your later emails.
-
-> 	# EIRP=40dBm (43dBm peak)
-> 	(57000 - 71000 @ 2160), (40)
-
-Otherwise I think these changes look good. If you can send a patch with
-the changes I would appreciate it, otherwise let me know and I can send
-a patch.
-
-Thanks,
-Seth
-
-> On a quick look, the result looks sane and makes sense to me: 1 W (30 dBm)
-> everywhere, reduced by 3 dB on the DFS channels since TPC isn't implemented;
-> for 6 GHz the client is reduced by 6 dB, which is also the case at least on
-> the US rules according to the comment there; and 60 GHz seems to follow
-> everyone else in using 40 dBm.
-> 
-> -- 
-> Cesar Eduardo Barros
-> cesarb@cesarb.eti.br
-> 
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
+--===============5915110246871851466==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============5915110246871851466==--
+
 
