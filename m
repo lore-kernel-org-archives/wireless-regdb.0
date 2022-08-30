@@ -1,34 +1,39 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:References:Cc:To:From:
- MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=sG2vq4V+p8B7bY2T3+bgUrjweSsf6SnlVJ5wTDI1vIc=;
- b=UrMqbQQxhytWvu
- +FMxD+LSfmj9hoMhxJeLvsR5bvLBWTI9JmJ4gwRXOyuZCQsnwuB0HJ5Cib6rh2wlCmr4PlQiZaTAG
- emMusffI2DHLANF5KRoeWv/xyO9M4/j2/iPdreGXAZRUESPGPanrYoVeL3Np4ENR4+meBe0wpNgJ1
- phJFp6owAcuFEJB1dKLK/lzPW8Rq9nQDvzCY1SBYWuBccFLiVo3q/JxwLDDFeAPF43XfrGFUug4i3
- GwhMx8oqOUHE3Wj3eY4K7gbIvBdNZwOx2p6Zk0uFZw4PUnMCO4OZkpb4A4NnOsgGh9bMkCFyT6Fa7
- 93cqBbqSpo2h0+BD1erg==;
-Received: from hm1831-n-117.locaweb.com.br ([189.126.112.117])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oOTXB-009NRL-SX
-	for wireless-regdb@lists.infradead.org; Thu, 18 Aug 2022 00:37:20 +0000
-Received: from mcbain0001.email.locaweb.com.br (189.126.112.11) by
- hm1831-n-113.locaweb.com.br id hvm3h02n8lgi for
- <wireless-regdb@lists.infradead.org>; Wed, 17 Aug 2022 21:25:49 -0300
- (envelope-from <cesarb@cesarb.eti.br>)
-Message-ID: <b453df46-01c4-0c89-1408-1f22eb8666bc@cesarb.eti.br>
-Date: Wed, 17 Aug 2022 21:36:57 -0300
-MIME-Version: 1.0
-Content-Language: en-US
-From: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=M752Y3Zq6Wt2UwOzlU0fkV/reVT4h+LfF+tqAo/+xu8=;
+ b=qWl2ZNrSrnOB0j
+ YJT01UGi2b6Q4BAwOjfJS7yg+nVaJjEFFHvWzqYUukCVOk3ttbgjURxBJb+U7iUOxGa8PqHj8w/qX
+ WLLgK87N2jYW4UGkGg983WLleivmTlh4eLqr50l0lfBs1M2PREY7G8DE+nG0F0c7V7lxWJnnC0YNt
+ zDjU0p3UL8egse4V9bBQp9qGpIT2idd2+BGsUAcHxJH7amGvR5u1sUermBWY7SNVQXPtcNqZnTU4K
+ oxab43I6HeE0tKA3ptxjwS2asggtq7DZ71DqXX6w3+OduDYeg1S7fAsWMQob6hKzHtE/+ENUGOGR7
+ dTt8frDxo6+2Roag+7/g==;
+Received: from ams.source.kernel.org ([145.40.68.75])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oT24w-00HY3g-If
+	for wireless-regdb@lists.infradead.org; Tue, 30 Aug 2022 14:19:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1661869135;
+	bh=C3esRepSdKPVLp+qFdnCtkoF1ceUqUwHJFtoqwlOh2I=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=q4hM+maTbt9et8J54Is9MKHF46kB1xzKYQI/vtMRAxRl4D72Suk6qZ20m7/EAt8tj
+	 pb2PGX5PTNzvyLeAe6HgF6PaVUFcEKwknU5VIzNVRwWoiAWGJCmikr0DEsC/JyelU+
+	 YwOqGuzTVZTd5EhXCM7GTS+2rK68B583cqtmG9iroM83w8Qu3XMbplK1gg49Myt73B
+	 YTgB63E/lg6Jkn3K/CYMXieWAzXghEiUTD80I3hsZqjGPMQjACYCSKuyR/8ATEGlib
+	 bMBl7Xm1CHohzsvkLyxjaQA7AT5IWjV+GDaBJHkR5N5Cp2rTxzNUYJ4wmILCmIfE8o
+	 dU0YYHt2YkNQg==
+Date: Tue, 30 Aug 2022 09:18:54 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <Yw4cTotCZm7CH/v7@ubuntu-x1>
 References: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
- <f0b68f02-a95d-93e6-6437-523f360e4eb6@cesarb.eti.br>
-In-Reply-To: <f0b68f02-a95d-93e6-6437-523f360e4eb6@cesarb.eti.br>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
  Brazil (BR)
 List-Unsubscribe: 
@@ -40,51 +45,174 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
+To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Em 17/08/2022 21:07, Cesar Eduardo Barros escreveu:
-> Em 17/08/2022 20:31, Cesar Eduardo Barros escreveu:
->> For range 5925-7125 MHz (article 11.7), there are different rules for 
->> APs, clients, and very low power devices. For APs (article 11.7.1), 
->> the maximum EIRP is 30 dBm (article 11.7.1.1), and it's INDOOR-ONLY 
->> (article 11.7.1.3); for clients of an indoor AP (article 11.7.2), the 
->> maximum EIRP is 24 dBm (article 11.7.2.1), and it's INDOOR-ONLY 
->> (article 11.7.2.3); for very low power devices (article 11.7.3), the 
->> maximum EIRP is 17 dBm (article 11.7.3.1).
+On Wed, Aug 17, 2022 at 08:31:56PM -0300, Cesar Eduardo Barros wrote:
+> The wireless-regdb rules for Brazil in wireless-regdb have no comment
+> indicating where they came from, and haven't been updated in a long time.
+> There have been some changes to the legislation since then, including the
+> addition of the 6 GHz and 60 GHz ranges.
 > 
-> Thinking better about it, I might have miscalculated this one. Since the 
-> smallest channel we use is 20 MHz, and the EIRP power density for 
-> clients is limited to -1 dBm/MHz (article 11.7.2.2), if I'm doing the 
-> calculations correctly the limit for clients would be 12 dBm, that is,
+> The relevant legislation can be found in the following three URLs, mostly
+> the last one:
 > 
-> (5925 - 7125 @ 320), (12), NO-OUTDOOR
+> https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
 > 
-> It's unfortunate that we cannot represent that kind of rule in db.txt, 
-> and are forced to artificially limit the power by 12 dB (the full power 
-> of 24 dBm I had calculated would work only for 320 MHz).
+> https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
 > 
-> I would appreciate if you could look over these power density rules, 
-> especially the ones which are in dBm/MHz instead of mW/MHz, since I 
-> might have miscalculated something else.
-> 
+> https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
 
-And thinking even more about it, if I'm understanding article 11.7.10 
-correctly, a client can transmit only when associated to an AP, except 
-for the negotiation while joining the AP. I believe this corresponds to 
-NO-IR, so the correct line for that range would be:
+Thanks for the information, and sorry for the slow response. I have
+limited time to review changes, and this one took a while.
 
-(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
+I provide more detailed responses below, but in general I think your
+suggested changes look correct.
 
--- 
-Cesar Eduardo Barros
-cesarb@cesarb.eti.br
+> In the last one, the relevant articles are:
+> 
+> * Article 10 is the classic wireless ranges (2.4 GHz, and 5 GHz channels 149
+> to 165), and the 900 MHz ranges
+> * Article 11 is the extended 5 GHz and 6 GHz ranges
+> * Article 22 is the vehicular (V2X) ranges
+> * Article 23 is the 60 GHz ranges
+> 
+> 
+> Here follows my interpretation of these rules from a wireless-regdb point of
+> view, with the relevant article number in parenthesis:
+> 
+> Other than the article 22 range (5850-5925 MHz), these rules don't mention a
+> max channel width, so VHT160 or even larger would be allowed in all ranges
+> except 5850-5925 MHz.
+> 
+> For ranges 902-907.5 MHz, 915-928 MHz, 2400-2483.5 MHz, and 5725-5850 MHz
+> (article 10.1), the maximum power output in the transmitter is 1 W (30 dBm,
+> article 10.3.2), and the maximum antenna gain is 6 dBi (article 10.5).
+
+Seems right.
+
+> For range 5150-5250 MHz (article 11.1), the maximum EIRP would be 4 W (36
+> dBm, article 11.1.1), but since the smallest channel size we use in this
+> range is 20 MHz, and the maximum EIRP spectral density is 50 mW/MHz (17
+> dBm/MHz, article 11.1.2), the maximum EIRP is 1 W (30 dBm); this range is
+> INDOOR-ONLY (article 11.1.3), and requires either TPC (article 11.5) or a
+> reduction of 3 dB (article 11.5.1).
+
+This also seems right.
+
+> For range 5250-5350 MHz (article 11.1), the maximum EIRP is 1 W (30 dBm,
+> article 11.1.1); this range is INDOOR-ONLY (article 11.1.3), requires either
+> TPC (article 11.5) or a reduction of 3 dB (article 11.5.1), and requires DFS
+> (article 11.6).
+
+Correct.
+
+> For range 5470-5725 MHz (article 11.3), the maximum power output in the
+> transmitter is 250 mW (24 dBm, article 11.3.1), the maximum EIRP is 1 W (30
+> dBm, article 11.3.2), requires either TPC (article 11.5) or a reduction of 3
+> dB (article 11.5.1), and requires DFS (article 11.6).
+
+Correct.
+
+> For range 5925-7125 MHz (article 11.7), there are different rules for APs,
+> clients, and very low power devices. For APs (article 11.7.1), the maximum
+> EIRP is 30 dBm (article 11.7.1.1), and it's INDOOR-ONLY (article 11.7.1.3);
+> for clients of an indoor AP (article 11.7.2), the maximum EIRP is 24 dBm
+> (article 11.7.2.1), and it's INDOOR-ONLY (article 11.7.2.3); for very low
+> power devices (article 11.7.3), the maximum EIRP is 17 dBm (article
+> 11.7.3.1).
+
+Right, so in this case it's possible to use either 24 dBm, NO-OUTDOOR or
+17 dBm and allow outdoor use. We've used the higher, indoor-only rule in
+the past. But as you note in your replies there is a PSD limit for
+clients which limits power to 12 dBm (since PSD limits are not currently
+supported) and it needs NO-IR.
+
+> For vehicular range 5850-5925 MHz (article 22.1), the base channel width is
+> 10 MHz but they can be aggregated (article 22.1.1), the maximum EIRP is 23
+> dBm (200 mW, article 22.2), and it requires TPC (article 22.3).
+
+Looking at the documents you provided and [1], the only allowed use of
+this range is for vehicle communication systems and not for WLAN. Unless
+I missed something, I think this range should be left out of the
+database.
+
+[1] https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2020/1467-ato-4776
+
+> For range 57-71 GHz (article 23.1), the maximum EIRP is 40 dBm (article
+> 23.1.1) with maximum peak 43 dBm (article 23.1.2).
+
+Correct.
+
+> I'm unsure as how to correctly represent the rules with a maximum antenna
+> gain in wireless-regdb. My best guess as to how these rules would be
+> represented in wireless-regdb, based on the US rules which have some
+> similar-looking ranges and power limits, would be (ignoring for now the 900
+> MHz and vehicular ranges, since I'm unsure about their correct channel
+> widths):
+> 
+> # Source:
+> # https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
+> # https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
+> # https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
+> country BR: DFS-FCC
+> 	#(902 - 907.5 @ ???), (30)
+> 	#(915 - 928 @ ???), (30)
+
+For these ranges I think you should use the same bandwidth as other
+rules in the database, i.e. 2 and 16 MHz.
+
+> 	(2400 - 2483.5 @ 40), (30)
+> 	# The next three ranges have been reduced by 3dB, could be increased back
+> to 30dBm if TPC is implemented.
+> 	(5150 - 5250 @ 80), (27), NO-OUTDOOR, AUTO-BW
+> 	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
+> 	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
+> 	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
+> 	# requirements, we can extend the range by 5 MHz to make the kernel
+> 	# happy and be able to use channel 144.
+> 	(5470 - 5730 @ 160), (27), DFS
+> 	(5730 - 5850 @ 80), (30)
+> 	# This range requires TPC.
+> 	#(5850 - 5925 @ ???), (20)
+
+This rule should be omitted.
+
+> 	# AP 30dBm, client 24dBm
+> 	(5925 - 7125 @ 320), (24), NO-OUTDOOR
+
+This range needs the adjustments from your later emails.
+
+> 	# EIRP=40dBm (43dBm peak)
+> 	(57000 - 71000 @ 2160), (40)
+
+Otherwise I think these changes look good. If you can send a patch with
+the changes I would appreciate it, otherwise let me know and I can send
+a patch.
+
+Thanks,
+Seth
+
+> On a quick look, the result looks sane and makes sense to me: 1 W (30 dBm)
+> everywhere, reduced by 3 dB on the DFS channels since TPC isn't implemented;
+> for 6 GHz the client is reduced by 6 dB, which is also the case at least on
+> the US rules according to the comment there; and 60 GHz seems to follow
+> everyone else in using 40 dBm.
+> 
+> -- 
+> Cesar Eduardo Barros
+> cesarb@cesarb.eti.br
+> 
+> _______________________________________________
+> wireless-regdb mailing list
+> wireless-regdb@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/wireless-regdb
 
 _______________________________________________
 wireless-regdb mailing list
