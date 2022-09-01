@@ -1,48 +1,36 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
- In-Reply-To:Date:Cc:To:From:Message-ID:Reply-To:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Owner;
- bh=/1ONt460A8CiuAS1p0yOlQx+rbt0AJ+M/88QOz8mZGU=;
- b=z25O56x4OjP/T0g7wsx4uuT0Oq
- X0Dyams/uHA7HgwjTewS10926cwnPebu2PE+3B7p+vmsvNiPoDZ89juaTKIEeJhfodgHIYvD9MW7u
- RZXGpJI9fMbgZYGqOp15HZkkoDf/OUnLvBPV9d+baGZVBwW0g4B4IUj5NcPmoAyfh8ZkGFiX4FhfC
- zsdHG9UiU/0wOVoXclfC/JUqp0kb3UDQp6fpD2Bi7uCd3NKmJb3r+1+G7bSys/V2Z+eGPef6mG1g6
- lTP0i4uvxIT5NLn/4DKrU1j2AHA6nqUNDp9nMhU03jqeB0CZRxoxX1IEuYzIUHS0tVwfL9T1UrsEh
- 3Q72ylNw==;
-Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
- helo=sipsolutions.net) by bombadil.infradead.org with esmtps (Exim 4.94.2
- #2 (Red Hat Linux)) id 1oX1YW-00AsYd-2Q for
- wireless-regdb@lists.infradead.org; Sat, 10 Sep 2022 14:34:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
- Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
- Resent-Cc:Resent-Message-ID;
- bh=yIUtt9DtQzamFmV3UNKESYszcnwOY+XRpFwUQuEzgeM=; t=1662820437;
- x=1664030037; b=J7UJp6L9I0SeO8cjke6mdCv1I94+mjN1OXF7AWgDtbJxoPQ
- o6ic+un2sy0tIDm5psjXn0SLy2fYA2igtHa0GL8vWDS43MJHsMXb+C7XGR2jHGeuhnpxRqEnLnB6m
- hHrnVtUzbnlcZjn/r8ngArydwTrn/mSRF+8gc/CRZVD4sWDBcq2asczVRAIT0i86mrdVv5/N3N7yR
- 5JnZ2pLOeadvHidBJqn3FEkkKmxNfuvUQOL1QbI/rKCp2p0bH1wZ25rV/BnxpJmp7BjohLgGwibf+
- zeoB2KX2IHjAvgBjCa2LjLuHkLljZx4Bz80PHMJvBDKdIV8KuZo8O0lzoeBVrcIQ==;
-Message-ID: <5d5e40bc5c6075c8fbc5e836f42f7a6398dcbf1a.camel@sipsolutions.net>
-From: Johannes Berg <johannes@sipsolutions.net>
-Date: Sat, 10 Sep 2022 16:33:48 +0200
-In-Reply-To: <e55819d3-cc2f-23ac-4b40-bdd1fd8e6b68@cesarb.eti.br>
-References: <20220901232734.5488-1-cesarb@cesarb.eti.br>
-	 <b8674e67fee2393d4c5fe9d9842028545c6adcfa.camel@sipsolutions.net>
-	 <6b577581-9daf-ff11-1aaa-ff1243eb9c03@cesarb.eti.br>
-	 <YxiwFLWhsOtJJhrq@do-x1extreme>
-	 <7c7135cb-ee5d-e7f3-45ca-8b7206312512@cesarb.eti.br>
-	 <Yxs9pmL7Efl+EPxe@do-x1extreme>
-	 <e55819d3-cc2f-23ac-4b40-bdd1fd8e6b68@cesarb.eti.br>
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+ Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+ List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:Cc:To:
+ MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=emji5WjOnw4aOT14/VRch+G/X742VQa1DXT5W98Km4A=;
+ b=Oq7fjhlNkaF5C5
+ YI5PGWSUPaQXutHk/o/f8UgVmsx1y3EKB4TV3aZbL1tVCSwpG6sKRFldj7KdO2NyRl1ZHMcG/bwn8
+ 2qHMeIyR48X6tWFQLrtovhUtpbQWC2jMOZ677YUQRxdd4ZYt46O/MINdnDww6yD1fpDjNZoCO3mWd
+ Z0U+2F345rrzetcIHzKhYxikAf03OCoQntxPIF81mwRehYCBIVrWy/xmMda6hq2u2AsnmRmjX5AZ9
+ PYbcoJwqu3Kl4q0C3IOPWd3haRBxpkBHQwsf5d+RVb0ls0d6cJHoQqMUUf3ZLciohh20SF8bDIxHG
+ ESRoUeSGvy5ACtdPGeuw==;
+Received: from hm1831-43.locaweb.com.br ([189.126.112.63])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oTaC4-009F5o-SA
+	for wireless-regdb@lists.infradead.org; Thu, 01 Sep 2022 02:44:38 +0000
+Received: from mcbain0010.email.locaweb.com.br (189.126.112.12) by
+ hm1831-n-113.locaweb.com.br id h20cqq2n8lg7 for
+ <wireless-regdb@lists.infradead.org>; Wed, 31 Aug 2022 23:32:09 -0300
+ (envelope-from <cesarb@cesarb.eti.br>)
+Message-ID: <2cf2cb6e-8083-9c09-c2a6-ae49424ea37a@cesarb.eti.br>
+Date: Wed, 31 Aug 2022 23:44:17 -0300
 MIME-Version: 1.0
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for Brazil (BR)
+References: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
+ <Yw4cTotCZm7CH/v7@ubuntu-x1>
+Content-Language: en-US
+From: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+In-Reply-To: <Yw4cTotCZm7CH/v7@ubuntu-x1>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Brazil (BR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -52,45 +40,62 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"; format="flowed"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>, Seth Forshee <sforshee@kernel.org>
+To: Seth Forshee <sforshee@kernel.org>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Fri, 2022-09-09 at 19:29 -0300, Cesar Eduardo Barros wrote:
+Em 30/08/2022 11:18, Seth Forshee escreveu:
+> On Wed, Aug 17, 2022 at 08:31:56PM -0300, Cesar Eduardo Barros wrote:
+>> 	#(902 - 907.5 @ ???), (30)
+>> 	#(915 - 928 @ ???), (30)
 > 
->  From my quick look, it seems that it would set a NO-160MHZ flag in the 
-> rule, which would then propagate to each 20MHz sub-channel, and probably 
-> would lead to it rejecting the use of the whole as a 160MHz channel; but 
-> there's also the 80+80 mode, which would still be allowed (and I vaguely 
-> recall seeing somewhere that adjacent 80+80 was prefered over 160 for 
-> some reason).
+> For these ranges I think you should use the same bandwidth as other
+> rules in the database, i.e. 2 and 16 MHz.
 
-Much hardware doesn't support it though. I guess it might be easier to
-do separate CCA in that case? Dunno.
+I found only two entries in the database with rules for the 900MHz 
+frequencies: US and "world". I don't think the US rule is a good model 
+here; it can use 16 MHz because it's a contiguous range, but the range 
+for Brazil has a hole in the middle.
 
-Anyway.
+Since there's nothing that a found in these rules which mention a 
+maximum channel width, the correct width is probably the maximum which 
+fits on each piece of the range. That is,
 
-> Unfortunately, I don't have any hardware which can use 160MHz channels; 
-> it's only last month that I upgraded my AP to one which can use 80MHz 
-> channels (which is what led me to looking into all this stuff).
-> 
+(902 - 907.5 @ 4), (30)
+(915 - 928 @ 8), (30)
 
-Really what I wanted to say is that you should be able to compile a
-kernel with e.g. ARCH=um per the instructions at
+As far as I could find, the hole between 907.5 and 915 exists because 
+there are three 2.5 MHz-wide GSM uplink channels there. However, I also 
+found out that there is a proposal within ANATEL (Consulta Pública 52 
+from 2021) to expand it with another uplink channel at 905 - 907.5 
+(there are actually five uplink channels in that proposal, the other one 
+is at 898.5 - 901). I have no idea when this will become official, or 
+whether it has already happened (and just wasn't reflected yet in the 
+restricted radiation rules I had researched), and what effect it would 
+have on 802.11ah users.
 
-https://w1.fi/cgit/hostap/tree/tests/hwsim/vm/README
+Given the uncertainty from that change, and given that so far there are 
+rules for the 900 MHz range in wireless-regdb only for the USA, it might 
+be wise to hold it for now and apply only the rest of the changes, 
+without these 900 MHz ranges.
 
-and then test it all in "userspace" with hwsim in the userspace kernel.
+> Otherwise I think these changes look good. If you can send a patch with
+> the changes I would appreciate it, otherwise let me know and I can send
+> a patch.
 
-johannes
+I will prepare a patch tomorrow.
+
+-- 
+Cesar Eduardo Barros
+cesarb@cesarb.eti.br
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
