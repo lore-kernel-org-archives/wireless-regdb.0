@@ -3,30 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=QJiSe5jNtRbiFV7YFMuXgkoWQoQDFsO+iFDU3xVrQEg=;
- b=bS/Mrpqng6g0ro
- 2c/WEWQvZuPsI1nKOjkxmlaJJgebzZeCR3TUP/QwiOYKDJUODl2dIvPgl8ClH++LoIz1DZTlTchVb
- dR9WilBirVv/OKGWL0auapAXiux8dPquzPQmNboSujVEqwcxsIjXkmvy3YKADG8WHL6x07sQruUwv
- NbzYiXAPwmZu99/jxdodzpCBFf2hx/7qN8RKU7u9afQcHGXafn8r+vzPz0PUcwlh+/LsYCjsK6IBP
- /qn/QABpgA2mHz2yLuhGvijYfDy8AxIIC/XV3ThRwRHh2rTq4rxVbw+5UJDkQpyfqpsKm+XGdcvp+
- sSB/SVowi7+XWijWMFyA==;
-Received: from mail4975.hm1479.locaweb.com.br ([201.76.49.75])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTte5-00FpzP-9s
-	for wireless-regdb@lists.infradead.org; Thu, 01 Sep 2022 23:30:51 +0000
-Received: from mcbain0012.email.locaweb.com.br (189.126.112.16) by
- mail4970.hm1479.locaweb.com.br id h24vck2n8lg8 for
- <wireless-regdb@lists.infradead.org>; Thu, 1 Sep 2022 20:20:16 -0300
- (envelope-from <cesarb@cesarb.eti.br>)
-From: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
-Date: Thu,  1 Sep 2022 20:27:34 -0300
-Message-Id: <20220901232734.5488-1-cesarb@cesarb.eti.br>
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:References:
+ In-Reply-To:Date:Cc:To:From:Message-ID:Reply-To:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Owner;
+ bh=Vd4heQGQ5LmU2F7J57jkQCqE86Tli10oYFgtseSj0HE=;
+ b=P9fX6pXsHRtEOOa4ItKfdqebDo
+ NJCKDdMhzRMEVSqKP3rYcVojKLs40/f21TRi5Q7yNkTiz+ce4ObV+UPFxV61E1oAM7NJCcbk8g+y8
+ 3LNCBTADfWvR1iBzcSqrESyzXC/PWDiFmVMRP3gw4Cd/nwQ1UXC07l9podSPdPhzCtDRDbEmvbIPq
+ 6Dl/hx7IUcFqw3DcLaJBD7TaX3O1G4qa5PTstgMKX/Xyn0nT2CMNN0Sxv3x9kyuIg0jLdF0tlkE/E
+ Ee8p885oAl0oBXynPWkFB36Nc0u+EzeVqwFIFe5iFFDL7DLP7h+e/KAYcRZNOyZVJ2PJAeFHIwjlr
+ VEHuGOGA==;
+Received: from s3.sipsolutions.net ([2a01:4f8:191:4433::2]
+ helo=sipsolutions.net) by bombadil.infradead.org with esmtps (Exim 4.94.2
+ #2 (Red Hat Linux)) id 1oU82i-005oZT-AJ for
+ wireless-regdb@lists.infradead.org; Fri, 02 Sep 2022 14:53:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+ Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+ Resent-Cc:Resent-Message-ID;
+ bh=8/9p4XOs9ynADcwk2rJHB943ArYkje+5EGwke1msBxs=; t=1662130388;
+ x=1663339988; b=rOSKlEt5kX30dsiKKZUC8U5iRmy0AA8L5jh/vsoK6tG7gzr
+ iAQwEz+eNTqkgi30u8rncilFU1uaUpQN9e+HCd2I7y+5Ul+n+0QDLeThLAy1C0+ELoNRwLUXqhlVC
+ lWRfMN0uWFTKphfl1S1RR1RTi2kDKcsOh9IOv9jkKypPB7q9tnRYq4lFJHzauVyXDbwq6WShh2RSZ
+ wH+6Uy8C2q2BuphJoSeRkHSWBKOtwy3gF3G2jcJXXtqVcxVm3PO8Zo5OBc8Ewgn/o7RLUQTd8bMF6
+ zg/rnyl8jYcBvuypIpP4rs3f57W9WgPojW9tCoIRDfrICQTxDpwPmo+V9XLZXOUw==;
+Message-ID: <b8674e67fee2393d4c5fe9d9842028545c6adcfa.camel@sipsolutions.net>
+From: Johannes Berg <johannes@sipsolutions.net>
+Date: Fri, 02 Sep 2022 16:53:00 +0200
+In-Reply-To: <20220901232734.5488-1-cesarb@cesarb.eti.br>
+References: <20220901232734.5488-1-cesarb@cesarb.eti.br>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
- for Brazil (BR)
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for Brazil (BR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -41,58 +51,24 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>, sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The rules for Brazil in wireless-regdb have no comment indicating where
-they came from, and haven't been updated in a long time. There have been
-some changes to the legislation since then, including the addition of
-the 6 GHz and 60 GHz ranges.
+On Thu, 2022-09-01 at 20:27 -0300, Cesar Eduardo Barros wrote:
+> 
+> +	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
+> +	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
+> +	# requirements, we can extend the range by 5 MHz to make the kernel
+> +	# happy and be able to use channel 144.
+> +	(5470 - 5730 @ 160), (27), DFS
+> +	(5730 - 5850 @ 80), (30)
+> 
 
-Signed-off-by: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
----
- db.txt | 23 ++++++++++++++++++-----
- 1 file changed, 18 insertions(+), 5 deletions(-)
+If you do the latter as 160 as well, and add AUTO-BW, couldn't you split
+them at 5725 correctly? But I guess it doesn't matter anyway.
 
-diff --git a/db.txt b/db.txt
-index 07cdf4a..c887557 100644
---- a/db.txt
-+++ b/db.txt
-@@ -279,12 +279,25 @@ country BO: DFS-JP
- 	(5250 - 5330 @ 80), (30), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+# Source:
-+# https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
-+# https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
-+# https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
- country BR: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (17), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
--	(5735 - 5835 @ 80), (30)
-+	(2400 - 2483.5 @ 40), (30)
-+	# The next three ranges have been reduced by 3dB, could be increased
-+	# to 30dBm if TPC is implemented.
-+	(5150 - 5250 @ 80), (27), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
-+	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
-+	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
-+	# requirements, we can extend the range by 5 MHz to make the kernel
-+	# happy and be able to use channel 144.
-+	(5470 - 5730 @ 160), (27), DFS
-+	(5730 - 5850 @ 80), (30)
-+	(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
-+	# EIRP=40dBm (43dBm peak)
-+	(57000 - 71000 @ 2160), (40)
- 
- country BS: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--- 
-2.37.2
-
+johannes
 
 _______________________________________________
 wireless-regdb mailing list
