@@ -3,44 +3,30 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:To
- :From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=slmdW9DxbH/+Lqkp+WrAu0sf6DMa46NeOX7bkm1GdWM=;
- b=M6i+ib2iFabLzi
- +i/2VDrJ8agjQcOSNSK/JI4br4q2FTVgvnIro4KP3kdCHoReot4pT46qHyYU8eSJKJO/6c4tmhiis
- DDSo+1k8PPihHT0SfcpYZe8sh0p13nrp3VhIHIW8QxLlmtXwfI3LUtpfVzRXXoIfQzwLxHxEFCEmz
- zy6etg7v6fP2DyZtgtfbbGmxgIbRSUpONiHNlRwJzIHeS1czQzul5bxAZnrQuZ5L+I/Wt8mDPSLtt
- Ay+J7ghkdbTXjAFvWjsg6yIJaNjsd60SEu9SAD44+j2BMbj2o57otevqmrCxapO9AaKppXf+akboo
- tIcaF0YlSaKH8Do3f+jQ==;
-Received: from s2.dolansoft.org ([212.51.146.245] helo=mx.dolansoft.org)
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1odGkb-00CUZt-AF
-	for wireless-regdb@lists.infradead.org; Tue, 27 Sep 2022 20:00:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=brun.one; s=s1;
- h=Sender:Content-Transfer-Encoding:MIME-Version:Message-Id:Date:Subject
- :To:From:Content-Type:Reply-To:Cc:Content-ID:Content-Description:In-Reply-To:
- References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:
- List-Owner:List-Archive; bh=PW5Lp3Kqt+ZRso1osq6nNwEpw4IqwI1BxL8MSrxEopU=;
- b=U
- 5icuuydsE742AwRkekpLrHrzKZYrojKH3fHF5TfYkXAUh1szLX32Nq8/sP5xTk0tih/20j3VHFub/
- YhLsi379xXAdP9Ky9+39YECm1Sxa+6yCu0AJ4/2bk/bdZmmWFELtV66Qe4KibY4tMf9xf6VGRq079
- yrhKvHCVdKh/l16boCgMqz+ZiVxhgZxB/yfI9OiXZCFSPk9wkJOJuZfflFVjpf6p8kG1sgQevyLI7
- JCuUbeoI4FvfMLA2bqTt1dYIIjAhXy4Mjrw/r1DmAYptPHlh9Rcm9jkB2q8iZ7TY2Bg4hyzknCIeO
- BGXoqvOCHM/t6utOXYo4pa2JpQuyN9doQ==;
-Received: from [212.51.153.89] (helo=blacklava.cluster.local)
-	by mx.dolansoft.org with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <lorenz@dolansoft.org>)
-	id 1odGkU-000qKs-AI
-	for wireless-regdb@lists.infradead.org; Tue, 27 Sep 2022 20:00:10 +0000
-From: Lorenz Brun <lorenz@brun.one>
-Date: Tue, 27 Sep 2022 22:00:06 +0200
-Message-Id: <20220927200006.2527013-1-lorenz@brun.one>
+ List-Owner; bh=3P7jTG1Th3FqWkHBxS6Y5GwAk1ftlMPNF81xXE6m4YQ=;
+ b=KriswcL7OPgw0N
+ 6cgO5KHUFchCiwJkEFOjHysL4B90Auq0fjyCUlMXENbnE/7nolgX/KzMnDZzvFgqyes/LiEOPU9M0
+ osYuuXp/Yj7BjvaAv2HNbQ2FJDj7gPWUkXMbq9j5QChtpeiGG9loDDQ6p94vOLnEr2aqfayXeHkxL
+ pL4VsvpzqBt2KpKBpAdaF9WoanErnAmXjhzriKuKnEDzUC3AlrI54vvfwZqF3pSKj9+6jU1AFTjKs
+ y2geD6Dcb7FtAEE0iT4jwyEz/ZusI5cUWyiruRFymd7LIDig4d5iMio0n+5yMVtmh78Je8lc2ZFyl
+ p8hXve3D4SqhaM1l6JKg==;
+Received: from mail49228.hm1479.locaweb.com.br ([201.76.49.228])
+	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oWmfb-003ZpG-MW
+	for wireless-regdb@lists.infradead.org; Fri, 09 Sep 2022 22:40:22 +0000
+Received: from mcbain0007.email.locaweb.com.br (189.126.112.75) by
+ mail4970.hm1479.locaweb.com.br id h3evf82n8lgs for
+ <wireless-regdb@lists.infradead.org>; Fri, 9 Sep 2022 19:32:13 -0300
+ (envelope-from <cesarb@cesarb.eti.br>)
+From: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+Date: Fri,  9 Sep 2022 19:39:47 -0300
+Message-Id: <20220909223947.27277-1-cesarb@cesarb.eti.br>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
- for Switzerland (CH)
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
+ rules for Brazil (BR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -55,39 +41,53 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, johannes@sipsolutions.net, Cesar Eduardo Barros <cesarb@cesarb.eti.br>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Switzerland has since approved the use of the 6 GHz spectrum as well as
-allowed the unlicensed use of the 66-71 GHz spectrum.
+The rules for Brazil in wireless-regdb have no comment indicating where
+they came from, and haven't been updated in a long time. There have been
+some changes to the legislation since then, including the addition of
+the 6 GHz and 60 GHz ranges.
 
-See https://www.ofcomnet.ch/api/rir/1010 for the current regulatory
-overview in Switzerland.
-
-Signed-off-by: Lorenz Brun <lorenz@brun.one>
+Signed-off-by: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
 ---
- db.txt | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ db.txt | 19 ++++++++++++++-----
+ 1 file changed, 14 insertions(+), 5 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 132f6de..012824f 100644
+index 07cdf4a..132f6de 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -358,8 +358,10 @@ country CH: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
--	# 60 GHz band channels 1-4 (ETSI EN 302 567)
--	(57000 - 66000 @ 2160), (40)
-+	# https://www.ofcomnet.ch/api/rir/1010/11
-+	(5945 - 6425 @ 160), (200 mW), NO-OUTDOOR, wmmrule=ETSI
-+	# https://www.ofcomnet.ch/api/rir/1010/07
+@@ -279,12 +279,21 @@ country BO: DFS-JP
+ 	(5250 - 5330 @ 80), (30), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
++# Source:
++# https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
++# https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
++# https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
+ country BR: DFS-FCC
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
+-	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-	(5490 - 5730 @ 160), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(2400 - 2483.5 @ 40), (30)
++	# The next three ranges have been reduced by 3dB, could be increased
++	# to 30dBm if TPC is implemented.
++	(5150 - 5250 @ 80), (27), NO-OUTDOOR, AUTO-BW
++	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
++	(5470 - 5725 @ 160), (27), DFS, AUTO-BW
++	(5725 - 5850 @ 80), (30), AUTO-BW
++	(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
++	# EIRP=40dBm (43dBm peak)
 +	(57000 - 71000 @ 2160), (40)
  
- country CI: DFS-FCC
+ country BS: DFS-FCC
  	(2402 - 2482 @ 40), (20)
 -- 
-2.37.2
+2.37.3
 
 
 _______________________________________________
