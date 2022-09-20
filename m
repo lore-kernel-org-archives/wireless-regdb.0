@@ -3,29 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=3P7jTG1Th3FqWkHBxS6Y5GwAk1ftlMPNF81xXE6m4YQ=;
- b=KriswcL7OPgw0N
- 6cgO5KHUFchCiwJkEFOjHysL4B90Auq0fjyCUlMXENbnE/7nolgX/KzMnDZzvFgqyes/LiEOPU9M0
- osYuuXp/Yj7BjvaAv2HNbQ2FJDj7gPWUkXMbq9j5QChtpeiGG9loDDQ6p94vOLnEr2aqfayXeHkxL
- pL4VsvpzqBt2KpKBpAdaF9WoanErnAmXjhzriKuKnEDzUC3AlrI54vvfwZqF3pSKj9+6jU1AFTjKs
- y2geD6Dcb7FtAEE0iT4jwyEz/ZusI5cUWyiruRFymd7LIDig4d5iMio0n+5yMVtmh78Je8lc2ZFyl
- p8hXve3D4SqhaM1l6JKg==;
-Received: from mail49228.hm1479.locaweb.com.br ([201.76.49.228])
-	by bombadil.infradead.org with esmtp (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oWmfb-003ZpG-MW
-	for wireless-regdb@lists.infradead.org; Fri, 09 Sep 2022 22:40:22 +0000
-Received: from mcbain0007.email.locaweb.com.br (189.126.112.75) by
- mail4970.hm1479.locaweb.com.br id h3evf82n8lgs for
- <wireless-regdb@lists.infradead.org>; Fri, 9 Sep 2022 19:32:13 -0300
- (envelope-from <cesarb@cesarb.eti.br>)
-From: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
-Date: Fri,  9 Sep 2022 19:39:47 -0300
-Message-Id: <20220909223947.27277-1-cesarb@cesarb.eti.br>
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=r8Gj6BBt8coP8x2sF8EoQ7s6gy7z5t8X67b29KyupJM=;
+ b=oGEUYC23T1zSjp
+ s73L+dhUrY0RV3X/H3/p9XTrfTBtge1xvaerajzzMwvm/tKMb2QTvm0YNZlVP+F/MQvzkHQQdhbaX
+ 0IODumZLyrVFxk64LpvnY5RuzVPtnPnIG9fY9YyJLxCMEPRMYgGndY1GL1YJJV+yz7oiInn/o4w4/
+ Z6VLUvfOuujlG/7SPSA8Zf5RKvdEYd957tBJ8jN9goiUS7weF/OoEayUKnd5u1jg+ecCE0Bx/H6IC
+ gafkz0EvMhUWJU3zQA3ZfhijUzlNf4w1lHJYjg6gnxqigHh014orycPRdwttxyQkVPaTQkwE06vPK
+ 39s5fxYbBoeaQCZBdVFQ==;
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1oan1T-007bXE-Qz
+	for wireless-regdb@lists.infradead.org; Tue, 20 Sep 2022 23:51:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1663717884;
+	bh=m7UKfFboQmNSIazcCyenHKoV2LMBka36TPbLGXyaABM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=BweDgZwbwoF2ds/2mbl+1UI7AZu0dZqmQARyExH/rRbp2oia+WNxDHRApRyWEET6y
+	 pDknRWJJ9S5N62XXnBdo1d10bCUW4nc6i8BLbZJ86FS1GJU4hnb2SS+iEtqufClPE/
+	 VQoOk52vsM3zkLoR9CNiocjzQCc8B3E9VmJTGOtCFCCDKg+o//KW7SphdGzW42JuUw
+	 ZKLFuCY7EMmxwrPUMEL9/JLXMZuUejCpw7aIsiZH32+WInwuDTTYJV14ZV2hRoZdv5
+	 Vn8yXGDXYfZoBYKmivBR51mh/GQxIvSsUTeipad2ia24PMyxdx36cMk8U6ddacWcHi
+	 AWJUxjOU7Vh/g==
+Date: Tue, 20 Sep 2022 18:51:23 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <YypR+61mc7AAmyxq@ubuntu-x1>
+References: <20220909223947.27277-1-cesarb@cesarb.eti.br>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
+Content-Disposition: inline
+In-Reply-To: <20220909223947.27277-1-cesarb@cesarb.eti.br>
+Subject: Re: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory
  rules for Brazil (BR)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
@@ -41,54 +50,19 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, johannes@sipsolutions.net, Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, johannes@sipsolutions.net
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The rules for Brazil in wireless-regdb have no comment indicating where
-they came from, and haven't been updated in a long time. There have been
-some changes to the legislation since then, including the addition of
-the 6 GHz and 60 GHz ranges.
+On Fri, Sep 09, 2022 at 07:39:47PM -0300, Cesar Eduardo Barros wrote:
+> The rules for Brazil in wireless-regdb have no comment indicating where
+> they came from, and haven't been updated in a long time. There have been
+> some changes to the legislation since then, including the addition of
+> the 6 GHz and 60 GHz ranges.
+> 
+> Signed-off-by: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
 
-Signed-off-by: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
----
- db.txt | 19 ++++++++++++++-----
- 1 file changed, 14 insertions(+), 5 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index 07cdf4a..132f6de 100644
---- a/db.txt
-+++ b/db.txt
-@@ -279,12 +279,21 @@ country BO: DFS-JP
- 	(5250 - 5330 @ 80), (30), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+# Source:
-+# https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
-+# https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
-+# https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
- country BR: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (17), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
--	(5735 - 5835 @ 80), (30)
-+	(2400 - 2483.5 @ 40), (30)
-+	# The next three ranges have been reduced by 3dB, could be increased
-+	# to 30dBm if TPC is implemented.
-+	(5150 - 5250 @ 80), (27), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
-+	(5470 - 5725 @ 160), (27), DFS, AUTO-BW
-+	(5725 - 5850 @ 80), (30), AUTO-BW
-+	(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
-+	# EIRP=40dBm (43dBm peak)
-+	(57000 - 71000 @ 2160), (40)
- 
- country BS: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
--- 
-2.37.3
-
+Applied, thanks!
 
 _______________________________________________
 wireless-regdb mailing list
