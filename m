@@ -3,38 +3,42 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=STkDe5JUo/Rj52Jq0VDc+WEDGfbOEtUPBoIhYYzIUJk=;
- b=RClwGaddxzE/kX
- xRpSeKpNDBEd3aX/bZ8gr0X1rynBGPtVr0Af4DSDo1iH62OKnm8a0o5IkjqEJ+PBzWZKy8vPoOf8D
- VBz7s4XxmGgtISmmvtAHwAgFRwz4pYMT1oC1mu69b/nROzgyoJrhB2gCORvm14tRwzlMHcQS4BxlT
- HjEiVaaR4Uhk3JM6+beOgthxICx8xVuSKKybFFctMFNepv+7rZjrrP7nyb6VJDkGcPZuMRyc/CHXo
- zMK501+fM3ofa93D8q++EszAQaXCXwi8r+pk3L/e5JUyDGhEQM4dPE0YoLCW8KTBvRjv3jcy/Krnd
- 5tqEOHzabejLtSMtVzow==;
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=CD6HLED4y3qyZ3n4Q2IErDsYnQybikxDjye/KvxbH9I=;
+ b=P318ACSKJFGggE
+ w1n5FL1V/FTyckHpZZsFuSTl3rPoAX+3pOhqubyRQ1INtJib6RPJyCS8yV9Q5YqDqVV/eiPWtC4wP
+ qcUhIBxXgosReF8zXOrijqUL4KcCnfo8wdnN844638k4O396T+Dcd+iXH2qtW8dssn9/D86jBqSf2
+ h263kU1ybn/DGKskwpUNac42kt3jWtsq0jYKAoyA4CvvKTn4YLOxG3QJ6bU040Io3cKAVdVus800j
+ iaRgaA3g+3o6pxP8FJLLpqYxkllMA0vwBNTwV/rXHK8RpvLv+/kyuLFcAIqXRaOqtD73BmAT8aE0X
+ NkMFSC0MfsUc+UGWLxfg==;
+Received: from mail-oa1-x29.google.com ([2001:4860:4864:20::29])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1okGEk-0069nR-3Y
-	for wireless-regdb@lists.infradead.org; Mon, 17 Oct 2022 02:52:19 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id 204so9848977pfx.10 for
- <wireless-regdb@lists.infradead.org>; Sun, 16 Oct 2022 19:52:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20210112;
- h=content-transfer-encoding:mime-version:message-id:date:subject:cc
- :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=qGZZN/AFG+E18FjNDFSOY1MKkkaUhFr7pWLXHYisKfo=;
- b=P6aCAof3fj2iynKF+R9vQd+vgVwQQmVQrx7UF42pcPIft0qYAZbNw8nD2jODEnDei5
- 5mxgmIVJxvdVFDHSFmL3gDgXu0lfAxTMovhSznDUdf9nk7WF8NnrCwweLfTcYfQUPfvQ
- CmD2vcylbznoxhZHznIh+VoLbe62rYdl0Zl7UesaZ4Er8cDCPmL8eKt5HhV7hd5CWNoA
- EwrxDXF62I6lF+j8SVuZ7HVYHZEppO2BLiUJ3iAgfOKK8hMdro5RzMfk+yrFOqMzzLc0
- JaHp4ROqsa91kL6KfwNYZA4Ttzyzz8u5plQFIjV1d/ySKcy9uPiIO5H60ONldGojNfSG S2pA==
-From: CaffeeLake <pascalcoffeelake@gmail.com>
-Date: Mon, 17 Oct 2022 11:52:04 +0900
-Message-Id: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
+	id 1oiig0-009KNb-5K
+	for wireless-regdb@lists.infradead.org; Wed, 12 Oct 2022 20:50:05 +0000
+Received: by mail-oa1-x29.google.com with SMTP id
+ 586e51a60fabf-134072c15c1so142194fac.2 for
+ <wireless-regdb@lists.infradead.org>; Wed, 12 Oct 2022 13:50:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=forshee.me;
+ s=google;
+ h=in-reply-to:content-disposition:mime-version:references:message-id
+ :subject:cc:to:from:date:from:to:cc:subject:date:message-id:reply-to;
+ bh=R8sTKdFtmfDqzDw0sO8Cb3NzCNCaL8pS0YGM8SgffAY=;
+ b=iJUnEfZdlBmdZ2kEUHxrW78KurBMb94FNUUS2xOgbQwpEG+MIwAf2+V1a1YKqGZMhL
+ X5cwyW//22+VTBg8Ku/fyjp7KKoUeYU6qQ2EcoZHTY18ulm11j7676NhDHrR7T150LUx
+ n6Gv6gIPpFzMqwbWJoyHO/Q8P53VIibk3yhaBzmvhVVwT88KC/YbfHXXs4mFud/e/inw
+ 0a4ZKiGxNg1sGaD4Pkuj4TyW1ZTAY3UthhlDwoxZZHZDSr3OmMQJlMhZ1+rwSHdDWFIb
+ Mu4NDeGYncjLnQVyeNFfClu3sDIQx28/Zg2ZkW3y6yesiEBK5qLa4X1NzEN1M3vEdrOJ v1qA==
+Date: Wed, 12 Oct 2022 15:47:45 -0500
+From: Seth Forshee <seth@forshee.me>
+Message-ID: <Y0cn8WDW6jRmADaa@ubuntu-x1>
+References: <20220927200006.2527013-1-lorenz@brun.one>
 MIME-Version: 1.0
-Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for Japan
- (JP) on 5GHz
+Content-Disposition: inline
+In-Reply-To: <20220927200006.2527013-1-lorenz@brun.one>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update regulatory
+ rules for Switzerland (CH)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,45 +53,20 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, CaffeeLake <PascalCoffeeLake@gmail.com>
+To: Lorenz Brun <lorenz@brun.one>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Support 144ch for JP Region.
+On Tue, Sep 27, 2022 at 10:00:06PM +0200, Lorenz Brun wrote:
+> Switzerland has since approved the use of the 6 GHz spectrum as well as
+> allowed the unlicensed use of the 66-71 GHz spectrum.
+> 
+> See https://www.ofcomnet.ch/api/rir/1010 for the current regulatory
+> overview in Switzerland.
+> 
+> Signed-off-by: Lorenz Brun <lorenz@brun.one>
 
-The Ministry of Internal Affairs and Communications has approved 144ch in Japan.
-
-Source: https://www.soumu.go.jp/main_content/000635492.pdf
-
-Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
----
- db.txt | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/db.txt b/db.txt
-index 012824f..8b3827a 100644
---- a/db.txt
-+++ b/db.txt
-@@ -907,13 +907,15 @@ country JO: DFS-JP
- 	(5170 - 5250 @ 80), (23)
- 	(5735 - 5835 @ 80), (23)
-
-+# Source:
-+# https://www.soumu.go.jp/main_content/000635492.pdf
- country JP: DFS-JP
- 	(2402 - 2482 @ 40), (20)
- 	(2474 - 2494 @ 20), (20), NO-OFDM
- 	(4910 - 4990 @ 40), (23)
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (23), DFS
-+	(5490 - 5730 @ 160), (23), DFS
- 	# 60 GHz band channels 2-4 at 10mW,
- 	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
- 	(57000 - 66000 @ 2160), (10 mW)
---
-2.37.3
-
+Sorry for the delay. Applied, thanks!
 
 _______________________________________________
 wireless-regdb mailing list
