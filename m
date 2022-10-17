@@ -6,35 +6,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
  :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=vrfLh7NhnjszCOi38LywMuL0czvQQUBfqgeLiHbrSk8=;
- b=zQ4MSNZQS2iuTF
- A77Wfmph+k8fjyS/wuHjnNyUcXEwMga6otmuaNw7MflVysb5x92Dl8YOkYvgOFrcO6nC2zJrSdgAR
- KwnVj4uPFb7PhIfErEMIdZVwCZLSEyvoj39NDuIsWIY4xnfCdUGUzj3T/cTiKzb4FUyl9hPaqNDt7
- sA1U3TIzuG7QbDmG5ATf2HnQztmk9j4E1PA/5mgh+KhY75WMNnXpAwmwP+u0X5MeVIS7M6m3UzA9J
- Nug6qUEqah1ofgNoUmmW05kSx3FsTkB1CSgUOji+PNSCDCFrxBuqbu3GLbFEgS1Icx18hDNGF6e0v
- ojuuWp0vE1OKQqPlRhPQ==;
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+ List-Owner; bh=STkDe5JUo/Rj52Jq0VDc+WEDGfbOEtUPBoIhYYzIUJk=;
+ b=RClwGaddxzE/kX
+ xRpSeKpNDBEd3aX/bZ8gr0X1rynBGPtVr0Af4DSDo1iH62OKnm8a0o5IkjqEJ+PBzWZKy8vPoOf8D
+ VBz7s4XxmGgtISmmvtAHwAgFRwz4pYMT1oC1mu69b/nROzgyoJrhB2gCORvm14tRwzlMHcQS4BxlT
+ HjEiVaaR4Uhk3JM6+beOgthxICx8xVuSKKybFFctMFNepv+7rZjrrP7nyb6VJDkGcPZuMRyc/CHXo
+ zMK501+fM3ofa93D8q++EszAQaXCXwi8r+pk3L/e5JUyDGhEQM4dPE0YoLCW8KTBvRjv3jcy/Krnd
+ 5tqEOHzabejLtSMtVzow==;
+Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1op691-00FSEp-Mc
-	for wireless-regdb@lists.infradead.org; Sun, 30 Oct 2022 11:06:25 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id l6so8229263pjj.0 for
- <wireless-regdb@lists.infradead.org>; Sun, 30 Oct 2022 04:06:22 -0700 (PDT)
+	id 1okGEk-0069nR-3Y
+	for wireless-regdb@lists.infradead.org; Mon, 17 Oct 2022 02:52:19 +0000
+Received: by mail-pf1-x42a.google.com with SMTP id 204so9848977pfx.10 for
+ <wireless-regdb@lists.infradead.org>; Sun, 16 Oct 2022 19:52:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20210112;
  h=content-transfer-encoding:mime-version:message-id:date:subject:cc
  :to:from:from:to:cc:subject:date:message-id:reply-to;
- bh=/J6k02TVORFNXB/Iha8H3DzOddnGAfqUw1Md3lKKnLo=;
- b=qtMGzOnm/UKmznDAjA7+mmgiwpPUtRT2LB/OU6bHDXdrulr/2Aei0oVOEmScqCb6Dp
- rlHQ2VyjzLQkR8cJL0zuCt/Vh6qIgYxoQv8zyTpq6ThMdjNAYGoJU+tSosdVPXM0AXO6
- 8ms0uspPWxhzZCKr8+Q7O+sSi+bEv9eaWtBEzD08TziGbhGN2wU72krBKcNtbqKSuPBT
- EGnYCs6uTL+D8a2Ypnu6xNUQBC6hjWDlkO9Yc5L8yVVD+YrNA2+G7yoeooqxOArftV6S
- vQDZ0yl0Ilbnp1wnzucYXDFPQh6cbZrUnBxuVBw9Rne2Z8sXEJaaZBE53NXdXXZApCof sC9g==
+ bh=qGZZN/AFG+E18FjNDFSOY1MKkkaUhFr7pWLXHYisKfo=;
+ b=P6aCAof3fj2iynKF+R9vQd+vgVwQQmVQrx7UF42pcPIft0qYAZbNw8nD2jODEnDei5
+ 5mxgmIVJxvdVFDHSFmL3gDgXu0lfAxTMovhSznDUdf9nk7WF8NnrCwweLfTcYfQUPfvQ
+ CmD2vcylbznoxhZHznIh+VoLbe62rYdl0Zl7UesaZ4Er8cDCPmL8eKt5HhV7hd5CWNoA
+ EwrxDXF62I6lF+j8SVuZ7HVYHZEppO2BLiUJ3iAgfOKK8hMdro5RzMfk+yrFOqMzzLc0
+ JaHp4ROqsa91kL6KfwNYZA4Ttzyzz8u5plQFIjV1d/ySKcy9uPiIO5H60ONldGojNfSG S2pA==
 From: CaffeeLake <pascalcoffeelake@gmail.com>
-Date: Sun, 30 Oct 2022 20:05:10 +0900
-Message-Id: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
+Date: Mon, 17 Oct 2022 11:52:04 +0900
+Message-Id: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
 MIME-Version: 1.0
 Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for Japan
- (JP) on 6GHz
+ (JP) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -53,35 +53,35 @@ To: sforshee@kernel.org
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, CaffeeLake <PascalCoffeeLake@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Support 6GHz for JP Region.
+Support 144ch for JP Region.
 
-The Ministry of Internal Affairs and Communications has approved 6GHz (5925 - 6425 MHz) in Japan.
+The Ministry of Internal Affairs and Communications has approved 144ch in Japan.
 
-Source: https://www.soumu.go.jp/main_content/000833682.pdf
+Source: https://www.soumu.go.jp/main_content/000635492.pdf
 
 Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
 ---
- db.txt | 3 +++
- 1 file changed, 3 insertions(+)
+ db.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/db.txt b/db.txt
-index 012824f..96527c9 100644
+index 012824f..8b3827a 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -907,6 +907,8 @@ country JO: DFS-JP
+@@ -907,13 +907,15 @@ country JO: DFS-JP
  	(5170 - 5250 @ 80), (23)
  	(5735 - 5835 @ 80), (23)
 
 +# Source:
-+# https://www.soumu.go.jp/main_content/000833682.pdf
++# https://www.soumu.go.jp/main_content/000635492.pdf
  country JP: DFS-JP
  	(2402 - 2482 @ 40), (20)
  	(2474 - 2494 @ 20), (20), NO-OFDM
-@@ -914,6 +916,7 @@ country JP: DFS-JP
+ 	(4910 - 4990 @ 40), (23)
  	(5170 - 5250 @ 80), (20), AUTO-BW
  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
- 	(5490 - 5710 @ 160), (23), DFS
-+	(5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
+-	(5490 - 5710 @ 160), (23), DFS
++	(5490 - 5730 @ 160), (23), DFS
  	# 60 GHz band channels 2-4 at 10mW,
  	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
  	(57000 - 66000 @ 2160), (10 mW)
