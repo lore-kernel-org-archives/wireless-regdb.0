@@ -3,41 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=rcLj8uexxPDaNrlf4JxUWwlWomkGWapeZaBbEwKkHj8=;
- b=24C/6QePVDeYRH
- l3tbahTL1oR5kncfKAnk0AC86suZO8VBaCJWDzB9Ly/1ayWt0gSHNp3k22/IF/SVxzwAF8lmHUCCC
- eKV1S/kv4hWNtgsfajcWDLRTHWOgtDYeIPsVChLKbqBc7QKqswFbDzIp7flmBmn4iCmhy5iBnNQA5
- EGt+BEbou7EnWrRZPRHYesQo/0X3Y9Pq1tvZcBQJh30h/AVVDht8PTErLYqRTZhLEnAls+ww0lh1n
- JSQPwOBny19A0ip5yLBb8xFebbgmhc4ojyA6BJvDP7nKh9NtllUX4aRn7rWfj1RhuTci2fu3YRMQ8
- pW5kqPZKTB/xYM9gfvYg==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=vrfLh7NhnjszCOi38LywMuL0czvQQUBfqgeLiHbrSk8=;
+ b=zQ4MSNZQS2iuTF
+ A77Wfmph+k8fjyS/wuHjnNyUcXEwMga6otmuaNw7MflVysb5x92Dl8YOkYvgOFrcO6nC2zJrSdgAR
+ KwnVj4uPFb7PhIfErEMIdZVwCZLSEyvoj39NDuIsWIY4xnfCdUGUzj3T/cTiKzb4FUyl9hPaqNDt7
+ sA1U3TIzuG7QbDmG5ATf2HnQztmk9j4E1PA/5mgh+KhY75WMNnXpAwmwP+u0X5MeVIS7M6m3UzA9J
+ Nug6qUEqah1ofgNoUmmW05kSx3FsTkB1CSgUOji+PNSCDCFrxBuqbu3GLbFEgS1Icx18hDNGF6e0v
+ ojuuWp0vE1OKQqPlRhPQ==;
+Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1oTjeX-00Bm3r-Ph
-	for wireless-regdb@lists.infradead.org; Thu, 01 Sep 2022 12:50:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1662036636;
-	bh=OWtdBP4/+VXtdZ5lVRHsOHA3h+/yoWhw6ulhO3A835g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=VGdRNbgNIFpml+QvbmtsJzIb0+vFZKtb8nrkvP3udIwWJ5e5SDQTKl37kH4mCQS2j
-	 BsNoFggY93HzVdMPCwS3SVKP9GomDz4ugCTDnGc748XaxddLV02HjLfZ6I4VTTjasS
-	 JC7VuUJYRdFIN0MFOz89XqWNKzO/5VOfwxuiv401Sj6ZThmp/376w1Cxp/QeJBACJ5
-	 4Hjlu6DVfOtSkyeMQ35SLPfxeckOXWeo+m1C8pW7nQcd9eRCfTykvowuUo7kcSu8nl
-	 emGnBRaLuMit8fGFapsiuR5ZBeW6jm2qmicOm3LOnyIY7035pT57W8Jv+B9fiJ1Aql
-	 VA6LO/tR4vuFQ==
-Date: Thu, 1 Sep 2022 07:50:35 -0500
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <YxCqm+3tCDpsaZxR@do-x1extreme>
-References: <271ca023-d574-7d84-a020-ec5950fb500e@cesarb.eti.br>
- <Yw4cTotCZm7CH/v7@ubuntu-x1>
- <2cf2cb6e-8083-9c09-c2a6-ae49424ea37a@cesarb.eti.br>
+	id 1op691-00FSEp-Mc
+	for wireless-regdb@lists.infradead.org; Sun, 30 Oct 2022 11:06:25 +0000
+Received: by mail-pj1-x1033.google.com with SMTP id l6so8229263pjj.0 for
+ <wireless-regdb@lists.infradead.org>; Sun, 30 Oct 2022 04:06:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20210112;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=/J6k02TVORFNXB/Iha8H3DzOddnGAfqUw1Md3lKKnLo=;
+ b=qtMGzOnm/UKmznDAjA7+mmgiwpPUtRT2LB/OU6bHDXdrulr/2Aei0oVOEmScqCb6Dp
+ rlHQ2VyjzLQkR8cJL0zuCt/Vh6qIgYxoQv8zyTpq6ThMdjNAYGoJU+tSosdVPXM0AXO6
+ 8ms0uspPWxhzZCKr8+Q7O+sSi+bEv9eaWtBEzD08TziGbhGN2wU72krBKcNtbqKSuPBT
+ EGnYCs6uTL+D8a2Ypnu6xNUQBC6hjWDlkO9Yc5L8yVVD+YrNA2+G7yoeooqxOArftV6S
+ vQDZ0yl0Ilbnp1wnzucYXDFPQh6cbZrUnBxuVBw9Rne2Z8sXEJaaZBE53NXdXXZApCof sC9g==
+From: CaffeeLake <pascalcoffeelake@gmail.com>
+Date: Sun, 30 Oct 2022 20:05:10 +0900
+Message-Id: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2cf2cb6e-8083-9c09-c2a6-ae49424ea37a@cesarb.eti.br>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Brazil (BR)
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for Japan
+ (JP) on 6GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,72 +44,53 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, CaffeeLake <PascalCoffeeLake@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, Aug 31, 2022 at 11:44:17PM -0300, Cesar Eduardo Barros wrote:
-> Em 30/08/2022 11:18, Seth Forshee escreveu:
-> > On Wed, Aug 17, 2022 at 08:31:56PM -0300, Cesar Eduardo Barros wrote:
-> > > 	#(902 - 907.5 @ ???), (30)
-> > > 	#(915 - 928 @ ???), (30)
-> > 
-> > For these ranges I think you should use the same bandwidth as other
-> > rules in the database, i.e. 2 and 16 MHz.
-> 
-> I found only two entries in the database with rules for the 900MHz
-> frequencies: US and "world". I don't think the US rule is a good model here;
-> it can use 16 MHz because it's a contiguous range, but the range for Brazil
-> has a hole in the middle.
-> 
-> Since there's nothing that a found in these rules which mention a maximum
-> channel width, the correct width is probably the maximum which fits on each
-> piece of the range. That is,
-> 
-> (902 - 907.5 @ 4), (30)
-> (915 - 928 @ 8), (30)
-> 
-> As far as I could find, the hole between 907.5 and 915 exists because there
-> are three 2.5 MHz-wide GSM uplink channels there. However, I also found out
-> that there is a proposal within ANATEL (Consulta Pública 52 from 2021) to
-> expand it with another uplink channel at 905 - 907.5 (there are actually
-> five uplink channels in that proposal, the other one is at 898.5 - 901). I
-> have no idea when this will become official, or whether it has already
-> happened (and just wasn't reflected yet in the restricted radiation rules I
-> had researched), and what effect it would have on 802.11ah users.
-> 
-> Given the uncertainty from that change, and given that so far there are
-> rules for the 900 MHz range in wireless-regdb only for the USA, it might be
-> wise to hold it for now and apply only the rest of the changes, without
-> these 900 MHz ranges.
+Support 6GHz for JP Region.
 
-Sounds good to me.
+The Ministry of Internal Affairs and Communications has approved 6GHz (5925 - 6425 MHz) in Japan.
 
-> > Otherwise I think these changes look good. If you can send a patch with
-> > the changes I would appreciate it, otherwise let me know and I can send
-> > a patch.
-> 
-> I will prepare a patch tomorrow.
+Source: https://www.soumu.go.jp/main_content/000833682.pdf
 
-Thanks!
+Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
+---
+ db.txt | 3 +++
+ 1 file changed, 3 insertions(+)
 
-> 
-> -- 
-> Cesar Eduardo Barros
-> cesarb@cesarb.eti.br
-> 
-> 
-> _______________________________________________
-> wireless-regdb mailing list
-> wireless-regdb@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/wireless-regdb
+diff --git a/db.txt b/db.txt
+index 012824f..96527c9 100644
+--- a/db.txt
++++ b/db.txt
+@@ -907,6 +907,8 @@ country JO: DFS-JP
+ 	(5170 - 5250 @ 80), (23)
+ 	(5735 - 5835 @ 80), (23)
+
++# Source:
++# https://www.soumu.go.jp/main_content/000833682.pdf
+ country JP: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+ 	(2474 - 2494 @ 20), (20), NO-OFDM
+@@ -914,6 +916,7 @@ country JP: DFS-JP
+ 	(5170 - 5250 @ 80), (20), AUTO-BW
+ 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+ 	(5490 - 5710 @ 160), (23), DFS
++	(5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
+ 	# 60 GHz band channels 2-4 at 10mW,
+ 	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
+ 	(57000 - 66000 @ 2160), (10 mW)
+--
+2.37.3
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
