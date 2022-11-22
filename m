@@ -3,39 +3,32 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=k2TXW+mPBaU/D9AvY9UUzv++ms2+26vSeHCFGokuDzM=;
- b=KIbk1WcZrKqGCW
- Bo+oDvh2G9bQkjGc6YutDIm+IMtRLygvtL7HY3Omy7+009mpc86v3N+8whLMiSWQpPSpoNkb0An4W
- KOWXIe/jInj/9+HSky5NGhfdz29rTAA5lyed0e5Tatn8JHF9Yyu8M07RBEeU4f8txuVpCyLKQJp4W
- asfdRz+uRmROrvEw86kTo/v1Pef/5Um9PmBjyv4ndtF1xxLRgtsprN7B+zD86bNmiIDVRB2Fr7xPD
- egktHeR8S/SsQ6ppDQpPRL7RiTJGUQWpKjWPYbctT6CJEAPgZdBSu5ZMLsq5AVxR03VLjoInYapob
- E4NfG8VOyIJBv+NFgtug==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1osnv4-00F1NG-QD
-	for wireless-regdb@lists.infradead.org; Wed, 09 Nov 2022 16:27:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1668011234;
-	bh=Kf1Uav0Jvf3kL1HMfC7BCUlGrQ5MIRxDnA+H66XQ/5s=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TjTCYw+/Wyumyf0w26Wt7kXnhlh1kW5HbGJv1r8KFJc57mq3910Qbi+GHJ0FDgoKB
-	 wCiKuxJZsKxna1qxv+dIA0jlAkV5C7hsXQL1c7Ynflo/UeG/JoeFc1VkwETxt1Xwtb
-	 bcfXyS+7EE5odUQy2PiKJ92UVq/y6uZG9dygROwEINrS/fOE9ZzF+WlxCDSdQLvEof
-	 1kbSxE+r4Qkdr1PZgG2V3eTj4n8xJQjRWDbpv+SOcxJx6PZYUd2ch9iDn3U/punK7Z
-	 qTDFBLSIqDt2pdQLAo+2QzR+w9VMDU9GBZx++TO0nkZ4G8PRYPxXD1ca3mIZzfY8Uj
-	 sEwyqTTEkr40A==
-Date: Wed, 9 Nov 2022 10:27:13 -0600
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <Y2vU4YAs5wmibcGF@ubuntu-x1>
-References: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=RWVyvsV2Rx4oXytCi/qbSKrcKfIr2ggZoXpQWSR7o9o=;
+ b=nQNXxn1ga0Zyiz
+ eDegFG7wb2egCye0191nWH4zJz7DbZdKFPRREZnk70o8No0ZGgit/fd7Zc7bwMQLKjlr5VoUGUfHf
+ n4S6YaI8kmykAGnnTVGyglvCliwuhTOpYXDgXetHzyLN0iqBSl4q2hFEkBiDLAgojqlVS2vTfmj7k
+ T4w2hcjKJk+gYCMi2c6enPjBENCtmcHU1Zj3/rAk7d1qNNyYaed9jLNCQIrPkeHvuqf/NqGdqrCgI
+ OqAaW9UX+L/1FFVcS7SvYee9tITkxsfD5+mnPZc02P1OU8B9ON3mc7iKfRLktcxyc7xvXz5yS11RQ
+ zdpDz/Skpqm4NCWxn4JA==;
+Received: from mail-tyzapc01on2075.outbound.protection.outlook.com
+ ([40.107.117.75] helo=APC01-TYZ-obe.outbound.protection.outlook.com) by
+ bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux)) id
+ 1oxJJr-002gdk-2i for wireless-regdb@lists.infradead.org; Tue, 22 Nov 2022
+ 02:47:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=newratek.onmicrosoft.com; s=selector1-newratek-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nXYL7XCdjn34p96lZiyL7qaGzK0aKUfngqCJWrYgtDM=;
+ b=Pth6XV2IC08znbWY6LbUfmxi9XCD3cBW0TxUWbwqjsSwhxSjM7o5U9Gy5PrLi7ad9+jRfGq0BTLPbkxE8Jbz17WK0S2qpBz1u/8MKLM9VRrzdj79RBploeS5YLjjludzC9ihbKqLuX2bjMPbsjMzmBaLw1aBBVVB/HYEPVpcfGI=
+From: JUN-KYU SHIN <jk.shin@newratek.com>
+Date: Tue, 22 Nov 2022 11:45:52 +0900
+Message-Id: <20221122024550.11415-1-jk.shin@newratek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Japan (JP) on 6GHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: add support for KR S1G
+ channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,68 +38,50 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: CaffeeLake <pascalcoffeelake@gmail.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: sforshee@kernel.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, JUN-KYU SHIN <jk.shin@newratek.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sun, Oct 30, 2022 at 08:05:10PM +0900, CaffeeLake wrote:
-> Support 6GHz for JP Region.
-> 
-> The Ministry of Internal Affairs and Communications has approved 6GHz (5925 - 6425 MHz) in Japan.
-> 
-> Source: https://www.soumu.go.jp/main_content/000833682.pdf
-> 
-> Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
+The 917-923.5MHz band is KR USN 1 band, so follows
+the emmision limists described in part 8.4.4
 
-Sorry for the slow response on your patches.
+The 925-931MHz band is KR USN 5 band, so follows
+the emmision limists described in part 8.8.1
 
-This patch conflicts with the other patch you sent for 5 GHz. I can
-easily reconcile the conflict in the rules, but I cannot read the linked
-documents (and machine translations is not proving very helpful). I
-can't tell if the link in this patch supersedes the link from the other
-patch, or if they are complimentary and should both be kept in the
-database. Can you clarify, or else resend both as a series with the
-second patch based off of the modifications from the first?
+Signed-off-by: JUN-KYU SHIN <jk.shin@newratek.com>
+---
+ db.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-Thanks,
-Seth
+diff --git a/db.txt b/db.txt
+index 012824f..1b4fe11 100644
+--- a/db.txt
++++ b/db.txt
+@@ -950,7 +950,14 @@ country KP: DFS-JP
+ # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
+ # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
+ # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
++# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000211335
+ country KR: DFS-JP
++	# S1G Channel USN 1 (917 - 923.5)
++	(920.5 - 921.5 @ 1), (10)
++	(921.5 – 922.5 @ 1), (14)
++	# S1G Channel USN 5 (925 - 931)
++	(926 - 930 @ 1), (17)
++	(926 - 930 @ 2), (20)
+ 	(2400 - 2483.5 @ 40), (23)
+ 	(5150 - 5230 @ 40), (23), AUTO-BW
+ 	# max. PSD 2.5 mW/MHz in 5230-5250 MHz frequency range
+-- 
+2.25.1
 
-> ---
->  db.txt | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/db.txt b/db.txt
-> index 012824f..96527c9 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -907,6 +907,8 @@ country JO: DFS-JP
->  	(5170 - 5250 @ 80), (23)
->  	(5735 - 5835 @ 80), (23)
-> 
-> +# Source:
-> +# https://www.soumu.go.jp/main_content/000833682.pdf
->  country JP: DFS-JP
->  	(2402 - 2482 @ 40), (20)
->  	(2474 - 2494 @ 20), (20), NO-OFDM
-> @@ -914,6 +916,7 @@ country JP: DFS-JP
->  	(5170 - 5250 @ 80), (20), AUTO-BW
->  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
->  	(5490 - 5710 @ 160), (23), DFS
-> +	(5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
->  	# 60 GHz band channels 2-4 at 10mW,
->  	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
->  	(57000 - 66000 @ 2160), (10 mW)
-> --
-> 2.37.3
-> 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
