@@ -6,36 +6,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
  :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=pyM0b9xWxz8tHqwFJsnu3GNDW4neezxS97fnVJWSDYQ=;
- b=Ti5F/AeVDIWgUc
- 6N3KRGfDn+86nKdxtU5wvtpgpNa4EkCHTq7Ax1pRvv8UQg2Q1rvI/Y32GwemtBQ7kVlz/LFB/e5lE
- rFo+RZBOfSpHQaP+sTARJS8z2pOQsxE7ncuBuQWgtVjflXwzYbpkv0o/5KNIxfWxmHG910KMhGlc0
- bk64DXGvEcwOWByVtwFUQPYL0YW+6Nl1GX/+p0cIR2LHv2vcFD2fXZoecC5OrGjDcPbZ+1rhKZrf9
- QfLMxLWMwu9uFRXnsd/twgXAQrwtw83sKaC+h0jBT6wUA3WNbXZqAfomO3CmNl5IaL1a1gSOlGpFZ
- vpFdiVG3XPbk6kkQ8RfQ==;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ List-Owner; bh=kvzZpjPKCi3o21KC0H06BVCGMn3odK8Yi++fFjdwshI=;
+ b=pJm1Jb7QNZDH2u
+ 81i2Nrad2phMChf1nA1XSVXWjvWR48i6UFS12kRJqr9fG1l3yTF1K36yEv3QKmsf/yxzU/d4p0raX
+ HzDbp+TpcUIr6BSaIidkqbExKkMkf3E8SYWTar1nLDs4uMUEux8RZKVqnbW/1xgDlWaa/HQMYi7mM
+ C1DcyM32YWZaTzGcU7n4s33Y7PEKZ7VXitsgKEUtc1/Wk0ZXJAw9ncJc0G9CGIDArd4g1LNswJVzD
+ lu3jo8cyO/nLQQjFPA+97pcgPDwxK4vFMQ/QiSBrIW18B5Pjeg3GKKG3VQ5AXLAz3w5Mg4kQiB3v/
+ 7bDm8a/POceXF1UJY+Tw==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2Jek-00B7TM-LY
-	for wireless-regdb@lists.infradead.org; Mon, 05 Dec 2022 22:09:48 +0000
+	id 1p2JeQ-00B7Hp-Pc
+	for wireless-regdb@lists.infradead.org; Mon, 05 Dec 2022 22:09:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1670278184;
-	bh=F/dUs+EC7sp9j+d7/R+Dw1DSfEMj7rJ8IWNvNgJg+h0=;
+	s=k20201202; t=1670278165;
+	bh=60NlLFX+EDU05h3PfVBbqUOSwhIMzkLYZPYAqEyh4c8=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=iVVrFOV4DNXoJyDj2R+dVuYmtwb8B5XwXkwbh3yBJzPPaznNlFh1uRgTMD3frtyv3
-	 2qlvOiu0BFbNbqaA63sAr86PPXrsRjdtat121sAXCqIcmfipy9osAS3ZlrXI7LUGXk
-	 neV6kHC65nJbNxjdhr5z7jlLN6WTp+vTsUhKQMxq+t7Wii/20WQwjrHFWHFWvdvHzE
-	 tFBNLZPyX8vPUIQ3O2VCrkf546MU9aBtSsPdA0SmfGwiEc1JSpUSxCZ3ba3YVSqwUK
-	 RVQYeSBW50muE9aI330+dNEtFYPtFGjgjN9PUb0RNsoBiFnU+rsICvuQ8U3Yv9sK/C
-	 KMr+hiobUu9qw==
-Date: Mon, 5 Dec 2022 16:09:42 -0600
+	b=U6+AE79FTTV5QgHBExtZ2Gr78p+6x9Z7eFIp9i8sNGedsVe/WbOcbsj+TjtYFa2ND
+	 K2rlVvRinpFt2oVQM5/VyYkmjNjYpPzTHzd/oPpaLR79GlQmEADFTbH3QgKrA2sgqh
+	 ATKRbhWK0rscpaLQy6oy8fkxMmy1dmUVM9xBj30qn2pJlG77XAX6CszZcd4zjYE4HP
+	 JbT0888aI9YdwDbyKFJm16w8I4FkMXTZ8nsPDwilSlXFMC8CaDPGOSj81Pzpat3tOv
+	 z3YPGldZeislAGh1hY5Mq/+uMHCGb7UMRfspdIEq8XMdXLtwaSak56PmK3eqQY4JgD
+	 ffcL5oGcHDh8Q==
+Date: Mon, 5 Dec 2022 16:09:24 -0600
 From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <Y45sJt1w5eIY0O5m@ubuntu-x1>
-References: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
+Message-ID: <Y45sFNcWYpISRYXa@ubuntu-x1>
+References: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221030110510.752996-1-PascalCoffeeLake@gmail.com>
+In-Reply-To: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
 Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Japan (JP) on 6GHz
+ Japan (JP) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -54,39 +54,39 @@ To: CaffeeLake <pascalcoffeelake@gmail.com>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sun, Oct 30, 2022 at 08:05:10PM +0900, CaffeeLake wrote:
-> Support 6GHz for JP Region.
+On Mon, Oct 17, 2022 at 11:52:04AM +0900, CaffeeLake wrote:
+> Support 144ch for JP Region.
 > 
-> The Ministry of Internal Affairs and Communications has approved 6GHz (5925 - 6425 MHz) in Japan.
+> The Ministry of Internal Affairs and Communications has approved 144ch in Japan.
 > 
-> Source: https://www.soumu.go.jp/main_content/000833682.pdf
+> Source: https://www.soumu.go.jp/main_content/000635492.pdf
 > 
 > Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
 
 Applied, thanks!
 
 > ---
->  db.txt | 3 +++
->  1 file changed, 3 insertions(+)
+>  db.txt | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
 > diff --git a/db.txt b/db.txt
-> index 012824f..96527c9 100644
+> index 012824f..8b3827a 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -907,6 +907,8 @@ country JO: DFS-JP
+> @@ -907,13 +907,15 @@ country JO: DFS-JP
 >  	(5170 - 5250 @ 80), (23)
 >  	(5735 - 5835 @ 80), (23)
 > 
 > +# Source:
-> +# https://www.soumu.go.jp/main_content/000833682.pdf
+> +# https://www.soumu.go.jp/main_content/000635492.pdf
 >  country JP: DFS-JP
 >  	(2402 - 2482 @ 40), (20)
 >  	(2474 - 2494 @ 20), (20), NO-OFDM
-> @@ -914,6 +916,7 @@ country JP: DFS-JP
+>  	(4910 - 4990 @ 40), (23)
 >  	(5170 - 5250 @ 80), (20), AUTO-BW
 >  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
->  	(5490 - 5710 @ 160), (23), DFS
-> +	(5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
+> -	(5490 - 5710 @ 160), (23), DFS
+> +	(5490 - 5730 @ 160), (23), DFS
 >  	# 60 GHz band channels 2-4 at 10mW,
 >  	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
 >  	(57000 - 66000 @ 2160), (10 mW)
