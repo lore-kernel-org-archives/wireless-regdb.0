@@ -6,36 +6,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
  :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=kvzZpjPKCi3o21KC0H06BVCGMn3odK8Yi++fFjdwshI=;
- b=pJm1Jb7QNZDH2u
- 81i2Nrad2phMChf1nA1XSVXWjvWR48i6UFS12kRJqr9fG1l3yTF1K36yEv3QKmsf/yxzU/d4p0raX
- HzDbp+TpcUIr6BSaIidkqbExKkMkf3E8SYWTar1nLDs4uMUEux8RZKVqnbW/1xgDlWaa/HQMYi7mM
- C1DcyM32YWZaTzGcU7n4s33Y7PEKZ7VXitsgKEUtc1/Wk0ZXJAw9ncJc0G9CGIDArd4g1LNswJVzD
- lu3jo8cyO/nLQQjFPA+97pcgPDwxK4vFMQ/QiSBrIW18B5Pjeg3GKKG3VQ5AXLAz3w5Mg4kQiB3v/
- 7bDm8a/POceXF1UJY+Tw==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+ List-Owner; bh=aeVkh6z6ZR8MocWT+PrWq172m5iE3E9ISvgtNZEcAZk=;
+ b=X4wdqBAJRaPZ2F
+ YKUDGspKdlJJzllhp6iguj3iapDYeu9NMz8eMsGZbC6dHC+CkgzirrsJ9YBOzmdoNz687iSK7XL0X
+ FZ4iL2/ph2VwoMnp3hq52nQUCyw2RtkiJgxazE09/OJDk+SFN7OM5+9LTeDpe+klfOhyxaNmixqpg
+ PXlw/P7pkQkoaCa+PDdP/QuXQI8MSNVcWWoxNRYiTQ2llkGl+j364a3rb+y8/x2/lin+1ApR1DXJ3
+ 5SSmW8O2i+TFei2EtE7xmwPzzJoyUh6fHpskKZsFQfgmy9RXVg7zrHraQwqcUms+P8tA+enA3wtP5
+ YJH+f2fEF10M3AbpSOoQ==;
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2JeQ-00B7Hp-Pc
-	for wireless-regdb@lists.infradead.org; Mon, 05 Dec 2022 22:09:28 +0000
+	id 1p2JdL-00B6aw-R7
+	for wireless-regdb@lists.infradead.org; Mon, 05 Dec 2022 22:08:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1670278165;
-	bh=60NlLFX+EDU05h3PfVBbqUOSwhIMzkLYZPYAqEyh4c8=;
+	s=k20201202; t=1670278095;
+	bh=gHqtxLNinWHlwCLy2Fxuy4wHAPCR+sLgYbAsrBrnwNY=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=U6+AE79FTTV5QgHBExtZ2Gr78p+6x9Z7eFIp9i8sNGedsVe/WbOcbsj+TjtYFa2ND
-	 K2rlVvRinpFt2oVQM5/VyYkmjNjYpPzTHzd/oPpaLR79GlQmEADFTbH3QgKrA2sgqh
-	 ATKRbhWK0rscpaLQy6oy8fkxMmy1dmUVM9xBj30qn2pJlG77XAX6CszZcd4zjYE4HP
-	 JbT0888aI9YdwDbyKFJm16w8I4FkMXTZ8nsPDwilSlXFMC8CaDPGOSj81Pzpat3tOv
-	 z3YPGldZeislAGh1hY5Mq/+uMHCGb7UMRfspdIEq8XMdXLtwaSak56PmK3eqQY4JgD
-	 ffcL5oGcHDh8Q==
-Date: Mon, 5 Dec 2022 16:09:24 -0600
+	b=c9Gn9u0XRw4YZzhpJ2snv19QxiKCQca0JVqEPJiL70BcZzaxs9RV1OG9tqtUvR7Kq
+	 yJeEjCcKSrTpoRL9bSMOsIIB8HmK4VqrqPBhLwyrSdj2CpQVN0A8YI6e3x+ujG5yF/
+	 M52q2+QUW75E2GZn4aGZueRntodSkrelTxlL0srZyzmNkHau0ON1TKBqANkf6QDU4I
+	 LdnSwl96+792l2Wt3rBG3ZuSj3bmh7XVAVhgfPxc7fFkMtnGFcAI3sZlvI59yAJIQs
+	 4+ATOeGwRqLF3/z1d6QnvsAHIjhVwiOjG81ayCZHnpVtgnbIoOvtJX2/0rF9h1Txn4
+	 WMMEnC4zlntZA==
+Date: Mon, 5 Dec 2022 16:08:13 -0600
 From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <Y45sFNcWYpISRYXa@ubuntu-x1>
-References: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
+Message-ID: <Y45rzTlZvlFrqao/@ubuntu-x1>
+References: <20221122024550.11415-1-jk.shin@newratek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20221017025204.1370004-1-PascalCoffeeLake@gmail.com>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Japan (JP) on 5GHz
+In-Reply-To: <20221122024550.11415-1-jk.shin@newratek.com>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add support for KR
+ S1G channels
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -45,57 +45,61 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: CaffeeLake <pascalcoffeelake@gmail.com>
+To: JUN-KYU SHIN <jk.shin@newratek.com>
 Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Mon, Oct 17, 2022 at 11:52:04AM +0900, CaffeeLake wrote:
-> Support 144ch for JP Region.
+On Tue, Nov 22, 2022 at 11:45:52AM +0900, JUN-KYU SHIN wrote:
+> The 917-923.5MHz band is KR USN 1 band, so follows
+> the emmision limists described in part 8.4.4
 > 
-> The Ministry of Internal Affairs and Communications has approved 144ch in Japan.
+> The 925-931MHz band is KR USN 5 band, so follows
+> the emmision limists described in part 8.8.1
 > 
-> Source: https://www.soumu.go.jp/main_content/000635492.pdf
-> 
-> Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
+> Signed-off-by: JUN-KYU SHIN <jk.shin@newratek.com>
 
-Applied, thanks!
+Thanks for the patch. I have some questions and comments, below.
 
 > ---
->  db.txt | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+>  db.txt | 7 +++++++
+>  1 file changed, 7 insertions(+)
 > 
 > diff --git a/db.txt b/db.txt
-> index 012824f..8b3827a 100644
+> index 012824f..1b4fe11 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -907,13 +907,15 @@ country JO: DFS-JP
->  	(5170 - 5250 @ 80), (23)
->  	(5735 - 5835 @ 80), (23)
-> 
-> +# Source:
-> +# https://www.soumu.go.jp/main_content/000635492.pdf
->  country JP: DFS-JP
->  	(2402 - 2482 @ 40), (20)
->  	(2474 - 2494 @ 20), (20), NO-OFDM
->  	(4910 - 4990 @ 40), (23)
->  	(5170 - 5250 @ 80), (20), AUTO-BW
->  	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
-> -	(5490 - 5710 @ 160), (23), DFS
-> +	(5490 - 5730 @ 160), (23), DFS
->  	# 60 GHz band channels 2-4 at 10mW,
->  	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
->  	(57000 - 66000 @ 2160), (10 mW)
-> --
-> 2.37.3
-> 
+> @@ -950,7 +950,14 @@ country KP: DFS-JP
+>  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
+>  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
+>  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
+> +# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000211335
+>  country KR: DFS-JP
+> +	# S1G Channel USN 1 (917 - 923.5)
+> +	(920.5 - 921.5 @ 1), (10)
+> +	(921.5 – 922.5 @ 1), (14)
+
+I don't know anything about S1G channels in Korea so I'm curious -- are
+these the only 2 channels defined in the 917-923.5 range?
+
+> +	# S1G Channel USN 5 (925 - 931)
+> +	(926 - 930 @ 1), (17)
+> +	(926 - 930 @ 2), (20)
+
+This unfortunately doesn't work. While it's possible to have both rules
+in the database, to the best of my recollection the kernel only ends up
+using the one with the larger bandwidth to set the power limit. So then
+the higher power limit would also be used for 1MHz channels.
+
+Thanks,
+Seth
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
