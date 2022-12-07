@@ -1,34 +1,38 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=RWVyvsV2Rx4oXytCi/qbSKrcKfIr2ggZoXpQWSR7o9o=;
- b=nQNXxn1ga0Zyiz
- eDegFG7wb2egCye0191nWH4zJz7DbZdKFPRREZnk70o8No0ZGgit/fd7Zc7bwMQLKjlr5VoUGUfHf
- n4S6YaI8kmykAGnnTVGyglvCliwuhTOpYXDgXetHzyLN0iqBSl4q2hFEkBiDLAgojqlVS2vTfmj7k
- T4w2hcjKJk+gYCMi2c6enPjBENCtmcHU1Zj3/rAk7d1qNNyYaed9jLNCQIrPkeHvuqf/NqGdqrCgI
- OqAaW9UX+L/1FFVcS7SvYee9tITkxsfD5+mnPZc02P1OU8B9ON3mc7iKfRLktcxyc7xvXz5yS11RQ
- zdpDz/Skpqm4NCWxn4JA==;
-Received: from mail-tyzapc01on2075.outbound.protection.outlook.com
- ([40.107.117.75] helo=APC01-TYZ-obe.outbound.protection.outlook.com) by
- bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux)) id
- 1oxJJr-002gdk-2i for wireless-regdb@lists.infradead.org; Tue, 22 Nov 2022
- 02:47:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=newratek.onmicrosoft.com; s=selector1-newratek-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nXYL7XCdjn34p96lZiyL7qaGzK0aKUfngqCJWrYgtDM=;
- b=Pth6XV2IC08znbWY6LbUfmxi9XCD3cBW0TxUWbwqjsSwhxSjM7o5U9Gy5PrLi7ad9+jRfGq0BTLPbkxE8Jbz17WK0S2qpBz1u/8MKLM9VRrzdj79RBploeS5YLjjludzC9ihbKqLuX2bjMPbsjMzmBaLw1aBBVVB/HYEPVpcfGI=
-From: JUN-KYU SHIN <jk.shin@newratek.com>
-Date: Tue, 22 Nov 2022 11:45:52 +0900
-Message-Id: <20221122024550.11415-1-jk.shin@newratek.com>
+ d=lists.infradead.org; s=bombadil.20210309;
+ h=Sender:List-Subscribe:List-Help
+ :List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:Content-Type:
+ MIME-Version:Message-Id:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+ bh=nmBYeMgSu/RaAFfuAeVBlb3oyOoiPlrAtWkXOn8fZlM=;
+ b=iZF2wTB/bH9LoTBOk/YNaF8v/O
+ rsiuLa5K5Mvz5ZEHkTfkAyZQa9co9r2Ln8UkaMPOYmcHz85oiLtQM4OASNNLebdwSJCDAcoxv8FVn
+ 1TswhNitVEdDyHRMswaDtiBSZvinFANLwA6I0ZgiC8mAeWk0BNNdvaTukoEC7bby/i1Eh8yoQN/Mw
+ a6u3SBylxRKt2BbTsl3prXT8ghcOXip6PEUgAFxJ5DADu8BIwjaSbzwNvAuWBd66X7AthsfcDpwbx
+ fzVUhlCbonGFw7XC7BWWJu/1iWXajU1QRbhRnM0ksMlAna6h2UwxGR8aLDWeEITU+rWGte7PtE+7/
+ jCfdhMJQ==;
+Received: from sender11-of-o52.zoho.eu ([31.186.226.238])
+	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
+	id 1p2s5t-000EDf-E0
+	for wireless-regdb@lists.infradead.org; Wed, 07 Dec 2022 10:56:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ t=1670410561; s=zmail; d=hak.dog; i=kleo@hak.dog;
+ h=Date:Date:From:From:To:To:Cc:Cc:Message-Id:Message-Id:Subject:Subject:MIME-Version:Content-Type:Reply-To;
+ bh=27mX4Vxa84Q/vH0D2HA7DK/SXxiwCdpXDqEyWLB3wRc=;
+ b=GqG3nLvlM6aRel4/aVbD3u8h4P77txAWNxj/WNV/urHMp/KJ8XwO/uWM5EAPiHZE
+ 2VainlA7zUs9QN+hmOHSZL+DZWkaKEmmH1o5nGsUpaBlLUxO0ZQ+PE7G/D2h7o39DM0
+ sJU1QT8pBSIF1S8L1cZaF2PqNyLb/ZHRDvxH42fI=
+Date: Wed, 07 Dec 2022 18:56:00 +0800
+From: kleo <kleo@hak.dog>
+Message-Id: <184ec3a63fe.d96b82f6427171.7593361304891506395@hak.dog>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: add support for KR S1G
- channels
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_1234383_1310708108.1670410560511"
+Subject: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Philippines (PH)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -38,50 +42,98 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, JUN-KYU SHIN <jk.shin@newratek.com>
+To: sforshee <sforshee@kernel.org>
+Cc: wireless-regdb <wireless-regdb@lists.infradead.org>, linux-wireless <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-The 917-923.5MHz band is KR USN 1 band, so follows
-the emmision limists described in part 8.4.4
-
-The 925-931MHz band is KR USN 5 band, so follows
-the emmision limists described in part 8.8.1
-
-Signed-off-by: JUN-KYU SHIN <jk.shin@newratek.com>
----
- db.txt | 7 +++++++
- 1 file changed, 7 insertions(+)
+------=_Part_1234383_1310708108.1670410560511
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
 
 diff --git a/db.txt b/db.txt
-index 012824f..1b4fe11 100644
+index 3f74194..fa9ffd7 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -950,7 +950,14 @@ country KP: DFS-JP
- # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
- # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
- # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
-+# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000211335
- country KR: DFS-JP
-+	# S1G Channel USN 1 (917 - 923.5)
-+	(920.5 - 921.5 @ 1), (10)
-+	(921.5 – 922.5 @ 1), (14)
-+	# S1G Channel USN 5 (925 - 931)
-+	(926 - 930 @ 1), (17)
-+	(926 - 930 @ 2), (20)
- 	(2400 - 2483.5 @ 40), (23)
- 	(5150 - 5230 @ 40), (23), AUTO-BW
- 	# max. PSD 2.5 mW/MHz in 5230-5250 MHz frequency range
--- 
-2.25.1
+@@ -1368,11 +1368,17 @@ country PG: DFS-FCC
+        (5735 - 5835 @ 80), (30)
+ 
+ country PH: DFS-FCC
+-       (2402 - 2482 @ 40), (20)
+-       (5170 - 5250 @ 80), (17), AUTO-BW
+-       (5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-       (5490 - 5730 @ 160), (24), DFS
+-       (5735 - 5835 @ 80), (30)
++       # https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2003/MC-09-09-2003.pdf
++       # https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2013/MC-03-08-2013.pdf
++       # https://ntc.gov.ph/wp-content/uploads/2016/MC/Explanatory-MC-No-01-01-2016.pdf
++       # https://ntc.gov.ph/wp-content/uploads/2022/mc/Memorandum_Cicurlar_No._002-09-2021.pdf
++       (915 - 918 @ 2), (30)
++       (2400 - 2483.5 @ 40), (24)
++       (5150 - 5250 @ 80), (24), AUTO-BW
++       (5250 - 5350 @ 80), (24), DFS, AUTO-BW
++       (5470 - 5730 @ 160), (24), DFS
++       (5730 - 5850 @ 80), (30)
++       (57000 - 66000 @ 2160), (40)
+ 
+ country PK: DFS-JP
+        # https://fab.gov.pk/type-approval/
 
+c5da72a2fef48891aceb3f3378afbb12a2778c83e9f053f5d23e589630536b61  country-ph.patch
+
+kleo
+
+
+
+
+------=_Part_1234383_1310708108.1670410560511
+Content-Type: application/octet-stream; name=country-ph.patch
+Content-Transfer-Encoding: 7bit
+X-ZM_AttachId: 138896930253290500
+Content-Disposition: attachment; filename=country-ph.patch
+
+diff --git a/db.txt b/db.txt
+index 3f74194..fa9ffd7 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1368,11 +1368,17 @@ country PG: DFS-FCC
+ 	(5735 - 5835 @ 80), (30)
+ 
+ country PH: DFS-FCC
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (17), AUTO-BW
+-	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+-	(5490 - 5730 @ 160), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	# https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2003/MC-09-09-2003.pdf
++	# https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2013/MC-03-08-2013.pdf
++	# https://ntc.gov.ph/wp-content/uploads/2016/MC/Explanatory-MC-No-01-01-2016.pdf
++	# https://ntc.gov.ph/wp-content/uploads/2022/mc/Memorandum_Cicurlar_No._002-09-2021.pdf
++	(915 - 918 @ 2), (30)
++	(2400 - 2483.5 @ 40), (24)
++	(5150 - 5250 @ 80), (24), AUTO-BW
++	(5250 - 5350 @ 80), (24), DFS, AUTO-BW
++	(5470 - 5730 @ 160), (24), DFS
++	(5730 - 5850 @ 80), (30)
++	(57000 - 66000 @ 2160), (40)
+ 
+ country PK: DFS-JP
+ 	# https://fab.gov.pk/type-approval/
+
+------=_Part_1234383_1310708108.1670410560511
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+------=_Part_1234383_1310708108.1670410560511--
+
+
+
