@@ -6,34 +6,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
  MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=XFLGfjncC2ymMLEp2L+dZl8Tfh2Bi5EpbcuM/m6Y61E=;
- b=p+YX9RuwRkuGDv
- tADA2WxoDbG6KgLreoyEkdS7/T4TMQPWqqt6au/y7B/+2VGngWfV5RF62eHDslMiY2jlgIMvW7rK4
- 9QjcQZvjsJaUeQm6nz13ftyyprgO9lZrfb38z+b5lYl2mDfm8PG1ORqJSU+ZWhKr/1gZ9fK1VK42Z
- /s7uVlDICiQj8J4DMM6Q5KB9jS0Kz/EQiwEMPOwj5bLGomhzqu4R/69LmlKfbol6IHa1egCKC74FU
- Z8Eli8EdULuCmZfT/GfP0BhWQg0jH+JSz6eOy50eAsCkp0tPAu76eyxSso/LWGnSdmIUbCnH1peCU
- 5Wu70e6BbZ6hKh/cqujQ==;
-Received: from mail-io1-xd2d.google.com ([2607:f8b0:4864:20::d2d])
+ List-Owner; bh=YLZFlRhwDkEqr8z2K8ahOwbzoulg0954TnxOjnD2hCs=;
+ b=VEjLIeJdYtUazF
+ XawhXbQd9+utEoRpn9G/3OaVT051B4Ubxh/eI6rF3Pab/BCHfzqzz0YX0cUE2iL/AREKupLAn2iKY
+ laFu76hnf1SKezz5sj5NIO4AKy3TL8a7Js78hjdn/mvIQspl8AgGFhGvA3e5dkt0+2RoimcEwa5Tk
+ o7z1L/GF4seZpzwpr3PB8sz1G91SvUz4hiNsnTWko6hF0Gwl7lNYxxWLzf36N9baSp17RrD3x/IXm
+ SkW9aAel0LgnVxknE/mdGgQMxiAw3Ve425J7RxRpsybZL9O/TvTWaqTzU2eN+lsdqRmdQbWLTrZo1
+ 9SZvXIiMP6gv/vpgrPZQ==;
+Received: from mail-io1-xd35.google.com ([2607:f8b0:4864:20::d35])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1pMq4i-007ub3-QG
-	for wireless-regdb@lists.infradead.org; Tue, 31 Jan 2023 12:49:26 +0000
-Received: by mail-io1-xd2d.google.com with SMTP id w24so2287324iow.13 for
- <wireless-regdb@lists.infradead.org>; Tue, 31 Jan 2023 04:49:21 -0800 (PST)
+	id 1pMUn2-003oIG-JJ
+	for wireless-regdb@lists.infradead.org; Mon, 30 Jan 2023 14:05:46 +0000
+Received: by mail-io1-xd35.google.com with SMTP id k13so1865365iob.9 for
+ <wireless-regdb@lists.infradead.org>; Mon, 30 Jan 2023 06:05:42 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
  s=20210112; h=content-transfer-encoding:cc:to:subject:message-id:date:from
  :mime-version:from:to:cc:subject:date:message-id:reply-to;
- bh=4IvuXJwVICWBcwlud5vZAuUcWP9KhMspPCpkjTpsyS4=;
- b=NuupiDQWOFqogwPeBdUZIVadecNGSE1gYLOTPNHkrLcwY78iVCDq5DxYOJhcwoFrRH
- Lt1YYqRHiatPYxL0dISGjE31fJ0k8RH85UTW3dwrp5gXXnCS4c8EeIRVSZ6Q3+aVIiTh
- 5piKj8kohfywKDP4HAOVWXGLwcDo346ct5YJpg/VkAiODyTzMLcoqsHYG+TB6lo0Qp9m
- wV7Bagl0Dtfc1fV7snB9kenWU/BehTk/ukJ6QvsTjN5zlnHbUeRI6WZIKio0qS9zdlFf
- F/ths3s3Uxe41wD6c2LAs/yYeSz/NCA542Nhisuh8BqQmpRCkmBYrZlldz/A5dJmTyKA Vzfg==
+ bh=/Qb6zMVyzjtj0/TQ/Lyc3HSKCfDqcZxkwmAqIFLNINM=;
+ b=BeH6FnitCZVR0iI8gmCER8IMJQNBB9NGcYTMaGX+FL0/YdxrRBrh7iRP5ou+BuabkR
+ EbE2h0BytgkGmKEhV0h5JP8bgdlMAwqSHCjKgMTq6ua8kGtj3den1FGKohq96yftyIsP
+ bHhD01xY4jrU0CBScgm6zigpUW3eMQ10lZKf7xh7C80mtrO+7mqK8CGgTzusyjeurlBB
+ J5hiN3KFQNBHgmaiJE9vc48vqRD5nzGcYI5HOwrlBISi80zq4JNvO+ilk9HoafF45JtR
+ kx+UWfEBfyY12byYGRApJ8rnswNpFRzl6hNpEiVXUiEEmIhN7S1ZsfRQQ+YxGu35pA1/ xuCw==
 MIME-Version: 1.0
 From: Eugene Konev <uejikov@gmail.com>
-Date: Tue, 31 Jan 2023 19:49:09 +0700
-Message-ID: <CAO7DJoCeUdHzRYkXg-HXTQqYpBPijR-ZbUy_C6Lx35s-wYR-mQ@mail.gmail.com>
-Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory info
- for Russia (RU) on 5GHz
+Date: Mon, 30 Jan 2023 21:05:30 +0700
+Message-ID: <CAO7DJoAXrB8e+q2uHD6Cq6A2UV5pN0=6ieAVV+yJp0ht1bPhyg@mail.gmail.com>
+Subject: [wireless-regdb] [PATCH] Update regulatory info for Russia (RU) on
+ 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,7 +49,7 @@ Errors-To:
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: sforshee@kernel.org
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
 Update regulatory info for Russia on 5GHz in accordance with
@@ -63,7 +63,7 @@ Signed-off-by: Eugene Konev <uejikov@gmail.com>
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 3f74194..915a3b9 100644
+index 3f74194..9bc2c1c 100644
 --- a/db.txt
 +++ b/db.txt
 @@ -1500,10 +1500,11 @@ country RS: DFS-ETSI
@@ -76,8 +76,8 @@ index 3f74194..915a3b9 100644
         (2400 - 2483.5 @ 40), (20)
 -       (5150 - 5350 @ 160), (20), NO-OUTDOOR
 -       (5650 - 5850 @ 160), (20), NO-OUTDOOR
-+       (5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, DFS
-+       (5650 - 5850 @ 160), (100 mW), NO-OUTDOOR, DFS
++       (5150 - 5350 @ 160), (200 mW), NO-OUTDOOR, DFS
++       (5650 - 5850 @ 160), (200 mW), NO-OUTDOOR, DFS
         # 60 GHz band channels 1-4, ref: Changes to NLA 124_Order
 №129_22042015.pdf
         (57000 - 66000 @ 2160), (40), NO-OUTDOOR
