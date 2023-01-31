@@ -3,39 +3,37 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=aeVkh6z6ZR8MocWT+PrWq172m5iE3E9ISvgtNZEcAZk=;
- b=X4wdqBAJRaPZ2F
- YKUDGspKdlJJzllhp6iguj3iapDYeu9NMz8eMsGZbC6dHC+CkgzirrsJ9YBOzmdoNz687iSK7XL0X
- FZ4iL2/ph2VwoMnp3hq52nQUCyw2RtkiJgxazE09/OJDk+SFN7OM5+9LTeDpe+klfOhyxaNmixqpg
- PXlw/P7pkQkoaCa+PDdP/QuXQI8MSNVcWWoxNRYiTQ2llkGl+j364a3rb+y8/x2/lin+1ApR1DXJ3
- 5SSmW8O2i+TFei2EtE7xmwPzzJoyUh6fHpskKZsFQfgmy9RXVg7zrHraQwqcUms+P8tA+enA3wtP5
- YJH+f2fEF10M3AbpSOoQ==;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
+ MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=XFLGfjncC2ymMLEp2L+dZl8Tfh2Bi5EpbcuM/m6Y61E=;
+ b=p+YX9RuwRkuGDv
+ tADA2WxoDbG6KgLreoyEkdS7/T4TMQPWqqt6au/y7B/+2VGngWfV5RF62eHDslMiY2jlgIMvW7rK4
+ 9QjcQZvjsJaUeQm6nz13ftyyprgO9lZrfb38z+b5lYl2mDfm8PG1ORqJSU+ZWhKr/1gZ9fK1VK42Z
+ /s7uVlDICiQj8J4DMM6Q5KB9jS0Kz/EQiwEMPOwj5bLGomhzqu4R/69LmlKfbol6IHa1egCKC74FU
+ Z8Eli8EdULuCmZfT/GfP0BhWQg0jH+JSz6eOy50eAsCkp0tPAu76eyxSso/LWGnSdmIUbCnH1peCU
+ 5Wu70e6BbZ6hKh/cqujQ==;
+Received: from mail-io1-xd2d.google.com ([2607:f8b0:4864:20::d2d])
 	by bombadil.infradead.org with esmtps (Exim 4.94.2 #2 (Red Hat Linux))
-	id 1p2JdL-00B6aw-R7
-	for wireless-regdb@lists.infradead.org; Mon, 05 Dec 2022 22:08:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1670278095;
-	bh=gHqtxLNinWHlwCLy2Fxuy4wHAPCR+sLgYbAsrBrnwNY=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=c9Gn9u0XRw4YZzhpJ2snv19QxiKCQca0JVqEPJiL70BcZzaxs9RV1OG9tqtUvR7Kq
-	 yJeEjCcKSrTpoRL9bSMOsIIB8HmK4VqrqPBhLwyrSdj2CpQVN0A8YI6e3x+ujG5yF/
-	 M52q2+QUW75E2GZn4aGZueRntodSkrelTxlL0srZyzmNkHau0ON1TKBqANkf6QDU4I
-	 LdnSwl96+792l2Wt3rBG3ZuSj3bmh7XVAVhgfPxc7fFkMtnGFcAI3sZlvI59yAJIQs
-	 4+ATOeGwRqLF3/z1d6QnvsAHIjhVwiOjG81ayCZHnpVtgnbIoOvtJX2/0rF9h1Txn4
-	 WMMEnC4zlntZA==
-Date: Mon, 5 Dec 2022 16:08:13 -0600
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <Y45rzTlZvlFrqao/@ubuntu-x1>
-References: <20221122024550.11415-1-jk.shin@newratek.com>
+	id 1pMq4i-007ub3-QG
+	for wireless-regdb@lists.infradead.org; Tue, 31 Jan 2023 12:49:26 +0000
+Received: by mail-io1-xd2d.google.com with SMTP id w24so2287324iow.13 for
+ <wireless-regdb@lists.infradead.org>; Tue, 31 Jan 2023 04:49:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20210112; h=content-transfer-encoding:cc:to:subject:message-id:date:from
+ :mime-version:from:to:cc:subject:date:message-id:reply-to;
+ bh=4IvuXJwVICWBcwlud5vZAuUcWP9KhMspPCpkjTpsyS4=;
+ b=NuupiDQWOFqogwPeBdUZIVadecNGSE1gYLOTPNHkrLcwY78iVCDq5DxYOJhcwoFrRH
+ Lt1YYqRHiatPYxL0dISGjE31fJ0k8RH85UTW3dwrp5gXXnCS4c8EeIRVSZ6Q3+aVIiTh
+ 5piKj8kohfywKDP4HAOVWXGLwcDo346ct5YJpg/VkAiODyTzMLcoqsHYG+TB6lo0Qp9m
+ wV7Bagl0Dtfc1fV7snB9kenWU/BehTk/ukJ6QvsTjN5zlnHbUeRI6WZIKio0qS9zdlFf
+ F/ths3s3Uxe41wD6c2LAs/yYeSz/NCA542Nhisuh8BqQmpRCkmBYrZlldz/A5dJmTyKA Vzfg==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20221122024550.11415-1-jk.shin@newratek.com>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: add support for KR
- S1G channels
+From: Eugene Konev <uejikov@gmail.com>
+Date: Tue, 31 Jan 2023 19:49:09 +0700
+Message-ID: <CAO7DJoCeUdHzRYkXg-HXTQqYpBPijR-ZbUy_C6Lx35s-wYR-mQ@mail.gmail.com>
+Subject: [wireless-regdb] [PATCH v2] wireless-regdb: Update regulatory info
+ for Russia (RU) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,54 +48,42 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: JUN-KYU SHIN <jk.shin@newratek.com>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: sforshee@kernel.org
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Tue, Nov 22, 2022 at 11:45:52AM +0900, JUN-KYU SHIN wrote:
-> The 917-923.5MHz band is KR USN 1 band, so follows
-> the emmision limists described in part 8.4.4
-> 
-> The 925-931MHz band is KR USN 5 band, so follows
-> the emmision limists described in part 8.8.1
-> 
-> Signed-off-by: JUN-KYU SHIN <jk.shin@newratek.com>
+Update regulatory info for Russia on 5GHz in accordance with
+current regulatory rules.
 
-Thanks for the patch. I have some questions and comments, below.
+Source: https://docs.cntd.ru/document/902048009?section=text
 
-> ---
->  db.txt | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/db.txt b/db.txt
-> index 012824f..1b4fe11 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -950,7 +950,14 @@ country KP: DFS-JP
->  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205195
->  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000205187
->  # https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000206568
-> +# https://www.law.go.kr/LSW//admRulLsInfoP.do?chrClsCd=&admRulSeq=2100000211335
->  country KR: DFS-JP
-> +	# S1G Channel USN 1 (917 - 923.5)
-> +	(920.5 - 921.5 @ 1), (10)
-> +	(921.5 – 922.5 @ 1), (14)
+Signed-off-by: Eugene Konev <uejikov@gmail.com>
+---
+ db.txt | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
-I don't know anything about S1G channels in Korea so I'm curious -- are
-these the only 2 channels defined in the 917-923.5 range?
+diff --git a/db.txt b/db.txt
+index 3f74194..915a3b9 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1500,10 +1500,11 @@ country RS: DFS-ETSI
+        # 60 GHz band channels 1-4, ref: Etsi En 302 567
+        (57000 - 66000 @ 2160), (40)
 
-> +	# S1G Channel USN 5 (925 - 931)
-> +	(926 - 930 @ 1), (17)
-> +	(926 - 930 @ 2), (20)
+-country RU:
++# Source: https://docs.cntd.ru/document/902048009?section=text
++country RU: DFS-ETSI
+        (2400 - 2483.5 @ 40), (20)
+-       (5150 - 5350 @ 160), (20), NO-OUTDOOR
+-       (5650 - 5850 @ 160), (20), NO-OUTDOOR
++       (5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, DFS
++       (5650 - 5850 @ 160), (100 mW), NO-OUTDOOR, DFS
+        # 60 GHz band channels 1-4, ref: Changes to NLA 124_Order
+№129_22042015.pdf
+        (57000 - 66000 @ 2160), (40), NO-OUTDOOR
 
-This unfortunately doesn't work. While it's possible to have both rules
-in the database, to the best of my recollection the kernel only ends up
-using the one with the larger bandwidth to set the power limit. So then
-the higher power limit would also be used for 1MHz channels.
-
-Thanks,
-Seth
-
+-- 
+2.30.2
 
 _______________________________________________
 wireless-regdb mailing list
