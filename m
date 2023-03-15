@@ -1,29 +1,40 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:Cc:To:From:MIME-Version:Date:Message-ID:
- Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
- :Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
- bh=OagVc67v87iFaD4Cpj7hFjgAUi66ZML747CIUJun5vA=;
- b=uKxH9mUVYIpKOOcJVtMKnOQ/Qp
- lJYTU6Ch3QrWl30fpQ7fphUTuCa1KA8yXSpRUtbC03HKkO9cGy4c4smA3T8TlKpsFmmbZQvCeerIG
- NBfm41tGLPXAhiO8BjpWdpGfQLYf04UYSaibZuPIPkIS09Yqp5rCDV7dz8jnPuUSkiazMx1L84vNB
- iIYsJYo0+iB6NVqjrFBvSxEtgEw7HDW9d6AVrty40bQwpFiSgvgU+FvEVXTR2alUgU8q6X3Hqccjb
- ZI6PaMRqmW4UX1eUuuWxixHS8wvJpg1pENMAJAd1wpTuwt16kWJrcphLAhkHN9lJHZLmnfBYfs86+
- X8qHFCDQ==;
-Received: from forward204a.mail.yandex.net
- ([2a02:6b8:c0e:500:1:45:d181:d204]) by bombadil.infradead.org with esmtps
- (Exim 4.96 #2 (Red Hat Linux)) id 1pfsKq-005ugO-1b for
- wireless-regdb@lists.infradead.org; Sat, 25 Mar 2023 01:04:46 +0000
-Message-ID: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
-Date: Sat, 25 Mar 2023 04:04:37 +0300
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:From:To
+ :Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=C8wuIYW4jNwrxkFIrTn34Y6jQeyVzP0Y48k8nYak97c=;
+ b=0TXnCmb0ot5xBa
+ XRdYpgy38xncFAx6lTY9JT8ru2xhhGhg3A2JShuFcffxfFE+iIQxgg0kWks537yb1OKEJXQ16qmTW
+ xq4oLXFrirkdioQXEsR2xyJlfUcw3OwMDrUMQWMEs6bnYIVASO9EPbrxCkWh5dH6repNck1UPKc1i
+ l0ZqCTCuAzX8gZ8HohEs0E7xH42GzjQDXD76R5VUYo9itf31PA58ENj15qYgsbLGkEq8Hal/hrG+p
+ a6UxhRPuTk30sZqnufCzJ6ValEh5Qge2/yESynRKivKrcUK02od95IHsbA4QWJH4isQ3kMQVXZdLi
+ XH1cX06Kx1Sy04ADCRdg==;
+Received: from mail-40141.protonmail.ch ([185.70.40.141])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pcSFu-00DdLo-2j
+	for wireless-regdb@lists.infradead.org;
+	Wed, 15 Mar 2023 14:37:32 +0000
+Date: Wed, 15 Mar 2023 14:37:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1678891045; x=1679150245;
+	bh=eaqZDiUQPcVaVRwGInFeXtM/vbGUBa2dI1gQ+cKvEnk=;
+	h=Date:To:From:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=CihPDe1hVhpk4tn4HGkIOSED3w3DZqYs5+anHk0cRE5MDHxoQLhHvKOM9IBX7fwHh
+	 ZaRZZE4A3irun9eNb5JW6DU0xIz48Cp/Yl48tFC7y0Ja5kDgDPF4tkwkialTMMo2Yo
+	 d/SQy0tL1GS+GeGQyLIM9RtgRbQqBC0fCnhei6QlIpeysyL3GozH68llGc3sIVmKVT
+	 po9TT4T9/uwt0hknFeu8GD+eMOEtnUly63YlIcQemPPMTdZbMmbcVV0dy7IToEF1eL
+	 RoN85jEOqKobL07b2QJh+wiAw9p7aVE19KqFUSuFLL6vVjaUN0/BcCMExYKJe1lJf5
+	 MwpP5CtFqdyWA==
+From: "tavio.wong" <tavio.wong@proton.me>
+Message-ID: <oiVeDD95tMcpWN4ynhZfWbX0idjaGq3ibft2obzq-RSMVptQ3TncwBf_kcekWctED_IGNRx3BmIACchzsrEcSwH1tcfr3jMRP2S1egcTCpY=@proton.me>
 MIME-Version: 1.0
-Content-Language: en-US
-From: Kirill <me@16depo.xyz>
-Subject: [wireless-regdb] [PATCH] Update regulatory info for Russia (RU) on
- 6GHz
+Subject: [wireless-regdb] wireless-regdb: Regulatory rules for Hong Kong
+ (HK)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -33,46 +44,35 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"; format="flowed"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: sforshee@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Update regulatory info for Russia on 6GHz in
-  accordance with current regulatory rules.
+Hello,
 
-Source: https://docs.cntd.ru/document/1300597464?section=text
+According to section 2.1(b) of [1], the allowed peak output power in different bands is higher than currently defined in db.txt. I see that the rules for HK have not been updated since 2014. Since I don't understand sections 2.2 and 2.3, is there any reason for limiting the output power other than that the information is outdated?
 
-Signed-off-by: Kirill Matvienko <me@16depo.xyz>
----
-  db.txt | 3 ++-
-  1 file changed, 2 insertions(+), 1 deletion(-)
+If not, I propose the rules for HK be updated as follows [section 2.1(a) also requires that 5.15-5.35 GHz be restricted to indoor use]:
 
-diff --git a/db.txt b/db.txt
-index 915a3b9..7f338b2 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1500,11 +1500,12 @@ country RS: DFS-ETSI
-  	# 60 GHz band channels 1-4, ref: Etsi En 302 567
-  	(57000 - 66000 @ 2160), (40)
+country HK: DFS-ETSI
+	(2402 - 2482 @ 40), (36)
+	(5170 - 5250 @ 80), (23), AUTO-BW, NO-OUTDOOR
+	(5250 - 5330 @ 80), (23), DFS, AUTO-BW, NO-OUTDOOR
+	(5490 - 5710 @ 160), (30), DFS
+	(5735 - 5835 @ 80), (36)
 
--# Source: https://docs.cntd.ru/document/902048009?section=text
-+# Source: https://docs.cntd.ru/document/1300597464?section=text
-  country RU: DFS-ETSI
-  	(2400 - 2483.5 @ 40), (20)
-  	(5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, DFS
-  	(5650 - 5850 @ 160), (100 mW), NO-OUTDOOR, DFS
-+	(5925 - 6425 @ 160), (100 mW), NO-OUTDOOR
-  	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order 
-№129_22042015.pdf
-  	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+Thank you for your consideration.
 
--- 
-2.34.1
+[1] https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca1039.pdf
+
+[2] https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt?id=7f7a9f7bc6011b072b5427eced1ff19261764e95#n751
+
+Best regards,
+Tavio
 
 _______________________________________________
 wireless-regdb mailing list
