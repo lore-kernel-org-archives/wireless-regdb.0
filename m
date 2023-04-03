@@ -3,44 +3,42 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:Cc:To:Message-ID:Date:From:
- In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=ubiOnQ8WpTJ/iAInN57qJtcIUIM/5rNErnQhamvZNKY=;
- b=gfU1dOVXwWLYu4
- SLSlw3vRIBKlGGpoIuJlcQzEyQNYYHptEEs6M5L1EAM3sdtk8FpWwFAMPMCNSHP/YthhgTmSEamjK
- e1I5Y5LuQId0Gl9Z16w2B9wuTsIYG9BJRJLkls4b0xB7Y28hhQojJHXRj9ReyvrdfnHxR+RTnhW8q
- evZjo+cglLvs/M9WfSELllZsQoR5CTGXy9v8rIwJPISgLP0tEDXwWDBcK7tPN33n7ogMdw1yDF1KR
- euF85rG0c9ZFddg8MH4/n5gmuHaa1HCZ6dhNZWA5lur54NjUA7Xt5PZFKqw9O/E/PzsqAMXusV+7x
- p5e9CvkVNAyUAMPPoGDA==;
-Received: from mail-pg1-x530.google.com ([2607:f8b0:4864:20::530])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=Y6m09aARAnxHTyfr/cjz2fcPZw2yCL0O7MSVhx/nj7w=;
+ b=v6g+NacN++E75B
+ tAcf0ZqLLsjjhaAm5+JJhTPvqNyyOKb85sjza6aXMCdGcfhQjpM8VsrGTJ5fJ9Qti0dhG+N72Q2XA
+ bTh4OLyogCqVA4IBnlDB2xtLyaLIRSmBIBMzbOrIHD6MrT3+nb6jbEDggTqO+JIIrjb5qT1h6NlBY
+ ag8mk69uI209UKKcsljRxuiW1M5LdcDfE7I0x+sXLwk5bGDchSv+D4gxre6nidrXf6NWRndAqeL25
+ 3vUmN+sW97uTgIx36FsMFQL2SgLSPy4MWGt5OkR/TFLqaTPfPsYiW/ywNnkq2P7M2xZQ7mhMEd1nE
+ kyu0uUZ6gVSazjOvkBtA==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pjR3K-00GimZ-2E
+	id 1pjMtq-00FwDb-2o
 	for wireless-regdb@lists.infradead.org;
-	Mon, 03 Apr 2023 20:45:24 +0000
-Received: by mail-pg1-x530.google.com with SMTP id y19so18347017pgk.5 for
- <wireless-regdb@lists.infradead.org>; Mon, 03 Apr 2023 13:45:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20210112; t=1680554721;
- h=content-transfer-encoding:cc:to:subject:message-id:date:from
- :in-reply-to:references:mime-version:from:to:cc:subject:date
- :message-id:reply-to; bh=M0gwdx/qI90Iih62gFITI5xcbfUZd1OMQlPB0MLeEbM=;
- b=puL71Hojfo4wnrmBc5xi8RCZRFBgdmUmCD47rDYK90zl01SqiVxVth7DRh50HT3rD1
- kDe8zcUOhPiGA3zmfeCD1kvn79itdzV9XBW5M10xUUhMx+ot9VpDvuBN5zH+jT4c96F+
- rqxuLIY3f/3Js4zxeW663G6TiMaBrsYrobelOMUpy9umT3IwiWHI0fYEpgXnqeNe4wif
- sGXCUQv0V7d2luWPAja7tlF4kSJlukZnNOLahLPevBZ01tubVp1OhcR54Zuix/Wo34WR
- BlwmnazUqhmzyK3oc1U7WNmJjtrQbEHczGLUJBjmOIiYGFubiVqOoo6Bor4jSyPp8APq 6oiw==
+	Mon, 03 Apr 2023 16:19:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1680538757;
+	bh=qWTCnLpgEni9/pyyMoun3r0gjRpTuUfI9r1kM+yuz2w=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=PfnIh2LZR1T78+uAdScowJY5wJMz/NfMjcHxEysNUZL9YzjhnVGOGKCh5P9iSRzIi
+	 5IJyzHBASaoKQ3vC4daYit+G8ReMoptjBYaU4wTKubrJjC1x99FylVcurplCWLJ4Xn
+	 ZlpycnRrZsmn9+n+Djhmrnd/LeCiM7tsamb3ds/sc5FtQL364oO9c+/rDrUcoDxugT
+	 a1xwIUJ6V7n4pBLvswZEtLIFEQ7mi+D7uW/5F8ithY21kHCT8Q0jWnHoZX3wz+dANo
+	 KKwaHokq9guefgaqSqJFucoyuxiQefTsrlJjVTPnB824We2cn3tjuMxoShFpcQ0f2F
+	 80QJsbLy1AK2A==
+Date: Mon, 3 Apr 2023 11:19:16 -0500
+From: "sforshee@kernel.org" <sforshee@kernel.org>
+Message-ID: <ZCr8hM7gJpAVHSLQ@do-x1extreme>
+References: <SJ0PR22MB249552E61991E3B2FAC911978F8F9@SJ0PR22MB2495.namprd22.prod.outlook.com>
+ <ZCdSShqbJQ43gZZR@do-x1extreme>
+ <SJ0PR22MB24959C931D27BDB56488B1DF8F8F9@SJ0PR22MB2495.namprd22.prod.outlook.com>
 MIME-Version: 1.0
-References: <CAMPnHXye6EBTix6125NzPrQSitwKikK6b77g=K5t-ihmU11JHg@mail.gmail.com>
- <CAMPnHXy49dSKdiCzeEZ86q3YEEWW=PrfPYwPevA4A2bFBe_sbg@mail.gmail.com>
- <ZBnde5f7JuORq1PX@do-x1extreme> <CAMPnHXxnDYQ8_TeT_aJ1GU2YvmJw+4QyvBmHhdCvpsmFFROv1w@mail.gmail.com>
- <ZCHxMx+aMqq3K6Cb@do-x1extreme>
-In-Reply-To: <ZCHxMx+aMqq3K6Cb@do-x1extreme>
-From: Keshav <the.ridikulus.rat@gmail.com>
-Date: Mon, 3 Apr 2023 15:45:09 -0500
-Message-ID: <CAMPnHXyeQiRG8OhDBqAQjato0j-8aMwUkXfgaWvFzGMHuwzwOQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] wireless-regdb: Please correct the regulatory
- rules for India (IN) on 2.4 GHz
+Content-Disposition: inline
+In-Reply-To: <SJ0PR22MB24959C931D27BDB56488B1DF8F8F9@SJ0PR22MB2495.namprd22.prod.outlook.com>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ USA on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -50,227 +48,86 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <sforshee@kernel.org>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: Eric Sellman <gak_action@live.com>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hello Seth,
+On Fri, Mar 31, 2023 at 09:38:24PM +0000, Eric Sellman wrote:
+> So who do I need to go to next to get this fixed?
 
-I apologize for the late reply from my end. Please see my comments below.
+It could be potentially be changed in the kernel, and
+linux-wireless@vger.kernel.org is the right group of people. But there
+are a lot of systems around running older kernels where the
+wireless-regdb might still be getting updated. So we'd want to at least
+make an effor to see that the change makes it to all the supported
+stable and distro kernels, open AP firmware projects, etc before we
+updated the database. That's likely to take a while.
 
-On Mon, Mar 27, 2023 at 2:40 PM Seth Forshee <sforshee@kernel.org> wrote:
->
-> On Fri, Mar 24, 2023 at 06:30:32PM -0500, Keshav wrote:
-> > Hello Seth,
-> >
-> > Thank you for your reply. Please find below my comments.
-> >
-> > On Tue, Mar 21, 2023 at 11:38 AM Seth Forshee <sforshee@kernel.org> wrote:
-> > >
-> > > On Sat, Mar 04, 2023 at 05:13:44PM -0600, Keshav wrote:
-> > > > Hello,
-> > > >
-> > > > I noticed that wireless-regdb db.txt [1] has restricted India's 2.4
-> > > > GHz maximum power to only 20 dBm:
-> > > >
-> > > > country IN:
-> > > >         (2402 - 2482 @ 40), (20)
-> > > >
-> > > > However the Official Gazette of Government of India (PDF [3] linked in
-> > > > URL [2]) mentions that upto 30 dBm is allowed in the 2.4 GHz band.
-> > > >
-> > > > 2.4 GHz Rules for India (IN): Pages 87 to 88 of PDF [3]
-> > > >
-> > > > I would like to mention that I am not an expert in this topic. I am
-> > > > not sure if there's any other reason to restrict 2.4 GHz for India to
-> > > > 20 dBm in the db.txt. I also couldn't find any other official
-> > > > Government of India document that restricts the maximum power to 20
-> > > > dBm (due to some other reason). Please look into this and correct the
-> > > > regulatory rules for India if needed. Thank you.
-> > > >
-> > > > Although not the topic of this email, you can also find the 5 GHz
-> > > > Rules for India in the same PDF [3] (pages 94 to 97) if interested.
-> > > >
-> > > > [1] https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt?id=7f7a9f7bc6011b072b5427eced1ff19261764e95#n853
-> > > >
-> > > > [2] https://dot.gov.in/spectrummanagement/gazette-notifications-delicensed-band
-> > > >
-> > > > [3] https://dot.gov.in/sites/default/files/Gazette_Notifications.pdf
-> > >
-> > > Sorry for the slow response. I've been attempting to research this as
-> > > time allows, but I haven't had a lot of time for it, and the information
-> > > is not well organized.
-> > >
-> > > [1] was the most complete summary I found for spectrum use in India. In
-> > > particular Annex 1 has a table of GSR numbers relevant for unlicensed
-> > > spectrum, which for 2.4 GHz is GSR No. 45(E) [2] and for 5 GHz is GSR
-> > > No. 1048(E) [3]. It looks like the document you linked to just bundles
-> > > these and other GSRs together, so as far as I can tell the information
-> > > you provided looks accurate.
-> > >
-> > > The database stores maximum EIRP, not transmitter output power, so I
-> > > think that 36 dBm is the correct value for 2.4 GHz (GSR No. 45(E) shows
-> > > an ERP of 36dBm, but based on the maximum transmitter power of 30 dBm I
-> > > think this is probably meant to be the EIRP).
-> > >
-> > > The 5 GHz rules look mostly right, except that it looks like 5250-5350
-> > > and 5470-5725 MHz both require DFS. They also require TPC, which Linux
-> > > doesn't support, but the PSD limit restricts our max EIRP to below the
-> > > threshold where TPC is required.
-> > >
-> > > So I think these are the correct rules for India:
-> > >
-> > > country IN:
-> > >         (2400 - 2482 @ 40), (36)
-> > >         (5150 - 5250 @ 80), (30)
-> > >         (5250 - 5350 @ 80), (24), DFS
-> > >         (5470 - 5725 @ 160), (24), DFS
-> > >         (5725 - 5875 @ 80), (30)
-> > >
-> > > If this looks right to you, I can send the patch to update the rules.
-> > >
-> > > Thanks,
-> > > Seth
-> > >
-> > > [1] https://dot.gov.in/sites/default/files/NFAP%202018.pdf
-> > > [2] https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
-> > > [3] https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
-> >
-> > Based on your explanation, the numbers look right to me. However, I am
-> > not an RF expert and I do not have enough knowledge to interpret these
-> > rules correctly myself. Therefore I will defer to your judgement here.
->
-> I am not an RF expert either.
->
-> > There's one thing I forgot to mention in my previous email. I noticed
-> > this discrepancy in db.txt because I came across the embedded regdb
-> > rules defined in an ath11k wifi router running OpenWrt
-> > (https://openwrt.org/toh/hwdata/dynalink/dynalink_dl-wrx36), and
-> > noticed that they are different from wireless-regdb db.txt rules. The
-> > "iw" outputs from the ath11k device are pasted below for your
-> > reference.
-> >
-> > # iw reg get
-> > global
-> > country IN: DFS-UNSET
-> >         (2402 - 2482 @ 40), (N/A, 20), (N/A)
-> >         (5150 - 5250 @ 80), (N/A, 30), (N/A)
-> >         (5250 - 5350 @ 80), (N/A, 24), (N/A)
-> >         (5470 - 5725 @ 160), (N/A, 24), (N/A)
-> >         (5725 - 5875 @ 80), (N/A, 30), (N/A)
-> >
-> > phy#1 (self-managed)
-> > country IN: DFS-FCC
-> >         (2402 - 2472 @ 40), (N/A, 30), (N/A)
-> >         (5170 - 5250 @ 80), (N/A, 30), (N/A), AUTO-BW
-> >         (5250 - 5330 @ 80), (N/A, 24), (0 ms), DFS, AUTO-BW
-> >         (5490 - 5730 @ 160), (N/A, 24), (0 ms), DFS, AUTO-BW
-> >         (5735 - 5835 @ 80), (N/A, 30), (N/A), AUTO-BW
-> >
-> > phy#0 (self-managed)
-> > country IN: DFS-FCC
-> >         (2402 - 2472 @ 40), (N/A, 30), (N/A)
-> >         (5170 - 5250 @ 80), (N/A, 30), (N/A), AUTO-BW
-> >         (5250 - 5330 @ 80), (N/A, 24), (0 ms), DFS, AUTO-BW
-> >         (5490 - 5730 @ 160), (N/A, 24), (0 ms), DFS, AUTO-BW
-> >         (5735 - 5835 @ 80), (N/A, 30), (N/A), AUTO-BW
-> >
-> > # iw list
-> > Wiphy phy1
-> > Frequencies:
-> >                         * 2412 MHz [1] (30.0 dBm)
-> >                         * 2417 MHz [2] (30.0 dBm)
-> >                         * 2422 MHz [3] (30.0 dBm)
-> >                         * 2427 MHz [4] (30.0 dBm)
-> >                         * 2432 MHz [5] (30.0 dBm)
-> >                         * 2437 MHz [6] (30.0 dBm)
-> >                         * 2442 MHz [7] (30.0 dBm)
-> >                         * 2447 MHz [8] (30.0 dBm)
-> >                         * 2452 MHz [9] (30.0 dBm)
-> >                         * 2457 MHz [10] (30.0 dBm)
-> >                         * 2462 MHz [11] (30.0 dBm)
-> >                         * 2467 MHz [12] (disabled)
-> >                         * 2472 MHz [13] (disabled)
-> >                         * 2484 MHz [14] (disabled)
-> >
-> > Wiphy phy0
-> > Frequencies:
-> >                         * 5180 MHz [36] (30.0 dBm)
-> >                         * 5200 MHz [40] (30.0 dBm)
-> >                         * 5220 MHz [44] (30.0 dBm)
-> >                         * 5240 MHz [48] (30.0 dBm)
-> >                         * 5260 MHz [52] (24.0 dBm) (radar detection)
-> >                         * 5280 MHz [56] (24.0 dBm) (radar detection)
-> >                         * 5300 MHz [60] (24.0 dBm) (radar detection)
-> >                         * 5320 MHz [64] (24.0 dBm) (radar detection)
-> >                         * 5500 MHz [100] (24.0 dBm) (radar detection)
-> >                         * 5520 MHz [104] (24.0 dBm) (radar detection)
-> >                         * 5540 MHz [108] (24.0 dBm) (radar detection)
-> >                         * 5560 MHz [112] (24.0 dBm) (radar detection)
-> >                         * 5580 MHz [116] (24.0 dBm) (radar detection)
-> >                         * 5600 MHz [120] (24.0 dBm) (radar detection)
-> >                         * 5620 MHz [124] (24.0 dBm) (radar detection)
-> >                         * 5640 MHz [128] (24.0 dBm) (radar detection)
-> >                         * 5660 MHz [132] (24.0 dBm) (radar detection)
-> >                         * 5680 MHz [136] (24.0 dBm) (radar detection)
-> >                         * 5700 MHz [140] (24.0 dBm) (radar detection)
-> >                         * 5720 MHz [144] (24.0 dBm) (radar detection)
-> >                         * 5745 MHz [149] (30.0 dBm)
-> >                         * 5765 MHz [153] (30.0 dBm)
-> >                         * 5785 MHz [157] (30.0 dBm)
-> >                         * 5805 MHz [161] (30.0 dBm)
-> >                         * 5825 MHz [165] (30.0 dBm)
-> >                         * 5845 MHz [169] (disabled)
-> >                         * 5865 MHz [173] (disabled)
-> >
-> > Looks like ath11k restricts the maximum EIRP to 30 dBm for 2.4 GHz.
-> > Again I am not an expert so I can't comment on whether 30 dBm vs 36
-> > dBm is the correct maximum EIRP value for 2.4 GHz.
->
-> I find the rules in GSR No. 45(E) unclear and a little confusing.
-> Broadly you can think of EIRP(dBm) = tx_output_power(dBm) +
-> antenna_gain(dBi). If you look at the US rules [1] you can see that it
-> specifies EIRP assuming an antenna gain of 6 dBi or less, with
-> adjusments for antennas with larger gains.
->
-> GSR No. 45(E) does not define things as clearly, but when I see a
-> transmitter output power of 30 dBm and a maximum effective radiated
-> power of 36 dBm it leads me to think that it has a similar model of
-> assuming an antenna gain <= 6 dBi. I could be wrong, but from what I see
-> this interpretation makes the most sense to me.
->
+I was about to propose an alternate idea, but then I went to check the
+kernel source and I think that it already does what I was going to
+propose. AUTO-BW means that a range can be combined with adjacent ranges
+for what you called "band straddling," and it also allows the kernel to
+automatically determine what bandwidth is supported. So all it should
+need to do is not just consider the bandwiths for the individual ranges
+but for the entire range which can be created by combining AUTO-BW
+rules.
 
-Yes, the GSR 45 (E) text is confusing for me as well. Not sure if
-"Effective Radiated Power" == "EIRP" in GSR 45 (E).
+And I think it's already doing this. reg_get_max_bandwidth_from_range()
+is called to determine the max bandwidth for a channel when the matching
+rule has AUTO-BW set. This looks at the rules before and after the
+matching rule, and the rules before and after those, etc, until it
+reaches rules which are no longer adjacent. Then it returns a maximum
+bandwidth which is the span of all the adjacent rules it found.
 
-> 30 dBm is certainly a safe value though, as the max EIRP should be at
-> least that much under any interpretation.
->
+You haven't said if you're seeing an actual problem using 160 MHz
+channels or if you just noticed the bandwidth is not 160 MHz in the
+database. If you are having trouble, please provide details about what
+you observe versus what you expect. Also note that a lot of wireless
+hardware now comes with it's own in-firmware regulatory database which
+will override the one loaded from userspace; you can run 'iw reg get'
+and see if your hardware reports a "self-managed" set of rules.
 
-I would prefer going with the safer value of 30 dBm in the regdb for
-now. However it is up to you if you want to change it to 30 dBm or 36
-dBm.
+Thanks,
+Seth
 
-> [1] https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-C/subject-group-ECFR2f2e5828339709e/section-15.247
->
-
-Thank you for the link. I haven't had time to go through it, but I
-don't think we can assume that the "Antenna Gain" specification in the
-US FCC regulatory rules also applies to India.
-
+> 
+> Get Outlook for Android<https://aka.ms/AAb9ysg>
+> ________________________________
+> From: sforshee@kernel.org <sforshee@kernel.org>
+> Sent: Friday, March 31, 2023 2:36:10 PM
+> To: Eric Sellman <GAK_ACTION@live.com>
+> Cc: wireless-regdb@lists.infradead.org <wireless-regdb@lists.infradead.org>; linux-wireless@vger.kernel.org <linux-wireless@vger.kernel.org>
+> Subject: Re: wireless-regdb: Update regulatory rules for USA on 5GHz
+> 
+> On Fri, Mar 31, 2023 at 08:30:09PM +0000, Eric Sellman wrote:
+> > First, I would like to state that I live in the USA And that this is my first time submitting a correction to the wireless-regdb.
+> >
+> > According to this list here >> https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt#n1727
+> >
+> > I only see VHT160 allowed to be utilized for 5500mhz to 5640mhz but there is no mention of VH160 being allowed for use with 5180 to 5320mhz.
+> >
+> > And according to this presentation here > https://transition.fcc.gov/oet/ea/presentations/files/may17/31-Part-15-Panel-UNII-UpdatesDT.pdf
+> >
+> > And this paragraph from this FCC document here > https://www.federalregister.gov/d/2014-09279/p-65
+> >
+> > "Band Straddling" is allowed with U-NII-1 and U-NII-2A. 5150mhz to 5330mhz
+> >
+> > Therefore, I would like you to add to the db that 5180 to 5320 can be used with vht160.
+> 
+> You are correct, however the kernel rejects the database if the max
+> bandwidth for a range exceeds the size of the range for a given rule. So
+> unfortunately we can't set the max bandwidth to 160 MHz.
+> 
 > Thanks,
 > Seth
-
-With Best Regards,
-
-Keshav A.
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
