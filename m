@@ -3,41 +3,40 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=4T88+HJGCPITTqI25f1FzSDQmQ2rEuiZWxa0Biashyc=;
- b=0HYF27qDxyG4p0
- QrNVTv6Xr2zLxxnqR+ySJ2jfA/SVY83zweFPKpaeMIoKWMA0W4BZSjBXTijNcETRozf9/CAAb6Ks2
- oLsO/vauo21kIR93tid4IDpW7hB6EBQ2t55LfAd76EjNSt4J5Pa4dORImo6o0jZiTV8PUYjbhxakK
- sffz8KoNAdX6o5+vAR/ZFAYlMyWo4Lan9FHkh7/itynjDvVR/QImwuOcKnjZ+AJcQe/WHzezO86s5
- xmTMV1nVYEizfRYrmhOWmlzwpDTCZ2HLsdlZV34TB6ARo4N6aVC3i6CVOM2CMCIqG61USiXGEXTF+
- kD3z/9lMfM9FGWfd+u9Q==;
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=WDH0qPn9zKJu8u7JGB68JX2rRGdioyk+eP4zqnRIXs0=;
+ b=IJAUJSiTuqZwNT
+ EnDqIplRoLxnhx/1atLBZ3ayRoWYnDUYl5qufDIADNE0+Y+SIl7I2I/+Yg4h83OOkDJfm2hL3ql4r
+ BAlZhkSbg6P/C1C/Q10PaDP21/xr8iXEEJeDr1lEka6/aBN3YbeETqfoJjmotUtu9zbaQ1kcDmCIk
+ Ymdz7eR6FEVh0aTtNizVYFUbxWSwd7PfF2J0uINp4gOI1y1lvyftIAz9q6XnquTwsTaOKYSUkgX6J
+ QXbf1a1pdexqFd6Hx0mcSrHRqwUu81XRDFFMBDkiEI4Q+FyFcQiNzk4uHI/Gl+csT9iH7De+HmmIl
+ oamphgWdUXlYF6duqpOg==;
+Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1po2CJ-00DqQy-2F
+	id 1pnwA5-00DFgZ-0H
 	for wireless-regdb@lists.infradead.org;
-	Sun, 16 Apr 2023 13:13:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681650816;
-	bh=Hv8eudMtXGgOxhIT1Cq3LG4BJ96JJeFHXsL8KtcptdI=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=R2/UsQGlhyrKOvpiVYJesW08nFlnRRMhyuzXcTJ9teJXtM2taS9yCchYYeh8ufoHA
-	 QvCmLDn/ve3dHlqqurqgARg/VDxFn47unBQl1OC4ZoUyoj5tAe8tHml/iBlraOFj/d
-	 Qu2hMoFMvkDYNMRla7fIJIlTDv4gx/+I/OKYYP+ZA/qd8DfR1Sp3OJwm9f1OnFBKn/
-	 vnseQgA67bojjp52DVl6LPTwMAN6KAmKMVK3lC84qZ6JRTxvzZw7UaTiBbLpcOlEIX
-	 Hhv8poAtpZWDP8+MtMtcp1fA1zHgCcpJWsYc2gEOqs257jA7PINQHkR/CBHWrZOXw5
-	 EZDjsC7HkHQUg==
-Date: Sun, 16 Apr 2023 08:13:34 -0500
-From: "sforshee@kernel.org" <sforshee@kernel.org>
-Message-ID: <ZDv0fuvSK0x/I4ci@ubuntu-x1>
-References: 
-	 <SJ0PR22MB249501047C8F6F51CCB9D06A8F8C9@SJ0PR22MB2495.namprd22.prod.outlook.com>
+	Sun, 16 Apr 2023 06:46:58 +0000
+Received: by mail-lf1-x132.google.com with SMTP id
+ 2adb3069b0e04-4ec816c9d03so757999e87.2 for
+ <wireless-regdb@lists.infradead.org>; Sat, 15 Apr 2023 23:46:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
+ s=20221208; t=1681627614; x=1684219614;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=5kzjc0m3n/HBNEngFJPQreLN49X01EVyeWOqOYCCxE4=;
+ b=akE6ALMsMvivugWKCDqVA3mT0Fbr25siLHjG3Ys0CIyRLsa5Jdf+7t3JelaN73XxL5
+ 029vkQP+wIpDLx3LqOz0GjHhgIvhLqWiBXePz/ifhbdarJWsoTHSN7166mE1yNzFIHHb
+ Qry7zPVOF8ATmD1shRYm/wJZsEtQvRr4l18WFFvkEt6/yDbWjo35TNPLZEstypKVMOdA
+ r+1w4GDpQ/jLXTlXoa6PihBXXKjjS+uZMi3cvgio3vSqOUZknDr/2PHq3zyPfhfEy0XW
+ PZ7e4xs60XWxDa0toIV8G/+hkiBlcF4WY6x8E1ZwRkT9LYgMws4hfgL+0efZx37Q1FeE fiQg==
+From: Dmitry Tunin <hanipouspilot@gmail.com>
+Date: Sun, 16 Apr 2023 09:46:48 +0300
+Message-Id: <20230416064648.3227-1-hanipouspilot@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <SJ0PR22MB249501047C8F6F51CCB9D06A8F8C9@SJ0PR22MB2495.namprd22.prod.outlook.com>
-Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
- Canada on 5GHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
+ for Russia (RU). Remove DFS requirement.
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -47,50 +46,60 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Eric Sellman <GAK_ACTION@live.com>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+To: Seth Forshee <sforshee@kernel.org>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, Dmitry Tunin <hanipouspilot@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Apr 01, 2023 at 08:26:51AM +0000, Eric Sellman wrote:
-> My apologies but I have made a mistake.
-> 
-> My previous submission about Canada is invalid. The weather frequency range has already been avoided.
-> 
-> Here is the correct information I meant to share with you.
-> 
-> https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf10971.html#s6
-> 
-> "Devices with occupied bandwidths which overlap different bands shall comply with all operational requirements for each band."
-> 
-> https://semfionetworks.com/blog/5ghz-regulations-in-canada-2018-update/
-> 
-> Canada still permits the lower 5ghz frequencies to be used for VHT 160. But it's missing according to the information for the Canadian profile in line 326
+Use of Wi-Fi devices are regulated by the Decision of the State Commission for Radio Frequencies
+ under the Ministry of Communications of Russia of February 29, 2016 No. 16-36-03
+ “On Amendments to the Decision of the State Committee for Radio Frequencies of May 7, 2007 No. 07-20-03-001
+ “On the allocation of radio frequency bands to short-range devices »
 
-Just for the record, as we discussed for the US rules, we can't set the
-max bandwidth for a range to a value larger than the range itself or the
-kernel will reject the database. However, it looks like with AUTO_BW the
-kernel will allow larger bandwidths with adjacent channels.
+https://www.garant.ru/products/ipo/prime/doc/71249926/
 
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/sforshee/wireless-regdb.git/tree/db.txt#n326.
-> 
-> And I wanted to mention that for 5150 - 5250 on line 328, the transmit power has been increased to 1 watt or "30 dBm" according to this document here.
-> 
-> https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf11294.html
+The document sets 100mW for 2.4 GHz and 200 mW for 5 GHz. The is also TPC requirement (see the footnote).
+There is a special limitation 100mW for 5 GHz onboard aircraft.
 
-I see a limit of 200 mW for 5150-5250 MHz. If I'm missing it, can you
-please tell me which section specifies a max EIRP of 30 dBm?
+DFS was never required in Russia.
+Instead the authority chose to prohibit outdoor use for 5 GHz totally.
 
-Thanks,
-Seth
+So we reduce power to 100 mW because of TPC on 5 GHz.
+
+Signed-off-by: Dmitry Tunin <hanipouspilot@gmail.com>
+---
+ db.txt | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 915a3b9..6a05141 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1501,11 +1501,10 @@ country RS: DFS-ETSI
+ 	(57000 - 66000 @ 2160), (40)
+ 
+ # Source: https://docs.cntd.ru/document/902048009?section=text
+-country RU: DFS-ETSI
+-	(2400 - 2483.5 @ 40), (20)
+-	(5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, DFS
+-	(5650 - 5850 @ 160), (100 mW), NO-OUTDOOR, DFS
+-	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order №129_22042015.pdf
++country RU:
++	(2400 - 2483.5 @ 40), (100mW)
++	(5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
++	(5650 - 5850 @ 160), (200 mW), NO-OUTDOOR
+ 	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+ 
+ country RW: DFS-FCC
+-- 
+2.34.1
+
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
-
