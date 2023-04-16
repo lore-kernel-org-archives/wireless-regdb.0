@@ -3,37 +3,42 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
- :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=F9DTREBuB9V+Pq+1Z3Rc2XSUuCk4EBIDkN6eOjEsmic=;
- b=oh/tGCFjNIh0xk
- vexEycbResqxnCv1PLhGVYmVKyVSaLIYkDBJKtThjbP1S1CK/P3m+AsqZ5UdAdV3LBkgk1ds2nY6J
- fTVn6SY4yi02ecJJfi0OMXi0h6AQaqHCymHVzeUxlHoJLUR+57CtmhQBDcxMR8BgMpZ7lcCklp5/O
- HWO4rI7BFlQh67/Z9wxxCLU+QgCE3wAhAGnk4vD+xpxsgrkKAaciKqOEWtOxRUP/7D0siThOnQNP8
- m8GBRMjcKdJRd5TpB2d1+GiLqPSkmkllEs4r9e39ForWNpp4U3ofuJUDYuYSUQNZDB+JArOlPuqqQ
- JOrVnpNHGZlBX29zqSwQ==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=ept0ZiNzqVOGnsAZgXGM3JihzJfhmwAXA3yunv/1yds=;
+ b=Ye+hRjOfJEHSwc
+ NYvHcGAF+6bVZNZoQP+lZswudJLlPuJ3upclpYY82JncmaU8UQTo75dkIosiWy6rR+nY2jl5BdDWU
+ M/AZqHjGQyxnrLQQvKIGQAZ6TMxmAuVsBc9dgH4jydPLYvyDRDoxamb4e1kf9UrIb+qWElaJQZKsO
+ YrfL4rROrpSC1HZT6dlSv0wfbPlIWQslWavY/a6b23/gyVw6zETjznXEGDcm7Uc27L/HtB5UouPSc
+ ZROcFM+iQ0FFjO3hGIlwCuZw/dp9BonjwrkoAWEapaOCcGWP18SSShjglS2OjDAR/CcDr0yJJJfNj
+ vRsAZFXeauscyX7OCYHw==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1pnrDy-00CxKr-1y
+	id 1pnpop-00Ct70-1t
 	for wireless-regdb@lists.infradead.org;
-	Sun, 16 Apr 2023 01:30:41 +0000
+	Sun, 16 Apr 2023 00:00:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1681608632;
-	bh=bYb6ghmwocp4rX7u+W+xhnCicstTQzYl0xEs2c5+z2U=;
-	h=From:To:Cc:Subject:Date:From;
-	b=WszKeYGCsw2Vmk+TGfTQaA16kxStCzsOF6bk0YASIv8zyYo6KFV3mJ6wOliodyorv
-	 YcAPoATMREikjxyFaoJPZrQnMppSl74IcZPiC2ChKL6pzKfPgwIuip9MWBYnt4NLn5
-	 XAg/hb4ZU3ymoFCbq2C9DVHqHnUnDlTf178a+wk5yw5SHc0cBqcU5T1aeRhVbui3uh
-	 O3g3FQiNZNC3JjaI25yj12wYrTzmYOJEin8wL4FT2BC3YWHUuXEnluSUqlts3aIoji
-	 40Y99aTpVszRhT/sJKwQyk4f+KQlyumrzfSXMrNSrQEROZMZAffUU410sX+t5Cgi+k
-	 KiaK+xAoRknSw==
+	s=k20201202; t=1681603233;
+	bh=CVdZs0MT+xGAks/nEDOst6GaoVVT0hv3SqAneERMTDU=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=IwURzOOxlt05ZxAtEAx9Hy8JrHvNAwxFJqNi4GOM1BqFSroTcR0ZcIbM2q+Ko57Tr
+	 /KCBGNwdpVZgLnH6Lx5/U/YUGmICDR9GIv+sZHMkrzIWvHXfnD1+AjiiEag3gL44kI
+	 al621CRNMxVCa6pCnN76kNmQDEyxO8/r51x8ZD+JGD7j6dPyWJTcKbLbdVMXCdUX5k
+	 E94o4pmpAXw1w5cX9ScaFem/5OhNVOfeHbGtpivx7Elnd86os/36/GmQP4Eto8yrjF
+	 7NOCbuwba011Zy/janN8WOhfS0lB1UIR89d4STw0Y3JLfO5086nP41kVmL7kx7awYk
+	 mRcsX6k0qS2mw==
+Date: Sat, 15 Apr 2023 19:00:32 -0500
 From: Seth Forshee <sforshee@kernel.org>
-Date: Sat, 15 Apr 2023 20:30:31 -0500
-Message-Id: <20230416013031.158433-1-sforshee@kernel.org>
+Message-ID: <ZDs6oG9jbKnJIDBS@ubuntu-x1>
+References: <oiVeDD95tMcpWN4ynhZfWbX0idjaGq3ibft2obzq-RSMVptQ3TncwBf_kcekWctED_IGNRx3BmIACchzsrEcSwH1tcfr3jMRP2S1egcTCpY=@proton.me>
+ <ZBnlfZXMxxhfxOSD@do-x1extreme>
+ <6r700jK10O2cquA_KXGtCw4lJFqxCnyvoY_1qcTfCcY-v0ncai7qKGIP4jAGBWeK2A8PoGKGtDDMxWhNP4S2oleHRvAEINXQ2BnP1aUM6KI=@proton.me>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
- for India (IN)
+Content-Disposition: inline
+In-Reply-To: <6r700jK10O2cquA_KXGtCw4lJFqxCnyvoY_1qcTfCcY-v0ncai7qKGIP4jAGBWeK2A8PoGKGtDDMxWhNP4S2oleHRvAEINXQ2BnP1aUM6KI=@proton.me>
+Subject: Re: [wireless-regdb] wireless-regdb: Regulatory rules for Hong
+ Kong (HK)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -48,47 +53,60 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org, Keshav <the.ridikulus.rat@gmail.com>
+To: "tavio.wong" <tavio.wong@proton.me>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Increase the max EIRP for 2.4 GHz to 30 dBm, and add DFS for 5250-5350
-MHz and 5470-5725 MHz.
+On Wed, Mar 22, 2023 at 03:14:41PM +0000, tavio.wong wrote:
+> Thanks for the feedback.
+> 
+> I have adjusted the rules as follows based on your suggestions and further research on FCC rules:
+> 
+> country HK: DFS-ETSI
+> 	(2400 - 2483.5 @ 40), (30)
+> 	(5150 - 5250 @ 80), (23), AUTO-BW, NO-OUTDOOR
+> 	(5250 - 5350 @ 80), (23), DFS, AUTO-BW, NO-OUTDOOR
+> 	(5470 - 5725 @ 160), (24), DFS
+> 	(5725 - 5850 @ 80), (30)
+> 
+> 1. The ranges have been adjusted to align with HK regulations.
+> 
+> 2. For 2400-2483.5 MHz, max power is set to 1 W (30 dBm) based on [1] 47 CFR 15.247(b)(3).
+> 
+> 3. For 5470-5725 MHz, max power is set to 250 mW (24 dBm) based on [2] 47 CFR 15.407(a)(2).
+> 
+> 4. For 5725-5850 MHz, max power is set to 1 W (30 dBm) based on [3] 47 CFR 15.407(a)(3)(i).
+> 
+> 5. 5725-5730 MHz (Channel 144) is already covered by the last range (5725-5850 MHz) so no changes are necessary.
+> 
+> I have also cross-checked the limits to make sure they don't exceed those in the rules for US. The only difference in limits is in 5250-5350 MHz where HK regulations further restrict it to 200 mW (23 dBm).
 
-Source:
-https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
-https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
+Since explicit power limits are given I think we should be able to use
+those. The reference to the US rules probably refers to other
+requirements. So for 3 we can use 27 dBm and for 4 we can use 36 dBm.
 
-Signed-off-by: Seth Forshee <sforshee@kernel.org>
----
- db.txt | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
+> 
+> One last suggestion: I noticed 6 GHz band is allowed for outdoor use at a max of 14 dBm (Section 3.2 of [4]) though it's only for licensed devices. Can it also be added to the rules as below?
+> 	(5925 - 6425 @ 160), (14)
 
-diff --git a/db.txt b/db.txt
-index 915a3b94d418..2a7779510cc5 100644
---- a/db.txt
-+++ b/db.txt
-@@ -850,11 +850,14 @@ country IL: DFS-ETSI
- 	# Table B List of conditions, row 68, wireless device using 802.11a/n/ac protocol
- 	(5725 - 5875 @ 80), (200 mW), AUTO-BW
- 
-+# Source:
-+# https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
-+# https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
- country IN:
--	(2402 - 2482 @ 40), (20)
-+	(2402 - 2482 @ 40), (30)
- 	(5150 - 5250 @ 80), (30)
--	(5250 - 5350 @ 80), (24)
--	(5470 - 5725 @ 160), (24)
-+	(5250 - 5350 @ 80), (24), DFS
-+	(5470 - 5725 @ 160), (24), DFS
- 	(5725 - 5875 @ 80), (30)
- 
- country IR: DFS-JP
--- 
-2.34.1
+Yes, we could do it this way, or use the 24 dBm limit with NO-OUTDOOR.
 
+Thanks,
+Seth
+
+> 
+> Thanks again for your time.
+> 
+> [1] https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-C/subject-group-ECFR2f2e5828339709e/section-15.247#p-15.247(b)(3)
+> 
+> [2] https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-E/section-15.407#p-15.407(a)(2)
+> 
+> [3] https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15/subpart-E/section-15.407#p-15.407(a)(3)(i)
+> 
+> [4] https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca1081.pdf
+> 
+> Best Regards,
+> Tavio
 
 _______________________________________________
 wireless-regdb mailing list
