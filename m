@@ -1,32 +1,39 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:Cc:To:
- MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=qTvyd+RSTziPC9qJIA/XDlrHBlpHLgJPOYNVPE67MQ0=;
- b=hIRtAFLVCXM/WH
- 8+Kw3mqBwscYmBL+8CFGi+i8DqrpzBASsAjws/m4pXYPZ3ckCn0sR/FMOKTB7F1M6HHUt92JGfz1O
- Sn6xHeRfWHByj1WHKZ7PRulfrTwCpEALZ9rW8FspLF4coFyNtYz632K3DnXeXnTbEQTzDmFDwgYjC
- ZWRF+uMW6xMEwW+LLjZfF+BQF+ZiaH7dIfBnLLtDFPaucqc5JEyEs3PczyjZM/rvhtIsVxyrxW9xw
- tVpi2oKdCwoHZlwm6n9FGfUf+pnC0660BkD1u5LYErsAGDEZr23GqvZZo0cpMfzS5anu2qClGxIcr
- wXx40Qis04X+mrGv27Xg==;
-Received: from forward501c.mail.yandex.net
- ([2a02:6b8:c03:500:1:45:d181:d501]) by bombadil.infradead.org with esmtps
- (Exim 4.96 #2 (Red Hat Linux)) id 1poO8K-00GAIT-1y for
- wireless-regdb@lists.infradead.org; Mon, 17 Apr 2023 12:39:02 +0000
-Message-ID: <59bfee53-12c7-cde4-e9c8-1adcefff459f@16depo.xyz>
-Date: Mon, 17 Apr 2023 15:38:50 +0300
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=F9DTREBuB9V+Pq+1Z3Rc2XSUuCk4EBIDkN6eOjEsmic=;
+ b=oh/tGCFjNIh0xk
+ vexEycbResqxnCv1PLhGVYmVKyVSaLIYkDBJKtThjbP1S1CK/P3m+AsqZ5UdAdV3LBkgk1ds2nY6J
+ fTVn6SY4yi02ecJJfi0OMXi0h6AQaqHCymHVzeUxlHoJLUR+57CtmhQBDcxMR8BgMpZ7lcCklp5/O
+ HWO4rI7BFlQh67/Z9wxxCLU+QgCE3wAhAGnk4vD+xpxsgrkKAaciKqOEWtOxRUP/7D0siThOnQNP8
+ m8GBRMjcKdJRd5TpB2d1+GiLqPSkmkllEs4r9e39ForWNpp4U3ofuJUDYuYSUQNZDB+JArOlPuqqQ
+ JOrVnpNHGZlBX29zqSwQ==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1pnrDy-00CxKr-1y
+	for wireless-regdb@lists.infradead.org;
+	Sun, 16 Apr 2023 01:30:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1681608632;
+	bh=bYb6ghmwocp4rX7u+W+xhnCicstTQzYl0xEs2c5+z2U=;
+	h=From:To:Cc:Subject:Date:From;
+	b=WszKeYGCsw2Vmk+TGfTQaA16kxStCzsOF6bk0YASIv8zyYo6KFV3mJ6wOliodyorv
+	 YcAPoATMREikjxyFaoJPZrQnMppSl74IcZPiC2ChKL6pzKfPgwIuip9MWBYnt4NLn5
+	 XAg/hb4ZU3ymoFCbq2C9DVHqHnUnDlTf178a+wk5yw5SHc0cBqcU5T1aeRhVbui3uh
+	 O3g3FQiNZNC3JjaI25yj12wYrTzmYOJEin8wL4FT2BC3YWHUuXEnluSUqlts3aIoji
+	 40Y99aTpVszRhT/sJKwQyk4f+KQlyumrzfSXMrNSrQEROZMZAffUU410sX+t5Cgi+k
+	 KiaK+xAoRknSw==
+From: Seth Forshee <sforshee@kernel.org>
+Date: Sat, 15 Apr 2023 20:30:31 -0500
+Message-Id: <20230416013031.158433-1-sforshee@kernel.org>
 MIME-Version: 1.0
-Content-Language: en-US
-References: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
- <ZDtXkCWhUQnYlNMm@ubuntu-x1>
-From: Kirill <me@16depo.xyz>
-In-Reply-To: <ZDtXkCWhUQnYlNMm@ubuntu-x1>
-Subject: Re: [wireless-regdb] [PATCH] Update regulatory info for Russia
- (RU) on 6GHz
+Subject: [wireless-regdb] [PATCH] wireless-regdb: update regulatory rules
+ for India (IN)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -36,78 +43,55 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"; format="flowed"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Seth Forshee <sforshee@kernel.org>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Keshav <the.ridikulus.rat@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-You're right.
+Increase the max EIRP for 2.4 GHz to 30 dBm, and add DFS for 5250-5350
+MHz and 5470-5725 MHz.
 
-The main document that describe current regulatory rules is 
-https://docs.cntd.ru/document/902048009?marker=65E0IS, with last version 
-from 10 march 2017, but since than all changes in there are regulated 
-and amended by decisions of "Main Radio Frequency Center", last one is 
-https://docs.cntd.ru/document/1300597464, with status "Действующий" 
-("Current").
+Source:
+https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
 
-List of all amendments are here: 
-https://docs.cntd.ru/document/902048009?section=operative
+Signed-off-by: Seth Forshee <sforshee@kernel.org>
+---
+ db.txt | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
+diff --git a/db.txt b/db.txt
+index 915a3b94d418..2a7779510cc5 100644
+--- a/db.txt
++++ b/db.txt
+@@ -850,11 +850,14 @@ country IL: DFS-ETSI
+ 	# Table B List of conditions, row 68, wireless device using 802.11a/n/ac protocol
+ 	(5725 - 5875 @ 80), (200 mW), AUTO-BW
+ 
++# Source:
++# https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
++# https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
+ country IN:
+-	(2402 - 2482 @ 40), (20)
++	(2402 - 2482 @ 40), (30)
+ 	(5150 - 5250 @ 80), (30)
+-	(5250 - 5350 @ 80), (24)
+-	(5470 - 5725 @ 160), (24)
++	(5250 - 5350 @ 80), (24), DFS
++	(5470 - 5725 @ 160), (24), DFS
+ 	(5725 - 5875 @ 80), (30)
+ 
+ country IR: DFS-JP
+-- 
+2.34.1
 
-On 16.04.2023 05:04, Seth Forshee wrote:
-> On Sat, Mar 25, 2023 at 04:04:37AM +0300, Kirill wrote:
->> Update regulatory info for Russia on 6GHz in
->>   accordance with current regulatory rules.
->>
->> Source: https://docs.cntd.ru/document/1300597464?section=text
->>
->> Signed-off-by: Kirill Matvienko <me@16depo.xyz>
-> 
-> Thanks for the patch.
-> 
-> Based on the document I think the rule is right. My only question is
-> whether or not this change is in effect yet. I ask because when I look
-> at [1], which is the document amended by the document you linked to, I
-> don't see this change. I'm not familiar with the process in Russia, so I
-> just want to confirm that the change is in effect before we update the
-> database.
-> 
-> Thanks,
-> Seth
-> 
-> [1] https://docs.cntd.ru/document/902048009
-> 
->> ---
->>   db.txt | 3 ++-
->>   1 file changed, 2 insertions(+), 1 deletion(-)
->>
->> diff --git a/db.txt b/db.txt
->> index 915a3b9..7f338b2 100644
->> --- a/db.txt
->> +++ b/db.txt
->> @@ -1500,11 +1500,12 @@ country RS: DFS-ETSI
->>   	# 60 GHz band channels 1-4, ref: Etsi En 302 567
->>   	(57000 - 66000 @ 2160), (40)
->>
->> -# Source: https://docs.cntd.ru/document/902048009?section=text
->> +# Source: https://docs.cntd.ru/document/1300597464?section=text
->>   country RU: DFS-ETSI
->>   	(2400 - 2483.5 @ 40), (20)
->>   	(5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, DFS
->>   	(5650 - 5850 @ 160), (100 mW), NO-OUTDOOR, DFS
->> +	(5925 - 6425 @ 160), (100 mW), NO-OUTDOOR
->>   	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order
->> №129_22042015.pdf
->>   	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
->>
->> -- 
->> 2.34.1
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
