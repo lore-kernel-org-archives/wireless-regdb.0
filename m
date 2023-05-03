@@ -3,40 +3,42 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
- References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
- :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=h8GgfcVRVrCfUMqPRxrAdMQtdHymHRpjmulDG8dykmM=;
- b=jv0+2lbnONsX5W
- Hlvz0Ks5KhHfb/6T06VW34+RVpgUVxdWsyapuK+q5pZN8fPHSivy5I4LiWu29Buo8kMf/vUQlHPqh
- Z8FIfO9HreFcG8PHxL3L95zKr4Jpt3jukcnHcfgcZHPcY9GU6NtFqbJ/SpReSfnLgg2fA1FGtx38B
- yDMAQf6iYy1BbiY2veL+u8CeHkev+tVBilK7pP4VpB9wM7KbKm4TyhKDIhNG2IAO25M8EgGFK23NE
- PwwHr+yg2biloGkKBf/cEhM3grytRi49vIqAd9ZOaoxqdn62jZLn9ADZ6WxkQ2FtTAvFpQ+a8AkQk
- lc2v+tNLd+VcXhcRC6xw==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:To:From
+ :Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+ List-Owner; bh=eZbrMU2BvbCexZInSjPS9Jmvhj88qwQiUTGvFWvmNHU=;
+ b=STOreafWoGAK/+
+ 91vdjYpA35Lqd96JJ5a02rcOF7WEKqQr5Fzk8WkjiNkAQ+kL9jdf7r0Udz7hOznuKFZXJhjPsjuN0
+ ZuoAF3Ea5bPn0sEN0Ca9F4Zl0NdxSi/YbXXzKzxuflHkvBWGpIV73ZxbnYwVtl6Oy5QE4bZ622APH
+ N8zGq22gdPv6ZX/+Tu5CnWiL8a9lJz4mELPZeE7+qnsq4GDeRkpA2rzNospVE+bkEyuFW0uB64VR0
+ PxWiVFEClcmQXHsokSFE+3JhyCHAtJhtw1lTbJyMNGCrkW2uEkxXCifdGLy2WqllTxxXdIEAQeQYL
+ y2xU5HjKJRSfqnlmA7EQ==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puDQY-004pMT-1m
+	id 1puIFL-005bRq-2V
 	for wireless-regdb@lists.infradead.org;
-	Wed, 03 May 2023 14:25:56 +0000
+	Wed, 03 May 2023 19:34:40 +0000
+Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140]) (using
+ TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client
+ certificate requested) by dfw.source.kernel.org (Postfix) with ESMTPS id
+ 528EB62F9B for <wireless-regdb@lists.infradead.org>; Wed,  3 May 2023
+ 19:34:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683123953;
-	bh=bLa5JCsvvnHG7alfQD8k/ej7JnLJbBqhc9pIBaJInd8=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=A49+ALjxo7Lj8/yTLaHnGwwkuBVyeWcEM8Tosay0v+YVRjaNN7042NHhC4tqyNOuZ
-	 xse0ncLSI2SBW8OgcRb+Ofkec48bEknf+KEuD2jJDlqQPJvchuT69LYM4F5c1ayfJw
-	 il7zEOaMf8kGEyKhdGIwu5lZOhmR6CybCudrODn6q5HohP07WytHAdmbZDnWvbPVXd
-	 v43WKNn7yddb+5+KMTd9C+fKUoCNKsi+3eBn1k20uS49RcO11s9S4qQZdVyWr9d5UO
-	 W/HRgdRwlc3JDcnrosTexYLUP6EHil4Bg5vtUAkrd56yCCr0m13qwys48pefe9Q/cj
-	 n77iMRZWZHjMw==
-Date: Wed, 3 May 2023 09:25:52 -0500
+	s=k20201202; t=1683142478;
+	bh=EdwV+fT0zKSnHXXjSJtyx5FXeRs4OElY6yiqIYXFwX8=;
+	h=Date:From:To:Subject:From;
+	b=f58XxzMTkVjDAGo3mNAeFL3KS2pflbOx8BR2hMBUzOJiejY+BzGhlt9qt+M71KtWH
+	 uJk2WknSM9dsPl0Jzz6ohs7kT+TnhQeMX3bmUFwU5yyZV52dxR7mEqsbtHbSvTMx0x
+	 lwYVPaPma7TPsSYZvr+3Wzl9+ZNfIrhB+p5PjNa3kWlDgPya7NPpUt9hZ8R2sfFZQe
+	 PbSM8FA+Vgn5m8i5fE50/J74sb+M6CJNbU6a6hU85n5YQ1q5ELSSA8D04Twy8XYC1m
+	 FNVOLAWhnlxm/u7Y7wqelxTawhVfmeaFgfFBUGVSCnGBkuLzjiy2wndcHs3ifEV+WN
+	 d4BFO4jNC+Elw==
+Date: Wed, 3 May 2023 14:34:37 -0500
 From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <ZFJu8FbgHF0Pbo+L@ubuntu-x1>
-References: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
+Message-ID: <ZFK3TQWDQMoH9obk@ubuntu-x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
-Subject: Re: [wireless-regdb] [PATCH] Update regulatory info for Russia
- (RU) on 6GHz
+Subject: [wireless-regdb] Stepping down as wireless-regdb maintainer
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -51,19 +53,27 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Kirill <me@16depo.xyz>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Sat, Mar 25, 2023 at 04:04:37AM +0300, Kirill wrote:
-> Update regulatory info for Russia on 6GHz in
->  accordance with current regulatory rules.
-> 
-> Source: https://docs.cntd.ru/document/1300597464?section=text
-> 
-> Signed-off-by: Kirill Matvienko <me@16depo.xyz>
+I started maintaining wireless-regdb over 8 years ago at a time when my
+job responsibilities included investigating and working to fix reports
+of wireless bugs in Linux. Not long after that my responsibilities
+started shifting away from wireless work, and for the past several years
+I've had no involvement in anything related to wireless beyond fairly
+passive maintenance of wireless-regdb. Even in that role it's recently
+been difficult to find time to validate proposed changes against the
+source documents, which has frequently lead to slow response times.
 
-Applied, thanks!
+As a result, I've decided that it is time for me to move on from
+maintaining wireless-regdb. I won't step away immediately, but I plan to
+stop applying patches and doing new releases around Sep 1 of this year.
+
+If anyone is interested in taking over maintenance of this project,
+please reach out and I'll be happy to discuss.
+
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
