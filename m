@@ -6,38 +6,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
  References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
  :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=qPT7irL2+yOnixtqcG52vLYt7NqTiRglJbTCeFN/gAI=;
- b=e8HoDfj+JS9Gog
- kNUW2Lh9c+/30QCnZvybsvjukd0T/3LGhx8q0L5duinQN6sW9+jo5O54IVq08V5lRursEJX1aJOWA
- AbJ39TI6+K2bQbOurPvxt2yUn4bt3s0qsaqNJij/LYPCCfrVkoYCPpn5+7Zgl7IiKYtOwoCzQvP+X
- 5uk7u9Bj7EYQ4E2mTPAFJqG+dz9bizenDBK+DXOnNEyMKR4lArniLMWIVTcvDANvYFihdpWx53wyX
- Ezvl1Aeg7xZeLtmtcpTxE7gXPQaVXFFCWAXNnWZdzdTr1nyKMtXOs+FmqG2v3/asBtz6syWOorQJ2
- aKzDduEuG5GdpyokB60w==;
+ List-Owner; bh=ePTJE04UXV5ai1JhBc76J3b2acb7DemCm86d84IuQnA=;
+ b=LSouyDOTHbpYGD
+ 6PekXeqDhIUfjfPdFdcWU18GgbVMZkWRvfQSfMZY5XFqHta2x7dUusWBdLzHmu+r9EerNIebSQ4t6
+ PKWbemvMI5vfYrFwAb04YA+nmsR6NpU4HCwp03/uVLs4yAFyYSuPbdXrgXWP0gs6NNI49Bv813lgw
+ vcgfFVsWJA/Se60EoF5+eoFoEhQnEdK04vEqLsXU8msqSspbWEUlVw6QRKQU2LBlSENEJzXWsWQnL
+ HP0craRvtCIKNvR00IdSfzADhHg6CYLkHDIB6jdZDwhePI6AquJdEMGj9FQ8pznvbIWo8WPwCkXeC
+ bl+R3aBoA5GsK1U4WIhg==;
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1puGUL-005IpO-1G
+	id 1puDZw-004qaI-2g
 	for wireless-regdb@lists.infradead.org;
-	Wed, 03 May 2023 17:42:02 +0000
+	Wed, 03 May 2023 14:35:38 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1683135720;
-	bh=oS1UqJvT9YwKZbIIzQccc+25t51qQGkqKy8e6NYb1B0=;
+	s=k20201202; t=1683124535;
+	bh=Dfu0Oo4wS5bbuhu/ZJTm3kewDRXpkdoWHrQ4dxVhyuE=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=tuhf2MJYprCSLPF+JCuTXwtLUFAZ3nMh5eKl7xEvqf5Ua3GsMhfq4vuPLfGaQ4NJk
-	 b/abPwpnBHuwwV8hKGPLVbW/cuJ6FSEPG29rZhz0P5mPsLJ3BHijeSYKG+DVW4ht1Q
-	 hKuQ+nuv0uCVcBgCpWRKIrktM0R7CYGnOD2sHH+8/XcBuqrLcGYWfBYhdJRGdo/a4t
-	 PAce9TzK2gN/Y7E5bK4Yc0IPOaZz8/hUXV4z8YJ2zAbctxVjBGvR07EYhf9Pn96B9N
-	 jYeQ/uVW2zRTXkEUT1RTNbAAb/zhKXd06zrxrf756BYBepl07lq7T1ux+r6nytFPNG
-	 vsY1vhPZLr3vg==
-Date: Wed, 3 May 2023 12:41:58 -0500
+	b=t7Ic6BvEPmFCHXXcHEM5dfIlU2WTCOCwUXuzKiUYq97cpSXEa2yaI2gK96qzjPUW0
+	 hKBNyct4D9jZ5hLAvAx8zDKTLK1VZVdRm3kITUi4u0PYjpep6rTYCmOsNLPsr0olZB
+	 OjbzWK3Zz8aO13Xpx8rQp25RVAyM3O5YmL42XwTo7u6dpPIbjPzRlTJjqk91gEDqPk
+	 CmPY/KtvSD0ls+KhEkR2uV+Zk+rIbqsAtzJZ50PuJdV6sfAFjjxqUKgIqh3JbP/BUJ
+	 UN99ZKQWTirPPwNn4aNiXYfi+19jVGTps+GdAYkPQ7/AoR8t43HToe0hukGKaIVeLI
+	 S+KhEJ5YZmkfQ==
+Date: Wed, 3 May 2023 09:35:34 -0500
 From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <ZFKc5uAVGToHg68o@ubuntu-x1>
-References: 
-	 <lPLmWUrjD7qCP9xceeomrJkM3UROE54cq2gp0jV2M-FeSKypWU2OB1smaPcro_p8kRHjXUcZd31egElc_z46nBTC5IMr9l31VNApPck5V6E=@proton.me>
+Message-ID: <ZFJxNrxeA+sRft0A@ubuntu-x1>
+References: <20230416013031.158433-1-sforshee@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <lPLmWUrjD7qCP9xceeomrJkM3UROE54cq2gp0jV2M-FeSKypWU2OB1smaPcro_p8kRHjXUcZd31egElc_z46nBTC5IMr9l31VNApPck5V6E=@proton.me>
-Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
- rules for Hong Kong (HK)
+In-Reply-To: <20230416013031.158433-1-sforshee@kernel.org>
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: update regulatory
+ rules for India (IN)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -52,21 +51,21 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: Tavio Wong <tavio.wong@proton.me>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>, "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>
+To: wireless-regdb@lists.infradead.org
+Cc: linux-wireless@vger.kernel.org, Keshav <the.ridikulus.rat@gmail.com>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-On Wed, May 03, 2023 at 03:37:14PM +0000, Tavio Wong wrote:
-> Update frequency ranges and max EIRP for 2.4 GHz and 5 GHz, and add support for
-> 6 GHz based on latest HK regulations.
+On Sat, Apr 15, 2023 at 08:30:31PM -0500, Seth Forshee wrote:
+> Increase the max EIRP for 2.4 GHz to 30 dBm, and add DFS for 5250-5350
+> MHz and 5470-5725 MHz.
 > 
 > Source:
-> https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca1039.pdf (2.4 GHz and 5 GHz)
-> https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca1081.pdf (6 GHz)
+> https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+> https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
 > 
-> Signed-off-by: Tavio Wong <tavio.wong@proton.me>
+> Signed-off-by: Seth Forshee <sforshee@kernel.org>
 
-Applied, thanks!
+Applied.
 
 _______________________________________________
 wireless-regdb mailing list
