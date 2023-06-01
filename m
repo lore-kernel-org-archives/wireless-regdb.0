@@ -3,40 +3,41 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=0pXuQjmpTBqDcf9xqWkfelIoBePZQnc6D+/VMNS2B9o=;
- b=D1b
- du62uxRaSFF2GyDTLGv813AxZajwlSI1IzqyCyzVnZRsu0yzdLl3NUwivqP2MQu5x50AeFbge3A9m
- 9E+6J45BaYzQfx0gfVBCO1rY5j60Fk/fDUFS+YvwckkjZ6dqG/UZk/zfHBOsOFlMGOCbf+4XOibT3
- UXMs6qyJsnXK9V86wsKuqg0gpQaZIV0Q9Zjdj1qVPItV4cpmjrXME+RHeCx8ehOsCyLuOY+etNpKL
- RM1DWgXvleqf0eFoo8AErRaCbJ8CM2LP8S5Gxihe2WJO/OCWn4KFIOXUDlSI0Z6bcj29e7tP/POpd
- FwWp+WNB7JP97tTQxRuBUUYO1wVQrpQ==;
-Received: from mail-pj1-x102d.google.com ([2607:f8b0:4864:20::102d])
+ List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:
+ References:Message-ID:Cc:To:From:Date:Reply-To:Content-ID:Content-Description
+ :Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=4uqiBAmP1fBmWB0yp86TgT4QbPI8dMWQH80vz/rj7TE=;
+ b=NbPOtCfGrQn9a6
+ cQcnOM9gbdwSUyMQsnF7zeJ3oyT0SwKkaUpxk9/RhkA4yEks0m6KamIq+4EQcfr/j6l7zKyO3J+TB
+ rh24HDJLdrTaFWpZhe0E8gK7isLgz+H4hBLLD+Y4YTp6ipyrO4q99ZkRuIistTKxfZvKljXXPPI9+
+ L+fkkHdf09MZDzgE7NcZdAqQlns33PI9XV9gRoAt2KKXjMEQ/EWERQoie7JZN2TdEEa+vTlZxWJlA
+ y45EUUBZCUTyMxjZkkunfu3PWuzb/NoeTWzglzhatKP5oou8sFyRWnpn66a5h1cRKsQ9lTZMgjmx9
+ RppOVm2aut3LW8JjOMRA==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qEA3h-00DQoB-2C
+	id 1q4iFJ-003fZy-0v
 	for wireless-regdb@lists.infradead.org;
-	Tue, 27 Jun 2023 14:52:47 +0000
-Received: by mail-pj1-x102d.google.com with SMTP id
- 98e67ed59e1d1-26307d808a4so1125652a91.1 for
- <wireless-regdb@lists.infradead.org>; Tue, 27 Jun 2023 07:52:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com;
- s=20221208; t=1687877563; x=1690469563;
- h=content-transfer-encoding:to:subject:message-id:date:from
- :mime-version:from:to:cc:subject:date:message-id:reply-to;
- bh=pbggdALUm82t0La70QhMqTY00W9nZK4H6t+OCLPvr14=;
- b=pxdnYf6sLJ9NFGZZxISbmHoND8jpdKz64aoMGKl9OfMlQXQ+AEatOI1hAGgWvk3P/z
- VZvEmWYf3BAwaYi5+R9R5UiMQRW/LkPFjFW5J2Z3GC4OWFF/pUYppXLdrP+MNkZIfafr
- o9/PUoUR6++FDAofjtZ/jBPK7PGzlt8tu9XCv0xo1TlEYuXbOX4qH41knJInfbyjMRr4
- IrjuETCNvtja4yofYL79IpcdfTl2QmOMqE0eITyQqYs1jKFJnum9hFbdSU5hBk8Vpq63
- vkpLzMCHHMrfIFIKq49sZUC6BmWVANpvNHgykHibTzcbUfaCZ1xMAA/PDX74VkGOx4yZ eKLA==
+	Thu, 01 Jun 2023 13:21:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1685625700;
+	bh=RqjrPYnvUJzRVywrJOrTYUsyPyv1BqLehdpXFxXeWv4=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=ewBtFp2rRzMe6WlmOU+McDv+7ilTktozcVAZKKsv1VraFly1hPrA0QAQk24rcdjDe
+	 g8z6EhK8jS4Ge/DZNt6fZGugURrB6V7ndFX6w8li2ddbzJ7yUOHPQxebRPVsVlGXk6
+	 1uAXYk59fvZx2Dc/IMcqd73e9xPHkBGxBOqyUIQZLazhh3UuBS7A59m/b64WNzxuOJ
+	 iWWvII7/8njibuEhdmjex0t+u0MaZY7xySvXITT+BQjtT93aTDN4vzr0Ti65uiKCo/
+	 e63cPXBjxJ2hUbt19zkEUtLYYKUeXfyEevREbEdd7G4YdnESA6byZfrCz6WLCj8Rae
+	 owec4JRFE8D+Q==
+Date: Thu, 1 Jun 2023 08:21:39 -0500
+From: Seth Forshee <sforshee@kernel.org>
+Message-ID: <ZHibY/SqV02YuEWL@ubuntu-x1>
+References: 
+	 <CAKOr0YRiWtywH_hggMn0jFivS7GOp9huw+ib5Lz43BxWo5M7CA@mail.gmail.com>
 MIME-Version: 1.0
-From: Atahan Bostan <ooatahanturan@gmail.com>
-Date: Tue, 27 Jun 2023 17:52:05 +0300
-Message-ID: <CAN=yUYY7nY=NEUp3Y2+RP0V_ekpK7Mn4jp87DuQrqLC60JsVKw@mail.gmail.com>
-Subject: [wireless-regdb] =?utf-8?q?wireless-regdb=3A_Update_for_regulato?=
-	=?utf-8?q?ry_info_for_T=C3=BCrkiye_=28TR=29_on_6GHz?=
+Content-Disposition: inline
+In-Reply-To: <CAKOr0YRiWtywH_hggMn0jFivS7GOp9huw+ib5Lz43BxWo5M7CA@mail.gmail.com>
+Subject: Re: [wireless-regdb] wireless-regdb: Update regulatory rules for
+ Egypt (EG) on 5GHz
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -46,67 +47,51 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Mohammed Ismail <m.ismael@gmail.com>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Hi everyone,
+On Thu, May 25, 2023 at 12:04:00PM +0300, Mohammed Ismail wrote:
+> Hi
+> Current rules are
+> 
+> country EG: DFS-ETSI
+>         (2402 - 2483 @ 40), (N/A, 20), (N/A)
+>         (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
+>         (5250 - 5330 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
+> 
+> it is outdated , here are the updated information
+> 
+> https://www.tra.gov.eg/wp-content/uploads/2021/11/EGY-NTRA-June21-NFAT.pdf
+> 
+> https://www.tra.gov.eg/wp-content/uploads/2021/11/EGY-NTRA-June21-Chart.pdf
 
-wireless-regdb as it stands currently does not cover 6GHz usage on
-Türkiye. Therefore I did my best effort to provide an updated regdb
-entry for the Türkiye along with correct transmission power values for
-5GHz bands and it should look like this if I'm not mistaken:
+Thanks for the links, however they don't seem to contain the information
+about power limits, etc. that we need to update the database. I found
+this document:
 
-```
-# According to https://www.btk.gov.tr/frekans-tahsisinden-muaf-telsiz-cihaz-ve-sistemleri
-(Exemption from Frequency Allocation for Wireless Devices and
-Systems).
-# 5725-5875 is SRD usage only
-# Full specifications of all unlicensed frequencies:
-https://www.btk.gov.tr/uploads/pages/ftm-teknik-olcutler-ek-5.pdf
-country TR: DFS-ETSI
-    # 2.4 GHz band, TS EN 300 328
-    (2400 - 2483.5 @ 40), (20)
+https://www.tra.gov.eg/wp-content/uploads/2022/03/EGY-NTRA-March-2022-SRD_English_Final.pdf
 
-    # 5 GHz band, TS EN 301 893
-    (5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-    (5250 - 5350 @ 80), (23), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-    (5470 - 5725 @ 160), (30), DFS, wmmrule=ETSI
+From this I think the correct rules are:
 
-    # SRDs, TS EN 300 440
-    (5725 - 5875 @ 80), (25 mW)
+country EG: DFS-ETSI
+        (2402 - 2483.5 @ 40), (20)
+        (5150 - 5250 @ 80), (23), AUTO-BW, wmmrule=ETSI
+        (5250 - 5350 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
+        (57000 - 66000 @ 2160), (40)
 
-    # 6 GHz band, TS EN 303 687
-    (5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+If this looks correct to you, I'll send a patch.
 
-    # 60 GHz band, TS EN 302 567
-    (57000 - 71000 @ 2160), (40)
-```
-
-Notes:
-
-- The range 5725-5875 MHz is allowed for unlicensed use for industrial
-purposes up to 1000mW, but not for Wi-Fi specifically, but I put it
-into regdb because it was there for most other European countries as
-well. SRDs, or in Turkish, KET devices, are described according to
-https://www.etsi.org/technologies/short-range-devices
-- There are three different specified output powers for different
-outdoor and indoor use cases for the 60GHZ band in the document but I
-will include the 40 dBm without outdoor limit to align it with other
-European countries and standards.
-- In Türkiye, outdoor usage allowed up to 14db, if it can be added,
-add "(5945 - 6425 @ 160), (14), wmmrule=ETSI" there as well, but I
-didn't add there, again, for consistency with other EU countries.
-
-Please double check the formatting before merging or anything, just in case.
-
-Thanks.
+Thanks,
+Seth
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
