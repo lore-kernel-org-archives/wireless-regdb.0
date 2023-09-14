@@ -1,45 +1,43 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Cc:To:
- From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=K1ol3FkVejQE+/Inqh/rQDhLRvP72GJWJadSllTpp/0=;
- b=UB185E2Dvnxt7k
- j6+nd5OB/XV8vOVwFufMdyn3Krl9T1Dk8NkyCIRvSEGspg3vD5voyKfwC2Ifk2dEcgkd6q1ILivIh
- rnhqXAAoWVz56QqTc/UqEx5IkujQTADuX+zyZH1la/Mbxpl4jBHJ3zDo76H2cERA4tcxISNK80UZL
- oimG+/NeFeeuFFbltl7dKWCbRuiNi42LuE1uc2bNU80uoNHZgL0+eQcXHysZi2EX+8jg140HaUCi3
- KsarxPPmS9NcUEkeE/TMVrp1SMg9r47MRkrmqiVbX1Sv1kATE8EYJAemuSNGOtUxKLs+svE/H5vdv
- e8wCKNVJ1VnLN91F7hkw==;
-Received: from ams.source.kernel.org ([145.40.68.75])
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+ Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+ List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:CC:To:
+ MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ List-Owner; bh=sng+g+3FXMCwSm7aUa3JGRb6N9b3b6s2V6EuTootoyw=;
+ b=v5LKtX4Rl4Av0X
+ YU9q89acGRIpIcPDmR7ykCWOBVqJx9hej/iHhtAaZdt7av7WjyUQbDAVgzJwWSa4HaAh1pT9SNXRS
+ 2GxgTD9GQnEJTqOJC2xzwAbaoqoVBWTCG55zJw9hTHfLg0Tz0C4wsnXJdtnfsyqfqnr4508KS2clF
+ TsKEQAAq8L6oVvzzw/mRjAfsWcJDGeeRYGq6Kga8OKlmH4gujOLK+N+1c1G/RnKu7gFjeZi1XU0rF
+ 6ZqGY3wAWJ7sR9KN6AP1tBAstWZLIYC8RJ7BtCWP4T5AFiAXZvuFgpHoyHw51xibKYBAgwL009reb
+ RzwIGDxT/9lnJZ071t1A==;
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1qcAW3-000Lyu-3B
+	id 1qgcpT-007ES3-0f
 	for wireless-regdb@lists.infradead.org;
-	Fri, 01 Sep 2023 20:13:17 +0000
-Received: from smtp.kernel.org (relay.kernel.org [52.25.139.140]) (using
- TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange
- X25519 server-signature RSA-PSS (2048 bits)) (No client certificate
- requested) by ams.source.kernel.org (Postfix) with ESMTPS id 2F45EB825CC
- for <wireless-regdb@lists.infradead.org>; Fri,  1 Sep 2023 20:13:14 +0000
- (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1693599193;
-	bh=w874aat6VlaOJyl5m9a9UVknPCXTGdGjPwhfrMlolNM=;
-	h=Date:From:To:Cc:Subject:List-Id:From;
-	b=QdIRgQGayJqHURSKZBS+GQUDHFYjZM7eoQvFymWgnSQarkjgfC1ccgAXOOe3lehBT
-	 ejikugQlcpgCF9GB212jn7psICVlXkBrG0oEFHSVo+28wkZg9rnr0MEiXn8iBNqxw4
-	 4rcy13WxdMGvuz3+8pcAS5+Q5g8I8xHeXlUVz8SObUgvZ4BlXm/WABAvFsIKAumWK3
-	 uVGAlBGJoA9ly+BbwMwaXaIbKfeQUcqailaGjnbkCxDhtI5MhVsgDU0qDtigZoffdh
-	 7PQPs6PN94RcE3jmOUBGZhq3BTNhlhb+4OA9wH5kFOpdFr3h7XjSrKidF26dkI22jm
-	 tfPkllZoADccQ==
-Date: Fri, 1 Sep 2023 15:13:11 -0500
-From: Seth Forshee <sforshee@kernel.org>
-Message-ID: <ZPJF1/2YA4dP+ggY@ubuntu-x1>
+	Thu, 14 Sep 2023 03:15:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com;
+ h=message-id : date : mime-version : subject : to : cc : references : from
+ : in-reply-to : content-type : content-transfer-encoding; s=qcppdkim1;
+ bh=Oum9B+ZueXk07z0wEEOFPseDq75McWYB77ymeZAJQ4k=;
+ b=kst2bIB0XgGl6vyLEH2CrI2Sm2AZJRZph/9HG3H78sxjfBy8BOc1xwpG6FJC+2cSlO+c
+ kgFbHeVxxAJYDyViQ+rDbOykT6aB4Bb24hzQF/mGbDU/oB1m60lzGvthLlTgQUTDmSi6
+ NrCrVvjoFMJo5IlKs3qsy1uSgczEplG+iqcZLRuwCJ3JGbesXakV5/ouqOKkXo0Le+P5
+ CpR+DsRb8jSfmRBlRX3HX+mizO9I/25APQyG0AaO+2s314rcSPhdbE5KXDdkwR+C59jO
+ HxnOSAPnJiQR63WpyQMGVV132E9PhbLRGcQVvtkRdRF4Ugbrmv1C/TrOwvYIZyd9dImU CA== 
+Message-ID: <46343a69-5f27-4ffa-bbd8-5b5e7616dbbf@quicinc.com>
+Date: Wed, 13 Sep 2023 20:15:40 -0700
 MIME-Version: 1.0
-Content-Disposition: inline
-Subject: [wireless-regdb] [ANN] wireless-regdb: master-2023-09-01
+Content-Language: en-US
+References: <20230315132904.31779-1-quic_adisi@quicinc.com>
+ <20230315132904.31779-3-quic_adisi@quicinc.com>
+ <4cb3e92530d3f4db3b414e2a7536a0f01b765c4d.camel@sipsolutions.net>
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <4cb3e92530d3f4db3b414e2a7536a0f01b765c4d.camel@sipsolutions.net>
+Subject: Re: [wireless-regdb] [PATCH v3 2/9] wifi: cfg80211: save Power
+ Spectral Density (PSD) of the regulatory rule
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -49,43 +47,26 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-A new release of wireless-regdb (master-2023-09-01) is available at:
+On 9/13/2023 7:58 AM, Johannes Berg wrote:
+> So I'd say we shouldn't touch any of the code under #ifdef
+> CONFIG_CFG80211_CRDA_SUPPORT any more since CRDA will not continue to
+> developed with any updates here.
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2023.09.01.tar.xz
-
-The short log of changes since the master-2022-05-03 release is below.
-
-As previously announced, I am stepping down as the maintainer of
-wireless-regdb effective today. This is the last release I plan to do,
-and currently there is no new maintainer for the project.
-
-Thanks,
-Seth
-
----
-
-Adam Nielsen (1):
-      wireless-regdb: Update regulatory rules for Australia (AU) for June 2023
-
-Seth Forshee (3):
-      wireless-regdb: Update regulatory rules for Egypt (EG) from March 2022 guidelines
-      wireless-regdb: Update regulatory info for Türkiye (TR)
-      wireless-regdb: update regulatory database based on preceding changes
-
-kleo (1):
-      wireless-regdb: Update regulatory rules for Philippines (PH)
-
+On a related note, what will happen to ongoing wireless-regdb support 
+now that Seth has stepped down as maintainer? Have enough vendors moved 
+to self-managed such that regdb is obsolete?
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
