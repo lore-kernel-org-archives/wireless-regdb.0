@@ -3,51 +3,38 @@ Return-path:
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=lists.infradead.org; s=bombadil.20210309; h=Sender:
  Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-Id:Date:Cc
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:Date:Cc
  :To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
- List-Owner; bh=8aXiiURj7uEefCjXBJr5X4S4yr5ybboEvDWTxG8NndA=;
- b=FJwv42/D6sod/R
- SAZOdW/+iP6VrrS279G/9RdYGXYa2vbGejPQeyNxDJtrhqIN0ZiyiUMiJLjR4cX8L+6XUYLgHlrMk
- fpvle691z9x0AlE7a7ZyqSjx7YSPyAUWbLjq4fr3yinMl3xIMksq12jfCPWGLMivQfv/xHzNgyg5F
- a2Aw9xMH+U1vHPnIcVxxFKMg3UWwMHMtqHjLJYvdKbwOULw0jWRKTOwugfu/3Rbooihr5xm8MS7mU
- 9Bgw9pmJE4v+hF0n085vyCIZAz1O57jGz445KGFbea50q0iLkby9u3jqNkgL1I7e+QYKmeXu+r3zD
- qHwGGzlNM6LVGc3xdfsw==;
-Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
+ List-Owner; bh=Dyp3KiV8MqBDgrhSVZhE8kJ0iVbGh0AvQ6SxgWtg4Sg=;
+ b=Xjvng2p4N09W30
+ 6627TObC8olHcINJmzAgVJbIPRY9mngekpCAw7uybNw/KrWdo368WBjmVNI8I6nuai4FhCE0jnOei
+ bMEg1HE9vt3vrWOaYmaj7ku+hZJQIrI4dKimIT/hPdUB0FwntgGgggRhbnKFNBGwaX26/vEG8kZaN
+ YKHFcIX76NS0fxhUMlDkN1x0D23Uy9wK6II6csBCekXV3+myI4oAOUEksbeZsj+OCQYEEuPUHgbqg
+ S7R1mpA7Onjgw8mxokoZ12W4NQGxJryzeuEU+SSBwspBCu4QwWnN7UVkN9MroX3MsGVk+NV4pjnB1
+ V22IOCriQillNjYIt7NA==;
+Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r4mSu-00AXOX-2C
+	id 1r3kh5-0052CV-0V
 	for wireless-regdb@lists.infradead.org;
-	Sun, 19 Nov 2023 18:24:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=flygoat.com; h=
-	cc:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:message-id:mime-version:reply-to
-	:sender:subject:subject:to:to; s=fm2; t=1700418247; x=
-	1700504647; bh=Ghajq2sXMlq4prW7btWmZuhNYsvMd0oxU8W4SfZ7+ZQ=; b=M
-	+M5PC2P2UZyv6zJe1cbf5n/2yNwUw4CJH+tINbhzjwUesHIR3S4MlhftUF0iwJ6J
-	BZsrExhIHhC48H9WjS/gMm3Da8U9z4ITM0ILjmd1QRYE87RO308G1HP5krrAvbBO
-	k7BQTyW5Z5LRRaLyIT04otx8wuDG/n1WMGUwBegry0GgGrtI5PXRc+vt8SxfnXIh
-	sbWCrp4WML9+P7Fwm/QvZE8HV+DWr/Prz0AbbjPCSNIB8D544wE7GDcmOc0UUXLh
-	zNY63JIDeWMigJKoZsHNtjxZKXfczoFhiu21FLvXsrs/VxXccFpZQpilDqNnAkqg
-	u2AvlCK5sth3FsE66z/bA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-transfer-encoding
-	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:message-id:mime-version:reply-to:sender
-	:subject:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender
-	:x-me-sender:x-sasl-enc; s=fm1; t=1700418247; x=1700504647; bh=G
-	hajq2sXMlq4prW7btWmZuhNYsvMd0oxU8W4SfZ7+ZQ=; b=kqcwojTivtIs1f0Bx
-	0D67roxhxxQlTEohb1ivt+vOAgb2mqwXbBtIdcGA+dZ5DS9eWbT/gh4+wtU+icbV
-	XcxOOZcZZYN61Rd3q9OmuePXgKuM0vJopeA+U//7hR4uPKHxOB+r5hjwA947ignb
-	xzAavZ8MAyh+ahWBJrcRkELyy0YEM58mX3RBb04NarbHjExTWb11FYzCNdWQExXd
-	+EQIH6aS3yH2Wxf16RsAE2sERPUqtinECSoNhcE3VDXyX93HLse0Z6c9LZCha67+
-	cw3Lveyl4xyj4J3S036VwYn9z7v4d/SO4IcuBnsxX/Azhy4Mu9Yh5cHunu65Hw7d
-	Fsx4g==
-From: Jiaxun Yang <jiaxun.yang@flygoat.com>
-Date: Sun, 19 Nov 2023 18:24:01 +0000
-Message-Id: <20231119182401.7630-1-jiaxun.yang@flygoat.com>
+	Thu, 16 Nov 2023 22:18:40 +0000
+Received: by mail-pf1-x435.google.com with SMTP id
+ d2e1a72fcca58-6c33ab26dddso1286799b3a.0 for
+ <wireless-regdb@lists.infradead.org>; Thu, 16 Nov 2023 14:18:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org;
+ s=google; t=1700173117; x=1700777917; darn=lists.infradead.org;
+ h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+ :to:from:from:to:cc:subject:date:message-id:reply-to;
+ bh=fut2D9PGkyHE9fjVYm7r2SdMYSbTSM2K3xqc3g+d5jg=;
+ b=dgKSE9M/a8QsJQcANphP5sqN7O6YrF2rznFXbtc7NLLaZRX/ogKByh097R363mS54/
+ eBr8Pbn7sqoRlyMlL5k5ewUzHzW1p6bfMj+4eEYb/v72i6TnoBzQQ1Y4VunVNLeZ20kD
+ ySu4NAGyvkS6BBtyBxKhZLeUgTj+g9FkjYaVM=
+From: Brian Norris <briannorris@chromium.org>
+Date: Thu, 16 Nov 2023 14:18:16 -0800
+Message-ID: <20231116221828.301564-1-briannorris@chromium.org>
 MIME-Version: 1.0
-Subject: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory rules
- for China (CN)
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Makefile: Reproducible
+ signatures
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -57,51 +44,51 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: text/plain; charset="us-ascii"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
 To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
+Cc: Chen-Yu Tsai <wens@kernel.org>, wireless-regdb@lists.infradead.org, Brian Norris <briannorris@chromium.org>
 List-ID: <wireless-regdb@lists.infradead.org>
 
-China had updated regulations on 5150 MHz to 5350 MHz by
-"中华人民共和国工业和信息化部令（第54号）", which released
-an update to "中华人民共和国无线电频率划分规定".
+Per openssl-mime(1):
 
-The new regulation effectives from 1 July 2023.
+       -noattr
+	   Normally when a message is signed a set of attributes are
+	   included which include the signing time and supported
+	   symmetric algorithms. With this option they are not included.
 
-In updated regulation, footnote "CHN44" had restricted 5150 MHz to
-5350 MHz as in door only for Broadband Wireless Access systems.
+The signing time hurts reproducibility, even if the same database, key,
+and certificate are used.
 
-Signed-off-by: Jiaxun Yang <jiaxun.yang@flygoat.com>
+So, drop the extra attributes from the smime command.
+
+Signed-off-by: Brian Norris <briannorris@chromium.org>
 ---
- db.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/db.txt b/db.txt
-index fdc2c13..24bb6d4 100644
---- a/db.txt
-+++ b/db.txt
-@@ -403,10 +403,11 @@ country CL: DFS-JP
+ Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Makefile b/Makefile
+index 02176ec7b717..ecd23309efb6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -69,6 +69,7 @@ regulatory.db.p7s: regulatory.db $(REGDB_PRIVKEY) $(REGDB_PUBCERT)
+ 		-signer $(REGDB_PUBCERT) \
+ 		-inkey $(REGDB_PRIVKEY) \
+ 		-in $< -nosmimecap -binary \
++		-noattr \
+ 		-outform DER -out $@
  
- # Source:
- # https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20219/d125301b13454551b698ff5afa49ca28.pdf
-+# https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20236/d1dc19424d5a4cfe90d631adeee8dd58.pdf
- # Note: The transmit power for 5150-5350MHz bands can be raised by 3dBm when TPC is implemented
- country CN: DFS-FCC
- 	(2400 - 2483.5 @ 40), (20)
--	(5150 - 5350 @ 80), (20), DFS, AUTO-BW
-+	(5150 - 5350 @ 80), (20), DFS, AUTO-BW, NO-OUTDOOR
- 	(5725 - 5850 @ 80), (33)
- 	# 60 GHz band channels 1,4: 28dBm, channels 2,3: 44dBm
- 	# ref: http://www.miit.gov.cn/n11293472/n11505629/n11506593/n11960250/n11960606/n11960700/n12330791.files/n12330790.pdf
+ sha1sum.txt: db.txt
 -- 
-2.34.1
+2.43.0.rc0.421.g78406f8d94-goog
 
 
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
