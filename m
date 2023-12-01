@@ -1,42 +1,43 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:
- Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:Subject:To:Message-ID:Date:From:
- MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
+ List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+ Subject:MIME-Version:Message-ID:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
- References:List-Owner; bh=SjxX6+qLTnDNCVeTNY79zJqFfs3Pu411KLqZ4EA2NRw=;
- b=Vep
- ETbrQA6U4Aygzew7CSpoSG2CXTx+m2yxWftNSJbmk/nPQdrvVz+wDPzCnakjQssLsENlBz2eeTi4J
- aOXK/PKr9QiXz4r1T14tQmFa47qDIiW0nltxeoJgluudfNfZDVk7qJibhAosr5Z7o4wE4tonPGtcp
- mF7X9p6vBzGV/z/iWdNeKPit2KinOlJlLv2GGOFDaqKEg/v33AZKHSlj61g2OXnBsxrHPG6YhDVJs
- Rfi19lFQQuTSR6s4reaEjqU4DQ16XKYMpH/s/2BqHzwyWBJNZ21bCjkFelL2tqMW0NM/C+08lK3HF
- 3W7z41hkLTO8nMrSOpG/XHqQX4NLVOg==;
-Received: from mail-oo1-xc2a.google.com ([2607:f8b0:4864:20::c2a])
+ References:List-Owner; bh=SO3G0Y2zEOAZNWqutFalNBNuJlt3ghxJw46p4RlL3g4=;
+ b=XRh
+ yZNuwURNFVBRJGoJk64WDTyf/nLr48a3rlZHShTcapm1yVNVtbxJGXLKCkIn436cJrOExTzIh5Mep
+ FtX8Kbxu+6oIys5F2+GhGGlfGEnnZIyYUDxq1fblLZ3zIQtiw+QFA4XuRAdzpmkjttjgxM5D/5Zzr
+ COvzyZHKgCplsNn2BcvAZBGwR2QgJVA9kps2skPj4VmQZP8C5IJeVFCvziPjQ5Or0cHEuKc+AJP4r
+ mGG5Wx+hJJmSNrs4CVKXytpHdQ9p7n9oG7v4ak5nQqpnUj2rp7pQmgWRqM+y13gKM39noHSmoPkPK
+ 7B5kZr9fZR4ZoLvfiL0fe7OsqeKTkNg==;
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1r9HGg-00F87w-0k
+	id 1r8yMP-00CvFK-1B
 	for wireless-regdb@lists.infradead.org;
-	Sat, 02 Dec 2023 04:06:16 +0000
-Received: by mail-oo1-xc2a.google.com with SMTP id
- 006d021491bc7-58ce8513da1so1740909eaf.2 for
- <wireless-regdb@lists.infradead.org>; Fri, 01 Dec 2023 20:06:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=jclark-com.20230601.gappssmtp.com; s=20230601; t=1701489970;
- x=1702094770; darn=lists.infradead.org;
- h=content-transfer-encoding:to:subject:message-id:date:from
- :mime-version:from:to:cc:subject:date:message-id:reply-to;
- bh=zSH9IwFv+kcQGSqEHHZsnxH9HABbZKHkqnqkbaRYok4=;
- b=M3qgVNqkdslBLFfB0vUozVZf5zcWW2+WYJyxfuI43GuP6mx594HtwoqYRmoEuUyJHW
- D7sVSnD7SEoA2XkwCnW8RmP0XhYQSU4w2lFyYgBym1Z1VaBMK3zUlHvSr0OcvYKJokpn
- mFI42YuxBXd280C6VLzIHOA7qWsevUpNhO87tTtI9dclqVC0OcHStUUubDaOY49YT22a
- bV8GrLOcyjFE3A6AUYdP8PmUlpECiNVIYKfmDmgdc6F8tQUVAcAL5qHtJmZ6rN2DY0OS
- Yj/Lxwqb2pq1H1QeNE5Z3cwC0FQZJXNZCEhLwClbfdS80XQ4FrNsGCmtfGJFrOLsITI9 mtfw==
+	Fri, 01 Dec 2023 07:54:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org
+ [100.75.92.58]) by dfw.source.kernel.org (Postfix) with ESMTP id 0370D6150B
+ for <wireless-regdb@lists.infradead.org>; Fri,  1 Dec 2023 07:54:52 +0000
+ (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701417291;
+	bh=WvwSnhS/WAdkhBy86iWMgf0DaqZC1ngTRg8LDwfDBw0=;
+	h=Date:From:To:Cc:Subject:From;
+	b=ZXmI96aaqEPvhCfJNnPpavE5L1QNC273luqucus+YTvhg9upKNH/nTLE3WnXXF1W0
+	 VTMZpteHa5hwVo8wDBJAnfVzWKgH/p5wxydIziUBvgDkXmTZCjcNQONc81vNCCL2gO
+	 1QAQALaINUc26If4sFO7z/UvlnK5JaOGnOb9D8y1sX7OgL2Qta7HkAkxfud5uCPRN8
+	 0ix2UzgXVWjk9DwLIFIVDc/iDkp9+yiIi2X7rk+6Dqkhd4DhUxHW4Kb30z39/5c3lw
+	 U8oi1fJeZbKLihW+mK6ARuL9J/c5tTfMz687TmbtScef+hyh419ZHsuYMp6P07ZzdT
+	 f3w4A7nju911w==
+Date: Fri, 1 Dec 2023 15:54:47 +0800
+From: Chen-Yu Tsai <wens@kernel.org>
+Message-ID: <ZWmRR5ul7EDfxCan@wens.tw>
 MIME-Version: 1.0
-From: James Clark <jjc@jclark.com>
-Date: Sat, 2 Dec 2023 11:05:58 +0700
-Message-ID: <CANz3_EYPnA9q=svHnwmakpv6JGSYfUV7JhOBBgyQwpzXMFz7XA@mail.gmail.com>
-Subject: [wireless-regdb] 6GHz in Thailand
+Subject: [wireless-regdb] [PATCH] wireless-regdb: Update keys and
+ maintainer information
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -46,49 +47,201 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
+Content-Type: multipart/mixed; boundary="===============2583218343651286792=="
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
-Content-Transfer-Encoding: 8bit
-To: wireless-regdb@lists.infradead.org
+To: Seth Forshee <sforshee@kernel.org>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-Thailand approved use of 6Ghz band on 28th April 2023.
+--===============2583218343651286792==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ipe/PCSRqSuzE0j0"
+Content-Disposition: inline
 
-The regulatory authority in Thailand is the National Broadcasting and
-Telecommunication Commission (NBTC) [1]. Their regulations have legal
-effect when they are published in the Royal Gazette
-(Ratchakitchanubeksa) [2].
 
-The relevant announcement was published  in the Royal Gazette on 28th
-April 2023 [3]. The technical content is on the 4th page of the PDF
-labelled หน้า 1 จาก 3, in section 2.1. It approves the range 5.925 -
-6.425GHz with EIRP 250mW, 12.5mW/MHz  inside buildings (ภายในอาคาร)
-and 25mW, 1.25 mW/MHz inside and outside buildings
-(ภายในอาคารและภายนอกอาคาร).
+--ipe/PCSRqSuzE0j0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-The date of effectivity is given on the first page of the PDF. The top
-right of the page is the publication date ๒๘ เมษายน ๒๕๖๖ which is 28
-April 2566 Buddhist Era (2023 CE). This line "ข้อ ๑
-ประกาศนี้ให้ใช้บังคับตั้งแต่วันถัดจากวันประกาศในราชกิจจานุเบกษาเป็นต้นไป"
-says that this announcement is effective from the date of publication
-in the Royal Gazette.
+As announced [1], I am taking over maintainership of the wireless
+regulatory database.
 
-There's an English language reference confirming this [4]. The WiFi
-Alliance countries page [5] also lists Thailand as having adopted
-5925-6425 MHz.
+Make it official by replacing the key and certificate, and updating
+maintainership information in various places.
 
-Please let me know if you need any further information.
+[1] https://lore.kernel.org/all/CAGb2v657baNMPKU3QADijx7hZa=3DGUcSv2LEDdn6N=
+=3DQQaFX8r-g@mail.gmail.com/
 
-James
+Signed-off-by: Chen-Yu Tsai <wens@kernel.org>
+---
+ Makefile               |  2 +-
+ debian-example/control |  2 +-
+ sforshee.key.pub.pem   |  9 ---------
+ sforshee.x509.pem      | 17 -----------------
+ wens.key.pub.pem       |  9 +++++++++
+ wens.x509.pem          | 17 +++++++++++++++++
+ wireless-regdb.spec    |  2 +-
+ 7 files changed, 29 insertions(+), 29 deletions(-)
+ delete mode 100644 sforshee.key.pub.pem
+ delete mode 100644 sforshee.x509.pem
+ create mode 100644 wens.key.pub.pem
+ create mode 100644 wens.x509.pem
 
-[1] https://www.nbtc.go.th/Home.aspx?lang=en-us
-[2] https://ratchakitcha.soc.go.th/
-[3] https://ratchakitcha.soc.go.th/documents/140D100S0000000004200.pdf
-[4] https://cetecomadvanced.com/en/news/thailand-nbtc-notification-wi-fi-6e-and-wi-fi-7/
-[5] https://www.wi-fi.org/countries-enabling-wi-fi-in-6-ghz-wi-fi-6e
+diff --git a/Makefile b/Makefile
+index 02176ec..c99fcb6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -34,7 +34,7 @@ REGDB_PRIVKEY ?=3D ~/.wireless-regdb-$(REGDB_AUTHOR).key.=
+priv.pem
+ REGDB_PUBKEY ?=3D $(REGDB_AUTHOR).key.pub.pem
+ REGDB_PUBCERT ?=3D $(REGDB_AUTHOR).x509.pem
+=20
+-REGDB_UPSTREAM_PUBKEY ?=3D sforshee.key.pub.pem
++REGDB_UPSTREAM_PUBKEY ?=3D wens.key.pub.pem
+=20
+ REGDB_CHANGED =3D $(shell $(SHA1SUM) -c --status sha1sum.txt >/dev/null 2>=
+&1; \
+         if [ $$? -ne 0 ]; then \
+diff --git a/debian-example/control b/debian-example/control
+index e6e7161..3d186ee 100644
+--- a/debian-example/control
++++ b/debian-example/control
+@@ -12,4 +12,4 @@ Suggests: crda
+ Description: The Linux wireless regulatory database
+  This package contains the wireless regulatory database used by all
+  cfg80211 based Linux wireless drivers. The wireless database being
+- used is maintained by Seth Forshee.
++ used is maintained by Chen-Yu Tsai.
+diff --git a/sforshee.key.pub.pem b/sforshee.key.pub.pem
+deleted file mode 100644
+index 73d580e..0000000
+--- a/sforshee.key.pub.pem
++++ /dev/null
+@@ -1,9 +0,0 @@
+------BEGIN PUBLIC KEY-----
+-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtUDjnCiEOQPyOddmLEE4
+-Fax+pYNxJX6QfGjdbz/Z11k4n3xqUsIDKi1+ZvQesxJwIFvUlzI9cYs7GwgXFGth
+-xFeLlhYc/STVCwn5aBGE+8pRDNFFGdoQRIrZ/nap/WAtGAsolbIt6oiYuNFWIfBT
+-H/ECb+lGm5NfKJAPrDb6aCNxV1b2zNPffSrZG3NF67onhe96f6XLgMcwNtJT7uys
+-Hucx8TainGPGZVt/JXVooerTfgBcml7YIBgydwcpEmYeNnPnlwRBN7Gxciv0oSkg
+-fJZ5CyvQ2N7IbD+T+8XueFIRFRt69uJomef7RhaE48eh5uDSRtXhxF+gZvTaxP+V
+-HQIDAQAB
+------END PUBLIC KEY-----
+diff --git a/sforshee.x509.pem b/sforshee.x509.pem
+deleted file mode 100644
+index ebd0160..0000000
+--- a/sforshee.x509.pem
++++ /dev/null
+@@ -1,17 +0,0 @@
+------BEGIN CERTIFICATE-----
+-MIICpDCCAYwCCQCyjd9HrvnOpzANBgkqhkiG9w0BAQsFADATMREwDwYDVQQDDAhz
+-Zm9yc2hlZTAgFw0xNzEwMDYxOTQwMzVaGA8yMTE3MDkxMjE5NDAzNVowEzERMA8G
+-A1UEAwwIc2ZvcnNoZWUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1
+-QOOcKIQ5A/I512YsQTgVrH6lg3ElfpB8aN1vP9nXWTiffGpSwgMqLX5m9B6zEnAg
+-W9SXMj1xizsbCBcUa2HEV4uWFhz9JNULCfloEYT7ylEM0UUZ2hBEitn+dqn9YC0Y
+-CyiVsi3qiJi40VYh8FMf8QJv6Uabk18okA+sNvpoI3FXVvbM0999Ktkbc0XruieF
+-73p/pcuAxzA20lPu7Kwe5zHxNqKcY8ZlW38ldWih6tN+AFyaXtggGDJ3BykSZh42
+-c+eXBEE3sbFyK/ShKSB8lnkLK9DY3shsP5P7xe54UhEVG3r24miZ5/tGFoTjx6Hm
+-4NJG1eHEX6Bm9NrE/5UdAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAIcD2vKCwt2v
+-fEQvhtNfTJNIuf4HF7sh9yUjTqoiDBa5c66dRnx12cNJV0e/M7eX7PVAdcBGIvCg
+-XZx5E6H/uKMve44GP8i25Goo8jRcIz8ywOatD6zPVXRHc9MBhbcLIlYkfZ8JqQ6G
+-njdbnG0C2YzIUGriWfMWBuqyQrVY/rrRgVca77I4iFj2qsQui1on5KXopMpnXKxy
+-Z8NvE8MtNXnXiuf11CEwStX2o9l5VvIPEPd90FGTL0f4fUsKhFUSCn1OOx8rL/wo
+-s2k04YCAu+KvudYw8R1UhyOZn1EDTEV9AmVzq/3PlMwNOmD9PBQvFjOpIR/LULGP
+-A+6gZqkWeRQ=3D
+------END CERTIFICATE-----
+diff --git a/wens.key.pub.pem b/wens.key.pub.pem
+new file mode 100644
+index 0000000..7239de9
+--- /dev/null
++++ b/wens.key.pub.pem
+@@ -0,0 +1,9 @@
++-----BEGIN PUBLIC KEY-----
++MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqXoseE2nGS0yUqAubO+I
++fxXFtmlUFkMUeVO3roj+wLddR44a4e+zkIba02SBH85dnktuWAI+sm9eQkdB9Cy4
++qNSqwA7mSPCozssIrjev9kA5y1VvW0+FNOZpEFByXk6dTLo4Ng3OczjXJwIqeQPh
++rM+wJ4WGkxer7EJ3N2WKRMvWQpOSE+M5RcVuAEp/y0IXKyWMuBc7FTZZ3kLOIea2
++x25eJh/3ileepZZytwIy6wcrc+JPZlia6w8HtqtQi8OPF/oKmcIWJb8taxqq5j5f
++622bXU1Cgy05uMms2zqRUN+7sXZtFXP9xuZrcZ5nNiKDebHWuIRSr5Zbw2MCTnhw
++VwIDAQAB
++-----END PUBLIC KEY-----
+diff --git a/wens.x509.pem b/wens.x509.pem
+new file mode 100644
+index 0000000..5fa4e44
+--- /dev/null
++++ b/wens.x509.pem
+@@ -0,0 +1,17 @@
++-----BEGIN CERTIFICATE-----
++MIICpzCCAY8CFGHAOGUaq9z5S9Csf/BsckjbGMYAMA0GCSqGSIb3DQEBCwUAMA8x
++DTALBgNVBAMMBHdlbnMwIBcNMjMxMjAxMDc0MTE0WhgPMjEyMzExMDcwNzQxMTRa
++MA8xDTALBgNVBAMMBHdlbnMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
++AQCpeix4TacZLTJSoC5s74h/FcW2aVQWQxR5U7euiP7At11Hjhrh77OQhtrTZIEf
++zl2eS25YAj6yb15CR0H0LLio1KrADuZI8KjOywiuN6/2QDnLVW9bT4U05mkQUHJe
++Tp1Mujg2Dc5zONcnAip5A+Gsz7AnhYaTF6vsQnc3ZYpEy9ZCk5IT4zlFxW4ASn/L
++QhcrJYy4FzsVNlneQs4h5rbHbl4mH/eKV56llnK3AjLrBytz4k9mWJrrDwe2q1CL
++w48X+gqZwhYlvy1rGqrmPl/rbZtdTUKDLTm4yazbOpFQ37uxdm0Vc/3G5mtxnmc2
++IoN5sda4hFKvllvDYwJOeHBXAgMBAAEwDQYJKoZIhvcNAQELBQADggEBACQo7iJ0
++f3z6bB+zGNHCPX0pQoitgqWxigXQ7FyRIPaC/dVnYF8x9b2IkXC9uLmMiP5TyVSb
++Q8R6Q3Rr3bCxOzNFRnijHO9UaPeFnORRbwavgdsqe3tvqJxn2MvJkUAArtmhn92m
++Qw4oe6ob6YTbdmRCcMnA666EERZoToSefpI27hw7CGPreYQVCJ2vyJrHNNOUS9Eo
++l77RRXXcNWKsHR+3txWHyJjAJDFWje3bBsZGv0ttptWrzGD85Te2U31YlalWx/fu
++w6B292VNU/r/X3YzWgj6hpJaE/oa/PIbjH9Cbbd+t7Twx4O7ooEDLdQqYz/3MS5A
++M1xGvJvBBaVFTsM=3D
++-----END CERTIFICATE-----
+diff --git a/wireless-regdb.spec b/wireless-regdb.spec
+index bb648ca..b92fee4 100644
+--- a/wireless-regdb.spec
++++ b/wireless-regdb.spec
+@@ -16,7 +16,7 @@ BuildArch: noarch
+ %description
+ This package contains the wireless regulatory database used by all
+ cfg80211 based Linux wireless drivers. The wireless database being
+-used is maintained by Seth Forshee.
++used is maintained by Chen-Yu Tsai.
+ http://wireless.kernel.org/en/developers/Regulatory/
+=20
+ %prep
+--=20
+2.39.2
+
+
+--ipe/PCSRqSuzE0j0
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE2nN1m/hhnkhOWjtHOJpUIZwPJDAFAmVpkUQACgkQOJpUIZwP
+JDDVWw//VmPcTU865IXBkOgo5EpMb29KI5qFfimmOv/LxNtcKCmt9mcgGdmxAlJ2
+6GO09QkFKD7Wvn6Lm5FedbZ3cgzYM01sT/f7MQOeHzleqXIO2nX/gLW7a/slBVid
+9m+JYPQOWX1X+xqCznQHLDxeVQoDMd6uyygtg5DNNSULOGLb2StzzhSNp+JJf03Q
+UGxkhgZt1zQr+nGR+i6DTzeM4SqD+wou3HxSRzqf5U+Z1ctQNg7UOVUgd6xHnI/T
+82eHx4nsDXF7ro6q1+d+jcJRUEANJ+1k3Q2jJyQ+c0F9mxC1SrDSJLSpBydqJ43Z
+Av5GH034jK/pASBCSsIAug9qwHkrZnrkGRB++na5HngPMBEgE+aju89FiiPxpAuY
+GdQU3rLc8j3vDa33vXTjSVLYjJtPYX21p2FiO3VKe2IFuSf5B0ZwJvikUwRJ3mVK
+yYfXuc//G4WY3EnFYjMRZN9DHE3MEb2RD1fP04uO3s7MVo+PpNARHC88B1y16mBy
+jZUh0IKipVGOAcv8hcR+LUESHZdvA4dtZ4/gS3zWofiSIp3w2ShfU+773IN55mWj
+D8qnshvMA4T2IHL8GCKR7MUpxY9q10QuhHDfIsdE4nq3g3sZVm0LKQZ4SC58j4g/
+Vb97sSa/meoILPUHIdjC1t5yWtj+xsXyb0g5pXx8BOxpHKyBiRA=
+=3sMl
+-----END PGP SIGNATURE-----
+
+--ipe/PCSRqSuzE0j0--
+
+
+--===============2583218343651286792==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+
 _______________________________________________
 wireless-regdb mailing list
 wireless-regdb@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/wireless-regdb
+
+--===============2583218343651286792==--
+
+
