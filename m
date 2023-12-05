@@ -1,33 +1,41 @@
 Return-path: 
  <wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org>
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20210309; h=Sender:Content-Type:
- Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
- List-Unsubscribe:List-Id:Subject:In-Reply-To:From:References:Cc:To:
- MIME-Version:Date:Message-ID:Reply-To:Content-ID:Content-Description:
+ d=lists.infradead.org; s=bombadil.20210309; h=Sender:
+ Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+ List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Date:Message-Id:
+ References:In-Reply-To:Cc:To:From:Reply-To:Content-ID:Content-Description:
  Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=eg1MpDbuHzycxLsVKrtULEZWT6ciLJZqilIWdO4uteQ=;
- b=Kct5oeXgGphccd
- toumd5FwSX+GkM9wmzBZJ7dp6Gupns/NCh3WxiT9ffZZ6S/D0Z2FNuCJlkgquwq9oUVD9Dmt0y7vZ
- L5qmqBLqRZt4HnutxnlQLj31/FvWJi1YMD/6KOk/gBh/tNRQ07z4BW+WZKEKGciFXSUFVBobL1fIL
- HUdp5uxsGQY7KEMPRWsWoKAYBXu/HB586QBuAIQiYxqtRaErdtTM1wYu3K74SJnonIpXMU5UisA0j
- UjlHEw4QWJi6ejZQVcch+PCcpquB3UrAebp0BOPKfE/TiEm48X+IrKq4tzBY6JfPYOFteK8Okc0Nc
- WXufjxr9D4QHjnz7n3hQ==;
-Received: from forward500c.mail.yandex.net
- ([2a02:6b8:c03:500:1:45:d181:d500]) by bombadil.infradead.org with esmtps
- (Exim 4.96 #2 (Red Hat Linux)) id 1rDnpL-000hOE-2q for
- wireless-regdb@lists.infradead.org; Thu, 14 Dec 2023 15:40:45 +0000
-Message-ID: <21b0fc55-6b5d-404b-88d1-3ad2b7acbbcd@16depo.xyz>
-Date: Thu, 14 Dec 2023 18:40:34 +0300
+ List-Owner; bh=pQHhj24i5F9EnfWusU31z9oFPKGdTHwF4SIxlztNYnc=;
+ b=gjYz56G5+YcdQL
+ WOEF17QPU/6IK7vmqUPJNlZSlSQg9GZ6cldQxh1UlNpLCCr+pGrDbfTkfxpjIPXdXUpvKb73ahsZZ
+ 9hD+SBNYadmwBgZCbosYDF/9mbpD1YK52oyxBdcnHdAayx0mFftBPC00jDIROSlY6i1bsiGjHuNEg
+ gx90UQNztB0f/aNCjq6bnJB1t9Wb41oOWw1piLvyaMUlgsI31qfNipcfS/DRBQs3jiR9TTeYpkrbq
+ jNwnaTmZ1yX/VD/cN7/aFc2mm0sTVFrGfWccmJNO9pdFiyI6sA4XjUveER4CyHQwohSswKPSeeUu6
+ h14rG25QPxu/w4JcxqXw==;
+Received: from dfw.source.kernel.org ([139.178.84.217])
+	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
+	id 1rARSa-006kfa-3B
+	for wireless-regdb@lists.infradead.org;
+	Tue, 05 Dec 2023 09:11:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1701767480;
+	bh=QMDREhFQs+Cx0qGLE9136SPqX1lANODyvOE4w3ZTV8g=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=kJL0n1adXyd+4aJbqeG0PPvNud7n72mRjjBl6faIYVwurj4dd0xsn4RrZmY9vCOAn
+	 un8OgChvpwhvciYmoDaIHSyFcAuTJ/EjMNmTt3hJHnXDaG2A7oAoDXNAMu92IK+KB1
+	 dcCXpCB+OFMdstC4JazUdfUjnlQRusUSvmC3kSdtOeHWr8MpKnRGCvfxkyhJDlLBLH
+	 94VbMyYan9zgCJkfu/HkEYxami6G+J8BwngjzXkuFx8Cx69b35EZIZohYV6X50+Jqt
+	 HUL1VpcuqyA4dPfnTmHKjWTg16r8uDVLUjfQVz4y2sveyhk7zVyvEFqFVgW9bLey5d
+	 R9TNtyleHYJ9g==
+From: Chen-Yu Tsai <wens@kernel.org>
+In-Reply-To: <20231119182401.7630-1-jiaxun.yang@flygoat.com>
+References: <20231119182401.7630-1-jiaxun.yang@flygoat.com>
+Message-Id: <170176747748.1180638.6206522543570761190.b4-ty@kernel.org>
+Date: Tue, 05 Dec 2023 17:11:17 +0800
 MIME-Version: 1.0
-Content-Language: en-US
-References: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
- <a0480e18-7b67-4e16-983e-c8f888c97261@16depo.xyz>
- <CAGb2v65V==YE=NLYyE=2ApN04jPeuFFc9d6bfTaQYBUsXoFWsQ@mail.gmail.com>
-From: Kirill Matvienko <me@16depo.xyz>
-In-Reply-To: <CAGb2v65V==YE=NLYyE=2ApN04jPeuFFc9d6bfTaQYBUsXoFWsQ@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] Update regulatory info for Armenia
- (AM)
+Subject: Re: [wireless-regdb] [PATCH] wireless-regdb: Update regulatory
+ rules for China (CN)
 List-Unsubscribe: 
  <http://lists.infradead.org/mailman/options/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=unsubscribe>
@@ -37,80 +45,37 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: 
  <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"; format="flowed"
+Content-Type: text/plain; charset="utf-8"
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: 
  wireless-regdb-bounces+johannes=sipsolutions.net@lists.infradead.org
 Content-Transfer-Encoding: 8bit
-To: wens@kernel.org
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+To: linux-wireless@vger.kernel.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
+Cc: wireless-regdb@lists.infradead.org
 List-ID: <wireless-regdb@lists.infradead.org>
 
-I have no evidence to why bandwidth restriction exist in the first 
-place, and my main concern in not power or bandwidth, but number of 
-channels. Now most wireless vendors use only UNII-1 and (less often) 
-UNII-2 for AM regulatory domain, but this decision from regulators will 
-allow to use UNII-2 extended and UNII-3.
-The document that being amended is N-169 
-(https://www.arlis.am/documentview.aspx?docid=76877), and there is only 
-this passage about 5GHz:
 
-5150 - 5250 ՄՀց, 5725 - 5875 ՄՀց ռադիոհաճախականությունների շերտերում 
-աշխատող, մինչև 100 մՎտ հզորությամբ, լոկալ ցանցերի սարքավորումների 
-օգտագործման համար (միայն շենքերի ներսում, ինչպես նաև օդանավերում` երկրի 
-մակերևույթից 3000 մետրից բարձր թռիչքի ժամանակ), 5250 - 5350 ՄՀց, 5470 - 
-5725 ՄՀց ռադիոհաճախականությունների շերտերում աշխատող, մինչև100 մՎտ 
-հզորությամբ, լոկալ ցանցերի սարքավորումների օգտագործման համար 
-(օդանավերում` երկրի մակերևույթից 3000 մետրից բարձր թռիչքի ժամանակ),
-
-which translated as:
-
-Operating in the radio frequency bands 5150 - 5250 MHz, 5725 - 5875 MHz, 
-for the use of local area network equipment with a power of up to 100 mW 
-(only inside buildings, as well as in aircraft when flying above 3000 
-meters above the earth's surface), 5250 - 5350 MHz, 5470 - 5725 MHz for 
-the use of local network equipment operating in radio frequency bands 
-with a power of up to 100 mW (in airplanes during flight above 3000 
-meters above the earth's surface);
-
-Anyway, if you think that we can't use wider channels, please, change 
-only frequencies and power.
-
-On 14.12.2023 18:02, Chen-Yu Tsai wrote:
-> On Thu, Dec 14, 2023 at 7:04 PM Kirill Matvienko <me@16depo.xyz> wrote:
->>
->> Source:https://www.arlis.am/DocumentView.aspx?DocID=181829
+On Sun, 19 Nov 2023 18:24:01 +0000, Jiaxun Yang wrote:
+> China had updated regulations on 5150 MHz to 5350 MHz by
+> "中华人民共和国工业和信息化部令（第54号）", which released
+> an update to "中华人民共和国无线电频率划分规定".
 > 
-> This only justifies the power limit change. What about the
-> maximum bandwidth?
+> The new regulation effectives from 1 July 2023.
 > 
+> In updated regulation, footnote "CHN44" had restricted 5150 MHz to
+> 5350 MHz as in door only for Broadband Wireless Access systems.
 > 
-> ChenYu
-> 
->> Signed-off-by: Kirill Matvienko <me@16depo.xyz>
->>
->> ---
->>    db.txt | 4 ++--
->>    1 file changed, 2 insertions(+), 2 deletions(-)
->>
->> diff --git a/db.txt b/db.txt
->> index fdc2c13..0708039 100644
->> --- a/db.txt
->> +++ b/db.txt
->> @@ -80,8 +80,8 @@ country AL: DFS-ETSI
->>
->>    country AM: DFS-ETSI
->>        (2402 - 2482 @ 40), (20)
->> -    (5170 - 5250 @ 20), (18)
->> -    (5250 - 5330 @ 20), (18), DFS
->> +    (5150 - 5350 @ 80), (100mW)
->> +    (5470 - 5875 @ 80), (100mW), NO-OUTDOOR,DFS
->>
->>    country AN: DFS-ETSI
->>        (2402 - 2482 @ 40), (20)
->> --
->> 2.34.1
->>
+> [...]
+
+Applied, thanks!
+
+[1/1] wireless-regdb: Update regulatory rules for China (CN)
+      commit: 8c784a10448e36dc387fe02ae6bf69f4ae0208d2
+
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
+
 
 _______________________________________________
 wireless-regdb mailing list
