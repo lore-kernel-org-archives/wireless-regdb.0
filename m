@@ -4,69 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25C10C46CD2
-	for <wireless-regdb@archiver.kernel.org>; Fri, 22 Dec 2023 03:32:51 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B54ACC46CD3
+	for <wireless-regdb@archiver.kernel.org>; Fri, 22 Dec 2023 03:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VzUmGYXnlX4K2+67rVxrZqkmwL1w0hKwOQcvHx2RGQg=; b=gnwUdbzohcnzts
-	Q3ET365IQiFoilZdGNA8hwiQnEQ7iXWnISG4eYvUUAHRhVXUNizReMtgPJVphelChhqlq7bkoP+CY
-	IbSF/e5zE+x0qHXBVnFgQuFvDZtZtnKzOqe7CPMtrzlz9oqXVJYlJ4UQ8t6rriADnex0TnAJ4I+6P
-	VNA1+Rp0ncs8faUqi+pXXKjZN/ZkIWVkDDUPBmqS9DNmxfBlLMLY5LZovtdYGifW1NJBInQrtJQYa
-	spQRO7KI/DxB+G73dpKsVzAj0TBFr6icBURNdDATNv3iTjeMb/JBq39hLxz0XtcSkY1zkooAdob3B
-	EECqj4A9R6+WTx7YB30g==;
+	List-Owner; bh=fge+IDTzXkqeg9r5qBn9pOmuSXPZCJ+xcWDHuxt01C4=; b=YtW8nqCLzuL+dG
+	wIJgO2SZT0n4CpW75IG99thSlRIh6GQthvu+91TUSfRfpyY+34LgakQoWJfBxohwx9bC4JVfHOhWc
+	rLxNwTys8aMAxdyWTslLVzWH1G0y9RCgjj+ijH06lRMH8xLGNQ0wcEfBuKz1zkGlCO8nPcnLg3Nf6
+	OW7ulwqVuyp4ge+JBKYXXgtpqySMkwwJKo+kE8B77n2/on/SRwXhynhnPk4MvAYMEl8tmwmuVwTjR
+	E+oq/clhuykD2au8PhoddiWxg8osqEVr5ITEfVNBTr1beprXkxqz9gCh2MwOP8yVcfYv0XwF2O5gC
+	5wV9K2Q+mHBOPSoQ/2Ag==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGWHH-004lbf-1W;
-	Fri, 22 Dec 2023 03:32:47 +0000
-Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
+	id 1rGWUM-004mw4-0x;
+	Fri, 22 Dec 2023 03:46:18 +0000
+Received: from ams.source.kernel.org ([145.40.68.75])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGWHF-004laq-0P
+	id 1rGWUJ-004mvf-0g
 	for wireless-regdb@lists.infradead.org;
-	Fri, 22 Dec 2023 03:32:47 +0000
+	Fri, 22 Dec 2023 03:46:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by ams.source.kernel.org (Postfix) with ESMTP id 437F6B81ACB
-	for <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2023 03:32:42 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4BE7FC433CA
-	for <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2023 03:32:41 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id 8A893B82175
+	for <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2023 03:46:13 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 16AD9C433C8
+	for <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2023 03:46:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1703215961;
-	bh=VzUmGYXnlX4K2+67rVxrZqkmwL1w0hKwOQcvHx2RGQg=;
+	s=k20201202; t=1703216772;
+	bh=/HBMIDCXdXSM0Cck61qEYJH7Milhscnpb8KzIzjkFTg=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=EY8IH9rmBuyJAcxeEywuyWd2x9SXsUVsSg7meIolz7r7DARLbK3KZmo4/gEemQ292
-	 ywAoqTGSbIjws/qLvxBGFR9JjedqDuygMplcbB6H5tfeaKTIUEHlCy2HKamp3Ml30Z
-	 3ZYa1sfjlvF0ArVcOd9OQHaxnb8EwN1AGIkF4g5d6AMYGkkvNI4itSbF0gRTjyywde
-	 Sl4OdHfIYzyKLcB0c1PpF89fRqtYNLKqlFBviba36w8s51ZZFOyGnXzdx2FfTjcrgu
-	 MK6BCoUYGyneAgfbpzHf31go6/jdd18ape9QmL6qihu38qbIgJAkqwAiWUd2QQd4fo
-	 mQ2wEt+RWy3rg==
-Received: by mail-oi1-f180.google.com with SMTP id 5614622812f47-3ba52d0f9feso1064707b6e.0
-        for <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2023 19:32:41 -0800 (PST)
-X-Gm-Message-State: AOJu0YzBxo1j7gO8/Y0WlzuyMYPmQJTCjrwfvPrV0tfHfqxaSck3gvJt
-	yQHhHwvDF9KXkx+/3P9I/2wFpkShz3BNYpTZ47U=
-X-Google-Smtp-Source: AGHT+IGITXZwz+rRhCdnZx1YCreGepZb864ZKGSj5n5Fe8f4KFIho/XRs2nNzQaUBM4EcKUW7W1H2MFPJD0FoEnZxfY=
-X-Received: by 2002:a05:6808:2f09:b0:3ba:e0c:398f with SMTP id
- gu9-20020a0568082f0900b003ba0e0c398fmr939540oib.104.1703215960556; Thu, 21
- Dec 2023 19:32:40 -0800 (PST)
+	b=B/CiACY8B4EYxT6Gd9aRpmfBhQ8eFVanMXimJlKmTKN/h3fnHsrXM574YDdXXfxiQ
+	 o4SKq3FtTtjsmVGyg2OtVgD3jhhRWQIYrq8+naavjCCkMoSRiKE+jYj3LP5R8yvFgw
+	 QGHY20V+LBg3WY12cRvK9kmP6REC1zwgIFuRJLpzILBL7TD1tz2vA2E+iUIPh+R5KM
+	 PFPbJxkJ9HnF1piKvVpqklHiHadR5hPoUFaYEv+eJSBZYR+1at3L239alKVKQe3XXu
+	 XYdjuKjrIJnrJAU7BWIgg9oP1KF01WDfydVVnt+E/jVk8cHAsQ8689LgtXH5rgvI6Z
+	 jTNT+5BDDIUKw==
+Received: by mail-pf1-f176.google.com with SMTP id d2e1a72fcca58-6d099d316a8so1437629b3a.0
+        for <wireless-regdb@lists.infradead.org>; Thu, 21 Dec 2023 19:46:12 -0800 (PST)
+X-Gm-Message-State: AOJu0YxCNUbH4oQybB6QezmfqZxpy3bIOACCOHbi32hgYdqVREReRry8
+	RWr5xpml8/2Pq34THUn/CdXkNKfgxofWZg6NGsM=
+X-Google-Smtp-Source: AGHT+IHiT1bovAevHK8u4faffnPvE7l8gJ5pn0mJQVTTG5mSfKYLXBDmlSSUE/X2nx+9IBov5k7VW7YJXtAf0X1AqGo=
+X-Received: by 2002:a05:6a20:da:b0:18b:d207:d857 with SMTP id
+ 26-20020a056a2000da00b0018bd207d857mr729730pzh.11.1703216771663; Thu, 21 Dec
+ 2023 19:46:11 -0800 (PST)
 MIME-Version: 1.0
-References: <411a77cb-47f1-2f97-76c6-939c024654b4@16depo.xyz>
- <a0480e18-7b67-4e16-983e-c8f888c97261@16depo.xyz> <CAGb2v65V==YE=NLYyE=2ApN04jPeuFFc9d6bfTaQYBUsXoFWsQ@mail.gmail.com>
- <21b0fc55-6b5d-404b-88d1-3ad2b7acbbcd@16depo.xyz>
-In-Reply-To: <21b0fc55-6b5d-404b-88d1-3ad2b7acbbcd@16depo.xyz>
+References: <CAE+BM3kzS-xYjLWyBqTaYpEAmR1p=8UuxR957QZW1soKwakmZQ@mail.gmail.com>
+In-Reply-To: <CAE+BM3kzS-xYjLWyBqTaYpEAmR1p=8UuxR957QZW1soKwakmZQ@mail.gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Fri, 22 Dec 2023 11:32:29 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65RqgpA8RMyTKSq3FrDQMQyKqOi5ycQ8Wu81PwiRyi0JA@mail.gmail.com>
-Message-ID: <CAGb2v65RqgpA8RMyTKSq3FrDQMQyKqOi5ycQ8Wu81PwiRyi0JA@mail.gmail.com>
-Subject: Re: [wireless-regdb] [PATCH] Update regulatory info for Armenia (AM)
-To: Kirill Matvienko <me@16depo.xyz>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Date: Fri, 22 Dec 2023 11:46:00 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65nTNa4GQdao85ZG08HToNx6vvK8MxkkW5SSKu7To-1Bg@mail.gmail.com>
+Message-ID: <CAGb2v65nTNa4GQdao85ZG08HToNx6vvK8MxkkW5SSKu7To-1Bg@mail.gmail.com>
+Subject: Re: [wireless-regdb] [PATCH] Correctly parse power with gain and eirp
+To: Rusty Howell <rustyhowell@gmail.com>
+Cc: wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231221_193245_451638_7474C828 
-X-CRM114-Status: GOOD (  21.11  )
+X-CRM114-CacheID: sfid-20231221_194615_553249_5B15FF69 
+X-CRM114-Status: GOOD (  15.87  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,62 +80,70 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-T24gVGh1LCBEZWMgMTQsIDIwMjMgYXQgMTE6NDDigK9QTSBLaXJpbGwgTWF0dmllbmtvIDxtZUAx
-NmRlcG8ueHl6PiB3cm90ZToNCj4NCj4gSSBoYXZlIG5vIGV2aWRlbmNlIHRvIHdoeSBiYW5kd2lk
-dGggcmVzdHJpY3Rpb24gZXhpc3QgaW4gdGhlIGZpcnN0DQo+IHBsYWNlLCBhbmQgbXkgbWFpbiBj
-b25jZXJuIGluIG5vdCBwb3dlciBvciBiYW5kd2lkdGgsIGJ1dCBudW1iZXIgb2YNCj4gY2hhbm5l
-bHMuIE5vdyBtb3N0IHdpcmVsZXNzIHZlbmRvcnMgdXNlIG9ubHkgVU5JSS0xIGFuZCAobGVzcyBv
-ZnRlbikNCj4gVU5JSS0yIGZvciBBTSByZWd1bGF0b3J5IGRvbWFpbiwgYnV0IHRoaXMgZGVjaXNp
-b24gZnJvbSByZWd1bGF0b3JzIHdpbGwNCj4gYWxsb3cgdG8gdXNlIFVOSUktMiBleHRlbmRlZCBh
-bmQgVU5JSS0zLg0KPiBUaGUgZG9jdW1lbnQgdGhhdCBiZWluZyBhbWVuZGVkIGlzIE4tMTY5DQo+
-IChodHRwczovL3d3dy5hcmxpcy5hbS9kb2N1bWVudHZpZXcuYXNweD9kb2NpZD03Njg3NyksIGFu
-ZCB0aGVyZSBpcyBvbmx5DQo+IHRoaXMgcGFzc2FnZSBhYm91dCA1R0h6Og0KPg0KPiA1MTUwIC0g
-NTI1MCDVhNWA1oEsIDU3MjUgLSA1ODc1INWE1YDWgSDVvNWh1aTVq9W41bDVodWz1aHVrdWh1a/V
-odW21bjWgtWp1bXVuNaC1bbVttWl1oDVqyDVt9Wl1oDVv9Wl1oDVuNaC1bQNCj4g1aHVt9Wt1aHV
-v9W41bIsINW01avVttW51ocgMTAwINW01Y7VvyDVsNWm1bjWgNW41oLVqdW11aHVtNWiLCDVrNW4
-1a/VodWsINaB1aHVttaB1aXWgNWrINW91aHWgNaE1aHVvtW41oDVuNaC1bTVttWl1oDVqw0KPiDW
-hdWj1b/VodWj1bjWgNWu1bTVodW2INWw1aHVtNWh1oAgKNW01avVodW11bYg1bfVpdW21oTVpdaA
-1asg1bbVpdaA1b3VuNaC1bQsINWr1bbVudW61aXVvSDVttWh1ocg1oXVpNWh1bbVodW+1aXWgNW4
-1oLVtGAg1aXWgNWv1oDVqw0KPiDVtNWh1a/VpdaA1ofVuNaC1bXVqdWr1oEgMzAwMCDVtNWl1b/W
-gNWr1oEg1aLVodaA1bHWgCDVqdW81avVudaE1asg1arVodW01aHVttWh1a8pLCA1MjUwIC0gNTM1
-MCDVhNWA1oEsIDU0NzAgLQ0KPiA1NzI1INWE1YDWgSDVvNWh1aTVq9W41bDVodWz1aHVrdWh1a/V
-odW21bjWgtWp1bXVuNaC1bbVttWl1oDVqyDVt9Wl1oDVv9Wl1oDVuNaC1bQg1aHVt9Wt1aHVv9W4
-1bIsINW01avVttW51ocxMDAg1bTVjtW/DQo+INWw1abVuNaA1bjWgtWp1bXVodW01aIsINWs1bjV
-r9Wh1awg1oHVodW21oHVpdaA1asg1b3VodaA1oTVodW+1bjWgNW41oLVtNW21aXWgNWrINaF1aPV
-v9Wh1aPVuNaA1a7VtNWh1bYg1bDVodW01aHWgA0KPiAo1oXVpNWh1bbVodW+1aXWgNW41oLVtGAg
-1aXWgNWv1oDVqyDVtNWh1a/VpdaA1ofVuNaC1bXVqdWr1oEgMzAwMCDVtNWl1b/WgNWr1oEg1aLV
-odaA1bHWgCDVqdW81avVudaE1asg1arVodW01aHVttWh1a8pLA0KPg0KPiB3aGljaCB0cmFuc2xh
-dGVkIGFzOg0KPg0KPiBPcGVyYXRpbmcgaW4gdGhlIHJhZGlvIGZyZXF1ZW5jeSBiYW5kcyA1MTUw
-IC0gNTI1MCBNSHosIDU3MjUgLSA1ODc1IE1IeiwNCj4gZm9yIHRoZSB1c2Ugb2YgbG9jYWwgYXJl
-YSBuZXR3b3JrIGVxdWlwbWVudCB3aXRoIGEgcG93ZXIgb2YgdXAgdG8gMTAwIG1XDQo+IChvbmx5
-IGluc2lkZSBidWlsZGluZ3MsIGFzIHdlbGwgYXMgaW4gYWlyY3JhZnQgd2hlbiBmbHlpbmcgYWJv
-dmUgMzAwMA0KPiBtZXRlcnMgYWJvdmUgdGhlIGVhcnRoJ3Mgc3VyZmFjZSksIDUyNTAgLSA1MzUw
-IE1IeiwgNTQ3MCAtIDU3MjUgTUh6IGZvcg0KPiB0aGUgdXNlIG9mIGxvY2FsIG5ldHdvcmsgZXF1
-aXBtZW50IG9wZXJhdGluZyBpbiByYWRpbyBmcmVxdWVuY3kgYmFuZHMNCj4gd2l0aCBhIHBvd2Vy
-IG9mIHVwIHRvIDEwMCBtVyAoaW4gYWlycGxhbmVzIGR1cmluZyBmbGlnaHQgYWJvdmUgMzAwMA0K
-PiBtZXRlcnMgYWJvdmUgdGhlIGVhcnRoJ3Mgc3VyZmFjZSk7DQo+DQo+IEFueXdheSwgaWYgeW91
-IHRoaW5rIHRoYXQgd2UgY2FuJ3QgdXNlIHdpZGVyIGNoYW5uZWxzLCBwbGVhc2UsIGNoYW5nZQ0K
-PiBvbmx5IGZyZXF1ZW5jaWVzIGFuZCBwb3dlci4NCg0KQ2FuIHlvdSBzZW5kIGEgbmV3IHZlcnNp
-b24gY2hhbmdpbmcgbm90IHRoZSBiYW5kd2lkdGggYnV0IGV2ZXJ5dGhpbmcgZWxzZT8NClRoYXQg
-d291bGQgcHJvdmlkZSBhIGJldHRlciB0cmFpbC4NCg0KUGxlYXNlIGFsc28gaW5jbHVkZWQgdGhl
-IHRyYW5zbGF0ZWQgdGV4dCBpbiB0aGUgY29tbWl0IGxvZy4gU29tZXRpbWVzDQpVUkxzIHdpbGwg
-ZGlzYXBwZWFyIGR1ZSB0byBvbmUgcmVhc29uIG9yIGFub3RoZXIuDQoNCg0KVGhhbmtzDQpDaGVu
-WXUNCg0KPiBPbiAxNC4xMi4yMDIzIDE4OjAyLCBDaGVuLVl1IFRzYWkgd3JvdGU6DQo+ID4gT24g
-VGh1LCBEZWMgMTQsIDIwMjMgYXQgNzowNOKAr1BNIEtpcmlsbCBNYXR2aWVua28gPG1lQDE2ZGVw
-by54eXo+IHdyb3RlOg0KPiA+Pg0KPiA+PiBTb3VyY2U6aHR0cHM6Ly93d3cuYXJsaXMuYW0vRG9j
-dW1lbnRWaWV3LmFzcHg/RG9jSUQ9MTgxODI5DQo+ID4NCj4gPiBUaGlzIG9ubHkganVzdGlmaWVz
-IHRoZSBwb3dlciBsaW1pdCBjaGFuZ2UuIFdoYXQgYWJvdXQgdGhlDQo+ID4gbWF4aW11bSBiYW5k
-d2lkdGg/DQo+ID4NCj4gPg0KPiA+IENoZW5ZdQ0KPiA+DQo+ID4+IFNpZ25lZC1vZmYtYnk6IEtp
-cmlsbCBNYXR2aWVua28gPG1lQDE2ZGVwby54eXo+DQo+ID4+DQo+ID4+IC0tLQ0KPiA+PiAgICBk
-Yi50eHQgfCA0ICsrLS0NCj4gPj4gICAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwg
-MiBkZWxldGlvbnMoLSkNCj4gPj4NCj4gPj4gZGlmZiAtLWdpdCBhL2RiLnR4dCBiL2RiLnR4dA0K
-PiA+PiBpbmRleCBmZGMyYzEzLi4wNzA4MDM5IDEwMDY0NA0KPiA+PiAtLS0gYS9kYi50eHQNCj4g
-Pj4gKysrIGIvZGIudHh0DQo+ID4+IEBAIC04MCw4ICs4MCw4IEBAIGNvdW50cnkgQUw6IERGUy1F
-VFNJDQo+ID4+DQo+ID4+ICAgIGNvdW50cnkgQU06IERGUy1FVFNJDQo+ID4+ICAgICAgICAoMjQw
-MiAtIDI0ODIgQCA0MCksICgyMCkNCj4gPj4gLSAgICAoNTE3MCAtIDUyNTAgQCAyMCksICgxOCkN
-Cj4gPj4gLSAgICAoNTI1MCAtIDUzMzAgQCAyMCksICgxOCksIERGUw0KPiA+PiArICAgICg1MTUw
-IC0gNTM1MCBAIDgwKSwgKDEwMG1XKQ0KPiA+PiArICAgICg1NDcwIC0gNTg3NSBAIDgwKSwgKDEw
-MG1XKSwgTk8tT1VURE9PUixERlMNCj4gPj4NCj4gPj4gICAgY291bnRyeSBBTjogREZTLUVUU0kN
-Cj4gPj4gICAgICAgICgyNDAyIC0gMjQ4MiBAIDQwKSwgKDIwKQ0KPiA+PiAtLQ0KPiA+PiAyLjM0
-LjENCj4gPj4NCg==
+On Thu, Sep 14, 2023 at 12:16=E2=80=AFPM Rusty Howell <rustyhowell@gmail.co=
+m> wrote:
+>
+> From 082a38a3de11701ea1edf40a2f3268ec5115c691 Mon Sep 17 00:00:00 2001
+> From: Rusty Howell <rhowell@control4.com>
+> Date: Wed, 13 Sep 2023 11:13:19 -0600
+> Subject: [PATCH] Correctly parse power with gain and eirp
+>
+> Parse a power entry like "(6, 20)" or "(20", or "(N/A, 20)".
+> Previously, the example ASCII file format show in this page would not par=
+se.
+> https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb#=
+mailing_list_for_regulatory_updates
+
+Antenna gain was removed from the database in commit e56cd96
+("wireless-regdb: remove antenna gain").
+
+The wiki needs to be updated.
+
+ChenYu
+
+> ---
+>  dbparse.py | 17 +++++++++++++----
+>  1 file changed, 13 insertions(+), 4 deletions(-)
+>
+> diff --git a/dbparse.py b/dbparse.py
+> index 1e87813..b36ff9c 100755
+> --- a/dbparse.py
+> +++ b/dbparse.py
+> @@ -264,16 +264,25 @@ class DBParser(object):
+>
+>      def _parse_power_def(self, pname, line, dupwarn=3DTrue):
+>          try:
+> -            max_eirp =3D line
+> -            if max_eirp =3D=3D 'N/A':
+> -                max_eirp =3D '0'
+> -            max_ant_gain =3D float(0)
+> +            max_eirp =3D ''
+> +            max_ant_gain =3D ''
+> +            if ',' in line:
+> +                max_ant_gain, max_eirp =3D line.split(',')
+> +                if max_ant_gain =3D=3D 'N/A':
+> +                    max_ant_gain =3D '0'
+> +            else:
+> +                max_ant_gain =3D '0'
+> +                max_eirp =3D line
+> +                if max_eirp =3D=3D 'N/A':
+> +                    max_eirp =3D 0.0
+> +
+>              def conv_pwr(pwr):
+>                  if pwr.endswith('mW'):
+>                      pwr =3D float(pwr[:-2])
+>                      return 10.0 * math.log10(pwr)
+>                  else:
+>                      return float(pwr)
+> +            max_ant_gain =3D float(max_ant_gain)
+>              max_eirp =3D conv_pwr(max_eirp)
+>          except ValueError:
+>              self._syntax_error("invalid power data")
+> --
+> 2.25.1
+>
+> _______________________________________________
+> wireless-regdb mailing list
+> wireless-regdb@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/wireless-regdb
 
