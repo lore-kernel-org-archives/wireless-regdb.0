@@ -4,76 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4A796C41535
-	for <wireless-regdb@archiver.kernel.org>; Fri, 22 Dec 2023 18:20:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 96ECEC46CD3
+	for <wireless-regdb@archiver.kernel.org>; Sat, 23 Dec 2023 13:09:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=ImC0ZSYUvyxJN7cttyQOqgjHvLFT+DqFZbB/HN6qKhw=; b=UHtub9+CswQ17kJTT+mctmsrbJ
-	81hvXSMBZXpvpMv/clez0yruaS2NX60uQ3eArLbQBXPUbpha2F7nM/+ih+izITGxUaLN6oh+4Enoz
-	9yNlLmzwT4MuuC0W3MwY4FJH+gKfuFVbxOXoxLUN/q9fUGSlpHIfPxbo/XlGXoI5Kb3alWuFtFj+o
-	/GZPBhKW82qWhvonqQYJoqZvNMsiLITw4xk2fEmmDop8WHZz2HoFUAYgilWUjD8NXJDTfAzgjEWVA
-	g4YN91HRblsRkM72/cB4PGhqjw9IhQ1hxXxPHZ50bGdNgDMkyuwL9ReguyWGncR/W+5q1RA/F8Nh1
-	wXtVXGAg==;
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=giEk1ukUCaG6bmqGiBslb7r3jzbq49P7oe4tCxYAA1E=; b=HPOhfe4nA7leAH1obkppqB53WU
+	VyGuPbJfR37s8xCrZEn+IptZhtn3m6wcbsOXzYfYPYWDBthEIaTBstZGKNvHoy+IuGX7pqgA+PmJM
+	nVYK0h2QrfBwRiOCyKQqUA0kiq3Cfum9EjWfv9/6phjXFVNYRs+vLsuTsVzAKZv4TdlT2H7aTvhtw
+	2MrcgATGn/wvg33YsRxAU2LyoP5k1t9kViq/reIP+VMA9/h2z4Wcqbv6NzOlTtB0+9OReOQBkBEva
+	F/jMy0ZKOZ6qIg2MWSvEn52zzqcTTRIgC40z3ZYdIxf/56FodF5uAqPqbQnTT0R71e5TaqIs3zg1p
+	IvBmq7EA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGk7m-006dLl-1o;
-	Fri, 22 Dec 2023 18:19:54 +0000
-Received: from mail-yb1-xb32.google.com ([2607:f8b0:4864:20::b32])
+	id 1rH1kW-007wNY-0v;
+	Sat, 23 Dec 2023 13:09:04 +0000
+Received: from mail-pf1-x433.google.com ([2607:f8b0:4864:20::433])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rGk7j-006dLF-1a
+	id 1rH1kT-007wND-03
 	for wireless-regdb@lists.infradead.org;
-	Fri, 22 Dec 2023 18:19:53 +0000
-Received: by mail-yb1-xb32.google.com with SMTP id 3f1490d57ef6-dbc666461daso1949008276.0
-        for <wireless-regdb@lists.infradead.org>; Fri, 22 Dec 2023 10:19:50 -0800 (PST)
+	Sat, 23 Dec 2023 13:09:02 +0000
+Received: by mail-pf1-x433.google.com with SMTP id d2e1a72fcca58-6d92e736787so1436570b3a.2
+        for <wireless-regdb@lists.infradead.org>; Sat, 23 Dec 2023 05:08:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1703269189; x=1703873989; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=ImC0ZSYUvyxJN7cttyQOqgjHvLFT+DqFZbB/HN6qKhw=;
-        b=b0fq3jZXg5QytZtt0Z9jYJCehA8RHlnqYYT0X1nouY6gZ/4N5vKlmJVO5Y4X03cphI
-         61f5UgBGHE85UVtQLmTqVHnh11haITGbMTbIbCabx/0HZ5tCDj3tBp/wnbgC/f+ejwXE
-         fnUztW4P6ghsaaK4d77bJZOiAALsHyxNjdBNJNTD4VYOhjtDyc6xcL3E7ulcO2ZTN3Fd
-         eG6jma5dGuWqFGCbCovBqSM14Dll5kynG3zXp+Kp3rhdZspCbzoa1miR7d9Ux4Z/VnOX
-         1eIk7d8Bku3V36/R7G5lAAfO4uQVd2pi5FRa+LAKrz+YgV/XyFIfi8JyDqVwn6SRBueb
-         i2Eg==
+        d=gmail.com; s=20230601; t=1703336938; x=1703941738; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=giEk1ukUCaG6bmqGiBslb7r3jzbq49P7oe4tCxYAA1E=;
+        b=EcLGnAI+8DRcjYTmKPrHxaQTKTPyul638ojpi7d7daOdE9dmXjZgqVqMzAVAAxTigS
+         ROSMJx+2qgB68/tsngjP8pndVDu4n3rgMwF8w6xY49ODhEJRSZU1sQMFMJ82EVxnZHRF
+         8YXiDY2fffI2/wMa+VoXyc/QOFCDL5Ta92/4gpzP+G7M/ngQAdn4H5FCJgJtTE5Wf923
+         PFYp6uEg8kqddhdpwQcY/e1skk9UnLfRGAkvXRQL7y55GeFNmrHWFd/YaP5t8vhevUOk
+         gPFemjlTMf91YUyxZv9j3T05qRX/rNvJajMvaWy7x9VPf7s+nD04MrwtqMa2JI2bOsgC
+         aPnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1703269189; x=1703873989;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=ImC0ZSYUvyxJN7cttyQOqgjHvLFT+DqFZbB/HN6qKhw=;
-        b=aW+BpFLJQnBpaZTIPWdJdfmk/cNgV6YXwguInFAy3tQkdK92elk0VAaTizBTLaQ33e
-         YMALaIwaFaY2uZ1LnHkGcDmaf0mQZtTtTS9WR5pbW1PjgPqU9eDlNYlaVGgRf1dgKhAe
-         BeMBsGecLs+C01Y+kXNfCPYLGgpcnckMWheop+phQIpddimZV2Tv4vpaSkXfVZrVHYQ2
-         4hz1IFWBkfYr7GqFLLk+nq9c45WDWU6Wo7cxwjslCImySAEw6oTs/i87vWptC5h6EUgo
-         L3/hH49E3/p4VLrBx7PhoOV6GVIxltnybHHKw2XpMso2D/hANDwX1HCgRTnEUbZLJlJY
-         O6Qg==
-X-Gm-Message-State: AOJu0YxyGM1/xkoNgcm/gzoywiO/kZAxjJqgWXTF9ICXz4hbLHfknw0L
-	/yHrWY5kzzfRJOyIjNmfHur7v6UgrGmD/bblqn4=
-X-Google-Smtp-Source: AGHT+IGgC5dPdi6Q5fpqhJEwAc06k2sqlWa6k56IC+uSe8LQvruD53t9fCWsPv9+BftXKXlxMuSTZmF/fhYdmYeqGXA=
-X-Received: by 2002:a25:41d1:0:b0:dbd:5721:76ef with SMTP id
- o200-20020a2541d1000000b00dbd572176efmr1135314yba.95.1703269189176; Fri, 22
- Dec 2023 10:19:49 -0800 (PST)
+        d=1e100.net; s=20230601; t=1703336938; x=1703941738;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=giEk1ukUCaG6bmqGiBslb7r3jzbq49P7oe4tCxYAA1E=;
+        b=v5csS2U6hC4p+EFM2QoMX8Q9v7Kx83UyKsihAam+UKRLU7J6vNViu9kMUWQa14wguF
+         NAxND6xQBqOt8Em3QRSVfoU97tuv52e2GaWbEa9cj2CvAHfvjTx0VuUqIa41hTdn+0G1
+         7OixkXCLnE9B9i2JK0fPkw7n8053Da+t8HMTBYkIWYKCGnvDhtoXxhvbEILIMiLp7vPP
+         TYN8LE+LZqfSE3suxmneSYL0vtUsHPYijLTzw2ApcxzLT3dZJnm4+jg3XZyF2ZLIEz0f
+         6q2caqmwwiCXIZrhetN+lVGzmTrahTFoYCbImNVKFe+4iTk+sKC4dHo8h4JU5FoABYSl
+         uWsA==
+X-Gm-Message-State: AOJu0Yz7qbd2iMQC+AuqbbBYZY0yXnLHjSoLjqOoUJnz1r6t2Td1HcpN
+	mz+FeHCVhhoE/FTGnkLAP1c=
+X-Google-Smtp-Source: AGHT+IHDAFk+ShOsE8erbpqJpgU4kaJHDB5HCe2u4GxUw9HU/il708ZE/Pc8RHzDzw0NFtXoeGfoFQ==
+X-Received: by 2002:aa7:804e:0:b0:6d9:a70d:7732 with SMTP id y14-20020aa7804e000000b006d9a70d7732mr66153pfm.24.1703336937650;
+        Sat, 23 Dec 2023 05:08:57 -0800 (PST)
+Received: from nuc11atkpe.. (113x34x39x75.ap113.ftth.ucom.ne.jp. [113.34.39.75])
+        by smtp.gmail.com with ESMTPSA id fa20-20020a056a002d1400b006d64c4cb661sm4999489pfb.200.2023.12.23.05.08.56
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 23 Dec 2023 05:08:57 -0800 (PST)
+From: CaffeeLake <pascalcoffeelake@gmail.com>
+X-Google-Original-From: CaffeeLake <PascalCoffeeLake@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org,
+	CaffeeLake <PascalCoffeeLake@gmail.com>
+Subject: [PATCH] wireless-regdb: Update regulatory rules for Japan (JP) for December 2023
+Date: Sat, 23 Dec 2023 22:08:52 +0900
+Message-ID: <20231223130852.44711-1-PascalCoffeeLake@gmail.com>
+X-Mailer: git-send-email 2.43.0
 MIME-Version: 1.0
-References: <CAL4zwzzFNEMz-UtnR=5kQKTPPUfZjD-cyc0mgvbBZh1LEqBKxw@mail.gmail.com>
- <CAGb2v66VnsbBRtkcy7bn-3SLQW7E0UG1_AwaFj+jcUmqhaxU2Q@mail.gmail.com>
-In-Reply-To: <CAGb2v66VnsbBRtkcy7bn-3SLQW7E0UG1_AwaFj+jcUmqhaxU2Q@mail.gmail.com>
-From: Diego Garcia del Rio <garci66@gmail.com>
-Date: Fri, 22 Dec 2023 15:19:36 -0300
-Message-ID: <CAL4zwzwP3LujcX1GaGK-ajfOCp8qN7dateunA2Wvy5Lv=phcPA@mail.gmail.com>
-Subject: Re: [wireless-regdb] Argentina approval of 6GHz band - updates to regdb
-To: wens@kernel.org
-Cc: wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20231222_101951_535007_3CE98BBC 
-X-CRM114-Status: GOOD (  28.21  )
+X-CRM114-CacheID: sfid-20231223_050901_057539_11BCF9C8 
+X-CRM114-Status: UNSURE (   6.44  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,75 +90,39 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Thanks for the info!
+Support 320MHz bandwidth for JP region.
 
-Let me try to get a patch. The limits are a bit strange indeed. But
-then the law says it should.follow FCC so I'm not sure.
+The Ministry of Internal Affairs and Communications has approved 320MHz bandwidth with 11be in Japan.
 
-On Fri, Dec 22, 2023 at 1:07=E2=80=AFAM Chen-Yu Tsai <wens@kernel.org> wrot=
-e:
->
-> On Mon, Dec 4, 2023 at 8:26=E2=80=AFPM Diego Garcia del Rio <garci66@gmai=
-l.com> wrote:
-> >
-> > Dear wireless-regdb / linux-wireless list members,
-> >
-> > Argentina approved, in may 2023, the use of the 6GHz band for indoor
-> > use. The specific decree can be consulted here :
-> > https://www.boletinoficial.gob.ar/detalleAviso/primera/287126/20230524
-> > but the specific technical addendum can be read at the link "Anexo 1"
-> > at the end of that document.
-> >
-> > The main changes are that operation on the band  5925-7125 MHz is
-> > allowed at an EIRP of 30dBm for APs and 24dBm for clients. The APs
-> > must also follow a maximum Power Spectral Density 5dBm/MHz  and
-> > clients must restrict themselves to -1 dBm/MHz EIRP PSD.
-> >
-> > I wasn't sure how to express the PSD requirements in the txt file nor
-> > how (or if its possible at all) to distinguish APs from clients.
->
-> I believe the PSD requirements are being discussed [1]. But currently
-> there is no support for this. Also no support for distinguishing APs
-> from clients.
->
-> > The given PSD limits would mean 18dBm for an AP at 20MHz, and 3dBm for
-> > each doubling in frequency, so a max of 27dBm for 160MHz APs)  while
-> > for clients, it would be 12dBm for a 20MHz channel and again, 3dBm
-> > plus for each doubling in channel width  (maximum of 21 dBm for a
-> > 160MHz channel).
-> >
-> > I believe that basically copying the FCC restrictions for the 6GHz
-> > band would probably be enough, but I was not 100% sure.
-> >
-> > Following James Clark's post mentioning the WiFi alliance's page,
-> > argentina is also showing up as having adopted the full 5925-7125
-> > range.
-> >
-> > Sorry I can't provide a direct patch to the DB itself since im not
-> > 100% sure how to represent the different power limits. Best regards
->
-> I think without a representation for PSD limits, and AFAIK unable to
-> have multiple rules for the same band with different requirements,
-> we can only use the minimum or the hard EIRP limit and PSD limits,
-> so that the client doesn't go above the limit when using narrower
-> channels.
->
-> So in this case the limit would be 12dBm regardless of channel width.
-> Can you send a patch for that? Preferably with a comment on why the
-> limit is so low, i.e. as explained above.
->
-> We can revisit it if the PSD stuff gets merged.
->
-> Thanks
-> ChenYu
->
-> [1] https://lore.kernel.org/all/20230315132904.31779-1-quic_adisi@quicinc=
-.com/
->
-> > Thanks!
-> >
-> > _______________________________________________
-> > wireless-regdb mailing list
-> > wireless-regdb@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/wireless-regdb
+Source: https://www.soumu.go.jp/main_content/000919158.pdf
+
+Signed-off-by: CaffeeLake <PascalCoffeeLake@gmail.com>
+---
+ db.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/db.txt b/db.txt
+index 24bb6d4..01e7338 100644
+--- a/db.txt
++++ b/db.txt
+@@ -944,6 +944,7 @@ country JO: DFS-JP
+ # Source:
+ # https://www.soumu.go.jp/main_content/000635492.pdf
+ # https://www.soumu.go.jp/main_content/000833682.pdf
++# https://www.soumu.go.jp/main_content/000919158.pdf
+ country JP: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
+ 	(2474 - 2494 @ 20), (20), NO-OFDM
+@@ -951,7 +952,7 @@ country JP: DFS-JP
+ 	(5170 - 5250 @ 80), (20), AUTO-BW
+ 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+ 	(5490 - 5730 @ 160), (23), DFS
+-	(5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
++	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+ 	# 60 GHz band channels 2-4 at 10mW,
+ 	# ref: http://www.arib.or.jp/english/html/overview/doc/1-STD-T74v1_1.pdf
+ 	(57000 - 66000 @ 2160), (10 mW)
+--
+2.43.0
+
 
