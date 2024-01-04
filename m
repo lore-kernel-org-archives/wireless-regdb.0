@@ -4,78 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D6264C47074
-	for <wireless-regdb@archiver.kernel.org>; Thu,  4 Jan 2024 09:08:12 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1426DC47074
+	for <wireless-regdb@archiver.kernel.org>; Thu,  4 Jan 2024 09:42:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=gPkikR0+Cp9CaLqdSLUmre0cKqV7mereubM4P+BkCyc=; b=SNdwGjBfOdEa5m+thwOPJ19Q9R
-	4Wxko51iitaWvDpImvhffR+oWIhYLyTal3pHxC7kKX7V3ugyk/QkstHFK8NjcrSftFAC6aS4C7UNK
-	/sof9CfQJhIjW2gAVAjf3ZPGQNPbIQAKIAfTz9R2yL55R/FLS5uwJaX1hfQSK2EvkYfVabvzsv2pd
-	4pTdJjjLOceogdHingsgAOJKO2EvLCaHXeN88kLKnJdfQoGLvAcBJjRKJ2ydJ7TdJww8CCIBVd6V3
-	SWa/GLDY1E0UAiM5l9br2U5OwdQMkkAeeM9xiya1RNbp4fKaPqnZHeBNY6SoLVeQEEyO536hsTble
-	adZxx+Fw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
+	Content-Transfer-Encoding:Content-Type:References:In-Reply-To:Date:Cc:To:From
+	:Subject:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=eqFUtFVL0U7tdRFhaeYDMZRzFaaJJ9J0Tp73uqe4ZXQ=; b=TcirY7WaW8m0DokGcBAjSAf3Ib
+	D64uAYhVWWM4mWyaDOFOcXPkL26gkPbPIbQoi8xoXSMmmOUw/leObwlsYAcOSL4+KUluUiJZ7ay/q
+	NGsxc+mtckcnMAYeAkAxFafiv9y1HviNeZ5T7Z9DH7EtjBRAjwjwYDmUErv9tlOI6DfiY125LqJJZ
+	pr/nfnkFlz6S3XJZxLVdcSxiXQl/adlLiI+vaqvrCYt8qAS6WnEX1dk3Ap4p9ln5Jh4hr0uvtUoF2
+	eMfJ0gzFhF8cXcRlmMD1IlayWC/nmwJQe4WDlr77PL1+ZYqxuarS86YaQxOXcu0e2Memgi6EOI2w2
+	Z4mKkVvg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLJhw-00DJQg-0u;
-	Thu, 04 Jan 2024 09:08:08 +0000
-Received: from mail-io1-xd29.google.com ([2607:f8b0:4864:20::d29])
+	id 1rLKFK-00DPkN-37;
+	Thu, 04 Jan 2024 09:42:38 +0000
+Received: from s3.sipsolutions.net ([2a01:4f8:242:246e::2] helo=sipsolutions.net)
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rLJht-00DJOX-0Y
+	id 1rLKFI-00DPjp-22
 	for wireless-regdb@lists.infradead.org;
-	Thu, 04 Jan 2024 09:08:07 +0000
-Received: by mail-io1-xd29.google.com with SMTP id ca18e2360f4ac-7baa8da5692so11231239f.0
-        for <wireless-regdb@lists.infradead.org>; Thu, 04 Jan 2024 01:08:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1704359282; x=1704964082; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=gPkikR0+Cp9CaLqdSLUmre0cKqV7mereubM4P+BkCyc=;
-        b=Z9su/wGuca+f2BDYxKxcQjhCEH93vrLy6uvJoS/j8xInq0deWDFcioFX9fZbWna+95
-         KnqYww2McDE/l50PQF8iGHD+YbF7FCn0X8Nk+jGe2brvmoY2Ej30jNYcbcB6XTSk9nwa
-         oXPTRv6DCz/D0d5ssdSUT8HivsE00Sn9RezrV5UOVupoH+sNhsrC4Tz+zx9MBY2hz2eA
-         jKIIja3nDFAUSEJSsmAMjSAKIt7+wOfyxo9mpZS/+4uVm5b39eQAXdpjAx+Z4Rs3p+5d
-         L5+3eJFnFOjRBP8yh1nmcEi3n2NiUT17okH3cu+58mMuhiCg+JD32PRvE0CCBp0uV1sS
-         +Y0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1704359282; x=1704964082;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=gPkikR0+Cp9CaLqdSLUmre0cKqV7mereubM4P+BkCyc=;
-        b=X/4pKFEz2RKZJk/rvgJDe+LtnNtEGdQ06kIpAOdhQ1jYqAIxgBfeB78lZmDf9n9+nU
-         0vx07L8F137OeKyL7LIk5dTWs8jMfNJZ4jGD665sQrP7IbLK/LoueklGLDdCKwcHkaKw
-         +WG0R5FgmSiveFKxGA+IrLS2Gx4OOe1tTG1snL2Dg0navhIjvTZm1f2d70jYMYwLLrnl
-         81H5yx3CyoebuQ0ZEsu5EnbuQBizgeVXzrMy0HH/ftIt8KOYgeYKVXpKKvGeZwd2Kg87
-         aBrGMv321YCxwYaM9Hg6vxk769FxQfvzzFjHzLAE0VbwRX1hBZBQgUyiPztLRMSg3dIR
-         WsHQ==
-X-Gm-Message-State: AOJu0YynFM4kbL+yoSAuXWIUABqjiFL+PFYMoxBKhUXKtYFRp15nKro2
-	8VaSulj8Jx0DUYQxhVg2G6IhJlNjymcNy03YVwM=
-X-Google-Smtp-Source: AGHT+IGuhm70ejPN/hiQgCDZR4YWOHYKn7MwRnNDZQgvpU4BVs/DsfrRaYduse0xQEVgMXCzh3W8g3dGP7/Lmwv8ngU=
-X-Received: by 2002:a5d:824e:0:b0:7b7:fe2f:dddd with SMTP id
- n14-20020a5d824e000000b007b7fe2fddddmr347340ioo.22.1704359282587; Thu, 04 Jan
- 2024 01:08:02 -0800 (PST)
-MIME-Version: 1.0
-References: <CAGb2v66xVLqr+tUSD_6uzguGXtj04WfbpT0z9M28r8z-g62Z=A@mail.gmail.com>
-In-Reply-To: <CAGb2v66xVLqr+tUSD_6uzguGXtj04WfbpT0z9M28r8z-g62Z=A@mail.gmail.com>
-From: b.K.il.h.u+tigbuh@gmail.com
-Date: Thu, 4 Jan 2024 10:07:51 +0100
-Message-ID: <CAPuHQ=GSuKW5=T0GXXCq7Pf9jw=zcEnms-fEJey68QUWH1ishQ@mail.gmail.com>
+	Thu, 04 Jan 2024 09:42:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=sipsolutions.net; s=mail; h=MIME-Version:Content-Transfer-Encoding:
+	Content-Type:References:In-Reply-To:Date:Cc:To:From:Subject:Message-ID:Sender
+	:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-To:
+	Resent-Cc:Resent-Message-ID; bh=eqFUtFVL0U7tdRFhaeYDMZRzFaaJJ9J0Tp73uqe4ZXQ=;
+	t=1704361354; x=1705570954; b=WcNzYA+7e4IGFU3sHiSZcDcu0YWDumqDhG2fO24un2a5bLX
+	Vbb0NcpjppFC/KRFuHvZ39wRCKP5ErJH6+tb9LtxkTEKShh/GYMooTBicBdZPQBO16ObH2Kbd9MAs
+	It4F4HaLAPsA92wl//eZkN1DO21Ab1Y9ypuNF4deQKarl7CP7j1rgcZ22ljc2rwMzxUFSBCHGS2O7
+	nZ97F4pu26JBXPi0OVYzvM5AV8BmPdaMOKa+Dgvp7NLmqnt7zMgECBpR1dIbid3xDKq8Z/O2R1XCH
+	iuMKPqulY3Cn4vxk2qkuMym2s6RptfDnM//38yanH7cxgyGos5jGRr2ZTsSeI9gg==;
+Received: by sipsolutions.net with esmtpsa (TLS1.3:ECDHE_X25519__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.97)
+	(envelope-from <johannes@sipsolutions.net>)
+	id 1rLKFD-00000004THE-43RE;
+	Thu, 04 Jan 2024 10:42:32 +0100
+Message-ID: <a5123274d5a8d80d554ffb786e25bef72d45f69b.camel@sipsolutions.net>
 Subject: Re: WiF Transmit Power Control (TPC) Regulatory Requirements?
-To: wens@kernel.org
+From: Johannes Berg <johannes@sipsolutions.net>
+To: b.K.il.h.u+tigbuh@gmail.com, wens@kernel.org
 Cc: Seth Forshee <sforshee@kernel.org>, Kalle Valo <kvalo@codeaurora.org>, 
-	Johannes Berg <johannes@sipsolutions.net>, 
-	wireless-regdb <wireless-regdb@lists.infradead.org>, 
-	linux-wireless <linux-wireless@vger.kernel.org>
+ wireless-regdb <wireless-regdb@lists.infradead.org>, linux-wireless
+ <linux-wireless@vger.kernel.org>
+Date: Thu, 04 Jan 2024 10:42:30 +0100
+In-Reply-To: <CAPuHQ=GSuKW5=T0GXXCq7Pf9jw=zcEnms-fEJey68QUWH1ishQ@mail.gmail.com>
+References: <CAGb2v66xVLqr+tUSD_6uzguGXtj04WfbpT0z9M28r8z-g62Z=A@mail.gmail.com>
+	 <CAPuHQ=GSuKW5=T0GXXCq7Pf9jw=zcEnms-fEJey68QUWH1ishQ@mail.gmail.com>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
+User-Agent: Evolution 3.50.2 (3.50.2-1.fc39) 
+MIME-Version: 1.0
+X-malware-bazaar: not-scanned
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240104_010805_216253_3E10AD8B 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20240104_014236_693468_C4982220 
+X-CRM114-Status: GOOD (  16.41  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -90,44 +75,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-You can find a wording in most such regulations that if TPC is not
-supported, the maximal TX power must be reduced by 3 dBmW. Hence in
-all such cases, the entries in db.txt contain 3 less than the maximum.
+On Thu, 2024-01-04 at 10:07 +0100, b.K.il.h.u+tigbuh@gmail.com wrote:
+> You can find a wording in most such regulations that if TPC is not
+> supported, the maximal TX power must be reduced by 3 dBmW. Hence in
+> all such cases, the entries in db.txt contain 3 less than the maximum.
+>=20
+> If, on the other hand, you know of a country that specifies that
+> devices lacking TPC may not use the band at all, all such band entries
+> must be omitted (commented out along with a URL).
 
-If, on the other hand, you know of a country that specifies that
-devices lacking TPC may not use the band at all, all such band entries
-must be omitted (commented out along with a URL).
+Yeah, that's how we (currently) handle things.
 
-On Thu, Jan 4, 2024 at 6:59=E2=80=AFAM Chen-Yu Tsai <wens@kernel.org> wrote=
-:
->
-> Hi folks,
->
-> I wanted to clarify the current state of things.
->
-> As far as I know the kernel doesn't have facilities to support TPC or
-> transmit power control, nor does the wireless-regdb database. And so
-> in the database we would either omit rules that require TPC, or include
-> alternative rules (as specified by local regulations) not requiring TPC.
-> Am I right?
->
-> This came up recently with regulatory changes for Singapore and Armenia.
->
-> For Singapore [1], the 5.250 =E2=80=93 5.350 GHz range has provisions tha=
-t allow
-> usage without TPC at a lower power, but the 5.470 =E2=80=93 5.725 GHz doe=
-s not.
->
-> For Armenia [2], the updated text (translated by Google Translate) as I
-> read it requires TPC for all 5 GHz channels.
->
->
-> Thanks
-> ChenYu
->
-> [1] https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-c=
-onsultations/ict-standards/telecommunication-standards/radio-comms/imdatssr=
-d.pdf
-> [2] https://www.arlis.am/DocumentView.aspx?DocID=3D181829
->
+I'm not even sure what the requirements would be for "TPC" to be
+implemented, tbh.
+
+> > As far as I know the kernel doesn't have facilities to support TPC or
+> > transmit power control,=C2=A0
+
+Right. I have, however, heard the interpretation that the fact that we
+have - even if nobody uses it - the "iw set txpower" command means that
+we *do* have TPC ... Not really sure what to make of that though.
+
+> > nor does the wireless-regdb database.
+
+Correct. With the new regdb format we could add something that would
+enable these ranges in the kernel only with some additional
+requirements, but
+  (a) we don't implement that now, and
+  (b) I don't know what the requirements would actually be, e.g. would
+      it be enough that the driver promises it implements "TPC" in some
+      way? Or even the manual setting?
+
+> > And so
+> > in the database we would either omit rules that require TPC, or include
+> > alternative rules (as specified by local regulations) not requiring TPC=
+.
+> > Am I right?
+
+Right.
+
+johannes
 
