@@ -4,7 +4,7 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 72CABC47077
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A7F9EC4707B
 	for <wireless-regdb@archiver.kernel.org>; Mon, 15 Jan 2024 03:15:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
@@ -12,55 +12,56 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=CUyK4N5XKMqP3dIZwsnheOKE7LI10fvwpKjs4nbqP7w=; b=SVacyCYjQNp+3AkkyihdeCVyws
-	AARAWuFa5hVTFzTwgfyvsXXZJeZLcS3hA9IX1TjE69906YpEvEn7/5SzAkMfNuninX15RJvQHL0It
-	vRFz3TF+80fTNIZ6s3hIcGX3GqxFX1fYsItLuuxbaZwRGZqdcATYry6k2hJhBvZVsGK7g7lPwtREG
-	rllwodRZMixUbxQ6EVb7trtvKttyONZ4tjHuYoztUQU26HyWoB0YZl8b8xgNxp9RI4aIRf4aWyEQp
-	jwfmvSEm9diam8queGOTMNnm7LN57oWskMkJmFMKa/nKtKVqGe3uv9/P5822QAMpkJ8hJZFnQBWbN
-	4sCpRYLg==;
+	bh=Iw5vm8/lhelxG2wKKE9HIlNZ7fO95Bc7qx2tbgkoXkA=; b=BqZj8HuWfr/djfE3Ercsl32zQV
+	pT/w1aYv9U2sXheljBscy1cjZkFWeu9wR5hxhM5c+FnwD8WfcimrnSG5DuV3jPfq7vpRemAJrej5h
+	UZZMsvlXVc/517uhDhVqk4yOaVLGyuwPP3YEYj4VJQE4/ccrmr11HQ3qXLt49zZ1Qf/hE9UVWFjYZ
+	e34+ZHTog1xHHm+AZaklPwmQvJUcrrDwej80vNg96vq83Ql7nNS8oT+nDOCtLr7eRivw+HXa+MwUf
+	RsqytV9pplALpYJh+SoHI+Js0W4angWxMMvJVGmmjg+o41qEyJKhjiwaP5i9PzEfv0fA0H0c4OQcb
+	WAQlkOCQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPDR8-007fxo-2s;
+	id 1rPDR8-007fxT-1W;
 	Mon, 15 Jan 2024 03:14:54 +0000
 Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.96 #2 (Red Hat Linux))
-	id 1rPDR5-007ftv-10
+	id 1rPDR5-007ftw-0u
 	for wireless-regdb@lists.infradead.org;
 	Mon, 15 Jan 2024 03:14:52 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 0974D60C2D;
-	Mon, 15 Jan 2024 03:14:35 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 321EEC43390;
+	by dfw.source.kernel.org (Postfix) with ESMTP id C9C1860C2A;
+	Mon, 15 Jan 2024 03:14:34 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 27E6EC433C7;
 	Mon, 15 Jan 2024 03:14:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
 	s=k20201202; t=1705288474;
-	bh=6XKzR6JpKzRVxLCrT4WttGuLf3DaR7RKYdWUPZ3p29E=;
+	bh=2ig79RDAIR350Gcr2/dh8FnclyFbe2ixCqAqgiVLLSk=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=c+SiE0bOIZ61YUIPVID7IGhSjgB7/OzKdiY4JTGdkrEukqQBABVHn/6YcxJyCyTpl
-	 jzDFxGBBNWbheOccbhBGZfNqrgECgVXgDFpWjc9XP07ie93MuPBj5aZ1nhQRYC9wSA
-	 LV5qAmCJ+fvqvaVRVheJZkJ/GLs9roTRR/uugD0BCwWhn7sKuBBl0kgxWUWbq9qNEL
-	 7ZSy7xhKYrnEJB/yGEFHDvp+3X4r7dwM0REdO6k/WaQNBqA2lhncByhm1MD4XZUDq4
-	 8GtmbUEbQjXFsldGosy6RMTiqX0R1kF2+5lI+wbU4EpXeUZPHSVM2zK8QEBlQgQw1z
-	 lTP0WShOrZdKQ==
+	b=NbreavbSsQwiQp84Vcwa58rtFmIRNdHhEB95CP2hcMQ1UPwDnFhE0hXDYil9qYPpG
+	 tHSiqUQ6+hw47mPNCAL+/wit3eZZNxUcrJRCPMNV6LouBF+EQzqh2HG2Os+KLUeDwj
+	 HytMrK4+JQJv1i58LgzdhYaFutm/mPd3mNFSvJIsb4rp+CUseMNtqXUHX0EEMlRKZ9
+	 84enJ8o+9MtRBNGv46CuMV4Rmt47cW6X4FMwSUeOWzlPHraqt7b7A6L2N8jLqovOtf
+	 i8diUQhJpDrVspXelWzRzZ6rOlujt9dS+nQWB+xf4JylAf4DWH83/DoQ/1ccpnunRM
+	 tIoeUbdDXhTQA==
 Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 0D39F5FCA8;
+	by wens.tw (Postfix) with ESMTP id 02AE75F7BF;
 	Mon, 15 Jan 2024 11:14:32 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: linux-wireless@vger.kernel.org, Andrew Yong <me@ndoo.sg>
 Cc: wireless-regdb@lists.infradead.org
-In-Reply-To: <20240112040217.24356-1-me@ndoo.sg>
-References: <20240112040217.24356-1-me@ndoo.sg>
-Subject: Re: [PATCH] wireless-regdb: Update and disable 5470-5730MHz band
- according to TPC requirement for Singapore (SG)
-Message-Id: <170528847205.770636.8573617454652565233.b4-ty@kernel.org>
-Date: Mon, 15 Jan 2024 11:14:32 +0800
+In-Reply-To: <20240112034311.23677-3-me@ndoo.sg>
+References: <20240112034311.23677-2-me@ndoo.sg>
+ <20240112034311.23677-3-me@ndoo.sg>
+Subject: Re: [PATCH v2] wireless-regdb: Update regulatory rules for
+ Singapore (SG) for September 2023
+Message-Id: <170528847198.770636.10523925169343032062.b4-ty@kernel.org>
+Date: Mon, 15 Jan 2024 11:14:31 +0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.12.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240114_191451_390779_3D966866 
-X-CRM114-Status: UNSURE (   4.74  )
+X-CRM114-CacheID: sfid-20240114_191451_390785_2B9241E7 
+X-CRM114-Status: UNSURE (   4.99  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -77,16 +78,20 @@ Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
 
-On Fri, 12 Jan 2024 12:02:17 +0800, Andrew Yong wrote:
->   - Use original regulation Tx power of 1000mW with TPC for 5470-5730MHz band instead of -3dBm offset without TPC
->   - Comment out 5470 - 5730 band to disable it since TPC is not implemented
+On Fri, 12 Jan 2024 11:40:44 +0800, Andrew Yong wrote:
+>  - Update regulatory rules for September 2023 IMDA TS SRD [1]:
+>    - Enable 5945 - 6425 MHz (Wi-Fi 6E) band per legislation
+>  - Switch units from dBm to mW to match values listed in legislation
+>  - Extend (5470 - 5725 @ 160) band to adjacent 5730 MHz to enable Ch 144 similar to US & TW regdomain
 > 
+> [1] https://www.imda.gov.sg/-/media/imda/files/regulation-licensing-and-consultations/ict-standards/telecommunication-standards/radio-comms/imdatssrd.pdf
 > 
+> [...]
 
 Applied, thanks!
 
-[1/1] wireless-regdb: Update and disable 5470-5730MHz band according to TPC requirement for Singapore (SG)
-      commit: d695bf21d1cdf02e64924f452c242f7588469609
+[1/1] wireless-regdb: Update regulatory rules for Singapore (SG) for September 2023
+      commit: bd69898e6f400bee1bf7863f2c65341eb7c746a6
 
 Best regards,
 -- 
