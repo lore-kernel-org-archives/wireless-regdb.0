@@ -4,74 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3444DC47258
-	for <wireless-regdb@archiver.kernel.org>; Wed, 31 Jan 2024 08:17:16 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7C2FAC48297
+	for <wireless-regdb@archiver.kernel.org>; Tue,  6 Feb 2024 11:33:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
 	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=u4xEK/zUqk2TAv4mPpYIINMyJ96A+evbdZYLBST6nAk=; b=WZe6j7n7Hhw5Kn54pEfWxI3BmY
-	5LDIotmuU32bMEiA64ph0n+BNQBAMGza7TlaXjYofsDqdwZYh0E/vS6zmw9T+xIpfx3f8w0g5o98A
-	VKBjk39O7w+YeQ/ZNrjBTL887JhRisnFptyMqkG0yGtQJ8vaIN0yHoPxZOA8URiaBpmz2VmZ07S01
-	scsnhlGVK5prj4u092tyEGPorFyTdBNB57/POElEiyYtCnk4Mqy4wiaHL1AHrkrMwJVoyNSX+Q9R9
-	a1SYOLjrNmJPQrL/G4ABooT7XA4+nVcYM8X1kSKhmKwlacp0xAzjRVS1I3MqNNWrK4sJkfZMJf3Pa
-	XpkJJHzQ==;
+	bh=XPnBkGvCsCJC8yqoqhPyYvVOlSawmi40m3VKxw8PS3s=; b=JGJvnDtSReRUUycbfIMCNrFUgz
+	qFrIoz9gijz/41f/bGkKmecxzWTgFNlqHgdf9M4HfELxIxzDsqGO0V3cKEn9FT7NvV4jAbnfdIgzO
+	ChkCu6AHIK5hfI3+aQ6UPNx/FguKiuwGDJ8dGg1H6TX7USPwC6LFIwkMkWsStnAUswtv8QArs+LOF
+	552IYi8b54kAcYcHa0XVhVp+JesJks1iGk/63vNh32NY2R4dlXSrFhZ0YS+tuLmxe0zU1//uz10G2
+	ieJaNXmfetTypIEKzpcRY+Nj+1SfdvpWgTLXndVqwMDPBvW3Iiu5YDaSgtb88JheW0slF1Tl+yx8L
+	KeVPrHNg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV5mU-000000022zY-1ExN;
-	Wed, 31 Jan 2024 08:17:14 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1rXJhs-00000007LgT-1e2h;
+	Tue, 06 Feb 2024 11:33:40 +0000
+Received: from mail-wr1-x429.google.com ([2a00:1450:4864:20::429])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV5mS-000000022yt-3689
-	for wireless-regdb@bombadil.infradead.org;
-	Wed, 31 Jan 2024 08:17:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Type:MIME-Version:Message-ID:
-	Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=u4xEK/zUqk2TAv4mPpYIINMyJ96A+evbdZYLBST6nAk=; b=Fm+v0/iFtNeD1G1tIJHqFrQDUn
-	/mNhN9IG2bAN9mDd9k7w1ckX8yHCQOJihtzLTzVaMVPwZaQLC1AXkjZ98O8pJx6BUI96L7Tnzj71w
-	1BYUi5NlKVEKTGnjvVx9h69MJMGqkEy8e4BlzPWoYaQBtqA1qbrM6ozBBbJiDstbnNK6YIBOpwPCO
-	r99seVk+7MW8A6UJU1n5a6/AYvW2yeDKTigTNUZVaxhT8ac3Cr2CXNrYuHC8yl/JTe65m//p5zxy2
-	GfQHpsx+Dcdrnpbbcuacr1gZN4SXki+J6tAmCLJ5XBtvKSkNassEkU6hH0FJF7NcwLnH9k0jCPVQR
-	njSFPcIQ==;
-Received: from dfw.source.kernel.org ([139.178.84.217])
-	by desiato.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1rV5mP-00000008oWa-1Tzp
+	id 1rXJZn-00000007JHB-07Jx
 	for wireless-regdb@lists.infradead.org;
-	Wed, 31 Jan 2024 08:17:11 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 2C6A061359
-	for <wireless-regdb@lists.infradead.org>; Wed, 31 Jan 2024 08:17:05 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AFDB8C43390;
-	Wed, 31 Jan 2024 08:17:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1706689024;
-	bh=OzitZ4w5MRiDU+CtZ6xvojyOdJEIVvovbM+ND+ZDIzM=;
-	h=Date:From:To:Cc:Subject:From;
-	b=dpVlxGdiQEXSYuEiI0omUaTNEru5V8OpK8JwOM6BHqlYxZAIzoiO2U+i4WdYaaUZU
-	 2zrhzW0sbeFEoBh5HwQaiORBKP9C75ehYv9P3o+vkWnIlv7my8oX/CRkiJbCOkoNAx
-	 whoXUHiIDGDc0QHzSJE34xZVof35alqesbe5eGTMq3O7ET7IKzkppB1G3Ty1ssMZqj
-	 saz8xu79dKqbGfUyNa16tNMZvuCu19wn+wwANYYR/swpJ7K8Ci02azhFZJtYLPwQra
-	 6LzeAw4vP0cgVppp3kYL5LcK5GtI3Bj8eOrX0Ud7OJfV9r/A3PzVAFzlP4X3i6bL+M
-	 DSxInrfC28G4g==
-Received: by wens.tw (Postfix, from userid 1000)
-	id 6D7175FA78; Wed, 31 Jan 2024 16:17:02 +0800 (CST)
-Date: Wed, 31 Jan 2024 16:17:02 +0800
-From: Chen-Yu Tsai <wens@kernel.org>
-To: wireless-regdb@lists.infradead.org
-Cc: linux-wireless@vger.kernel.org
-Subject: [ANN] wireless-regdb: master-2024-01-23
-Message-ID: <ZboB_mw_abHH2sJj@wens.tw>
+	Tue, 06 Feb 2024 11:25:20 +0000
+Received: by mail-wr1-x429.google.com with SMTP id ffacd0b85a97d-33b13332ca7so3376711f8f.2
+        for <wireless-regdb@lists.infradead.org>; Tue, 06 Feb 2024 03:25:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1707218716; x=1707823516; darn=lists.infradead.org;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=XPnBkGvCsCJC8yqoqhPyYvVOlSawmi40m3VKxw8PS3s=;
+        b=P1HTvTweqrulNBk87M9CjSD18Jmd2wGfI2NOu52RfTyXD6zx7GTv9uV3m1umfdOnS1
+         /YHIz/gu1a3df56UYj5Fih/99efQEWVjwp+ZFVJnQ+Px+2WOCfY44QGPhQAgJYbBlJkr
+         2KHEK9eewVvVYLzQSW/nqQlla3NwGHpRtHVVJzCFOAda8uknYuWLLGbXBMKE7C2YILW7
+         6U0Qs5ffW6iQb/vad5B/qtyqzunNFCrc2VYJaTVhebx920IvCrf69wpKVHl/EdGddLHO
+         RoQ8ubXeJEMlmmCAYXGD2aJ6bQO0z4igCQFLy0xTLgFKwYCJY6dVPE9SoFKhq2PZlD0M
+         9jYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1707218716; x=1707823516;
+        h=content-disposition:mime-version:message-id:subject:cc:to:from:date
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=XPnBkGvCsCJC8yqoqhPyYvVOlSawmi40m3VKxw8PS3s=;
+        b=f3LgVbgjpILPiW37k2bHt3TDYOTZ1kJ4CN9bseZd7+EmweME5Ghzo33CC8kOG2p9P5
+         yaH9+C7XQAQH3MykjOZX5S69HK9pePMQLMqytRbin7o4zKkJqmfa68lnf1JBKsFHSpSk
+         N/liTwPa5s8CQy4TVhXqoxmnP8/X33rK2E1tX8TTXb4AnimQliZhKkKA3DWqqtHscDME
+         xa+eRDJqxI92lLlH3UwbILwVC3yM6RAagTyvBQTm619nCEw9KhhnlweyIwrPFyQvMRAs
+         oOVeCFoyTbqbLGWR6soR1wO+MVQ8oMsTkNGTg1b307L8jHGPiLFP6ZHanUyoA4JFqCZm
+         LpRA==
+X-Gm-Message-State: AOJu0YwtaX5MP+5QP1DUM2+ytSWhId/zDNdOmCSM/Roe/9/ijxHOBMBO
+	qqL7NQr/dx3EPES1JGDRS9JTCNi7sjkL4q1nQVkxkfcKi0AM775P
+X-Google-Smtp-Source: AGHT+IGIFjcwhNK5IblvTvhlzCTLbtEy3VCyCK2uI5SipzG1fkpQbBLRGs0IdtntYkQbIOYswvKB6Q==
+X-Received: by 2002:adf:ee43:0:b0:33a:fcb1:e1d with SMTP id w3-20020adfee43000000b0033afcb10e1dmr1116697wro.25.1707218715885;
+        Tue, 06 Feb 2024 03:25:15 -0800 (PST)
+X-Forwarded-Encrypted: i=0; AJvYcCV3iBCiBxuY9HCjBAVr0zhlnul6kvz7xRhh0zHD11YYVHlPMejYkCoE+oiMiIwDTxqV1HWdAv/mE1m4uhf/P875dNZbntZWZKY+PBVe9WyxyKHAHVi7VxQBNJEvnwk5stdSweocqhg=
+Received: from nz.home (host86-152-202-149.range86-152.btcentralplus.com. [86.152.202.149])
+        by smtp.gmail.com with ESMTPSA id l12-20020a5d4bcc000000b0033905a60689sm1875015wrt.45.2024.02.06.03.25.15
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 06 Feb 2024 03:25:15 -0800 (PST)
+Received: by nz.home (Postfix, from userid 1000)
+	id D4DBA15F143E09; Tue,  6 Feb 2024 11:25:14 +0000 (GMT)
+Date: Tue, 6 Feb 2024 11:25:14 +0000
+From: Sergei Trofimovich <slyich@gmail.com>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org, Chen-Yu Tsai <wens@kernel.org>,
+	Seth Forshee <sforshee@kernel.org>
+Subject: wireless-regdb key change broke crda tests after 37dcea0e6e5
+Message-ID: <ZcIXGjzrZrXPCBcp@nz.home>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240131_081709_630439_A946B293 
-X-CRM114-Status: UNSURE (   4.73  )
+X-CRM114-CacheID: sfid-20240206_032519_110186_DD3E9C44 
+X-CRM114-Status: UNSURE (   6.58  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Tue, 06 Feb 2024 03:33:38 -0800
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -86,32 +92,30 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-A new release of wireless-regdb (master-2024-01-23) is available at:
+Hi `crda` and `wireless-regdb` maintainers!
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2024.01.23.tar.xz
+`nixpkgs` attempted to update to latest `wireless-regdb-2024.01.23` from
+`2024.01.23` and got `crda` verification failures at
+https://github.com/NixOS/nixpkgs/pull/286012:
 
-The short log of changes since the master-2023-09-01 release is below.
+    crda> make verify
+    crda>   CHK  ...-wireless-regdb-2024.01.23/lib/crda/regulatory.bin
+    crda> Database signature verification failed.
+    crda> Invalid or empty regulatory file, note: a binary regulatory file should be used.
+    crda> make: *** [Makefile:161: verify] Error 234
 
-Appologies for the late announcement. There were some permission issues
-preventing the tarball from being uploaded.
+Bisect says the suspect is key change at done by https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git/commit/?id=37dcea0e6e5effb4228fe385e906edba3cbee389
 
---
+"wireless-regdb: Update keys and maintainer information".
 
-Andrew Yong (2):
-      wireless-regdb: Update regulatory rules for Singapore (SG) for September 2023
-      wireless-regdb: Update and disable 5470-5730MHz band according to TPC requirement for Singapore (SG)
+Both `git` `master` version of `crda` and `wireless-regdb` still fail
+`crda`'s `make verify`.
 
-Brian Norris (1):
-      wireless-regdb: Makefile: Reproducible signatures
+Should `crda` key the key update as well?
 
-CaffeeLake (1):
-      wireless-regdb: Update regulatory rules for Japan (JP) for December 2023
+Thanks!
 
-Chen-Yu Tsai (2):
-      wireless-regdb: Update keys and maintainer information
-      wireless-regdb: update regulatory database based on preceding changes
+-- 
 
-Jiaxun Yang (1):
-      wireless-regdb: Update regulatory rules for China (CN)
-
+  Sergei
 
