@@ -4,58 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 33623C25B75
-	for <wireless-regdb@archiver.kernel.org>; Thu,  6 Jun 2024 13:40:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E2D4AC27C55
+	for <wireless-regdb@archiver.kernel.org>; Thu,  6 Jun 2024 14:50:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Subject:From:To:MIME-Version:Date:Message-ID:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=HL+VA5pC54SIq4UIX+CDF+Q028epsxdOE0vBPFeYum0=; b=BJ4uoy1AFE/aE8jC+c1jaSWyQf
-	llZ2IeebqcglZMKufKd5l0SbTiPR+b8KxhkUQlu6gLr429mIB86nrOtZ7NSvhc6UBrOtGncrJ8Jra
-	igob8NdJmcTGWKoBopj109cdPn9m6evQCBZyC/J19kBA/qZ5IGQUBRL35Qo9jtMLMfRWm5qv6YbnP
-	d4wgmqkMdPVRaFutBPBd5vMERZ/rxJ/1FXfVn8YLHiauGpiwPr7tiTZnyxLfqan1CNDOQo0EjZLG4
-	t59dMp3FTndPhMCPYTf8iY1tc9cSsPV5YwAoXO/xSz9pXvMOhmOuS1WUyuTqHS7smiDPBfCI22YHY
-	UFlvadGQ==;
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=iMKNvpG46NbVfu5KTKT/UqnRgR4KRUfGMYhWdwkFFf4=; b=fcpgQccKpw0ApLWlyzNXBeor1V
+	jprniUNWLx6DI73YtBjEwSparFxg3O1VyfMw6qKNJZt9EGuSWWu0wDog6pDI16YarSbElR1bn2i9I
+	3g5GkxFHWfzcQnue6vxkEQ+DE7Uk0/J1LTaVL2WgyG9X2rMeva6F0c1bSZpXAxmbfzPJIybS5OVea
+	FqQZzUIhVkSFq2M4EL/ohHn61eSSs508mC33aN/l/yQHz5cmybulT+pdsyn1cyf0hLxqTgMA8k9yd
+	SpQdeVQKl/hA9+RHHCZOwMQxrxgflIU/DMGAYb9j5jRP3CcXwtJyT5gyWG6vmwd0rhITfZUs0Ifu6
+	qkjz3QpQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFDLq-00000009wei-2iG7;
-	Thu, 06 Jun 2024 13:40:22 +0000
-Received: from mailcow.semisol.dev ([91.107.204.153])
+	id 1sFERE-0000000A8oA-0W2k;
+	Thu, 06 Jun 2024 14:50:00 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFDLm-00000009wco-3YIc
+	id 1sFER9-0000000A8lA-3jvG
 	for wireless-regdb@lists.infradead.org;
-	Thu, 06 Jun 2024 13:40:21 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon) with ESMTPSA id 41D0A7E952
-	for <wireless-regdb@lists.infradead.org>; Thu,  6 Jun 2024 13:40:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=semisol.dev; s=cow;
-	t=1717681215; h=from:subject:date:message-id:to:mime-version:content-type:
-	 content-transfer-encoding:content-language;
-	bh=HL+VA5pC54SIq4UIX+CDF+Q028epsxdOE0vBPFeYum0=;
-	b=pvp3jC2LqC3aCTRLTfJi8xwV8zC/r9XPi+mxDc5wOHlDT4MzEAwN4Y+qeJNBi835qE1cK2
-	2eJAPb3kuRcLuIickkG+KWdkIM+NyTb9tB1x4tbE8jvr2JF8YZSt3ZKxEf6KbPBq8yakJU
-	L6dSsc1AZOPmeTyJLrSlQWSA/F0DTnCJrRxRa9c8DRTLDhhDdS8hCDCINR5bGEOxRAGdoq
-	ED3MNRecEgRcXxtvlerA5j2BiW9rFZCIbXv9epCfqEDZMGKrWbcMezDtQwoAu1CMGwaoMI
-	nvoZ3VP+2Uiw8CBgFnUUZrgiESWyTW5G92ucmWzPpvzoc9bF7AADA+7ncMxfEA==
-Authentication-Results: mailcow.semisol.dev;
-	auth=pass smtp.mailfrom=hi@semisol.dev
-Message-ID: <dc4483d0-c97f-4287-a23f-48140d1c1bff@semisol.dev>
-Date: Thu, 6 Jun 2024 16:40:14 +0300
+	Thu, 06 Jun 2024 14:49:57 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id F08DB61D5E;
+	Thu,  6 Jun 2024 14:49:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86708C2BD10;
+	Thu,  6 Jun 2024 14:49:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1717685393;
+	bh=KyWSqCy4y4RAmggOkMol/rJUPGZ7GGG0ZXiF6oovYR8=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=heNGA8U5jJ6uhJsp81YfDgADGow0uoDRDK4t1QyunDx2s5U1yBvRRL8KZsMMt9jat
+	 T40SO+TneWiSCqhgEiR0RhrTFAvQiMeuC5lSdEGv/HYt9c3VYwMWNPlsgGxOfhdOLW
+	 1yv56LyueR4EOWM7ldcz4fiNmz702XWk6cElgCrEY0FJD+RwDhCJdeiORvFRKSWRFv
+	 T7kDN3nZND1giCGgsdPDzHlTsvbw8hI4/cjSdRbPmRraatfvOZdf/Dx/SslHHEtXZg
+	 bK3bPOehZw7hId+rqaXPcpNMmdpH6TbEXyNCapt82hKB97OIy71lKXS7D12wMT6/Xd
+	 oeuegQitoRLCA==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 87B7B5F8B0;
+	Thu,  6 Jun 2024 22:49:50 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+In-Reply-To: <20240603060558.98791-1-pkshih@realtek.com>
+References: <20240603060558.98791-1-pkshih@realtek.com>
+Subject: Re: [PATCH 1/4] wireless-regdb: Update regulatory info for
+ Malaysia (MY) on 6GHz
+Message-Id: <171768539053.810063.5040807853852576172.b4-ty@kernel.org>
+Date: Thu, 06 Jun 2024 22:49:50 +0800
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Content-Language: en-US
-To: wireless-regdb@lists.infradead.org
-From: Semisol <hi@semisol.dev>
-Subject: Error in 5GHz band information for Turkey
-Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
-X-Last-TLS-Session-Version: TLSv1.3
-X-Spamd-Bar: -
-X-Rspamd-Queue-Id: 41D0A7E952
+X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_064019_374531_D5D14E84 
-X-CRM114-Status: UNSURE (   2.06  )
+X-CRM114-CacheID: sfid-20240606_074956_058553_BB3EB3B7 
+X-CRM114-Status: UNSURE (   4.94  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,18 +76,29 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi.
+On Mon, 03 Jun 2024 14:05:55 +0800, Ping-Ke Shih wrote:
+> Malaysia Communications and Multimedia Commission announced CLASS
+> ASSIGNMENT NO. 1 OF 2022, which page 11 describes frequency bands
+> 5925-6425 MHz are used with conditions of 25 mW EIRP for indoor and outdoor
+> use and 200 mW EIRP for indoor use only.
+> 
+> [1] https://www.mcmc.gov.my/skmmgovmy/media/General/CA-No-1-of-2022_-signed_19012022.pdf
+> 
+> [...]
 
-There seems to be an error in this rule for Turkey in the database:
+Applied to master in wens/wireless-regdb.git, thanks!
 
-> (5495 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+[1/4] wireless-regdb: Update regulatory info for Malaysia (MY) on 6GHz
+      https://git.kernel.org/wens/wireless-regdb/c/ddbf3192cbc0
+[2/4] wireless-regdb: Update regulatory info for Morocco (MA) on 6GHz
+      https://git.kernel.org/wens/wireless-regdb/c/472f62de66a7
+[3/4] wireless-regdb: Update regulatory info for Chile (CL) on 6GHz
+      https://git.kernel.org/wens/wireless-regdb/c/2b2e1f829e84
+[4/4] wireless-regdb: Update regulatory info for Mexico (MX) on 6GHz
+      https://git.kernel.org/wens/wireless-regdb/c/30b964dd5d3f
 
-The start of the range is 5945 MHz, not 5495 MHz, according to the 
-regulations at
-https://www.btk.gov.tr/uploads/pages/ftm-teknik-olcutler-ek-5.pdf (Table 
-3, 7b).
-
-
-semisol
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
 
 
