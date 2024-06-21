@@ -4,64 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CD2D5C27C5F
-	for <wireless-regdb@archiver.kernel.org>; Thu,  6 Jun 2024 14:56:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6D821C27C4F
+	for <wireless-regdb@archiver.kernel.org>; Fri, 21 Jun 2024 06:22:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=yohAEL+OdYTGnAas1PUR5UQqYteNSCGv5FVHTvpp23Y=; b=QBfowoTPGtaQJBs828AGdvrEwi
-	ovlCcubBHVycgb7BG9nicuYKpz1zehjWFHVtRP179HWcdOZaUF+Q/HnlZkCttQ45xu5yhre9GnS/w
-	9Ly82UB52SeTOPneUUiQAu2GhUlL8KWSLzT5RI2DVIQ3+wZ8FItkokFwP+RTaqs6TlZQl5nQ73nu5
-	INXllVGHPQ4XEYNvs+9DIi5/Ewxk0xc2Hz4RczW9ggXi2MLiGDaz2CmLqke1VaQhAAp5xgkGtgdJc
-	TXNGRszqmYIkNphHV8+yhzz4yiVljPp7UAjIjsjay4RH7gk16prm/O2i4D5X1rbtHqRX8QvLAbmT3
-	Ka66C0yw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V82Up5PnUHiEiL997Ur7Nk989dtxnAte9RodaCm+aFM=; b=zBsiQeIf7RNwL6
+	u1UFbUTbcJwV6chitIFx7+P8skf4hWxT4Wr/P5JcT2zFm+mXZET6Z7sJrhmNDtIuzhIWsxbgpch8h
+	dX/mv/V58Y6USFghv1q4F7eip3cI5ijtXRbI7bv75c3vU0Elgsn7iekYogy3PXRPFqR34w6rUYxJc
+	Pcd8rDT2+jA0dT9ttj13XVZ3FWrTXbVn/EVLO9NoiRKMYYQWjQq38ZL2ABtIcCDOyYd4mVajtXTpN
+	ER/94TI4fVyrk4dh4WF+GDHhET9msAytNRzE/35CYiR0l78yp9yuU6UK9YghFHXhywxRFZFypwPYp
+	69vWfCvNzKMVGwat24Cw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFEX8-0000000AAH2-3aIq;
-	Thu, 06 Jun 2024 14:56:06 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sKXer-00000007wQq-3KDI;
+	Fri, 21 Jun 2024 06:22:01 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sFEX6-0000000AAGL-21CA
+	id 1sKXen-00000007wOK-43YS
 	for wireless-regdb@lists.infradead.org;
-	Thu, 06 Jun 2024 14:56:06 +0000
+	Fri, 21 Jun 2024 06:21:59 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 69E7BCE1B9B;
-	Thu,  6 Jun 2024 14:56:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 88091C2BD10;
-	Thu,  6 Jun 2024 14:56:01 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 9095A6243A
+	for <wireless-regdb@lists.infradead.org>; Fri, 21 Jun 2024 06:21:56 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 45A61C2BBFC
+	for <wireless-regdb@lists.infradead.org>; Fri, 21 Jun 2024 06:21:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1717685761;
-	bh=BJvw1GXBb75PGCCdgtHgmV04LTSJ7apMr2NBvvD9rpE=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=JIZx+eSMLuh8W9sEZX6wWZEwX3XEHQEDaagANYczQH3Q4mmfh+pUiyAlf1NXYwzbj
-	 idKHoeLEghNSbG7VLF0b7x6Bk9N92HoRN+/x3G8v1laWEoGCQUWcUJw6W1mVF/kWRZ
-	 RumMAve6yyVc0V9+BkWLSPE7Gd74Hp7Lrmyl2F/V6BHZdWv1BZf16ABWCWk4iktFFo
-	 22SxaESW7Cfb248hQCTd8lpP4OqyuznEx5DyDxbd2jL/RSwYWichTryOmw44Uy1L+J
-	 OMCSiRR0MYfMq+5jd/kSLv1/LzC6JHPfOdF69GMxxEGDtkm3VSlS9xQAri8BXzxklr
-	 E+Edmiwgqfe5g==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 792305F8B0;
-	Thu,  6 Jun 2024 22:55:59 +0800 (CST)
+	s=k20201202; t=1718950916;
+	bh=hMkpu0krNr2g93eZ8IM3B57N+hVlxXfT21ilDYvWVq8=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=EX9lQoltpiFc3q7j93ULJKsmcCLkMw97KPsdkc79sXOn67DqN8tp/SEio66pj4o6K
+	 a4KHHhkAHY7av+6Ot0ulcV1M7wsnKZlwYXsMcqkZgrHTRHbshHh5uJDTmq1Sqt5IDR
+	 P7kOpza35cV/NMwoktwJ62TM2Feya/a3B7C1pI6v1LCxbUj+RhbjjC/67v/SudRbs8
+	 FYGa12CaFVXUaSyz9eM5sYi0yL47cEpIfRHr0fZdhqnFaetlpsgCnP19F9O+diwklL
+	 hpPdKb+LwVMaEqvFzRRpf77ZkblnibDOs0GWCicqIt5EaOawbJ0Lre/8Swz2yfQZIq
+	 3a7FF0x+0QFXQ==
+Received: by mail-lj1-f174.google.com with SMTP id 38308e7fff4ca-2ec50a5e230so528141fa.0
+        for <wireless-regdb@lists.infradead.org>; Thu, 20 Jun 2024 23:21:56 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCWQX0ltk4uClF6GP4GOuYjq5nOchSeaWJFYUXVcpLFBjdKoiGFTzR/THSQsEb0CsKvioWZU50dJAp8d+uBciNyN40EPP1ZEOynJ71ub2AsSbjEl
+X-Gm-Message-State: AOJu0YwKAdS9fI3CaGZmisudSe75nScy47SqMPDNlwdso9QFtLcFhSJA
+	gct1+c0QdP8vAL2weGw0i+4Yk0MQ9QpFHbrgTVD2yLkKAyLCjepOjV7F0+DvxecODqUaeO5bkWA
+	yMV3KoA3cziLe0FKT3UwJCsupLvg=
+X-Google-Smtp-Source: AGHT+IGw5UYx81r3K2ucby3YFlI+wqgzxWeOa5Pevemh0b0s2VLqCckk46850zC6AS/PpwpRA8YwMxo1ssl2bdwY2H0=
+X-Received: by 2002:a2e:83d0:0:b0:2ea:e763:7124 with SMTP id
+ 38308e7fff4ca-2ec3ceb867bmr51106431fa.18.1718950914635; Thu, 20 Jun 2024
+ 23:21:54 -0700 (PDT)
+MIME-Version: 1.0
+References: <20240607023058.34002-1-pkshih@realtek.com> <20240607023058.34002-4-pkshih@realtek.com>
+In-Reply-To: <20240607023058.34002-4-pkshih@realtek.com>
 From: Chen-Yu Tsai <wens@kernel.org>
+Date: Fri, 21 Jun 2024 14:21:41 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65k7M0=fiJoVaNUFxKCsRQXcv7mmXjDEJ0-OnV2uTUE1w@mail.gmail.com>
+Message-ID: <CAGb2v65k7M0=fiJoVaNUFxKCsRQXcv7mmXjDEJ0-OnV2uTUE1w@mail.gmail.com>
+Subject: Re: [PATCH 4/5] wireless-regdb: Update regulatory info for Costa Rica
+ (CR) for 2021
 To: Ping-Ke Shih <pkshih@realtek.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20240605074209.8713-1-pkshih@realtek.com>
-References: <20240605074209.8713-1-pkshih@realtek.com>
-Subject: Re: [PATCH v3 1/4] wireless-regdb: Update regulatory info for
- Malaysia (MY) for 2022
-Message-Id: <171768575947.810795.11893893795963994787.b4-ty@kernel.org>
-Date: Thu, 06 Jun 2024 22:55:59 +0800
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.13.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240606_075604_730157_3CBD404C 
-X-CRM114-Status: UNSURE (   4.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240620_232158_176432_47A521EF 
+X-CRM114-Status: GOOD (  14.59  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,33 +79,68 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, 05 Jun 2024 15:42:06 +0800, Ping-Ke Shih wrote:
-> Malaysia Communications and Multimedia Commission announced CLASS
-> ASSIGNMENT NO. 1 OF 2022, which page 11 describes frequency bands
-> 5925-6425 MHz are used with conditions of 25 mW EIRP for indoor and outdoor
-> use and 200 mW EIRP for indoor use only. Add frequency range of
-> 5925-6425 MHz and update limits of existing entries accordingly.
-> 
-> [1] https://www.mcmc.gov.my/skmmgovmy/media/General/CA-No-1-of-2022_-signed_19012022.pdf
-> 
-> [...]
+Hi,
 
-Applied to master in wens/wireless-regdb.git, thanks!
+On Fri, Jun 7, 2024 at 10:31=E2=80=AFAM Ping-Ke Shih <pkshih@realtek.com> w=
+rote:
+>
+> DECENTRALIZED INSTITUTIONS, REGULATORY AUTHORITY OF PUBLIC SERVICES,
+> announced ALCANCE NO 87 A LA GACETA NO 83 (in Spanish) on April 30, 2021.
+>
+> For 6GHz band (frequency 5925-7125), allowed only the following usage
+> applications free in this segment:
+>  - Applications of low power in interiors (LPI), according to the limits =
+of
+>    power 24 dBm.
+>  - Applications of very low power (VLP), indoors and exteriors, with an
+>    EIRP maximum of 14 dBm.
+>
+> Also update and add limits of 2 and 5 GHz bands accordingly.
+>
+> [1] https://storage.googleapis.com/eleoscompliance1.appspot.com/public/PN=
+AF%20modificaci%C3%B3n%20ALCA87_30_04_2021.pdf
+>
+> Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+> ---
+>  db.txt | 8 ++++++--
+>  1 file changed, 6 insertions(+), 2 deletions(-)
+>
+> diff --git a/db.txt b/db.txt
+> index c98749442873..cdec93783b20 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -434,12 +434,16 @@ country CO: DFS-FCC
+>         (5735 - 5835 @ 80), (30)
+>         (5925 - 7125 @ 320), (12), NO-OUTDOOR
+>
+> +# Source:
+> +# https://storage.googleapis.com/eleoscompliance1.appspot.com/public/PNA=
+F%20modificaci%C3%B3n%20ALCA87_30_04_2021.pdf
+>  country CR: DFS-FCC
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 20), (17)
+> +       (2402 - 2482 @ 40), (30)
+> +       (5170 - 5250 @ 20), (24)
+>         (5250 - 5330 @ 20), (24), DFS
+>         (5490 - 5730 @ 20), (24), DFS
+>         (5735 - 5835 @ 20), (30)
+> +       (5875 - 5925 @ 20), (24)
+> +       (5925 - 7125 @ 320), (24), NO-OUTDOOR
 
-[1/4] wireless-regdb: Update regulatory info for Malaysia (MY) for 2022
-      https://git.kernel.org/wens/wireless-regdb/c/f901fa959af9
-[2/4] wireless-regdb: Update regulatory info for Morocco (MA) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/d72d28865b44
-[3/4] wireless-regdb: Update regulatory info for Chile (CL) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/414face1b010
-[4/4] wireless-regdb: Update regulatory info for Mexico (MX) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/1156a08e9106
+I believe the kernel uses EIRP values. That means using the values in the
+third column of the table in the reference.
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+ChenYu
 
+
+>
+>  # Source:
+>  # https://www.mincom.gob.cu/es/marco-legal
+> --
+> 2.25.1
+>
 
