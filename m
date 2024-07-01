@@ -4,64 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 89E8BC30653
-	for <wireless-regdb@archiver.kernel.org>; Mon,  1 Jul 2024 09:18:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6CB63C2BD09
+	for <wireless-regdb@archiver.kernel.org>; Mon,  1 Jul 2024 09:26:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Z8HrWeav/hxSmGZQ+dPYYN1IgsHgCGKGGOptpuhPTCU=; b=up/+I1Lg42mzmWZ393eELxVixH
-	rF2WQwpY2JV8Edyt8dJNQR2nraD3wJZih8+U+APzPvX32DzKtidFhN1SK4cfwCafA63ZXHEE+xkwh
-	c9Ckh1K+v2riAus5wAxzh9yMPVsDH+HOec1dCJniYvUxCC39GubTly+NEg3lM2wV6wY1In6+lzg4/
-	A00xsVNpPK4SeebtdKJMxW5LyxzKV/JvOxOBgr3UzHaSQAvaF9rOLBpmnr5q1IfQ0p1EPyuF3lDxl
-	2WxpWYlUi06zWyzfYjPXNblox9aQiFZRBuNgyEsq4Hc+1M4qFCKY0YGPCW267mEJd43b3KKLC8Es3
-	nEROxQrw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PE6fyhBdActmp3jTFVWZT4nG6nWM66miAz7ePrMwBws=; b=V9krcWJ/PeaMpI
+	MAmrQLbEO61EYYOcvyA+gc5fztgXZbVpwuNSlbnd6H4VgCPnIKM78nN2xZ1KbGRue86n9NwylyKUC
+	Qtxl0nycXg5o5zWBG9rt5Y8fFnsht2QEWrCudOnu5pZMLd+ycLxR50EIk6GMkeCX9GEaVIxzADrJ0
+	qpj9iMrZAsRMWRMVwgOaJmzpbIwwRZjoSsDxUoRP3frFbLZ4RD+4z5I1YFz+aEII9ab+sTWcfk6Ju
+	303zI+pQ9AmAbZwfXMowoTnpch0xjiU9BxDHcCAMWX5rpBp23VF6wPvPCy5GQEVLyDPQeMsHKNqYB
+	AjqHkOFw4u6kASQ05Czw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sODBD-00000002QCL-46jS;
-	Mon, 01 Jul 2024 09:18:36 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1sODJ4-00000002RFW-2WKX;
+	Mon, 01 Jul 2024 09:26:42 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sODBB-00000002QBv-0mcR
+	id 1sODIz-00000002RES-48bE
 	for wireless-regdb@lists.infradead.org;
-	Mon, 01 Jul 2024 09:18:34 +0000
+	Mon, 01 Jul 2024 09:26:40 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 66B2061181;
-	Mon,  1 Jul 2024 09:18:32 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id EEC1DC116B1;
-	Mon,  1 Jul 2024 09:18:31 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id 641FC61181
+	for <wireless-regdb@lists.infradead.org>; Mon,  1 Jul 2024 09:26:37 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 1863CC4AF0C
+	for <wireless-regdb@lists.infradead.org>; Mon,  1 Jul 2024 09:26:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1719825512;
-	bh=eLrNP786r1nyDwVMD5zW1RtilLFeZn9DWE2Ef08E84s=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=kJYlOueiqzJxdsJRrpGesaqV0SmP54o8oa567VMflPAeaxyBVphaLDA+q9N6k4Tum
-	 NIktYhFjNY4jLjwx6YppoyPJG9hJ9ofRTRYY2wX/Gu8G5xicIqDBT8MU7HelWIKuSn
-	 oZmUUbtkcn/v+Etf5YDK959LkmLWEdN9xHvAOfiEEmgWRo/lhboVeo5PygADVORiPj
-	 nzCAoaUKRmUY3/ULTTSD1t75utnKeh04GmasOCUxXEyCxoCg5D8DnpRmdadv0HVIrf
-	 vw4YVk0bR0IiPKszW3CCjAliyRXOL9/prF78c+S++h7F6p/9ifGfcdTWF9wkOvAPCJ
-	 9PTm5RuHezsTg==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 00E9B5FA01;
-	Mon,  1 Jul 2024 17:18:28 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Ping-Ke Shih <pkshih@realtek.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20240624025623.6021-1-pkshih@realtek.com>
-References: <20240624025623.6021-1-pkshih@realtek.com>
-Subject: Re: (subset) [PATCH v2 1/4] wireless-regdb: Update regulatory info
- for Liechtenstein (LI) on 6GHz
-Message-Id: <171982550898.1221830.493885225232689365.b4-ty@kernel.org>
-Date: Mon, 01 Jul 2024 17:18:28 +0800
+	s=k20201202; t=1719825997;
+	bh=E8ISHJRZ0T/wmgb74RMlaRUlrSpgkvdgYZlNdp66hSo=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=g63thwVTDS93Gpb36X1j8fIy2YOuYjLmODvt//DMk3KDd7AkcXlUyAmh7ByNU+llJ
+	 Z89zA2tRiN2UIlcaN0pyXVQ7fXv5hxOcvou12z0ev3KcrZo57q7LNd4RQajWKS07rL
+	 TchVrFTxx+dAz7G2wW6h8sysq5+CJ8XnukjCgffzI4W9+Thih3IxWD5Z0I0/XlVpck
+	 TLHEw3vDXsvPAeMthiGw29Ocd8dh0J7cCwH2LuZ9htsJ4YQC4v4Gd86i8muaJ1F4aK
+	 5VVZmkVJ0KhlpeZP2clntxhOWO7JBrYJekdtXNQfhoMGkoENGpIwqPyz1nCdbeUOlU
+	 QY2Ysi7BnKM2Q==
+Received: by mail-lj1-f177.google.com with SMTP id 38308e7fff4ca-2eaea28868dso37869451fa.3
+        for <wireless-regdb@lists.infradead.org>; Mon, 01 Jul 2024 02:26:37 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCXdd2gNb+ed3g5VqqU2j21BWI80NWyhaIl534ddSEJBbsf/COk4FJ9zRC0r6bJAOuU8ZuLtdzZxuelAo6j6cRz2PK7V0EnvePAzzab+UdfltoY8
+X-Gm-Message-State: AOJu0YzhOly5zZP45dxvkoncTsVoyLqWYIWx6mXr0AF+9dC0VxuRqccS
+	CBihL+GLMCwURtA0ciVK/PItHKAjseLDDHsO8DLN0UlPkur4+fdmNJlzwEqpkiwgsAsqiM32s7O
+	BDFDYMQ4waX/5AqAMCX9O//efrIY=
+X-Google-Smtp-Source: AGHT+IHMe03KviipNWz/spwITQbaWDQjiqkIVKXLq6j97XrzUf1loSPVyZVsGkgp8u4hDeEBZfH6FAGujQnAED7LTqI=
+X-Received: by 2002:a05:651c:118d:b0:2ec:5685:f061 with SMTP id
+ 38308e7fff4ca-2ee5e3a3f04mr37129561fa.21.1719825995419; Mon, 01 Jul 2024
+ 02:26:35 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.13.0
+References: <20230416013031.158433-1-sforshee@kernel.org> <d448ca6a-106a-478f-ad80-5c8730765ca0@nbd.name>
+In-Reply-To: <d448ca6a-106a-478f-ad80-5c8730765ca0@nbd.name>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Mon, 1 Jul 2024 17:26:22 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64ArWLugdvZfGxSGA3eqxcozMo1Xov77_93=A=FwtijNw@mail.gmail.com>
+Message-ID: <CAGb2v64ArWLugdvZfGxSGA3eqxcozMo1Xov77_93=A=FwtijNw@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: update regulatory rules for India (IN)
+To: Felix Fietkau <nbd@nbd.name>
+Cc: Seth Forshee <sforshee@kernel.org>, wireless-regdb@lists.infradead.org, 
+	linux-wireless@vger.kernel.org, Keshav <the.ridikulus.rat@gmail.com>
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240701_021833_323331_583C1B84 
-X-CRM114-Status: UNSURE (   5.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20240701_022638_130586_A49E7D0B 
+X-CRM114-Status: GOOD (  13.85  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -73,28 +79,55 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, 24 Jun 2024 10:56:20 +0800, Ping-Ke Shih wrote:
-> CEPT ECC/DEC/(20)01 of 20 November 2020 on the harmonised use of the
-> frequency band 5945-6425 MHz for Wireless Access Systems including Radio
-> Local Area Networks (WAS/RLAN), which [1] defines
-> 
->  - LOW POWER INDOOR (LPI) DEVICES
->    * Restricted to indoor use only
->    * Maximum mean e.i.r.p. 23 dBm
->    * Maximum mean e.i.r.p. density 10 dBm/MHz
-> 
-> [...]
+On Sat, Jun 22, 2024 at 1:54=E2=80=AFAM Felix Fietkau <nbd@nbd.name> wrote:
+>
+> On 16.04.23 03:30, Seth Forshee wrote:
+> > Increase the max EIRP for 2.4 GHz to 30 dBm, and add DFS for 5250-5350
+> > MHz and 5470-5725 MHz.
+> >
+> > Source:
+> > https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr=
+-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+> > https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e=
+-dated-22102018
+> >
+> > Signed-off-by: Seth Forshee <sforshee@kernel.org>
+> > ---
+> >   db.txt | 9 ++++++---
+> >   1 file changed, 6 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/db.txt b/db.txt
+> > index 915a3b94d418..2a7779510cc5 100644
+> > --- a/db.txt
+> > +++ b/db.txt
+> > @@ -850,11 +850,14 @@ country IL: DFS-ETSI
+> >       # Table B List of conditions, row 68, wireless device using 802.1=
+1a/n/ac protocol
+> >       (5725 - 5875 @ 80), (200 mW), AUTO-BW
+> >
+> > +# Source:
+> > +# https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-=
+gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+> > +# https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-10=
+48e-dated-22102018
+> >   country IN:
+> > -     (2402 - 2482 @ 40), (20)
+> > +     (2402 - 2482 @ 40), (30)
+> >       (5150 - 5250 @ 80), (30)
+> > -     (5250 - 5350 @ 80), (24)
+> > -     (5470 - 5725 @ 160), (24)
+> > +     (5250 - 5350 @ 80), (24), DFS
+> > +     (5470 - 5725 @ 160), (24), DFS
+>
+> What about the DFS region? The DFS channels won't work without it.
 
-Applied to master in wens/wireless-regdb.git, thanks!
+The given references do not specify which region to follow. So unless someo=
+ne
+provides more information, there is nothing we can do.
 
-[1/4] wireless-regdb: Update regulatory info for Liechtenstein (LI) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/f8ef7da3d44c
-
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
-
+ChenYu
 
