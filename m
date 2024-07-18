@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 04712C3DA60
-	for <wireless-regdb@archiver.kernel.org>; Thu, 18 Jul 2024 04:42:08 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 84153C3DA60
+	for <wireless-regdb@archiver.kernel.org>; Thu, 18 Jul 2024 04:44:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VMSlL6CxrI528gHhmTXRAJNirXFHa9HxzS9XIDjiQ48=; b=FhW9nZ308Scem2
-	1VhbY3gzjk3Q1CcuU78+1vwrJrDwXpDnTsUbpgpfW+1CDspTXeY8F01RM3125lLivVGSPt7K893yh
-	hHhj0rtF0xaak8YOy5zc++GOVBf1XbA/9Xiq27hQiBBG4NWH+yTM5jE4FSh6M46aTdGYfkoT78qoI
-	O+hk26DW29wdD3eV5S9MV9Dloa+LjZwZ24ICYJWYJ+CGF9qq0g0fkU2ddpgFGBww5E0spjoP9OsKU
-	C6v5rXWihpGZj+8NOcOd/lZhW7B9+NkT1q4UCyCylEIJbHhywKYw6qCF5/TYN2gCkaIM3w9NTHc7p
-	Jw/4yz32uzk1iPvgw8Dw==;
+	List-Owner; bh=wy/Tp+S4SzCfSB3MBLoDS34Db3iGIMN6BJKOaiWBu10=; b=4pY1TssG4hnnRi
+	XVZIZL8+HsYXzwe6J5J5Sil+e59i0LSE1b6RhdLmto7GXIAKCoiAiRA1wt5OpDs2ZOaBNNrVw+mpc
+	TnhjV9QmpYgLjIEOPczGsrdZrDklFBi1R87eQwuxX/WpZj8cEZsZayPAhlwuJFZuRoT6EVxWTPNVP
+	hEXYbixGYXEB8JcgFbGdOWobxECwMRcwaZIHpfzY9IbN/KIascPZBhSSaD8LSxKZJU201BryyXPVh
+	JpFvtTLVPukdilRdoggi1/yZCZD1Urfi04edvlmcK/iTfq8ZpF9BtPKg7ztiSElK9+q1foSyiAwm/
+	oUYW495huueoj+QiTdSw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUIy0-0000000Fkxq-04Qt;
-	Thu, 18 Jul 2024 04:42:08 +0000
-Received: from sin.source.kernel.org ([2604:1380:40e1:4800::1])
+	id 1sUJ06-0000000Fl9X-0Yyr;
+	Thu, 18 Jul 2024 04:44:18 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUIxw-0000000Fkx8-2QNi
+	id 1sUIzs-0000000Fl88-1WaS
 	for wireless-regdb@lists.infradead.org;
-	Thu, 18 Jul 2024 04:42:06 +0000
+	Thu, 18 Jul 2024 04:44:16 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sin.source.kernel.org (Postfix) with ESMTP id 9C3D3CE191B
-	for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 04:42:02 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 9B140C4AF0C
-	for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 04:42:01 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id 4B165CE1911
+	for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 04:44:02 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 86093C4AF0A
+	for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 04:44:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1721277721;
-	bh=4rCkh4Y5tFWEKxjdy2NSfbu6yS8Qfl9dSLmQRD51zCM=;
+	s=k20201202; t=1721277841;
+	bh=ZRDC4dHcF/WcX8gCYsuspFUop2dQtRDN/rE9HjjCRSU=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=JESp2OyC3LD2Xjl4Bs82IyJjqSqT0OBDcQVM9JZbtgMiDHU15poYEusbuunCdibej
-	 Q001JTrw28miMZe2IA6YMB4SxjP008N57WdvcYarAHHmn//fHNM2NtN/C8RMXiysmJ
-	 vfZTUaXR4acw4loMmXBmkgwXvaxsRq/i5Ed2xMnz3VEhFouU7mikd6Bwu+iH6MDbDf
-	 rUWRT8DDtsfalRKwcxG4Is4w2IMm1kUcURC7VESjzwfEMvchIl0iBl+ZbB12AICxE4
-	 R4ulJPmFCRjHDcrmJGPfYDr7+AV+1rqoAXx4NkMI5NebWDE/KJUfLpSmYwdqtDxmqB
-	 A2QAr5naKFEZw==
-Received: by mail-lj1-f180.google.com with SMTP id 38308e7fff4ca-2ebed33cb65so4028351fa.2
-        for <wireless-regdb@lists.infradead.org>; Wed, 17 Jul 2024 21:42:01 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCUH7ErRGZlYrRtLzfXUPWi/4D2AaPArvUd2wO/WlfXTL2cfaPodX5jAjF7mhKJ37582ZfoKOuJtOvoclK8d/goqjSF7cwCm75l5z1avXwdVN2ac
-X-Gm-Message-State: AOJu0YzNG8gh5iPTXJL6DeAd5RbK3p7UUs2rvXQhuZWISTkF/tf12R4P
-	SWOx7gP/ha5NRxqtnssN5RHR6L0jRDq+lywcZ0EkQA5GWq4m42/f2NnAU0473kc3yHXPMqP/dtr
-	AS/89VV3sgV3J1Hw7YrCJI4lZrfM=
-X-Google-Smtp-Source: AGHT+IGnu+6eqtqrXqcfw3BIcpmlRagcob58rqe6uZr+Jqmpq7ct9P7VbWUf3lX2MeHg7XWG8rk6Zc7KqzpmVSkClEg=
-X-Received: by 2002:a2e:888a:0:b0:2ec:18e5:e686 with SMTP id
- 38308e7fff4ca-2ef05d4384emr8194621fa.33.1721277719979; Wed, 17 Jul 2024
- 21:41:59 -0700 (PDT)
+	b=Mz70H359F7LVtlyY8SeAvdc8Ybv7HBH6O8ge0qYVI1r5OecjQ+OdjMwd5uDQJNuEU
+	 eM+LHOFp0GmQWzTbm/L9JTEMgd518QSQXMSyy+kRLjEuaEgbI5/urjmaq/XTZlpcJ9
+	 ipLnbuNLrgPgptOVV06jlUf36rn4l+ggAd+OtSnSa7nSLuLWcwKkeRLxhbskVjedU1
+	 3HYUAIH1jhlXfRfGt6AyL/qNclrhFpDGjLtpBXP+HCft4ZyrZl0AyKN8lJdkoGcuZW
+	 1hPyXvzHwh7Ks7i/h6yK/Eibb5wfWllzo4ZlUyMljuM37weq3ghx9KNePM4V9KeJB9
+	 rLFGmkvEw8Hvg==
+Received: by mail-lj1-f171.google.com with SMTP id 38308e7fff4ca-2ee9b1b422fso4388331fa.0
+        for <wireless-regdb@lists.infradead.org>; Wed, 17 Jul 2024 21:44:01 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCVtT31eTbqnvp6YPxUhe7SQQwm7POSzHJjRvcuCdOcm9FQTjcaYT9AV4xms+kQw/LrmDrHtVy1GidPGzOopRCPqRiOmlvJU+lcxZ27EMOeY/Jny
+X-Gm-Message-State: AOJu0Ywc1Of9ps/PRPU1NluHdy4jokF3xUGYcNF6dWtNEhZSvI9Lx30E
+	rmFu3RXCvvTp8swrTgmeN85B+LeQ8LHDrpxWcxOxjpVftgtaG2bC+E4svlcGvS+4PIpMk0LEM2Y
+	zUW85GHU5Y0q1ighBEvBg/NpUoTM=
+X-Google-Smtp-Source: AGHT+IFvQlfoJbyn8/5uIxJdMdaYOBwoIliZ2UEO1YIkhUi565xheTeo35Xejr4Vn0ydaiHQnIgf/baFvGmOBkd/Ark=
+X-Received: by 2002:a2e:9ed9:0:b0:2ee:daf3:5d30 with SMTP id
+ 38308e7fff4ca-2ef0649b2b2mr3327151fa.0.1721277839845; Wed, 17 Jul 2024
+ 21:43:59 -0700 (PDT)
 MIME-Version: 1.0
-References: <20240705060613.28909-1-pkshih@gmail.com> <20240705060613.28909-2-pkshih@gmail.com>
-In-Reply-To: <20240705060613.28909-2-pkshih@gmail.com>
+References: <20240705060613.28909-1-pkshih@gmail.com> <20240705060613.28909-4-pkshih@gmail.com>
+In-Reply-To: <20240705060613.28909-4-pkshih@gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Thu, 18 Jul 2024 12:41:47 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67QC3_L740rctZeJTagF888_5jhQinPNVkfEy_pEgvKNg@mail.gmail.com>
-Message-ID: <CAGb2v67QC3_L740rctZeJTagF888_5jhQinPNVkfEy_pEgvKNg@mail.gmail.com>
-Subject: Re: [PATCH 2/5] wireless-regdb: Update regulatory info for Peru (PE)
- on 6GHz
+Date: Thu, 18 Jul 2024 12:43:47 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66Xga1j_VELV1XXzOVxr_i6YdmFCSDRYmxOtq9rj3GfBQ@mail.gmail.com>
+Message-ID: <CAGb2v66Xga1j_VELV1XXzOVxr_i6YdmFCSDRYmxOtq9rj3GfBQ@mail.gmail.com>
+Subject: Re: [PATCH 4/5] wireless-regdb: Update regulatory info for El
+ Salvador (SV) on 6GHz
 To: Ping-Ke Shih <pkshih@gmail.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240717_214204_819378_6F9D1555 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20240717_214404_796866_92783C1E 
+X-CRM114-Status: GOOD (  14.17  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -88,24 +88,26 @@ e:
 >
 > From: Ping-Ke Shih <pkshih@realtek.com>
 >
-> Ministerial Resolution -2021-MTC/01 decided
+> The General Superintendency of Electricity and Telecommunications Makes
+> Knowledge to the General issued resolution No. T-0408-2023.
 >
-> For the band 5925-7125 MHz, low power indoor case of use.
+> Free use within the entire band for WLAN (WiFi) application, from
+> 5925 MHz to 7125 MHz, must have following technical and operation
+> conditions:
 >  - access point
->    maximum EIRP: 30 dBm
->    Limited power spectral density: 5 dBm / MHz
->  - user devices
->    maximum EIRP: 24 dBm
->    Limited power spectral density: -1 dBm / MHz
+>    * P.I.R.E 30 dBm
+>    * spectral density of P.I.R.E. 5 dBm/Mhz
+>  - client
+>    * P.I.R.E 24 dBm
+>    * spectral density of P.I.R.E. -1 dBm/Mhz
+>  - Indoor use only permitted
 
 Please explicitly mention that the PSD limits the rule to 12 dBm.
 
-Otherwise this looks good.
-
 ChenYu
 
-> [1] https://cdn.www.gob.pe/uploads/document/file/1861732/Resoluci%C3%B3n%=
-20Ministerial%20nro%20373-2021-MTC/01.pdf
+> [1] https://www.siget.gob.sv/actualizacion-de-cuadro-nacional-de-atribuci=
+on-de-frecuencias-t-0408-2023/
 >
 > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 > ---
@@ -113,25 +115,24 @@ ChenYu
 >  1 file changed, 3 insertions(+)
 >
 > diff --git a/db.txt b/db.txt
-> index 266ba2d48731..2e862b322f13 100644
+> index d6b14c055afb..2a4f1ed524c1 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -1443,12 +1443,15 @@ country PA: DFS-FCC
->         (5725 - 5850 @ 80), (36)
->         (57000 - 64000 @ 2160), (43)
+> @@ -1736,11 +1736,14 @@ country SR: DFS-ETSI
+>         (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+>         (5490 - 5710 @ 160), (27), DFS
 >
 > +# Source:
-> +# https://cdn.www.gob.pe/uploads/document/file/1861732/Resoluci%C3%B3n%2=
-0Ministerial%20nro%20373-2021-MTC/01.pdf
->  country PE: DFS-FCC
+> +# https://www.siget.gob.sv/actualizacion-de-cuadro-nacional-de-atribucio=
+n-de-frecuencias-t-0408-2023/
+>  country SV: DFS-FCC
 >         (2402 - 2482 @ 40), (20)
->         (5170 - 5250 @ 80), (17), AUTO-BW
->         (5250 - 5330 @ 80), (24), DFS, AUTO-BW
->         (5490 - 5730 @ 160), (24), DFS
->         (5735 - 5835 @ 80), (30)
+>         (5170 - 5250 @ 20), (17)
+>         (5250 - 5330 @ 20), (23), DFS
+>         (5735 - 5835 @ 20), (30)
 > +       (5925 - 7125 @ 320), (12), NO-OUTDOOR
 >
->  country PF: DFS-ETSI
+>  country SY:
 >         (2402 - 2482 @ 40), (20)
 > --
 > 2.25.1
