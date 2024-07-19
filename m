@@ -4,79 +4,80 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8BCE6C3DA49
-	for <wireless-regdb@archiver.kernel.org>; Fri, 19 Jul 2024 03:07:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 60014C3DA49
+	for <wireless-regdb@archiver.kernel.org>; Fri, 19 Jul 2024 03:24:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=X2aBN439CgxyqsWC/FKZX/cRexlSuHG40IikgmWyCH4=; b=ovCMruz7i1QWwVO/79P8shq2Te
-	wPnm83tkaU+V5i0fqzfbnIpGAZpg9ROy3nxBtidRmiUXLO13n0im+sX8ospB/9xVXgBzOK1Li4ezz
-	cJlTCmZ0sCbp1tc4qxWvdTiBTdAd70VrxTBRWP1QzcuxIXLaFqxRjuG18TkzgRN39t2475GbO2k50
-	9mqSbzY2AFpe53TtiqT4STYE9udCytj7C9a9AHnz7K2lfsYzY3mCHF+huAz2+NG8Y0kWBqZywEGOr
-	Lek4a1YFeWNXj2TI2co0bysuFJ7zokwsKidvTDWbG+/oc5ZyXicG4W3ihpI8uR5uIL5FetBc+Q12q
-	sa3B1LKA==;
+	bh=hw9MxDYjCDZPKe0pPKGa20/2reQTiIpQlhrmRrwXuGY=; b=j1W3eYN1KCTHbReFBQXLOYbh3Y
+	Ca3Y59l0jXPRnPgX1WeJTpSaYfWr7fqf9Ake40vzG+ZpkujYZfaQjmUpZXYwVEVa9IH8iYN/WaVpu
+	Lz0xWKRInRJ9aJghENPOENo2CvRbVWHmzUpGhI2Mb6xoGryF8EEAzIvBWiFCwa2rM5NhkXKzKhsjy
+	ptAyh9qHquiaTXqN+cD/SfFGnGhx3Ci373CDAsLMQw2rYrEUMYE2T8wbJnQQ2cOo4pBGCTg/twHrk
+	GgL65wdf2EapZrRTIGT1Vn/gM6I1/0SOCaNKg+sIvHDjyDkmC1DMpvyiVmU2IVmbUqXDgsY/zT3D0
+	w9Qd0PTg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUdxv-00000001O2u-40wq;
-	Fri, 19 Jul 2024 03:07:27 +0000
-Received: from mail-ed1-x52f.google.com ([2a00:1450:4864:20::52f])
+	id 1sUeDz-00000001Pgx-2wzT;
+	Fri, 19 Jul 2024 03:24:03 +0000
+Received: from mail-pf1-x432.google.com ([2607:f8b0:4864:20::432])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sUdxt-00000001O2F-1FSA
+	id 1sUeDw-00000001PfW-0X6v
 	for wireless-regdb@lists.infradead.org;
-	Fri, 19 Jul 2024 03:07:26 +0000
-Received: by mail-ed1-x52f.google.com with SMTP id 4fb4d7f45d1cf-5a108354819so526719a12.0
-        for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 20:07:24 -0700 (PDT)
+	Fri, 19 Jul 2024 03:24:01 +0000
+Received: by mail-pf1-x432.google.com with SMTP id d2e1a72fcca58-70b1207bc22so371947b3a.3
+        for <wireless-regdb@lists.infradead.org>; Thu, 18 Jul 2024 20:23:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1721358443; x=1721963243; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
+        d=gmail.com; s=20230601; t=1721359439; x=1721964239; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=X2aBN439CgxyqsWC/FKZX/cRexlSuHG40IikgmWyCH4=;
-        b=IzO+Ur6A+dIgl7utQQBpHK4+dXRigMtJvM+dgxZCT1/Z4QjJopqYZs2VSwc+yJQhdc
-         8itS489Ax2XzKLGyerCmV8vPSfMbgF4EzB+LgpTtK1S5UNmnsQf63zZRlpqtGIawfNqm
-         SHriT7SW7uJeNewxhJDO93H4yMhJ/wDEkhGUF/R9GJFuftlWLppXXVi1R0zFdVlIw8CN
-         Xux8LztzXgPlV6olhKbdQOKXkiaWS8+jLuLRat+wZsPYX55+g/vjn9cMEvIloMNnDQSz
-         R3qNPePTJmdI64doaJJl2bjXMO6QfrcXu6hRC0c18t93IsnJP6FDI+q1105BHeC9IkU6
-         nUQA==
+        bh=hw9MxDYjCDZPKe0pPKGa20/2reQTiIpQlhrmRrwXuGY=;
+        b=I0BA7z27Btk5LGPIauCs6kTr4eujpy4MtCzR/qwnPLUUzBrqIeZkzPTBAU/qTE3D+0
+         wKfmmE23OEBD3bVJFIAa15zrGEvA3i5T+/WK6QWlsXPWSKf90CH0QPHSGiW+c8pewu3S
+         fREzGJkPj/ptDP/8Q7MSjnPs/kgNMluxYaEkczzYJvdnLoqs8mkVOXFXQ5xZXTGb5S6f
+         oQyMdfXGKruBnBmpDF3sy3AU00p4ktlts415SBSE+89SPD3Tmkt8siNi+koHwObFMKhS
+         /qwqi/6i4tYkxzqCu/5DhS8BLIczYb2XtMnzYMeqW5VH3rkWmyTWtcQux47lj6rC3tI4
+         5Alw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1721358443; x=1721963243;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+        d=1e100.net; s=20230601; t=1721359439; x=1721964239;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
          :subject:date:message-id:reply-to;
-        bh=X2aBN439CgxyqsWC/FKZX/cRexlSuHG40IikgmWyCH4=;
-        b=rEO68ut/GGGobUg2cQSc9Rbd6ygB8G+snaCfVA2TtEsWSL/7NZ6OTqwp4t68+DCmiM
-         K0ytc7xGWN4QyKfIQd/a87TSBSUfzg6dvDu9TdXXKvDqnoOqgCDbW8aK5dbIeokA1rxr
-         TZblvtONBhd9fKa/A4XWuPB7yitkz1251Qag/mANXB9RszjiorRdTwUdfzYqvtcuXWJ/
-         PlAxX+zYgN/GnhyNNpTR6nksWTbAhZakUtmwZoj5VGWtCSsT6dfMJjqS5hba9rMGw6Iy
-         1SnaZ7D3zbef8RCfxDTNJQ5MCaprCV39OODKABRgQUH6wFN1EZiHELpt+CKhiSTz2fRU
-         8nJw==
-X-Forwarded-Encrypted: i=1; AJvYcCWXqKEHWqaboGQJleXowUH/d/5d+FJYVPe2OxZo+LkQITd8P9OsaiTeK3+JkxVuoL2acqxmtXhqhJfB5Et/MsZNIt7gUAfXLMbl+esQ8d7uVLQk
-X-Gm-Message-State: AOJu0YxBLxatUJvqVjQhJ4St7h3iLgfGXEoNIZEyb2QtZ897DGXumjrA
-	vXs3eQbtyLOEB1e1hHnKCUb8gTJKs82bSZQxGFT/Ep1pdIntMdpHakbH/5LFWCe8hi0GVhG4RWu
-	KB6YFVGyXHO2QaeZte8tQhspL29OVTjIa
-X-Google-Smtp-Source: AGHT+IEJE61cAf3fLd8YLQ+hDm+7GTnb8etkVZpYIxtEOSpYiChPVVa/B3u7xEdF2li1npL4Zce3tmzzq8pJ0ASkkxk=
-X-Received: by 2002:a17:906:b798:b0:a6f:61c7:dea7 with SMTP id
- a640c23a62f3a-a7a01158645mr422794566b.18.1721358442926; Thu, 18 Jul 2024
- 20:07:22 -0700 (PDT)
-MIME-Version: 1.0
-References: <20240705060613.28909-1-pkshih@gmail.com> <20240705060613.28909-5-pkshih@gmail.com>
- <CAGb2v64mLd+jhwL2EXZ=zTJZ2VuMXTa==NvAqib=xQrNg-ufkQ@mail.gmail.com>
-In-Reply-To: <CAGb2v64mLd+jhwL2EXZ=zTJZ2VuMXTa==NvAqib=xQrNg-ufkQ@mail.gmail.com>
+        bh=hw9MxDYjCDZPKe0pPKGa20/2reQTiIpQlhrmRrwXuGY=;
+        b=vu0NEZZf19laLMlp5PfxopafqAv2BEBwfViN1m7lc3YeyxrhfJRh6OA3YHqJyMwg0Q
+         mE/uUenJ13lw7cC+LfSzdX1aKrDMZeimjVz/og7P3ge/QlxEoKwtktfT9VYBA6UmUZZm
+         7vEyBImxt3P4BYMmVmJ53CMngMf5E64A/v3Ow0G6rmtwJ+YXsVo5Q9/Q6n/sXXscKY/E
+         3+fMzrtFhx0olIYOWxxQvt4ioJ3C8NAi7VA65YZK7Ed1PxR6YHQnbA9Q/v0xRRGtKfVE
+         z4hKy2FSUZAQwQxgj6hVvq0OR3Qb/b4f3M6ipUO1onXcM6I4UU572O5R2rLX/AE1rUYI
+         7N/Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVi32ZE/MnYUKjTwcbuP7DcC42fwpcLaH3tH20u5RDaklTZl3I3pZOg6GPMoFQ41h2FHQajIZjI2bjOhKqAoYrqNX4Bd9IoC95TTzpHMp2EuNRK
+X-Gm-Message-State: AOJu0Yz8zZE8IIv1gDAPSKR5TOIGTJx4HpN1yqSJjC3MMItS3Mm19vPO
+	nfDncCVSz0NC122bt1dYWta/69IhtFvSHQXji23vRxilddJV8CWA
+X-Google-Smtp-Source: AGHT+IH3QDE73aAhx7uVbuP5X1jQyZQZTQlKAU8dt8Owuy+t+9KZh+fRw0cGEJOdioXFi4LV0cdwnQ==
+X-Received: by 2002:a05:6a00:4b4d:b0:70b:29bf:bbde with SMTP id d2e1a72fcca58-70cfc8f8d6cmr1977912b3a.12.1721359438917;
+        Thu, 18 Jul 2024 20:23:58 -0700 (PDT)
+Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
+        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-70cff59fd9csm279160b3a.173.2024.07.18.20.23.57
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 18 Jul 2024 20:23:58 -0700 (PDT)
 From: Ping-Ke Shih <pkshih@gmail.com>
-Date: Fri, 19 Jul 2024 11:07:12 +0800
-Message-ID: <CAHrRpunYADgM3NcrSC38GPzqGwUBePA84zLMM5u91kz81ZsU5w@mail.gmail.com>
-Subject: Re: [PATCH 5/5] wireless-regdb: Update regulatory info for Togo (TG)
- for 2022
 To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-wireless@vger.kernel.org,
+	wireless-regdb@lists.infradead.org
+Subject: [PATCH v2 2/5] wireless-regdb: Update regulatory info for Peru (PE) on 6GHz
+Date: Fri, 19 Jul 2024 11:23:23 +0800
+Message-Id: <20240719032326.7353-2-pkshih@gmail.com>
+X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20240719032326.7353-1-pkshih@gmail.com>
+References: <20240719032326.7353-1-pkshih@gmail.com>
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240718_200725_357813_9181BEE9 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20240718_202400_192179_DBA4A8D2 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,25 +93,52 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Chen-Yu Tsai <wens@kernel.org> wrote:
->
-> On Fri, Jul 5, 2024 at 2:06=E2=80=AFPM Ping-Ke Shih <pkshih@gmail.com> wr=
-ote:
-> >
-> > 5925-6425 MHz
-> >   - LPI
-> >     * EIRP 23 dBm (200 mW)
-> >     * EIRP density 10 dBm/MHz
->
-> The document you linked to suggests it is actually -10 dBm/MHz,
-> which kind of makes it useless as the total e.i.r.p for a 20 MHz
-> channel would be 2 mW or 3 dBm...
->
-> And the PSD for LP being lower than VLP seems like an error.
+From: Ping-Ke Shih <pkshih@realtek.com>
 
-Since it looks like an error, I keep the power limit as I made, but
-add some description by v2.
+Ministerial Resolution -2021-MTC/01 decided
 
-Thanks for the review.
-Ping-Ke
+For the band 5925-7125 MHz, low power indoor case of use.
+ - access point
+   maximum EIRP: 30 dBm
+   Limited power spectral density: 5 dBm / MHz
+ - user devices
+   maximum EIRP: 24 dBm
+   Limited power spectral density: -1 dBm / MHz
+
+With minimum bandwidth 20MHz and PSD -1 dBm/MHz, 12 dBm is adopted.
+
+[1] https://cdn.www.gob.pe/uploads/document/file/1861732/Resoluci%C3%B3n%20Ministerial%20nro%20373-2021-MTC/01.pdf
+
+Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+---
+v2:
+  - explain how induce how we induce 12 dBm from PSD -1 dBm/MHz in commit
+    message
+---
+ db.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/db.txt b/db.txt
+index 5cada55b51eb..1e0a14b8670f 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1443,12 +1443,15 @@ country PA: DFS-FCC
+ 	(5725 - 5850 @ 80), (36)
+ 	(57000 - 64000 @ 2160), (43)
+ 
++# Source:
++# https://cdn.www.gob.pe/uploads/document/file/1861732/Resoluci%C3%B3n%20Ministerial%20nro%20373-2021-MTC/01.pdf
+ country PE: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (17), AUTO-BW
+ 	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
++	(5925 - 7125 @ 320), (12), NO-OUTDOOR
+ 
+ country PF: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+-- 
+2.25.1
+
 
