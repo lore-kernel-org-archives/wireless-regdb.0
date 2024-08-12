@@ -4,78 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 78E13C3DA7F
-	for <wireless-regdb@archiver.kernel.org>; Mon, 12 Aug 2024 13:20:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0C5EEC52D7C
+	for <wireless-regdb@archiver.kernel.org>; Mon, 12 Aug 2024 13:58:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=YV6vFPhPARfxp8c+kV66rvLmVnOfu3xFpidfqyCEuUQ=; b=hQwUKIlSICQJpnl1nySavEV9pl
-	F0lj/d3zxpDL5BzqRthiDf/C5TRzvFKyyKTcgSikyNbD5xrHpRKs+g6mTy/QIFBkHksfSztI9nXmV
-	Kz4RoJcopjIFOTTdPhNdloxl4mWYmZkt1BWE+MESNkkqP/re5/BJW0CmMGZQSMOEH5MRHD7B6FmSR
-	CsBbYOPfuQoecOQeY/8pmWs8b/zibo7n34uCML87nCReiix6acsy3mGi+50OKCubP7r6d93VRqDyB
-	VKc47lFfLcZXHsUtu4IhQVn7Evx4m/xX/eA49bD7bq9vaQKHFANcrGlgThHQDbViLPBuzbTWCheKp
-	pKTlLDTQ==;
+	bh=lNduTJ9CC8fqnmYU1wGF3gGCKQbWhPEO76TH3JWDKVQ=; b=SjFUC4K5sUc02lvu3wFiNL00A9
+	aETs9jLIqH5nb9AZIckzFoytSDxARlFrRAoNYcaFwsFGIBZPspUdNtDbcvYUElUjel6a6FvQDgCwx
+	iSlh0wkvaRT+fOnDZ5w5iqzTHlOhjlS7qkrvL1o0YRHu9aK7Anz5rYai7RcbM6aJWCKElYwl+Rnuc
+	kpiDZuIqWwGLp8L3JzmaQq/H6vonNuI/Zia/RCdYTXU/9UcnQR6HoPcxQGs6xZ9IjAOitcLodID6x
+	fHXgwjuqeFHIzdnCvvh8adoJr6NSdSzVajIyGQ1+CN+10t5CWA6ZBV5sAdNdyzhbSNwUmSql1hGJf
+	gy+E6R1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdUxs-00000000OGF-3xCy;
-	Mon, 12 Aug 2024 13:20:01 +0000
-Received: from mail-oa1-x2e.google.com ([2001:4860:4864:20::2e])
+	id 1sdVZ1-00000000W5s-0gC2;
+	Mon, 12 Aug 2024 13:58:23 +0000
+Received: from mail-yw1-x1135.google.com ([2607:f8b0:4864:20::1135])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdUxp-00000000OEn-2Zwn
+	id 1sdVYM-00000000Vvt-1PCZ
 	for wireless-regdb@lists.infradead.org;
-	Mon, 12 Aug 2024 13:19:59 +0000
-Received: by mail-oa1-x2e.google.com with SMTP id 586e51a60fabf-268a9645e72so3123672fac.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 12 Aug 2024 06:19:57 -0700 (PDT)
+	Mon, 12 Aug 2024 13:57:44 +0000
+Received: by mail-yw1-x1135.google.com with SMTP id 00721157ae682-691bb56eb65so41035307b3.0
+        for <wireless-regdb@lists.infradead.org>; Mon, 12 Aug 2024 06:57:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=up.edu.ph; s=up.edu.ph; t=1723468796; x=1724073596; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=YV6vFPhPARfxp8c+kV66rvLmVnOfu3xFpidfqyCEuUQ=;
-        b=P3hF4Z2fQCOAvYWq6hAIACKu7htrlshXHODQwXapym6/ZFWo+mDv2/kcPF0Axm0mX/
-         fEOXHPz41vgapStpGmpFlnV1/6IB5Cio6Aco+mstUBwsYhbnsVf3415j09WZCsxnSQWo
-         1og0t0jj8+IjXBrzlDiVTCvxUV6ogLC90vQH7+gC/wb4avRD8NmvCTiGz2zP58lfdRX7
-         QG41drBFvYyzOlWwgWPfUCPYwTewLZ0zpP2b2DqjsfCnoKkOXTT2MuMUE+axncNZuppk
-         HTm4bLhhqWaZhYkQP2ABAksq/w5haU8MWvRZbqFV5105quzKwmcO+tnjoy1JS95Sd2f4
-         fPcw==
+        d=up.edu.ph; s=up.edu.ph; t=1723471061; x=1724075861; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=lNduTJ9CC8fqnmYU1wGF3gGCKQbWhPEO76TH3JWDKVQ=;
+        b=Ldd76/0kEZSTDb/qntQBypgbXYAT+Qkp8laSiyfpedgRkTp0WUAOU9v0ZQdouAbxq0
+         T/2ekRfAXIRuBi8byIABlrdgDpYRwukknVAmqjT7PLQaUB8Q9tIJAX+XPjfI1WNN0w3B
+         Nwiq97p9sMLDkaPW1i0cS07rcuu4+GfFyrektyf2XZvKq9YzWjExLdaKpOJD6ybOi7/9
+         y5rNROGCYzCw3vjOn5Jc1AG8/nYQ1fT1Cr4N4tm7/Tug0fhSWkW5ZAdBbRbbMuqeeQBN
+         rwMEs9aLqeE55h+qIbB6qwP6hQUM2AAd4t6lWoQpHtdeQDTZXI5H/JZOViimNiiY/Cfz
+         FcKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1723468796; x=1724073596;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=YV6vFPhPARfxp8c+kV66rvLmVnOfu3xFpidfqyCEuUQ=;
-        b=bRAIVKAInQvNSX87pYVDUedUqgUcbS8cINlnnWlXFSlKRaEDchpei0CMAn3KFd+tlg
-         T2cc2gPkXyXAKycNT/Kfkn9EQv8KyNEI2Ckmz4H10Qvfqhvy4MCo0+ChrQl7rWd9q/B2
-         Rl187KglV+tasiHmizyfVfnF3XZZloMvvjs8ux9Jiy94AdaboMCTpm006PimY3q9Ym4K
-         TYmTyU/Ni/jc3TUvr4/oTZqQxWeJJNuLnHPWXfCuMPPBJsmulRJBwBsUFVl1GqwCYzn4
-         i+55l/km9qJiQLlMJoayDaq+S3X5HN+0xeB/e8C/m1K2EfaamPrU0tkz5gHwZVvk+fku
-         Fp+Q==
-X-Forwarded-Encrypted: i=1; AJvYcCUC1hfL8LDD+av+tFzXWZW1jDJhtlDQj4brbZMlrWiQtiFaE3JFnhzjQ+Z/2jQ58Lqbblqi9RYuO4F5xDCp3YsPYd5aIsI98Wa57nvSZ3BCGEkQ
-X-Gm-Message-State: AOJu0YyrDaOEsvWIuQ+nNLSq9JCohG+AFgRyBHPk8W/uWlnlNycUbjf8
-	5ZZEasjMK9+ZDmb7g4pbFhvNwY5qL/3j/VxqU5piwViRk2zUMjN5FaVpi9lqn6Q=
-X-Google-Smtp-Source: AGHT+IEo3bfLnDHA7PuB+xcNoXw1PVeSN2YT/EZlO8XhMijXe8ECXX0hNOWsRb5aJzSzuxSEPL2jnw==
-X-Received: by 2002:a05:6871:e020:b0:268:bb3a:cf90 with SMTP id 586e51a60fabf-26fcb6a0b43mr94900fac.18.1723468796360;
-        Mon, 12 Aug 2024 06:19:56 -0700 (PDT)
-Received: from localhost.localdomain ([2001:4453:59c:d600:9959:2afb:92b5:96e8])
-        by smtp.gmail.com with ESMTPSA id 41be03b00d2f7-7c3dbea2332sm4223719a12.86.2024.08.12.06.19.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 12 Aug 2024 06:19:55 -0700 (PDT)
-From: Gacel Perfinian <gcperfinian@up.edu.ph>
-To: Chen-Yu Tsai <wens@kernel.org>
-Cc: linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org,
-	Gacel Perfinian <gcperfinian@up.edu.ph>
-Subject: [PATCH v2] wireless-regdb: Update regulatory info for Philippines (PH) on 6GHz
-Date: Mon, 12 Aug 2024 21:18:12 +0800
-Message-ID: <20240812131811.565-2-gcperfinian@up.edu.ph>
-X-Mailer: git-send-email 2.45.2.windows.1
+        d=1e100.net; s=20230601; t=1723471061; x=1724075861;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=lNduTJ9CC8fqnmYU1wGF3gGCKQbWhPEO76TH3JWDKVQ=;
+        b=dtWANX+jNO/LiH3hfcTiNzNLo9Cc3mfKh5qxFlMOtahpMvTUmA6+/5OTzMSe23Ogsr
+         rio+7N/z7z/qgnr1W9s39CLiZ+MY2eJHizvXoi4jUDnxkQfnjENgCefb9AVpxhVP+MaK
+         buen4UPIe5kVLyD8SKqxRJcZLkAGFy4guAfgOZR8SNOjqq5GkROrdS4VZykEUMy/TmuZ
+         dZgxeP3CyevT07OAyj2rfSX733prGyolsosOx8YU7Vn8VXTx1gp8H2ZNhDrHXqiVFjiY
+         XBfZ4jcIREch1gWY92pIZqBEoBsLXT4FH0us5AJ8c+n/oIabmgse9jq5ERpLlRN1YM2s
+         uO6w==
+X-Gm-Message-State: AOJu0YxF/B9RiNrNVbztZzpxbJCempqASfiSZnIFLstv+5uSc1e84mHr
+	VVItPn2kvZ3H6SFEYUbAxlp/yUos5/IdVo98RgEtClvDw8Pu5i3rByP6N2Gg5+q30X+ecSrxrNB
+	8G/b8SB15bQnmDoWgIlAMjh3g6FSH4FfQvWafKrLCRsYuKXRIWP8l0A==
+X-Google-Smtp-Source: AGHT+IEv3zIN1Mx8QyftqMoo0Zm5me5odUUYdAG++ZeXRvY7+7Rr3p2dsai4Pwgl9pO0x2uhCE+xiqhSJ6n+607i8c0=
+X-Received: by 2002:a05:690c:480d:b0:69d:8337:e54f with SMTP id
+ 00721157ae682-6a975f91de4mr4687277b3.39.1723471060664; Mon, 12 Aug 2024
+ 06:57:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+From: Gacel Perfinian <gcperfinian@up.edu.ph>
+Date: Mon, 12 Aug 2024 21:57:27 +0800
+Message-ID: <CAJ5pLOZ-LfP8_ZNeh63_C8LNcx9kwK97AAa6gYQSQ+ge21Qydw@mail.gmail.com>
+Subject: wireless-regdb: Discussion of MGWS/60GHz rules for Philippines (PH)
+To: wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240812_061957_712309_53573C50 
-X-CRM114-Status: UNSURE (   7.95  )
+X-CRM114-CacheID: sfid-20240812_065742_417060_48F2C9E1 
+X-CRM114-Status: UNSURE (   5.40  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -91,50 +83,25 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-The Philippine National Telecommunications Commission has issued
-Memorandum Circular 002-07-2024 [1] on 05 July 2024, amending
-the allowed frequencies for HIPERLANs and RLANs specified in Section 2
-of Memorandum Circular No. 03-05-2007 [2]. The amendment has been in
-force since 22 July, 15 days after publication in The Philippine Star
-and copies furnished to the UP Law Center as mandated by law.
+Hello,
 
-The amended frequency table allows HIPERLAN and RLAN devices to operate
-on 5925 - 6425 MHz band for up to 25 mW eirp for indoor and outdoor use
-(excluding UAV/drone use) and 250 mW eirp for indoor use only.
+I have noticed that in reviewing the database, the maximum power for
+MGWS (60GHz) is set to 24 dBm. The relevant regulation [1] has only
+authorized to accept MGWS devices, however it never stated what maximum
+power should MGWS devices have, nor the explanatory document [2] states
+the power requirements. Looking at the latest revisions [3], it seems
+that it was never specified, at least for HIPERLAN/RLAN devices.
 
-[1] https://ntc.gov.ph/wp-content/uploads/2024/MEMORANDUM%20CIRCULAR/NTC%20MC%20No.%20002-07-2024.pdf
-[2] https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2007/MC-03-05-2007.pdf
+The entry was committed as part of a rules cleanup (9dc0800cdd7a) [4],
+but the conversations [5][6] did not state where the 24 dBm value was
+derived from.
 
-Signed-off-by: Gacel Perfinian <gcperfinian@up.edu.ph>
----
- db.txt | 3 +++
- 1 file changed, 3 insertions(+)
+Gacel Perfinian
 
-diff --git a/db.txt b/db.txt
-index e952d0a..788cd04 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1493,9 +1493,11 @@ country PG: DFS-FCC
- # NTC MC 03-05-2007 https://ntc.gov.ph/wp-content/uploads/2015/10/LawsRulesRegulations/MemoCirculars/MC2007/MC-03-05-2007.pdf
- # NTC MC 03-08-2013 https://region7.ntc.gov.ph/images/LawsRulesAndRegulations/MC/WDN/MC_03-08-2013.pdf
- # NTC MC 01-01-2016 https://ntc.gov.ph/wp-content/uploads/2016/MC/Explanatory-MC-No-01-01-2016.pdf
-+# NTC MC 002-07-2024 https://ntc.gov.ph/wp-content/uploads/2024/MEMORANDUM%20CIRCULAR/NTC%20MC%20No.%20002-07-2024.pdf
- # 2400 - 2483.5 MHz: NTC MC 09-09-2003, Section 3.1; NTC MC 03-08-2013, Section 3.1; NTC MC 03-05-2007, Section 2
- # 5150 - 5350 MHz: NTC MC 09-09-2003, Section 3.1; NTC MC 03-08-2013, Section 3.1; NTC MC 03-05-2007, Section 2
- # 5470 - 5850 MHz: NTC MC 09-09-2003, Section 3.1; NTC MC 03-08-2013, Section 3.1 NTC MC 03-05-2007, Section 2
-+# 5925 - 6425 MHz: NTC MC 002-07-2024, Section 1; NTC MC 03-05-2007, Section 2
- # 57000 - 66000 MHz: NTC MC 01-01-2016, Section 1
- 
- country PH: DFS-FCC
-@@ -1504,6 +1506,7 @@ country PH: DFS-FCC
- 	(5250 - 5350 @ 80), (23), DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (24), DFS
- 	(5725 - 5850 @ 80), (24)
-+	(5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
- 	(57000 - 66000 @ 2160), (24)
- 
- country PK: DFS-JP
--- 
-2.45.2.windows.1
-
+[1] https://ntc.gov.ph/wp-content/uploads/2016/MC/MC-01-01-2016.pdf
+[2] https://ntc.gov.ph/wp-content/uploads/2016/MC/Explanatory-MC-No-01-01-2016.pdf
+[3] https://ntc.gov.ph/wp-content/uploads/2024/MEMORANDUM%20CIRCULAR/NTC%20MC%20No.%20002-07-2024.pdf
+[4] https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git/commit/?id=9dc0800cdd7aeeae273b983973a1749f73008291
+[5] https://lists.infradead.org/pipermail/wireless-regdb/2022-December/001401.html
+[6] https://lists.infradead.org/pipermail/wireless-regdb/2023-June/001440.html
 
