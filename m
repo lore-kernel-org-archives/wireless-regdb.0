@@ -4,63 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26FD6C52D7B
-	for <wireless-regdb@archiver.kernel.org>; Tue, 13 Aug 2024 05:37:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9DF32C52D7B
+	for <wireless-regdb@archiver.kernel.org>; Tue, 13 Aug 2024 18:45:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=uCMup60B9gVCPNLKEMjuydGP5aX8htQkurPq8mwPbIs=; b=uD3t8ALsIjoWAO5pWiddHeP5Yi
-	aXnjOXVcdAwCWQz6nw1IcBRIA9EgRN8o2yU18600dCWTBe9qlFfRRLhkn3NMa+FL76CfbOT0oyuW+
-	xqEDYoEQVpTpeoOnNxBy8WcVGRgnQQga2DnpIkHyipv4zuNC7KtDEQ98cyOWw6IpMMef3xUE9y8nS
-	rvXTYw5zhBSjQiLHvwdhnjO2kaS9xsRDoCs712kuJDaRrHOC/gg5Z6W4SG/wJt07331LitMERzoTR
-	WlgRCs9Ubq4Zs2AbI94gKH9i/gF5ypP8H132Jhyt605knadCF1kg3GhhooLpESnyeQIC+lKhnCuY7
-	qkDlw9KQ==;
+	Content-Type:Subject:CC:From:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Em7cUJw5izL4WWcctmkjBTWewXnAU1bKpfm7GAgQUvo=; b=BQV/M8XMPbfXc4M34aV+mZk4tF
+	Ggs8xogU00e0mxxPNs/4TWB3yW6u9+NmsDSgPcwL7JTqlwWKrm2jn5c+v5ImncbjZtroljaPWLI5g
+	6ZGZGKQcJZ8tZkRHB8V9gp9BGksVDga3vYnfBTXF0tMxzBmPsM5a0XGKOuwHWQD3w+tNSvaA4KgGB
+	Rsu0C92bnOO6iI9cR9fKDcwd2339AMvuqMYzgo06+IVH1cKJs9rBwi4UkG2+eXKKzTqpLC5LPrUQ3
+	+arOVezOdN+i/zzdaI/MqUeKD/XwzPNYjEJVUWD3d68KbhKcFp40kya9gg/oo8kGnLj8BI3SESv9G
+	apB6RN/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdkE2-00000002T1W-3n5p;
-	Tue, 13 Aug 2024 05:37:42 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1sdwVw-00000004f8C-1UIb;
+	Tue, 13 Aug 2024 18:45:00 +0000
+Received: from mx0a-0031df01.pphosted.com ([205.220.168.131])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sdkE0-00000002T0h-1Bop
+	id 1sdwVs-00000004f7k-3ocw
 	for wireless-regdb@lists.infradead.org;
-	Tue, 13 Aug 2024 05:37:41 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id B9A8A61558;
-	Tue, 13 Aug 2024 05:37:38 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4D083C4AF0B;
-	Tue, 13 Aug 2024 05:37:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723527458;
-	bh=VIPGR320Y7Rivy+1q2HS3AcUVzT2ZyXizwLc9SN61NQ=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=aoIOB9kqhy8q71oSLTrjlsj0fuOWa1XqBnxGmzzqf2bXKmMiui2VrAuR+VwvqiJhW
-	 caZex7P2Kq8lN+zJ1SIk2okL3jF0LJGvkhxbZILIBOMG4QgomUqw6zY/pJDmE/dsyk
-	 n5r6/nHHE8jiCXz/NzjFODxj5h+6n/TQ0P12S83VDkOxKhcWsxlWfWe+RDBtwBpmdl
-	 hzpfRYOVMavWTIYGrdwV8BWBx2o54a/0OFfKYdrVZRe1WLbaz0FVxWwsT/vVZGeJ/A
-	 SdCxaEbun6+XixVDE8/XT6ZLfFuD7N8YhGgGNfDk//W6skW2Pdt421ieFDjjGQsWzm
-	 8mPPmexoBa0Ug==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id DB7B55F7C0;
-	Tue, 13 Aug 2024 13:37:35 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Gacel Perfinian <gcperfinian@up.edu.ph>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20240812131811.565-2-gcperfinian@up.edu.ph>
-References: <20240812131811.565-2-gcperfinian@up.edu.ph>
-Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for
- Philippines (PH) on 6GHz
-Message-Id: <172352745587.1740740.10621361224039297904.b4-ty@kernel.org>
-Date: Tue, 13 Aug 2024 13:37:35 +0800
+	Tue, 13 Aug 2024 18:44:58 +0000
+Received: from pps.filterd (m0279865.ppops.net [127.0.0.1])
+	by mx0a-0031df01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 47DCXA0s008159;
+	Tue, 13 Aug 2024 18:44:54 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quicinc.com; h=
+	cc:content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=qcppdkim1; bh=Em7cUJw5izL4WWcctmkjBT
+	WewXnAU1bKpfm7GAgQUvo=; b=nJUo7rKo6ZPFcjqqhaeMkgIBH4OmVT+ZfJc4Nv
+	94hX0Kaa7KVE8PPF5gNlxLErMSyXQUZTrv7lNyVRS6Avqt3QOpoqXF9XoTgnsTr9
+	JU/882kSDZG6L3hToVBOC6xYUJXXy40M+/jJbagsbML+T0gkdKo4WlaqfNgp6cVz
+	hjZ9T1AMAhAT4SnSKrbxLXTtQjvuz3vlr/R10bzOaYrvCQuD5fpV3vahBsyLgoGf
+	dSoPTHZh6BuiFk6YkM0kb2keY3y5HVirfXCGC/LGRTvRIiV8g//BsD2F3Ge19xeS
+	cDE14LXHuNvfO/IdhFVjjXL0/AcSRZry2LCDyYhzC4vIWtdA==
+Received: from nalasppmta05.qualcomm.com (Global_NAT1.qualcomm.com [129.46.96.20])
+	by mx0a-0031df01.pphosted.com (PPS) with ESMTPS id 40x15e8t3w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 13 Aug 2024 18:44:54 +0000 (GMT)
+Received: from nalasex01a.na.qualcomm.com (nalasex01a.na.qualcomm.com [10.47.209.196])
+	by NALASPPMTA05.qualcomm.com (8.18.1.2/8.18.1.2) with ESMTPS id 47DIir6s028122
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 13 Aug 2024 18:44:53 GMT
+Received: from [10.111.178.117] (10.49.16.6) by nalasex01a.na.qualcomm.com
+ (10.47.209.196) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.1544.9; Tue, 13 Aug
+ 2024 11:44:53 -0700
+Message-ID: <cfbfa8f1-3367-4bc9-b201-2faac3aa7581@quicinc.com>
+Date: Tue, 13 Aug 2024 11:44:52 -0700
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+To: Chen-Yu Tsai <wens@kernel.org>
+Content-Language: en-US
+From: Jeff Johnson <quic_jjohnson@quicinc.com>
+CC: <linux-wireless@vger.kernel.org>, <wireless-regdb@lists.infradead.org>
+Subject: Should the wireless-regdb wiki be updated?
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.13.0
+X-Originating-IP: [10.49.16.6]
+X-ClientProxiedBy: nalasex01a.na.qualcomm.com (10.47.209.196) To
+ nalasex01a.na.qualcomm.com (10.47.209.196)
+X-QCInternal: smtphost
+X-Proofpoint-Virus-Version: vendor=nai engine=6200 definitions=5800 signatures=585085
+X-Proofpoint-GUID: S5ZvGth25uDQ43M8Ph3z0S-HDnW80e6d
+X-Proofpoint-ORIG-GUID: S5ZvGth25uDQ43M8Ph3z0S-HDnW80e6d
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.28.16
+ definitions=2024-08-13_09,2024-08-13_02,2024-05-17_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 bulkscore=0 malwarescore=0
+ phishscore=0 suspectscore=0 priorityscore=1501 mlxlogscore=680
+ clxscore=1011 spamscore=0 impostorscore=0 lowpriorityscore=0 mlxscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2408130135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240812_223740_401896_5A71D5E6 
-X-CRM114-Status: UNSURE (   5.38  )
+X-CRM114-CacheID: sfid-20240813_114457_053845_D849A36F 
+X-CRM114-Status: UNSURE (   7.72  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,23 +95,22 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, 12 Aug 2024 21:18:12 +0800, Gacel Perfinian wrote:
-> The Philippine National Telecommunications Commission has issued
-> Memorandum Circular 002-07-2024 [1] on 05 July 2024, amending
-> the allowed frequencies for HIPERLANs and RLANs specified in Section 2
-> of Memorandum Circular No. 03-05-2007 [2]. The amendment has been in
-> force since 22 July, 15 days after publication in The Philippine Star
-> and copies furnished to the UP Law Center as mandated by law.
-> 
-> [...]
+In response to regdb e-mails showing up on linux-wireless but not
+wireless-regdb I went looking at the Wiki to see the current guidance:
 
-Applied to master in wens/wireless-regdb.git, thanks!
+https://wireless.wiki.kernel.org/en/developers/regulatory/wireless-regdb
 
-[1/1] wireless-regdb: Update regulatory info for Philippines (PH) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/003c282a297f
+I was surprise to see the following:
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+Sending updates to the regulatory database
+Note: wireless-regdb is currently unmaintained, and patches or requests for
+changes are likely to get no response.
 
+Elsewhere in the Wiki there are some outdated references to Seth, as well as a
+reference to "signed with his RSA private key" without any indication who
+"his" is referring to.
+
+This seems like old information that should be updated!
+
+/jeff
 
