@@ -4,63 +4,63 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id F3418C52D7D
-	for <wireless-regdb@archiver.kernel.org>; Wed, 14 Aug 2024 04:12:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 433F9C3DA4A
+	for <wireless-regdb@archiver.kernel.org>; Wed, 14 Aug 2024 04:17:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=QI6m0I8kbYGeJGKWQHPEKSqw06EwwNoTiwfSFuLmDrY=; b=gvXNS6vkbft4GbqJn4QlIh9Vwr
-	fI3RJmHXpeSypfxL/xJBf2Rs/Nj01Nnq/jRJ+HtceatMUfv1KeJKs27nTkZ/gaVUGGIzCcHOhgMeZ
-	BvfgrFsSktGbuxVaAeudsUFv5vayPsNVzvjSu0NvHH0l98k4UbuAZBXCICoqvaB+91myX5E22bEO7
-	IVA+XYGACi7k+xin/rqtIdN8pxu9ZZGd1wsRqCUhFkqhtBGPAnpRG2Eo8MmIEAHZRytMGfeR9w79W
-	cpvDlQjzsx8dZcbdEMcoZkJGI7sDrczU+ZSoSlGQTMpAtyzF8qnmfHDTJJQS+F3zcazhtj4Dqzg8J
-	kAnmvTbQ==;
+	bh=LUvk9jOtjbk8M8q0Lqz1UEWukrkSIAtgutzt5Y7kRPw=; b=Dd+rlB7oCcQrM8ptWR6TN0vfkm
+	R2n77oQ/D/4FGYxA6n60/22wB/fONnEb0LqqNRwP5J3ZYw0yXly4DJ223MFwwzlas/fdtlUE2qJEh
+	/kYQifUQXd3Q3Nc5on4YzGz+n9ronRfCLUFg6VYzJ72z30yVrf0wQEBiaVMWGN4lF/Bdz7LJOsKlN
+	LdeThLiFIJV1ZPwt7QZ7Ix74i2NqpmZLwjFCmsySQhHO/mRYmnzCA9Cg55UL1utVRTtkVZ1Yf2rgf
+	I5ZM7OM5mXspUY6t6S3TKJ6OV/B8+gvFFBGKYmcLVdqLrbZPgwcjeKzAmbkob1qTO4YAd/zaQOirA
+	xx3STYGg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1se5Mo-00000005fZj-1uGp;
-	Wed, 14 Aug 2024 04:12:10 +0000
-Received: from dfw.source.kernel.org ([139.178.84.217])
+	id 1se5Rd-00000005fyw-2dBK;
+	Wed, 14 Aug 2024 04:17:09 +0000
+Received: from sin.source.kernel.org ([145.40.73.55])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1se5Ml-00000005fZJ-2sgt
+	id 1se5RZ-00000005fyL-3O8g
 	for wireless-regdb@lists.infradead.org;
-	Wed, 14 Aug 2024 04:12:09 +0000
+	Wed, 14 Aug 2024 04:17:07 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id C7669611D2;
-	Wed, 14 Aug 2024 04:12:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4491BC32786;
-	Wed, 14 Aug 2024 04:12:06 +0000 (UTC)
+	by sin.source.kernel.org (Postfix) with ESMTP id C2199CE1800;
+	Wed, 14 Aug 2024 04:17:03 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B1692C32786;
+	Wed, 14 Aug 2024 04:17:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1723608726;
-	bh=HkKwIoHlO5q5N5v9NshMb5gWmUGTcPxTXNFH0izbM88=;
+	s=k20201202; t=1723609023;
+	bh=P66EC/EOWgTS3MmgKmRne8BgZ5jFbuBCFQ1xi7keYQk=;
 	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=annuNz0pL5GiQX2eyFsbp/fCXyzBcARPtZQrsoFayVO1jY0gyGEuKCWd71l7qXUPO
-	 5toZqQNbN9TWEBSE6FO9IMIWNvkjH8JN45A9Ga/1QFp06CDiOkOOBQxTANKhqKlaX1
-	 4ziiQT1NHsTWRMeFXQhp8FO1mObK7LSkRFOROu8E4CuOJAeVPBDlWGTbjAXFv7myuE
-	 z4D8IwNNcuptCNneiQ32s7KUpe7U+oFG0Cg56rdKVVxEzJHOdb4k80xk5dELfZB9hc
-	 8CjQs1Xt1UL7ffw4sW8Otw0nCJLXjtzJAtiGc7/TudjRPKWwSDlLSO7inxx54VkLwc
-	 nK+TedOVPRlKg==
+	b=ikOgzmM7M+GwqXsBFTaSWUCI8dyJh7on+m31Uqme2/hci1Jhay3sNxrAYOLVwUEzN
+	 gQd6cGTgC1owfWZggAbxq4uWCrFlmtMbXsxFXgz4lhA9rEyKl/b24xeC1LaZzVPzSM
+	 bKNy9nIkLko7Uf1aHMN2vmwgb6r/WBW1j+94fB9FIJqWABhNK1TI8xh7INulcjjDhl
+	 8bl3scrldbGU2t2oX/y5oFIEJNZ3disyfGi0u5x6TGh5sKyW3CzXjVZ/jVBAJ4+Pvo
+	 u2k/bKUrV+V7wfBR8NFjEHQUbSTNdOu5DorEfbI6uLNTuNriD8mu5ht/LwXy1MdW5w
+	 YqLWJ0f28VZ9g==
 Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 66AB15FCA8;
-	Wed, 14 Aug 2024 12:12:02 +0800 (CST)
+	by wens.tw (Postfix) with ESMTP id E507B5FCA8;
+	Wed, 14 Aug 2024 12:16:57 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-To: linux-wireless@vger.kernel.org, Jiaxun Yang <jiaxun.yang@flygoat.com>
-Cc: wireless-regdb@lists.infradead.org, leslie_sen <leslie_sen@163.com>
-In-Reply-To: <20240813-correct_cn-v1-1-91275dc00d9d@flygoat.com>
-References: <20240813-correct_cn-v1-1-91275dc00d9d@flygoat.com>
-Subject: Re: [PATCH RESEND] wireless-regdb: Correct regulatory rules for
- China (CN)
-Message-Id: <172360872239.1746842.1519520270672145622.b4-ty@kernel.org>
-Date: Wed, 14 Aug 2024 12:12:02 +0800
+To: Jiaxun Yang <jiaxun.yang@flygoat.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, 
+ Jeff Johnson <quic_jjohnson@quicinc.com>
+In-Reply-To: <20240813-workflow-v2-0-6d8039283d45@flygoat.com>
+References: <20240813-workflow-v2-0-6d8039283d45@flygoat.com>
+Subject: Re: [PATCH v2 0/2] wireless-regdb: Workflow updates
+Message-Id: <172360901791.1747049.9173998849926904492.b4-ty@kernel.org>
+Date: Wed, 14 Aug 2024 12:16:57 +0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.13.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240813_211207_810927_0E74A493 
-X-CRM114-Status: UNSURE (   4.70  )
+X-CRM114-CacheID: sfid-20240813_211706_055056_424559B7 
+X-CRM114-Status: UNSURE (   5.38  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,21 +76,22 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Tue, 13 Aug 2024 20:43:59 +0100, Jiaxun Yang wrote:
-> As per "工业和信息化部关于加强和规范2400MHz、5100MHz和5800MHz频段无线电
-> 管理有关事宜的通知" ("工信部无〔2021〕129号"), only 5250 MHz - 5350 MHz
-> band is required to have DFS / TPC.
+On Tue, 13 Aug 2024 20:39:38 +0100, Jiaxun Yang wrote:
+> This series updated some workflow components to streamline
+> wireless-regdb contributor experiences.
 > 
-> This is slightly conflicting with is attachment "2400MHz、5100MHz 和
-> 5800MHz 频段无线电发射设备射频技术要求", which stated that all devices
-> working at 5100 MHz band should implement DFS/TPC.
+> Please review.
+> 
+> Thanks
 > 
 > [...]
 
 Applied to master in wens/wireless-regdb.git, thanks!
 
-[1/1] wireless-regdb: Correct regulatory rules for China (CN)
-      https://git.kernel.org/wens/wireless-regdb/c/3b347617c12a
+[1/2] wireless-regdb: Update .gitignore
+      https://git.kernel.org/wens/wireless-regdb/c/3afe17272b35
+[2/2] wireless-regdb: Add .b4-config
+      https://git.kernel.org/wens/wireless-regdb/c/bf55ed481432
 
 Best regards,
 -- 
