@@ -4,70 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id B8FA8CA0ECD
-	for <wireless-regdb@archiver.kernel.org>; Fri, 30 Aug 2024 01:08:05 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DF2FBCA0EDF
+	for <wireless-regdb@archiver.kernel.org>; Fri, 30 Aug 2024 05:11:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bSnSc4sRqBV9otxRsGxqcOTNAvA4eOn0ezTqsVX+Se0=; b=l4tlbnRQ/KkGeE
-	7nBMIts1e8GUADx+FkC+rSknLPbS6zWef7eav9h9thjX9BJpFZ3t4VF/+JL0WRx4QOdGV/B+zds2J
-	D0jMdEMVzwDJjf5nEsNSC6a5Q/eO9pLQvABEB7J5SmiPBpkd1889Q5pz9kzV2HyweLWSOsu/5p2hz
-	xE61+BGos216YzjZIcO+dkav0rFriOYDPI/aF2+pP1On5ON7CmP3q0MIgjtJ75aE9yNqZyLMeZtQq
-	XMfe8PIcHoMxTQU5/F/UKHS9SEG/01z+sS2V1cm4aPSOs/zcIecvWmD28/BBKzMw03du4DYK/O4Qu
-	+nFqcy6oIgydrSw4b4KQ==;
+	List-Owner; bh=iKfjJqBZUxr4XQhpTYMFXUX2vWf7Jtd5kOd4PCUfsm0=; b=RNRDx0yHXyzaRI
+	Mz4Gp133+GsObZFu2OVUTc5dCtAvfRf5xeEDyktrdk4/9cFRdw5juYWyyS7AuXxElIEZVcKYMLPZK
+	jQTInhuhVHFM68RaZJp2KBwMp/mocoYcVsEGKCfUqgebTl04qDR0zYayXzDfglUNR9H75MoQNGlHN
+	LPd5zJoRXZy4rTOeHRzcgomzcXEyImgO1qltOOPvK6iLbmhLCl6+ar5/Dk+52bxj8pIMKyInSU8Bv
+	nqbdKxS/De1SisDups3MF6A2bJETwwDgn34tCk/GzwfEzOc0mbPBROLRVrH0aozkCFY7qxgHkhDMy
+	gxZvXdfEucPkiJd6m27A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjq7M-00000004FPa-3nwi;
-	Fri, 30 Aug 2024 01:08:00 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1sjtvG-00000004kvW-0nyk;
+	Fri, 30 Aug 2024 05:11:46 +0000
+Received: from ams.source.kernel.org ([2604:1380:4601:e00::1])
 	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1sjq7I-00000004FOx-3Pk5
+	id 1sjtvD-00000004kun-04vi
 	for wireless-regdb@lists.infradead.org;
-	Fri, 30 Aug 2024 01:07:58 +0000
+	Fri, 30 Aug 2024 05:11:44 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 96B63A43CD1
-	for <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2024 01:07:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 39807C4CEC3
-	for <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2024 01:07:55 +0000 (UTC)
+	by ams.source.kernel.org (Postfix) with ESMTP id DFC66AE3A2E
+	for <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2024 05:11:35 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E13A1C4CEC8
+	for <wireless-regdb@lists.infradead.org>; Fri, 30 Aug 2024 05:11:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1724980075;
-	bh=2FHY8Quc4szV77a2D4rntb/EAYwy+mQMYzBOSG+Y76g=;
+	s=k20201202; t=1724994700;
+	bh=lUVTzlqIl1gRgb48cDT9zmapdJGJAG5HEb76hLGHF18=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=P0dTybzIKvwmQZRQacLID/SDgC90g2RBhCR6zya2lyqnzYdLlteuTRqoZSJYDcQFk
-	 bRNsNJ3tk+IPOTEJuGTEex3Upmu8Wo/0WRSvnBQFzO7TdxaUz1z+kyalqPRmW5CrfX
-	 XyWGKjuFRmHu63n07ttJ1iyHWlFPxuhrWIR98rAVZnbomOTur1Oy13trddviEjMm8z
-	 q7YQr1KQZvzL9EQIwym55yDyyw4+q9WEarMAVM7khpRnMRds59wqjUoAJZymZ/cDso
-	 L56cZt6FMySRefO1XzsOM/Q7P7Svi+EbZKNAzgkAJilxo2O/G3gPW/7Cpb8fPF9hNd
-	 8LtdYZd7nmGvA==
-Received: by mail-lj1-f170.google.com with SMTP id 38308e7fff4ca-2f50966c448so13872691fa.2
-        for <wireless-regdb@lists.infradead.org>; Thu, 29 Aug 2024 18:07:55 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCXUb5XDCjFcOyyAx7LakIdiUwmki/sisdscNgXo+jonoWbp+sx02/yRov0ea1KV5dfxZwWu9KBW0U4dljKG4Q==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwYc8uScdR11FgSi9QMqJXakb2QMLRA2UIuf82YPLxjK0R++q/J
-	uDnjIOn1PsMQ/JNfTkP8cyEY4XNjdK6zTrQaZJYQsPWgF+ctGNrHmzC/1q11ATpM85xI2yb7AQE
-	iYwwkP7DsNZFOeVFL+Irw8wSN9k4=
-X-Google-Smtp-Source: AGHT+IF6b96BNsVFCDePVLyE+aN9H4S278CRJOw0NxissvFB8pVbFjVvaelamZ72szM9Q/DR1TOU8XP7WavA1ymiVZ8=
-X-Received: by 2002:a2e:bc1f:0:b0:2f3:f168:f91 with SMTP id
- 38308e7fff4ca-2f6103a4a8fmr37525101fa.11.1724980073549; Thu, 29 Aug 2024
- 18:07:53 -0700 (PDT)
+	b=BMzSeeIRuTb3yLiul3yBhBlB+eQ9BAf6mSwJ80qsKJiUqNIk4MbzQ3o+/u41eNCwA
+	 ip7DCcvwFl4EY5eS08ERD0e7tmL4GBy9mWS9SC8H7kZwD0v4N9F7LPGgKGM1a71oEG
+	 l1lGiaISv280iyyLW3OAvuDXqSL8lvHjXW1Gy5VEIwc8HCua/gT5OQHZuWON7o9Awd
+	 X9vONfBC6edkzqC9UV0+rJkhAbJ6mTaAZlddaMDlM24xjHPSC2okW65JS9ogkNCKYG
+	 258fK3UWAVnNjYcD/Kd+BK54RU3DvvjdrNs4bKTouzvysHr9viMfVkgaQ6zXTwkGlK
+	 lUIhsieGJlF7Q==
+Received: by mail-lj1-f177.google.com with SMTP id 38308e7fff4ca-2f50966c469so15453071fa.3
+        for <wireless-regdb@lists.infradead.org>; Thu, 29 Aug 2024 22:11:40 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCWBVY3uopjbXHRFZOkSPoxz0WjTfvNubc8WfSYC1bwc5Fh8ll0FeoVeFC7ziR/guLBXmqtk8bqzRhjhJw19+g==@lists.infradead.org
+X-Gm-Message-State: AOJu0YyDmPI2CzWattxNWzJGWo+9oh/349c6mwQl7mhzIvSBDOw3mnh7
+	N8z5xfA1qc4BpjkbUWDe05YOLVzyGSmV26VYcBCfNDcqemt9ha/U+Q4CrOlLevKJZ2NkYNsEOzO
+	N3eHj12FE6b4yOiVKmtfuTtRSInM=
+X-Google-Smtp-Source: AGHT+IFDlrCbObFWC1YfVOWK8MLL0QcnU/O1cKtjCCOqW8niklN+iAadyLU61BXNgCphUfQUjd9mMBrcIeWcDE3jpwA=
+X-Received: by 2002:a05:651c:502:b0:2f5:136d:89ef with SMTP id
+ 38308e7fff4ca-2f6103e391amr40331661fa.22.1724994699196; Thu, 29 Aug 2024
+ 22:11:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20240828084706.12257-1-pkshih@gmail.com> <20240828084706.12257-3-pkshih@gmail.com>
-In-Reply-To: <20240828084706.12257-3-pkshih@gmail.com>
+References: <20240828084706.12257-1-pkshih@gmail.com> <20240828084706.12257-2-pkshih@gmail.com>
+In-Reply-To: <20240828084706.12257-2-pkshih@gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Fri, 30 Aug 2024 10:07:40 +0900
-X-Gmail-Original-Message-ID: <CAGb2v66xNmSY782csEi04rT-qrk-+tcxnV1ce7ByNMgNSAYNsw@mail.gmail.com>
-Message-ID: <CAGb2v66xNmSY782csEi04rT-qrk-+tcxnV1ce7ByNMgNSAYNsw@mail.gmail.com>
-Subject: Re: [PATCH 3/4] wireless-regdb: Update regulatory info for Israel
- (IL) for 2021
+Date: Fri, 30 Aug 2024 14:11:25 +0900
+X-Gmail-Original-Message-ID: <CAGb2v653gw3FvUmZtYt_sOZa+cxLJo=_cRGBr=gAjuF8eBx1pw@mail.gmail.com>
+Message-ID: <CAGb2v653gw3FvUmZtYt_sOZa+cxLJo=_cRGBr=gAjuF8eBx1pw@mail.gmail.com>
+Subject: Re: [PATCH 2/4] wireless-regdb: Update regulatory info for Kuwait
+ (KW) for 2022
 To: Ping-Ke Shih <pkshih@gmail.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240829_180757_001005_BCB9A9BE 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20240829_221143_361166_57C6ADC1 
+X-CRM114-Status: GOOD (  13.23  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,86 +83,83 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, Aug 28, 2024 at 6:32=E2=80=AFPM Ping-Ke Shih <pkshih@gmail.com> wro=
+On Wed, Aug 28, 2024 at 5:52=E2=80=AFPM Ping-Ke Shih <pkshih@gmail.com> wro=
 te:
 >
 > From: Ping-Ke Shih <pkshih@realtek.com>
 >
-> Israel released the wireless telegraph regulations (certificates of
-> conformity) on 2021 [1]. Update regulation of Radio Local Area Network
-> (RLAN) below.
+> Kuwait, CITRA (Communication & Information Technology Regulatory Authorit=
+y)
+> released Regulations for Wi-Fi service on 2022 [1] via page [2].
 >
+>  * 2400 - 2483.5 MHz
+>    - upper limit 100 mW; 10 mW/MHz (adopt 100 mW)
 >  * 5150 - 5250 MHz
->    - 200 mW; 10 dBm/MHz (adopt 200 mW)
->    - EN 301 893
->    - inside a building only
+>    - upper limit 200 mW; 10 mW/MHz (adopt 200 mW)
+
+
 >  * 5250 - 5350 MHz
->    - without TPC: 100 mW; 7 dBm/MHz (adopt 100 mW)
->    - EN 301 893, DFS
->    - inside a building only
+>    - upper limit 100 mW; 10 mW/MHz (adopt 100 mW)
+>    - DFS
 >  * 5470 - 5725 MHz
->    - without TPC: 500 mW; 14 dBm/MHz (adopt 500 mW)
->    - EN 301 893, DFS
->    - inside a building only
->  * 5945 - 6425 MHz
->    - 200 mW; 10 dBm/MHz (adopt 200 mW)
->    - EN 303 687
->    - inside a building only
->
->  * No touch 2402 - 2482 and 5725 - 5875 MHz, because the regulation not
->    clearly point out RLAN for the frequency ranges.
+>    - upper limit 500 mW; 50 mW/MHz (adopt 500 mW)
+>    - DFS
+>  * 5725 - 5825 MHz
+>    - upper limit 500 mW; 50 mW/MHz (adopt 500 mW)
+>    - DFS
 
-For 2400 - 2483.5 MHz, see item 49.
-For 5725 - 5875 MHz, you can use the SRD one.
+TPC is required for the three bands above. If we follow the referenced
+ESTI standard EN 301 893, then operating without TPC requires to drop
+the power limit by 3 dBm. However that standard does not conver the
+5.8 GHz range.
 
-For all rules, please reference the item number from [1]. The ESTI
-reference is secondary.
+On the other hand, EN 302 502, the standard covering 5.8 GHz, does not
+give a separate limit for systems without TPC.
+
 
 ChenYu
 
-
+>  * 5925 - 6425 MHz
+>    - 200 mW
+>    - indoor only
 >
-> [1] https://www.nevo.co.il/law_html/law01/502_483.htm#Seif9
-> [2] EN 301 893 https://www.etsi.org/deliver/etsi_en/301800_301899/301893/=
-02.01.01_60/en_301893v020101p.pdf
-> [3] EN 303 687 https://www.etsi.org/deliver/etsi_en/303600_303699/303687/=
-01.01.01_60/en_303687v010101p.pdf
+> [1] https://citra.gov.kw/sites/ar/Lists/CITRALaws/Attachments/14/%D8%A7%D=
+9%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D=
+9%85%D9%8A%D8%A9%20%D9%84%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%88%D8%A=
+7%D9%8A%20%D9%81%D8%A7%D9%8A.pdf
+> [2] https://citra.gov.kw/sites/ar/Pages/CITRALaws.aspx
 >
 > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 > ---
->  db.txt | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
+>  db.txt | 10 +++++++---
+>  1 file changed, 7 insertions(+), 3 deletions(-)
 >
 > diff --git a/db.txt b/db.txt
-> index 50ebd50becbd..0bc40db2d9b5 100644
+> index ad8dddc9c800..50ebd50becbd 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -905,14 +905,16 @@ country IE: DFS-ETSI
->  # IL: https://www.gov.il/he/departments/legalInfo/telegraph_law
->  # IL: official document (pdf): https://rfa.justice.gov.il/SearchPredefin=
-edApi/Documents/IdngyMn~ojdQSrkxuAqfZqiM8c1foi3TSZQhp7OMszo=3D
->  # IL: also available as unofficial word doc: https://www.nevo.co.il/Hand=
-lers/LawOpenDoc.ashx?id=3D199708
-> +# https://www.nevo.co.il/law_html/law01/502_483.htm#Seif9
->  country IL: DFS-ETSI
->         (2402 - 2482 @ 40), (20)
->         (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-> -       (5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS, AUTO-BW
-> +       (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
->         # Table B List of conditions, row 63, indoor short range device w=
-ithout TPC (ETSI EN 301 893)
->         (5470 - 5725 @ 160), (500 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=
-=3DETSI
->         # Table B List of conditions, row 68, wireless device using 802.1=
-1a/n/ac protocol
->         (5725 - 5875 @ 80), (200 mW), AUTO-BW
-> +       (5945 - 6425 @ 320), (200 mW), NO-OUTDOOR
+> @@ -1050,10 +1050,14 @@ country KR: DFS-JP
+>         # 60 GHz band channels 1-4
+>         (57000 - 66000 @ 2160), (43)
 >
->  # Source:
->  # https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gs=
-r-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+> +# Source:
+> +# https://citra.gov.kw/sites/ar/Lists/CITRALaws/Attachments/14/%D8%A7%D9=
+%84%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9=
+%85%D9%8A%D8%A9%20%D9%84%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A7%D9%84%D9%88%D8%A7=
+%D9%8A%20%D9%81%D8%A7%D9%8A.pdf
+>  country KW: DFS-ETSI
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 80), (20), AUTO-BW
+> -       (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> +       (2400 - 2483.5 @ 40), (100 mW)
+> +       (5170 - 5250 @ 80), (200 mW), AUTO-BW
+> +       (5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW
+> +       (5470 - 5825 @ 160), (500 mW), DFS
+> +       (5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+>
+>  country KY: DFS-FCC
+>         (2402 - 2482 @ 40), (20)
 > --
 > 2.25.1
->
 >
 
