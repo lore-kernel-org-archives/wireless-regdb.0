@@ -4,77 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 00BB9EE0209
-	for <wireless-regdb@archiver.kernel.org>; Wed, 11 Sep 2024 05:53:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B1D22CF397B
+	for <wireless-regdb@archiver.kernel.org>; Fri, 20 Sep 2024 01:19:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=bJLrTEng+6Jx7oKK3DNfPjxsGDrJ5KjOSDCymU8hD2o=; b=maGDlJ3TfBxR9WiRLr2HEoAK71
-	ydP04tc/zGMXMW2n+tOGWQ0OhAkXzvvj207mz7cAQGapgiPdqhfUWu2cH7zqlOK7LWu6B1Rcwp4cu
-	JWyHfrDRpJWnjQEtQ5lZrnFkhQUYwYfuH6fC9amu4DKgW71l9b+nU/QiYk0DPWcx/hzJvCHLRUH17
-	y/wQI0XdrcJ/za4qerRjA0FWd2GuyuhY0DNj4OsjCOcyEfWyft8hfsKNhDD3ZCO0UBMmE2ZEEuhnX
-	6sdAJtrjbNaI8MG2sqaa2VKuZXy7B9fP9DnSqdWGFElOupddhZ8uxL/oiXdFTL8+v8TBATk5Lv9P1
-	HyuPNK0A==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=cSfZImcSqa+uFEx0KKNiivLbTp+IhV4+X3Qg5DK/KEo=; b=XoCTSZsDVgaLbDeN4zgXIJjWP3
+	PfwjRs38I7uAJ9AnZxD4NAJjKe33m/uOeAm+rtjXgfSvIhvIJoondxzTAjQEqAsMB2PxYBsRtq+bQ
+	L+jLzBRQrh7wRAU60Wg54a5fP31gGGS63OVPUIsMIiVjNwvX7NTuX8RabKvm75vtbgmpyuq4aDedq
+	AcqzRKh4SBv3fW51JYdvrfjs1vqIkh/Kk+bGlMHTsX5uwGZDBAN30DV4tpL9yHI0w20gPgaIbGiwA
+	8cEtGDR5iMSZE38fdBCmVJ61G04IXkx1A6DtQEC0kOU3wIZFbz+D/Zhrz+NjV+YjAyZ6I0zoo3Ueg
+	pnR1Aq/w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soGIA-00000008CQw-2fz8;
-	Wed, 11 Sep 2024 05:53:26 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
-	by bombadil.infradead.org with esmtps (Exim 4.97.1 #2 (Red Hat Linux))
-	id 1soGI4-00000008CPz-2se7
+	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
+	id 1srSJ9-0000000BFei-009o;
+	Fri, 20 Sep 2024 01:19:39 +0000
+Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
+	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
+	id 1srSJ5-0000000BFeN-0ctF
 	for wireless-regdb@lists.infradead.org;
-	Wed, 11 Sep 2024 05:53:24 +0000
-Received: by mail-ej1-x632.google.com with SMTP id a640c23a62f3a-a8d0d0aea3cso627490366b.3
-        for <wireless-regdb@lists.infradead.org>; Tue, 10 Sep 2024 22:53:20 -0700 (PDT)
+	Fri, 20 Sep 2024 01:19:37 +0000
+Received: by mail-pl1-x62a.google.com with SMTP id d9443c01a7336-2068acc8a4fso15677415ad.1
+        for <wireless-regdb@lists.infradead.org>; Thu, 19 Sep 2024 18:19:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1726033999; x=1726638799; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=bJLrTEng+6Jx7oKK3DNfPjxsGDrJ5KjOSDCymU8hD2o=;
-        b=NWxHft2ViKz/YcNplC0AJu2vtHtyhL4v8Fj2q2Tk+QY41sC2tpT5G/WWboKRijgPjA
-         Fwm8eNXKp03IQrBV6sAm9wSFQTCdr5KYuhsZ/6f/w9HhHFlOUKQ54TaYWf4sxMLCB3cs
-         l4yDFMp37sSyMSyeKGyntMsRHwFSY7/n7BRkMVkCXjOxYr1tWTjxBtgeL87f48ar0xjQ
-         0acH73Attq5iBWyAyfoLh3WMBNdT+jcUnyRLnhxtyQPGIFLXpIsjeErEhXGM/1iQNgPN
-         Hih1LunnmOgVxAIYl8NH9uPjh9cDSrWwWAPiF446NLSq8M7Eu3ka6xClw8xXf1z5fDSN
-         Kg+w==
+        d=gmail.com; s=20230601; t=1726795174; x=1727399974; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=cSfZImcSqa+uFEx0KKNiivLbTp+IhV4+X3Qg5DK/KEo=;
+        b=OCoCB47CCfH/cHUlMj6GEapygGs/0JwEjkVi3pNnnV7gkCAvwCUJ+8YgUPztxHPQ6T
+         jm2AZdYp3eFBRkg3Jo1a4A0iVA6iaqzI3waYYeJrTds+kHC7L0WESQZmKzgLJSBRaZB+
+         h5TT+XjmrvGZ2DroyPkFbRiYoJ+qrDoRh69Y7f1avEzUQgMxZ4TRxPzUQfz9U31xfp2a
+         TB595Yr2pV34FOxm8Y7X1cZePLCARFmB14b6lgV67BjV6sHZYH+yuigeSDtak7KdMB8U
+         nYvAzpWYmravembs2BbjiSlHB1mzBoi8DObM2zbIliA2JPhGv/sokkdljGAtOI6A7M+x
+         DdPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1726033999; x=1726638799;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=bJLrTEng+6Jx7oKK3DNfPjxsGDrJ5KjOSDCymU8hD2o=;
-        b=aAR57lwF/fWcpiSAbfE0f9ycWyP6RLthfAc/FUrRYeWN4U1YVGwu1fqEby06i5ZrNU
-         bCnMa8sTu4BcB3aFXAdTRxizZRhtpkvTgoN0SeIFB3YD2Fko+j7kap3aDzRnvATP2Jz7
-         GRst3BMXO8cNIhlY3VyG2udtnCl1vsRXbAuSikqmUL11AbRbNbrHJBX+98O2La/gjM7L
-         kwnsAJLdU5Bbytuw35F36EctNvtEyCEfeKcdzvKCHnkPcPaf3b18s+YNow5QM36DQKjK
-         ymEKuIKGHEvw0wG/8GuODUCruD+GR+SN+vJyBnnHg1+dAe8di3s/cXqU+/FlbDzYWh9x
-         4Sgg==
-X-Forwarded-Encrypted: i=1; AJvYcCXIF5ziU83pOfZKgXKxB0Wjd9WuhbitTjobJzngmvQoJ5xyyQHPeXN7mG9DKd8YPxlU5JW8x0nu9Q2kZZGAaA==@lists.infradead.org
-X-Gm-Message-State: AOJu0YzswvEXKBgkGdDB9x4Cc8jVodSnHou94RorFSJbxV1jGmMJcsEC
-	G2VxY4/qKlOIFHgV1j3cJhRK1y9prA6UQWNL6ufEbryp/krnQzamBZcT40va1w83Ca9SkxDIRTt
-	wOXBBMx1HGb3WpMpL3RIDVMmgatp+R9rIGJs=
-X-Google-Smtp-Source: AGHT+IEYxeCzzwzF3KQtrk4/6mHLEV4G0TwzNALY82kLWkdFzVqRJU0JkOAmC6t2WpbswtPGXetSvACEbVjuHgRRLMg=
-X-Received: by 2002:a17:907:7d87:b0:a8a:9207:c4c1 with SMTP id
- a640c23a62f3a-a8ffae0ae15mr283232366b.58.1726033997782; Tue, 10 Sep 2024
- 22:53:17 -0700 (PDT)
-MIME-Version: 1.0
-References: <CAKAWfyLVNrCzYoACGt2zAJ5K5FnBJkDmHuVAfmScQ3=_ahSEbw@mail.gmail.com>
-In-Reply-To: <CAKAWfyLVNrCzYoACGt2zAJ5K5FnBJkDmHuVAfmScQ3=_ahSEbw@mail.gmail.com>
+        d=1e100.net; s=20230601; t=1726795174; x=1727399974;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=cSfZImcSqa+uFEx0KKNiivLbTp+IhV4+X3Qg5DK/KEo=;
+        b=hOuSwu87xmnAeIUWlW8jJlBmzQRrChHnAo2s5HIgp/7qcoVZ45obI1x9ZG7Hvqqy9h
+         1x5Uw/HOFF3QHNyw9ussWd1/AOIFdLuasLywhfLKkzyRaA15V3wqOzHv56CESMEEQ+oR
+         7rTDtleZ0cC/HrgI4hsSzCtpyqE5DI7EuJjyFScmey5zThccXGclGSQB8EIhLa/SGwf/
+         rAK4kH6haJ4aa0rnU+FxVdcSbDOlX4/iVoWvmT70YDB9WwF7IVjKPELFkZVa6l5+LtdU
+         uw/NcR31428pwW7uUuHdu7bjENi7M8J1Uw1ndCpVUJhjvUaU49Pu6ZYLHz68hrxOZH4Z
+         QQlg==
+X-Forwarded-Encrypted: i=1; AJvYcCXgxu1i152dHJXps9fHkQ2S2Q//jhgcm8QaR+qnS8y1uEeDeur3hWuGn3CUA3p3Lje3I2EThE+1nwb/uzmaag==@lists.infradead.org
+X-Gm-Message-State: AOJu0YyzO6mQk+OA2lMOCMiUH19Or27N9pmJk6T7upe5fL33d57X/4gb
+	A946Sdu4c+Wf3v2P1+jhywTGzb8RbCAXTLnXWOI6Nlj9KfJ2MH7d
+X-Google-Smtp-Source: AGHT+IFbgQrbxYjwtQn0sQCBm9qIarBXdG348D1rj614PsAJTWsBJwFjDKLNQ4QMe+lnoYHvL+5pZA==
+X-Received: by 2002:a17:902:ef48:b0:205:8cde:34c3 with SMTP id d9443c01a7336-208d8423fdamr17208735ad.54.1726795173485;
+        Thu, 19 Sep 2024 18:19:33 -0700 (PDT)
+Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
+        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2079472fb5csm85672215ad.252.2024.09.19.18.19.32
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 19 Sep 2024 18:19:33 -0700 (PDT)
 From: Ping-Ke Shih <pkshih@gmail.com>
-Date: Wed, 11 Sep 2024 13:53:06 +0800
-Message-ID: <CAHrRpumE7KsEDaF+Ec288q5xGGAetVAfg4j8TGd_cLqT2MDFpg@mail.gmail.com>
-Subject: Re: wireless-regdb: Update regulatory rules for Indonesia (ID)
-To: Zulkifli Izoel <izoel21@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: wens@kernel.org
+Cc: linux-wireless@vger.kernel.org,
+	wireless-regdb@lists.infradead.org
+Subject: [PATCH] wireless-regdb: Update regulatory info for Tanzania (TZ) for 2024
+Date: Fri, 20 Sep 2024 09:19:01 +0800
+Message-Id: <20240920011901.5038-1-pkshih@gmail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240910_225320_745344_3CE0F620 
-X-CRM114-Status: UNSURE (   4.64  )
+X-CRM114-CacheID: sfid-20240919_181935_215755_7406BD93 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -90,23 +90,71 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Zulkifli Izoel <izoel21@gmail.com> wrote=EF=BC=9A
->
-> country ID: DFS-JP
-> # ref: https://jdih.kominfo.go.id/produk_hukum/view/id/862/t/peraturan+me=
-nteri+komunikasi+dan+informatika+nomor+2+tahun+2023
-> (2400 - 2483.5 @ 40), (500 mW), NO-OUTDOOR
-> (2400 - 2483.5 @ 20), (4 W)
-> (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR
-> (5250 - 5350 @ 80), (200 mW), NO-OUTDOOR
-> (5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
-> (5725 - 5825 @ 80), (200 mW), NO-OUTDOOR
-> (5725 - 5825 @ 20), (4 W)
-> (57000 - 64000 @ 2160), (10 W), NO-OUTDOOR
->
+From: Ping-Ke Shih <pkshih@realtek.com>
 
-You should send out a patch to update the rule like others [1].
+United Republic of Tanzania, Tanzania Communications Regulatory Authority
+released Minimum Technical Specifications for Short Range Devices (SRDs)
+on 2024 [1].
 
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git=
-/log/
+ * 2400-2483.5 MHz
+   - 100 mW e.i.r.p.
+ * 5150-5350 MHz
+   - 200 mW mean e.i.r.p.
+     * The maximum mean e.i.r.p. density shall be limited to 10 mW/MHz
+       in any 1 MHz band.
+   - EN 301 893
+     * DFS: 5250-5350 MHz
+   - Restricted to indoor use.
+ * 5470-5725 MHz
+   - 250 mW e.i.r.p
+     * The maximum mean e.i.r.p. density shall be limited to 50 mW/MHz
+       in any 1 MHz band
+   - EN 301 893
+     * DFS: 5470-5725 MHz
+   - Indoor as well as outdoor use allowed.
+ * 5725-5850 MHz
+   - 1W
+   - EN 302 502
+     * DFS: 5850 - 5875 MHz
+     * FWA device shall have the capability to reduce the operating
+       mean EIRP level to a level not exceeding 24 dBm for ChS = 20 MHz
+       (24 dBm is adopted)
+ * 5945-6425 MHz
+   - 23 dBm for LPI usage
+     (should be indoor naturally)
+   - 14 dBm for VLP usage
+
+[1] https://www.tcra.go.tz/download/sw-1719952895-Minimum%20Technical%20Specifications%20for%20Short%20Range%20Devices%20(SRD),%20June%202024.pdf
+
+Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+---
+ db.txt | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 9a55f6b8cc98..5ef3236d26ae 100644
+--- a/db.txt
++++ b/db.txt
+@@ -1860,9 +1860,15 @@ country TW: DFS-FCC
+ 	# 60g band, LP0002 section 4.13.1.1 (1)(A), EIRP=40dBm(43dBm peak)
+ 	(57000 - 66000 @ 2160), (40)
+  
+-country TZ:
+-	(2402 - 2482 @ 40), (20)
+-	(5735 - 5835 @ 80), (30)
++# Source:
++# https://www.tcra.go.tz/download/sw-1719952895-Minimum%20Technical%20Specifications%20for%20Short%20Range%20Devices%20(SRD),%20June%202024.pdf
++country TZ: DFS-ETSI
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (200 mW), AUTO-BW, NO-OUTDOOR
++	(5250 - 5350 @ 80), (200 mW), DFS, AUTO-BW, NO-OUTDOOR
++	(5470 - 5725 @ 160), (250 mW), DFS, NO-OUTDOOR
++	(5725 - 5850 @ 80), (24), DFS
++	(5945 - 6425 @ 320), (23), NO-OUTDOOR
+ 
+ # Source: https://zakon.rada.gov.ua/laws/show/z0201-15#n48
+ # Although it is allowed to use up to 250 mW for some 5 GHz frequency ranges,
+-- 
+2.25.1
+
 
