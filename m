@@ -4,63 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id CED47CF64A1
-	for <wireless-regdb@archiver.kernel.org>; Mon, 30 Sep 2024 07:44:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E5ADCCF6497
+	for <wireless-regdb@archiver.kernel.org>; Mon, 30 Sep 2024 08:47:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=VgDE8SmCj+W10/aQaZKbsUJroBA2Ahy5TLJrxJTN/hk=; b=ZqO5XwRNd7fRr0D4OwJJ8jqGVD
-	IjlqH68SNj6n3uT4ZiSurbGKuzU9veKG8P0qelamMwU5YxxjA48L98aQBwv1RNL0EafCsIcQ66IeW
-	O8JPP2R1PTEDfycuzC/rEV3jLo9ZXn57svtajk00PPJmD69oUqAWM1irbke977FcxjpAKGUkxoNMv
-	Cy/+EhnZkPFnO4CHo23gzwkyE6nSB44XRnC2fXVBejG/7JO5x8b7x4RX5mTrXrZQvMoVxmZ+WwR3B
-	julC3uQs48B2HXXa/NwH15MZQ/8p537Npuic9Psg/4s/4N/F6X4navgXKbn7/+4oxek1T/pXFJowg
-	Xsn9U2ig==;
+	bh=8I/lGPCSbuIyJIsmteHQqKPwzwgdEUPdJgNlOfuPdWI=; b=Gl6idPEUuLGxsgKNf5zykLMzId
+	D+NgEdAtOTXIXmUZErN2LlSz+UeuF4rcZ0JR4qJc66cIKZsiwrs+UzxmdWxS3jrZPeowi5DijupPl
+	FsN3jtWEfJIIsYG4gOlWpj3KbZ1zrbkTX1VZ8uJaogNIjI8SU14uMkBSQb/r4dtgzR/463NoEGUS0
+	8lsObX91ENkcK6E5mMe8tknS88EmWVYc2doHWk+1lHn8m3hj5Lrsj27GsLD3bryxoPRSEL7R7jGmy
+	zHofg+24+637w7xWhprrhPyTqHdKnNzD7dVN5unyaST8ncGjkVoukq2pRxJ0JrDX5MT1VDEHg4bIA
+	nhp8GfAg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svB4t-0000000GDOp-1uXo;
-	Mon, 30 Sep 2024 07:44:19 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1svC44-0000000GO5h-12pX;
+	Mon, 30 Sep 2024 08:47:32 +0000
+Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svB4p-0000000GDNl-2rns
+	id 1svC1u-0000000GNe8-3eO5
 	for wireless-regdb@lists.infradead.org;
-	Mon, 30 Sep 2024 07:44:17 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 91E05A41420;
-	Mon, 30 Sep 2024 07:44:06 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4C18CC4CECD;
-	Mon, 30 Sep 2024 07:44:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1727682254;
-	bh=Jxs5S8FqqKtOinOcz6fXTUgLw2ZrQLwAaM/ETwjv4yM=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Ss3ne3A5rZPQTo9Xc1kiCYW6v4Ny0eClFFSh470nnhBuHh4mUueVTKNWAAIW3BYl7
-	 WIe+y09/gUkyHF4Pg0rGwxaSXY5+uqn+hPGd6AINCjf9nGjsI5wUp3OBb3rvYKHaT5
-	 X/GOR19Js16kRK35jDY/TqKY6hPNWOcmLXe2FT1j/X8deu1UOiaC9nRwbpwzwvAbKB
-	 uHhUmeqPqReD54k2sqC0lpgOoGolFETpd7k4Rw04FKVrstuYudL7nsXCPjiIEaiQAu
-	 URwQSuhWX4FrUNoIiZ3kbqS6s+9eroK1/8e/3EpdCS4YeyDibpqsZV7CnFcDHu2vSH
-	 /uoM5xlJ1DBvw==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 023CB5F843;
-	Mon, 30 Sep 2024 15:44:10 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20240902082304.52326-1-pkshih@gmail.com>
-References: <20240902082304.52326-1-pkshih@gmail.com>
-Subject: Re: [PATCH v2 1/4] wireless-regdb: Update regulatory info for
- Serbia (SR) for 2024
-Message-Id: <172768225097.2546520.15568532170446522580.b4-ty@kernel.org>
-Date: Mon, 30 Sep 2024 15:44:10 +0800
+	Mon, 30 Sep 2024 08:45:20 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-a8d4979b843so595290966b.3
+        for <wireless-regdb@lists.infradead.org>; Mon, 30 Sep 2024 01:45:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1727685916; x=1728290716; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=8I/lGPCSbuIyJIsmteHQqKPwzwgdEUPdJgNlOfuPdWI=;
+        b=eyqVX7JQVGokEFeIQ9BWCrRImO8ensxhTgISdqHRrL3UQMP3EjFxySUo3l2mkUWuJo
+         DkeEiwK2J8xi2oJYgmcwWcSsZBw6s8KQiLqjfjUYTBNHnlvHYN6s1TEPclu1XG35DOPK
+         /ul99jT9eMDCKg2wo2QHyJjVyHcCfgsizoAnd9D0D+pkBK4qXrRTNX24qOB5pvWzEXxJ
+         Y+V161HNBmvp3DFKCLUdANNmiGYmwBi7U3o5pZ92hs0BjKE+175F2qZvRyIXh4J8JOeK
+         dVM8ON97SidVXXDov6Ch0nOrrO/f87N9IHn/YSgY41QwKe3iKxYujHreJULIN9uUcEY3
+         jeXg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1727685916; x=1728290716;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=8I/lGPCSbuIyJIsmteHQqKPwzwgdEUPdJgNlOfuPdWI=;
+        b=IE4WKdMk3RZL4hMFY8kOFa2/Lm+OXOf5JWwc2GLS8zadwqOpYNH6WdNf7eaPhE28gW
+         ghwP2UcG5ZhclIVVQi7KLGQcggvX4SRRdBQcC9Y83WI6Kf+PYhj14SL7sCwbVdZN7QXH
+         h/kZYXwIVISF1R0tpY+zg6AkmoS4drb9zVGTvhGeqBfcu02oNORF+gUCWB5OudGkRex/
+         rGcoaSPvGw8/Y6oDO+d+6LW8gjb3EC5jyd0skXbL3VgMyFEuh/LB+DeTnbzwSyRSFybX
+         bHDUXXNf+Eva1QcioBEkYs4E2JRd/+szd9BYjXJJLLaNLITCu4u9MfrkP4R91FqmbZyI
+         oKVg==
+X-Forwarded-Encrypted: i=1; AJvYcCXQb7ZIuIqzxU5pZZPk6l31TCioCBDMO5bikHNZGk1UOJOXRmGCTpX6pOoT3qHOJ+ud88lKEP9yjOL4J8HY6A==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw3oeXxQvH8CnAFo3TfiHPaQ+VOVRbAPJ4xIOvPqynu8wruYG93
+	TaLAB1QbhyNqUITMpkOvyQcwse5blqRiXyUlyHfC+DRBeg6azehk051pu7GeDLhz3r3XGQt+RpG
+	ddpfpTb0oLCtBOcmqncFS1FKJH9I=
+X-Google-Smtp-Source: AGHT+IFZzSCLd7/MCF7USN75uNQ0wZI+FbjfyoXU1amJOsTDB4gms/++Ii6xkR/4OklFeDYm+1PxFQKgA00Aae7uSAM=
+X-Received: by 2002:a17:907:3205:b0:a8a:7062:23ef with SMTP id
+ a640c23a62f3a-a93c496565bmr1194138466b.32.1727685916256; Mon, 30 Sep 2024
+ 01:45:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
+References: <20240920011901.5038-1-pkshih@gmail.com> <CAGb2v65J1FV-POEh+QciWUxE-OZyRuh+Wfad9TuimJrrDHcjkQ@mail.gmail.com>
+In-Reply-To: <CAGb2v65J1FV-POEh+QciWUxE-OZyRuh+Wfad9TuimJrrDHcjkQ@mail.gmail.com>
+From: Ping-Ke Shih <pkshih@gmail.com>
+Date: Mon, 30 Sep 2024 16:45:05 +0800
+Message-ID: <CAHrRpukWTimT_dRtdQwpX-RYAonWic1aE_3KMtEZ3bvr1+iW3w@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Tanzania (TZ)
+ for 2024
+To: wens@kernel.org
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240930_004415_819320_39F89ACC 
-X-CRM114-Status: UNSURE (   6.11  )
+X-CRM114-CacheID: sfid-20240930_014518_950956_020F96DA 
+X-CRM114-Status: UNSURE (   9.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,50 +91,36 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, 02 Sep 2024 16:23:01 +0800, Ping-Ke Shih wrote:
-> Serbia government released radio frequency range on February 5, 2024 [1].
-> Based on Article 100, paragraph 5 of the Law on Electronic Communications
-> and Article 17, paragraph 1 and Article 42, paragraph 1 of the Law on
-> Government.
-> 
->  * 2400 - 2483.5 MHz
->    - reference [1] page 114-115, section 2400 MHz - 2450 MHz, 8th row
->      * EN 302 328
->        - 20 dBm
->  * 5150 - 5350 MHz
->    - reference [1] page 120-121, section 5150 MHz - 5250 MHz, 8th row
->      reference [1] page 121,     section 5250 MHz - 5255 MHz, 8th row
->      reference [1] page 121,     section 5255 MHz - 5350 MHz, 8th row
->      * EN 301 893
->        - 23 dBM (Without TPC)
->        - 5250 - 5350 MHz, DFS
->  * 5470 - 5725 MHz
->    - reference [1] page 122,     section 5470 MHz - 5570 MHz, 8th row
->      reference [1] page 122,     section 5570 MHz - 5650 MHz, 6th row
->      reference [1] page 123,     section 5650 MHz - 5725 MHz, 8th row
->      * EN 301 893
->        - 27 dBm (Without TPC)
->        - 5470 - 5725 MHz, DFS
->  * 5925 - 6425 MHz
->    - reference [1] page 124,     section 5925 MHz - 6700 MHz, 6th row
->      * EN 303 687
->        - 23 dBm, LPI
-> 
-> [...]
+Chen-Yu Tsai <wens@kernel.org> wrote:
+>
+> On Fri, Sep 20, 2024 at 9:19=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.com> w=
+rote:
+> >
+> > From: Ping-Ke Shih <pkshih@realtek.com>
+> >
+> > United Republic of Tanzania, Tanzania Communications Regulatory Authori=
+ty
+> > released Minimum Technical Specifications for Short Range Devices (SRDs=
+)
+> > on 2024 [1].
+> >
+> >  * 2400-2483.5 MHz
+> >    - 100 mW e.i.r.p.
+> >  * 5150-5350 MHz
+> >    - 200 mW mean e.i.r.p.
+> >      * The maximum mean e.i.r.p. density shall be limited to 10 mW/MHz
+> >        in any 1 MHz band.
+> >    - EN 301 893
+>
+> This also restricts 5250-5350 to 100 mW due to lack of TPC.
 
-Applied to master in wens/wireless-regdb.git, thanks!
+I think you meant the description below in Table A.1 pp. 88
 
-[1/4] wireless-regdb: Update regulatory info for Serbia (SR) for 2024
-      https://git.kernel.org/wens/wireless-regdb/c/388c80ccba39
-[2/4] wireless-regdb: Update regulatory info for Kuwait (KW) for 2022
-      https://git.kernel.org/wens/wireless-regdb/c/83c175cec096
-[3/4] wireless-regdb: Update regulatory info for Israel (IL) for 2021
-      https://git.kernel.org/wens/wireless-regdb/c/3ba2c5306fd3
-[4/4] wireless-regdb: Update regulatory info for Honduras (HN) for 2023
-      https://git.kernel.org/wens/wireless-regdb/c/8760bc37e9d0
+2) Not required for devices that operate at a maximum mean e.i.r.p. of
+20 dBm when operating in 5 250 MHz to 5 350 MHz or 27 dBm when
+operating in 5 470 MHz to 5 725 MHz.
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+I was not aware of this. Thanks for the info.
 
+Ping-Ke
 
