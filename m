@@ -4,77 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 39D33CF6497
-	for <wireless-regdb@archiver.kernel.org>; Mon, 30 Sep 2024 09:06:53 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 40069CEB2FE
+	for <wireless-regdb@archiver.kernel.org>; Tue,  1 Oct 2024 06:36:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ORaJDlvQnympO3hAnhO+eW7AqBF+2CEiHEVUGjcCDbE=; b=XhNRLH87egY/SyyGlFv1GG1iEg
-	lyYFUOJ73n0/gqZBVl1lrR9deeDesRhMoNNuERyCTEpkrRkhGddDiiJqDPAoKytm3GctebB5+Kxaf
-	QheH+ZtgXyB51Bpj/ITDmUGUk1h8xHkrn3+c3xKsWxODK3TTaGOwGlVKYrju9NtLweyJj7QyBIu2O
-	fqAE1aay6pbBGNycTp1wATn2RMGZLNLpGXKEs2+fP2fMCW4bkyMIas3hIjgz83xEtN4xr00Mqw94Y
-	RZLGUFM4KR3ErO/MZ4kXEer0w0+EK2SXfVteqeObh7gVBxRwNdyrG8Oqn/wsthzkOnUiAcexygPBa
-	IwXjBXXw==;
+	bh=Ou2UBEoY95HsSQFIFjrO2N/l0x2xL08+3BVXGHJ++L0=; b=a5oMmTOTnJd3mPwxzNoVgW6m+6
+	8zgOa3b6qDFDXR3xms+8cd9AAOoe86HHFJ7qYzQ1cKmVGYlD2E0HwyjptsMo/uR09S2v1ODXhFNDx
+	ICq8aft8c1JH8mCY1FlnybgFIAZdsba4tI07V/vwpvOISNHkgkhC6tnosG2F0Zi0qAwNUH15lt7B7
+	db0ZD7K4ioW0vDU2X9NJ5m4a6Ghe+/vRaH8qjBEYpCzsOik3bBPsVUSK3HgrlkOabBopoJUjmJ1a7
+	ICI74zcdUyub7YM/8QF/MG41+yl4BKKjKlMHg5hmjy/i0MxAbf4yqsM9z8xwybnFfncTTTGHprGZt
+	n552n+bw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1svCMm-0000000GRb9-3SFx;
-	Mon, 30 Sep 2024 09:06:52 +0000
-Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
+	id 1svWUc-00000001lwK-0pZj;
+	Tue, 01 Oct 2024 06:36:18 +0000
+Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1svCKU-0000000GR3B-3s3K
+	id 1svWTZ-00000001lmh-0wTt
 	for wireless-regdb@lists.infradead.org;
-	Mon, 30 Sep 2024 09:04:32 +0000
-Received: by mail-pf1-x42d.google.com with SMTP id d2e1a72fcca58-71798a15ce5so3852845b3a.0
-        for <wireless-regdb@lists.infradead.org>; Mon, 30 Sep 2024 02:04:30 -0700 (PDT)
+	Tue, 01 Oct 2024 06:35:15 +0000
+Received: by mail-pl1-x636.google.com with SMTP id d9443c01a7336-20bb39d97d1so2481565ad.2
+        for <wireless-regdb@lists.infradead.org>; Mon, 30 Sep 2024 23:35:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1727687070; x=1728291870; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1727764512; x=1728369312; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=ORaJDlvQnympO3hAnhO+eW7AqBF+2CEiHEVUGjcCDbE=;
-        b=SM3s4Pjt8rBaOpl3TybitH2BZYbwiJIh1jmrYZFoY5j4cY56lswTRHY7XNofrT9GZD
-         uf1GoOT8EJjjp0Bu5iAKYCMtXA9nizPGJ48t7BNj/wtjZFVrj22GB0Ut0HQ+IGtocJey
-         BCECoWAfYSdpmkd331uvUYGqHvkIxnJR/7T7NqbNBTQ4j6IlN3eQRPUU7z/j1DvdgmMD
-         wytv+msy3BX/4uEXGUgXYndh8VGHdnbG0ipSRHlXa3c1mxci1sunFoOoii6mSRATuZe1
-         C3IYOer+eIDmvdTaQ51PlNQaRJDvby7O1kIDLsZjtqZuJpQLKB+wV5OI2v/NsX0B3vtO
-         e10Q==
+        bh=Ou2UBEoY95HsSQFIFjrO2N/l0x2xL08+3BVXGHJ++L0=;
+        b=dJ7JiXcsPkuQVYANx4SKNtfq3n4GzBoorV40ssXFh5Ig8iVJw1w2pRZh2VvInFXhC6
+         RT7iTVBOCvyfqLij3K39KKdjNDrRhz5tMCX/igOlGACgzfaC99hHpKogznFTzFSe9sCo
+         yha+qjajIijZNjrG39U8JSHYmB6ek2s9t9wKof0i9DuYtDiM/do5V3NiM2RZrrUYr0wd
+         H52/lbDTGckgXVnywolfCgH/HX7QuRUEboQxjyq6jPnLGMZmNXGNdLDkv4dTLy/g0tmB
+         k54ZRN4QJv02DWIGPiriUBUmzH00qGBweS2rvTO9NdGtwoTCKFTh896PGpaQLFTM3+ot
+         Txnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1727687070; x=1728291870;
+        d=1e100.net; s=20230601; t=1727764512; x=1728369312;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=ORaJDlvQnympO3hAnhO+eW7AqBF+2CEiHEVUGjcCDbE=;
-        b=Y0HC8DMrS+zFFlDie1YC92GZgDsRoNx7lC3rtD0BzeVtc14ulxlbSVfC8I8wrnTIdO
-         8hda5dd4JslUYCm5+fFVjTyA9mjlkH1GhV9RW+fRuB33bw+ffzkni8Xo8v6m7zE0jrsl
-         pzbWqNY0XtxXbSIgnkKN5ITJaS+2qACEEgt6pR24fVDpaa0EJ5aeVOqwrbm0xShIxTN1
-         71iENs3jU2ZBsTddV6rAk/9+s+bQRIyGKbuRm/0YOA0/FkolYujjthKVO1C1YdbWCMma
-         UTT/6BHUNN8bUSbqdMSX9VJ7Hydam08qbtBy84UnJ0mgWitNTCjfITxe9OFDOLZBWdAa
-         nppw==
-X-Forwarded-Encrypted: i=1; AJvYcCWE40RI6mqIbgFqOHlKQMeP5jiNSzt5VL5/1o7XhhzGOEjU3lXZJPFFfcFuIJeUafDMrOIMT6xHZsz3iJX7Ag==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yys9oVHFAhMtoLEgKBXyCLREjSWK+2IbOxlNcgdlDEDrCFrFwOI
-	twmjwYK0o+G4JQOu/L58opU5wyzcjUOg6CzRIEJY3E6Mf3gB+JRroxWRrHwd
-X-Google-Smtp-Source: AGHT+IHFIuIoXvob0CtewxlvNmhZkjzGLnRZ9R+TKA/iEfmHDe8pezvMHkONT23eFA43aIx6Y8BTBA==
-X-Received: by 2002:a05:6a00:4b53:b0:718:dbc7:2d2f with SMTP id d2e1a72fcca58-71b192af06dmr23961003b3a.5.1727687069546;
-        Mon, 30 Sep 2024 02:04:29 -0700 (PDT)
+        bh=Ou2UBEoY95HsSQFIFjrO2N/l0x2xL08+3BVXGHJ++L0=;
+        b=kWYhhypndgvJtLpbfr/Nr6fmHRG628vFoIct4yjWkPEPCH+jsiVpsWUd8rEkc4aQUe
+         YKa15JKhNvfISq5jkOfvYwigNTpY1boX12gs4dX8iyJT4VYNWam2EJfPuAZMzjQze3KD
+         zMjDpsnY06p3CJlGyMQ3JWwXIE1lUq3kf6GAw9aJ5monvbYINEtui3zNWnWqBVrfzdql
+         4rj9nixOYyXPz3h2ySthsaV5L3tN28kiR3b2UReKcPuXw7qJKjL5JPveUKlGCIx0jJYo
+         n8DYJuC5kWlJIqT6GpE2kR2c12xEGQKLKKbXhcmrpUEmYluomk/4Av9YpiYXnOtpkAsw
+         ToMw==
+X-Forwarded-Encrypted: i=1; AJvYcCXQ+y+kt7ZytQ5cr4YeM/Q+qUL25WQcPj+NTAA5UbnZaewFFRTctgPup+anpT+AVz+GmwMwh7iXC6lLWx8sHQ==@lists.infradead.org
+X-Gm-Message-State: AOJu0YwZIwjcMafXmfGvI92QbnFTkD/FzC3NjN91YUkWZp+0OtwqtYdo
+	+qGIsyCCLIYEkqNHvOywdX/cCr+MA5CtCZdD/csGO9S8rdMTCjxr
+X-Google-Smtp-Source: AGHT+IFHyqrsQCdO8VSAOw0hPJvRNbiXbTDcRmMnvrR4RiZY+PlefWDW6p95WISDErRFlsxHS+EDsw==
+X-Received: by 2002:a17:902:e888:b0:20b:7731:e3df with SMTP id d9443c01a7336-20b7731e68cmr91202675ad.43.1727764512159;
+        Mon, 30 Sep 2024 23:35:12 -0700 (PDT)
 Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-71b264bc1a3sm5777328b3a.75.2024.09.30.02.04.28
+        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-20b37e20dffsm63934325ad.170.2024.09.30.23.35.10
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 30 Sep 2024 02:04:29 -0700 (PDT)
+        Mon, 30 Sep 2024 23:35:11 -0700 (PDT)
 From: Ping-Ke Shih <pkshih@gmail.com>
 To: wens@kernel.org
 Cc: linux-wireless@vger.kernel.org,
 	wireless-regdb@lists.infradead.org
-Subject: [PATCH v3] wireless-regdb: Update regulatory info for Tanzania (TZ) for 2024
-Date: Mon, 30 Sep 2024 17:03:47 +0800
-Message-Id: <20240930090347.11085-1-pkshih@gmail.com>
+Subject: [PATCH] wireless-regdb: Update regulatory info for Pakistan (PK) for 2024
+Date: Tue,  1 Oct 2024 14:34:30 +0800
+Message-Id: <20241001063430.8347-1-pkshih@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20240930_020430_995053_7F983ECE 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20240930_233513_293741_A105B891 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -91,76 +92,58 @@ Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infra
 
 From: Ping-Ke Shih <pkshih@realtek.com>
 
-United Republic of Tanzania, Tanzania Communications Regulatory Authority
-released Minimum Technical Specifications for Short Range Devices (SRDs)
-on 2024 [1].
+The Pakistan Telecommunication Authority released FRAMEWORK FOR WIRELESS
+LOCAL AREA NETWORK - 2024 [1]
 
- * 2400-2483.5 MHz
-   - 100 mW e.i.r.p.
- * 5150-5350 MHz
-   - 200 mW mean e.i.r.p.
-     * The maximum mean e.i.r.p. density shall be limited to 10 mW/MHz
-       in any 1 MHz band.
-   - EN 301 893
-     * without TPC: 20 dBm when operating in 5250-5350 MHz
-       (20 dBm is adopted for 5250-5350 MHz)
-     * DFS: 5250-5350 MHz
-   - Restricted to indoor use.
- * 5470-5725 MHz
-   - 250 mW e.i.r.p
-     * The maximum mean e.i.r.p. density shall be limited to 50 mW/MHz
-       in any 1 MHz band
-   - EN 301 893
-     * DFS: 5470-5725 MHz
-   - Indoor as well as outdoor use allowed.
- * 5725-5850 MHz
-   - 1W
-   - EN 302 502
-     * DFS: 5850 - 5875 MHz
-     * FWA device shall have the capability to reduce the operating
-       mean EIRP level to a level not exceeding 24 dBm for ChS = 20 MHz
-       (24 dBm is adopted)
- * 5945-6425 MHz
-   - 23 dBm for LPI usage
-     (should be indoor naturally)
-   - 14 dBm for VLP usage
+* 2.40-2.50 GHz
+  - 30 dBm EIRP
+* 5.725-5.875 GHz
+  - 30 dBm EIRP
+* 5.925- 6.425 GHz
+  - Indoor use Only
+    * 23 dBm Maximum mean EIRP
+    * Power Spectral Density of WLAN operating under this provision shall
+      not exceed 10 dBm/MHz.
+  - Outdoor use
+    * 14 dBm Maximum mean EIRP
+    * Power Spectral Density of WLAN operating under this provision shall:
+      - not exceed 1 dBm/MHz.
+      - not exceed 10 dBm/MHz for narrowband operations on BWs below 20 MHz
 
-[1] https://www.tcra.go.tz/download/sw-1719952895-Minimum%20Technical%20Specifications%20for%20Short%20Range%20Devices%20(SRD),%20June%202024.pdf
+[1] https://www.pta.gov.pk/assets/media/2024-09-23-WLAN-Framework-Final-05-09-2024.pdf
 
 Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 ---
-v3:
-  - remove NO-OUTDOOR from 5470-5725 MHz, since "Indoor as well as outdoor
-    use allowed."
-v2:
-  - 20 dBm when operating in 5250-5350 MHz for devices without TPC
----
- db.txt | 12 +++++++++---
- 1 file changed, 9 insertions(+), 3 deletions(-)
+ db.txt | 13 +++++--------
+ 1 file changed, 5 insertions(+), 8 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 956cfd044157..a1408b1da878 100644
+index 956cfd044157..adda839f4cf4 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1873,9 +1873,15 @@ country TW: DFS-FCC
- 	# 60g band, LP0002 section 4.13.1.1 (1)(A), EIRP=40dBm(43dBm peak)
- 	(57000 - 66000 @ 2160), (40)
-  
--country TZ:
--	(2402 - 2482 @ 40), (20)
--	(5735 - 5835 @ 80), (30)
-+# Source:
-+# https://www.tcra.go.tz/download/sw-1719952895-Minimum%20Technical%20Specifications%20for%20Short%20Range%20Devices%20(SRD),%20June%202024.pdf
-+country TZ: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), AUTO-BW, NO-OUTDOOR
-+	(5250 - 5350 @ 80), (20), DFS, AUTO-BW, NO-OUTDOOR
-+	(5470 - 5725 @ 160), (250 mW), DFS
-+	(5725 - 5850 @ 80), (24), DFS
+@@ -1521,17 +1521,14 @@ country PH: DFS-FCC
+ 	(5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
+ 	(57000 - 66000 @ 2160), (24)
+ 
+-country PK: DFS-JP
++country PK:
+ 	# https://fab.gov.pk/type-approval/
+ 	# https://pta.gov.pk/media/Pakistan_Table_of_Frequency_Allocations.pdf
+ 	# https://www.pta.gov.pk/assets/media/iot_srd_regulatory_framework_01-06-2022.pdf
+-	(2402 - 2482 @ 40), (100 mW)
+-	(5150 - 5270 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
+-	(5270 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+-	(5470 - 5610 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
+-	(5610 - 5725 @ 80), (200 mW), AUTO-BW
+-	(5725 - 5875 @ 80), (1000 mW)
+-	(57000 - 66000 @ 2160), (40)
++	# https://www.pta.gov.pk/assets/media/2024-09-23-WLAN-Framework-Final-05-09-2024.pdf
++	(2400 - 2500 @ 40), (30)
++	(5725 - 5875 @ 80), (30)
 +	(5945 - 6425 @ 320), (23), NO-OUTDOOR
  
- # Source: https://zakon.rada.gov.ua/laws/show/z0201-15#n48
- # Although it is allowed to use up to 250 mW for some 5 GHz frequency ranges,
+ # PL as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301 893)
+ # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
 -- 
 2.25.1
 
