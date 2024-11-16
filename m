@@ -4,77 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0A0ED3E18D
-	for <wireless-regdb@archiver.kernel.org>; Mon, 21 Oct 2024 07:21:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AEFDFD68BD2
+	for <wireless-regdb@archiver.kernel.org>; Sat, 16 Nov 2024 08:25:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
 	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=XkeOc7cfVOIbP+Run4GnrPC5KIhzOGmW2fBCzCngoXE=; b=DqV+UBKs3CO3wm+PQXnWYIsy4u
-	vMK9Mv9YqbsaJuPm03rWGjEwNi/HMPVC4r5mPqEsBqMiKNlK/rvRh6CipG38XRLOCVzvB8mcInWhj
-	apdWOlNg/BGgaY1iVUs0RWNpG6dr3PgIlrR4Kuvw0cyBUMcxni4IKyiXw2Nw+fWN3622faw4pDAL6
-	GavTtu5hmc/FJVo4Xq2Sd+Zrkd+V7HDXS2ZxIFJwitl/RDZ1LIzDCWQzH2VObYJ8Ta4LME4PUAmiO
-	XBM+/TDqu1ejuTdaU6sJKxp56cIJd41fVQaQX955bVK6a5OLxtvDTRR7ajqzEJ6isksE+t69h6KzY
-	gGRLEZNQ==;
+	bh=0wI5s4CZuvcmq2kH2NFj7Lf55gnF/3ikMJSmm8d1y6c=; b=qhjTPKwGxqBWAzMLqADElpx2RI
+	7hG1Hxoqei3Q0MKqE45vuTDdNMohVziBrsWb0RIcFyei0/y4Opmt85KRGEEQ1qV2IlEukw1wMjc0p
+	0p6qfAAbGYvxcIklJAg1gD+esZc988VklDM1SOdC/J1UAHt1eh/rl3frWWBdshlMWU/6noWuIFwrp
+	l83Pt8lZm0vOWtRnlO2pqb64FMxa/MRUPxw0vNXV5DGBsFs9FcpA7z6C46czncWOsqmswQ0j+O/6K
+	u0C587lsvgwd22l2D7YmT7yd88qiZ9RRh2BGlW5O23GT/AUmpkRU2I0/XTa6EaC8j5TEe1mm2X0mE
+	7KVMmgTw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2mjJ-00000006LqQ-2PWY;
-	Mon, 21 Oct 2024 07:21:29 +0000
-Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
+	id 1tCE7l-00000005ECt-2qkw;
+	Sat, 16 Nov 2024 08:25:45 +0000
+Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1t2mdQ-00000006KOO-1yfV
+	id 1tCE70-00000005E6e-0mKQ
 	for wireless-regdb@lists.infradead.org;
-	Mon, 21 Oct 2024 07:15:27 +0000
-Received: by mail-pl1-x636.google.com with SMTP id d9443c01a7336-20c693b68f5so43476265ad.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 21 Oct 2024 00:15:23 -0700 (PDT)
+	Sat, 16 Nov 2024 08:24:59 +0000
+Received: by mail-pf1-x42f.google.com with SMTP id d2e1a72fcca58-71e4e481692so378626b3a.1
+        for <wireless-regdb@lists.infradead.org>; Sat, 16 Nov 2024 00:24:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1729494923; x=1730099723; darn=lists.infradead.org;
+        d=gmail.com; s=20230601; t=1731745497; x=1732350297; darn=lists.infradead.org;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=XkeOc7cfVOIbP+Run4GnrPC5KIhzOGmW2fBCzCngoXE=;
-        b=Ew6+UCrMX5qkhs7Tl+dX8wHuqE/sY+6IIf+f9oXoFf/2kTtoefjQwIxquoYmEkHnvg
-         gXVdyvmn5969yk0nEHI9yAlzKli4FtpNy6lPj1c+YVddYgcUMh7MBaDsfPenG7J7B+rL
-         /PiZdgdd9OJ1CDVl6t2TcU0ujJ1AoY9b3aWZnVaQeoOjgFPr0fZkWCw7SF75xIhyeqZ/
-         gaJA/X02+EQBGb+u8164ocyRwcWRMwPKfO/KJlBFhQ1VjEP+MeQatRPaxbWQsqcTzZnP
-         7fOM3JkhvPtbbtonJ4LhTZGkXDuNsa/W4O/zt7p6vv7jn0axI0+vXyuZN4OY73xroD8r
-         i3ew==
+        bh=0wI5s4CZuvcmq2kH2NFj7Lf55gnF/3ikMJSmm8d1y6c=;
+        b=dLuiDPacWNkRgVvFPP5bFA/Ny5TVg0/5SVZUvnwj+qQKMbIhYv4J3NbMlMhCefYGlK
+         w+HWpzgBwfNdYIHiTL8n/x8MQ4nswqw9eUYlW70D2Sr5fQHcOEtJ6STfOv8r2O5aPbus
+         vTN4Y186GgWQRlNU534mJDT4HbbgS3ORTku62DahuC5W+oG4pWN+wk6C/0NytXTjfPHo
+         7nNQhPkbCdYH91qBVKlZanNPyQHqmV0pePLDOshSkR3ScEUHNLmIofjSM0YRJLlzEt7g
+         PtJIp08uLuwNJVkzuekpzJJht4K4/XDiEq1xKt+FYxrttBWiExNlKgshNAaYpdLpk5Td
+         DtwA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1729494923; x=1730099723;
+        d=1e100.net; s=20230601; t=1731745497; x=1732350297;
         h=content-transfer-encoding:mime-version:message-id:date:subject:cc
          :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
          :reply-to;
-        bh=XkeOc7cfVOIbP+Run4GnrPC5KIhzOGmW2fBCzCngoXE=;
-        b=Gm4kUvFcMlLE+8boKk1xcHZDbRWQ1g86KZ4rBlNBgIWLpdBq5n0trEED6TtATvme0M
-         a7yzx1xW7ejSnBR5QkoOuI/TJpk5WqPEtfUuD9dSjnfXf9R3k3W41ir/O5wmXTS2baso
-         3NPGXbtB0uur3S079v/wPnAQ3zuK96jWx27G6hxMZxHwi6LuuMSoEcgsTXdRpJk49HTn
-         5oxalW53p2FsC5ndgetAzdRlgBSfpqrvkvxDBMV3jjVKNUYBSJjINlRRfgQ5dGVE/NUF
-         OmqTwmeRSOSplcJirc+MOqg1oJYK1I7p50rrYdXRttrtNoqe9Z+J+T/+0fg8aiVUoarE
-         FT4g==
-X-Forwarded-Encrypted: i=1; AJvYcCXmtGQ1KlaI1YgQAk41KohqneqiC22/KG/Z83EuAUDa8uhVBw8H0Zafq4xKQNZMZff72Jk62AykX9qyUJVcUA==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy/YTeQJc7EkeFFgkdOhTz7J74+jnaM4c9PLgaQXRB80d1iTD50
-	077Te4aW9fM8arzFR1djyiD8HIPcvYwnwf7sZTbRKQrfWNfNezUC
-X-Google-Smtp-Source: AGHT+IGFHU4wYoQlhJAvvlVJDQvCiFCQfB26WJQ7/VeCuSx9oH7SYqIlsO9VgEATYBiLrynWGS/zew==
-X-Received: by 2002:a17:902:ce0f:b0:20c:f261:2516 with SMTP id d9443c01a7336-20e5a70d0b1mr171296365ad.8.1729494922856;
-        Mon, 21 Oct 2024 00:15:22 -0700 (PDT)
-Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
-        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-20e7f0d9a7esm19550805ad.182.2024.10.21.00.15.21
+        bh=0wI5s4CZuvcmq2kH2NFj7Lf55gnF/3ikMJSmm8d1y6c=;
+        b=QsDMAYlaNuZ9oSi0m8ESxrnWAqxoF/h6MXSn2snZewXh9Tph480qOjL0pwdlolJIzt
+         odKkpOXanejRdwSt8dsSiRTCMwgwv/dl6Yw2cil62CMiTm8hDOHFNT/IHzzL/vGiXDaF
+         JgSB+GfoDZ9TZRDbZqnxJVZRCF/B+dHsDDV8mShfe0L5wkl6/YswirbSVgiLEmYOidsf
+         bSL0iwfkGRyqe84qfAM6wNYaReMfeE/zlOPO4CNf1W11q6OIEMmBjQWJL+S8oqL/J+3Q
+         15SCArNwTHoTWUESx34EF87v967WIbb2bzK8aSw2VYfoGFLZq202ZGBhKEFQqveK2W10
+         /IYw==
+X-Forwarded-Encrypted: i=1; AJvYcCVHSnN2a5HEieohQgj3Eb3Nfy6Wczprkj4SYU+zATrVGTVhKapjKY2tHZKtmITTV9zHCpX2W8sQLtdG4re/UA==@lists.infradead.org
+X-Gm-Message-State: AOJu0YwFHxALXPD6ECKwi56tOm77xlsnlhrXLQa0QCLc8GXmi0vBxxBL
+	mf8W5O+owXROyeg5m8fVf80Htm/t97hdZ1GYwxiqHNhGgyrSdQIG
+X-Google-Smtp-Source: AGHT+IFjjVdXIRE4mP/e67dY9BI8qNrx6Qx69NWuwuXYIMqxobLunMTVHIPdh/WdCy8fIWQOm7Xq5g==
+X-Received: by 2002:a05:6a00:843:b0:71e:fb4:6c98 with SMTP id d2e1a72fcca58-7247709d088mr7996100b3a.23.1731745495652;
+        Sat, 16 Nov 2024 00:24:55 -0800 (PST)
+Received: from pkshih-B33E.realtek.com (125-231-72-119.dynamic-ip.hinet.net. [125.231.72.119])
+        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-724770ee925sm2606801b3a.5.2024.11.16.00.24.54
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 21 Oct 2024 00:15:22 -0700 (PDT)
+        Sat, 16 Nov 2024 00:24:55 -0800 (PST)
 From: Ping-Ke Shih <pkshih@gmail.com>
 To: wens@kernel.org
 Cc: linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org
-Subject: [PATCH] wireless-regdb: Update regulatory info for Oman (OM)
-Date: Mon, 21 Oct 2024 15:15:06 +0800
-Message-Id: <20241021071506.24320-1-pkshih@gmail.com>
+	wireless-regdb@lists.infradead.org,
+	combuster@gmail.com
+Subject: [PATCH] wireless-regdb: assert and correct maximum bandwidth within frequency difference
+Date: Sat, 16 Nov 2024 16:24:17 +0800
+Message-Id: <20241116082417.8720-1-pkshih@gmail.com>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241021_001524_620231_A5CCB61E 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20241116_002458_263019_261B6F74 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -92,71 +93,59 @@ Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infra
 
 From: Ping-Ke Shih <pkshih@realtek.com>
 
-Sultanate of Oman, Telecommunications Regulatory Authority released
-Technical Specifications for Wideband and Broadband Data Transmission
-Systems [1].
+Since kernel will reject max bandwidth being larger than freq_diff in
+is_valid_reg_rule(), as well reject it ahead.
 
-* 2400-2483.5 MHz
-  - 100 mW max. mean EIRP
-  - indoor use only
-* 5150-5250 MHz
-  - 200 mW max. mean EIRP
-* 5250-5350 MHz
-  - 200 mW max. mean EIRP
-  - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
-         corresponding mean EIRP density limits shall be reduced by 3 dB.
-         (20 dBm is adopted)
-  - DFS
-* 5470-5725 MHz
-  - 1 W max. mean EIRP
-  - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
-         corresponding mean EIRP density limits shall be reduced by 3 dB.
-         (27 dBm is adopted)
-  - DFS
-* 5725-5850 MHz
-  - 2 W max. mean EIRP
-  - TPC: FWA systems operating in frequency band 5725-5850 MHz shall
-         employ TPC with a range of at least 5 dB.
-         (28 dBm Is adopted)
-  - Outdoor use only
-    (Since NO-INDOOR flag is not supported by current format, don't add
-     this entry.)
-  - DFS
-* 5925-6425 MHz
-  - 200 mW max. mean EIRP
-  - Indoor use only
-* 57-66 GHz
-  - 40 dBm max. mean EIRP
-  - Indoor use only
-
-[1] https://tra.gov.om/DownloadFile.jsp?type=DocumentList&code=474
-
+Closes: https://lore.kernel.org/linux-wireless/CAPGdDAmPp80VEZ0TG=cS3QAYKqELHfqChid0wYZ7eLAENFY86Q@mail.gmail.com/T/#u
+Reported-by: Ivan Bulatovic <combuster@gmail.com>
 Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 ---
- db.txt | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ db.txt     | 8 ++++----
+ dbparse.py | 3 +++
+ 2 files changed, 7 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index a9a9ba48f42d..32b533e800f5 100644
+index 32b533e800f5..a12f931ef4b2 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1463,10 +1463,12 @@ country NZ: DFS-ETSI
- 	(57000 - 71000 @ 2160), (40)
+@@ -787,11 +787,11 @@ country GT:
+ 	(2400 - 2483.5 @ 40), (500 mW)
+ 	(5150 - 5350 @ 80), (200 mW), NO-OUTDOOR
+ 	(5470 - 5725 @ 160), (250 mW), NO-OUTDOOR
+-	(5725 - 5850 @ 160), (500 mW), NO-OUTDOOR
++	(5725 - 5850 @ 80), (500 mW), NO-OUTDOOR
+ 	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR, AUTO-BW
+-	(6425 - 6525 @ 320), (200 mW), NO-OUTDOOR, AUTO-BW
++	(6425 - 6525 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
+ 	(6525 - 6875 @ 320), (150 mW), NO-OUTDOOR, AUTO-BW
+-	(6875 - 7125 @ 320), (150 mW), NO-OUTDOOR, AUTO-BW
++	(6875 - 7125 @ 160), (150 mW), NO-OUTDOOR, AUTO-BW
+ 	(57000 - 66000 @ 2160), (20 mW), NO-OUTDOOR
  
- country OM: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5490 - 5710 @ 160), (27), DFS
-+	(2400 - 2483.5 @ 40), (100 mW), NO-OUTDOOR
-+	(5170 - 5250 @ 80), (200 mW), AUTO-BW
-+	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
-+	(5490 - 5725 @ 160), (27), DFS
-+	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
-+	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
+ country GU: DFS-FCC
+@@ -1646,7 +1646,7 @@ country RS: DFS-ETSI
+ 	(5250 - 5350 @ 80), (23), DFS, AUTO-BW
+ 	(5470 - 5725 @ 160), (27), DFS
+ 	(5725 - 5850 @ 80), (24), DFS, AUTO-BW
+-	(5850 - 5875 @ 80), (24), AUTO-BW
++	(5850 - 5875 @ 20), (24), AUTO-BW
+ 	(5925 - 6425 @ 320), (23), NO-OUTDOOR
+ 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+ 	(57000 - 66000 @ 2160), (40)
+diff --git a/dbparse.py b/dbparse.py
+index 5f7e08200fa0..b27690166427 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -218,6 +218,9 @@ class DBParser(object):
+                 self._syntax_error("Inverted freq range (%d - %d)" % (start, end))
+             if start == end:
+                 self._syntax_error("Start and end freqs are equal (%d)" % start)
++            if bw > end - start:
++                self._syntax_error("BW is smaller than freq_diff (%d - %d) (%d)"
++                                      % (start, end, bw))
+         except ValueError:
+             self._syntax_error("band must have frequency range")
  
- # Source:
- # http://www.asep.gob.pa/images/telecomunicaciones/Anexos/PNAF-dic2015.pdf
 -- 
 2.25.1
 
