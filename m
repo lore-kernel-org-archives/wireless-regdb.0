@@ -4,72 +4,79 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E255AD60CFC
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id DEED7D591A5
 	for <wireless-regdb@archiver.kernel.org>; Tue, 19 Nov 2024 16:41:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
-	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=0tllZx9Of3KLpu5YjG9NlyM0UxxcMwiUmdsYpdP5M5c=; b=VoBjW+YJARbToJ6qu2tTVTR4lJ
-	0jMhx6SpdH5ENUAdxfpJkbIXw+L40qLKUcEDxH2s5bLZr9C0eON1s4xci9Uv2mM4KHhsGN4qDXdKu
-	DfPJjfkL0xNmmGLdsKtuniBWCoTjP7tHFELkUKx3cNDkPcG6Yp6qsvD53U+25/uFBbMSiDEt0EHhM
-	g375E1su16ZKydNF0OrmRlEa4kEKZJcxvYsGpiw7M/23Hd7xdsfT6O1XiqSuFm4GaPM9flQOmmSmj
-	Fsiyp+cUvtQ5Qcli7Fron3VXPvhzHyl/OBcrogMHfOiza2ii6C+VFfHRabW6e8IXj7GSARU3huPRr
-	pEF8t9Iw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=gc645Fqa6qgDAAXRDmGCyal4u71PxNRjXFB8kh8iuwc=; b=JXh0zlGKNWR1lAwRID8nWT3Azn
+	EazQ5BMuGSYtJHKOjYDXUiE4JLo58qZV7lPo6f8AjiFl3O2aS2Hzm1k/xZLkOCyxJL0B7Hfdy/zez
+	HfFo1gBPCt4gEVDct/lVRzdmhpFXFp+i8yIKR++Qp8D1E9a+aFzK3lYsuV2041cabF6AjsV49Q8an
+	8S/MCFdqTORghPSDL56yAucsk5sw9Mk8ti/gnjcFUbZc6dDpsQIfBp8uCaRQWddxCLuCjhUlT2GVO
+	AlW8oHcSgYaXFpT22+enjFd/n0OcOPiN0K1fFddCBSZPQGn1iGBS04ShJLJ+Cj9tdgscwmqsMuKEM
+	vbEh3K8g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tDRIX-0000000D3oH-0f7l;
+	id 1tDRIX-0000000D3oO-2FHy;
 	Tue, 19 Nov 2024 16:41:53 +0000
-Received: from mail-pl1-x632.google.com ([2607:f8b0:4864:20::632])
+Received: from mail-pf1-x435.google.com ([2607:f8b0:4864:20::435])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tC2YL-00000003yaq-3li9
+	id 1tCIHK-00000005aWr-0t0f
 	for wireless-regdb@lists.infradead.org;
-	Fri, 15 Nov 2024 20:04:26 +0000
-Received: by mail-pl1-x632.google.com with SMTP id d9443c01a7336-2114214c63eso20087915ad.3
-        for <wireless-regdb@lists.infradead.org>; Fri, 15 Nov 2024 12:04:24 -0800 (PST)
+	Sat, 16 Nov 2024 12:51:55 +0000
+Received: by mail-pf1-x435.google.com with SMTP id d2e1a72fcca58-72467c35ddeso2002997b3a.0
+        for <wireless-regdb@lists.infradead.org>; Sat, 16 Nov 2024 04:51:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1731701064; x=1732305864; darn=lists.infradead.org;
-        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
-         :date:message-id:reply-to;
-        bh=0tllZx9Of3KLpu5YjG9NlyM0UxxcMwiUmdsYpdP5M5c=;
-        b=A2ue+d0Ew03HnmVsRp9PhQlZ/9un1yE0xPnCYXp9herJrJYw4Fql+W7mkCPmv8Zz8x
-         DXVMr+NQ97YpNyj3pngvffk7LOeyXFxe5viBQxtp0TgGWnwDH8TLebnV5Nw3E1aV15iB
-         xHzGodKsIzMdTxfzb8R4BE8MBamtf4eEzLoubNf8+Cha1qwCHVZr33KpWJ0piOj4wGsr
-         P1Sl6MDKg2E91nKO94E//1zue8t+3+M2vQlJLmRLdGgAQpoHgjzXTKhbWQCOZzZZ3hYQ
-         7zYPrZhS+xDluFAinhhQPaQ381QhH5ANRMgWAq6hkssg51/kWwxcAcEJhcpW0VGZxGyb
-         9jxQ==
+        d=gmail.com; s=20230601; t=1731761513; x=1732366313; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=gc645Fqa6qgDAAXRDmGCyal4u71PxNRjXFB8kh8iuwc=;
+        b=BlGatlluEUbkRiHY1V4QDvbVVFlUkZ04uatvsKFCs/JoxTnOtUU00hbuLl55rvFpFy
+         Q6T6SOEYLHJ+TMXlXVsS8Sd28xUO1VCZqpp3J+aDT9WlSiIOmBxBZE1yqBU8pAdOnR3j
+         iXhh2ekbwD3iafSB1BT8KiAJOEVnAPBee1jvHVqReL6J6QRSmVsAWPep50lLLp5IAwtQ
+         uY02EaBS2FbyBcZsxjAxWsoCU+v1fGeBKfjOrBG/5QIZMvFjMLcN4rVyxdMzKxsDxYma
+         jZTbEQHSVX2Y99+S3ymFH4Qs9rIkmovvHScdV/9Nv9v/Noui7kqVCCjXgZvVKtJ5t55h
+         cxIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1731701064; x=1732305864;
-        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
-         :from:to:cc:subject:date:message-id:reply-to;
-        bh=0tllZx9Of3KLpu5YjG9NlyM0UxxcMwiUmdsYpdP5M5c=;
-        b=i+oQRVggdlSn/wa1oGivG1vZsxV3W6nhAfwUqxhINgbcoiovf7SUbNjqUpHmc+a6ua
-         HT/Gh/soSWPKSoyUYgHi+WG5ML5MEtNW0ttWWDfmLJiNpIP5GlDkQeABTPgHylm+Pj2y
-         2TbZtJZKgIv1Uu29/RlWCSfBzC/TUWhS5DOzL2FsYexL5DwIqF/zc+IaCEsOeD/g8Z3V
-         NN72bY9YSKMfFUQtjivAKv7ud/UhB6JxKXe/maQx7ndMD5FWEyStJEEy5pPCPeL8Kuqe
-         Y7doOf15OL3yamLOK1NnLx50roXfYEBVkp5P2EagrLuMln6d0AR9YWMz1yuSrrhqK4Xz
-         NuPA==
-X-Gm-Message-State: AOJu0YwtevB9mp08oINjKQjOL/A/zLwNI+YMgOKqg2H3e8JzINhnichu
-	JOWM4WOmuaygNH+s4pB0x3wXf//eEIeY4erVgzOuhkHFCAEplmUI5NgixZ3RyRme0AhH7jlPuI+
-	8iPhUTsZZ6h42RK2lIBEV8iYg/N8=
-X-Google-Smtp-Source: AGHT+IFauZMicTOO3TkdEKamOpGX2av/xIsv4r9p0AXBq6ixrhCnUDURTGCzCtODU/piRSQ6f9VSdghZnQKR7djoz8c=
-X-Received: by 2002:a17:902:e742:b0:20b:5b16:b16b with SMTP id
- d9443c01a7336-211d0ebed22mr50930805ad.36.1731701064096; Fri, 15 Nov 2024
- 12:04:24 -0800 (PST)
+        d=1e100.net; s=20230601; t=1731761513; x=1732366313;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=gc645Fqa6qgDAAXRDmGCyal4u71PxNRjXFB8kh8iuwc=;
+        b=ZYQG1D3ZPf8wWqjZvOFfvtMYiVf5pISV/r/9yCUYB/VLKi3UckaPSffkxRCWEYsOhi
+         1U4vC0YtxOrDD+ikcGo83p03l7oPm8WfxkOddElBjI+i3cKDYnq0OUNgbzRHVUFJT7Ee
+         +VADJCESY/Kh5b8GmNxn0tkegl9qPhmfFu3HeXjybF1i6q9ydFPITFiJmEUXWBHK2XTC
+         VkUX/3939mzEF/5yPRvW5VDXY9YO+1rbr5UN3TN4rxnFu/QtTWFBs6zYmDsOnIKVP4TE
+         mAmAMLoH/HD3tPQMzyD1H2bLGmnrkk1sttcUZ6zxTLIMBk0eoWjM5/pCnpMwIyL8VIZZ
+         OBqg==
+X-Forwarded-Encrypted: i=1; AJvYcCX2NIvgY3ePpTnIOnZDXkjYg0/as5XmgiXHGYeM9LOs/vt8G8SwSoFhtKYyz2ZbDtgWVmyl8MLrP92YOhEyBQ==@lists.infradead.org
+X-Gm-Message-State: AOJu0YyGfRRPsLAW7IXzWE/g4F6OQp+94ob1X48rkjb2gDlqY8T3XVRX
+	NbxyXwcBp+TqMrvVWS7IcR96yaTbOaufsxE4aFHMaY74jNDyx7VpIn5TPZLvTHrABiBNsoJkiZ5
+	Qx+ZGp2UMQqJDrKb6dOwJW8WBRNk=
+X-Google-Smtp-Source: AGHT+IHGreIYzr2bJ/6W0ODmIX4Ny1M/rNgdyZsolUqt32ukNk6xZFUGNGfFW46QzU0yzTgTg2okmGJunKWq7j63Lf0=
+X-Received: by 2002:a17:90b:4d08:b0:2e9:20d8:414c with SMTP id
+ 98e67ed59e1d1-2e9fe62d772mr15300927a91.5.1731761513234; Sat, 16 Nov 2024
+ 04:51:53 -0800 (PST)
 MIME-Version: 1.0
+References: <CAPGdDAmPp80VEZ0TG=cS3QAYKqELHfqChid0wYZ7eLAENFY86Q@mail.gmail.com>
+ <2dcd4763853b4645bab7911482209de6@realtek.com>
+In-Reply-To: <2dcd4763853b4645bab7911482209de6@realtek.com>
 From: Ivan Bulatovic <combuster@gmail.com>
-Date: Fri, 15 Nov 2024 21:04:13 +0100
-Message-ID: <CAPGdDAmPp80VEZ0TG=cS3QAYKqELHfqChid0wYZ7eLAENFY86Q@mail.gmail.com>
-Subject: wireless-regdb: Updated regulatory rules for Serbia (RS) fails to load
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+Date: Sat, 16 Nov 2024 13:51:42 +0100
+Message-ID: <CAPGdDAkCh81SYsZiCM8pEn8hEpsT19H1DkBx5Tr4A5a+uThhhQ@mail.gmail.com>
+Subject: Re: wireless-regdb: Updated regulatory rules for Serbia (RS) fails to load
+To: Ping-Ke Shih <pkshih@realtek.com>
+Cc: "linux-wireless@vger.kernel.org" <linux-wireless@vger.kernel.org>, 
+	"wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
 Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241115_120425_934124_33C7CFAC 
-X-CRM114-Status: UNSURE (   3.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20241116_045154_249749_52522483 
+X-CRM114-Status: GOOD (  10.22  )
 X-Mailman-Approved-At: Tue, 19 Nov 2024 08:41:25 -0800
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -85,21 +92,40 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi everyone,
+Patch works for me Ping-Ke, cfg80211 doesn't return the error any more
+when RS is set.
 
-since commit b44edb2eaf3a917fbd7005f05c6faa202c984152 regulatory.db
-fails to load when country is set to RS with message:
-
-kernel: cfg80211: Invalid regulatory domain detected: RS.
-
-Offending lines are:
-
-1646: (5725 - 5850 @ 80), (24), DFS, AUTO-BW
-1647: (5850 - 5875 @ 80), (24), AUTO-BW
-
-OpenWRT is impacted, but I can reproduce this on Linux also.
-
-Best regards,
+Thanks,
 
 Ivan
+
+
+On Sat, Nov 16, 2024 at 9:30=E2=80=AFAM Ping-Ke Shih <pkshih@realtek.com> w=
+rote:
+>
+> Ivan Bulatovic <combuster@gmail.com> wrote:
+> >
+> > since commit b44edb2eaf3a917fbd7005f05c6faa202c984152 regulatory.db
+> > fails to load when country is set to RS with message:
+> >
+> > kernel: cfg80211: Invalid regulatory domain detected: RS.
+> >
+> > Offending lines are:
+> >
+> > 1646: (5725 - 5850 @ 80), (24), DFS, AUTO-BW
+> > 1647: (5850 - 5875 @ 80), (24), AUTO-BW
+> >
+> > OpenWRT is impacted, but I can reproduce this on Linux also.
+> >
+>
+> I sent a patch [1] to correct this. Could you please give it a try and ac=
+k the patch if
+> it works to you?
+>
+> Thanks.
+> Ping-Ke
+>
+> [1] https://lore.kernel.org/linux-wireless/20241116082417.8720-1-pkshih@g=
+mail.com/T/#u
+>
 
