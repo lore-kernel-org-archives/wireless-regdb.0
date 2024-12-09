@@ -4,80 +4,62 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8281EE77173
-	for <wireless-regdb@archiver.kernel.org>; Mon,  9 Dec 2024 05:43:47 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F7E0E77173
+	for <wireless-regdb@archiver.kernel.org>; Mon,  9 Dec 2024 05:52:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=LvxE9KWeFX/OQsOjGIozVp+veKIzqMmU1Jx+cc8a3is=; b=ZHcGTlSwx6bUZFhJ4pM9VDFZGV
-	rU3FvR1mvUtSPG/yVR3xQsmMrKE6NxAHve/y9LzYuRZHvIiAuilgMYLS/xqNfsZ81TmEIXDN6K08/
-	nFxBxagfMwKjMdHd+z5QOWTCDTjkA3sOImT/Ibw9Kf3+7ArKoMo36j+ocMRXCXh71+FGev7/ye7JQ
-	aI/gE+inJNRLd+8adNazd2saWVnRY4Mi+1KKPJob92SIRy2WoLOwaP+tXuNkbH6mGUMl6ie9acKJc
-	OOq32gmo/zlhvObNTCBG/8f4rvdkGT751wcGHQcX0ZV50jw6XwNRhsa1P32i3UKjok5L2EpTN4PHf
-	Beqlm7mg==;
+	bh=SphdzPXJuA/l8gEy0hqbjDovHVs5UNFcby4/S8/uuHk=; b=nCrCh5J6RpfHBhrbtCM/LJ/qF8
+	43Rw7TJB9+d1CLHoRg6Gp+XCfNOhGgetesSqS7WqjZvkSlR7Vg9Gqp+b5u88m7EFth0MRIrKrwxk0
+	A6a3pChonmEJr1rLe6iCTJDPno7TKVHq//DQKI6f+Q/QvH2coK7HFTKSP8thKla2MNgDFqmWOECrx
+	jd1Ocl+xLgvbyqb4c21tCN1lgG7nCHN+TtpD7AHf5bhgw6/mQWNVnWWzbmEBJ8OUmR3X1YiPe/aBT
+	DneFQnVSzleH8cHrLTimjNW6fCW906Jsg8t+MI0snl7FudXAX+FpRmxf86wcwHV7sz7jtS9EpLBaF
+	dT4oRt2Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKWYa-00000006WZh-3XfT;
-	Mon, 09 Dec 2024 05:43:44 +0000
-Received: from mail-ej1-x629.google.com ([2a00:1450:4864:20::629])
+	id 1tKWgh-00000006XHk-1s9U;
+	Mon, 09 Dec 2024 05:52:07 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKWYY-00000006WYC-1Ri6
+	id 1tKWge-00000006XH2-3WM3
 	for wireless-regdb@lists.infradead.org;
-	Mon, 09 Dec 2024 05:43:43 +0000
-Received: by mail-ej1-x629.google.com with SMTP id a640c23a62f3a-aa69077b93fso21958266b.0
-        for <wireless-regdb@lists.infradead.org>; Sun, 08 Dec 2024 21:43:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1733723020; x=1734327820; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=LvxE9KWeFX/OQsOjGIozVp+veKIzqMmU1Jx+cc8a3is=;
-        b=idk2SqgBbZ2tKyEngm6fFqaKqPpsvPKB0MtjYP1y3KWXHGO6tQRh1IdnwwPsMEYg/Z
-         0Ube+DMV/ip8InnRZPuk//om5rhwkjBkwdTCoVlEQ5X97QAuI8foIffeqwbeiy5+BXOT
-         A8nXXIvAJVY4OFs9ZOH5DXUGuifQ0NVI+wepCSjZ4/uY/lUlTYqIOIPrN/hJbW2CinAa
-         RzmvhUQlaFWG2sWcNHMprFlhOzUW0DwKGk5AXfd7OBPo47euBDyfuQJhT03sbSRRfHPv
-         MWLQBZ5Y8cobdo6i2cRJI0kjj2AssdVuwma02U+us2dRLIAEzrxwCRXqaR3k0I9ZvK/b
-         KuJA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733723020; x=1734327820;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=LvxE9KWeFX/OQsOjGIozVp+veKIzqMmU1Jx+cc8a3is=;
-        b=SAW1ocjgiFSBz73c2r+cYQ6xhVX7fQnt5fm5FAvJsX4pTkXi/Uk1fwgb4mlCse2GsY
-         4nBhRWWNilzDoGVGywI6A+mgOzjlTtN2aBDkdg611MsI/bb5GWsrv0m2ynBZDzctk18A
-         QH/DHluIIWR6JhD8sGqOwsXCOQttn69rKhMs0qov+FLj5XJ8LlPnlD5eINvzDkNy+qAE
-         zpM0oagY4K7la2ZF6j/6GFpjWfywZ1VROYyyuXt2H9QmAml2tsMS6Y0WCC77d75dNfsb
-         QQElKzZRLd2ZVyj6qE5X0C2crRHXm8wH5+4xSu6DovK/xq574xeGIUIZGXSAzXIjJXuN
-         UqMg==
-X-Forwarded-Encrypted: i=1; AJvYcCWRfzqHS8v+l0z48GiSss5hWmnXQ0zYJFxh6wq7uCmaeV1oq2gM4WgaCMeG3bJMzr8X/Z6n6uLTjzd5SXj6dg==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy53vp+AuA4SM8ETpOwRWrpsr98HFrhcYNYS5fcOLh8QVI0ENn/
-	aClPwQ8vDqaJ3k8MexNHkL5Kk/oJhD0Peytxm6/DSgYKM2w0LNTlyc5eR2dfweghcMH5FzX48Kc
-	KHNwmnl9toCwIwU6IzHT072syV8I=
-X-Gm-Gg: ASbGnctlt0tWJIBlgt5d1958VlaZ/eJeFXnWdiVDRxCnt4s+ZqDefM95ahtXr1Pq9NP
-	8jLRAYbjWqiuBtSg+VGuBWvBD6Y6i424=
-X-Google-Smtp-Source: AGHT+IGGePJo+9N4Of4PeXOzooY+Gs9piE89hotQoUrmoId59x6OpJsYaqkpE1HlgA0Tb6qsnt0CfpTgn3festfQL9Y=
-X-Received: by 2002:a17:906:3090:b0:aa6:800a:1292 with SMTP id
- a640c23a62f3a-aa6800a1c31mr295375066b.25.1733723019879; Sun, 08 Dec 2024
- 21:43:39 -0800 (PST)
-MIME-Version: 1.0
-References: <20241021071506.24320-1-pkshih@gmail.com> <CAGb2v64FojDNF+9fhdE5LhMJRYr0Tk9s+uPkVYD=pYsdHLggrA@mail.gmail.com>
-In-Reply-To: <CAGb2v64FojDNF+9fhdE5LhMJRYr0Tk9s+uPkVYD=pYsdHLggrA@mail.gmail.com>
-From: Ping-Ke Shih <pkshih@gmail.com>
-Date: Mon, 9 Dec 2024 13:43:28 +0800
-Message-ID: <CAHrRpu=q-AQyp15iqDyB=6hcPL289BgpQnDRNNDoOEz6FrAFzg@mail.gmail.com>
+	Mon, 09 Dec 2024 05:52:06 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 43A91A40E2B;
+	Mon,  9 Dec 2024 05:50:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65BAEC4CED1;
+	Mon,  9 Dec 2024 05:52:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1733723523;
+	bh=mwiIiqNIdB6mZrBb7/PSo4K5yBcLR0YgHtklPxn8qaY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=AXZhlK9H9t0xiznfxZNu0Fi610flMLslYT5xoPD5edmlqHNhBay/X9FMdp9o8oI1Y
+	 7LtDDVySNDZWcYXEHaZ/xzj2dp1lvPUle6F1w4k8pTegkQQfFB4m89aMFgyYEDKw4B
+	 pWNocdEinK2e0nrXPamsrQ1GqUFwwJlY943WdVGDqy9KnkHjneqnhq9jv9nN0EeeFz
+	 n+B1Kn/aRl8osvUNqUNfjAd431rMC14jrqauUQw+6PkUn4iggBUAZqUjZgk3oyf17q
+	 z62ImsHcqGsfwcL3f3lZU/CjB2GuRO0BX5LF5AH7Sz/eQ6WH0at3iSUcdVx0X5aVcX
+	 6kFkiCz+HwYWw==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 9F0785FD3D;
+	Mon,  9 Dec 2024 13:52:00 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Ping-Ke Shih <pkshih@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+In-Reply-To: <20241021071506.24320-1-pkshih@gmail.com>
+References: <20241021071506.24320-1-pkshih@gmail.com>
 Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Oman (OM)
-To: wens@kernel.org
-Cc: Johannes Berg <johannes@sipsolutions.net>, linux-wireless@vger.kernel.org, 
-	wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Message-Id: <173372352062.3392947.8322619197587000209.b4-ty@kernel.org>
+Date: Mon, 09 Dec 2024 13:52:00 +0800
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241208_214342_381051_A860C1D1 
-X-CRM114-Status: UNSURE (   4.66  )
+X-CRM114-CacheID: sfid-20241208_215204_947277_EE1548BC 
+X-CRM114-Status: UNSURE (   8.21  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -93,15 +75,53 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Chen-Yu Tsai <wens@kernel.org> wrote=EF=BC=9A
+On Mon, 21 Oct 2024 15:15:06 +0800, Ping-Ke Shih wrote:
+> Sultanate of Oman, Telecommunications Regulatory Authority released
+> Technical Specifications for Wideband and Broadband Data Transmission
+> Systems [1].
+> 
+> * 2400-2483.5 MHz
+>   - 100 mW max. mean EIRP
+>   - indoor use only
+> * 5150-5250 MHz
+>   - 200 mW max. mean EIRP
+> * 5250-5350 MHz
+>   - 200 mW max. mean EIRP
+>   - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
+>          corresponding mean EIRP density limits shall be reduced by 3 dB.
+>          (20 dBm is adopted)
+>   - DFS
+> * 5470-5725 MHz
+>   - 1 W max. mean EIRP
+>   - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
+>          corresponding mean EIRP density limits shall be reduced by 3 dB.
+>          (27 dBm is adopted)
+>   - DFS
+> * 5725-5850 MHz
+>   - 2 W max. mean EIRP
+>   - TPC: FWA systems operating in frequency band 5725-5850 MHz shall
+>          employ TPC with a range of at least 5 dB.
+>          (28 dBm Is adopted)
+>   - Outdoor use only
+>     (Since NO-INDOOR flag is not supported by current format, don't add
+>      this entry.)
+>   - DFS
+> * 5925-6425 MHz
+>   - 200 mW max. mean EIRP
+>   - Indoor use only
+> * 57-66 GHz
+>   - 40 dBm max. mean EIRP
+>   - Indoor use only
+> 
+> [...]
 
-> > +       (5490 - 5725 @ 160), (27), DFS
->              ^
->            typo? It says 5470 above.
->
-> I can fix it when applying.
->
+Applied to master in wens/wireless-regdb.git, thanks!
 
-Sorry for the typo.
-Please fix it. Thanks.
+[1/1] wireless-regdb: Update regulatory info for Oman (OM)
+      https://git.kernel.org/wens/wireless-regdb/c/f67f40d00919
+
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
+
 
