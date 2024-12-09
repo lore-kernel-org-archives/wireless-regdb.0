@@ -4,63 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0F7E0E77173
-	for <wireless-regdb@archiver.kernel.org>; Mon,  9 Dec 2024 05:52:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CE7C6E7717D
+	for <wireless-regdb@archiver.kernel.org>; Mon,  9 Dec 2024 15:49:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=SphdzPXJuA/l8gEy0hqbjDovHVs5UNFcby4/S8/uuHk=; b=nCrCh5J6RpfHBhrbtCM/LJ/qF8
-	43Rw7TJB9+d1CLHoRg6Gp+XCfNOhGgetesSqS7WqjZvkSlR7Vg9Gqp+b5u88m7EFth0MRIrKrwxk0
-	A6a3pChonmEJr1rLe6iCTJDPno7TKVHq//DQKI6f+Q/QvH2coK7HFTKSP8thKla2MNgDFqmWOECrx
-	jd1Ocl+xLgvbyqb4c21tCN1lgG7nCHN+TtpD7AHf5bhgw6/mQWNVnWWzbmEBJ8OUmR3X1YiPe/aBT
-	DneFQnVSzleH8cHrLTimjNW6fCW906Jsg8t+MI0snl7FudXAX+FpRmxf86wcwHV7sz7jtS9EpLBaF
-	dT4oRt2Q==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Cc:Date:Message-Id:
+	Subject:Mime-Version:Content-Transfer-Encoding:Content-Type:From:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=D9xNsw0Z721VfzeMUB/1PkzJCgqS1qTp/54moOOD5l4=; b=A5gdmCHKxB4hC5sbtyiRU4cUQh
+	vPIntRpAtr0phyAJu/maqqCTfcljyh6kXHyoN48HTZE/ouvoasHwqPt6EL1ambSQSa6fMSkBfvmRN
+	L4285ishutCL444IvM1fGTEucGzBw4apDmGRdG+/QUsn9NONVi49es1jucsfWnVWTC9CRjl0P0NmA
+	ay2GY4hCFqMiWW5kD0N9AwnF3jIfY6WVur6oJzrW16X8NtdY8ECg7QoeokGlMugqhv6244Sx3o8Cz
+	Z5BTmePqbSw5gAs9I3g+coqM+ZPQtF8Eg0FH4nL9zYmNo5V33Q3oAzRJqhpSVoNJAtrhb6F2onv2h
+	F1Jkw7dQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKWgh-00000006XHk-1s9U;
-	Mon, 09 Dec 2024 05:52:07 +0000
-Received: from nyc.source.kernel.org ([147.75.193.91])
+	id 1tKg0z-00000008RLb-17tR;
+	Mon, 09 Dec 2024 15:49:41 +0000
+Received: from qs51p00im-qukt01072501.me.com ([17.57.155.14])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKWge-00000006XH2-3WM3
+	id 1tKfyl-00000008R1r-3WaM
 	for wireless-regdb@lists.infradead.org;
-	Mon, 09 Dec 2024 05:52:06 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 43A91A40E2B;
-	Mon,  9 Dec 2024 05:50:12 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 65BAEC4CED1;
-	Mon,  9 Dec 2024 05:52:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1733723523;
-	bh=mwiIiqNIdB6mZrBb7/PSo4K5yBcLR0YgHtklPxn8qaY=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=AXZhlK9H9t0xiznfxZNu0Fi610flMLslYT5xoPD5edmlqHNhBay/X9FMdp9o8oI1Y
-	 7LtDDVySNDZWcYXEHaZ/xzj2dp1lvPUle6F1w4k8pTegkQQfFB4m89aMFgyYEDKw4B
-	 pWNocdEinK2e0nrXPamsrQ1GqUFwwJlY943WdVGDqy9KnkHjneqnhq9jv9nN0EeeFz
-	 n+B1Kn/aRl8osvUNqUNfjAd431rMC14jrqauUQw+6PkUn4iggBUAZqUjZgk3oyf17q
-	 z62ImsHcqGsfwcL3f3lZU/CjB2GuRO0BX5LF5AH7Sz/eQ6WH0at3iSUcdVx0X5aVcX
-	 6kFkiCz+HwYWw==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 9F0785FD3D;
-	Mon,  9 Dec 2024 13:52:00 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20241021071506.24320-1-pkshih@gmail.com>
-References: <20241021071506.24320-1-pkshih@gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Oman (OM)
-Message-Id: <173372352062.3392947.8322619197587000209.b4-ty@kernel.org>
-Date: Mon, 09 Dec 2024 13:52:00 +0800
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
+	Mon, 09 Dec 2024 15:47:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dipier.ro; s=sig1;
+	t=1733759236; bh=D9xNsw0Z721VfzeMUB/1PkzJCgqS1qTp/54moOOD5l4=;
+	h=From:Content-Type:Mime-Version:Subject:Message-Id:Date:To:
+	 x-icloud-hme;
+	b=UoUy1K3DRtzGe/vn6duteCCDj8xEAZcxVPk266991Vb5k+PkL5wbmP40k8XhtHO9D
+	 ncQCkTbLbiyThRkHznA1GXdrv13q21jyxYUiggmmvnVutj6WM+fAvSirFIGow1Hk8k
+	 OJIN35VCRwR4TRdumrWa7HVZPVISznm+kdpMt3l24BYX1zWxhG7V11uzNnLx0R694m
+	 S5rAjhLdDNeh5JYroB/Wvg6xjN0FY1ASON2+ai+ofoeC3FvLgKqW59L/h2DJR3WxNL
+	 08XfYD5iPqD7JtKBQl3JFA2w/9QXX5RiiSxCFpNIvGHCJvM9SA5PgO47Wp+sthmDZS
+	 iRsmes7to9m6Q==
+Received: from smtpclient.apple (qs51p00im-dlb-asmtp-mailmevip.me.com [17.57.155.28])
+	by qs51p00im-qukt01072501.me.com (Postfix) with ESMTPSA id 23E6944044C;
+	Mon,  9 Dec 2024 15:47:14 +0000 (UTC)
+From: tina@dipier.ro
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3826.300.87.4.2\))
+Subject: wireless-regdb: Update regulatory rules for Armenia (AM) on 2.4 and 5
+ GHz
+Message-Id: <274D81C2-56C7-4042-96F9-A04A92BEAEFD@dipier.ro>
+Date: Mon, 9 Dec 2024 19:47:02 +0400
+Cc: wireless-regdb@lists.infradead.org
+To: linux-wireless@vger.kernel.org
+X-Mailer: Apple Mail (2.3826.300.87.4.2)
+X-Proofpoint-GUID: UuWCcrbY94N62xca04BbdLA8e3rv5caQ
+X-Proofpoint-ORIG-GUID: UuWCcrbY94N62xca04BbdLA8e3rv5caQ
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1057,Hydra:6.0.680,FMLib:17.12.68.34
+ definitions=2024-12-09_12,2024-12-09_02,2024-11-22_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0 malwarescore=0
+ mlxlogscore=999 bulkscore=0 clxscore=1030 phishscore=0 adultscore=0
+ suspectscore=0 spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2308100000 definitions=main-2412090123
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241208_215204_947277_EE1548BC 
-X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-CacheID: sfid-20241209_074723_952969_26C19B40 
+X-CRM114-Status: UNSURE (   7.50  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Mon, 09 Dec 2024 07:49:25 -0800
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,53 +80,89 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, 21 Oct 2024 15:15:06 +0800, Ping-Ke Shih wrote:
-> Sultanate of Oman, Telecommunications Regulatory Authority released
-> Technical Specifications for Wideband and Broadband Data Transmission
-> Systems [1].
-> 
-> * 2400-2483.5 MHz
->   - 100 mW max. mean EIRP
->   - indoor use only
-> * 5150-5250 MHz
->   - 200 mW max. mean EIRP
-> * 5250-5350 MHz
->   - 200 mW max. mean EIRP
->   - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
->          corresponding mean EIRP density limits shall be reduced by 3 dB.
->          (20 dBm is adopted)
->   - DFS
-> * 5470-5725 MHz
->   - 1 W max. mean EIRP
->   - TPC: if TPC is not used, then the maximum permitted mean EIRP and the
->          corresponding mean EIRP density limits shall be reduced by 3 dB.
->          (27 dBm is adopted)
->   - DFS
-> * 5725-5850 MHz
->   - 2 W max. mean EIRP
->   - TPC: FWA systems operating in frequency band 5725-5850 MHz shall
->          employ TPC with a range of at least 5 dB.
->          (28 dBm Is adopted)
->   - Outdoor use only
->     (Since NO-INDOOR flag is not supported by current format, don't add
->      this entry.)
->   - DFS
-> * 5925-6425 MHz
->   - 200 mW max. mean EIRP
->   - Indoor use only
-> * 57-66 GHz
->   - 40 dBm max. mean EIRP
->   - Indoor use only
-> 
-> [...]
+Public Services Regulatory Commission of the Republic of Armenia has =
+released two amendments to its 2011 Decision =E2=84=96169=D5=86 on =
+Approval of the Procedure for Issuing Permits for the Use of Radio =
+Frequencies.
 
-Applied to master in wens/wireless-regdb.git, thanks!
+1. Amendment =E2=84=96159=D5=86, on permit of usage of radio frequency =
+ranges without permit, released on May 11, 2012, available at =
+https://www.psrc.am/contents/document/4749 (choose language =E2=86=92 =
+HY)
 
-[1/1] wireless-regdb: Update regulatory info for Oman (OM)
-      https://git.kernel.org/wens/wireless-regdb/c/f67f40d00919
+<=E2=80=A6> Based on Article 5, Part 1, Point 1(d) and Point 2(b), =
+Article 6, Part 1 and Part 2, Point 1, and Article 17, Part 5 of the Law =
+of the Republic of Armenia "On Electronic Communication," as well as =
+Article 70, Part 1 of the Law of the Republic of Armenia "On Legal =
+Acts," the Public Services Regulatory Commission of the Republic of =
+Armenia decides:
+To amend Points 4 and 5 of the annex to the decision =E2=84=96169N of =
+April 13, 2011, by the Public Services Regulatory Commission of the =
+Republic of Armenia titled "Approval of the Procedure for Granting =
+Permissions for the Use of Radio Frequencies," by restating them with a =
+new wording. <=E2=80=A6>
+"4. No permission is required for:
+<=E2=80=A6>
+9) The use of broadband wireless access equipment operating in the =
+2400=E2=80=932483.5 MHz radio frequency band with a power of up to 100 =
+mW.
+<=E2=80=A6>=E2=80=9D
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
 
+2. Amendment =E2=84=96295-=D5=86, on permit of usage of radio frequency =
+ranges without permit, released on August 23, 2023, available at =
+https://www.psrc.am/contents/document/11375 (choose language =E2=86=92 =
+HY)
+
+<=E2=80=A6> Based on Articles 33 and 34 of the Law "On Normative Legal =
+Acts," the Public Services Regulatory Commission of the Republic of =
+Armenia decides:
+To amend Subpoint 10 of Point 4 of the annex to Decision =E2=84=96169-N =
+of April 13, 2011, of the Public Services Regulatory Commission of the =
+Republic of Armenia, titled "Approval of the Procedure for Granting =
+Permissions for the Use of Radio Frequencies," as follows:
+"10) For the use of local network equipment operating in the 5150-5350 =
+MHz and 5470-5875 MHz radio frequency bands with an effective radiated =
+power (e.r.p.) of up to 100 mW (only indoors, as well as in airplanes =
+during all phases of flight), utilizing dynamic frequency selection =
+(DFS) and transmitter power control (TPC).=E2=80=9D <=E2=80=A6>
+
+
+Essentially, this two documents define this frequencies as permitted:
+- 2400 - 2483.5 MHz @ 100 mW
+- 5150 - 5350 MHz @ 100 mW with DFS, outdoor usage forbidden
+- 5470 - 5875 MHz @ 100 mW) with DFS, outdoor usage forbidden
+
+However, I am not sure if AUTO-BW option here is required. As far as I =
+know, there is currently no limitation on bandwidth usage in IEEE 802.11 =
+set of protocols in Armenia.
+
+---
+db.txt | 10 +++++++---
+1 file changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index e282e3b..5d5ba22 100644
+--- a/db.txt
++++ b/db.txt
+@@ -81,10 +81,14 @@ country AL: DFS-ETSI
+	# short range devices (ETSI EN 300 440-1)
+	(5725 - 5875 @ 80), (25 mW)
+
++# Source (in Armenian):
++# 2.4 GHz https://www.psrc.am/contents/document/4749
++# 5 GHz https://www.psrc.am/contents/document/11375
++
+country AM: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 20), (18)
+-	(5250 - 5330 @ 20), (18), DFS
++	(2400 - 2483.5 @ 40), (100 mW)
++	(5150 - 5350 @ 160), (100 mW), NO-OUTDOOR, AUTO-BW, DFS
++	(5470 - 5875 @ 160), (100 mW), NO-OUTDOOR, AUTO-BW, DFS
+
+country AN: DFS-ETSI
+	(2402 - 2482 @ 40), (20)
+--=20
+2.45.2=
 
