@@ -4,83 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EFD27E7717D
-	for <wireless-regdb@archiver.kernel.org>; Tue, 10 Dec 2024 03:01:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 019F5E77188
+	for <wireless-regdb@archiver.kernel.org>; Tue, 24 Dec 2024 15:38:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=PuF4KpktRoMjj2LgIzDS0P7FgH2EXyHF2Fregf7Z3v8=; b=KzXEf06GkX68F+J1120bCa8gBw
-	Ffc/MxGnx71P71+s5i+vvQbBPv1QDTZm+DEthi72YM/ylPLRuRROo91AU+wDhGMen1fInTFIltgQN
-	/Ij26pweszwJsRqMrd3OCyL6A1p64OwIE5ttmo0846GRb7AdfpwDbvU1YLIpvLQmSzP5aTDTwjJdW
-	uuJuaAKiFNQiTP2LvS+uKyKiQRSSi6sBreBTXnnIB7YEOedWKJBEhS6Y6YzMnx9G25Ri425fEPLE7
-	m0aqjwbxpATr3vFSSnZGdCoc3ZUe/QvTIriGGEzQ6QKwrCskDt3nyjsjiEwB2SP6zBqPXEel0irYq
-	iKv11d4A==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:MIME-Version:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=iBHrC4Ss9zY2busqHImL1SrchJYSMB8blH021r3lAKE=; b=O5G+bS4ZCSwcTSJyGKQ56NRZXj
+	z0WpEPdWgcZQdqeFDZO4R9n0I7oN8hQNDYlR6uMBE5S9ul1YpZeNNqd6OmC8HyQcToY+1VIAg+vIl
+	9GQTloDrPFaScdgV0JTRKxhuMpmybBWL5LYJtPsj9mVvfKqQmKBcYbeiog5XSruHtd+kRhkGh4dY6
+	iiBfXLbhEQv9uHEPxkogz/qr3ZpfZIH/XY1FxrAZTjdrlUuY79y0YBMI3Lf0P8ofDabrTkkaP+aC1
+	bL3YVeb0zLVtD2hE3VVz9mL5ILYeS0sF/1PE0O6UAnWfuczjLxIgKuVBzlLZ5TyyQe2gSejgbmNd8
+	+7n6o9rQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKqV5-0000000A3kT-3n3W;
-	Tue, 10 Dec 2024 03:01:27 +0000
-Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
+	id 1tQ6z2-0000000CDrJ-3nkN;
+	Tue, 24 Dec 2024 15:38:08 +0000
+Received: from mailtransmit05.runbox.com ([2a0c:5a00:149::26])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tKqUV-0000000A3ff-2qB3
+	id 1tQ6uZ-0000000CDe5-2F3M
 	for wireless-regdb@lists.infradead.org;
-	Tue, 10 Dec 2024 03:00:53 +0000
-Received: by mail-pf1-x42d.google.com with SMTP id d2e1a72fcca58-725db141410so1861824b3a.2
-        for <wireless-regdb@lists.infradead.org>; Mon, 09 Dec 2024 19:00:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1733799651; x=1734404451; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=PuF4KpktRoMjj2LgIzDS0P7FgH2EXyHF2Fregf7Z3v8=;
-        b=BZHNCRbs2temSvfAd2MZW4VhYGgyP3Q3/RNlLOboZ+DP2D2xlIO8VNjO+QT5OUV6QH
-         Jhuw/zftvHz6PznFZQFpk4CUOoK6Yk5UfFQihcXVaTLYhLEMU86apgJX4nHNOUSI3mJS
-         b+S1EKKOrElvElqDsvX/Ovqwr/nJBkC4foTzLGjjljqKbOV7kFyTGX3zaUYp4T7O8+hx
-         V6tYj05PqHMyt/3TIZiElr24q3deFfrV4297CkCZkcog6I3wdjx+PnkMEFz190O60aeC
-         zuvDg7VN78+JcI2PNZ5NxIcIbHsX6J1sT2xMTYsBvb8jXbAMIGvWIPCxbguacDVmHFOH
-         sY8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1733799651; x=1734404451;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=PuF4KpktRoMjj2LgIzDS0P7FgH2EXyHF2Fregf7Z3v8=;
-        b=w2OUB3gupbz0tpySQxR0GwKXLUXgHJ4XPJo48d3NCJVXDL0WR+6znXbvbNkpJKZ7OB
-         EXwmHUanJq8qmCqzw0cvW75xABmz03UMciIrgW7pxT0Wc5wocpz8ontPUp34X5/3JnQd
-         3Hi2ZPzoTzxSlzdl01bDY76zA8uE02bGD1zURTiIzYbbuool11hdmo4qRdNVMMu25yRg
-         9ny83XdTXoDGtE4en7PrWqYYymVwAoJWO+Micc+HHamUqN8RSZ0bsJbAfCEEbRnRjSjE
-         eq0cSc8MrEoRLNQVXi/XqSjny1yipIvgsnZjOqVKXVHRxtEHLd0YhEDYrrrFqMl4IbOZ
-         v2Kg==
-X-Forwarded-Encrypted: i=1; AJvYcCXx5t0tc0HUcyzI3ThVfxMUS4FseFp6/bj13wpMsoguVMheq2FZdFSZvM/drX35gIVAxm0MzXlwXI2pZSkG7A==@lists.infradead.org
-X-Gm-Message-State: AOJu0YxRR8hmJa1AlMF6SY13USuHGoVWlZ/bFYs/L8Yn1zEBAk5syarx
-	saJpdlsgCSmYN4iat5MB/ZwgEdvr1zYBvf3FNjFiM5uKoDy0RxQO
-X-Gm-Gg: ASbGncvmpvWI+8XkH7LwwQ3EOTrfkHxCnEs3D/Xvo3HhGibhJ+hXtNSR+XScxGh1d7g
-	mnkMAzapHEe9ASExKHkQgke1igqNx2MGHXUmS3bm2K+3mwesNlvepLLFqEl1EHm8qiX96gMpATL
-	XGxrPlGTHTaJNOwOhwYEo/BCKIA6obSR3h3pFoQ9/jcZrEMVuLUyp/hWVkfu+nUy8dbHTcfGyIs
-	BQyhZaj9B7XE8WE8jokb5u4SpnAlUNMn5siFCHQPRhyW1tc3Ah7EyC+93N86dObQmQZQ++IguAL
-	DDVCxvePJgxwZ/xxFjca
-X-Google-Smtp-Source: AGHT+IEBvEnR+R0mttxHfe0ZTZil1rWtAnX5H72IFzLjxPlNGuvhgYO8YxBZUPBMPLbHrp3Zz2p9gw==
-X-Received: by 2002:a05:6a00:b91:b0:725:b347:c3cc with SMTP id d2e1a72fcca58-7273cba78b1mr3966391b3a.23.1733799650593;
-        Mon, 09 Dec 2024 19:00:50 -0800 (PST)
-Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-725eab24e05sm3062234b3a.133.2024.12.09.19.00.49
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 09 Dec 2024 19:00:50 -0800 (PST)
-From: Ping-Ke Shih <pkshih@gmail.com>
-To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org
-Subject: [PATCH] wireless-regdb: Update regulatory info for Cayman Islands (KY) for 2024
-Date: Tue, 10 Dec 2024 11:00:37 +0800
-Message-Id: <20241210030037.6380-1-pkshih@gmail.com>
-X-Mailer: git-send-email 2.25.1
+	Tue, 24 Dec 2024 15:33:34 +0000
+Received: from mailtransmit02.runbox ([10.9.9.162] helo=aibo.runbox.com)
+	by mailtransmit05.runbox.com with esmtps  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+	(Exim 4.93)
+	(envelope-from <desu@rainwalker.ee>)
+	id 1tQ6uS-0057KE-Mf
+	for wireless-regdb@lists.infradead.org; Tue, 24 Dec 2024 16:33:24 +0100
+Received: from [10.9.9.72] (helo=submission01.runbox)
+	by mailtransmit02.runbox with esmtp (Exim 4.86_2)
+	(envelope-from <desu@rainwalker.ee>)
+	id 1tQ6uS-0004gd-3B; Tue, 24 Dec 2024 16:33:24 +0100
+Received: by submission01.runbox with esmtpsa  [Authenticated ID (1227212)]  (TLS1.2:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
+	(Exim 4.93)
+	id 1tQ6uE-007NoX-5u; Tue, 24 Dec 2024 16:33:10 +0100
+From: Veronika Baranova <desu@rainwalker.ee>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
+Subject: wireless-regdb: Update regulatory rules for Estonia (EE) on 5GHz
+Date: Tue, 24 Dec 2024 17:33:08 +0200
+Message-ID: <2968514.e9J7NaK4W3@nakatomi>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Transfer-Encoding: 7Bit
+Content-Type: text/plain; charset="us-ascii"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20241209_190052_355486_31CEBD23 
-X-CRM114-Status: UNSURE (   9.22  )
+X-CRM114-CacheID: sfid-20241224_073331_578554_FB078818 
+X-CRM114-Status: UNSURE (   4.96  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Tue, 24 Dec 2024 07:38:07 -0800
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -95,102 +68,44 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-From: Ping-Ke Shih <pkshih@realtek.com>
+Hello,
 
-Utility Regulation and Competition Office, Cayman Islands, released
-Operating Parameters for Wireless Data Transmission (including WiFi)
-Services On 18th November 2024 [1].
-
-Both FCC and EU reference are permitted. Adopt FCC reference.
-
-* 2400 - 2483.5 MHz
-  - Part 15.247
-    * 1 Watt
-      For systems using digital modulation in the 902 - 928 MHz,
-      2400-2483.5 MHz, and 5725 - 5850 MHz bands: 1 Watt.
-
-* 5150 - 5350 MHz
-  - Part 15.407
-    * 250 mW
-      For client devices in the 5.15-5.25 GHz band, the maximum conducted
-      output power over the frequency band of operation shall not exceed
-      250 mW provided the maximum antenna gain does not exceed 6 dBi.
-      In addition, the maximum power spectral density shall not exceed
-      11 dBm in any 1 megahertz band.
-
-      For the 5.25-5.35 GHz and 5.47-5.725 GHz bands, the maximum conducted
-      output power over the frequency bands of operation shall not exceed
-      the lesser of 250 mW or 11 dBm + 10 log B, where B is the 26 dB
-      emission bandwidth in megahertz. In addition, the maximum power
-      spectral density shall not exceed 11 dBm in any 1 megahertz band.
-    * DFS: 5.25-5.35 GHz
-
-* 5470 - 5725 MHz
-  - Part 15.407
-    * 250 mW
-      For the 5.25-5.35 GHz and 5.47-5.725 GHz bands, the maximum conducted
-      output power over the frequency bands of operation shall not exceed
-      the lesser of 250 mW or 11 dBm + 10 log B, where B is the 26 dB
-      emission bandwidth in megahertz. In addition, the maximum power
-      spectral density shall not exceed 11 dBm in any 1 megahertz band.
-    * DFS: 5.47-5.725 GHz
-
-* 5725 - 5875
-  - Part 15.407
-    * 1 W
-      For the band 5.725-5.85 GHz, the maximum conducted output power over
-      the frequency band of operation shall not exceed 1 W.
-
-* 5925 - 6425 MHz
-  - Part 15.407 (but no description; reference [2])
-    * -1 / MHz (12 dBm is adopted)
-      Accordingly, the Commission concludes that the appropriate maximum
-      power spectral density for low power indoor client devices in this
-      band is 6 dB below the limit for access points (or -1 dBm/MHz based
-      on the adopted PSD limit).
-    * NO-OUTDOOR
-
-* 57 - 71 GHz
-  - Part 15.255 (but no power value; reference [3])
-    * 40 dBm
-      The average power of any emission shall not exceed 40 dBm and the
-      peak power of any emission shall not exceed 43 dBm.
-
-[1] https://www.ofreg.ky/viewPDF/documents/2024-11-19-16-28-50-OfReg-WiFi-Permitted-Parameters-V2.pdf
-[2] https://www.federalregister.gov/documents/2020/05/26/2020-11236/unlicensed-use-of-the-6-ghz-band
-[3] https://docs.fcc.gov/public/attachments/FCC-16-89A1.pdf
-
-Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
----
- db.txt | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
+The current values in the database seems to be out of date for the range 5470 
+- 5725, the max power should be 1W instead of 500mW. And 200 mW in 5250 - 5350 
+MHz. Also, V-band is permitted up to 71GHz.
 
 diff --git a/db.txt b/db.txt
-index 24195fcac004..37597f9add41 100644
+index e282e3b..2ada200 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1066,12 +1066,15 @@ country KW: DFS-ETSI
- 	(5470 - 5825 @ 160), (24), DFS
- 	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
- 
-+# Source: https://www.ofreg.ky/viewPDF/documents/2024-11-19-16-28-50-OfReg-WiFi-Permitted-Parameters-V2.pdf
- country KY: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (24), AUTO-BW
--	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
--	(5490 - 5730 @ 160), (24), DFS
--	(5735 - 5835 @ 80), (30)
-+	(2400 - 2483.5 @ 40), (1000 mW)
-+	(5150 - 5250 @ 80), (250 mW), AUTO-BW
-+	(5250 - 5350 @ 80), (250 mW), DFS, AUTO-BW
-+	(5470 - 5725 @ 160), (250 mW), DFS, AUTO-BW
-+	(5725 - 5875 @ 80), (1000 mW), AUTO-BW
-+	(5925 - 6425 @ 320), (12), NO-OUTDOOR
-+	(57000 - 71000 @ 2160), (40)
- 
- # Source:
- # http://adilet.zan.kz/rus/docs/V1500010730
--- 
-2.25.1
+@@ -618,15 +618,15 @@ country EC: DFS-FCC
+ # EE: https://www.itu.int/ITU-D/study_groups/SGP_1998-2002/JGRES09/pdf/
+estonia.pdf
+ country EE: DFS-ETSI
+        (2400 - 2483.5 @ 40), (100 mW)
+-       (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
+-       (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
+-       (5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
++       (5150 - 5250 @ 160), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
++       (5250 - 5350 @ 160), (200 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
++       (5470 - 5725 @ 160), (1000 mW), DFS, wmmrule=ETSI
+        # short range devices (ETSI EN 300 440-1)
+        (5725 - 5875 @ 80), (25 mW)
+        # 6 GHz band
+        (5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=ETSI
+        # 60 GHz band channels 1-4 (ETSI EN 302 567)
+-       (57000 - 66000 @ 2160), (40)
++       (57000 - 71000 @ 2160), (40)
+
+
+Related links from Estonian Consumer Protection and Technical Regulatory 
+Authority:
+https://www.ttja.ee/uudised/ttja-ja-keskkonnaagentuur-teevad-koostood-et-peatada-wi-fi-haireid-riiklikes-ilmaradarites [20.02.2023, in Estonian]
+https://www.ttja.ee/eraklient/side-ja-meediateenused/raadioside/wifi-seadmete-kasutus [in Estonian]
+https://www.riigiteataja.ee/aktilisa/1170/5202/4018/MKM_m15_Lisa6.pdf [in 
+Estonian]
+https://www.ttja.ee/ru/chastnoe-lico/svyaz-i-media-uslugi/radiosvyaz/
+radiooborudovanie [in Russian]
+
 
 
