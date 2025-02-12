@@ -4,70 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 65EFDC0219E
-	for <wireless-regdb@archiver.kernel.org>; Wed, 12 Feb 2025 09:04:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id A0063C0219E
+	for <wireless-regdb@archiver.kernel.org>; Wed, 12 Feb 2025 09:04:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l1i2fO0eLZTsype5YWgJ4YqWhb1ZsVk+/lhkQRpeLpg=; b=lJ1dJZpgUyWf7n
-	/Ja6MIqnRMPvXAnlDjJC6QObXbUjWNVr7ky5+L/o6jNWC2WppDYuwQgk4brmH+wec92etzpcZrANb
-	6oaAHThNz971+TResZMKBwOAwZnPz3ksDCvWFvgkHIljeiicq8nt/2FAbHJZ+SS8x/bIkXkXOrcoI
-	bLJIyS6W10/aXnbohTByw39SVbjJaL8YWSln8n5cceo1HiVLlXQYzSWaIAx7RrIwhrjXIegQ34gqK
-	Jighahrlf4itO1uz5POqGvpFq2cwelsktUdyARSgpNNOiAzthxZYeo2HreHf+UBpfjXtansnHUGR4
-	ach6R7DnBJw5oILe4UDA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+AWP5N2XIugKbOhpDKDsyEhuWv/27XGFo/qT0xqJCRo=; b=zT0MsUuePaPVrOc37mapYzPM1U
+	6417JFA0MAOrD64fJYMuw5BLH4FyEQY0tiEVHfWmlw9MMsrETcluevqIbxbo7TEOFN2lthVrrKG/c
+	tWatebj116Yt99TlfyMAQcVq6+1k8b3OioCHGGQEh1Pgrhn4CzSOQfc9VIdNfXLhI7iOmKiMrkhIb
+	+2/SZLVST9kbU9+f7bX/UC797v6PmxwJO0mPLyqUl5kXWxPlZqoT/PH6p8wrCiW0OcU1U35rylgXK
+	Ss3E6CrDZ2RKOvHtcMXY4dDkn7KwEex7X/CW+7nhgQeh622F607URe2ZoHzYPFeiU0elKSww/xHrk
+	expHlDBQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti8fT-00000006iF0-3Zcu;
-	Wed, 12 Feb 2025 09:04:27 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1ti8fd-00000006iIf-1HfJ;
+	Wed, 12 Feb 2025 09:04:37 +0000
+Received: from dfw.source.kernel.org ([139.178.84.217])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1ti8Xr-00000006h3H-2ZG7
+	id 1ti8Z2-00000006hCy-3l3Y
 	for wireless-regdb@lists.infradead.org;
-	Wed, 12 Feb 2025 08:56:37 +0000
+	Wed, 12 Feb 2025 08:57:50 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 709A15C4D71
-	for <wireless-regdb@lists.infradead.org>; Wed, 12 Feb 2025 08:55:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id ABBB3C4CEE2
-	for <wireless-regdb@lists.infradead.org>; Wed, 12 Feb 2025 08:56:34 +0000 (UTC)
+	by dfw.source.kernel.org (Postfix) with ESMTP id BD8C55C463E;
+	Wed, 12 Feb 2025 08:57:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id DF331C4CEDF;
+	Wed, 12 Feb 2025 08:57:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739350594;
-	bh=9iY0bTPEiF6cgKBOM/MVgOB4IJr80XFYsNHuBio+2Y4=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=F/m2G+WdqLfqEQQ6StrAfP77Dw2q85o7IEQrG46gme/yFirCnty0XTr/okfr72e4W
-	 z6GyAuoFQFeWM4bjU7lNWHkY5XZvcdY22hP5YhTNFWWmj7EWPy8N+y5Jk6hOcnSUqq
-	 /AKW3fSRiR1ewC0tJrhdHCnPFJlJQVFFNT7c7muz+K8H+NKbK+eEGl7FFekHl0mSX5
-	 JiuI01PqtqgDjtEwVaN8X/Mb40CnMF5M6CYVmCexcN/BXoDJd85m56V8a0MUdcIrQP
-	 DKx6udUrTnSfo902X4mRjM3f9F1otRcfX+GszCKukxEzxWxV4/t3T3jeZ9eXh4jIvw
-	 8Xt4+cSvZx5CA==
-Received: by mail-lj1-f171.google.com with SMTP id 38308e7fff4ca-307c13298eeso6082051fa.0
-        for <wireless-regdb@lists.infradead.org>; Wed, 12 Feb 2025 00:56:34 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AJvYcCVxQHPfJfwzvkI+WeeEpBQ/I1V3I9p/0XY2uFE8sDxr915BPo/B6UVrLhxmZ0C2UQcWSRjNs8O0gvaJZdnXgg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YxBqu+rtFgTKf7o4UiVdOCjHqNFCnEZgIKoxRYdjcH+iHtqbP0H
-	ESTIHDN+53jTX+AlhY4rACD7IZj9/FRWyfBSMr2qCJUs4SPZad9lt+TGYsg7JZh5Qvif5B6Rjid
-	Lvjz6i9k8HjTNwgZOTQbFEpcr8Os=
-X-Google-Smtp-Source: AGHT+IEPaeahhI9AP0YU7LtJNx1HreZhGiSsK7NEuLN3kYoKO5diqb9wNh5cPHYYg986jwNFMJmgi505lY4XRpsuti8=
-X-Received: by 2002:a05:651c:2101:b0:302:251a:bcfe with SMTP id
- 38308e7fff4ca-30904592604mr6901811fa.6.1739350593019; Wed, 12 Feb 2025
- 00:56:33 -0800 (PST)
-MIME-Version: 1.0
-References: <20250129112554.27296-2-jakob.riepler@paranoidlabs.org>
-In-Reply-To: <20250129112554.27296-2-jakob.riepler@paranoidlabs.org>
+	s=k20201202; t=1739350668;
+	bh=AVqaqDgKTBD9UCgA5nDwYKhma1UIFvgSO+jt9SHCNsI=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=cucnSEtCrn4bQMRCOzy6PRgEl4x1MupJwdAHyG6G6y6u/+mNm3aX0bFbhYQj2QVDp
+	 WHGqW80jR5JT0p4cB9eBaxgFZJ0K2mgN7llgZ2c0q0FZkgcal21HK4ae3dvaIpeSqY
+	 OCHgBvaqW6Ssf9cS2OxQfu6u+wWS70/+nPv+BZMOaNe2xvF03HXF6TM0Uee18nnAEi
+	 vqBtCJHzAjBlPkf8IL9ItDHXfwuHrgkxFl8ECUsBzXTUZMPSorUsEh1V7HxJPzSyRf
+	 iyBvGbQ5D8CwuCzF1SIbG70gaRJZlRoRU60d1D84kfiC6grf3Wd0GiNY8mqm5NI0ds
+	 Nk+SIEvD231VQ==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id EFA255FB64;
+	Wed, 12 Feb 2025 16:57:44 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Wed, 12 Feb 2025 16:56:20 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67SbKbci+1MQH=ebVcf2oFUg6n0NxZB9jjcwMxsS2sJqg@mail.gmail.com>
-X-Gm-Features: AWEUYZnat1IPN8e4uzhrgq_hXC3ByJc5btgg0RyctcTJDpVG4xtEfKmwQ2UBeHc
-Message-ID: <CAGb2v67SbKbci+1MQH=ebVcf2oFUg6n0NxZB9jjcwMxsS2sJqg@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory rules for Austria (AT)
-To: Jakob Riepler <jakob.riepler@paranoidlabs.org>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: linux-wireless@vger.kernel.org, 
+ =?utf-8?q?Robert_J=C3=B6rdens?= <rj@quartiq.de>
+Cc: wireless-regdb@lists.infradead.org
+In-Reply-To: <20250125011210.56371-1-rj@quartiq.de>
+References: <20250125011210.56371-1-rj@quartiq.de>
+Subject: Re: [PATCH] wireless-regdb: Permit 320 MHz bandwidth in 6 GHz band
+ in ETSI/CEPT
+Message-Id: <173935066497.2471378.13516689980592599167.b4-ty@kernel.org>
+Date: Wed, 12 Feb 2025 16:57:44 +0800
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250212_005635_764559_5088C51E 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20250212_005748_987404_C507C72D 
+X-CRM114-Status: UNSURE (   5.85  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -79,84 +74,28 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jan 29, 2025 at 10:06=E2=80=AFPM Jakob Riepler
-<jakob.riepler@paranoidlabs.org> wrote:
->
-> According to the Austrian "Frequenznutzungsverordnung" Attachement 2
-> page 404
-> (https://www.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40251378/II_61_2023_=
-Anlage_2.pdf),
-> Austria extended the usable range according to the EU SRD Band 75a (Imple=
-menting
-> decision 2019/1345, current consolidated version:
-> https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=3DCELEX%3A02006D0771%=
-2801%29-20220210&qid=3D1738145465756)
->
-> This probably applies to most other countries that are part of CEPT
-> and/or EU but I'm not good enough with international law to be sure
-> about others.
-> It might be worth checking and updating this for many more countries.
+On Sat, 25 Jan 2025 02:12:10 +0100, Robert Jördens wrote:
+> This increases the allowed bandwidth from 160 to 320 MHz for the
+> 5945-6425 MHz band to support 802.11be (Wi-Fi 7) EHT-320 for the
+> ETSI/CEPT harmonized countries (EU + CH/LI/NO and TR).
+> 
+> Previously the bandwidth limit was set to 160 MHz to match 802.11ax
+> (including the 6 GHz extension called Wi-Fi 6e). This limit is not
+> supported by the current regulatory documents and should be relaxed to
+> 320 MHz.
+> 
+> [...]
 
-Thank you for the information. Based on previous review, I believe each
-country still publishes their own rules, even though they are based on
-the EU's harmonized rules. Given that most countries publish them under
-their official language, I think we would have to rely on local users
-to provide updates, instead of me digging through websites in foreign
-languages.
+Applied to master in wens/wireless-regdb.git, thanks!
 
-ChenYu
+[1/1] wireless-regdb: Permit 320 MHz bandwidth in 6 GHz band in ETSI/CEPT
+      https://git.kernel.org/wens/wireless-regdb/c/6c7cbccaee12
 
-> This also updates two outdated links (the RTR one was a 404, the CEPT
-> one redirects with a warning that this link wil stop working).
-> Specifically the CEPT one might need updating for all other countries as
-> well (also the link now seems to refer to a newer version of the document
-> than the originally referenced one. v2.2.1 is from 2021 and was updated
-> to include the 66-71GHz range as well).
->
-> Signed-off-by: Jakob Riepler <jakob.riepler@paranoidlabs.org>
-> ---
->  db.txt | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index e282e3b..8a5c0bd 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -114,8 +114,8 @@ country AS: DFS-FCC
->  #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/T=
-XT/?uri=3DCELEX:02005D0513-20070213
->  #  EU decision 2006/771/EC: https://eur-lex.europa.eu/legal-content/EN/T=
-XT/?uri=3DCELEX:02008D0432-20080611
->  #  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/=
-TXT/PDF/?uri=3DCELEX:32021D1067&from=3DEN
-> -# Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/downloa=
-d/25c41779-cd6e/Rec7003e.pdf
-> -# AT: https://www.rtr.at/en/tk/Spektrum5GHz/1997_bmvit-info-052010en.pdf
-> +# Harmonized CEPT countries (February 2021): https://docdb.cept.org/down=
-load/25c41779-cd6e/Rec7003e.pdf
-> +# AT: https://www.rtr.at/TKP/was_wir_tun/telekommunikation/spectrum/band=
-s/1997_bmvit-info-052010en.pdf
->  # AT: acceptance https://www.ris.bka.gv.at/Dokumente/BgblAuth/BGBLA_2014=
-_II_63/BGBLA_2014_II_63.pdfsig
->  country AT: DFS-ETSI
->         (2400 - 2483.5 @ 40), (100 mW)
-> @@ -126,8 +126,8 @@ country AT: DFS-ETSI
->         (5725 - 5875 @ 80), (25 mW)
->         # 6 GHz band
->         (5945 - 6425 @ 160), (23), NO-OUTDOOR, wmmrule=3DETSI
-> -       # 60 GHz band channels 1-4 (ETSI EN 302 567)
-> -       (57000 - 66000 @ 2160), (40)
-> +       # 60 GHz band channels 1-6 (ETSI EN 302 567)
-> +       (57000 - 71000 @ 2160), (40)
->
->  # Source:
->  # 'Item' in the comments below refers to each numbered rule found at:
-> --
-> 2.47.1
->
->
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
+
 
