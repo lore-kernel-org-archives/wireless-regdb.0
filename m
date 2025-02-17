@@ -4,64 +4,56 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 14A56C021A4
-	for <wireless-regdb@archiver.kernel.org>; Thu, 13 Feb 2025 09:35:56 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CD12C021A9
+	for <wireless-regdb@archiver.kernel.org>; Tue, 18 Feb 2025 01:54:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=I6JrKcSUb6WDczJV8ag67aIUSUqStX+xeLQDh2eurjI=; b=mg4CuWp7qlOrIPk4Hj2uxpBYM+
-	l1u/BCVZ0GY3Y+q2FfVP11PbEVP7/f4CrQz+Ag6eKutDbBrj5nfb6fGbz9FXHBci1DzdtRdRafnEK
-	EE1XYXfGNvFJHMUnBDt+BCHX5dE4AbBviXqj4JRuRPMjotEB39qEB+61K+kEVLMXRWD3sjXxkbByP
-	HBGA45GWfPK47zx6KVwe568IVG1sD4K3gmG0I+IwdkhP3ycKNV/QTB7dufYaUWk+qkgNOU5k6e2a6
-	nTkHk7eXAtnceQ6cIXuApUqvqpcgnTkOgqS/FKQ4LRNjxc2spTsNMPcBiPzrESbqNqupuNhXLPwZM
-	HYjeUmYA==;
+	Content-Type:Subject:From:Cc:To:MIME-Version:Date:Message-ID:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=EqjaxkSMH6a14BIcts9S+GvzQ/owur+zJ/UQJTqvW0M=; b=TCRxbN8M/BwJJ5XN4PeYmEE9IB
+	MhpWfWreJokuEr1lRWmOXssNsj+ECVsrW7WwKombm03BMWvFi8h0Dc2ltPfdw4D8NsNelXwymCaOL
+	NvDHjLqFqM9yxtgGVc5UAaWfyssUz6CvZeysgrvAY6WU9z3E2dSB21mRKQBhT5hHnydy+wb3goEj8
+	XA36xkPHA0BuWdCo7Zl3WjL2oDtcA/HYaMz7xFn4gq3/Pxb7R7v9cDUGm4zetkj81VQyCuhAvOP9K
+	2RPTiyv+01VLDhpdCZtWGsukIlLz2NqmRlxgftXJBmk75qMdkzK8zV8xpmWVSU0N++K0iK2v53Wis
+	SKxkzjEw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiVdQ-0000000AUYo-49N2;
-	Thu, 13 Feb 2025 09:35:52 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
+	id 1tkCoP-00000006TSj-2TaG;
+	Tue, 18 Feb 2025 01:54:14 +0000
+Received: from mobintestserver.ir ([138.199.196.29])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tiVbD-0000000ATzN-3dFS
+	id 1tk7fF-00000005syH-16h2
 	for wireless-regdb@lists.infradead.org;
-	Thu, 13 Feb 2025 09:33:37 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id 4DAA8A41F7B;
-	Thu, 13 Feb 2025 09:31:48 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2F912C4CEE2;
-	Thu, 13 Feb 2025 09:33:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1739439213;
-	bh=lTlb+V8ErFDBNECiQ8dYQrHNPQVFcjjaKQK3OXzWBJc=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=aKKxVzeMqCnJYPPDiL5fVGUs2VRQ0q/98Wmzx4WEu/hiFvDF2oqLANIv2xUlO3KJJ
-	 /G2i/BkmPJ21TZoKaUKvTWihPul3b/knxVD7oX267jR4R+l8wbWtpFbZe4ZdT4N1kK
-	 iNTgb4z6q6RoXm6m4OB8Lh4Wm1gx5X4exev0bzrd1+X+U7zYzt/pWvLBRvqu0ufN+O
-	 nVhOLGL+N6bDYzx/tdD+sX/zJfhpkX3fF7vPlfQcZ29v8cTPzf7lrbbY9vuo+V1olD
-	 Bug8E296+Dyw0UyuGw8KIEqlNYK4ndyPHEZ66Ztj52zlamXtxYm7Xw1FAFmTCMq+Wf
-	 sHRnGvwKuluNg==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 112105F9B4;
-	Thu, 13 Feb 2025 17:33:30 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-In-Reply-To: <20250213011827.4528-1-pkshih@gmail.com>
-References: <20250213011827.4528-1-pkshih@gmail.com>
-Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for Cayman
- Islands (KY) for 2024
-Message-Id: <173943921003.2910806.8495759400350357844.b4-ty@kernel.org>
-Date: Thu, 13 Feb 2025 17:33:30 +0800
+	Mon, 17 Feb 2025 20:24:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; s=dkim; bh=6TFSCyZPa9K3TSA
+	tbvQ0bWAA1mUMGmPtjART2Y+XAk0=; h=subject:from:cc:to:date;
+	d=mobintestserver.ir; b=X9q3tq6+EhfufyB7cyOR1fIjnsO1oULcZtREr64ojG5Npw
+	3Q8oMQnliaS04tzOhwnrejGyqUqE8gInXASqxMUZ5I87UrghwUilapJlXq0S58atmymlXq
+	tEFCMahedyfVmZIDJ8P6B9xaTjdY0x1gQ22A2HT+GUU9MoVbZC3IJ8NcfH6HnIn7nTA1A6
+	2EfJ4I9tU3mPjbl1tvleMFEeVyVhnRLQS7NUuTN+IJo5qD8y6r4uA2bWWRI7YAChtpwdnS
+	9EKxXDRqiHzq5RiiIkUNOeFtpafFHWjEGR+bJsSL6qsc7YKzR+ZnbFHIRQdH2c2Ol1a0AX
+	VPaiB2StwBBclxIw==
+Received: by mobintestserver.ir (OpenSMTPD) with ESMTPSA id b183fba8 (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO);
+	Mon, 17 Feb 2025 20:24:20 +0000 (UTC)
+Message-ID: <c9ccf5ba-c091-45c4-9283-970bfa4f1afe@mobintestserver.ir>
+Date: Mon, 17 Feb 2025 23:54:14 +0330
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
+From: Mobin Aydinfar <mobin@mobintestserver.ir>
+Subject: wireless-regdb: Update regulatory rules for Iran (IR) on both 2.4 and
+ 5Ghz
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250213_013335_971191_408E619E 
-X-CRM114-Status: UNSURE (   4.54  )
+X-CRM114-CacheID: sfid-20250217_122425_608870_EB086066 
+X-CRM114-Status: UNSURE (   5.18  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Mon, 17 Feb 2025 17:54:12 -0800
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,28 +68,23 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Thu, 13 Feb 2025 09:18:27 +0800, Ping-Ke Shih wrote:
-> Utility Regulation and Competition Office, Cayman Islands, released
-> Operating Parameters for Wireless Data Transmission (including WiFi)
-> Services On 18th November 2024 [1].
-> 
-> Both FCC and EU reference are permitted. Adopt FCC reference.
-> 
-> * 2400 - 2483.5 MHz
->   - Part 15.247
->     * 1 Watt
->       For systems using digital modulation in the 902 - 928 MHz,
->       2400-2483.5 MHz, and 5725 - 5850 MHz bands: 1 Watt.
-> 
-> [...]
+Hi. I checked the wireless-regdb for Iran Wi-Fi frequencies and It 
+doesn't have any source. I checked the local regulatory docs about WAS 
+and looks like the regdb doesn't comply to it.
 
-Applied to master in wens/wireless-regdb.git, thanks!
+The official link is 
+https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968f-0050569b0899 
+which is inaccessible from outside of Iran.
 
-[1/1] wireless-regdb: Update regulatory info for Cayman Islands (KY) for 2024
-      https://git.kernel.org/wens/wireless-regdb/c/39b47ea61848
+A mirror version is hosted by me: 
+https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-doc.pdf
+(The relevant table is in Page 8, The document is in Persian).
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+A translated version of mentioned table is here: 
+https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-table.ods
 
+I'm looking to update the regdb but I don't know much about Wi-Fi 
+frequencies, So I sent this message as a call for help.
+
+Best Regards
 
