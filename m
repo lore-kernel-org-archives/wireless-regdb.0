@@ -4,58 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4D77FC021AA
-	for <wireless-regdb@archiver.kernel.org>; Tue, 18 Feb 2025 11:11:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43365C021AA
+	for <wireless-regdb@archiver.kernel.org>; Wed, 19 Feb 2025 00:25:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Subject:References:In-Reply-To:Message-ID:Cc:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=J6q5Z6fDtJn6BBS+T7U1DdO17HL5vyinICaaufLicu8=; b=LpOFu64goKxxKcf6qq21s9Fuz/
-	HS3jnaAe1BDlF7QHNQURzr9lGUm/ZGfTRlR7P4s2E7nOsqObujPuJsmgC46/ZA3bvfLU1ADa+bPy0
-	YlRYYOPgh3wSmdazq/Zn12vhgX1N9eiyjIuJYMQuATDhgwNc6L3D2DxSIY0NlWtN6xxfQISIXA8ey
-	2naqrqp7+g4E0N/pZNA+nc5SObUWPGl6lzLgvv35+mNQSHrDNNL+/soguZeix+LKHffhiQ9ABLX+/
-	Nrsa+xXM9j++kCERf3lCnoPCFQ8cDq3Gna2lEtc32kv8rePX2lk+3B+fCr9Bjf+JEgCRb+VK0cUs4
-	xJ+Eux4A==;
+	bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=; b=4GP+QOn63jwr9BiRwo4r9EBmIT
+	z+1QDI173gCZY8qnIMthzo1vAqVhittCim/oMx6S08QVu1lnO18PSn6xHaIGciRS0JRFT6FxVoJO7
+	+cItFifiePjAvs1tc2VafXhzTjp5lu+m3/aDs1MYH2hL6gg551vOfmn7VqKHeWp6xhnWipjzR60iM
+	x9IeO0WTvefSEJlc3qrchbAogo3ynrf8wm9x2D3zHUF2rHwzyAr7QpCcZ5Sc5++Ln5LuyqM3MNdC9
+	WcZ3tf3EpGAjuGruetI9B3ECi39L0AnKH5TGlVwUByiCuyDqgIFdJOy95DHapQ8Ps6VuIA3ZzgOhN
+	PdWyuS3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkLVc-00000007tEi-309Y;
-	Tue, 18 Feb 2025 11:11:24 +0000
-Received: from mobintestserver.ir ([138.199.196.29])
+	id 1tkXtq-0000000ALki-1GTL;
+	Wed, 19 Feb 2025 00:25:14 +0000
+Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkLVZ-00000007tD0-2KRQ
+	id 1tkXtn-0000000ALkF-1QRo
 	for wireless-regdb@lists.infradead.org;
-	Tue, 18 Feb 2025 11:11:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; s=dkim; bh=J6q5Z6fDtJn6BBS
-	+T7U1DdO17HL5vyinICaaufLicu8=; h=subject:references:in-reply-to:cc:to:
-	from:date; d=mobintestserver.ir; b=Oj1ckdEEMEPqZ8o2klEJbrewgCUk5noiRQl
-	KovWANZmgyD/DnGf7lz9llqjbfimq+5GzBK86t0hFpumwJ2aWulhi0hwllhtjiFYAiaY5X
-	t4Ppyq7A0euJChk1KZUih8v4EW5cvMpC/MnzkZKXNpmbKbYnRrmiSD3cdWTizpJMYXfYOE
-	CKeCu98WsW4Qgx/1LYAn4YyeSPovU8YrSoWSwcHBMwJgs6XiLTt2guxTMXbSWj9rVGMDMW
-	4d19mEWvUJRQxFnYCHksp/Ja/RX/nzzZwbKVp+D7G4XX/kR8VBgX9CoMzkGJ7H6a6XuFjD
-	cdjAdZK3eixqpbaT9AHmbMD+Urg==
-Received: by mobintestserver.ir (OpenSMTPD) with ESMTPSA id 9d7a8db4 (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO);
-	Tue, 18 Feb 2025 11:11:18 +0000 (UTC)
-Date: Tue, 18 Feb 2025 14:41:12 +0330 (GMT+03:30)
-From: Mobin Aydinfar <mobin@mobintestserver.ir>
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: wens@kernel.org, linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org
-Message-ID: <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
-In-Reply-To: <20250218025957.13818-1-pkshih@gmail.com>
-References: <20250218025957.13818-1-pkshih@gmail.com>
-Subject: =?UTF-8?Q?=D9=BE=D8=A7=D8=B3=D8=AE:_[PATCH]_wireless-r?=
- =?UTF-8?Q?egdb:_Update_regulatory_?=
- =?UTF-8?Q?rules_for_Iran_(IR)_on_both_2.4_and_5Ghz_for_2019?=
+	Wed, 19 Feb 2025 00:25:12 +0000
+Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-abb75200275so507291366b.3
+        for <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2025 16:25:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1739924709; x=1740529509; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=;
+        b=jkcqwfS8PlX8Z6bGJMDT9IVaND7tkhmuG4IAggvpIUVWk+z45WVfv4VCfgySFAHPF2
+         PG/rUQtOlr02MA2vp4O6vGygo4LVWROa7ruuF10nIbqNw1n330B/9jsQZ7rP1Bneo+gc
+         yJnynMUCmqCwlMD5z4i6WKqPlqmbCEQYWCV+nc22tP9m5/gHZwa9I2Pbi6txLslosWBO
+         gdx5vsjG2AvkO5JK6QFno8lfODb1BaBn/tZH6XB143WeO8U5boHplvP6x0auMvGmPgJ8
+         ychOaCKgPhK03tXHc6E+soi4OqKJrrw/92kzbzPhPUX+Pk5NjKj3cJLPzxR8ntNXxXr4
+         6oxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1739924709; x=1740529509;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=;
+        b=Ke41DzIMhOYY4BdKRT+BvVxrjOxYqwyUOpF54q6xtNv1nMx00bLfsEFWoZ8ljnpQM6
+         bpNhOm8X0A+o2kS0AhyP9adulC0guIIbhGoAPCDXDu0/3tAl49zzAwF8kHChEpkvL5lA
+         dNCKnWSeoTVze5ye5uSeZUIzFBn8yErwDf4mTFVnMrLQedeBpIsY9NTE6q/5KimZkWak
+         5Sm3Rv2mZvkI8uHQSQL1tk4ig74eu5KCfNBxlOeOUFlQdqfY5unRcmpBVn0BjYpj5jCn
+         1MD3Z+8t2JtnpWowTQDo2S7Puxg7T+o2/TqFZaOrHONSfZGlCuaBThAYh6pzYlOxRybT
+         Ew8Q==
+X-Forwarded-Encrypted: i=1; AJvYcCVfNj7yMAaCejjQKNH2k8dA0kJALQIOYLszc8gtlWIIucS/I1iBTxG+imk5/d+OYC+fhBBudf1vrOWchmrsyw==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yy25mtaekMD0WTY5KR1FQjYVQ1hkp37VAlTiZTMMCXAFH2GQFTX
+	j4vN3N4Ni4WcIiN2JRzKToWvXvB3/pYz6k9G8B2Ana/Oh8BJppbUksBSsWXuBsynuN8IrHugxd0
+	+gjXiRrvGEmcfAQQSdS1pIlIKnQ0=
+X-Gm-Gg: ASbGncs6/HubPvek2RaIjYvaZn6E60sTkuQ2sfEXrjmDNXOG0PZvjNjcwaz2E9g7eC+
+	Ht7LHUA/y+Kd+SgCkqEsyI2+VjW0H9kJVCkpZpBUe59XAnC+xAoBmkzkfm5LuzIeBheLySjEC
+X-Google-Smtp-Source: AGHT+IH/eRR+jHwglhsHt7CzzanpkgEslZqXG2/Nd6MIcEZbE9Rc6okmt7/3o1ZBvkjMnyoEp1P+NF9j/633VosvxnA=
+X-Received: by 2002:a17:907:7b8b:b0:aa6:7737:199c with SMTP id
+ a640c23a62f3a-abb70b1f29bmr1591523566b.15.1739924709310; Tue, 18 Feb 2025
+ 16:25:09 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8; format=flowed
+References: <20250218025957.13818-1-pkshih@gmail.com> <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
+In-Reply-To: <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
+From: Ping-Ke Shih <pkshih@gmail.com>
+Date: Wed, 19 Feb 2025 08:24:58 +0800
+X-Gm-Features: AWEUYZlVZBxj6AnTShq8nRpf9OMSgEmG2Ug6PpgLVdF15aiALjJJO9rGTHrKMhg
+Message-ID: <CAHrRpu=kD7TdyKfD+MNFjFv2jRqfOS5wPzCsKa2O4hFnu8n80w@mail.gmail.com>
+Subject: =?UTF-8?Q?Re=3A_=D9=BE=D8=A7=D8=B3=D8=AE=3A_=5BPATCH=5D_wireless=2Dregdb=3A_Update_regulat?=
+	=?UTF-8?Q?ory_rules_for_Iran_=28IR=29_on_both_2=2E4_and_5Ghz_for_2019?=
+To: Mobin Aydinfar <mobin@mobintestserver.ir>
+Cc: wens@kernel.org, linux-wireless@vger.kernel.org, 
+	wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-X-Correlation-ID: <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
-Read-Receipt-To: mobin@mobintestserver.ir
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_031121_895457_9BE08E44 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20250218_162511_399616_7CA03741 
+X-CRM114-Status: GOOD (  18.32  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,97 +94,98 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-=DB=B1=DB=B8 =D9=81=D9=88=D8=B1=DB=8C=D9=87 =DB=B2=DB=B0=DB=B2=DB=B5 =DB=B0=
-=DB=B6:=DB=B3=DB=B0:=DB=B3=DB=B8 Ping-Ke Shih <pkshih@gmail.com>:
+Mobin Aydinfar <mobin@mobintestserver.ir> wrote:
+>
+> =DB=B1=DB=B8 =D9=81=D9=88=D8=B1=DB=8C=D9=87 =DB=B2=DB=B0=DB=B2=DB=B5 =DB=
+=B0=DB=B6:=DB=B3=DB=B0:=DB=B3=DB=B8 Ping-Ke Shih <pkshih@gmail.com>:
+>
+> > From: Ping-Ke Shih <pkshih@realtek.com>
+> >
+> > Decision No. 4004-01DEC-CRA, 8th Edition - February 2019,
+> > Radiocommunications and Regulatory Organization.
+> > General radio license for the use of parts of the frequency bands
+> > 2400-2483.5 MHz, 5150-5250 MHz, 5350-5250 MHz, 5470-5725 MHz, and
+> > 5850-5725 MHz in radio access networks. [1]
+> >
+> > * 2400 - 2483.5
+> >   - 100 mW e.i.r.p
+> >   - 10dBm in every 1Mhz
+> > * 5150 - 5250
+> >   - 200 mW e.i.r.p
+> >   - 10dBm/MHz per 1MHz bandwidth or -6dBm/25kHz per 25kHz bandwidth
+> > * 5250 - 5350
+> >   - 200 mW e.i.r.p
+> >   - 10dBm/MHz per 1MHz bandwidth
+> >   - DFS
+> > * 5470 - 5725
+> >   - 1000 mW e.i.r.p
+> >   - 17dBm/MHz per 1MHz bandwidth
+> >   - DFS
+> >   - If TPC is not used, the maximum radiated e.i.r.p. must be reduced
+> >     by 3dB.
+> >   - Outdoor use only
+> >     (Since NO-INDOOR flag is not supported by current format, don't add
+> >      this entry.)
+> > * 5725 - 5850
+> >   - 4000 mW e.i.r.p
+> >   - 36dBm in every 500 kHz
+> >   - DFS
+> >   - Outdoor use only
+> >     (Since NO-INDOOR flag is not supported by current format, don't add
+> >      this entry.)
+> >
+> > These information is from [4], Mobin Aydinfar shared the official link
+> > [1]
+> > (inaccessible from outside of Iran), a mirror version [2] and
+> > translated
+> > version [3].
+> >
+> > [1]
+> > https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968=
+f-0050569b0899
+> > [2] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-doc.pdf
+> > [3] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-table.ods
+> > [4]
+> > https://lore.kernel.org/linux-wireless/c9ccf5ba-c091-45c4-9283-970bfa4f=
+1afe@mobintestserver.ir/T/#u
+> >
+> > Cc: Mobin Aydinfar <mobin@mobintestserver.ir>
+> > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+> > ---
+> > db.txt | 9 ++++++---
+> > 1 file changed, 6 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/db.txt b/db.txt
+> > index d56ad32d31c9..0189355dff17 100644
+> > --- a/db.txt
+> > +++ b/db.txt
+> > @@ -934,9 +934,12 @@ country IN:
+> >     (5470 - 5725 @ 160), (24), DFS
+> >     (5725 - 5875 @ 80), (30)
+> >
+> > -country IR: DFS-JP
+> > -   (2402 - 2482 @ 40), (20)
+> > -   (5735 - 5835 @ 80), (30)
+> > +# Source:
+> > +#
+> > https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968=
+f-0050569b0899
+> > +country IR: DFS-ETSI
+> > +   (2400 - 2483.5 @ 40), (100 mW)
+> > +   (5150 - 5250 @ 80), (200 mW)
+> > +   (5250 - 5350 @ 80), (200 mW), DFS
+> >
+> > # IS as part of CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301
+> > 893)
+> > # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300
+> > 440)
+> > --
+> > 2.25.1
+>
+> Thanks for the patch, I should mention the document date is February
+> 2021, Not 2019.
+>
 
-> From: Ping-Ke Shih <pkshih@realtek.com>
->
-> Decision No. 4004-01DEC-CRA, 8th Edition - February 2019,
-> Radiocommunications and Regulatory Organization.
-> General radio license for the use of parts of the frequency bands
-> 2400-2483.5 MHz, 5150-5250 MHz, 5350-5250 MHz, 5470-5725 MHz, and
-> 5850-5725 MHz in radio access networks. [1]
->
-> * 2400 - 2483.5
-> =C2=A0 - 100 mW e.i.r.p
-> =C2=A0 - 10dBm in every 1Mhz
-> * 5150 - 5250
-> =C2=A0 - 200 mW e.i.r.p
-> =C2=A0 - 10dBm/MHz per 1MHz bandwidth or -6dBm/25kHz per 25kHz bandwidth
-> * 5250 - 5350
-> =C2=A0 - 200 mW e.i.r.p
-> =C2=A0 - 10dBm/MHz per 1MHz bandwidth
-> =C2=A0 - DFS
-> * 5470 - 5725
-> =C2=A0 - 1000 mW e.i.r.p
-> =C2=A0 - 17dBm/MHz per 1MHz bandwidth
-> =C2=A0 - DFS
-> =C2=A0 - If TPC is not used, the maximum radiated e.i.r.p. must be reduce=
-d
-> =C2=A0=C2=A0=C2=A0 by 3dB.
-> =C2=A0 - Outdoor use only
-> =C2=A0=C2=A0=C2=A0 (Since NO-INDOOR flag is not supported by current form=
-at, don't add
-> =C2=A0=C2=A0=C2=A0=C2=A0 this entry.)
-> * 5725 - 5850
-> =C2=A0 - 4000 mW e.i.r.p
-> =C2=A0 - 36dBm in every 500 kHz
-> =C2=A0 - DFS
-> =C2=A0 - Outdoor use only
-> =C2=A0=C2=A0=C2=A0 (Since NO-INDOOR flag is not supported by current form=
-at, don't add
-> =C2=A0=C2=A0=C2=A0=C2=A0 this entry.)
->
-> These information is from [4], Mobin Aydinfar shared the official link=20
-> [1]
-> (inaccessible from outside of Iran), a mirror version [2] and=20
-> translated
-> version [3].
->
-> [1]=20
-> https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968f-=
-0050569b0899
-> [2] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-doc.pdf
-> [3] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-table.ods
-> [4]=20
-> https://lore.kernel.org/linux-wireless/c9ccf5ba-c091-45c4-9283-970bfa4f1a=
-fe@mobintestserver.ir/T/#u
->
-> Cc: Mobin Aydinfar <mobin@mobintestserver.ir>
-> Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> ---
-> db.txt | 9 ++++++---
-> 1 file changed, 6 insertions(+), 3 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index d56ad32d31c9..0189355dff17 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -934,9 +934,12 @@ country IN:
-> =C2=A0=C2=A0=C2=A0 (5470 - 5725 @ 160), (24), DFS
-> =C2=A0=C2=A0=C2=A0 (5725 - 5875 @ 80), (30)
->
-> -country IR: DFS-JP
-> -=C2=A0=C2=A0 (2402 - 2482 @ 40), (20)
-> -=C2=A0=C2=A0 (5735 - 5835 @ 80), (30)
-> +# Source:
-> +#=20
-> https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968f-=
-0050569b0899
-> +country IR: DFS-ETSI
-> +=C2=A0=C2=A0 (2400 - 2483.5 @ 40), (100 mW)
-> +=C2=A0=C2=A0 (5150 - 5250 @ 80), (200 mW)
-> +=C2=A0=C2=A0 (5250 - 5350 @ 80), (200 mW), DFS
->
-> # IS as part of CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301=20
-> 893)
-> # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300=20
-> 440)
-> --
-> 2.25.1
-
-Thanks for the patch, I should mention the document date is February=20
-2021, Not 2019.
-
-Best Regards
+I did copy and paste from Google translation. I will correct the by v3. Tha=
+nks.
 
