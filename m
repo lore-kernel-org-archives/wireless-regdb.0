@@ -4,82 +4,85 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 43365C021AA
-	for <wireless-regdb@archiver.kernel.org>; Wed, 19 Feb 2025 00:25:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B4CFFC021AF
+	for <wireless-regdb@archiver.kernel.org>; Wed, 19 Feb 2025 02:35:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=; b=4GP+QOn63jwr9BiRwo4r9EBmIT
-	z+1QDI173gCZY8qnIMthzo1vAqVhittCim/oMx6S08QVu1lnO18PSn6xHaIGciRS0JRFT6FxVoJO7
-	+cItFifiePjAvs1tc2VafXhzTjp5lu+m3/aDs1MYH2hL6gg551vOfmn7VqKHeWp6xhnWipjzR60iM
-	x9IeO0WTvefSEJlc3qrchbAogo3ynrf8wm9x2D3zHUF2rHwzyAr7QpCcZ5Sc5++Ln5LuyqM3MNdC9
-	WcZ3tf3EpGAjuGruetI9B3ECi39L0AnKH5TGlVwUByiCuyDqgIFdJOy95DHapQ8Ps6VuIA3ZzgOhN
-	PdWyuS3Q==;
+	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=R04HbjsN0O8oNVWfF9dMnHHroywF9MmsNCZD/04NKBY=; b=1Yf4DIGepM7ki0bY4Uy1gemyE4
+	+5IqB4CINtu7w/Gu4EA/swBK+lbeC937HfYPPvJD4JPHdChCZAqgz54Eg908FnKEXLKKbjuJtDVZm
+	4hv+OTQFtoOrIv031J6vMNkpzqulN3vgiO4T95FcoGy+9oEHI0Gu1o/ti5ves+AkE3jQ0vd4wgQOd
+	07ppeaK1zuldT7lO3We5VoNGtFGiLb/UpNtjlPvKwusK9mSm8OrEMHAnq6J7R7qCh7uJcfssRaPoP
+	7Pg7IATDltevqiOdiIWIStlt5F54XsX3a3C1eVkrPRibX0POVVOWKt5b/OPPGEnDbKsITxNkM8O5O
+	IPwsowGQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkXtq-0000000ALki-1GTL;
-	Wed, 19 Feb 2025 00:25:14 +0000
-Received: from mail-ej1-x62a.google.com ([2a00:1450:4864:20::62a])
+	id 1tkZvP-0000000AfUu-396v;
+	Wed, 19 Feb 2025 02:34:59 +0000
+Received: from mail-pl1-x62a.google.com ([2607:f8b0:4864:20::62a])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1tkXtn-0000000ALkF-1QRo
+	id 1tkZvN-0000000AfSv-0RYB
 	for wireless-regdb@lists.infradead.org;
-	Wed, 19 Feb 2025 00:25:12 +0000
-Received: by mail-ej1-x62a.google.com with SMTP id a640c23a62f3a-abb75200275so507291366b.3
-        for <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2025 16:25:10 -0800 (PST)
+	Wed, 19 Feb 2025 02:34:58 +0000
+Received: by mail-pl1-x62a.google.com with SMTP id d9443c01a7336-21f2339dcfdso6139495ad.1
+        for <wireless-regdb@lists.infradead.org>; Tue, 18 Feb 2025 18:34:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1739924709; x=1740529509; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=;
-        b=jkcqwfS8PlX8Z6bGJMDT9IVaND7tkhmuG4IAggvpIUVWk+z45WVfv4VCfgySFAHPF2
-         PG/rUQtOlr02MA2vp4O6vGygo4LVWROa7ruuF10nIbqNw1n330B/9jsQZ7rP1Bneo+gc
-         yJnynMUCmqCwlMD5z4i6WKqPlqmbCEQYWCV+nc22tP9m5/gHZwa9I2Pbi6txLslosWBO
-         gdx5vsjG2AvkO5JK6QFno8lfODb1BaBn/tZH6XB143WeO8U5boHplvP6x0auMvGmPgJ8
-         ychOaCKgPhK03tXHc6E+soi4OqKJrrw/92kzbzPhPUX+Pk5NjKj3cJLPzxR8ntNXxXr4
-         6oxw==
+        d=gmail.com; s=20230601; t=1739932496; x=1740537296; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=R04HbjsN0O8oNVWfF9dMnHHroywF9MmsNCZD/04NKBY=;
+        b=akU53QJjco/Ru8WIUpFoGXSDW3b5lOeLW87840OAeKfrjxBcLmqiOa8+l2jkNFumg6
+         97b5YiMHm1SPpeUFHpJzlG1tkfonm9Hi5IMxm+fxegfAOx8FfGmSXPzYFSCdAHu5BPpP
+         gVpEPidDeYgSwsZxdCO40smna//1TU0Dl7e/QEMI2WcIngR2a5MSKtZ6p0q2U2iyzrSg
+         hzPLee7BSKd26gi7zj2/97U6IkWIUusSwmoC+qTneO8Ixmo2BQiDo1TGNG+sjJy2E4D9
+         H8Exvs/vAdDQ67FLBO5yemb3toSG3JA/euomu1kYIY21R76kq4lvr1hKmNwPKhdTgc4k
+         OXoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1739924709; x=1740529509;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=65jUrLBN/LLKjwx7RNV0Qdqfa/uMv6KZrrsG3GDWlyQ=;
-        b=Ke41DzIMhOYY4BdKRT+BvVxrjOxYqwyUOpF54q6xtNv1nMx00bLfsEFWoZ8ljnpQM6
-         bpNhOm8X0A+o2kS0AhyP9adulC0guIIbhGoAPCDXDu0/3tAl49zzAwF8kHChEpkvL5lA
-         dNCKnWSeoTVze5ye5uSeZUIzFBn8yErwDf4mTFVnMrLQedeBpIsY9NTE6q/5KimZkWak
-         5Sm3Rv2mZvkI8uHQSQL1tk4ig74eu5KCfNBxlOeOUFlQdqfY5unRcmpBVn0BjYpj5jCn
-         1MD3Z+8t2JtnpWowTQDo2S7Puxg7T+o2/TqFZaOrHONSfZGlCuaBThAYh6pzYlOxRybT
-         Ew8Q==
-X-Forwarded-Encrypted: i=1; AJvYcCVfNj7yMAaCejjQKNH2k8dA0kJALQIOYLszc8gtlWIIucS/I1iBTxG+imk5/d+OYC+fhBBudf1vrOWchmrsyw==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yy25mtaekMD0WTY5KR1FQjYVQ1hkp37VAlTiZTMMCXAFH2GQFTX
-	j4vN3N4Ni4WcIiN2JRzKToWvXvB3/pYz6k9G8B2Ana/Oh8BJppbUksBSsWXuBsynuN8IrHugxd0
-	+gjXiRrvGEmcfAQQSdS1pIlIKnQ0=
-X-Gm-Gg: ASbGncs6/HubPvek2RaIjYvaZn6E60sTkuQ2sfEXrjmDNXOG0PZvjNjcwaz2E9g7eC+
-	Ht7LHUA/y+Kd+SgCkqEsyI2+VjW0H9kJVCkpZpBUe59XAnC+xAoBmkzkfm5LuzIeBheLySjEC
-X-Google-Smtp-Source: AGHT+IH/eRR+jHwglhsHt7CzzanpkgEslZqXG2/Nd6MIcEZbE9Rc6okmt7/3o1ZBvkjMnyoEp1P+NF9j/633VosvxnA=
-X-Received: by 2002:a17:907:7b8b:b0:aa6:7737:199c with SMTP id
- a640c23a62f3a-abb70b1f29bmr1591523566b.15.1739924709310; Tue, 18 Feb 2025
- 16:25:09 -0800 (PST)
-MIME-Version: 1.0
-References: <20250218025957.13818-1-pkshih@gmail.com> <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
-In-Reply-To: <7c909df2-2651-497c-91c2-624a7e3db43f@mobintestserver.ir>
+        d=1e100.net; s=20230601; t=1739932496; x=1740537296;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=R04HbjsN0O8oNVWfF9dMnHHroywF9MmsNCZD/04NKBY=;
+        b=a4EJPnRr7VP+EKrTJr175egtLVGMD9hrfB1Mn6P/fa9UFa4OEqaz2BGij5cCErt500
+         ZEzz8Si4jA04sv2+ia1fmWuGCJ7CKhqej/5MEyCvYXb2pC68TAKRSiveQ6vc5tMBbvhK
+         BEYQdK2m64Xaax8fSWEUdEgpUrhRgBVuO2nPzh/5hd4XH8wYkk+qR3nuRct1Duv5XzU7
+         0hqPlFL37Uto2NvnjfXIZIBI29MfP3e6ALqrPwz6Qf9lD53zySoCDdMvzxOh7NlK5kK1
+         6ZStXvxCEJH9LPItT4+tMEXpiDlSTqYDsXM1KZaOmG7kU/IITUqHCquyxwQHs+f4nQ8G
+         daog==
+X-Forwarded-Encrypted: i=1; AJvYcCWau4TXCP8kWkP95HdnKasZrfeCXRVF8/WYQxl/xdd2XpJtDk61SZk6Q8JmfuYOygN4DtaIPah9qNU1f12gVA==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw+tEbGq5GTzdW64T1JkmHH5s2Ii99O9ekfFRybh6eKVxW0np23
+	OheyybdUxMiJfhdjhHS0M9dqh56EAH3rZsdNFJpft160F6kbpetGUhxflGTm
+X-Gm-Gg: ASbGncvNeySSG/3cQg/mP8DKefYTMfAMyBV29hQ76Q6rPMfnpx+yMLbdaJZP7DmoPPv
+	58j1J7pqZ0iyTFRZHZwQB3G7PUkJTjEgk42tApbPb7L0+fcwzACi1AFv+2B4krqqs4Pt4qx6fez
+	PerCUV63aYY7m85XdcFKy6xOe7/eP2mS9LIj9xEPqqjj15HnsauBknQFPVnV+dRZMyPrt3OsOSj
+	BUH/mrPnkkObH4pNBa8Rra/avwVkFicRnPfhPUq/nX40VzouuNmf59Q7hi/FTselcWmg2caksxe
+	rSGAtc7XHxuqcAf7aeYJnNUMocWUjwhla6eSbzaMXLf6RHAohQG0OWRnzA==
+X-Google-Smtp-Source: AGHT+IHBWu2zNx2ZlrggZ0xLhsQ8WBxnnw96NQe2O8w6INoGz6Pif8fopNl0K3piu9ZyZbDJXE8fMw==
+X-Received: by 2002:a17:902:f541:b0:21f:5063:d3ca with SMTP id d9443c01a7336-2216ef0c858mr35681335ad.16.1739932496085;
+        Tue, 18 Feb 2025 18:34:56 -0800 (PST)
+Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
+        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-220d536671asm96837625ad.88.2025.02.18.18.34.54
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 18 Feb 2025 18:34:55 -0800 (PST)
 From: Ping-Ke Shih <pkshih@gmail.com>
-Date: Wed, 19 Feb 2025 08:24:58 +0800
-X-Gm-Features: AWEUYZlVZBxj6AnTShq8nRpf9OMSgEmG2Ug6PpgLVdF15aiALjJJO9rGTHrKMhg
-Message-ID: <CAHrRpu=kD7TdyKfD+MNFjFv2jRqfOS5wPzCsKa2O4hFnu8n80w@mail.gmail.com>
-Subject: =?UTF-8?Q?Re=3A_=D9=BE=D8=A7=D8=B3=D8=AE=3A_=5BPATCH=5D_wireless=2Dregdb=3A_Update_regulat?=
-	=?UTF-8?Q?ory_rules_for_Iran_=28IR=29_on_both_2=2E4_and_5Ghz_for_2019?=
-To: Mobin Aydinfar <mobin@mobintestserver.ir>
-Cc: wens@kernel.org, linux-wireless@vger.kernel.org, 
-	wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: wens@kernel.org
+Cc: linux-wireless@vger.kernel.org,
+	wireless-regdb@lists.infradead.org,
+	johannes@sipsolutions.net,
+	mobin@mobintestserver.ir
+Subject: [PATCH v3 1/3] wireless-regdb: allow NO-INDOOR flag in db.txt
+Date: Wed, 19 Feb 2025 10:34:13 +0800
+Message-Id: <20250219023415.14229-1-pkshih@gmail.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250218_162511_399616_7CA03741 
-X-CRM114-Status: GOOD (  18.32  )
+X-CRM114-CacheID: sfid-20250218_183457_160494_AB66B023 
+X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -94,98 +97,58 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Mobin Aydinfar <mobin@mobintestserver.ir> wrote:
->
-> =DB=B1=DB=B8 =D9=81=D9=88=D8=B1=DB=8C=D9=87 =DB=B2=DB=B0=DB=B2=DB=B5 =DB=
-=B0=DB=B6:=DB=B3=DB=B0:=DB=B3=DB=B8 Ping-Ke Shih <pkshih@gmail.com>:
->
-> > From: Ping-Ke Shih <pkshih@realtek.com>
-> >
-> > Decision No. 4004-01DEC-CRA, 8th Edition - February 2019,
-> > Radiocommunications and Regulatory Organization.
-> > General radio license for the use of parts of the frequency bands
-> > 2400-2483.5 MHz, 5150-5250 MHz, 5350-5250 MHz, 5470-5725 MHz, and
-> > 5850-5725 MHz in radio access networks. [1]
-> >
-> > * 2400 - 2483.5
-> >   - 100 mW e.i.r.p
-> >   - 10dBm in every 1Mhz
-> > * 5150 - 5250
-> >   - 200 mW e.i.r.p
-> >   - 10dBm/MHz per 1MHz bandwidth or -6dBm/25kHz per 25kHz bandwidth
-> > * 5250 - 5350
-> >   - 200 mW e.i.r.p
-> >   - 10dBm/MHz per 1MHz bandwidth
-> >   - DFS
-> > * 5470 - 5725
-> >   - 1000 mW e.i.r.p
-> >   - 17dBm/MHz per 1MHz bandwidth
-> >   - DFS
-> >   - If TPC is not used, the maximum radiated e.i.r.p. must be reduced
-> >     by 3dB.
-> >   - Outdoor use only
-> >     (Since NO-INDOOR flag is not supported by current format, don't add
-> >      this entry.)
-> > * 5725 - 5850
-> >   - 4000 mW e.i.r.p
-> >   - 36dBm in every 500 kHz
-> >   - DFS
-> >   - Outdoor use only
-> >     (Since NO-INDOOR flag is not supported by current format, don't add
-> >      this entry.)
-> >
-> > These information is from [4], Mobin Aydinfar shared the official link
-> > [1]
-> > (inaccessible from outside of Iran), a mirror version [2] and
-> > translated
-> > version [3].
-> >
-> > [1]
-> > https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968=
-f-0050569b0899
-> > [2] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-doc.pdf
-> > [3] https://mobintestserver.ir/Iran-2.4Ghz-5Ghz-cra-official-table.ods
-> > [4]
-> > https://lore.kernel.org/linux-wireless/c9ccf5ba-c091-45c4-9283-970bfa4f=
-1afe@mobintestserver.ir/T/#u
-> >
-> > Cc: Mobin Aydinfar <mobin@mobintestserver.ir>
-> > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> > ---
-> > db.txt | 9 ++++++---
-> > 1 file changed, 6 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/db.txt b/db.txt
-> > index d56ad32d31c9..0189355dff17 100644
-> > --- a/db.txt
-> > +++ b/db.txt
-> > @@ -934,9 +934,12 @@ country IN:
-> >     (5470 - 5725 @ 160), (24), DFS
-> >     (5725 - 5875 @ 80), (30)
-> >
-> > -country IR: DFS-JP
-> > -   (2402 - 2482 @ 40), (20)
-> > -   (5735 - 5835 @ 80), (30)
-> > +# Source:
-> > +#
-> > https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968=
-f-0050569b0899
-> > +country IR: DFS-ETSI
-> > +   (2400 - 2483.5 @ 40), (100 mW)
-> > +   (5150 - 5250 @ 80), (200 mW)
-> > +   (5250 - 5350 @ 80), (200 mW), DFS
-> >
-> > # IS as part of CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301
-> > 893)
-> > # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300
-> > 440)
-> > --
-> > 2.25.1
->
-> Thanks for the patch, I should mention the document date is February
-> 2021, Not 2019.
->
+From: Ping-Ke Shih <pkshih@realtek.com>
 
-I did copy and paste from Google translation. I will correct the by v3. Tha=
-nks.
+For certain regulations, frequency range is outdoor only, which flag should
+be NO-INDOOR, but db2fw.py doesn't allow this flag.
+
+As suggestion, only fill NO-INDOOR flag in db.txt, but ignore this rule
+in parsing to binary.
+
+Suggested-by: Johannes Berg <johannes@sipsolutions.net>
+Link: https://lore.kernel.org/linux-wireless/5e433cd8d070682cb6ed31de3a2dd337e6f48b50.camel@sipsolutions.net/T/#t
+Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+---
+v3:
+ - new introduction by v3
+---
+ dbparse.py | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/dbparse.py b/dbparse.py
+index cc5012bc05bd..450406ff1b34 100755
+--- a/dbparse.py
++++ b/dbparse.py
+@@ -121,6 +121,9 @@ class FlagError(Exception):
+     def __init__(self, flag):
+         self.flag = flag
+ 
++class IgnoreRule(Exception):
++    pass
++
+ @total_ordering
+ class Permission(object):
+     def __init__(self, freqband, power, flags, wmmrule):
+@@ -134,6 +137,9 @@ class Permission(object):
+         for flag in flags:
+             if not flag in flag_definitions:
+                 raise FlagError(flag)
++            # skip rule with NO-INDOOR so that kernel doesn't need special deal.
++            if flag == 'NO-INDOOR':
++                raise IgnoreRule()
+             self.flags |= flag_definitions[flag]
+         self.textflags = flags
+ 
+@@ -429,6 +435,8 @@ class DBParser(object):
+             perm = Permission(b, p, flags, w)
+         except FlagError as e:
+             self._syntax_error("Invalid flag '%s'" % e.flag)
++        except IgnoreRule:
++            return
+         for cname, c in self._current_countries.items():
+             if perm in c:
+                 self._warn('Rule "%s, %s" added to "%s" twice' % (
+-- 
+2.25.1
+
 
