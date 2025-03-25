@@ -4,52 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 13A51C36002
-	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Mar 2025 14:39:10 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A6DDC35FFC
+	for <wireless-regdb@archiver.kernel.org>; Tue, 25 Mar 2025 04:50:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Subject:Cc:To:MIME-Version:Message-ID:Date:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=XQZy5fcF6RvFZ3iU3YsO2JmW4uOxF4U2Mh2QChAVSpA=; b=TgPLd0GnuJNaH8HNWS79qlkNt5
-	9lEC2OvRMF233if5rRGCcCrr/ugQz6yaf5/vNk3MqHFGDr6pdXRsA+bFSI0jBwbjHrj+M6WuiwnRf
-	ZSArAee8B/eoRMOmwEugSvlPdu8ZgauhgaPeOViW6CXj4sRx9kLtbptd9XsPbQaCFMEpIQyM5l6L/
-	U7fbFVa4Ba3aMDJAL9g/gWfRR/1jWllzkD1ZQ8fdck+6UgqH3Np8rAi3uPMlZ/c+yWfhtg5pvj+RN
-	SLz4zmF7gEkx3AkjI7awOPotMyh5MqqsMLrVKvX1I3N09jORM0UIS5VzoZlyCQ/YQ59ANVtSfn5g+
-	rN6XZouQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mHf23PYpONH7NSarovgoaVkFPmYakxvDZRh5TQAtW1Q=; b=zxq92uuBdHRk0o
+	lRYCxTnpn/aih3SdnKUc8uG35UjRq0QQ3Ns+LesCF+RaDnjCrl6GnhXt5PyWHEjNzZBvjHaZsi0Dx
+	A9Yrn5unXZOWMYJVfEeba9oEt0NRutkQNKupHas0eb5DDQsd0aBc3yBJooysfYFOxHcdI4Bp7FLLf
+	1ZDjhavy54NUyUhLIK9YS6jEZdO8pabqFangZmUsZ5WFgN2aKDWYocQs5XSRlMnARmCyx++7XOq7u
+	hqhXN/u63DkmunxcMOlxPdplCJPLhn99zfYaPO80gMFv7KoQRW9jxe+hkvwYxo/0vo/C8pI7hu1nf
+	P5+ykhSecpKU/2uUfVFg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98 #2 (Red Hat Linux))
-	id 1twixH-00000003Pqk-0QkY;
-	Mon, 24 Mar 2025 14:39:07 +0000
-Received: from vps-c8396917.vps.ovh.net ([2001:41d0:701:1100::5b82] helo=aegrel.ee)
+	id 1twwFW-00000004qbQ-3B4J;
+	Tue, 25 Mar 2025 04:50:50 +0000
+Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
 	by bombadil.infradead.org with esmtps (Exim 4.98 #2 (Red Hat Linux))
-	id 1twW1I-00000001zhx-2Cyk
+	id 1twwFU-00000004qax-31sm
 	for wireless-regdb@lists.infradead.org;
-	Mon, 24 Mar 2025 00:50:25 +0000
-DKIM-Signature: v=1; a=ed25519-sha256; s=default; d=aegrel.ee; c=relaxed/relaxed; r=y;
-	h=Content-Type:Subject:Content-Language:To:User-Agent:MIME-Version
-	:Message-ID:Date:From:Sender:Expires:Content-Type; t=1742777420;
-	x=1745369420; bh=XQZy5fcF6RvFZ3iU3YsO2JmW4uOxF4U2Mh2QChAVSpA=; b=5/TsoI1l4H
-	SORDJDGkDpWm7uDj4mCjKuCZnIANAraFqZZfpxtuG6kOElHkJ+UebuFEC4GXv3xuAgbTRr0mAPA
-	w==;
-From: =?UTF-8?Q?Taavi_Eom=C3=A4e?= <taaviw@aegrel.ee>
-Date: Mon, 24 Mar 2025 01:55:05 +0200
-Message-ID: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
+	Tue, 25 Mar 2025 04:50:50 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by dfw.source.kernel.org (Postfix) with ESMTP id B2E885C5735
+	for <wireless-regdb@lists.infradead.org>; Tue, 25 Mar 2025 04:48:29 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 0AAD1C4CEE8
+	for <wireless-regdb@lists.infradead.org>; Tue, 25 Mar 2025 04:50:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1742878246;
+	bh=5zDi8YoOLLY6kzWiEV4UjU7bS9nBQXo8CLxRn2hADeE=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=KRygjic2PTsuo3/B5Bs2RMjmAXw9AsAmte5VsUq1DBulnNXK6rEXthX9GvQLXXeG9
+	 Baty5bHiIKxsKptLunkwt5b8UekoEZe8qW5vzZM3snd6LKgB42wLW/DEne1bRQctxK
+	 a1MCtWEDOUyIdmzQz0e99rmLCo9S+QaV0xS7eTZ+yAyk0pebKdRk0sAJrZDFFUfVSw
+	 8OM+Cg1+3U8g7mDFIaQV5VXwv9ZgdgJIiomF93i2/SfQ/eqnpmvedZNLR7SNas3cpn
+	 FDv5oRqrCzDrLWlhNyNrY9Gg2dqd9ibE5O6G5GwrxDdcrINyys2LAYYZZRWxrzsn/P
+	 cLJzO0qMipXzw==
+Received: by mail-lj1-f176.google.com with SMTP id 38308e7fff4ca-30c461a45f8so51736901fa.1
+        for <wireless-regdb@lists.infradead.org>; Mon, 24 Mar 2025 21:50:45 -0700 (PDT)
+X-Gm-Message-State: AOJu0Yy86TzjHF2zPl0spEG/PIoIwI1GqGGaaeNeZZe1Nl3JKQN9u1hx
+	j8rDdGDzt1/LNCoF/WlPUWENKM/VUXGDdhtSLeHJp6duSZZQ9JkJHx3Zg2xBZTnu9gl+wdrzr3l
+	yM2dcn2MzwTmSK6EltRLh+TDISnY=
+X-Google-Smtp-Source: AGHT+IFUQjv/K4LMNsuWqItOtnw2coVKy8FkrbnI9ro3SessxkEYPqjNmS4WKU1ZWdMWwS/NGYvTzAh9UIUHP5qtNRc=
+X-Received: by 2002:a2e:bc1b:0:b0:30b:cc6a:fff7 with SMTP id
+ 38308e7fff4ca-30d7e1ed7cdmr53753701fa.6.1742878244347; Mon, 24 Mar 2025
+ 21:50:44 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-To: Chen-Yu Tsai <wens@kernel.org>
+References: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
+In-Reply-To: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 25 Mar 2025 12:50:32 +0800
+X-Gmail-Original-Message-ID: <CAGb2v647q2-K_jQXFHxgjYiG=xxvVajtmAPu7XcOBTCdG3fALQ@mail.gmail.com>
+X-Gm-Features: AQ5f1JrGKFaz9WX1gznR-jRqeh_RcI6__9F_MHRPOlDHNHVYGBkMbCzbH2DbUNo
+Message-ID: <CAGb2v647q2-K_jQXFHxgjYiG=xxvVajtmAPu7XcOBTCdG3fALQ@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE)
+ for 2024
+To: =?UTF-8?B?VGFhdmkgRW9tw6Rl?= <taaviw@aegrel.ee>
 Cc: wireless-regdb <wireless-regdb@lists.infradead.org>
-Cc: linux-wireless <linux-wireless@vger.kernel.org>
-Content-Language: en-US
-Subject: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE) for 2024
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250323_175024_735675_FE7571D3 
-X-CRM114-Status: UNSURE (   0.50  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Mon, 24 Mar 2025 07:38:26 -0700
+X-CRM114-CacheID: sfid-20250324_215048_881280_6E44A1BB 
+X-CRM114-Status: GOOD (  15.27  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -61,8 +79,83 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-QWxsb3cgUzFHIG9wZXJhdGlvbiBiYXNlZCBvbiBjdXJyZW50bHkgYXBwbGljYWJsZSB1c2FnZSBydWxlcyBzcGVjaWZpZWQKaW4gYW5uZXggNiBvZiAiUmFhZGlvc2FnZWR1c3RlIGthc3V0YW1pc2UgdGluZ2ltdXNlZCBqYSB0ZWhuaWxpc2VkIG7DtXVkZWQgCnNhZ2VkdXNsb2FzdCB2YWJhc3RhdHVkIHJhYWRpb3NlYWRtZXRlbGUiIAogCkVuYWJsZSBBVVRPLUJXIGZvciBhbGwgNUdIeiBiYW5kcyBhcyBubyBiYW5kd2lkdGggbGltaXQgaXMgc3BlY2lmaWVkIGZvcgp0aGVzZSBiYW5kcy4KClNwZWNpZnkgNkdIeiBwb3dlciBsaW1pdCBpbiBtVyB0byBtYXRjaCBvdGhlcnMuCgpGaXggNjBHSHogYmFuZCB0byBtYXRjaCByZWd1bGF0aW9uIGFuZCBhbGxvdyBiYW5kd2lkdGhzIHNwZWNpZmllZCBieSA4MDIuMTFheS4KCi0tLQogZGIudHh0IHwgMTEgKysrKysrKy0tLS0KIDEgZmlsZSBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKyksIDQgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZGIudHh0IGIvZGIudHh0CmluZGV4IGUzMzFkNGYuLjgzZjc5MjQgMTAwNjQ0Ci0tLSBhL2RiLnR4dAorKysgYi9kYi50eHQKQEAgLTYxOCwxOCArNjE4LDIxIEBAIGNvdW50cnkgRUM6IERGUy1GQ0MKICMgIEVVIGRlY2lzaW9uIDIwMjEvMTA2Ny9FQzogaHR0cHM6Ly9ldXItbGV4LmV1cm9wYS5ldS9sZWdhbC1jb250ZW50L0VOL1RYVC9QREYvP3VyaT1DRUxFWDozMjAyMUQxMDY3JmZyb209RU4KICMgSGFybW9uaXplZCBDRVBUIGNvdW50cmllcyAoSnVseSAyMDE5KTogaHR0cHM6Ly93d3cuZWNvZG9jZGIuZGsvZG93bmxvYWQvMjVjNDE3NzktY2Q2ZS9SZWM3MDAzZS5wZGYKICMgRUU6IGh0dHBzOi8vd3d3LnR0amEuZWUvZXQvZXR0ZXZvdHRlbGUtb3JnYW5pc2F0c2lvb25pbGUvc2lkZXRlZW51c2VkL3JhYWRpb3NlYWRtZWQvd2lmaS1zZWFkZQorIyBFRTogaHR0cHM6Ly93d3cucmlpZ2l0ZWF0YWphLmVlL2FrdC8xMTcwNTIwMjQwMTg/bGVpYUtlaHRpdiAoTGlzYSA2KQogIyBFRTogaHR0cHM6Ly93d3cuaXR1LmludC9JVFUtRC9zdHVkeV9ncm91cHMvU0dQXzE5OTgtMjAwMi9KR1JFUzA5L3BkZi9lc3RvbmlhLnBkZgogY291bnRyeSBFRTogREZTLUVUU0kKKwkoODYzIC0gODY4IEAgMSksICgyNSBtVykKKwkoOTE1LjggLSA5MTkuNCBAIDEpLCAoMjUgbVcpCiAJKDI0MDAgLSAyNDgzLjUgQCA0MCksICgxMDAgbVcpCiAJKDUxNTAgLSA1MjUwIEAgODApLCAoMjAwIG1XKSwgTk8tT1VURE9PUiwgQVVUTy1CVywgd21tcnVsZT1FVFNJCiAJKDUyNTAgLSA1MzUwIEAgODApLCAoMTAwIG1XKSwgTk8tT1VURE9PUiwgREZTLCBBVVRPLUJXLCB3bW1ydWxlPUVUU0kKLQkoNTQ3MCAtIDU3MjUgQCAxNjApLCAoNTAwIG1XKSwgREZTLCB3bW1ydWxlPUVUU0kKKwkoNTQ3MCAtIDU3MjUgQCAxNjApLCAoNTAwIG1XKSwgREZTLCBBVVRPLUJXLCB3bW1ydWxlPUVUU0kKIAkjIHNob3J0IHJhbmdlIGRldmljZXMgKEVUU0kgRU4gMzAwIDQ0MC0xKQotCSg1NzI1IC0gNTg3NSBAIDgwKSwgKDI1IG1XKQorCSg1NzI1IC0gNTg3NSBAIDgwKSwgKDI1IG1XKSwgQVVUTy1CVwogCSMgNiBHSHogYmFuZAotCSg1OTQ1IC0gNjQyNSBAIDMyMCksICgyMyksIE5PLU9VVERPT1IsIHdtbXJ1bGU9RVRTSQorCSg1OTQ1IC0gNjQyNSBAIDMyMCksICgyMDAgbVcpLCBOTy1PVVRET09SLCB3bW1ydWxlPUVUU0kKIAkjIDYwIEdIeiBiYW5kIGNoYW5uZWxzIDEtNCAoRVRTSSBFTiAzMDIgNTY3KQotCSg1NzAwMCAtIDY2MDAwIEAgMjE2MCksICg0MCkKKwkoNTcwMDAgLSA3MTAwMCBAIDg2NDApLCAoNDApCiAKICMgaHR0cHM6Ly93d3cudHJhLmdvdi5lZy93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wMy9FR1ktTlRSQS1NYXJjaC0yMDIyLVNSRF9FbmdsaXNoX0ZpbmFsLnBkZgogY291bnRyeSBFRzogREZTLUVUU0kKLS0gCjIuNDUuMgoK
+On Mon, Mar 24, 2025 at 8:26=E2=80=AFAM Taavi Eom=C3=A4e <taaviw@aegrel.ee>=
+ wrote:
+>
+> Allow S1G operation based on currently applicable usage rules specified
+> in annex 6 of "Raadiosageduste kasutamise tingimused ja tehnilised n=C3=
+=B5uded
+> sagedusloast vabastatud raadioseadmetele"
+>
+> Enable AUTO-BW for all 5GHz bands as no bandwidth limit is specified for
+> these bands.
+
+Thank you for the update. I do wonder if it's reasonable to apply
+non-specific SRD rules to WLAN (it probably is OK), and whether it
+is actually useful or not given the drastically different power
+limits.
+
+> Specify 6GHz power limit in mW to match others.
+
+Should read: ... to match regulations.
+
+We want the numbers and units used to match the regulations verbatim,
+unless some other limit applies that causes a change (such as reducing
+the limit by 3 dBm due to lack of TPC.)
+
+I'll update the wording when applying.
+
+
+ChenYu
+
+> Fix 60GHz band to match regulation and allow bandwidths specified by 802.=
+11ay.
+>
+> ---
+>  db.txt | 11 +++++++----
+>  1 file changed, 7 insertions(+), 4 deletions(-)
+>
+> diff --git a/db.txt b/db.txt
+> index e331d4f..83f7924 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -618,18 +618,21 @@ country EC: DFS-FCC
+>  #  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/EN/=
+TXT/PDF/?uri=3DCELEX:32021D1067&from=3DEN
+>  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/downloa=
+d/25c41779-cd6e/Rec7003e.pdf
+>  # EE: https://www.ttja.ee/et/ettevottele-organisatsioonile/sideteenused/=
+raadioseadmed/wifi-seade
+> +# EE: https://www.riigiteataja.ee/akt/117052024018?leiaKehtiv (Lisa 6)
+>  # EE: https://www.itu.int/ITU-D/study_groups/SGP_1998-2002/JGRES09/pdf/e=
+stonia.pdf
+>  country EE: DFS-ETSI
+> +       (863 - 868 @ 1), (25 mW)
+> +       (915.8 - 919.4 @ 1), (25 mW)
+>         (2400 - 2483.5 @ 40), (100 mW)
+>         (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=3DETSI
+>         (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=
+=3DETSI
+> -       (5470 - 5725 @ 160), (500 mW), DFS, wmmrule=3DETSI
+> +       (5470 - 5725 @ 160), (500 mW), DFS, AUTO-BW, wmmrule=3DETSI
+>         # short range devices (ETSI EN 300 440-1)
+> -       (5725 - 5875 @ 80), (25 mW)
+> +       (5725 - 5875 @ 80), (25 mW), AUTO-BW
+>         # 6 GHz band
+> -       (5945 - 6425 @ 320), (23), NO-OUTDOOR, wmmrule=3DETSI
+> +       (5945 - 6425 @ 320), (200 mW), NO-OUTDOOR, wmmrule=3DETSI
+>         # 60 GHz band channels 1-4 (ETSI EN 302 567)
+> -       (57000 - 66000 @ 2160), (40)
+> +       (57000 - 71000 @ 8640), (40)
+>
+>  # https://www.tra.gov.eg/wp-content/uploads/2022/03/EGY-NTRA-March-2022-=
+SRD_English_Final.pdf
+>  country EG: DFS-ETSI
+> --
+> 2.45.2
+>
 
