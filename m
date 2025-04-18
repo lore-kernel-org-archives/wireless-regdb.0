@@ -4,71 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42A89C28B30
-	for <wireless-regdb@archiver.kernel.org>; Wed, 26 Mar 2025 03:49:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 095DBC369C9
+	for <wireless-regdb@archiver.kernel.org>; Fri, 18 Apr 2025 19:35:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J629AtJYyLuDWVt0Y3fluXRtdWxbFc5RD7FNsgaYoyY=; b=eiumtk7qW55jQG
-	1NHWVSHbO+2UfFuxwsIQgUSoOQdPhD78lpB0SK4G3+oOMc34F0UYNKJzPCvucejDLk1qhRXU7k/Oy
-	rmP0o/n3dEA1dseuTEcRGO1AW67loZxTKcGPwfPzZgU/H9lq/dGdw3hApGRUOBll0/HltFNU6/WaG
-	RlfziMge21P7AKVg6xAf8HUnfoFKZf/beuE8DHeiQYv8Y+1L8f+klT4lMaLr5isai700DTUTDPD+P
-	IYCBSfBp1n95859dq3YJAtpkvRywU6h/wxVsd/1NHuRKmtUpZ5KUJKwuSHf1KtOj98lBF7ztp2RwQ
-	mHsuwdFSEgXZHFM3s/cg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	Content-Transfer-Encoding:Message-Id:Date:MIME-Version:Subject:Cc:To:From:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Gqf9MNMQv1izUarlmFAo3gQSnimgXjxG/3jtSrbUYSA=; b=NmcboA7i+uOe0FbxhaR5KfruTQ
+	aMMI+nCt+IsuyxRVx8cTpS+Fz23FWHPNaMSh1BlX5qeErpEXkbgMgBcGp2/IwKjPcTdql9qOb8hRn
+	u/5DAmdJHiWIv4VEBQawof3DfisaEZ7jBWVlKBqwRFxdmWt2BdByj43tf9+YYmOaK8hS+wtLbcrAq
+	Dkzoup48EXkOBMAlbcKcwyN89Y5PPfIK+eAnz/fQ15PEUZobLwc2GYKg1CxZNUBsetc2PBX0Lqcjw
+	MHlVVf/a0qLZQj5zTTFfGIo3Ol3N8a67G6lV5JlDUgTiAkyFg7lFvCCcg+ax038kIu6jhswh0796h
+	GPwql1CA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
-	by bombadil.infradead.org with esmtp (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txHlN-00000007V8I-3otW;
-	Wed, 26 Mar 2025 03:49:09 +0000
-Received: from nyc.source.kernel.org ([2604:1380:45d1:ec00::3])
-	by bombadil.infradead.org with esmtps (Exim 4.98.1 #2 (Red Hat Linux))
-	id 1txHlL-00000007V7p-2JtC
+	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1u5rUx-000000001SK-2dLx;
+	Fri, 18 Apr 2025 19:35:39 +0000
+Received: from forward401d.mail.yandex.net ([178.154.239.222])
+	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1u5rUs-000000001QB-2noV
 	for wireless-regdb@lists.infradead.org;
-	Wed, 26 Mar 2025 03:49:09 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by nyc.source.kernel.org (Postfix) with ESMTP id C8057A40CD8
-	for <wireless-regdb@lists.infradead.org>; Wed, 26 Mar 2025 03:43:37 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 766B2C4CEE2
-	for <wireless-regdb@lists.infradead.org>; Wed, 26 Mar 2025 03:49:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1742960946;
-	bh=J629AtJYyLuDWVt0Y3fluXRtdWxbFc5RD7FNsgaYoyY=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=BBiarn0duFv2ziy6tPxbLeqK6ApbYHhcebrS1wBjVMapnJXWzvVVccqxU9QTEZvd8
-	 Zt1wpA7LyO+QKK7eZBlnT3CYXHWJMHvpX7Nikf6kr6T+7LUr63qyOEoKNtK4DJgvoH
-	 5oKzyztE1W3m9PdW73LdJRSQKKCFuDJbiO2qf6j2m/XAp/huUnt3zYA/ImzmHXa9VQ
-	 qjy+aycPq1njmYRuIfK5GFheoojNukMeWvu3v333oJTWDWIe3KrI2AKpBk8d4aKwVs
-	 EFtqBbhuEBan64/qrLaqF0qQTVhVfqD1KBhXtsdVoRqVcaXsnNjDGq6l4qQAuWkomN
-	 hI3+oXho06qxQ==
-Received: by mail-lf1-f53.google.com with SMTP id 2adb3069b0e04-5499614d3d2so7349871e87.3
-        for <wireless-regdb@lists.infradead.org>; Tue, 25 Mar 2025 20:49:06 -0700 (PDT)
-X-Gm-Message-State: AOJu0Yx4JRpzuMmJfcKVbYUYuYodVOWWQ+3FHMZfYuJcnm2ITbDszGuf
-	Y/XqVwzhswLLI/CkzTkLND0wFDAapXcXPn3NH2OFGTtwD7SV8T2b7clU87X7PULzADB2Ynq8sYC
-	ezqmsZ7Hz4Qxnnhf9q8lFdOlHoW4=
-X-Google-Smtp-Source: AGHT+IHEBowDmKKJ4uPZw2eR4+uo6y25i9TqtFvNeDHYqtAU6sFOhDXY8D3VKJGMgiquCUuG/rbqSgghA894ug4vGY8=
-X-Received: by 2002:a05:6512:2303:b0:54a:cc75:6a9d with SMTP id
- 2adb3069b0e04-54ad64fbb77mr7042218e87.42.1742960944854; Tue, 25 Mar 2025
- 20:49:04 -0700 (PDT)
+	Fri, 18 Apr 2025 19:35:39 +0000
+Received: from mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net (mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net [IPv6:2a02:6b8:c43:7cf:0:640:f67c:0])
+	by forward401d.mail.yandex.net (Yandex) with ESMTPS id 26F66627AE;
+	Fri, 18 Apr 2025 22:35:30 +0300 (MSK)
+Received: from mail.yandex.com (2a02:6b8:c43:4b0f:0:640:cb38:0 [2a02:6b8:c43:4b0f:0:640:cb38:0])
+	by mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net (mxback/Yandex) with HTTPS id HYQFXn0L2Cg0-oPnIjwbU;
+	Fri, 18 Apr 2025 22:35:29 +0300
+X-Yandex-Fwd: 1
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=etylix.me; s=mail;
+	t=1745004929; bh=Gqf9MNMQv1izUarlmFAo3gQSnimgXjxG/3jtSrbUYSA=;
+	h=Message-Id:Date:Subject:To:From:Cc;
+	b=5ZUImbyPVAolIyFTCGMlPiUQl4kj3QeNnHxaBsjOcQ3amWEYbZJl7017NgVgcl8Tf
+	 kOdP0mdPAPQpTJ4aB5wfJgIsgPAxrnzHieXYZ4VERollau2DE1qPJgO0WQiyOSfz0t
+	 0ZMDbOLSfa4Ai95ruiTea3amNQsdBQc+bGs7WAyI=
+Authentication-Results: mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net; dkim=pass header.i=@etylix.me
+Received: by mail-sendbernar-production-main-32.klg.yp-c.yandex.net with HTTP;
+	Fri, 18 Apr 2025 22:35:29 +0300
+From: Duy Hoang <duy@etylix.me>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
+Subject: [PATCH] wireless-regdb: Update regulatory info for Vietnam (VN) for 2025
 MIME-Version: 1.0
-References: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
- <CAGb2v647q2-K_jQXFHxgjYiG=xxvVajtmAPu7XcOBTCdG3fALQ@mail.gmail.com> <2c7d8d57-51de-46d5-8958-2a7a8ca3135d@aegrel.ee>
-In-Reply-To: <2c7d8d57-51de-46d5-8958-2a7a8ca3135d@aegrel.ee>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Wed, 26 Mar 2025 11:48:52 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64q+CmQZk0fXSODiZrq7JkKDm4C8Hq2QFPBcLEgyNsG2w@mail.gmail.com>
-X-Gm-Features: AQ5f1Jp6MLRqPAnoHAa1_VNU2oyVyrtvZArUKRrqVONBYEazyr57hNjr9D8jEC0
-Message-ID: <CAGb2v64q+CmQZk0fXSODiZrq7JkKDm4C8Hq2QFPBcLEgyNsG2w@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE)
- for 2024
-To: =?UTF-8?B?VGFhdmkgRW9tw6Rl?= <taaviw@aegrel.ee>
-Cc: wireless-regdb <wireless-regdb@lists.infradead.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+X-Mailer: Yamail [ http://yandex.ru ] 5.0
+Date: Sat, 19 Apr 2025 02:35:29 +0700
+Message-Id: <2199341745004929@mail-sendbernar-production-main-32.klg.yp-c.yandex.net>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250325_204907_721165_A9603549 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20250418_123534_888459_26AD2D90 
+X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,52 +68,71 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, Mar 26, 2025 at 1:06=E2=80=AFAM Taavi Eom=C3=A4e <taaviw@aegrel.ee>=
- wrote:
->
-> Hi,
->
-> On 3/25/25 06:50, Chen-Yu Tsai wrote:
-> > I do wonder if it's reasonable to apply
-> > non-specific SRD rules to WLAN (it probably is OK), and whether it
-> > is actually useful or not given the drastically different power
-> > limits.
->
-> If I understood you correctly, if someone is located in an environment
-> where DFS channels are vacant, it should be possible to practically use
-> that section at a lower power limit defined by SRD rules.
->
-> The very least it should allow people (including myself) to just run
-> tests with wider channels.
+According to [1] and [2]:
+- Update frequency range to match with Circular
+- Update units from dBm to mW to match values listed in Circular
+- Add AUTO-BW flags to allow the use of 160 MHz based on other rules
+- Update to allow use of 6 GHz band
 
-I understand that this is a valid use case, and I will accept the change.
-I just wonder if the very low limit of 25 mW would be useful in actual
-settings such as in a building with concrete walls. The transmit power
-limit is not immediately visible to users; non-technical users might
-select this channel and not realize the very low limit and experience
-bad performance.
+Detail:
+* 2400 - 2483.5 MHz
+  - 200 mW (23 dBm)
+* 5150 - 5250 MHz
+  - 200 mW (23 dBm)
+  - Indoor only
+* 5250 - 5350 MHz
+  - 200 mW (23 dBm)
+  - DFS
+* 5470 - 5725 MHz
+  - 1000 mW (30 dBm)
+  - DFS
+* 5725 - 5850 MHz
+  - 1000 mW (30 dBm)
+* 5925 - 6425 MHz
+  - LPI
+    * 200 mW (23 dBm)
+    * Indoor only
+  - VLP
+    * 25 mW (14 dBm)
+    * Indoor and outdoor
 
-> > I'll update the wording when applying.
->
-> Thanks, much appreciated.
->
-> I also just noticed that there's some linkrot with
-> "https://www.ttja.ee/et/ettevottele-organisatsioonile/sideteenused/raadio=
-seadmed/wifi-seade",
-> the working link would be
-> "https://ttja.ee/eraklient/side-ja-meediateenused/raadioside/wifi-seadmet=
-e-kasutus".
->
-> Should I submit a new patch to update that or could you incorporate this
-> minor touch-up as well?
+[1] https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.pdf
+[2] https://mic.gov.vn/van-ban-phap-luat/25099.htm
 
-I guess you could send a new patch for the record.
+Signed-off-by: Hoang Pham Anh Duy <duy@etylix.me>
+---
+ db.txt | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
 
-
-Thanks
-ChenYu
+diff --git a/db.txt b/db.txt
+index e331d4f..eb882de 100644
+--- a/db.txt
++++ b/db.txt
+@@ -2001,12 +2001,16 @@ country VI: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
++# Source:
++# https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.pdf
++# https://mic.gov.vn/van-ban-phap-luat/25099.htm
+ country VN: DFS-FCC
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (17)
+-	(5250 - 5330 @ 80), (24), DFS
+-	(5490 - 5730 @ 80), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(2400 - 2483.5 @ 40), (200 mW)
++	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
++	(5250 - 5350 @ 80), (200 mW), DFS, AUTO-BW
++	(5470 - 5725 @ 80), (1000 mW), DFS, AUTO-BW
++	(5725 - 5850 @ 80), (1000 mW), AUTO-BW
++	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+ 
+ # Source:
+ # http://www.trr.vu/attachments/category/130/GURL_for_Short-range_Radiocommunication_Devices2.pdf
+-- 
+2.46.0.windows.1
 
