@@ -4,59 +4,77 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 095DBC369C9
-	for <wireless-regdb@archiver.kernel.org>; Fri, 18 Apr 2025 19:35:41 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9E9EDC369CB
+	for <wireless-regdb@archiver.kernel.org>; Wed, 23 Apr 2025 06:55:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	Content-Transfer-Encoding:Message-Id:Date:MIME-Version:Subject:Cc:To:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=Gqf9MNMQv1izUarlmFAo3gQSnimgXjxG/3jtSrbUYSA=; b=NmcboA7i+uOe0FbxhaR5KfruTQ
-	aMMI+nCt+IsuyxRVx8cTpS+Fz23FWHPNaMSh1BlX5qeErpEXkbgMgBcGp2/IwKjPcTdql9qOb8hRn
-	u/5DAmdJHiWIv4VEBQawof3DfisaEZ7jBWVlKBqwRFxdmWt2BdByj43tf9+YYmOaK8hS+wtLbcrAq
-	Dkzoup48EXkOBMAlbcKcwyN89Y5PPfIK+eAnz/fQ15PEUZobLwc2GYKg1CxZNUBsetc2PBX0Lqcjw
-	MHlVVf/a0qLZQj5zTTFfGIo3Ol3N8a67G6lV5JlDUgTiAkyFg7lFvCCcg+ax038kIu6jhswh0796h
-	GPwql1CA==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=D4BIwnznthiv+D6IfZakyHyA3dCAn7tDKaxeei3iHn4=; b=z3mPGdXWdeoU8cd8HMNhIEp0Dw
+	wx96x5P3S3YBe0SXojeH8BkWDcf5Ud0auwmLjDUq3ZNXMNt+ieVlllOMs5ITGLQBoodVpeXL7sfO7
+	z6dB4YCUodT7JRfr9Ct36VxUZ+QEQAUNBxMfMAYaY8wLQlSNpNfshTYm0j5+JuBTGfO3HQ9xTEa23
+	+ZXVWtd5E4hLucQPFIsqvup7xls2tXZc9P1EsnT2OkeTJbZOyAopkQdZEZo3vqT2rl7kJXvNjgaDH
+	UsHXDVg6Z0UIcfPS98e0d+zfAtXG+M02Gn7twcG5tXue9Jplmux6QhwEVGSeOW1vYdGa1QqxA/9BC
+	EuW0UhhQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5rUx-000000001SK-2dLx;
-	Fri, 18 Apr 2025 19:35:39 +0000
-Received: from forward401d.mail.yandex.net ([178.154.239.222])
+	id 1u7U13-00000009PQ0-445i;
+	Wed, 23 Apr 2025 06:55:29 +0000
+Received: from mail-ed1-x533.google.com ([2a00:1450:4864:20::533])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1u5rUs-000000001QB-2noV
+	id 1u7T99-00000009HMS-1V2N
 	for wireless-regdb@lists.infradead.org;
-	Fri, 18 Apr 2025 19:35:39 +0000
-Received: from mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net (mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net [IPv6:2a02:6b8:c43:7cf:0:640:f67c:0])
-	by forward401d.mail.yandex.net (Yandex) with ESMTPS id 26F66627AE;
-	Fri, 18 Apr 2025 22:35:30 +0300 (MSK)
-Received: from mail.yandex.com (2a02:6b8:c43:4b0f:0:640:cb38:0 [2a02:6b8:c43:4b0f:0:640:cb38:0])
-	by mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net (mxback/Yandex) with HTTPS id HYQFXn0L2Cg0-oPnIjwbU;
-	Fri, 18 Apr 2025 22:35:29 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=etylix.me; s=mail;
-	t=1745004929; bh=Gqf9MNMQv1izUarlmFAo3gQSnimgXjxG/3jtSrbUYSA=;
-	h=Message-Id:Date:Subject:To:From:Cc;
-	b=5ZUImbyPVAolIyFTCGMlPiUQl4kj3QeNnHxaBsjOcQ3amWEYbZJl7017NgVgcl8Tf
-	 kOdP0mdPAPQpTJ4aB5wfJgIsgPAxrnzHieXYZ4VERollau2DE1qPJgO0WQiyOSfz0t
-	 0ZMDbOLSfa4Ai95ruiTea3amNQsdBQc+bGs7WAyI=
-Authentication-Results: mail-nwsmtp-mxback-production-main-46.klg.yp-c.yandex.net; dkim=pass header.i=@etylix.me
-Received: by mail-sendbernar-production-main-32.klg.yp-c.yandex.net with HTTP;
-	Fri, 18 Apr 2025 22:35:29 +0300
-From: Duy Hoang <duy@etylix.me>
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
-Subject: [PATCH] wireless-regdb: Update regulatory info for Vietnam (VN) for 2025
+	Wed, 23 Apr 2025 05:59:48 +0000
+Received: by mail-ed1-x533.google.com with SMTP id 4fb4d7f45d1cf-5f624291db6so8547291a12.3
+        for <wireless-regdb@lists.infradead.org>; Tue, 22 Apr 2025 22:59:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ekahau.com; s=google; t=1745387984; x=1745992784; darn=lists.infradead.org;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=D4BIwnznthiv+D6IfZakyHyA3dCAn7tDKaxeei3iHn4=;
+        b=di65QDhiVGdZ/Q4g/N48MUMEDPIKSVgy07PmmRaJ0lUQIjf5HD4+dbi5iUTDnakJBz
+         /T64RGGFT98u6CtJVg1HElr//Xmpgvb4k+pL+qIrcivQkZclsq7pHs69Jc+JNp7Nh9VN
+         QBaHNqDxx1XN5L+LuJL9asu5cpPK6YNUjxwlJnvvlGt9eXiw0f2KULVtgPjQz6Y2jc82
+         lgBEmBocR+ukeNFpZjhSXm4MrV1Pj+6GGvr2h+GiRJG1wY3m5/+aGgi/Yj5rQT9stv68
+         A7HFmDRQvZuFzLnqAoisF5MomrQXyDNUk0Dp/j4705Sxd+LA3nye4ZzcCm6QsT4+q1Ik
+         d5Tg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745387984; x=1745992784;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=D4BIwnznthiv+D6IfZakyHyA3dCAn7tDKaxeei3iHn4=;
+        b=f20A/QLMYRJPXTqf2ihwiP0Q+NcrYqbBNxXtg6I18QHXMGErMmMOEmygh78M2TGDDo
+         Jku/x8l2+Y3yGlpCo3Jy2s9kFamGNRTzB8e6TRlMusjufByZwF96pSMxf19HkZlGuItu
+         2WX6oVd+SZMgsCtiuKvECUNveXjWpPnyo8f1gztJXoNzMLjyPFD/W6gyDckJOgnTIujO
+         /ZCsZ/sLtG5BLJF4ebWqV3s87/FejZWsNQkqsE39efJk9+iD7QzThxv03FHBx8+6ciHd
+         zw9rW7qbPgvJT5jZPXoGwFGb1JGhKY5Ep12wl6V338GmrRYE16F3Tl8NlxiZVxbkzUZK
+         SJRw==
+X-Gm-Message-State: AOJu0YzdYP3kuEzV5oXFRTRJI6fD+kaBOInBqOFDAul4Dbx8Ug3JmO52
+	eSLHkD02d+j6FUL4p48CjlqC/YriWhiU3CW8/HCK/rc1VcVY4oBUeYmUjiuvTN8nB8GzU3gxIa0
+	XrFtSzzTFHGSR+UR0/F8PwcTsyF2mwO0MeZJTwMy7k3w7SjGyN2tirNFBv45sHOe4e2iS9DnSqD
+	3KvBh0QusMjSD2TrDl9P2sEWKiW0wtvHQqNn0BQ8jIEAGNd6nreA==
+X-Gm-Gg: ASbGncsVckx5Xy9axRFxYyI+kc0FlOsU6obMn8NvdT29gik8a2rokpbupyrMDrYM84K
+	zI3kLCErj+z7jRpJWZLQIl6uJpzGHX/df0JL5PexGu6ytpGmRYip3HZIytbw4PbysmSYLepJvIN
+	9vobsIfnO/FlX/Ju+/6Y3E5PQWFOG9YZv5
+X-Google-Smtp-Source: AGHT+IEPoovxa9aaowxPB79IP/72N5PnEPST6jlg1TJs7B6WmK2qaXObc81TJ03IddBhOowdJsVc6FkO5Je95+zhv5E=
+X-Received: by 2002:a05:6402:90d:b0:5f6:ace4:9fa6 with SMTP id
+ 4fb4d7f45d1cf-5f6ace4a062mr8089378a12.16.1745387984302; Tue, 22 Apr 2025
+ 22:59:44 -0700 (PDT)
 MIME-Version: 1.0
-X-Mailer: Yamail [ http://yandex.ru ] 5.0
-Date: Sat, 19 Apr 2025 02:35:29 +0700
-Message-Id: <2199341745004929@mail-sendbernar-production-main-32.klg.yp-c.yandex.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain
+From: Olli Alanen <olli.alanen@ekahau.com>
+Date: Wed, 23 Apr 2025 08:59:33 +0300
+X-Gm-Features: ATxdqUEiZ7RYpH_szQmCeEGQOiZwqigU5VQ5zl0y9I9Vp1_QCJmFaMTh0Cjkseo
+Message-ID: <CAAKnb7=8R3RFWHWDksjvjX8QDGidpMoe10OgmOJbuVXuq+fvPw@mail.gmail.com>
+Subject: 6ghz missing from some countries according to Wi-Fi Alliance
+To: wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250418_123534_888459_26AD2D90 
-X-CRM114-Status: UNSURE (   7.43  )
+X-CRM114-CacheID: sfid-20250422_225947_407278_566A5AE3 
+X-CRM114-Status: UNSURE (   7.16  )
 X-CRM114-Notice: Please train this message.
+X-Mailman-Approved-At: Tue, 22 Apr 2025 23:29:43 -0700
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,68 +89,42 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-According to [1] and [2]:
-- Update frequency range to match with Circular
-- Update units from dBm to mW to match values listed in Circular
-- Add AUTO-BW flags to allow the use of 160 MHz based on other rules
-- Update to allow use of 6 GHz band
+Hello,
 
-Detail:
-* 2400 - 2483.5 MHz
-  - 200 mW (23 dBm)
-* 5150 - 5250 MHz
-  - 200 mW (23 dBm)
-  - Indoor only
-* 5250 - 5350 MHz
-  - 200 mW (23 dBm)
-  - DFS
-* 5470 - 5725 MHz
-  - 1000 mW (30 dBm)
-  - DFS
-* 5725 - 5850 MHz
-  - 1000 mW (30 dBm)
-* 5925 - 6425 MHz
-  - LPI
-    * 200 mW (23 dBm)
-    * Indoor only
-  - VLP
-    * 25 mW (14 dBm)
-    * Indoor and outdoor
+and thanks for maintaining this database. We find it a very useful
+source of information. We were recently comparing your regulatory
+domain data to Wi-Fi alliance documents at:
+https://www.wi-fi.org/regulations-enabling-6-ghz-wi-fi and noticed
+some inconsistencies in the 6ghz band. I believe the following
+countries might require an update as according to WFA 6ghz is allowed
+at there, but in your database it is not:
+- Bangladesh
+- Syria
+- Tunisia
+- Vietnam
+- Andorra
+- Egypt
+- Monaco
 
-[1] https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.pdf
-[2] https://mic.gov.vn/van-ban-phap-luat/25099.htm
+The latest thread in this mailing list seems to propose a fix for
+Vietnam, but similar should be likely applied for other countries in
+my list too. I do not unfortunately have the original documents to
+which to refer, but I trust that the information in the Wi-Fi Alliance
+website should be correct.
 
-Signed-off-by: Hoang Pham Anh Duy <duy@etylix.me>
----
- db.txt | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+BR,
 
-diff --git a/db.txt b/db.txt
-index e331d4f..eb882de 100644
---- a/db.txt
-+++ b/db.txt
-@@ -2001,12 +2001,16 @@ country VI: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+# Source:
-+# https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.pdf
-+# https://mic.gov.vn/van-ban-phap-luat/25099.htm
- country VN: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (17)
--	(5250 - 5330 @ 80), (24), DFS
--	(5490 - 5730 @ 80), (24), DFS
--	(5735 - 5835 @ 80), (30)
-+	(2400 - 2483.5 @ 40), (200 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (200 mW), DFS, AUTO-BW
-+	(5470 - 5725 @ 80), (1000 mW), DFS, AUTO-BW
-+	(5725 - 5850 @ 80), (1000 mW), AUTO-BW
-+	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
- 
- # Source:
- # http://www.trr.vu/attachments/category/130/GURL_for_Short-range_Radiocommunication_Devices2.pdf
+Olli Alanen
+
 -- 
-2.46.0.windows.1
+
+
+This email, its contents and attachments contain information from Ziff 
+Davis, Inc. and/or its affiliates which may be privileged, confidential or 
+otherwise protected from disclosure. The information is intended to be for 
+the addressee(s) only. If you are not an addressee, any disclosure, copy, 
+distribution or use of the contents of this message is prohibited. If you 
+have received this email in error, please notify the sender by reply email 
+and delete the original message and any copies.
+
 
