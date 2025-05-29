@@ -4,95 +4,113 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D84A2C5AD49
-	for <wireless-regdb@archiver.kernel.org>; Thu, 29 May 2025 15:03:21 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34153C54FB3
+	for <wireless-regdb@archiver.kernel.org>; Thu, 29 May 2025 15:33:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=LxtQC1MUVZHNaNGyRdqTime6CdwJkwSW3XxqC34BelE=; b=0rf7yYsNvCMAd1hlDOCjZQ+vgp
-	DPgxfZemJLJ41X1WHxAoQDNGWB3iEP2yFSkih+d4/dxWe8vEc/6oXIdvmW8PXGStyLJKiHuviWA2+
-	2uqk3TManY3G+kiKK6h4akv/WJ6VdW2jNK/03dRh1sJceD5y4xgIMi5Tk81kJ2H7y2b35jINu2a4s
-	UjTyRTQe0ReGs7LWGr2wHK85RP0Scr+2qpbzxUZXInxghPaKGw7jtw7eKYZxI5D8ZWD4aaA1d6j3I
-	hww3p+NRaSzgvtli000iJavoZIlMvYKjUtiRYR8ZmCRDABGFHwYrm7OSrLZUm+HcWe61zKooPMOLH
-	9BE60Rkg==;
+	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=+5XrwQcXjTJzUM2MFfvkIx9eS2VzpJsm+RPNfXTZeFM=; b=Ovx8HZ8hSRlslLjAtIpXIZgMLD
+	RLWs5GCiPgWI7kaZYsKkhZbvh4EYw1O4be45x+eMWVDEFg1wbtFfF6Os0FxxBHWxNffgObmSW/ZJD
+	WmLG4LTbe8GUL2RTmnW6M0KyXleiqixmlws6qYyk7hvVJtUeYzPes/YTNJ7cIpkTiuW5GXFz6DLa+
+	kKUul1fA3dOo2AVn66eXFHrdJgQSlMkPhyri0AwE+wHwxcQjkxhQVY/Wtto0y+w2L1d5N97/ZxNzG
+	skjBmhD3E03ht/d5lhEJKkeRBgxCSeN7498MfqPX5KsI4R55CAj/mKkIn68HPYEkiBMR8It++iMTW
+	XPD88ygA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKemu-0000000G1la-165n;
-	Thu, 29 May 2025 15:03:20 +0000
-Received: from fhigh-b1-smtp.messagingengine.com ([202.12.124.152])
+	id 1uKfGJ-0000000G50q-2VGh;
+	Thu, 29 May 2025 15:33:43 +0000
+Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uKdmq-0000000FvaW-2nXS
+	id 1uKeZf-0000000G0hq-2JUN
+	for wireless-regdb@bombadil.infradead.org;
+	Thu, 29 May 2025 14:49:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
+	:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Sender:Reply-To:Content-ID:Content-Description;
+	bh=+5XrwQcXjTJzUM2MFfvkIx9eS2VzpJsm+RPNfXTZeFM=; b=GWdAwyJHb1g6lJdwQohtqCbn1N
+	YSPB5L8Fr2xeRya4XoP4yr+wpE2Ov7vEewzBi41yDbldP1izzgXquaNH+6Eh7v0UOBRAeiUeEXBdg
+	b/9nFTS2UZgyQRX8yQ3yIc0nkegMjhRU0FLimbdHoKi/VY0mDqeB9Xs5THnG/7LEZMPGbD4XnBS8/
+	o4opMFwaZWJK1x7XGMOwHB1jHrEC4G4UBKgep6stWiAlbuwkPeWGvrsG/w0A3LmweWx6S7Yvhm9qd
+	FI4KqVglQWv6Ht3a8Jk0rCeNeLxY6pfuA5xs6r5hrr4ZQK0xJViBw/rjoB9JvrbZ3GuA9xqPdDW3G
+	di+AouUQ==;
+Received: from fout-b2-smtp.messagingengine.com ([202.12.124.145])
+	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
+	id 1uKeZZ-000000008MF-3Mgr
 	for wireless-regdb@lists.infradead.org;
-	Thu, 29 May 2025 13:59:14 +0000
+	Thu, 29 May 2025 14:49:37 +0000
 Received: from phl-compute-02.internal (phl-compute-02.phl.internal [10.202.2.42])
-	by mailfhigh.stl.internal (Postfix) with ESMTP id ADBDB25400A2;
-	Thu, 29 May 2025 09:59:09 -0400 (EDT)
+	by mailfout.stl.internal (Postfix) with ESMTP id DD7461140122;
+	Thu, 29 May 2025 10:49:16 -0400 (EDT)
 Received: from phl-imap-16 ([10.202.2.88])
-  by phl-compute-02.internal (MEProxy); Thu, 29 May 2025 09:59:09 -0400
+  by phl-compute-02.internal (MEProxy); Thu, 29 May 2025 10:49:16 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=emily.moe; h=cc
 	:cc:content-transfer-encoding:content-type:content-type:date
-	:date:from:from:in-reply-to:message-id:mime-version:reply-to
-	:subject:subject:to:to; s=fm2; t=1748527149; x=1748613549; bh=Lx
-	tQC1MUVZHNaNGyRdqTime6CdwJkwSW3XxqC34BelE=; b=H24xHhykCa6vFG4Bze
-	siSe6RJnC2Qe2u4r6Icu5rJy+X3fyV3XQzAS8Za5ict0LQ3XvQOtZYXx5BBLOlUn
-	xz4FxJakTwmNJ/4/Elh2FQGpbtI4mlNBFXY6UgVD+IAO3tAnkfqXefo6yz1WOBQJ
-	YAbi7QXjs96tZm5umIKfVXl/q0q/ZNtscXmkH8Fy6TsLPTawO6DNONMIEHeBRTaE
-	EssE3o0HrqEUpbHr5g+71ZI5mWO9gFnjdoXQpqC4gLau435aTV/2QBj2I9ZzzMGT
-	to8fXfRuXH4UNnmi9CrdVMlAa9IlL1YeGNiH+i+aRdzmuCAoQFu4kHRiRnOBZZT8
-	j3Sw==
+	:date:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1748530156;
+	 x=1748616556; bh=+5XrwQcXjTJzUM2MFfvkIx9eS2VzpJsm+RPNfXTZeFM=; b=
+	LxOVsix1UCiEECy1oFMxqGyX3OSUHipGIUqjcO9/MAyT6J574kF/78UhaAbSfM1v
+	WC6Fl9YHPQt6aX/uh3403vR+Sm3Zs2MhQnTBS6X5AENHAFcyq+pN6wTRwBLEVZ2L
+	6Hz9IK+dY1MAVD1/sBOi9ZMosP6jsZwipbW8n94ys4pBcJUlLKAwtnqNsaaBHT1K
+	JNc5TKSCmmaQ5YBZkQP3HgXFEYwSm8lkTyNttd2bPKZ55viFzWtH5++dZzNFX1Ao
+	7AKVWJOpLw32DIoWJ8Z0f89TW0rKkjb+rchDKqtWgWmPd+7goDPaEKmWiOLlX5sK
+	EX1SCIzCGxUft7iQXIElMQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
 	messagingengine.com; h=cc:cc:content-transfer-encoding
 	:content-type:content-type:date:date:feedback-id:feedback-id
-	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
-	:subject:to:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm1; t=1748527149; x=1748613549; bh=LxtQC1MUVZHNaNGyRdqTime6CdwJ
-	kwSW3XxqC34BelE=; b=G8NoJiR/ZG2DxbNmVRGyyFtpgCXC9aBhYNYHqxFT3w1p
-	4DkQEgR3SLKxGhEJq+S/PAd7c7bTLDEXgYBs7sXyPSmRAC4BagKQgO6n8agaCy6L
-	CFeTfxwnFXDPdz+IklB158LO8lKlLGCJeTJd+RYRvY8++wIpxAcSm4FMQXM1UvXQ
-	71KZP7heQiwra58ufg6JbswXchwC0udm2B2x0YAcOwm/rboH/QDegXS5sQzqzuP5
-	ED7JpLbL1GGb/VZe/HAMhK5X6BasbSopmgO/ZpJoryMsoTe7ECv2wVPVjcA50Q3l
-	ksBOynVudoMHLNt7jpRdjg0ed9dZa8/9/0EIriIHMA==
-X-ME-Sender: <xms:LWg4aCpe1gjks2PbcyIBbTlmZit-7FwOZWQpkWKd9JeaRlmsTTJ_PA>
-    <xme:LWg4aArwjd5QskGyKp6zayE1bubn3rYawYI0b2ay4H4Yi5pv850nDUy52rGK3sPSX
-    dAQ050lBd-zN_Gvwqs>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtddtgddvieefvdculddtuddrgeefvddrtd
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1748530156; x=
+	1748616556; bh=+5XrwQcXjTJzUM2MFfvkIx9eS2VzpJsm+RPNfXTZeFM=; b=B
+	9sOwg5J51+3tVqCol4NpQ+0BgLwr+FWbGqg8Gp0QvvgZkI4TSv5zrRe4UXeQnYVL
+	I8nVLj2fiKV4mjoOjF4laTti72fN6wTqiG1y2/GZFT+EhsrOCxzE5Rg8tQCrPXsH
+	lp4e+vzjbFaf+KTiJZdMAcwpwNgOhCO/j14tci6DYPsZWw8uzX1emNKnNywWHpAc
+	7vPdJXn3K91c5KoHv4d4h2lsPCDfaWAvl0AzPojKgQtF2u5RkTaLpGy2ARBaPuc8
+	vH6Im21bzE2EWQvn9ZNesxqC7RIXWjaGLfmLG1qpbE3yUdbMlgQS4zyug06igqP4
+	qEYA17A/D8qorsb+n3WsA==
+X-ME-Sender: <xms:7HM4aDwkDYu2wil-7KrYlHOXk83v8PnRqToAtcRVTZhkmRLQgLDo_g>
+    <xme:7HM4aLRxbLq78yNOVtX9iCb4W3TYkPTJTgam00JOYUsHos9Zpr40BxzVN23Ro4usL
+    k9on5W2u-zGWgo2ztM>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtddtgddvieegudculddtuddrgeefvddrtd
     dtmdcutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpggft
     fghnshhusghstghrihgsvgdpuffrtefokffrpgfnqfghnecuuegrihhlohhuthemuceftd
-    dtnecunecujfgurhepoffhvfevufffkffogggtgfesthekredtredtjeenucfhrhhomhep
-    gfhmihhlhicuoehlihhnuhigsegvmhhilhihrdhmohgvqeenucggtffrrghtthgvrhhnpe
-    eifeejjeeigeejheffueelhfeifeeugfekfffgudelheevieevgfekhfekgeeitdenucff
-    ohhmrghinhepohhftghomhdrohhrghdruhhknecuvehluhhsthgvrhfuihiivgeptdenuc
-    frrghrrghmpehmrghilhhfrhhomheplhhinhhugiesvghmihhlhidrmhhovgdpnhgspghr
-    tghpthhtohepfedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtoheplhhinhhugiesvg
-    hmihhlhidrmhhovgdprhgtphhtthhopeifihhrvghlvghsshdqrhgvghgusgeslhhishht
-    shdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehlihhnuhigqdifihhrvghlvg
-    hsshesvhhgvghrrdhkvghrnhgvlhdrohhrgh
-X-ME-Proxy: <xmx:LWg4aHOIsDQQFrTYURhXWOFces_H10kH95RNctlF3NDOEJG-k-yXLQ>
-    <xmx:LWg4aB7XqNJR-deT-VszsW2z5GE9ZZ8Gdmb96GHVeVMHlFJZYrIPGA>
-    <xmx:LWg4aB5QFPOwD3TdEDvCms020hdreserrGZuWXlAHO_kQkU__0mPpA>
-    <xmx:LWg4aBitLyClOShc5A2ReAdOiYYUL-F0pB4sd_6TSPpRLxIM6uZXyw>
-    <xmx:LWg4aMPSIBJRcaEchgEeGl-5f0RkUMeYnclXPweGWPsXkdxLq-nyuIbJ>
+    dtnecunecujfgurhepoffhvfevufffkffojghfgggtgfesthekredtredtjeenucfhrhho
+    mhepgfhmihhlhicuoehlihhnuhigsegvmhhilhihrdhmohgvqeenucggtffrrghtthgvrh
+    hnpeejudduledvffeuteekveeffeetfeethfelieehjedviedthedvvdffgeeuieevvden
+    ucffohhmrghinhepohhftghomhdrohhrghdruhhknecuvehluhhsthgvrhfuihiivgeptd
+    enucfrrghrrghmpehmrghilhhfrhhomheplhhinhhugiesvghmihhlhidrmhhovgdpnhgs
+    pghrtghpthhtohepfedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtoheplhhinhhugi
+    esvghmihhlhidrmhhovgdprhgtphhtthhopeifihhrvghlvghsshdqrhgvghgusgeslhhi
+    shhtshdrihhnfhhrrgguvggrugdrohhrghdprhgtphhtthhopehlihhnuhigqdifihhrvg
+    hlvghsshesvhhgvghrrdhkvghrnhgvlhdrohhrgh
+X-ME-Proxy: <xmx:7HM4aNV5pK_6Z2T5-qe1zafaIWVBl3gVx4mc2KctKayqkjV-BajS6w>
+    <xmx:7HM4aNipvNmQI6Lbn1sH1M65BTybEl4kmEfsVzIcfijACKZy4J73lA>
+    <xmx:7HM4aFAlUFXaQ0ZwUBEmOrzJyoPwFMC6wxnr7St9mR4yRsZ_sq-IgA>
+    <xmx:7HM4aGJfTJtgyyMX3F5jds0o14IF02GRKZ3lO4_FfAIx1Wweb-MYXg>
+    <xmx:7HM4aKV5MjtxscjCu4X2s_RxL_EFaB0twb-lAqjyxn1q1H2udQfidUye>
 Feedback-ID: i3c8944dd:Fastmail
 Received: by mailuser.phl.internal (Postfix, from userid 501)
-	id 3AA972CC0083; Thu, 29 May 2025 09:59:09 -0400 (EDT)
+	id 55A3D2CC0081; Thu, 29 May 2025 10:49:16 -0400 (EDT)
 X-Mailer: MessagingEngine.com Webmail Interface
 From: Emily <linux@emily.moe>
 To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org,
 	Emily <linux@emily.moe>
-Subject: [PATCH] wireless-regdb: Permit 230 MHz bandwidth in 6 GHz band for GB
-Date: Thu, 29 May 2025 14:57:06 +0100
-Message-ID: <20250529135706.31269-1-linux@emily.moe>
+Subject: [PATCH v2] wireless-regdb: Permit 320 MHz bandwidth in 6 GHz band for GB
+Date: Thu, 29 May 2025 15:47:56 +0100
+Message-ID: <20250529144854.31931-1-linux@emily.moe>
 X-Mailer: git-send-email 2.49.0
+In-Reply-To: <20250529135706.31269-1-linux@emily.moe>
+References: <20250529135706.31269-1-linux@emily.moe>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250529_065912_984728_47AB87E6 
-X-CRM114-Status: GOOD (  10.91  )
+X-CRM114-CacheID: sfid-20250529_154935_220754_EE55E291 
+X-CRM114-Status: GOOD (  12.75  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -131,6 +149,9 @@ bandwidth is restricted in any way.
 
 Signed-off-by: Emily <hello@emily.moe>
 ---
+Sorry for the list spam; I didn’t notice the typo in the commit
+subject line until it was pointed out to me out of band…
+
  db.txt | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
