@@ -4,102 +4,90 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id DBF73C7EE33
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D882AC7EE30
 	for <wireless-regdb@archiver.kernel.org>; Thu, 26 Jun 2025 11:22:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:In-Reply-To:From:References:Cc:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=umoGUYQe48OfV5fwGyylK64REtd9n1DfkxW5EqG+gec=; b=1LITKlnCZgGXPrGCzq+HkWX7Pk
-	wcey0Zgcta7O+85jlUn6Wvi4qF66i3/LWIXlWoLelHE7xo5H3HWfpvdkhBDCdslgjLsSeIY6ccQA2
-	mIE5pa0UQq50OAXjtJUbeftCXCEKz40NNbiabZB/tPKbYobHiStyxoThxTHWxDickok+WrhSb0ant
-	PIFJjMxYsRGz9RtRcdI5NleOjawPvfBHagi2PpjSf1VwPIHPPg2QYi+RTwM3HUWV+A3FJxWq0tJbI
-	1aCNs1ZJG59T3GOQMiyng55FcN0D46eeBb2aIRFWwVIUchHe3Wi6qLEskwKpKkczUKPCBFfHTtwtR
-	5bBlWT7g==;
+	bh=37koSnKgU7hvKQYo2n96QVYEhjOgjKih/EBKKAgCbs4=; b=5CIWQQXmInRVkkaov98tSJygtb
+	Uq0wJjfR5Eq4MOkrDjs5jEDaQwKi+XsQCnpRPZjcHblDBhc54p6xMEerr8VgXCDPQnaGqrQnMe67N
+	odekUMFF+3pgIEwkqtGoGeiMn3XRIHcI6kmAcBezsl64a+sC/HGulnfcff/o9F8xnXT2Z+wVYO2EX
+	W0TqVPrlnFQ4A6gEJKaFGqcNSmJkKuPh/9aVG7BZxmedwfCBvV5tuGOKT8RccovXYzDNmEPyWMri/
+	6WmDa/GOPU2LgbEzb8YvxT/z53+Q+kX67nOVUukGtlOWDP0E6zU2mLU1pqcgqSnatzvF2FOIej2Be
+	EoVmwp3g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUkgv-0000000BNva-3WWe;
-	Thu, 26 Jun 2025 11:22:53 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1uUkgw-0000000BNwE-3AVw;
+	Thu, 26 Jun 2025 11:22:54 +0000
+Received: from mail-pl1-x633.google.com ([2607:f8b0:4864:20::633])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUjIY-0000000BDEo-06vp
-	for wireless-regdb@bombadil.infradead.org;
-	Thu, 26 Jun 2025 09:53:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:MIME-Version
-	:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:
-	Content-Type:Content-ID:Content-Description;
-	bh=umoGUYQe48OfV5fwGyylK64REtd9n1DfkxW5EqG+gec=; b=FZeYPzxA6Q2T9O48XmDKzwLb7F
-	Lo6w4yCiWpCWVHu8UVOwBAsExd39niAn7xKZ4Ef8D+SLLAqZSppVRbZcsPEUMY4gRaSk0AQG1hB43
-	cD5fsrbme7vMu5cgGxNg9QEjk5z6b7swiD4aPIxiQ+IVjctpFfQcvYpA5eUA9BhwZ0/WL6OZE52yz
-	nM/K8b4ZbZf79WfUr2CKJDZ2G++v/J9zN1AGvoc6EFs/UCa1qG+lcJd3WNbLR+xXiE4pB5k/eb71w
-	qfdedfJ22hb68ys3fiznCqTXbG5bOgUasJTSRlwlbcp0FqNgWf8D9kU2RSnDFT9CPy5YzMwZ3ih4B
-	XEwHWB1g==;
-Received: from mail-pf1-x42a.google.com ([2607:f8b0:4864:20::42a])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uUjIU-000000064dx-3tT6
+	id 1uUjKz-0000000BDT6-3edj
 	for wireless-regdb@lists.infradead.org;
-	Thu, 26 Jun 2025 09:53:37 +0000
-Received: by mail-pf1-x42a.google.com with SMTP id d2e1a72fcca58-73972a54919so814263b3a.3
-        for <wireless-regdb@lists.infradead.org>; Thu, 26 Jun 2025 02:53:33 -0700 (PDT)
+	Thu, 26 Jun 2025 09:56:11 +0000
+Received: by mail-pl1-x633.google.com with SMTP id d9443c01a7336-22c33677183so8744215ad.2
+        for <wireless-regdb@lists.infradead.org>; Thu, 26 Jun 2025 02:56:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1750931612; x=1751536412; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=umoGUYQe48OfV5fwGyylK64REtd9n1DfkxW5EqG+gec=;
-        b=WuqcQ7+CvJLf4fT/aSlDc0U7SJy8lqJ/RYBJGwotSIO+94T/3oob8OVf9FzDApKjup
-         tOr/QCuA5BsyysCj9DaXkZYkvSravdGQ6zI4u/ByAm7Mac4DDFAdTkONRU0UAft5ERnJ
-         8emgRT3ilgyURPYwzhkMX1UznEKXjT/WIgDY9NaR5YDW31C21fgn9jRDAF2x3vS1eyqv
-         2QxRH3ATmN43Y8Fo/UlBK5ueEUdo8CLXrNAx5JIoTY1mUmr3ulpfislzKwBGP5d8rl09
-         sGEXqZXS6Yfu/pp5zllquN73mmJsP14kHkniTFmtdLQh/UmVUcT8FSIScAo1xgSgyhoe
-         wj/Q==
+        d=gmail.com; s=20230601; t=1750931769; x=1751536569; darn=lists.infradead.org;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=37koSnKgU7hvKQYo2n96QVYEhjOgjKih/EBKKAgCbs4=;
+        b=EsQxilgQGmUKnQ9JUWnSutIxdOaCpzwB87+uFU/t91k6gqB/ySHJ8iJxgzaiSmfihU
+         eP1wQvWD+I0N7gLnuUxtX/NCutrHcb2tnx4unrrrWql06RpdMJx9RmxXwVmZgMVhHUBy
+         05fIuGjvi0gdDO02umEZY1OfSY/8D+UB8MgRCa3DGnzuJ7Qk6JgxhifcpPhz5RPpMm3b
+         vOZd5RUbIrNaCM/8mwMYhHnj0j8quhSQ1u+1CpJNRdD7HldMHI4TPVnRYucGcd6419/l
+         ynU0W4VQbYSV3dXEP+OAZUX4U4CnR5S7UGABpPlkcCOSzp4CB7iGGL/83B9epSU3iZOp
+         H3yw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1750931612; x=1751536412;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=umoGUYQe48OfV5fwGyylK64REtd9n1DfkxW5EqG+gec=;
-        b=intyamviKMYZnp6bypr/XlbQvpr5wMTBEvuCON91lgHRn18wIReScMpddYMezUt5Dk
-         OTcH73ii/ZeiNodcPbBeJIB+N7VtnI+GuaSVdYhCCsYdNLui85ZybwUKZfXs2rVRNJes
-         DP4p7zWIMCpTcMDjHmuv4ytdSQFJToFOAHRfeGF+cmysYGwY9FsTTVha7Qz1bfgdE25R
-         NooYgRUwu8zug79q9g4EFI/U4IH7s2PzUKf/GcIP6Ml5jaR30EeToNIPg5NAvgRQT790
-         PxJnTG0hFV60BpniSI7x8pcW74+YFhJHviMbGI1SOWCAQMoF7qPwMoM3pQH9PNcWHLvX
-         uCog==
-X-Forwarded-Encrypted: i=1; AJvYcCUv7x2dJZIvWPkN1Kqe168TiB3lGiHjc0PVhuEwRxp6lV4vKrUvUGueL94YBhNQNyCtSZsl55YpII1mcxWosg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YyOvOhqLd+0jW+/BJnGVCMo+WEmXzknSUAPbJpTgO/COxvFFi5I
-	Y2iMR970AkxGBTcxfwWdIwlOfXmrUJ4UUSAZGc+tGnvVr2Z4P+uS/tD8
-X-Gm-Gg: ASbGncvFp6Cwnnaax0YID0iK4WqkHZzdybNThYIdlUcjSJueUV4dKLSvI4VMSvME8n6
-	29IYyeaiBM4FjoKwk/rnjtPcJyVM7ax8kkCRSTmJbyGZ4Sw+rpE8j7WHNNvQOeBCinitxnUOWM3
-	O/V8nH5CaPq6qlKAjl1IGt6E+MpdFqau7nnWnkC/zXNpIFkmotMqoxI4mlD7qaaylR7O+SNJQho
-	EKUGCb9YzuH7CuDedfW0gJUHkgmyt8QmtyvJLNSoXV3LY+HdE46+7FVWjTjRGLGabDETSUXdapX
-	0XAYMH2yCESVmE4snrgmby3GFvhHhxjDmWx9NIR0ICDFIi34cFr7ShboIopncfRHuo8=
-X-Google-Smtp-Source: AGHT+IE4u1wjlqpnZwCtzwCzN8lsdLc5uxDFnvFhKRwltl0hwS2kIseIBzeGS/5ZNVgtkOZovl3FBA==
-X-Received: by 2002:a17:90b:3a48:b0:311:e8cc:424e with SMTP id 98e67ed59e1d1-315f269d1ffmr9858405a91.24.1750931611952;
-        Thu, 26 Jun 2025 02:53:31 -0700 (PDT)
-Received: from glados.lan ([2804:d51:4975:7202:7e03:331b:6be0:eea6])
-        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-315f5428ae2sm4073980a91.28.2025.06.26.02.53.29
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Thu, 26 Jun 2025 02:53:31 -0700 (PDT)
-From: Marcos Alano <marcoshalano@gmail.com>
-To: linux-wireless@vger.kernel.org
-Cc: wens@kernel.org,
-	wireless-regdb@lists.infradead.org,
-	Marcos Alano <marcoshalano@gmail.com>
-Subject: [PATCH v3] wireless-regdb: Update regulatory rules for Brazil (BR) on 6GHz
-Date: Thu, 26 Jun 2025 06:53:20 -0300
-Message-ID: <20250626095320.2948805-1-marcoshalano@gmail.com>
-X-Mailer: git-send-email 2.49.0
-In-Reply-To: <20250602121434.3011282-1-marcoshalano@gmail.com>
-References: <20250602121434.3011282-1-marcoshalano@gmail.com>
+        d=1e100.net; s=20230601; t=1750931769; x=1751536569;
+        h=content-transfer-encoding:in-reply-to:from:references:cc:to
+         :content-language:subject:user-agent:mime-version:date:message-id
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=37koSnKgU7hvKQYo2n96QVYEhjOgjKih/EBKKAgCbs4=;
+        b=rXI1NMLiETP4NcvWrX0xsMQ9CeWw6tE9Hh9EvyEk42R6AOr0EZEkBbsBSbPCe4MMZH
+         BerXWoSl1l5Z4bubvWcz0/p2tppN9hoq3Dpl2BV71IeXIfp0+5UUxPUOtqiuEmnOw4iN
+         jEJjoAe4DYGYx8s/XVsCFxtKwX6R7gWP7LbEoyqAyTcBKGn3wS9M89FP/67SV7b1ElVD
+         XPb2+rFV/kAt/tHwoa1vn8f3dOJ1sTl/KZ254zMfbacbp4BHPOcQf3kBFntZKY9IMK3m
+         Xo5Qk2PZAPb1r43k+XGsl3QEvAvHfl4KIa5+7qkniw0lrLT2/j5hlmLIOXJpF7fYDfhC
+         JWtA==
+X-Forwarded-Encrypted: i=1; AJvYcCUeCfkNYVlejhmcRPaxVBvjE78+6yKXstwUz9isEp1dY57uk4hz6AhP7KAJakTZ+/+SFgrCXocFEmCE5eaHcg==@lists.infradead.org
+X-Gm-Message-State: AOJu0YyMHuOFyCuVUEfNlTdhZV+uZa32xnfci4DIECuLxTmAxvrspRIz
+	FH7ZkDszE91jD9/OxwbHPaG33PH3tOAd+vh973PoHbsvAugB8fP4kLi2
+X-Gm-Gg: ASbGncslv9Nhk2pdZM1tH6c7ZDyavKA3KA8GHrxybA4BqlMH84AieHcHmi7OIOMMS3P
+	eq1/9Ad1WPW4EuxntqLMQMXvKc9iTHvwY6BsXgE9x8v5zG4x7jzQzJLlfw+tfAMW9Lhk71UkRKn
+	zk6uZFsGf9VDnoOcnbdquYbMpkkSwOylElt40YEh28ZeemCTGgwJRbMuHeP1Ja8FdRsdUb1lt9W
+	1rTtWsp2EArC5xy+mzm3L2nAOeGoGK6LXA5gzESBPBMVmh+nVet2f3/+HF9GKpBOaGOr5qJNTis
+	R0thskfF2APJFia2EMovJVCAXZag3IVaSoVLQ7VwS7ttFx4a3B2W4b3biIwzQGehJOMpD08g1uy
+	vXJOsTwlh4MZpdAJMaB9UZ9DI0HU8/jaE1ED2XQ==
+X-Google-Smtp-Source: AGHT+IEMYT2m1/4OY42gRrv08XFk24ea9yFOUWIux+JsIeLqU2Vjysir8YigFi2HW8kVa7afDe4ijg==
+X-Received: by 2002:a17:903:2bcb:b0:234:8a4a:adb4 with SMTP id d9443c01a7336-238240f5674mr92109895ad.21.1750931769058;
+        Thu, 26 Jun 2025 02:56:09 -0700 (PDT)
+Received: from ?IPV6:2804:d51:4975:7202:7e03:331b:6be0:eea6? ([2804:d51:4975:7202:7e03:331b:6be0:eea6])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-237d860a36dsm153819385ad.126.2025.06.26.02.56.06
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 26 Jun 2025 02:56:08 -0700 (PDT)
+Message-ID: <46ab2a6b-82ff-4330-819e-99a67280409a@gmail.com>
+Date: Thu, 26 Jun 2025 06:56:05 -0300
 MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: wireless-regdb: Update regulatory rules for Brazil (BR) on 6GHz
+Content-Language: en-US
+To: wens@kernel.org
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+References: <8bc290d6-5687-495d-b5d5-a8ca94cf2f7a@gmail.com>
+ <CAGb2v64z3Yv_MNxJDTMcDR5ajD_L0zpsea2aBcrCLKfw3HUmiQ@mail.gmail.com>
+ <ee7a2587-3e4c-4bb2-8eeb-961dbbb9ca97@gmail.com>
+ <CAGb2v640p2zfD9T6PnmfOwJY8nMeSyY5CJNhtdW9B-+ZPNSW4Q@mail.gmail.com>
+From: Marcos Alano <marcoshalano@gmail.com>
+In-Reply-To: <CAGb2v640p2zfD9T6PnmfOwJY8nMeSyY5CJNhtdW9B-+ZPNSW4Q@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250626_105335_153200_1548A427 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20250626_025609_931814_1B88D02E 
+X-CRM114-Status: GOOD (  17.97  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -114,39 +102,83 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Change rules for 6GHz on Brazil removing `NO-IR` and adjust
-the maximum power according the normative.
 
-Change the comment to point to the newer normative.
 
-Signed-off-by: Marcos Alano <marcoshalano@gmail.com>
----
- db.txt | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+On 26/06/2025 06:23, Chen-Yu Tsai wrote:
+> Hi,
+> 
+> On Thu, Jun 26, 2025 at 4:37 PM Marcos Alano <marcoshalano@gmail.com> wrote:
+>>
+>> On 26/06/2025 05:15, Chen-Yu Tsai wrote:
+>>> On Mon, Jun 2, 2025 at 9:23 AM Marcos Alano <marcoshalano@gmail.com> wrote:
+>>>>
+>>>> Hi,
+>>>>
+>>>> The rules for Brazil were based on this normative
+>>>> https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680,
+>>>> as mentioned in the comments of the entry.
+>>>>
+>>>> This January came out a newer normative
+>>>> https://informacoes.anatel.gov.br/legislacao/resolucoes/2025/2001-resolucao-772,
+>>>>
+>>>> It allows 6GHz frequencies, so the line:
+>>>> (5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
+>>>> Should change for, at least:
+>>>> (5925 - 7125 @ 320), (12), NO-OUTDOOR
+>>>> The removal of NO-IR is important, since routers Wi-Fi 6E and 7 don't
+>>>> work because of this outdated rule based on an outdated normative.
+>>>
+>>> Those are very large documents. Could you help point out which sections
+>>> or comments apply to your argument?
+>>
+>> https://informacoes.anatel.gov.br/legislacao/atos-de-requisitos-tecnicos-de-gestao-do-espectro/2024/1920-ato-915:
+>> in the items IX.4 and IX.5 mentions the 6GHz frequency.
+> 
+> This only covers point-to-point usage. You would need to modify the rules
+> and add the PTP flag. Likely not what you actually want.
+> 
+>> https://informacoes.anatel.gov.br/legislacao/resolucoes/2025/2001-resolucao-772:
+>> You can search for "5925-6700" to check how the allocation is done.
+>> It mentions satellites, so that's why I set indoors, but maybe you
+>> understand that is not necessary.
+> 
+> This only gives the band allocation, not the requirements for each use.
+> Also, satellite communication is a different use category. We should look
+> for WiFi or RLAN, or perhaps "comunicação multimídia".
+> 
+> The requirements I were able to find are:
+> 
+> https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2021/1510-ato-1306
+> 
+> ChenYu
 
-diff --git a/db.txt b/db.txt
-index 803f1bc..eda4eca 100644
---- a/db.txt
-+++ b/db.txt
-@@ -322,7 +322,7 @@ country BO: DFS-JP
- # Source:
- # https://www.gov.br/anatel/pt-br/regulado/radiofrequencia/radiacao-restrita
- # https://informacoes.anatel.gov.br/legislacao/resolucoes/2017/936-resolucao-680
--# https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448
-+# https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2021/1510-ato-1306
- country BR: DFS-FCC
- 	(2400 - 2483.5 @ 40), (30)
- 	# The next three ranges have been reduced by 3dB, could be increased
-@@ -331,7 +331,7 @@ country BR: DFS-FCC
- 	(5250 - 5350 @ 80), (27), NO-OUTDOOR, DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (27), DFS, AUTO-BW
- 	(5725 - 5850 @ 80), (30), AUTO-BW
--	(5925 - 7125 @ 320), (12), NO-OUTDOOR, NO-IR
-+	(5925 - 7125 @ 320), (27), NO-OUTDOOR
- 	# EIRP=40dBm (43dBm peak)
- 	(57000 - 71000 @ 2160), (40)
- 
+I created a v3 patch that updates the comments with the new normative 
+you found, removes the NO-IR so a AP can work correctly, and changed the 
+maximum power from 12 to 27, since for APs it seems to mention 30dBm, 
+but I considered TPC like the other frequencies.
+
+> 
+>> Marcos.
+>>
+>>
+>>>
+>>> Thanks
+>>> ChenYu
+>>>
+>>>> I'm no lawyer, so please if you see something different, like more
+>>>> granular control in the allowed frequencies, please let us know.
+>>>>
+>>>> Thanks,
+>>>> --
+>>>> Marcos Alano
+>>>>
+>>>>
+>>
+>> --
+>> Marcos Alano
+>>
+
 -- 
-2.49.0
+Marcos Alano
 
 
