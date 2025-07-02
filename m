@@ -4,71 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06CFBC83013
-	for <wireless-regdb@archiver.kernel.org>; Wed,  2 Jul 2025 04:51:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD8E9C83013
+	for <wireless-regdb@archiver.kernel.org>; Wed,  2 Jul 2025 04:53:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O4TNcrfvqA37Pbp5VNMoWSQT6a1B7j9uR4GZrpPKvBI=; b=GpQXvy6ahVWO+D
-	sm0EjGveO05mezDJfCvp1wp36VCLKgftVAjHA0NoP+v2zyYGVY9hTW9c76y5mAQqJAlnvqtQi/LB3
-	MwVLW0nXiEraiqYtqhsNkAgdzd2V/rR3iLw/RX+nAOyFP5uudf8XLD/z4VKtEHKYqy0Bt4U3gpLLs
-	6NmqazqRWZ8/YMPYJzKrybT+KGSE35YdZkFMhbbZxfzWf5Rj92rkjOdFQdrnZ9GC8IdchyB1fV6+0
-	+QD3RrNwGTO5+p3XFMXJ3zJhkd3jen0/D3JVa+3VJKOTRtdxqiDEFtHk8PWc8gA5hsVvW1i3DFF3g
-	enu99bTQbWPeX0DiDgIg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=NhF4ysCM5Hmqd5IDxKR65kb//P8p7gg/zYpWITpYES0=; b=AsLQzLK0cPEh/8RPotRRTZGLQb
+	icMnakTmWSulJYlm8OrnerOnmXk8pCl0devSEVFotvD6Fiqk2zxega+U4pQ5zBaVHltrLAnAD6Uav
+	ZlHvEUpoEfgRTQOBtyGtHf0o3GoWWwxxDfcEtfHKNNqb3lL8+wzFS7LIOjcVdf17iwERaOEdjwUv2
+	TR4stxMcGZwQmro93xk+W55QwdS7PHPM3G0+7uoGntnz1pl9T92Nohu1ILA8qCuKncZtJwO5AKFkZ
+	I4UPFQ73FQ3+41+LXBYns7DsBGw7qDebb5jGaZ+e/V/aE0M1yZJhIJAP5iwL7ohHgjZcOSqOsH+68
+	ph4GuiJw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWpRM-00000007DG1-4AW7;
-	Wed, 02 Jul 2025 04:51:25 +0000
-Received: from dfw.source.kernel.org ([2604:1380:4641:c500::1])
+	id 1uWpT5-00000007DSO-1Lji;
+	Wed, 02 Jul 2025 04:53:11 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWpRI-00000007DFd-3dPE
+	id 1uWpT4-00000007DS0-35xW
 	for wireless-regdb@lists.infradead.org;
-	Wed, 02 Jul 2025 04:51:23 +0000
+	Wed, 02 Jul 2025 04:53:10 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by dfw.source.kernel.org (Postfix) with ESMTP id 45A815C3A66
-	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:51:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E60A8C4CEEF
-	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:51:19 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 0B02C6000A;
+	Wed,  2 Jul 2025 04:53:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8F11DC4CEEE;
+	Wed,  2 Jul 2025 04:53:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751431879;
-	bh=AbtaAYG2tnL9JYsjzZ1tJ/pWcEGZotHeLArFcWa9pes=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=Hux3qMXbcOorUN9lSZJvY+81nxnngsvr+WURS1VkvOqM7OhWp6SuIbKTV7Zw3KP2x
-	 geBOrcsE6TVEkkU43NVjJTgtIs4tQ+RJoj28OZyzNJSln+u1nPtSeKRQVxnzDUbPwF
-	 PbYHGYdB1nVgeUb5jTwfu6QSbE5RIaK7NirkqIrSu6HTFYkekSvvFv1+fpMTDJCMRs
-	 pJeJUz39ai8ovYciFILpYLVotpJKVcDXpnaSY4elUh3kriJgxB7a+vcO9skxvwg9au
-	 E6m/1y4XJrHW+obqUSVXbHnvcocZFxWEwncBoLOwm7xNMqq7d1wtifzOX1JaMlKh27
-	 HRb+gc81+q3TA==
-Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-32b3b250621so60020401fa.2
-        for <wireless-regdb@lists.infradead.org>; Tue, 01 Jul 2025 21:51:19 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCVPaCQG82eC9XJ8FoopcEHSQi+G2S1Ww5DR7y0VPV4VlBKs5O6bQ5GX3+Toy8ewyVdXB5hfHQ3m1/mR+K6Oxg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YzNeBeNyqBo+gu79cUVDNjCoRVqXR9AShrC2mFuBw5m+/pzglTc
-	jBbQz8Z6tjnZYHv/Y3dhypKdrlJk76T66Xxcn6xZS9I1D4JLd6OoZiNd4IBdclO433oczbhKakx
-	yN6xw5V1ZD+8zS2w0Uiy4PdHA9FaTTyo=
-X-Google-Smtp-Source: AGHT+IGFkO/EB2Eand4Hgzq62JCZfNA2JPy4b4ML7CTsU5lKGbO7qu+F/jVaeONePB+bl3UCsq7pU4tEj5Z7hzzplbk=
-X-Received: by 2002:a05:651c:41c5:20b0:32c:a006:2a1d with SMTP id
- 38308e7fff4ca-32dfff6da90mr2903241fa.4.1751431878315; Tue, 01 Jul 2025
- 21:51:18 -0700 (PDT)
-MIME-Version: 1.0
-References: <12521651747386138@mail-sendbernar-production-main-36.klg.yp-c.yandex.net>
-In-Reply-To: <12521651747386138@mail-sendbernar-production-main-36.klg.yp-c.yandex.net>
+	s=k20201202; t=1751431988;
+	bh=U0MmV9GD7Pjqnyd9ukW4/UdBnpirT6pIr0xOABSdnME=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=u3kcTlKgD3tl0iHObjuff8/hQx5mG/7/gDzY+mXBkBgwyg6SA5mmasrllcB5LruBy
+	 bfRSFKOmDQvfI6Ta89vKv/TSBC1f3kOettz7KuMyhCN42nOOmZIbKJBODq6+GIF/cP
+	 2ZBciUVEw3aTBkOp11nkeXjbZGGiSrGZK33VYLLP7OW4Axl2ilbKaVVWVG9iTF9XFM
+	 TcKRPbJF1jIrNyUhBpulC9dtmRz05woL1J7oZzkoFjKqZuEpW2y5tmmNvoiZKmsRDt
+	 tXt00jCaJibm/F0sLDtLQEDcxOXh7TSjxqHwV/XxXN0VxZXaXBk+l2BpEJ37qaBvwT
+	 PgvP9aWh6v57A==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id C2E7D5FC08;
+	Wed,  2 Jul 2025 12:53:05 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Wed, 2 Jul 2025 12:51:06 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64669B=aNGfKzgfzUPn1VsLKPsLbar8wRDQXaoVw3mLnw@mail.gmail.com>
-X-Gm-Features: Ac12FXwnHsMQdd1ZFym4-FST1PW7b7s2phMRRjAeKWolhhVEyELAdLnyS2pevn4
-Message-ID: <CAGb2v64669B=aNGfKzgfzUPn1VsLKPsLbar8wRDQXaoVw3mLnw@mail.gmail.com>
+To: linux-wireless@vger.kernel.org, Duy Hoang <duy@etylix.me>
+Cc: wireless-regdb@lists.infradead.org
+In-Reply-To: <12521651747386138@mail-sendbernar-production-main-36.klg.yp-c.yandex.net>
+References: <12521651747386138@mail-sendbernar-production-main-36.klg.yp-c.yandex.net>
 Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for Vietnam
  (VN) for 2025
-To: Duy Hoang <duy@etylix.me>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_215120_988273_CCEF1C7A 
-X-CRM114-Status: GOOD (  17.53  )
+Message-Id: <175143198579.473566.3806316258566400343.b4-ty@kernel.org>
+Date: Wed, 02 Jul 2025 12:53:05 +0800
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.2
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,22 +69,16 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
-Again, sorry for taking so long to respond.
-
-On Fri, May 16, 2025 at 5:02=E2=80=AFPM Duy Hoang <duy@etylix.me> wrote:
->
+On Fri, 16 May 2025 16:02:18 +0700, Duy Hoang wrote:
 > According to [1] and [2]:
 > - Update frequency range to match with Circular
 > - Update units from dBm to mW to match values listed in Circular
 > - Add AUTO-BW flags to allow the use of 160 MHz based on other rules
 > - Update to allow use of 6 GHz band
->
+> 
 > Detail:
 > * 2400 - 2483.5 MHz
 >   - 200 mW (23 dBm)
@@ -119,57 +102,16 @@ On Fri, May 16, 2025 at 5:02=E2=80=AFPM Duy Hoang <duy@etylix.me> wrote:
 >     * Indoor and outdoor
 > * 57000 - 66000 MHz
 >   - 10000 mW
->
-> [1] https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.=
-pdf
-> [2] https://mic.gov.vn/van-ban-phap-luat/25099.htm
->
-> Signed-off-by: Hoang Pham Anh Duy <duy@etylix.me>
-> ---
-> Patch v2:
->   - Since Linux does not support TPC, reduce 5250 - 5350 MHz to 100 mW an=
-d 5470 - 5725 MHz to 500mW
->   - Add AUTO-BW for 6GHz band
->   - Add 60GHz
-> ---
->  db.txt | 15 ++++++++++-----
->  1 file changed, 10 insertions(+), 5 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index e331d4f..4e9539b 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -2001,12 +2001,17 @@ country VI: DFS-FCC
->         (5490 - 5730 @ 160), (24), DFS
->         (5735 - 5835 @ 80), (30)
->
-> +# Source:
-> +# https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/08-btttt.signed.p=
-df
-> +# https://mic.gov.vn/van-ban-phap-luat/25099.htm
->  country VN: DFS-FCC
-> -       (2402 - 2482 @ 40), (20)
-> -       (5170 - 5250 @ 80), (17)
-> -       (5250 - 5330 @ 80), (24), DFS
-> -       (5490 - 5730 @ 80), (24), DFS
-> -       (5735 - 5835 @ 80), (30)
-> +       (2400 - 2483.5 @ 40), (200 mW)
-> +       (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-> +       (5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW
-> +       (5470 - 5725 @ 80), (500 mW), DFS, AUTO-BW
+> 
+> [...]
 
-                         ^
-I believe this can be set to 160 directly? I didn't see any restrictions
-on band width. I will change this when applying.
+Applied to master in wens/wireless-regdb.git, thanks!
 
-> +       (5725 - 5850 @ 80), (1000 mW), AUTO-BW
-> +       (5925 - 6425 @ 320), (200 mW), NO-OUTDOOR, AUTO-BW
-> +       (57000 - 66000 @ 2160), (10000 mW), NO-OUTDOOR
->
->  # Source:
->  # http://www.trr.vu/attachments/category/130/GURL_for_Short-range_Radioc=
-ommunication_Devices2.pdf
-> --
-> 2.46.0.windows.1
->
+[1/1] wireless-regdb: Update regulatory info for Vietnam (VN) for 2025
+      https://git.kernel.org/wens/wireless-regdb/c/4411b3985baa
+
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
+
 
