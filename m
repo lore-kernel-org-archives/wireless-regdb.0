@@ -4,70 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 86042C83013
-	for <wireless-regdb@archiver.kernel.org>; Wed,  2 Jul 2025 04:32:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 4422BC83038
+	for <wireless-regdb@archiver.kernel.org>; Wed,  2 Jul 2025 04:34:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KA98BdKCh5oS9/TAYbpR/Rj1CPi4GoXifqKDYjvR5yc=; b=nPHx9aeFdw32DY
-	t5yjUHQj0wA/n6Ot2syhL0mnfE41j3g2OluFy01dILn8vO4oNKevxFqtsULuhAiRmlwbwV1+QgYGF
-	tDe3f7t4V0pAQ3Waf+tHbLHV4PI9n2VPBOWn4gU30O481QPCrPZ+mHmlXLdgsYrf5ME5/VTzl+v70
-	Gcs7A4Wbq9DHr+3L4rNg6dlLPIxbUE+Bdx+ThkfV6AGqs1RZEd8hZOwnDEZpm0t1gOWVqh2nd8am5
-	UC+qWo+Ijh+Go/J0f1A586u5WzZY7aOub0O2W96utqBhd3+9hsIjxiZceG5bAbyqR3SnTJA439kaF
-	rs5DSIYEQKgS72afNmpQ==;
+	List-Owner; bh=ASbbblohaYhvdHggb9VEfr02EPZqkaP//CSig0p1ovI=; b=aqzFcT4nplx97N
+	dSXpGp70vZgs7wrrl3ke059AqUg95/y4v/ryq6TH5CnN/JdEHvewk9Nq0G7fcyD2tOtcI8vaJYMAr
+	ssXMJphFAFpchkdt8tUe7YULbvZpd9iccswoEbxlEnAZ1gt2A7S3fbUAIqTF1mqYH1H8SNMbd9DwR
+	Mlsdvv4kqWVr+9vJjn/QbT0eEWFKyHAUPMhwCkIA/v2CQQccq9d8YhjrmTZ96vgUlfXqwIpBQw+aN
+	AnREOOGhlbZ6BIgd1HeQwf6PSehFGKjnVSc5+nrNbAlTPxbT10Y2oAvwn8ILZuDJ3voof1vLU9mUI
+	mTt/1hj3k87bKHoLnkwg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWp94-00000007BYN-2ECb;
-	Wed, 02 Jul 2025 04:32:30 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1uWpB2-00000007BhC-07en;
+	Wed, 02 Jul 2025 04:34:32 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWp91-00000007BXt-1SaW
+	id 1uWpB1-00000007Bh6-02fp
 	for wireless-regdb@lists.infradead.org;
-	Wed, 02 Jul 2025 04:32:28 +0000
+	Wed, 02 Jul 2025 04:34:31 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 548964577A
-	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:32:26 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 2C4C8C4CEF3
-	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:32:26 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 18F826000A
+	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:34:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C4286C4CEEF
+	for <wireless-regdb@lists.infradead.org>; Wed,  2 Jul 2025 04:34:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751430746;
-	bh=pW5M7RB7yP26nn3ovt54nB0lYFengwwwgfq3Wa0Ayl0=;
+	s=k20201202; t=1751430869;
+	bh=4gsTPOrdy7QYDrIhvx9/sRa5vTKXYTzvN/28QQ3hLwk=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=mSPRER3t9wxVdYqgO8AAh3iHY6z7CUxh9wtpoe4eUGfpO7uEvJyZmOdHPUY4gy9Yt
-	 KUlZduzQbglKuKHlytsseEYjUknGX2hHT3JKmT22SJSspajBtMxoNA25HX+itnmuv9
-	 N1wODY/eRMQlbRkLOiLNB2R5kI28uKAunr1Y/jYnMGTIPzQOlvLWf1lUv23X9tYaDa
-	 Z7/uo7KFHBRQ5FjRPVI0K5tj43oxMFC/2S2cKTWrcfI0n3bzznT9OIbY1xju+tufcF
-	 NJvt04AuDxwdDjJzcAUIrDitvn67E8jQBqT+6Z77wN9ztzAMcGTT1+vkL77DTVJ9gO
-	 JiGkdRfCA0b+A==
-Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-32b7113ed6bso35734211fa.1
-        for <wireless-regdb@lists.infradead.org>; Tue, 01 Jul 2025 21:32:26 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCUfT8zsh0OnCGhf33Pz0MrkuzSP+2JqriarSfP4ciROsyg/dASeI9cJya2VGAaBOQz+FyPhUqMziudFmtK+ZA==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwN59iaewrSFvckUbWznxSrHxMTUx4+OYBX7cSZ9g9cNjRRG+NM
-	3WYY41bD95k3rJxE5xMZRE7jLjX1UhVysWcCHQMNKGqpjcMVZ/dE2kHZmUVDWJqfq+AEYI1oaY0
-	ki7IeaEDzgX2xHkrMut6d8yyYksF5IL8=
-X-Google-Smtp-Source: AGHT+IFlGO4sNolgF2KA1RatvPB6wV1AHaPeP1a3aJaT5obEfpzFYbBkapw3+tRs6mBRepvGR1gc3MT6642g+4tPabg=
-X-Received: by 2002:a05:651c:2204:b0:32b:3c11:5177 with SMTP id
- 38308e7fff4ca-32e00044a77mr4933951fa.21.1751430744564; Tue, 01 Jul 2025
- 21:32:24 -0700 (PDT)
+	b=F3xkhLxdEiwj6lnsY/P9b8Gx9QBDzlMWhZmalFZpgeL54W1Ku2cm73P5v3c3gpHA9
+	 05ftSJJ7d/mlDMV6ISHQ63vPMDDctEDExMcHBi6yTuoxPZTxCwlDKrZunpRK3PbwEf
+	 Gil/Ara6Iqzqxc3O1aoQ2N/SlvUQ0UlPCi4W4bRayXyZB64qwoQB0Z/MDXen+vQdMv
+	 5Ce/dmsjPIO8oS+Lvu2yz6t+wpEXlfwKvHxlB0KIGIxVoMt/XamiNMbeb9VVSUHEMl
+	 cUuBqld5xhXmvEk7gsXdo6ZdTumGlXAYikZTQ6E5RgKVl7nSMPg256YkZCbApSp9M7
+	 TcJnzNYHLQqVg==
+Received: by mail-lj1-f171.google.com with SMTP id 38308e7fff4ca-32ac52f78c1so64610951fa.3
+        for <wireless-regdb@lists.infradead.org>; Tue, 01 Jul 2025 21:34:29 -0700 (PDT)
+X-Gm-Message-State: AOJu0YzWOHorFPgAp7F6WsMrx8CwQaF8MzMz/p+FprqanID1ILdq3SRS
+	L+SL8OauKJlr98yYMBRj3leytqJoYarHDrcC0ME5ld5Q2JnRs4P0+P+pYV0rn7gAl10mrwWgy0K
+	DqUFALSJulQlSMGW2eKVz0HTkGswD98Y=
+X-Google-Smtp-Source: AGHT+IG/dq8BWFDgxIS2F9towL4OcexZWsj57hY+CJ5ZQtCNoTu74iu1KmpLBGMmqnLYlN4cEIHBYyCJCAcGTcJDmN0=
+X-Received: by 2002:a05:651c:2117:b0:32b:5272:38eb with SMTP id
+ 38308e7fff4ca-32e000de116mr5416511fa.40.1751430868141; Tue, 01 Jul 2025
+ 21:34:28 -0700 (PDT)
 MIME-Version: 1.0
-References: <20250618054904.9107-1-pkshih@gmail.com>
-In-Reply-To: <20250618054904.9107-1-pkshih@gmail.com>
+References: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee> <CAGb2v66AATrsy-q6j3973SiDbxx0yO=ZX++BhSedrkZ9ULQ=nQ@mail.gmail.com>
+In-Reply-To: <CAGb2v66AATrsy-q6j3973SiDbxx0yO=ZX++BhSedrkZ9ULQ=nQ@mail.gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Wed, 2 Jul 2025 12:32:12 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65E7K0yRz==OTyBd_LCWwU+0MYWSivgJG4x70gS1Cp93w@mail.gmail.com>
-X-Gm-Features: Ac12FXylc4Od60Knly9PgbYZ86cMiQLma7woh9tu6U68rpRSCN2PyCv_VqoWow8
-Message-ID: <CAGb2v65E7K0yRz==OTyBd_LCWwU+0MYWSivgJG4x70gS1Cp93w@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Egypt (EG) for 2024
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Date: Wed, 2 Jul 2025 12:34:15 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
+X-Gm-Features: Ac12FXx5syhyqQRrFlK4dWesxPfm1JUXgGZyclgJ1bdUh9JyAJvSOxTc4tckjts
+Message-ID: <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE)
+ for 2024
+To: =?UTF-8?B?VGFhdmkgRW9tw6Rl?= <taaviw@aegrel.ee>
+Cc: wireless-regdb <wireless-regdb@lists.infradead.org>
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250701_213227_432255_0560A949 
-X-CRM114-Status: GOOD (  16.89  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -83,77 +80,81 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, Jun 18, 2025 at 1:49=E2=80=AFPM Ping-Ke Shih <pkshih@gmail.com> wro=
-te:
+On Fri, May 16, 2025 at 4:24=E2=80=AFPM Chen-Yu Tsai <wens@kernel.org> wrot=
+e:
 >
-> From: Ping-Ke Shih <pkshih@realtek.com>
+> Hi,
 >
-> National Telecommunications Regulatory Authority (NTRA) released Radio
-> Spectrum Guidelines for Short-range Devices (SRD) on November 2024.
+> On Mon, Mar 24, 2025 at 8:26=E2=80=AFAM Taavi Eom=C3=A4e <taaviw@aegrel.e=
+e> wrote:
+> >
+> > Allow S1G operation based on currently applicable usage rules specified
+> > in annex 6 of "Raadiosageduste kasutamise tingimused ja tehnilised n=C3=
+=B5uded
+> > sagedusloast vabastatud raadioseadmetele"
+> >
+> > Enable AUTO-BW for all 5GHz bands as no bandwidth limit is specified fo=
+r
+> > these bands.
+> >
+> > Specify 6GHz power limit in mW to match others.
+> >
+> > Fix 60GHz band to match regulation and allow bandwidths specified by 80=
+2.11ay.
 >
-> As Table 4 Mandatary requirements for Wideband Data Transmission Systems:
-> Including Wireless LAN (Wi-Fi and Multiple GIGABIT wireless systems for
-> Indoor applications only)
+> I just realized that you didn't provide a Signed-off-by in the patch.
+> I can't apply your patch without it.
 >
-> * Wi-Fi for indoor applications only, so add NO-OUTDOOR for all entries.
->
-> * 2400 - 2483.5 MHz
->   - 100 mW e.i.r.p.
->   - EN 300 328
-> * 5150 - 5350 MHz
->   - 200 mW e.i.r.p.
->   - DFS and TPC in 5250 - 5350 MHz
->     * for devices without TPC, the limit is lowered 3 dBm
->   - EN 301 893
-> * 5925 - 6425 MHz
->   - 250 mW e.i.r.p.
->   - EN 303 687
-> * 57 - 66 GHz
->   - 40 dBm e.i.r.p.
->   - EN 302 567
->
-> [1] https://www.tra.gov.eg/wp-content/uploads/2024/11/EGY-NTRA-November-2=
-024-SRD_English-1.pdf
->
-> Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> ---
->  db.txt | 10 ++++++----
->  1 file changed, 6 insertions(+), 4 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index e331d4f763e3..4a05bdca781e 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -632,11 +632,13 @@ country EE: DFS-ETSI
->         (57000 - 66000 @ 2160), (40)
->
->  # https://www.tra.gov.eg/wp-content/uploads/2022/03/EGY-NTRA-March-2022-=
-SRD_English_Final.pdf
-> +# https://www.tra.gov.eg/wp-content/uploads/2024/11/EGY-NTRA-November-20=
-24-SRD_English-1.pdf
->  country EG: DFS-ETSI
-> -       (2402 - 2483.5 @ 40), (20)
-> -       (5150 - 5250 @ 80), (23), AUTO-BW, wmmrule=3DETSI
-> -       (5250 - 5350 @ 80), (20), DFS, AUTO-BW, wmmrule=3DETSI
-> -       (57000 - 66000 @ 2160), (40)
-> +       (2402 - 2483.5 @ 40), (100 mW), NO-OUTDOOR
-> +       (5150 - 5250 @ 80), (200 mW), AUTO-BW, wmmrule=3DETSI, NO-OUTDOOR
-> +       (5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW, wmmrule=3DETSI, NO-OU=
-TDOOR
+> Can you provide it? Just reply to the thread with a proper Signed-off-by
+> tag.
 
-The database parser requires the wmmrule flag be the last flag for some
-reason. I fixed it up locally and will force push it out.
+Ping?
 
-ChenYu
-
-> +       (5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
-> +       (57000 - 66000 @ 2160), (40), NO-OUTDOOR
+> Thanks
+> ChenYu
 >
->  # ES as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 30=
-1 893)
->  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 4=
-40)
-> --
-> 2.25.1
->
+> > ---
+> >  db.txt | 11 +++++++----
+> >  1 file changed, 7 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/db.txt b/db.txt
+> > index e331d4f..83f7924 100644
+> > --- a/db.txt
+> > +++ b/db.txt
+> > @@ -618,18 +618,21 @@ country EC: DFS-FCC
+> >  #  EU decision 2021/1067/EC: https://eur-lex.europa.eu/legal-content/E=
+N/TXT/PDF/?uri=3DCELEX:32021D1067&from=3DEN
+> >  # Harmonized CEPT countries (July 2019): https://www.ecodocdb.dk/downl=
+oad/25c41779-cd6e/Rec7003e.pdf
+> >  # EE: https://www.ttja.ee/et/ettevottele-organisatsioonile/sideteenuse=
+d/raadioseadmed/wifi-seade
+> > +# EE: https://www.riigiteataja.ee/akt/117052024018?leiaKehtiv (Lisa 6)
+> >  # EE: https://www.itu.int/ITU-D/study_groups/SGP_1998-2002/JGRES09/pdf=
+/estonia.pdf
+> >  country EE: DFS-ETSI
+> > +       (863 - 868 @ 1), (25 mW)
+> > +       (915.8 - 919.4 @ 1), (25 mW)
+> >         (2400 - 2483.5 @ 40), (100 mW)
+> >         (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=3DET=
+SI
+> >         (5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=
+=3DETSI
+> > -       (5470 - 5725 @ 160), (500 mW), DFS, wmmrule=3DETSI
+> > +       (5470 - 5725 @ 160), (500 mW), DFS, AUTO-BW, wmmrule=3DETSI
+> >         # short range devices (ETSI EN 300 440-1)
+> > -       (5725 - 5875 @ 80), (25 mW)
+> > +       (5725 - 5875 @ 80), (25 mW), AUTO-BW
+> >         # 6 GHz band
+> > -       (5945 - 6425 @ 320), (23), NO-OUTDOOR, wmmrule=3DETSI
+> > +       (5945 - 6425 @ 320), (200 mW), NO-OUTDOOR, wmmrule=3DETSI
+> >         # 60 GHz band channels 1-4 (ETSI EN 302 567)
+> > -       (57000 - 66000 @ 2160), (40)
+> > +       (57000 - 71000 @ 8640), (40)
+> >
+> >  # https://www.tra.gov.eg/wp-content/uploads/2022/03/EGY-NTRA-March-202=
+2-SRD_English_Final.pdf
+> >  country EG: DFS-ETSI
+> > --
+> > 2.45.2
+> >
 
