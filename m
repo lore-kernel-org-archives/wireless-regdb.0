@@ -4,51 +4,64 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05D2BC77B7C
-	for <wireless-regdb@archiver.kernel.org>; Thu,  3 Jul 2025 17:11:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7E3CEC83F04
+	for <wireless-regdb@archiver.kernel.org>; Thu,  3 Jul 2025 17:14:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
-	From:References:Cc:Subject:MIME-Version:Date:Message-ID:Reply-To:To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=d3IiFOOiNV0AkWfvi6by7eT/YEGKXk1N60ilSxrwdho=; b=NY9qy5Q/BvfnCIFwGLOuY75Sdm
-	EFO/CaNWHTGKY07fIArYjdH/TOUzqUVz27CrETg6mtf7dYPVG5hVazE6ulPA0yPjVjiIHYUdvwYPj
-	xGAE7Z1wMPrlZDUfHRxx9BOKNZpaFTh8LFBIO4DgQvDkCVAUG7brJvCy1nrQg95h2ZAwJSJ5m9wdL
-	fXs303Yk2hEiP6JfgWc+aNYq/mX+VqAtpvibXBpfG4rvlqLSmobUwE8pvfvdN+kbb2ta0wo9EGhXc
-	ncyvMMFoRCYLd0y0dxeYUDX9Q2UyfQ0Pie6cgMAokwAHiaoa7yUlEQEalgLyXmWTYlJSg3Ylqx1GI
-	Da3spQ0w==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=Ibqr+k4gBzTYaKehoB40tQG5J2SNKH3STOXQs1Ohcsw=; b=hbMDXKN39mUfjibjhbkwgKezWm
+	+UguRVwWqsfik0AOzVzJ3slcn2nBLPsRP+Tind1Pasc57ySfPY6gAJcnu7ED4ugmJOFvXz09bJGjl
+	AdKyI4q4tVWwPOExC6I5CutUp/p9YwmXNQ1J5gGU1cubM+4pmod8xAB1uIfgfGkajpzUbgeGg0SoE
+	GvTp/exKBvG4hjQ0aR8Zjgx35FRkUzicWrpYOhieVMTgpdj8l/58olrZOBrD87XbASu5tUSZYz1lF
+	jREQXXbSbOrxkO9qTKg6zeDTz78kIQbPUwWxquyELMUeSLmuzBOpt9qWTLwXyWKJpbqyuCPF2WK6z
+	c3owQZTQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXNTX-0000000C5ay-2rg6;
-	Thu, 03 Jul 2025 17:11:55 +0000
-Received: from vps-c8396917.vps.ovh.net ([2001:41d0:701:1100::5b82] helo=aegrel.ee)
+	id 1uXNVq-0000000C6EY-0oJb;
+	Thu, 03 Jul 2025 17:14:18 +0000
+Received: from nyc.source.kernel.org ([147.75.193.91])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uXL2c-0000000Bgvj-3aeg
+	id 1uXL6N-0000000BhTD-0pVa
 	for wireless-regdb@lists.infradead.org;
-	Thu, 03 Jul 2025 14:36:00 +0000
-DKIM-Signature: v=1; a=ed25519-sha256; s=default; d=aegrel.ee; c=relaxed/relaxed; r=y;
-	h=Content-Type:From:Content-Language:Subject:User-Agent:MIME-Version:Date
-	:Message-ID:To:Sender:Expires:Content-Type; t=1751553357; x=1754145357; bh=d
-	3IiFOOiNV0AkWfvi6by7eT/YEGKXk1N60ilSxrwdho=; b=Y/XMOQHWjFeeWgSeMykqXxM9KM6f
-	TnHj2xCQm6qJHwa3VH6Y3PEj+FMagb1Trnphg9ixrIOhJqxuI8FG5Ns0CQ==;
-Message-ID: <7a9c4849-bae9-4889-a1fb-d050b93bb315@aegrel.ee>
-Date: Thu, 3 Jul 2025 17:35:56 +0300
-MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE)
- for 2024
-Cc: wireless-regdb <wireless-regdb@lists.infradead.org>
+	Thu, 03 Jul 2025 14:39:52 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by nyc.source.kernel.org (Postfix) with ESMTP id 2384DA538AB;
+	Thu,  3 Jul 2025 14:39:50 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id A1C10C4CEE3;
+	Thu,  3 Jul 2025 14:39:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1751553589;
+	bh=rqvzcOGtggHK1HdqCLGJDxgHLdc+gHMLK7oTthIT6G4=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=LqhKE1Ezc7rDWASL+peDD6y4moi+ogM1FhIA60MeMvKsqsLzmKTQzNerLswmMYuwZ
+	 m71OrgJFClJx3Ihv0DP71dSKnqU0AcwdvIWEpmN7ulM2t/hd4GKR7n8SRv5hcDJSum
+	 DMz9LRrHJLQvSi2IKeZaB57jGUp6yPXbr2EN/eZOyFMUb1Sn7yDH/i6KzU7BUG/FYi
+	 IJOxlUZb4U6sSY3TJd+k6wPJJAgspp4yM2fw7dUc52BMXABYmGXb9aqvrUbdt4BJcq
+	 yvjgtLoofKbGVknthkIoA74NFicTJntTPxD8OjraU7yx9IXkhzpm9pzbPKF+SCOvNP
+	 JfsMgjGotTlLw==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 249725FB0F;
+	Thu,  3 Jul 2025 22:39:46 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: =?utf-8?q?Taavi_Eom=C3=A4e?= <taaviw@aegrel.ee>
+Cc: wireless-regdb <wireless-regdb@lists.infradead.org>, 
+ linux-wireless <linux-wireless@vger.kernel.org>
+In-Reply-To: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
 References: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
- <CAGb2v66AATrsy-q6j3973SiDbxx0yO=ZX++BhSedrkZ9ULQ=nQ@mail.gmail.com>
- <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
-Content-Language: en-US
-From: =?UTF-8?Q?Taavi_Eom=C3=A4e?= <taaviw@aegrel.ee>
-In-Reply-To: <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
-Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms010308050206040608010200"
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia
+ (EE) for 2024
+Message-Id: <175155358607.1087851.15293340917846249231.b4-ty@kernel.org>
+Date: Thu, 03 Jul 2025 22:39:46 +0800
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+X-Mailer: b4 0.14.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250703_073559_037210_A21CE632 
-X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-CacheID: sfid-20250703_073951_313489_4C9DD161 
+X-CRM114-Status: UNSURE (   4.90  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -64,113 +77,23 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-This is a cryptographically signed message in MIME format.
+On Mon, 24 Mar 2025 01:55:05 +0200, Taavi Eomäe wrote:
+> Allow S1G operation based on currently applicable usage rules specified
+> in annex 6 of "Raadiosageduste kasutamise tingimused ja tehnilised nõuded
+> sagedusloast vabastatud raadioseadmetele"
+> 
+> Enable AUTO-BW for all 5GHz bands as no bandwidth limit is specified for
+> these bands.
+> 
+> [...]
 
---------------ms010308050206040608010200
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: base64
+Applied to master in wens/wireless-regdb.git, thanks!
 
-T24gNy8yLzI1IDA3OjM0LCBDaGVuLVl1IFRzYWkgd3JvdGU6DQo+PiBJIGp1c3QgcmVhbGl6
-ZWQgdGhhdCB5b3UgZGlkbid0IHByb3ZpZGUgYSBTaWduZWQtb2ZmLWJ5IGluIHRoZSBwYXRj
-aC4NCj4+IEkgY2FuJ3QgYXBwbHkgeW91ciBwYXRjaCB3aXRob3V0IGl0Lg0KPj4NCj4+IENh
-biB5b3UgcHJvdmlkZSBpdD8gSnVzdCByZXBseSB0byB0aGUgdGhyZWFkIHdpdGggYSBwcm9w
-ZXIgU2lnbmVkLW9mZi1ieQ0KPj4gdGFnLg0KPiBQaW5nPw0KDQpTb3JyeSBmb3IgdGhlIGxh
-dGUgcmVwbHkuDQoNClNpZ25lZC1vZmYtYnk6IFRhYXZpIEVvbcOkZSA8dGFhdml3QGFlZ3Jl
-bC5lZT4NCg0K
+[1/1] wireless-regdb: Update regulatory info for Estonia (EE) for 2024
+      https://git.kernel.org/wens/wireless-regdb/c/490f136d0b42
 
---------------ms010308050206040608010200
-Content-Type: application/pkcs7-signature; name="smime.p7s"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename="smime.p7s"
-Content-Description: S/MIME Cryptographic Signature
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
 
-MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
-DVgwggXjMIIDy6ADAgECAhApEu0OgvC2rf5l2ks29jJoMA0GCSqGSIb3DQEBCwUAMIGBMQsw
-CQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRy
-bzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1
-dGhlbnRpY2F0aW9uIENBIEczMB4XDTI1MDIyNjE4MzE0NloXDTI2MDIyNjE4MzE0NlowGjEY
-MBYGA1UEAwwPdGFhdmlAYWVncmVsLmVlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-AQEAsCxhxq5/z/ch2BdjO4t03JW81DmaAmVHJFukZujsKzOr96NVTqvoIXf4XwXWxQbZH5/9
-NOdX6asygku87N883fFM/+sqmVif2o2Cwnr+yesHEQKsNWY0awQgv6bMqPPLpIMYjHKgIqkf
-jVJYXVup8oLrJtN1gp7k3NAlT3gDLZgUtIZSkfFfOSqhMDlDYBUS9aOow7SqXDzriwQP9dKT
-LpeO2Lhut9ODsgSHQ33Kt/hPyB8P0APbyyPCymEjX8j0JCeX861dCNMylcLdJeX7ay9erRDm
-jbWLMUaJq5LKV371MAFp7oi1HFTlW1rqHDJo4YBt6oyg8u51Me5nEdnhVwIDAQABo4IBuzCC
-AbcwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBS+l6mqhL+AvxBTfQky+eEuMhvPdzB+Bggr
-BgEFBQcBAQRyMHAwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jYWNlcnQuYWN0YWxpcy5pdC9jZXJ0
-cy9hY3RhbGlzLWF1dGNsaWczMDEGCCsGAQUFBzABhiVodHRwOi8vb2NzcDA5LmFjdGFsaXMu
-aXQvVkEvQVVUSENMLUczMBoGA1UdEQQTMBGBD3RhYXZpQGFlZ3JlbC5lZTBSBgNVHSAESzBJ
-MDwGBiuBHxABATAyMDAGCCsGAQUFBwIBFiRodHRwczovL3d3dy5hY3RhbGlzLml0L2FyZWEt
-ZG93bmxvYWQwCQYHZ4EMAQUBATAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwSAYD
-VR0fBEEwPzA9oDugOYY3aHR0cDovL2NybDA5LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRI
-Q0wtRzMvZ2V0TGFzdENSTDAdBgNVHQ4EFgQUjSmj8rKWg55r+AS7jdrBtI/sKA8wDgYDVR0P
-AQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQCgkDFzi3c7DmH4waADC8rVSJV2hjLyZzMh
-zHlLrc8eq+Cp1B94UNzLLB5Q0ZDP7M0utCfyu2lrTwSm3a6PLhIvAAWkMKwxhJOH6jgewkZf
-k8j03tmehQKQUepnlezVdGRuozH8Sx1ZRWCnwKYsbbGePe3Nf5m8pZT0LyDbDUbC1sFdrILM
-PQnPUhDKPPyt/Iqp1dKiuAb+7wZcOFeqOlARt3wBgE+ej+tS1HLaTpRxcXyuY8vL0RBLyX7k
-YK138n2/FPkGeDpfxTshCDunmR3YA18k3iYpPQoznBq3ko7UoI5ZFrN2KLMNOkU1o8DjPyRO
-4crs/QBn3RXz2yeQ2VjM+HAGxGyUu1cJ8TeBavU1i2V3Xsc9CjHNTNt3V0SF1MTBiA49beHk
-S6wWpGzRKCry3I6hu2nyhIsAMOYC0TZomWDbGk4zGgyexdVxcAuLdq2SWXQ0Fjd8+kI0VsMu
-E1M0jsQQLo/83SnCmKjXizyD071HigsmLex0KUFGJEG766A99kKY5sdgHsgAH1pX4K1jnjx2
-7cp+egyd5dHn2kF8AZ2XwkDQYJhAvj9tW9y6XdByc3Me+c8DmJ3LgdXI9Ifk1a7v3ypOEwkH
-6oj69jAQcAme4inudeRQTBDu2fZp4a48VOl5J7mDwjv/weibecwHkXKUn5ksrWYu+/dFWR3t
-PTCCB20wggVVoAMCAQICEBcQPt49ihy1ygZRk+fKQ2swDQYJKoZIhvcNAQELBQAwazELMAkG
-A1UEBhMCSVQxDjAMBgNVBAcMBU1pbGFuMSMwIQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1
-ODUyMDk2NzEnMCUGA1UEAwweQWN0YWxpcyBBdXRoZW50aWNhdGlvbiBSb290IENBMB4XDTIw
-MDcwNjA4NDU0N1oXDTMwMDkyMjExMjIwMlowgYExCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdC
-ZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBTYW4gUGlldHJvMRcwFQYDVQQKDA5BY3RhbGlzIFMu
-cC5BLjEsMCoGA1UEAwwjQWN0YWxpcyBDbGllbnQgQXV0aGVudGljYXRpb24gQ0EgRzMwggIi
-MA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDt5oeWocGktu3CQlX3Pw8PImBfE+CmQ4iG
-SZF5HBsvGlAP3EYB7va6OobMUWHvxA+ACHEpWq0YfNh6rRUlULOGcIpEFtVf4nAiEvdQtiFQ
-BmtWJSn3naoMHqpMvmwZ4lL0Xr1U9JHmTqkU3DuYcNNO3S+hYWDZpWQbeSGibNVeiJ4kY6JD
-h0fvqloK1BsuS3n2OgArPYGfAYtDjCvT2d+6Ym3kArHZjEcrZeBI+yVVnjPwbTSCKax8DtS2
-NP/CJ6RjpnRvuSwusRy84OdwdB71VKs1EDXj1ITcCWRZpkz+OhV6L8Zh+P0rmOSJF6KdHiao
-zfncURx4s54GFJNRGkx1DnCxcuL0NJMYG42/hrDYOjNv+oGWSEZO/CT3aaLSMB5wTbZKfcD1
-R+tTanXD+5Gz5Mi15DTE7QH8naZjZxqqhyxL1KyuIgaVDxvQtPSjo5vTsoa09rn+Ui8ybHnv
-YO/a/68OIQIHLGbUd2COnwm0TiZ3Jg/oYGxwnJPvU1nDXNcecWTIJvFF5qD2ppJH3HgJVVeP
-UEOY1E4Kp3k0B8hdRdhMV5n+O6RCKCTFcZaESF8sELgdrqnCLPP1+rX7DA8pxZoX0/9Jk64E
-OsbfQyLIJlrrob2YS0Xlku6HisZ8qrHLhnkzF5y7O34xmatIp8oZ5c54QP+K5flnTYzWjuIx
-LwIDAQABo4IB9DCCAfAwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBRS2Ig6yJ94Zu2J
-83s4cJTJAgI20DBBBggrBgEFBQcBAQQ1MDMwMQYIKwYBBQUHMAGGJWh0dHA6Ly9vY3NwMDUu
-YWN0YWxpcy5pdC9WQS9BVVRILVJPT1QwRQYDVR0gBD4wPDA6BgRVHSAAMDIwMAYIKwYBBQUH
-AgEWJGh0dHBzOi8vd3d3LmFjdGFsaXMuaXQvYXJlYS1kb3dubG9hZDAdBgNVHSUEFjAUBggr
-BgEFBQcDAgYIKwYBBQUHAwQwgeMGA1UdHwSB2zCB2DCBlqCBk6CBkIaBjWxkYXA6Ly9sZGFw
-MDUuYWN0YWxpcy5pdC9jbiUzZEFjdGFsaXMlMjBBdXRoZW50aWNhdGlvbiUyMFJvb3QlMjBD
-QSxvJTNkQWN0YWxpcyUyMFMucC5BLiUyZjAzMzU4NTIwOTY3LGMlM2RJVD9jZXJ0aWZpY2F0
-ZVJldm9jYXRpb25MaXN0O2JpbmFyeTA9oDugOYY3aHR0cDovL2NybDA1LmFjdGFsaXMuaXQv
-UmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0TGFzdENSTDAdBgNVHQ4EFgQUvpepqoS/gL8QU30J
-MvnhLjIbz3cwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQAmm+cbWQ10sxID
-6edV94SAhc1CwzthHFfHpuYS30gisWUfWpgp43Dg1XzG2in3VGV7XrzCCGZh4JM/XQWp+4ox
-myV42Qjz9vc8GRksgo6X2nYObPYZzQjda9wxsCB38i4G3H33w8lf9sFvl0xm4ZXZ2s2bF/Pd
-qvrK0ZgvF51+MoIPnli/wJBw3p72xbk5Sb1MneSO3tZ293WFzDmz7tuGU0PfytYUkG7O6ann
-GqbU1I6CA6QVKUqeFLPodSODAFqJ3pimKD0vX9MuuSa0QinH7CkiPtZMD0mpwwzIsnSs3qOO
-l60tIZQOTc0I6lCe1LLhrz7Q75J6nNL9N5zVwZ1I3o2Lb8Dt7BA13VFuZvZIzapUGV83R7pm
-SVaj1Bik1nJ/R393e6mwppsT140KDVLh4Oenywmp2VpBDuEj9RgICAO0sibv8n379LbO7ARa
-0kw9y9pggFzN2PAX25b7w0n9m78kpv3z3vW65rs6wl7E8VEHNfv8+cnb81dxN3C51KElz+l3
-1zchFTurD5HFEpyEhzO/fMS5AkweRJIzwozxNs7OL/S/SVTpJLJL1ukZ1lnHHX0d3xCzRy/5
-HqfK3uiG22LPB5+RjNDobPAjAz2BKMfkF/+v0pzn8mqqkopQaJzEAbLbMpgQYHRCjvrUxxwj
-JyUFb2Z+40UNtMF4MTK7zTGCBOAwggTcAgEBMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UE
-CAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxp
-cyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcz
-AhApEu0OgvC2rf5l2ks29jJoMA0GCWCGSAFlAwQCAQUAoIIDGjAYBgkqhkiG9w0BCQMxCwYJ
-KoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yNTA3MDMxNDM1NTZaMC8GCSqGSIb3DQEJBDEi
-BCByDysKoy6CLBf34GmvpnfUv9EhW8qJNzqQ6M3gLyey2TCBpwYJKwYBBAGCNxAEMYGZMIGW
-MIGBMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2Fu
-IFBpZXRybzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xp
-ZW50IEF1dGhlbnRpY2F0aW9uIENBIEczAhApEu0OgvC2rf5l2ks29jJoMIGpBgsqhkiG9w0B
-CRACCzGBmaCBljCBgTELMAkGA1UEBhMCSVQxEDAOBgNVBAgMB0JlcmdhbW8xGTAXBgNVBAcM
-EFBvbnRlIFNhbiBQaWV0cm8xFzAVBgNVBAoMDkFjdGFsaXMgUy5wLkEuMSwwKgYDVQQDDCNB
-Y3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMwIQKRLtDoLwtq3+ZdpLNvYyaDCC
-AVcGCSqGSIb3DQEJDzGCAUgwggFEMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAQIwCgYIKoZI
-hvcNAwcwDQYIKoZIhvcNAwICAQUwDQYIKoZIhvcNAwICAQUwBwYFKw4DAgcwDQYIKoZIhvcN
-AwICAQUwBwYFKw4DAhowCwYJYIZIAWUDBAIBMAsGCWCGSAFlAwQCAjALBglghkgBZQMEAgMw
-CwYJYIZIAWUDBAIEMAsGCWCGSAFlAwQCBzALBglghkgBZQMEAggwCwYJYIZIAWUDBAIJMAsG
-CWCGSAFlAwQCCjALBgkqhkiG9w0BAQEwCwYJK4EFEIZIPwACMAgGBiuBBAELADAIBgYrgQQB
-CwEwCAYGK4EEAQsCMAgGBiuBBAELAzALBgkrgQUQhkg/AAMwCAYGK4EEAQ4AMAgGBiuBBAEO
-ATAIBgYrgQQBDgIwCAYGK4EEAQ4DMA0GCSqGSIb3DQEBAQUABIIBAF+xjLaWz598gtOBp2Mt
-ovrlOU9n7ZlLYBRrQEfkYHzZCRrunNkN9I0OPy03XZeX/ggwixxrD3cWeOOD7a2qoJSpaW5n
-T/Wi/88mlzdjliPgYCsSeVXojSBVkWO6eRLEppcAv9wmYDuFGX1DGAUK1h6U3/xDoK49b3GA
-mfsOu4ZNqLTVW/pDbdMtCmMBop8VZ57GEzeL5wuPLsI0OLAmUXMCMqyhew5PdrBIqk5d4cAg
-vJHR5QiPkcRHO1M8WO+AcCvjW/SGpCkqI/ZIDjjB5Jjuubf8Hr/8qqhnsmzqsgkRPi0kjtP5
-xuecL3wfndvvYPXIUhJc4JG9V0x8GkeJ8UQAAAAAAAA=
---------------ms010308050206040608010200--
 
