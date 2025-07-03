@@ -4,81 +4,52 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2BBE5C7EE30
-	for <wireless-regdb@archiver.kernel.org>; Wed,  2 Jul 2025 07:50:42 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 05D2BC77B7C
+	for <wireless-regdb@archiver.kernel.org>; Thu,  3 Jul 2025 17:11:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=/EmtKNpLV1wuppjdHJcp+jhS0vREUC35ykYwMdMeJCw=; b=4Jypz025z3jE12qMheQsrsP3iF
-	m/pJTWXTbNEBXZP7+a0gIQ1WRg2uuYxGEsvBeeVOVDQFH83maDvddvtWyn6isCDgpS8Ox7ZyfePHt
-	3MOgS0UfFvqPc1EdcWVM77f33DD49/chRspvA/7bv2zb1ggFWt4vhXoxIAb05rDlsv5HyGxygbkiw
-	kGinm80uRa1ncHYjMVRkuH2bLjPi/GdbUIS+6v+MPgun2spzMciwLmp9Q1WSwlxnONSc/2ETeH3NC
-	vGTiCHWk2qHtXPQ41tLQu+Qi6GAELhluLd79IOmuTx5FczcYzN817lV2LF4oT7V/4mJRnXMwd+Xws
-	b+wWydmw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:In-Reply-To:
+	From:References:Cc:Subject:MIME-Version:Date:Message-ID:Reply-To:To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=d3IiFOOiNV0AkWfvi6by7eT/YEGKXk1N60ilSxrwdho=; b=NY9qy5Q/BvfnCIFwGLOuY75Sdm
+	EFO/CaNWHTGKY07fIArYjdH/TOUzqUVz27CrETg6mtf7dYPVG5hVazE6ulPA0yPjVjiIHYUdvwYPj
+	xGAE7Z1wMPrlZDUfHRxx9BOKNZpaFTh8LFBIO4DgQvDkCVAUG7brJvCy1nrQg95h2ZAwJSJ5m9wdL
+	fXs303Yk2hEiP6JfgWc+aNYq/mX+VqAtpvibXBpfG4rvlqLSmobUwE8pvfvdN+kbb2ta0wo9EGhXc
+	ncyvMMFoRCYLd0y0dxeYUDX9Q2UyfQ0Pie6cgMAokwAHiaoa7yUlEQEalgLyXmWTYlJSg3Ylqx1GI
+	Da3spQ0w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWsEq-00000007Xof-0XcI;
-	Wed, 02 Jul 2025 07:50:40 +0000
-Received: from mail-ej1-x630.google.com ([2a00:1450:4864:20::630])
+	id 1uXNTX-0000000C5ay-2rg6;
+	Thu, 03 Jul 2025 17:11:55 +0000
+Received: from vps-c8396917.vps.ovh.net ([2001:41d0:701:1100::5b82] helo=aegrel.ee)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uWsEm-00000007XoI-3oEv
+	id 1uXL2c-0000000Bgvj-3aeg
 	for wireless-regdb@lists.infradead.org;
-	Wed, 02 Jul 2025 07:50:38 +0000
-Received: by mail-ej1-x630.google.com with SMTP id a640c23a62f3a-ad572ba1347so598588466b.1
-        for <wireless-regdb@lists.infradead.org>; Wed, 02 Jul 2025 00:50:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751442635; x=1752047435; darn=lists.infradead.org;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=/EmtKNpLV1wuppjdHJcp+jhS0vREUC35ykYwMdMeJCw=;
-        b=U769GupFZHGoKonvziZIGdZda8E+NNZuhLaj0eu+yI7ALAKIOhBSwgI/9PuvbAhlYS
-         wu+SCQYxkIewiz6RCNvbe0MEJSL6Z4M7y+cvF7ElbwEAm/NXnSAIDzqvnEAmYN6wyfji
-         Vv1eYh45h3Zr6SZ5qzEokkfNTf4nfGBafitcr9qFCUclVbCQgmvZFITDh7ofWVm42cBZ
-         s2i3Knv/+S+cdvx4pK87eN04ONhbKaN/gz7P4TgIvfpT2UdmcCBu4gPqnb6KUgyTZIRV
-         b05qHEyeYw6YQun7J21cBEz65Ito+aZ2gEREM3tu7MvNpFoO+GILUYGPN7HZaV0NmG8k
-         mp+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751442635; x=1752047435;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
-         :subject:date:message-id:reply-to;
-        bh=/EmtKNpLV1wuppjdHJcp+jhS0vREUC35ykYwMdMeJCw=;
-        b=kBgN9o19nWLfUIimJtfQ4PIgDZGDQ1y3JXOm3ylJi6Zh8sRLSQk58xS3+3HJovXwrY
-         71IdmKbLuWXjXtdZMZt1fpTOwQlU4CveDE1IWvXiqpi0AxdjgdwE6Kz2UjgFE05QsCHd
-         /5pmk2U+umULBxLVx6sUMVe6ANxtJRFiZGb5j9HX7agMnAAPwYZQLHIFcBnbaho0T9/H
-         ZmM6nH9WH7Jb5IHglQ7pYQPzhqqOpFP3BX6fd3Cl22htuWHQlGVUzERrBuSotN4LP+B5
-         2rV5wfiA5fs2bUH9NZhhlEqvMkcNJn2VQ1QlAR40UEQReL/+uYWuy+o3tOMotqmwange
-         fGUA==
-X-Forwarded-Encrypted: i=1; AJvYcCWVM/AIU8EcCeDjQWUwjA9sfzg+NbwCEap+vQnbkJDrHqKiQE+NbHMmNpeBxcNQ0QtCjTS/JAL91TMXR+nwSQ==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yz5QLoUJjBAkzTxPOEGKloqpgXG1E+zVE3fLktrWY6nMFniGve1
-	LETHxL7eEKjLAKl4345GhRlXTNyofRlbmPe3pOmeBDmZloCcmuG2cBjrXxehtv++zdNtMOrNXTx
-	jPy+FCwn/w6dxby73XJjwMEaBdr3Jc7++pA==
-X-Gm-Gg: ASbGncvSiwb40dK80e8cKCgYp4ThjKpvs9284pJsZZSmeW3PVUEYRdlabXyLfjQrNJw
-	vxKd+SGrq2xDPlpXR4E81m7g8vuAxA0L9tjWHA6WV4+4ZsNxZx9JqJvqcTrL9PAPYdieowU0Lm6
-	rBfiAM6csuhtbb3XwiBosDsk7spchoIPlZZjRB+b80a4M=
-X-Google-Smtp-Source: AGHT+IE6La0g8qRD8zHQFlQBaAcefxIOZCxxslGrHN5ee1te8a1PXmHq7cRrHwzL2R8sUuiK/uqIjRCvKvEbGhdHyGw=
-X-Received: by 2002:a17:907:3cca:b0:add:fb01:c64a with SMTP id
- a640c23a62f3a-ae3c2d95d66mr194213466b.43.1751442634387; Wed, 02 Jul 2025
- 00:50:34 -0700 (PDT)
+	Thu, 03 Jul 2025 14:36:00 +0000
+DKIM-Signature: v=1; a=ed25519-sha256; s=default; d=aegrel.ee; c=relaxed/relaxed; r=y;
+	h=Content-Type:From:Content-Language:Subject:User-Agent:MIME-Version:Date
+	:Message-ID:To:Sender:Expires:Content-Type; t=1751553357; x=1754145357; bh=d
+	3IiFOOiNV0AkWfvi6by7eT/YEGKXk1N60ilSxrwdho=; b=Y/XMOQHWjFeeWgSeMykqXxM9KM6f
+	TnHj2xCQm6qJHwa3VH6Y3PEj+FMagb1Trnphg9ixrIOhJqxuI8FG5Ns0CQ==;
+Message-ID: <7a9c4849-bae9-4889-a1fb-d050b93bb315@aegrel.ee>
+Date: Thu, 3 Jul 2025 17:35:56 +0300
 MIME-Version: 1.0
-References: <20250618054904.9107-1-pkshih@gmail.com> <CAGb2v65E7K0yRz==OTyBd_LCWwU+0MYWSivgJG4x70gS1Cp93w@mail.gmail.com>
-In-Reply-To: <CAGb2v65E7K0yRz==OTyBd_LCWwU+0MYWSivgJG4x70gS1Cp93w@mail.gmail.com>
-From: Ping-Ke Shih <pkshih@gmail.com>
-Date: Wed, 2 Jul 2025 15:50:45 +0800
-X-Gm-Features: Ac12FXyxk-hToU5xt0idQY1B-nIjw_nd8QJ-Jbncrdq6C1wI200kwkVNIlHOXew
-Message-ID: <CAHrRpumH3DJ2orNksahgri+SjZz=W79EHuUEjRaVjNtwJb6uAw@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Egypt (EG) for 2024
-To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+User-Agent: Mozilla Thunderbird
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Estonia (EE)
+ for 2024
+Cc: wireless-regdb <wireless-regdb@lists.infradead.org>
+References: <c6eb2f23-f15a-4a4f-9934-f8d524bc2cd1@aegrel.ee>
+ <CAGb2v66AATrsy-q6j3973SiDbxx0yO=ZX++BhSedrkZ9ULQ=nQ@mail.gmail.com>
+ <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
+Content-Language: en-US
+From: =?UTF-8?Q?Taavi_Eom=C3=A4e?= <taaviw@aegrel.ee>
+In-Reply-To: <CAGb2v64_LXmb8cX7Uh5xwRGt=MH0GAmugCrJwHTykT=s3v5xGw@mail.gmail.com>
+Content-Type: multipart/signed; protocol="application/pkcs7-signature"; micalg=sha-256; boundary="------------ms010308050206040608010200"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250702_005036_964248_2169794C 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20250703_073559_037210_A21CE632 
+X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -93,86 +64,113 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Chen-Yu Tsai <wens@kernel.org> wrote=EF=BC=9A
->
-> On Wed, Jun 18, 2025 at 1:49=E2=80=AFPM Ping-Ke Shih <pkshih@gmail.com> w=
-rote:
-> >
-> > From: Ping-Ke Shih <pkshih@realtek.com>
-> >
-> > National Telecommunications Regulatory Authority (NTRA) released Radio
-> > Spectrum Guidelines for Short-range Devices (SRD) on November 2024.
-> >
-> > As Table 4 Mandatary requirements for Wideband Data Transmission System=
-s:
-> > Including Wireless LAN (Wi-Fi and Multiple GIGABIT wireless systems for
-> > Indoor applications only)
-> >
-> > * Wi-Fi for indoor applications only, so add NO-OUTDOOR for all entries=
-.
-> >
-> > * 2400 - 2483.5 MHz
-> >   - 100 mW e.i.r.p.
-> >   - EN 300 328
-> > * 5150 - 5350 MHz
-> >   - 200 mW e.i.r.p.
-> >   - DFS and TPC in 5250 - 5350 MHz
-> >     * for devices without TPC, the limit is lowered 3 dBm
-> >   - EN 301 893
-> > * 5925 - 6425 MHz
-> >   - 250 mW e.i.r.p.
-> >   - EN 303 687
-> > * 57 - 66 GHz
-> >   - 40 dBm e.i.r.p.
-> >   - EN 302 567
-> >
-> > [1] https://www.tra.gov.eg/wp-content/uploads/2024/11/EGY-NTRA-November=
--2024-SRD_English-1.pdf
-> >
-> > Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> > ---
-> >  db.txt | 10 ++++++----
-> >  1 file changed, 6 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/db.txt b/db.txt
-> > index e331d4f763e3..4a05bdca781e 100644
-> > --- a/db.txt
-> > +++ b/db.txt
-> > @@ -632,11 +632,13 @@ country EE: DFS-ETSI
-> >         (57000 - 66000 @ 2160), (40)
-> >
-> >  # https://www.tra.gov.eg/wp-content/uploads/2022/03/EGY-NTRA-March-202=
-2-SRD_English_Final.pdf
-> > +# https://www.tra.gov.eg/wp-content/uploads/2024/11/EGY-NTRA-November-=
-2024-SRD_English-1.pdf
-> >  country EG: DFS-ETSI
-> > -       (2402 - 2483.5 @ 40), (20)
-> > -       (5150 - 5250 @ 80), (23), AUTO-BW, wmmrule=3DETSI
-> > -       (5250 - 5350 @ 80), (20), DFS, AUTO-BW, wmmrule=3DETSI
-> > -       (57000 - 66000 @ 2160), (40)
-> > +       (2402 - 2483.5 @ 40), (100 mW), NO-OUTDOOR
-> > +       (5150 - 5250 @ 80), (200 mW), AUTO-BW, wmmrule=3DETSI, NO-OUTDO=
-OR
-> > +       (5250 - 5350 @ 80), (100 mW), DFS, AUTO-BW, wmmrule=3DETSI, NO-=
-OUTDOOR
->
-> The database parser requires the wmmrule flag be the last flag for some
-> reason. I fixed it up locally and will force push it out.
+This is a cryptographically signed message in MIME format.
 
-Sorry for the mistakes. I forgot to run the parser before sending out patch=
-.
+--------------ms010308050206040608010200
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: base64
 
->
-> ChenYu
->
-> > +       (5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
-> > +       (57000 - 66000 @ 2160), (40), NO-OUTDOOR
-> >
-> >  # ES as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN =
-301 893)
-> >  # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300=
- 440)
-> > --
-> > 2.25.1
-> >
+T24gNy8yLzI1IDA3OjM0LCBDaGVuLVl1IFRzYWkgd3JvdGU6DQo+PiBJIGp1c3QgcmVhbGl6
+ZWQgdGhhdCB5b3UgZGlkbid0IHByb3ZpZGUgYSBTaWduZWQtb2ZmLWJ5IGluIHRoZSBwYXRj
+aC4NCj4+IEkgY2FuJ3QgYXBwbHkgeW91ciBwYXRjaCB3aXRob3V0IGl0Lg0KPj4NCj4+IENh
+biB5b3UgcHJvdmlkZSBpdD8gSnVzdCByZXBseSB0byB0aGUgdGhyZWFkIHdpdGggYSBwcm9w
+ZXIgU2lnbmVkLW9mZi1ieQ0KPj4gdGFnLg0KPiBQaW5nPw0KDQpTb3JyeSBmb3IgdGhlIGxh
+dGUgcmVwbHkuDQoNClNpZ25lZC1vZmYtYnk6IFRhYXZpIEVvbcOkZSA8dGFhdml3QGFlZ3Jl
+bC5lZT4NCg0K
+
+--------------ms010308050206040608010200
+Content-Type: application/pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Description: S/MIME Cryptographic Signature
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCC
+DVgwggXjMIIDy6ADAgECAhApEu0OgvC2rf5l2ks29jJoMA0GCSqGSIb3DQEBCwUAMIGBMQsw
+CQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRy
+bzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1
+dGhlbnRpY2F0aW9uIENBIEczMB4XDTI1MDIyNjE4MzE0NloXDTI2MDIyNjE4MzE0NlowGjEY
+MBYGA1UEAwwPdGFhdmlAYWVncmVsLmVlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAsCxhxq5/z/ch2BdjO4t03JW81DmaAmVHJFukZujsKzOr96NVTqvoIXf4XwXWxQbZH5/9
+NOdX6asygku87N883fFM/+sqmVif2o2Cwnr+yesHEQKsNWY0awQgv6bMqPPLpIMYjHKgIqkf
+jVJYXVup8oLrJtN1gp7k3NAlT3gDLZgUtIZSkfFfOSqhMDlDYBUS9aOow7SqXDzriwQP9dKT
+LpeO2Lhut9ODsgSHQ33Kt/hPyB8P0APbyyPCymEjX8j0JCeX861dCNMylcLdJeX7ay9erRDm
+jbWLMUaJq5LKV371MAFp7oi1HFTlW1rqHDJo4YBt6oyg8u51Me5nEdnhVwIDAQABo4IBuzCC
+AbcwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBS+l6mqhL+AvxBTfQky+eEuMhvPdzB+Bggr
+BgEFBQcBAQRyMHAwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jYWNlcnQuYWN0YWxpcy5pdC9jZXJ0
+cy9hY3RhbGlzLWF1dGNsaWczMDEGCCsGAQUFBzABhiVodHRwOi8vb2NzcDA5LmFjdGFsaXMu
+aXQvVkEvQVVUSENMLUczMBoGA1UdEQQTMBGBD3RhYXZpQGFlZ3JlbC5lZTBSBgNVHSAESzBJ
+MDwGBiuBHxABATAyMDAGCCsGAQUFBwIBFiRodHRwczovL3d3dy5hY3RhbGlzLml0L2FyZWEt
+ZG93bmxvYWQwCQYHZ4EMAQUBATAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwSAYD
+VR0fBEEwPzA9oDugOYY3aHR0cDovL2NybDA5LmFjdGFsaXMuaXQvUmVwb3NpdG9yeS9BVVRI
+Q0wtRzMvZ2V0TGFzdENSTDAdBgNVHQ4EFgQUjSmj8rKWg55r+AS7jdrBtI/sKA8wDgYDVR0P
+AQH/BAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQCgkDFzi3c7DmH4waADC8rVSJV2hjLyZzMh
+zHlLrc8eq+Cp1B94UNzLLB5Q0ZDP7M0utCfyu2lrTwSm3a6PLhIvAAWkMKwxhJOH6jgewkZf
+k8j03tmehQKQUepnlezVdGRuozH8Sx1ZRWCnwKYsbbGePe3Nf5m8pZT0LyDbDUbC1sFdrILM
+PQnPUhDKPPyt/Iqp1dKiuAb+7wZcOFeqOlARt3wBgE+ej+tS1HLaTpRxcXyuY8vL0RBLyX7k
+YK138n2/FPkGeDpfxTshCDunmR3YA18k3iYpPQoznBq3ko7UoI5ZFrN2KLMNOkU1o8DjPyRO
+4crs/QBn3RXz2yeQ2VjM+HAGxGyUu1cJ8TeBavU1i2V3Xsc9CjHNTNt3V0SF1MTBiA49beHk
+S6wWpGzRKCry3I6hu2nyhIsAMOYC0TZomWDbGk4zGgyexdVxcAuLdq2SWXQ0Fjd8+kI0VsMu
+E1M0jsQQLo/83SnCmKjXizyD071HigsmLex0KUFGJEG766A99kKY5sdgHsgAH1pX4K1jnjx2
+7cp+egyd5dHn2kF8AZ2XwkDQYJhAvj9tW9y6XdByc3Me+c8DmJ3LgdXI9Ifk1a7v3ypOEwkH
+6oj69jAQcAme4inudeRQTBDu2fZp4a48VOl5J7mDwjv/weibecwHkXKUn5ksrWYu+/dFWR3t
+PTCCB20wggVVoAMCAQICEBcQPt49ihy1ygZRk+fKQ2swDQYJKoZIhvcNAQELBQAwazELMAkG
+A1UEBhMCSVQxDjAMBgNVBAcMBU1pbGFuMSMwIQYDVQQKDBpBY3RhbGlzIFMucC5BLi8wMzM1
+ODUyMDk2NzEnMCUGA1UEAwweQWN0YWxpcyBBdXRoZW50aWNhdGlvbiBSb290IENBMB4XDTIw
+MDcwNjA4NDU0N1oXDTMwMDkyMjExMjIwMlowgYExCzAJBgNVBAYTAklUMRAwDgYDVQQIDAdC
+ZXJnYW1vMRkwFwYDVQQHDBBQb250ZSBTYW4gUGlldHJvMRcwFQYDVQQKDA5BY3RhbGlzIFMu
+cC5BLjEsMCoGA1UEAwwjQWN0YWxpcyBDbGllbnQgQXV0aGVudGljYXRpb24gQ0EgRzMwggIi
+MA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDt5oeWocGktu3CQlX3Pw8PImBfE+CmQ4iG
+SZF5HBsvGlAP3EYB7va6OobMUWHvxA+ACHEpWq0YfNh6rRUlULOGcIpEFtVf4nAiEvdQtiFQ
+BmtWJSn3naoMHqpMvmwZ4lL0Xr1U9JHmTqkU3DuYcNNO3S+hYWDZpWQbeSGibNVeiJ4kY6JD
+h0fvqloK1BsuS3n2OgArPYGfAYtDjCvT2d+6Ym3kArHZjEcrZeBI+yVVnjPwbTSCKax8DtS2
+NP/CJ6RjpnRvuSwusRy84OdwdB71VKs1EDXj1ITcCWRZpkz+OhV6L8Zh+P0rmOSJF6KdHiao
+zfncURx4s54GFJNRGkx1DnCxcuL0NJMYG42/hrDYOjNv+oGWSEZO/CT3aaLSMB5wTbZKfcD1
+R+tTanXD+5Gz5Mi15DTE7QH8naZjZxqqhyxL1KyuIgaVDxvQtPSjo5vTsoa09rn+Ui8ybHnv
+YO/a/68OIQIHLGbUd2COnwm0TiZ3Jg/oYGxwnJPvU1nDXNcecWTIJvFF5qD2ppJH3HgJVVeP
+UEOY1E4Kp3k0B8hdRdhMV5n+O6RCKCTFcZaESF8sELgdrqnCLPP1+rX7DA8pxZoX0/9Jk64E
+OsbfQyLIJlrrob2YS0Xlku6HisZ8qrHLhnkzF5y7O34xmatIp8oZ5c54QP+K5flnTYzWjuIx
+LwIDAQABo4IB9DCCAfAwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBRS2Ig6yJ94Zu2J
+83s4cJTJAgI20DBBBggrBgEFBQcBAQQ1MDMwMQYIKwYBBQUHMAGGJWh0dHA6Ly9vY3NwMDUu
+YWN0YWxpcy5pdC9WQS9BVVRILVJPT1QwRQYDVR0gBD4wPDA6BgRVHSAAMDIwMAYIKwYBBQUH
+AgEWJGh0dHBzOi8vd3d3LmFjdGFsaXMuaXQvYXJlYS1kb3dubG9hZDAdBgNVHSUEFjAUBggr
+BgEFBQcDAgYIKwYBBQUHAwQwgeMGA1UdHwSB2zCB2DCBlqCBk6CBkIaBjWxkYXA6Ly9sZGFw
+MDUuYWN0YWxpcy5pdC9jbiUzZEFjdGFsaXMlMjBBdXRoZW50aWNhdGlvbiUyMFJvb3QlMjBD
+QSxvJTNkQWN0YWxpcyUyMFMucC5BLiUyZjAzMzU4NTIwOTY3LGMlM2RJVD9jZXJ0aWZpY2F0
+ZVJldm9jYXRpb25MaXN0O2JpbmFyeTA9oDugOYY3aHR0cDovL2NybDA1LmFjdGFsaXMuaXQv
+UmVwb3NpdG9yeS9BVVRILVJPT1QvZ2V0TGFzdENSTDAdBgNVHQ4EFgQUvpepqoS/gL8QU30J
+MvnhLjIbz3cwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4ICAQAmm+cbWQ10sxID
+6edV94SAhc1CwzthHFfHpuYS30gisWUfWpgp43Dg1XzG2in3VGV7XrzCCGZh4JM/XQWp+4ox
+myV42Qjz9vc8GRksgo6X2nYObPYZzQjda9wxsCB38i4G3H33w8lf9sFvl0xm4ZXZ2s2bF/Pd
+qvrK0ZgvF51+MoIPnli/wJBw3p72xbk5Sb1MneSO3tZ293WFzDmz7tuGU0PfytYUkG7O6ann
+GqbU1I6CA6QVKUqeFLPodSODAFqJ3pimKD0vX9MuuSa0QinH7CkiPtZMD0mpwwzIsnSs3qOO
+l60tIZQOTc0I6lCe1LLhrz7Q75J6nNL9N5zVwZ1I3o2Lb8Dt7BA13VFuZvZIzapUGV83R7pm
+SVaj1Bik1nJ/R393e6mwppsT140KDVLh4Oenywmp2VpBDuEj9RgICAO0sibv8n379LbO7ARa
+0kw9y9pggFzN2PAX25b7w0n9m78kpv3z3vW65rs6wl7E8VEHNfv8+cnb81dxN3C51KElz+l3
+1zchFTurD5HFEpyEhzO/fMS5AkweRJIzwozxNs7OL/S/SVTpJLJL1ukZ1lnHHX0d3xCzRy/5
+HqfK3uiG22LPB5+RjNDobPAjAz2BKMfkF/+v0pzn8mqqkopQaJzEAbLbMpgQYHRCjvrUxxwj
+JyUFb2Z+40UNtMF4MTK7zTGCBOAwggTcAgEBMIGWMIGBMQswCQYDVQQGEwJJVDEQMA4GA1UE
+CAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2FuIFBpZXRybzEXMBUGA1UECgwOQWN0YWxp
+cyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIENBIEcz
+AhApEu0OgvC2rf5l2ks29jJoMA0GCWCGSAFlAwQCAQUAoIIDGjAYBgkqhkiG9w0BCQMxCwYJ
+KoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yNTA3MDMxNDM1NTZaMC8GCSqGSIb3DQEJBDEi
+BCByDysKoy6CLBf34GmvpnfUv9EhW8qJNzqQ6M3gLyey2TCBpwYJKwYBBAGCNxAEMYGZMIGW
+MIGBMQswCQYDVQQGEwJJVDEQMA4GA1UECAwHQmVyZ2FtbzEZMBcGA1UEBwwQUG9udGUgU2Fu
+IFBpZXRybzEXMBUGA1UECgwOQWN0YWxpcyBTLnAuQS4xLDAqBgNVBAMMI0FjdGFsaXMgQ2xp
+ZW50IEF1dGhlbnRpY2F0aW9uIENBIEczAhApEu0OgvC2rf5l2ks29jJoMIGpBgsqhkiG9w0B
+CRACCzGBmaCBljCBgTELMAkGA1UEBhMCSVQxEDAOBgNVBAgMB0JlcmdhbW8xGTAXBgNVBAcM
+EFBvbnRlIFNhbiBQaWV0cm8xFzAVBgNVBAoMDkFjdGFsaXMgUy5wLkEuMSwwKgYDVQQDDCNB
+Y3RhbGlzIENsaWVudCBBdXRoZW50aWNhdGlvbiBDQSBHMwIQKRLtDoLwtq3+ZdpLNvYyaDCC
+AVcGCSqGSIb3DQEJDzGCAUgwggFEMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAQIwCgYIKoZI
+hvcNAwcwDQYIKoZIhvcNAwICAQUwDQYIKoZIhvcNAwICAQUwBwYFKw4DAgcwDQYIKoZIhvcN
+AwICAQUwBwYFKw4DAhowCwYJYIZIAWUDBAIBMAsGCWCGSAFlAwQCAjALBglghkgBZQMEAgMw
+CwYJYIZIAWUDBAIEMAsGCWCGSAFlAwQCBzALBglghkgBZQMEAggwCwYJYIZIAWUDBAIJMAsG
+CWCGSAFlAwQCCjALBgkqhkiG9w0BAQEwCwYJK4EFEIZIPwACMAgGBiuBBAELADAIBgYrgQQB
+CwEwCAYGK4EEAQsCMAgGBiuBBAELAzALBgkrgQUQhkg/AAMwCAYGK4EEAQ4AMAgGBiuBBAEO
+ATAIBgYrgQQBDgIwCAYGK4EEAQ4DMA0GCSqGSIb3DQEBAQUABIIBAF+xjLaWz598gtOBp2Mt
+ovrlOU9n7ZlLYBRrQEfkYHzZCRrunNkN9I0OPy03XZeX/ggwixxrD3cWeOOD7a2qoJSpaW5n
+T/Wi/88mlzdjliPgYCsSeVXojSBVkWO6eRLEppcAv9wmYDuFGX1DGAUK1h6U3/xDoK49b3GA
+mfsOu4ZNqLTVW/pDbdMtCmMBop8VZ57GEzeL5wuPLsI0OLAmUXMCMqyhew5PdrBIqk5d4cAg
+vJHR5QiPkcRHO1M8WO+AcCvjW/SGpCkqI/ZIDjjB5Jjuubf8Hr/8qqhnsmzqsgkRPi0kjtP5
+xuecL3wfndvvYPXIUhJc4JG9V0x8GkeJ8UQAAAAAAAA=
+--------------ms010308050206040608010200--
 
