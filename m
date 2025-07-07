@@ -4,84 +4,87 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6459BC83F0D
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7DA06C83F09
 	for <wireless-regdb@archiver.kernel.org>; Mon,  7 Jul 2025 02:55:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=vLFT9YUi2kgk4IHIMXEm1tnwQfNF6uLUtXcFAl9ufZ4=; b=ZO1VgQRbmIycbFYqH3/uioLzVT
-	GINMC4MeC9Qq5wdtkNDpr8Ir2S5/oSV9ETgvQugRd7zQk3koxoH3gn2TbywTM9Bp/KfJukB3ZEIlO
-	ojhA8XDngTTEdAfY9k0eZlXEI7c6HioRbppG/RNNEwoGrbOFfC/sawgd1MHijCSfgiY9n3R63/1pA
-	SBNwzPfE906vjkqptOkjRRJHgc4vvFUkuaRdpzpaxaGFvX0wDr4PFB3zw4kKytdMrE8IYc8ScyfVH
-	K8bZ7jSjdwrq6qfzVfL3Y8M0yZ35NEB11My1cCrAyZTnfrdRTQdwQem8D/fXqNvGHaWZog8EVSpf2
-	BBDSr9OQ==;
+	MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=qx8X3o9APoPQgn0WIpEcwf5Z4PWAuPlq8VwPxSyh4wo=; b=xZx0J/Ds3rJP3Op4mCIFVR2PuT
+	QUUIUT58wmaPcXWvyqxT93S+XNqmXjbP6WxOdWQ5ZZMSjeUZeWD5ppqeJn6sMmYH1PBs1PuSWU5g2
+	TICNC52DpvE+G3XFdcY88FiQXLN8Hb5X7w48V/dJtga53tN194skmcF0DnOr/+HEw5VF7rykfvcJM
+	1zPGdXfMi7XC3bOYLdPesiacT1ckZCSz+UVSDgUm/vceUcFCsPD6hpDriDg2WnSDlEZ5b5nQ5cnYi
+	mGfAn7iDsL2/BvLABkOq+FdTtgL9z5BZRUs0VhDBicNdSWdFsqis0WoJi401aZArmnH03p4Jnx57j
+	+cerIi1g==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYc1B-00000001F9w-0Wec;
+	id 1uYc1B-00000001FA4-2D5l;
 	Mon, 07 Jul 2025 02:55:45 +0000
-Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
+Received: from mail-pf1-x42c.google.com ([2607:f8b0:4864:20::42c])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uYbsC-00000001E0z-0nCv
+	id 1uYbsE-00000001E1w-2I2i
 	for wireless-regdb@lists.infradead.org;
-	Mon, 07 Jul 2025 02:46:29 +0000
-Received: by mail-pf1-x42d.google.com with SMTP id d2e1a72fcca58-7490acf57b9so1813135b3a.2
-        for <wireless-regdb@lists.infradead.org>; Sun, 06 Jul 2025 19:46:27 -0700 (PDT)
+	Mon, 07 Jul 2025 02:46:32 +0000
+Received: by mail-pf1-x42c.google.com with SMTP id d2e1a72fcca58-7426c44e014so1970649b3a.3
+        for <wireless-regdb@lists.infradead.org>; Sun, 06 Jul 2025 19:46:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1751856387; x=1752461187; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=vLFT9YUi2kgk4IHIMXEm1tnwQfNF6uLUtXcFAl9ufZ4=;
-        b=P9FE7mguXAudWNZ+IfBlLmRON9UNrjbXvYbaHtJPFnzW/Y4/zj6tK8aqJdw39Z4FE7
-         CFDqdy4xtK4ON4cJ79Jvo6YiMT9MYPPYe3UJEPjH9cNiWI6XLOri1djlOm9xTpud+roV
-         GRzM3CGCnk3dG73QAYXYr9zFxHquBBr05lOq6ZzGLe1cE9bMVnICcCelqn1BZ/lI8a7b
-         WyJVkEj5+diED9cfKxRO/Y8VXbxDMCYAIk/uZsDbAjDYBBYFqA8Yd5BKZMThUqU/sRct
-         wNZCUy97cEANdhNa+7zqNOfCRhdG4dCevM7O0G9PtZ9KMJTvJ0oCgBR8WiK762I1YAF0
-         bJgA==
+        d=gmail.com; s=20230601; t=1751856390; x=1752461190; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=qx8X3o9APoPQgn0WIpEcwf5Z4PWAuPlq8VwPxSyh4wo=;
+        b=TdfzikR0PDuaTxaSB0pKMSG4NHl1AtXvroyclvHa18GA3P4OofFEUi4KxdiNL1SuPU
+         2RtvLc7EEnhFpFAfbWDV2YHlJuZoLLL5DpKWG3GpMZf1XnylhwFlaB4+HGIrbBPOnu1m
+         JuDgsm6kkaXc6+F75ooz3zn3GAzU0bt+p+LIrqaWo+zBkgn6WaoNxwl+invejz+F2CfA
+         mBv5kEH9lYBMqqJWk4xuR6mVTCQDqLitkjmBCV0nNqQRmzd6F/wVCF8EBxjvndN+NnN9
+         SsNazUy4dztpU/UDcXbsY5a98hkHHkkWO8zCnvrISpY8vvtmvLzlkBlULyey6Vgndf1e
+         BHKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1751856387; x=1752461187;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
-        bh=vLFT9YUi2kgk4IHIMXEm1tnwQfNF6uLUtXcFAl9ufZ4=;
-        b=ek9D0fA8KZA45H5puw4IWyhI3LvX7HQTIX4fU5n+xe4Y6hAWw4+yaROEP186ur4NVE
-         s55HPZD629yHHv6ZP3P2bAkgtOX+ykd9dQgRln6R1ddt2sShlHWZE5MjZ39RYLipoPw/
-         SKfB9NwuPpjOlOxFSJBsVGhYQOKCE23aPXtvHlMH5NwkjEPIlIm1XLc2KB5/+H6MZII4
-         ONPGs8OgRrKnzY5hkeVdqI2JSbqRSgST/NQ1dJA1KKMVwcjMXHZm3AL10EKDjzYp3IZh
-         Cfve13WPOLN+Q1oLEF+4mMOrlT+b3xmAUYBrHlkVn0DtaAO6G52hFdaoMWZXqI6wV9Vu
-         9Wow==
-X-Forwarded-Encrypted: i=1; AJvYcCUX81F+0i8wd5pd12tXt+twSJ/LTDtBhd9lX4wWnU7QW7qc+zw0ezov3H8ioBUa+FCDkxGtuWT0HW6IuBjHBw==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwBn3gSkxVUC9DU3jeRaBPuK/aKyjNU9ogU8ghSWxNULMHgIsiy
-	+XXDGULx5sLMVUlfzydAXvP5Z99Nd9TMjtn152TFHu4JyMr5TcYsEni2
-X-Gm-Gg: ASbGnct+5lws8AKPLoJr6TUC1gxmTRx01mK3vrgxZOjeE1ZQQ5uyi4eQsKv7P/iLAb9
-	+9zIqsBtKflZBOWDbcArQMdBzpuspxgO+u8hlfbrLpJRcxBgMEx+2B9HB8oBUm7oqqdacqARoyd
-	2hd8wHUkxWeZUHLc/8ITTiUlmEipDK8b3YiagIhMcAAjZGhjC9YnPdwbEIAzWYLrR25u8utHEwk
-	1N2vWogUycEqPx/p8W/ffp6WEDKFHXLtNL4ffk3BMSNwjinpu+/pztkFP3JocLr+zAIinlU4Ys4
-	0HollLr1dYhRwnQ90HoaLuZNjKGMtTcGJCKhaPSXls8FLyYzCyng9jrshzt42qvUzec60TJhgFi
-	bStLqE5N/UmlV544jPWEABgG44fR72/xRxKpF
-X-Google-Smtp-Source: AGHT+IGZ6t+i+0pA1w4HjlrKayguT9lc3j1A3wPeXlmDAPtkqs9+ohFZq6n50UzOxDd+2xwoBhEIWQ==
-X-Received: by 2002:a05:6a00:3c8b:b0:748:3485:b99d with SMTP id d2e1a72fcca58-74ce65c53bamr16375568b3a.18.1751856386905;
-        Sun, 06 Jul 2025 19:46:26 -0700 (PDT)
+        d=1e100.net; s=20230601; t=1751856390; x=1752461190;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=qx8X3o9APoPQgn0WIpEcwf5Z4PWAuPlq8VwPxSyh4wo=;
+        b=p7InkNqx+6bfCpjRbzA96OmYIpwKYGiQO0MtJmmr+u+/xAgT0p5EO+nNTaSsXsG7a1
+         iI/amisQIsGq+w+xXcEcaIzghhkvlackgedDIL6dUb8JjVf073kQFIKLfKgE1QMGZjZR
+         Ts/8uyJLDE8XZ6qHb6tMSUObMX7qWe5XVguxGQcQwIAjlphVGMz8qSAGkZqYWVPvSsiM
+         1ZQmI7dSuLGyTyToynnE2zeOv08I+3CgIjbDRX9XSS2c1jsc6iLwpCScGaoD7E+JHEa+
+         944ZEuaoFik/t1ooqv+BcL1Cii1s/wDBnQsEpvKglAdvYT7eqQ1jia8vPldSw7W/fxSa
+         hP7A==
+X-Forwarded-Encrypted: i=1; AJvYcCXyGpRDMD3LpzcS4WafuH6WSe6LKRUFbH/VU9W6YwAStAnS1uXlRLI5bJ9FtD4sf+umXxP37Wr78B7n4eolmA==@lists.infradead.org
+X-Gm-Message-State: AOJu0YzHb3QowBQqFE23YOLbkg9p89S9FCajkxfAmAXKDLMaoSeTyl87
+	38AWqFY5CEOAjFTmDH/GZd8T9Xy15lxVK3fz+bMF3wWuxM0aoKw0Mqt1
+X-Gm-Gg: ASbGncs8kvINqJuwDLrjqBBRMk33a7FGoMtrzGCmTkqZn0NbGzP2i3FV8Y4SdumM9cO
+	Yws622h3DTLbaSlijvwCPnVldiIvsxHjeF5KiqcdoqF/LjGg/QTPhlvvOqMmQQPCLB+cFgrFQq8
+	HsYDKW3+mR3NI38gZEr3bTBT7qc1+hb7x9FJYVeVE0i5or1eNHJi0JtGfYAX6wBgrPtz5EMgEyu
+	ycCLA+O9K+LyD+EMOaqKRBvDbCtq+L3Q/xmEBQNwtsdN7nV6jn5+hvNVUghv5dlqEA2Gnr/ZIJR
+	FNyp/dOTkl1bEWA9IJIUP+UcTELfccDt41OgtXlQ/bJtApAVX532VjFREjaxWZGVu0T1tJRsznF
+	9pflPKIc7jgn4LMpkbmX17CtF86AGY5dxcfFi
+X-Google-Smtp-Source: AGHT+IGB//0dIHmRUqv7GGFRgwfb9zOE0RNFn3qjwDP61v2rY3kcwt+uv3zZV0ED3+F3uGYj9Qdyjw==
+X-Received: by 2002:a05:6a00:4b13:b0:748:ff39:a0f7 with SMTP id d2e1a72fcca58-74cf6f2f331mr7968176b3a.9.1751856389931;
+        Sun, 06 Jul 2025 19:46:29 -0700 (PDT)
 Received: from localhost.localdomain (125-231-129-141.dynamic-ip.hinet.net. [125.231.129.141])
-        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-74ce35cd066sm8205274b3a.53.2025.07.06.19.46.25
+        by smtp.googlemail.com with ESMTPSA id d2e1a72fcca58-74ce35cd066sm8205274b3a.53.2025.07.06.19.46.28
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 06 Jul 2025 19:46:26 -0700 (PDT)
+        Sun, 06 Jul 2025 19:46:29 -0700 (PDT)
 From: Ping-Ke Shih <pkshih@gmail.com>
 To: wens@kernel.org
 Cc: linux-wireless@vger.kernel.org,
 	wireless-regdb@lists.infradead.org
-Subject: [PATCH 1/3] wireless-regdb: Update regulatory info for CEPT countries for 6GHz listed by WiFi Alliance
-Date: Mon,  7 Jul 2025 10:46:13 +0800
-Message-Id: <20250707024615.38507-1-pkshih@gmail.com>
+Subject: [PATCH 3/3] wireless-regdb: update regulatory rules for Paraguay (PY) on 6 GHz for 2025
+Date: Mon,  7 Jul 2025 10:46:15 +0800
+Message-Id: <20250707024615.38507-3-pkshih@gmail.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20250707024615.38507-1-pkshih@gmail.com>
+References: <20250707024615.38507-1-pkshih@gmail.com>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250706_194628_228313_FE54D793 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20250706_194630_584083_CD0B942D 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -98,127 +101,51 @@ Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infra
 
 From: Ping-Ke Shih <pkshih@realtek.com>
 
-The regulations enabling 6GHz WiFi [1] of WiFi Alliance lists CEPT
-countries including
- - Albania (AL)
- - Andorra (AD)
- - Austria (AT)
- - Belarus (BY)
- - Belgium (BE)
- - Georgia (GE)
- - Iceland (IS)
- - Liechtenstein (LI)
- - Macedonia, The Former Yugoslav Republic of (MK)
- - Moldova, Republic of (MD)
- - Monaco (MC)
- - Montenegro (ME)
- - Norway (NO)
- - Russian Federation (RU)
- - Switzerland (CH)
- - Türky (TR)
- - Ukraine (UA)
-Add 6 GHz frequency entry if not being added yet.
+Government of Paraguay, National Telecommunication Commission released
+BOARD RESOLUTION No. 1035/2025 (by translation).
 
-But being pending to add rules to below entires because countries are not
-existing yet:
- - Faroe Islands (FO)
- - Gibraltar (GI)
- - Isle of Man (IM)
- - San Marino (SM)
- - Holy See (Vatican City State) (VA)
+The operation parameters are listed on page 6-7.
 
-Links of all these countries are to point to ECC/DEC/(20)01 [2] [3], which
-decision enters into force on 8 November 2024; preferred date for
-implementation of this Decision shall be 8 May 2025.
+ * LPI
+   - indoor only
+   - 5925 - 6425 MHz
+   - Max. e.i.r.p: AP: 30 dBm, Client: 24 dBm
+   - Max. PSD e.i.r.p: AP: 5 dBm/MHz, Client: -1 dBm/MHz
+     (Since minimum bandwidth is 20 MHz for WiFi, e.i.r.p limit is 12 dBm
+      for client)
+ * VLP
+   - indoor/outdoor
+   - 5925 - 6425 MHz
+   - Max. e.i.r.p: 17 dBm
+   - Max. PSD e.i.r.p: -5 dBm
 
- * LPI devices
-   - 5945-6425 MHz
-   - Restricted to indoor use only
-   - Maximum mean e.i.r.p.: 23 dBm
-   - Maximum mean e.i.r.p. density: 10 dBm/MHz
- * VLP devices
-   - 5945-6425 MHz
-   - Indoors and outdoors
-   - Maximum mean e.i.r.p.: 14 dBm
-   - Maximum mean e.i.r.p. density: 1 dBm/MHz
-
-[1] https://www.wi-fi.org/regulations-enabling-6-ghz-wi-fi
-[2] https://docdb.cept.org/implementation/16737
-[3] https://docdb.cept.org/download/4685
+[1] https://www.conatel.gov.py/conatel/wp-content/uploads/2025/05/2025-rd-1035-sistema-acceso-inalambrico-baja-potencia-6ghz-norma-tecnica.pdf
 
 Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
 ---
- db.txt | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ db.txt | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index acfbcbf29887..b5b1308460cc 100644
+index 224edfcd90a9..ba1d7f8f8580 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -41,6 +41,7 @@ country AD: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
+@@ -1621,12 +1621,15 @@ country PW: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
  
-@@ -80,6 +81,7 @@ country AL: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
++# Source:
++# https://www.conatel.gov.py/conatel/wp-content/uploads/2025/05/2025-rd-1035-sistema-acceso-inalambrico-baja-potencia-6ghz-norma-tecnica.pdf
+ country PY: DFS-FCC
+ 	(2402 - 2482 @ 40), (20)
+ 	(5170 - 5250 @ 80), (24), AUTO-BW
+ 	(5250 - 5330 @ 80), (24), DFS, AUTO-BW
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
++	(5925 - 6425 @ 320), (12), NO-OUTDOOR
  
  # Source:
- # 2.4 GHz https://www.psrc.am/contents/document/4749
-@@ -355,6 +357,7 @@ country BY: DFS-ETSI
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
- 	(5490 - 5710 @ 160), (27), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 
- country BZ: DFS-JP
- 	(2402 - 2482 @ 40), (30)
-@@ -742,6 +745,7 @@ country GE: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (18), AUTO-BW
- 	(5250 - 5330 @ 80), (18), DFS, AUTO-BW
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1234,6 +1238,7 @@ country MC: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 
- # Source:
- # http://www.cnfr.md/index.php?pag=sec&id=117&l=en
-@@ -1266,6 +1271,7 @@ country ME: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 
- country MF: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
-@@ -1292,6 +1298,7 @@ country MK: DFS-ETSI
- 	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
- 	# short range devices (ETSI EN 300 440-1)
- 	(5725 - 5875 @ 80), (25 mW)
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40)
- 
-@@ -1924,6 +1931,7 @@ country UA: DFS-ETSI
- 	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
- 	(5470 - 5725 @ 160), (100 mW), DFS, NO-OUTDOOR, wmmrule=ETSI
- 	(5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Etsi En 302 567
- 	(57000 - 66000 @ 2160), (40 mW), NO-OUTDOOR
- 
+ # https://www.cra.gov.qa/-/media/System/D/2/5/8/D258CF18B83A5613B0D590193CB799CB/Class-License-WIFI-6E-Final-English-032022--V3.ashx
 -- 
 2.25.1
 
