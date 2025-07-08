@@ -4,71 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 006B9C8303C
-	for <wireless-regdb@archiver.kernel.org>; Tue,  8 Jul 2025 07:46:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2395C8303C
+	for <wireless-regdb@archiver.kernel.org>; Tue,  8 Jul 2025 08:17:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cdulQe9cXhzIof3BZ305Mmp1ccT/I4l/DavEKN1p4WU=; b=XbqSw9yhdsIst0
-	uCCcgSVDjyQm1mqP6OFYNIv0KwOMmHP46uz0u/PK3mdwVi0SiMetz/ukROyoXwwAqVcRtI853Ko7u
-	4pIRuq4D5yUjUx7plouM/oWTDRblOPb7hkMTdN5tkfy9d2YWpkiZZkA0hCvixwOa1z0JOQKWBksj9
-	tcf8nJ8m96H1nVFuPzaYbrbJYqzAESmidiEmQd7Rt6qDOiuYpbB4BCj9DHPxse9D3zJTXBciofxHz
-	Tf2lc6iYP+gzIPkjVtogIbPIybrDAR50hKGqw87lCjlbXix7bLCX/KyZYEwM7esnWMTjhct4HO9gU
-	l1qt1syJz+kDBDTupT5A==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=HI6uy3/VA9ODWgnMqFTSxnicfikmsNzPdv5EuvAouoU=; b=YT39XQDl7bTybyGGfDQf6AyBm9
+	bcgeBK+HDhrasKyDWm1mGq3cDVmJOdjlGZ+ABk6gRWcqUsWNLn+AVbAiFOXjdjL/+2oYTY7hkNf3d
+	7rJQChEj2K8x1qqU38Czj+te5FQfrnjiq7AKvOcMVkn5Av8vxaJYDxhhCaB7qM9U90a4duimc1z74
+	GT1B0QIPE+oWnwqqGHLEF7D70Mw7ojKZUuj2ciW8+tyHyyPJecKg7Uc2CMpjIv87PLK4IadIkTuFO
+	VUwKxhnK2HDVL/Kyx/7wpVob7vk+h9DQSmlVdJdPBclWXSFPC3n4lrIuoogOHqvxbfetJ8pEXZFrU
+	DAXzhEQA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ328-00000004coh-2099;
-	Tue, 08 Jul 2025 07:46:32 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1uZ3Vu-00000004igR-07Rt;
+	Tue, 08 Jul 2025 08:17:18 +0000
+Received: from mail-ed1-x534.google.com ([2a00:1450:4864:20::534])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ325-00000004co2-3izK
+	id 1uZ3Vr-00000004ifZ-0f3e
 	for wireless-regdb@lists.infradead.org;
-	Tue, 08 Jul 2025 07:46:31 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C5C1B43C92
-	for <wireless-regdb@lists.infradead.org>; Tue,  8 Jul 2025 07:46:28 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A6B03C4CEED
-	for <wireless-regdb@lists.infradead.org>; Tue,  8 Jul 2025 07:46:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1751960788;
-	bh=DTo6M5lf619kLLoaWOPb/W1KDqfDZkScguV96S3rP6s=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=nDOkT4Zeb8q1NACckU99nuxMzaH61O4F3lFLl6+phk9775ZynUtjRrg/pk8E9ohHx
-	 x+qz4sAMQFKmbYLfLUw89sp+1I9Ho/SViODOI3Un4sfn2iAU9jwjOT6f+lVNQ98/NS
-	 /R3QwAvgxzIePijDpnRxtgP2GMGDfiqhd6SNqfF8CgwJUeFsRi4Jyb7+SJhShCmupz
-	 cdPMoDtNAV3eSdlCUE6azPgAq9HeM3J77Lj33vn//f4TG4mBKJN+G9rwbzovjrJhyR
-	 yQN+2RcDfARTV2hYvOG3QylE8vzriudesdzcVKvF5RGavyKbnmX+C+yAWAPfKMMUUT
-	 ceqM8ir1VVRLA==
-Received: by mail-lf1-f42.google.com with SMTP id 2adb3069b0e04-555024588b1so3952506e87.1
-        for <wireless-regdb@lists.infradead.org>; Tue, 08 Jul 2025 00:46:28 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCXcp3dOWpjKSmxAwKA8ElBLnte8EoAtRj6k23EpKtZMuoeZxy0JQ5dYmhyGerYe2TmuYysR4xNBR+bOezkP2w==@lists.infradead.org
-X-Gm-Message-State: AOJu0YytzNIwByK5QkbW7VlsaVEr5dNYQJEBoljFbBhGj23p4P9q2jQp
-	KhC+nKtjvEd13wlvqzN+S4KvL6DjIyvS6ToqfO3KNJWdb1ZQQ1MdRg390s9ZCZjRbPv4Sdq54wa
-	tPhfKje2b/LobKCSazyTOtLHgnObSm60=
-X-Google-Smtp-Source: AGHT+IHjAE6byGQG4XVAZXRxytoDVyFw9lU38ypb3eoe2P7D/hVWUAzvISuuT41d8uX4WywBS3zaTYCK89UimOaQK48=
-X-Received: by 2002:a05:6512:3192:b0:553:2f27:e96b with SMTP id
- 2adb3069b0e04-557a14219abmr3880844e87.2.1751960787032; Tue, 08 Jul 2025
- 00:46:27 -0700 (PDT)
+	Tue, 08 Jul 2025 08:17:16 +0000
+Received: by mail-ed1-x534.google.com with SMTP id 4fb4d7f45d1cf-6077dea37easo6686312a12.3
+        for <wireless-regdb@lists.infradead.org>; Tue, 08 Jul 2025 01:17:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1751962633; x=1752567433; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=HI6uy3/VA9ODWgnMqFTSxnicfikmsNzPdv5EuvAouoU=;
+        b=WY6adH35ULejLsvj9J0LYi5Bpw/XYuWidRDiaYq5muUsqN/C08xoeSTR+O9HlFFCZr
+         6jc0x+WgkQee6k1MWqrp7dO9rRcN+Ieb1/e3PBjw2+SfSeI6QWA0yIFFbXmFa+L5rSAC
+         hG95MXJ7iHoK/aTOTyVxbXr8TjabKDyGsHKV78AduM0NNUCKrec7TpMMmhs4nGUGVf6j
+         LR7t96/RTIgqabN5AR3+y941Bzk5Yl2JcTbQZZV+2pLBCEomC6XV8Pr2jaxLIJQGLCgJ
+         B1LwmyyLg9/lNWLQ3CyDsQMRDAzjA1/wIrPxwo/XM/HY3tX9SDJ1gAV/ySSX08j/0saV
+         OehQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1751962633; x=1752567433;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=HI6uy3/VA9ODWgnMqFTSxnicfikmsNzPdv5EuvAouoU=;
+        b=fsZRZBzUQkPQxsUOjf9ZNJr7OyLXR8ZMK4iZ2QWZcBhQVTBqNl6/zz6uD+W3MwOrNP
+         6neRKmKg0mw3f7D8Ssq5O8fijXofE/InkAJZYQbm/aqppXrRreBWJjTHptPDyjrVPpWE
+         qQiTItZxod4HcaPom28ek6XA6mk8Aejnmnur85muUCqW9CJuF0+Et7smQfU6/uWkI0GO
+         8F6VXrbJIJF4T6c1HEzGJU0L2wQGhapkwO2L8ezANTgSJlzLHMA8zqrGufpH3r+moi1F
+         Sm/qhu0PvSbE9oEGTCZ72kUipmn4n2HzDX6K8rTE6E0bxkxOdMLS1ys73O0nHllJj4k8
+         7RrA==
+X-Forwarded-Encrypted: i=1; AJvYcCUL/u4V5Sq7Mvkzsbmy5Fn+s8HEfZJ8Fs9S5sc/5Us/FBkqnIeUs5WjVvWj+7q+LmeK9ZnWG7UFSsMnpYP81w==@lists.infradead.org
+X-Gm-Message-State: AOJu0YzIH9bJpqvBgfYq1B6Plx/05stIUST3FVVyk/iFid/kA/B5UFIB
+	SRbbw3dd12GdmRcU59LG95X17WhVCpykv7MoEbca3iH3B19NW3UnvmpVvr4bOSnfAqddEznycRk
+	iyalNJWbww27MTpwAiq8vkCPfLNBILyw=
+X-Gm-Gg: ASbGnctrh1yGeimYbBmIA7wYPcVGkz56q27Xr2WrXrm5elzovIGrFYiVSTOnEYlLXBf
+	OaRW9ZAmvwWy0WpNWiL13/MKiw1jYWDU0T9PKosXYWr0x8I5zBNqTGux+r8G0+03Y216SSwKD7/
+	hKDYBNhZqHhz174Jk+majf+DYgagc132OpcY7QhLyXpR0=
+X-Google-Smtp-Source: AGHT+IEmWCLMD3Tas03el2MROEquJ/ls6tdQP9T7z9a0b5GgjOI02bv1CITiE/ML+H5CRU9PQbtqjE+hJArr3fhhtpA=
+X-Received: by 2002:a17:906:6a16:b0:ae3:c780:b883 with SMTP id
+ a640c23a62f3a-ae3fe82d4d8mr1633925566b.54.1751962632684; Tue, 08 Jul 2025
+ 01:17:12 -0700 (PDT)
 MIME-Version: 1.0
-References: <20250708015005.6470-1-pkshih@gmail.com>
-In-Reply-To: <20250708015005.6470-1-pkshih@gmail.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 8 Jul 2025 15:46:14 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67YNZG_-MtJT_pncaqeQULj3FGLj7jpSUSOGTXe2ipGag@mail.gmail.com>
-X-Gm-Features: Ac12FXwklBAEJJlypuFhAQb60x5EXySJCz7ifc3-PKY6mu50ahUqBM0Eq4-VWmg
-Message-ID: <CAGb2v67YNZG_-MtJT_pncaqeQULj3FGLj7jpSUSOGTXe2ipGag@mail.gmail.com>
+References: <20250708015005.6470-1-pkshih@gmail.com> <CAGb2v67YNZG_-MtJT_pncaqeQULj3FGLj7jpSUSOGTXe2ipGag@mail.gmail.com>
+In-Reply-To: <CAGb2v67YNZG_-MtJT_pncaqeQULj3FGLj7jpSUSOGTXe2ipGag@mail.gmail.com>
+From: Ping-Ke Shih <pkshih@gmail.com>
+Date: Tue, 8 Jul 2025 16:17:30 +0800
+X-Gm-Features: Ac12FXw5cCDxyXC22kgmT8lPlGYC45ldlFXO_SGEEYiTvFw45_ycYDRtycdSzl4
+Message-ID: <CAHrRpu=rcXQzBO-NdDYBxj02WpMAHyP8ZdQhU=ScO=bOQXk9Tw@mail.gmail.com>
 Subject: Re: [PATCH v3] wireless-regdb: Update regulatory info for CEPT
  countries for 6GHz listed by WiFi Alliance
-To: Ping-Ke Shih <pkshih@gmail.com>
+To: wens@kernel.org
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250708_004630_001967_D52995C0 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20250708_011715_195999_43C48174 
+X-CRM114-Status: GOOD (  11.88  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -80,47 +91,49 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Tue, Jul 8, 2025 at 9:50=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.com> wrot=
-e:
+Chen-Yu Tsai <wens@kernel.org> wrote:
 >
-> From: Ping-Ke Shih <pkshih@realtek.com>
+> On Tue, Jul 8, 2025 at 9:50=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.com> wr=
+ote:
+> >
+> > From: Ping-Ke Shih <pkshih@realtek.com>
+> >
+> > The regulations enabling 6GHz WiFi [1] of WiFi Alliance lists CEPT
+> > countries including
+> >  - Albania (AL)
+> >  - Andorra (AD)
+> >  - Austria (AT)
+> >  - Belgium (BE)
+> >  - Georgia (GE)
+> >  - Iceland (IS)
+> >  - Liechtenstein (LI)
+> >  - Macedonia, The Former Yugoslav Republic of (MK)
+> >  - Moldova, Republic of (MD)
+> >  - Monaco (MC)
+> >  - Montenegro (ME)
+> >  - Norway (NO)
+> >  - Switzerland (CH)
+> >  - T=C3=BCrky (TR)
+> >  - Ukraine (UA)
+> > Add 6 GHz frequency entry if not being added yet.
+> >
+> > The following are skipped as they do not have corresponding entries in
+> > the database yet. Adding an entry just for 6 GHz would cause 2.4 GHz an=
+d
+> > 5 GHz bands from the world domain to stop working.
+> >  - Faroe Islands (FO)
+> >  - Gibraltar (GI)
+> >  - Isle of Man (IM)
+> >  - San Marino (SM)
+> >  - Holy See (Vatican City State) (VA)
 >
-> The regulations enabling 6GHz WiFi [1] of WiFi Alliance lists CEPT
-> countries including
->  - Albania (AL)
->  - Andorra (AD)
->  - Austria (AT)
->  - Belgium (BE)
->  - Georgia (GE)
->  - Iceland (IS)
->  - Liechtenstein (LI)
->  - Macedonia, The Former Yugoslav Republic of (MK)
->  - Moldova, Republic of (MD)
->  - Monaco (MC)
->  - Montenegro (ME)
->  - Norway (NO)
->  - Switzerland (CH)
->  - T=C3=BCrky (TR)
->  - Ukraine (UA)
-> Add 6 GHz frequency entry if not being added yet.
+> I also went through the whole list, and it seems "Bosnia and Herzegovina"=
+ (BA)
+> is missing a 6 GHz entry. Could you send a followup patch to add it?
 >
-> The following are skipped as they do not have corresponding entries in
-> the database yet. Adding an entry just for 6 GHz would cause 2.4 GHz and
-> 5 GHz bands from the world domain to stop working.
->  - Faroe Islands (FO)
->  - Gibraltar (GI)
->  - Isle of Man (IM)
->  - San Marino (SM)
->  - Holy See (Vatican City State) (VA)
 
-I also went through the whole list, and it seems "Bosnia and Herzegovina" (=
-BA)
-is missing a 6 GHz entry. Could you send a followup patch to add it?
-
-Thanks
-ChenYu
+Sure. I will go through whole CEPT countries for 6 GHz entries.
 
