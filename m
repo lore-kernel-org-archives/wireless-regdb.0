@@ -4,62 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 9569AC83F0A
-	for <wireless-regdb@archiver.kernel.org>; Tue,  8 Jul 2025 12:04:17 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 070F4C83F10
+	for <wireless-regdb@archiver.kernel.org>; Thu, 10 Jul 2025 03:12:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Cc:To:Message-Id:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Subject:Date:From:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=xzCowVZAkVLlB6K9r1YTa9/vbKlrCX9BPKZEWgetdyk=; b=d5gRgHUk+aZgdiOF6Ma6vT3NGd
-	mT1wwXdbZW1hE0EduxVDN23dxCeTo4hLAJjR/ouGmLAZwdiUnRDndgWX9DqFnAlRM3VoN4uZ76+eM
-	ZD6L1s1QA6TPdz85nnGoyDv/1S4ECsExqD8SR5fOQWxFTMR0oQ+M+VnZcn0qFjWfIbVyNfxsj6qZd
-	3g20iNXjT5io+kpzNKVxIA+xnzlvYYI5COStOstsBYj1r1lsqwCLp24G8I1KWPVU07kfs/FACflXU
-	MJkT5ugegAGSvuIX68XXikX808MwLCxUrNZLFSWk8+2zSbBhG3rv0/9zTq/yPeKsUDOY29gY/RTTS
-	yVz6wxPQ==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=StebM8DcmraG1uxLx19MY18vMCqMRSCjadNXvr17br0=; b=o3DAdP7ymxs1UAQD4BK8Mm3ZhW
+	FfBykpPwfmzrSBo50DhWyq9MfqImKYdIEszUc2jrtkEERMsf5qdZVexZbAHiSFb4sRHfjO9ckWjY2
+	GPpCiRe93gg9sS6IyCiuns4Bsm21LnrfC78iAgUgWKCWfob5vIo9bA9fFYpuPo6G9+pFNzmdE6M52
+	UlzGED2qR32NqNQXrmd580jLwlzVvf41d+mMQ2cKHV9dfdfM8+3hojnfDI8zNzVG8FAMvNossMW61
+	m7TBUUomUedIWttTHdhD9/5kCno0b0da6/T6ZG6kGX9d/7Y642eIS0d2Oh17nhuHSNK2/GXweQuZd
+	ckJePJ7A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ73Y-00000005Fo2-3ppG;
-	Tue, 08 Jul 2025 12:04:16 +0000
-Received: from forward100b.mail.yandex.net ([2a02:6b8:c02:900:1:45:d181:d100])
+	id 1uZhi5-0000000AZHh-2z1L;
+	Thu, 10 Jul 2025 03:12:34 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uZ64h-000000058kw-3IQ2
+	id 1uZhi3-0000000AZHZ-2YEs
 	for wireless-regdb@lists.infradead.org;
-	Tue, 08 Jul 2025 11:01:26 +0000
-Received: from mail-nwsmtp-smtp-production-main-87.sas.yp-c.yandex.net (mail-nwsmtp-smtp-production-main-87.sas.yp-c.yandex.net [IPv6:2a02:6b8:c23:2f3c:0:640:7ca0:0])
-	by forward100b.mail.yandex.net (Yandex) with ESMTPS id 319E060E21;
-	Tue,  8 Jul 2025 14:01:16 +0300 (MSK)
-Received: by mail-nwsmtp-smtp-production-main-87.sas.yp-c.yandex.net (smtp/Yandex) with ESMTPSA id 61fFSplM6eA0-VmTTjdGi;
-	Tue, 08 Jul 2025 14:01:15 +0300
-X-Yandex-Fwd: 1
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0upti.me; s=mail;
-	t=1751972475; bh=xzCowVZAkVLlB6K9r1YTa9/vbKlrCX9BPKZEWgetdyk=;
-	h=Cc:Message-Id:To:From:Date:Subject;
-	b=NYDKt7F/KJ9MhqDKTEVT1r6IRnatXBrYyiuLtKNVhirgLG4GHAXmSvcDbLUtDEgdy
-	 FcU13l3uP4i+p6WZvr1aTs0FBCg5BJg5e5yIRdHVXVWUbsj2nXGcZKonTT3/beNIZ9
-	 Z7ZHb52yL4m3MV4OvDwbnLLD2CN8XHNH7MgjCikU=
-Authentication-Results: mail-nwsmtp-smtp-production-main-87.sas.yp-c.yandex.net; dkim=pass header.i=@0upti.me
-From: K900 <me@0upti.me>
-Date: Tue, 08 Jul 2025 14:00:38 +0300
-Subject: [PATCH] wireless-regdb: allow 320MHz channel width for Russia
+	Thu, 10 Jul 2025 03:12:31 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id A48CE61139;
+	Thu, 10 Jul 2025 03:12:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 3D7C3C4CEEF;
+	Thu, 10 Jul 2025 03:12:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1752117150;
+	bh=x9gEGEGbGMlzpDA9o371WL8DLUnKrs62R/dX/MKJvP4=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=NDZE3ylVhQdNq2CcVoaffQJyY0ZjKe/rKKpko1x7pjQroDngAQWsZ01c3zCNOdaxI
+	 6nQeVn5HedffcfbGnb6cWBEZaWl+Dxc26+ICpn5saX9BvTIK5y3Zp8S5mgAthGk3OP
+	 aS8hcN7i5C+rXbRYfvsnyvHOYvqHno1S/PYxfJchCSjMcUBU3hjRgtUdC9Aa9RSTId
+	 JJEkTo2wU2qQovq7yJ55feo8lwCX6aNjZ5rTqt3BF+yUa8CKz9g0Eo3ytOCB65Ymk/
+	 gytBECKx+PDFNE0x4mCKa0+XEXiSi+3tuUm/6Ksvc+CVdHZGHPl7zmcG6g6bBf8OAO
+	 TYwAi7iBZu5XQ==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 4D2765F843;
+	Thu, 10 Jul 2025 11:12:26 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Ping-Ke Shih <pkshih@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+In-Reply-To: <20250708113544.3557-1-pkshih@gmail.com>
+References: <20250708113544.3557-1-pkshih@gmail.com>
+Subject: Re: [PATCH] wireless-regdb: update regulatory rules for Bosnia and
+ Herzegovina (BA) for 6 GHz
+Message-Id: <175211714623.3967082.14941797088374296053.b4-ty@kernel.org>
+Date: Thu, 10 Jul 2025 11:12:26 +0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
-Message-Id: <20250708-russia-320-v1-1-53641e8dd417@0upti.me>
-X-B4-Tracking: v=1; b=H4sIAFX6bGgC/6tWKk4tykwtVrJSqFYqSi3LLM7MzwNyDHUUlJIzE
- vPSU3UzU4B8JSMDI1MDcwML3aLS4uLMRF1jIwPdJAPTJMM0I8sUS8M0JaCGgqLUtMwKsGHRsbW
- 1AHFEhSlcAAAA
-X-Change-ID: 20250708-russia-320-b05b1f29d91f
-To: Chen-Yu Tsai <wens@kernel.org>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, 
- K900 <me@0upti.me>
+Content-Transfer-Encoding: 7bit
 X-Mailer: b4 0.14.2
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20250708_040124_008747_B12B4411 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
-X-Mailman-Approved-At: Tue, 08 Jul 2025 05:03:50 -0700
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,36 +72,32 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-The entry was added before 11be (and thus 320MHz) was a thing,
-and there is no actual legal restriction on channel width, so
-update it to allow 320MHz channels.
+On Tue, 08 Jul 2025 19:35:44 +0800, Ping-Ke Shih wrote:
+> For CEPT countries, ECC/DEC/(20)01 [1][2] decision enters into force
+> on 8 November 2024; preferred date for implementation of this Decision
+> shall be 8 May 2025. Update regulatory rule for Bosnia and Herzegovina
+> accordingly.
+> 
+>  * LPI devices
+>    - 5945-6425 MHz
+>    - Restricted to indoor use only
+>    - Maximum mean e.i.r.p.: 23 dBm
+>    - Maximum mean e.i.r.p. density: 10 dBm/MHz
+>  * VLP devices
+>    - 5945-6425 MHz
+>    - Indoors and outdoors
+>    - Maximum mean e.i.r.p.: 14 dBm
+>    - Maximum mean e.i.r.p. density: 1 dBm/MHz
+> 
+> [...]
 
----
-Signed-off-by: K900 <me@0upti.me>
----
- db.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Applied to master in wens/wireless-regdb.git, thanks!
 
-diff --git a/db.txt b/db.txt
-index 12ac14766a698fc774bf2920bdbe3ff5533d4d5c..22de7b00be60445e49a612eb86a1f1d976039d26 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1726,7 +1726,7 @@ country RU:
- 	(2400 - 2483.5 @ 40), (100mW)
- 	(5150 - 5350 @ 160), (100 mW), NO-OUTDOOR
- 	(5650 - 5850 @ 160), (100 mW), NO-OUTDOOR
--	(5925 - 6425 @ 160), (100 mW), NO-OUTDOOR
-+	(5925 - 6425 @ 320), (100 mW), NO-OUTDOOR
- 	# 60 GHz band channels 1-4, ref: Changes to NLA 124_Order №129_22042015.pdf
- 	(57000 - 66000 @ 2160), (40), NO-OUTDOOR
- 
-
----
-base-commit: 5a8ced5ad3135d72a53260282e760325e26e07a9
-change-id: 20250708-russia-320-b05b1f29d91f
+[1/1] wireless-regdb: update regulatory rules for Bosnia and Herzegovina (BA) for 6 GHz
+      https://git.kernel.org/wens/wireless-regdb/c/5fd8ee30bb6c
 
 Best regards,
 -- 
-K900 <me@0upti.me>
+Chen-Yu Tsai <wens@kernel.org>
 
 
