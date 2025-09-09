@@ -4,61 +4,78 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 16B59CAC581
-	for <wireless-regdb@archiver.kernel.org>; Mon,  8 Sep 2025 10:05:27 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 25802CAC58E
+	for <wireless-regdb@archiver.kernel.org>; Tue,  9 Sep 2025 07:34:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=AS/fmKziD50kaDdJVDN645ueTzUVKKXEpU4r/Tfy21k=; b=emGHY6mgLDFUQme55sN2LeTjgU
-	R2I94TA7HXs+WtciHk7vwn0NcwBusqSPMbZumr/HaO3mYS0SHICxWcDn0kWJ1UsBSTY4Wpx1r1WzF
-	4qZeL7WerzoPXBHKUjuTuAP/P5Uqb8tkGYEj10qMTXTXkItZDCtFb7be6/Y6dT/sWkYztH7x+fC5A
-	l83uBQWC8iUlGiT5+T5R7Vf6Ibp+92S5Kd65qixMcRRVeESIVFXuMpFdtDparml5pThZVLIaZGqgF
-	5vo7vIJAjhinpQa0fnncaYCyZPDALZAeYKg3FE8MWbD3lkK7rI65yEtV5IXeQ6AFPX02+xphfNvq3
-	PcBH6Rvw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fgb5P9ewGaB5VQSgPYMCUW7jqnBbMxTASJQmDE9DF7g=; b=K9Xy0bcVFyajJP
+	u26Uu3u+6UsDFDGEQ7A8n4BhT0ctoiSanndAxUIMUONHCebj9aUnIabv7+zIKVGB38PLCZRv9Zb1i
+	9/E4jjvcJ1hbiOGWTU4zOtpSs+R/4HsBMscloSgEajIWb8EOsRuis0B1klLshou4Khpd1BcvOo9ZJ
+	NgAiYXX+P0EwTm1otsCrsGqll/o50UtOV8RQaqksjdNtFmJmRTgkKTZRjUVN3eTVRCKVyET0nhhIL
+	yvQoTCmQzvVQ1uRmOjRbR8PU/mzFy25mDxNPSnwXDQ3julNz01BVi3yTOPDmWYJzTFaPE6TzBb4Le
+	2yWNHaWnqZYfiJpNIjMw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvYkX-0000000GFaZ-3CQ5;
-	Mon, 08 Sep 2025 10:05:25 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1uvssJ-00000005Bzn-3me2;
+	Tue, 09 Sep 2025 07:34:47 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1uvY2v-0000000Fyse-1Y2k
+	id 1uvrb9-00000004cfn-1eKs
 	for wireless-regdb@lists.infradead.org;
-	Mon, 08 Sep 2025 09:20:21 +0000
+	Tue, 09 Sep 2025 06:13:00 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id C9A8B601A4;
-	Mon,  8 Sep 2025 09:20:20 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CAE9C4CEF8;
-	Mon,  8 Sep 2025 09:20:20 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id AC4BD44457
+	for <wireless-regdb@lists.infradead.org>; Tue,  9 Sep 2025 06:12:57 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8E005C4AF09
+	for <wireless-regdb@lists.infradead.org>; Tue,  9 Sep 2025 06:12:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1757323220;
-	bh=RvB/XOeZola/zhwtbf12JpjACUKVBX4RRTFpxH1zHso=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=n6mBWZ2Qi4bWMd2yE9xqWTuLdO8tBxsUdEW5DI3ZvnhrysMst2z14h4v8QpMEYXAm
-	 SktiVArEQpCCyjs2KhqEHCbgLgj1qCbxtm6I44YCltpyewcDSSUFmPyCVLNCtmzezB
-	 k733a2PP0xPm/szbCDv8Cn7P/CWD+pWSp+Ww/ZmAyt8IY9v2oEmzBgVduhO0B4vnHE
-	 lK8z/GgijlUEutT8qNcPo8tSTGvH8xfskLeDPSG/LbotvNNZGp5c0xm6LVN/Nmj6iZ
-	 SJnaJzHOY8wWRIpRvSvfWXwkWIesWivp3F8sN1A2YDTr8h03P1IarNjwGE895RiRuW
-	 2j1k3VjX34Tyw==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id D16C45F846;
-	Mon, 08 Sep 2025 17:20:17 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, 
- avalon.vargas.centeno@est.una.ac.cr
-In-Reply-To: <20250826004342.5363-1-pkshih@gmail.com>
-References: <20250826004342.5363-1-pkshih@gmail.com>
-Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info including
- bandwidth for Costa Rica (CR) for 2023
-Message-Id: <175732321782.1589339.2167695644057038388.b4-ty@kernel.org>
-Date: Mon, 08 Sep 2025 17:20:17 +0800
+	s=k20201202; t=1757398377;
+	bh=IhTfS0JUckoliWKeRxLgJ1fRKb93Z2PXLWdC7vce1Po=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=JdA+YKmS48rFY08CB//OrLRHr3sTmavZttnDpnvkb4VsDVNix8RAfpT78unHOJgIc
+	 impKvBxXqOPkB1RMFr9HwNz8Y1jZwUvsIjMQYcbPbH8vqGdwKyOMbc2OMIHyBJyFG4
+	 eE9JcArDL3pJA3VjoUuNHi+1lQatxLiaXcojD+cT4G3uEJtA89TmMQSAkOsucg19UT
+	 fs5Xd0Wo0HccMnHOt4QdbWZmLS8iMYMNCA7l2P/HrmV4VTUXxK6APfT9uNZKKqDGNf
+	 3KeYbhs4twwliFs6C5g87wUTY6xQcliw1c0Uly1JgVvR9LULUoo7DbYp9f8nDBtQJd
+	 JnOwbcckhs3kA==
+Received: by mail-lj1-f178.google.com with SMTP id 38308e7fff4ca-336c2194a65so40182311fa.2
+        for <wireless-regdb@lists.infradead.org>; Mon, 08 Sep 2025 23:12:57 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCVVyCIp3DjNMYsR1GZRH9dseDXx2CBOSxm0sM1YKGkc2JsCi0Ku6Y65Fbgy7EZX+ybGKy70M14UC0/1AX1LSQ==@lists.infradead.org
+X-Gm-Message-State: AOJu0YwjTeKeoQNQ24KpVrTUTtU7GG8JQ5O2LAHtQvjZp9wGxVw+ws+7
+	64X/iO672uufkzph08APOJ0zs5m0w4Tc9BS7HwcOg/XlNakRs0F71oocE78DhT3kO0WdkWrj9yd
+	HKop/f9R0u7K7DI6CTdgxf9T4Z+BALZQ=
+X-Google-Smtp-Source: AGHT+IHmIWEsCknZu3Jqd201RYpsXCgaqRpOm4m1rhu2IqOFqpBjyfEfmvoPDAL7Tq+q9yrHWoLwflm6Ly6nv45/NMk=
+X-Received: by 2002:a05:651c:23d2:20b0:338:735:8a79 with SMTP id
+ 38308e7fff4ca-33b4b230a20mr25793411fa.1.1757398375874; Mon, 08 Sep 2025
+ 23:12:55 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
+References: <000201db8822$98f28da0$cad7a8e0$@gmail.com> <CAGb2v65490c1m3W_1RkxJ-E7Q=3V_K8xqS2jmd6awcOdzWHXzQ@mail.gmail.com>
+ <ff6ad414457e4b1cb68e834978a553c3@realtek.com> <CAPRryQobXZe5OwR=F-X0KHYyfBwUpFsi=Y5pKnENcUXTN42xAA@mail.gmail.com>
+ <002d01db8da7$daf2ed50$90d8c7f0$@gmail.com> <CAGb2v66Y+rTsuKfQDgv-qwRTOorOucM+qfBOia-gY5sPCJp5qQ@mail.gmail.com>
+ <319c9de5-e26f-45c0-9200-747c86bce303@green-communications.fr>
+ <001a01db8ddc$019e8890$04db99b0$@gmail.com> <CAGb2v6689=CmxqOk9rCSXPctg8iCZzOUgcaxdNeB9uHSHzk39Q@mail.gmail.com>
+ <14ab2a58e7603047354a17b2c980c143992a6782.camel@sipsolutions.net>
+In-Reply-To: <14ab2a58e7603047354a17b2c980c143992a6782.camel@sipsolutions.net>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 9 Sep 2025 14:12:43 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66aOHxeHEEKO_XaBfufWPnjJk6RkTBo8e9D1T9ET4S1Fg@mail.gmail.com>
+X-Gm-Features: Ac12FXx4shXnbeVWSvaDVdt1XgyWGOKPO6XkNJGCmVmG-O_vnFWduYdKw68XKJw
+Message-ID: <CAGb2v66aOHxeHEEKO_XaBfufWPnjJk6RkTBo8e9D1T9ET4S1Fg@mail.gmail.com>
+Subject: Re: wireless-regdb: Allow 6ghz in the US
+To: Johannes Berg <johannes@sipsolutions.net>
+Cc: rmandrad@gmail.com, 
+	Nicolas Cavallari <nicolas.cavallari@green-communications.fr>, 
+	Dennis Bland <dennis@dbperformance.com>, Ping-Ke Shih <pkshih@realtek.com>, 
+	linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20250908_231259_474504_9197F33D 
+X-CRM114-Status: GOOD (  22.56  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -70,44 +87,60 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Tue, 26 Aug 2025 08:43:42 +0800, Ping-Ke Shih wrote:
-> THE PRESIDENT OF THE REPUBLIC AND THE MINISTER OF SCIENCE, INNOVATION,
-> TECHNOLOGY AND TELECOMMUNICATIONS released National Frequency Allocation
-> Plan (PNAF) No. 44010-MICITT [1], and effective date from 05/31/2023.
-> The table 22 shows maximum power permitted for the frequency bands:
-> 
-> - 2400 to 2500 MHz
->   36 dBm
-> - 5150 to 5350 MHz
->   30 dBm
->   DFS on 5250-5350 MHz
-> - 5470 to 5725 MHz
->   30 dBm
->   DFS on 5470-5730 MHz (take 5MHz from next entry)
-> - 5725 to 5850 MHz
->   36 dBm
-> - 5850 to 5895 MHz
->   36 dBm
-> - 5895 to 5925 MHz
->   30 dBm
-> - 5925 to 7125 MHz
->   30 dBm, LPI, indoor only
->   14 dBm, VLP, indoor and outdoor
-> - 57,000 to 71,000 MHz
->   43 dBm
-> 
-> [...]
+Hi,
 
-Applied to master in wens/wireless-regdb.git, thanks!
+On Thu, Mar 6, 2025 at 4:02=E2=80=AFPM Johannes Berg <johannes@sipsolutions=
+.net> wrote:
+>
+> Uh, this is a complex discussion. I do believe that we simply do not
+> have a way to capture the complexity of the rules in the database today.
+>
+> Skimming the documentation, it seems that:
+>
+>  * Paragraph 56: For AP operation, it is allowed to operate an LPI AP
+>    (indoors, obviously) - we could capture that with NO_OUTDOOR and
+>    that's what the rule has now.
+>  * Paragraph 122: For client operation, passive scanning is required,
+>    presumably because clients are assumed to be mobile and thus also
+>    present outdoors, where they will also scan.
+>    This can only be captured with NO_IR today.
+>  * There are additional spectral density power limits in paragraph 59,
+>    which cannot be captured by the database today.
+>
+> However, the combination of these really cannot be captured - NO_IR will
+> also prevent AP operation, which I think is the issue discussed in this
+> thread, but removing NO_IR will make clients break Paragraph 122.
+>
+> I'll note that in general scanning on the 6/7 GHz band, by 802.11 spec,
+> is only active on the few Preferred Scanning Channels (PSCs), however,
+> that'd _still_ break Paragraph 122.
+>
+>
+> Unfortunately, it's also hard to fix - we cannot remove NO_IR because
+> that's used by older kernels, so I think the only way to fix it would be
+> to add a flag a la NL80211_RRF_ALLOW_6GHZ_VLP_AP (which translates to
+> IEEE80211_CHAN_ALLOW_6GHZ_VLP_AP) which overrides NO_IR for this
+> specific case.
+>
+> We also have reg_rule->psd internally already, I guess we just never
+> added a way to convey it from userspace? Not sure what it even does
+> though.
 
-[1/1] wireless-regdb: Update regulatory info including bandwidth for Costa Rica (CR) for 2023
-      https://git.kernel.org/wens/wireless-regdb/c/b484a31c2037
+I wonder if it is worth bringing up this topic in the networking track
+at Plumbers this year? It would be about the various limitation of
+wireless-regdb today, such as:
+- lack of PSD
+- only one rule per band, preventing things such as
+  - AP on 6 GHz in the US, as this thread mentions
+  - very low power outdoor usage vs higher power but indoor-only usage
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+That said, I'm not in a position to implement anything to improve the
+status quo.
 
+
+ChenYu
 
