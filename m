@@ -4,94 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 8DA4DCAC5B0
-	for <wireless-regdb@archiver.kernel.org>; Sat,  4 Oct 2025 15:57:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6DEC7CCA470
+	for <wireless-regdb@archiver.kernel.org>; Tue,  7 Oct 2025 04:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:In-Reply-To:References:Cc:To:Subject:MIME-Version:Date:
-	Message-ID:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=UkC3AELOpWV0/BiWqfTHXOtItCby386HiwylDrzY5Xw=; b=LWw5yasjiHMblgO+9kX49Mmrnw
-	PZqrPa5+vqM1w+mwhh8jcV8jnuNgF6cdlyBOinwqpgDaW/XnnTQO6zgrEK4xdLLYv0XZKWo13Tw1d
-	4B8iOUCD9L2CHycchi0znh9NRruLYOcHRI8qxt+GlGdjrUHmIm+paErOqZ+mzr1YtuCmIej4Wvya1
-	6CQzfcDQBtJWnKU3Di+XUwvbBenD7dHvsWqfeYf7anu6EXJ2RRlr9/71KUXMvkH5Zw4x7DYAgcVVj
-	JQmoKnpvG5hKoJ9xzQgthBCpjTdmG6BbCLSxEuNVCPlMel1bUE1+hi39DlWxx+nHZ+Kxc2VYVAOnS
-	myYVFGfA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=33ewjYkb4qoFkkq0fX8pWFVAxvzax+lpS2Yg53heRLg=; b=qR8Lu/TZYSiXSG
+	P/nqI84YHHxF1iQk+xI0JBSoiziSxNLYXxqRTnU9UMDBcDiOxjY5XvKg9m0onp13rzssBaM2uDpeO
+	nsGK4mGtqSHqCwuCKzDIW8iAu/CKuWXxvalq3uTs1AIDBz7oaS1kAUCWFAdy+UDiLkD8GNNgKzIzl
+	IJq7Env4UIvnbJK1Z9lhGwSWQpy42ii63oRtw5Nhb7OV9nImlRJaerk9SOGaNdTuQvGEyeOLScc1O
+	Y9cDwk0o2pFhbgQVu1PsL74B/aa9uLcmbTjHA7Kr3SB/7Q4V90qPuI2/yz4N5A+E7/FMwS97oKMIs
+	ZD4+tuAzBbQ1FaKqQ54A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v54dO-0000000DqBP-2Q1f;
-	Sat, 04 Oct 2025 15:57:22 +0000
-Received: from mail-lf1-x132.google.com ([2a00:1450:4864:20::132])
+	id 1v5zLE-00000001FpH-1UGX;
+	Tue, 07 Oct 2025 04:30:24 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v54dL-0000000DqB4-44wx
+	id 1v5zLB-00000001FoQ-0i4e
 	for wireless-regdb@lists.infradead.org;
-	Sat, 04 Oct 2025 15:57:21 +0000
-Received: by mail-lf1-x132.google.com with SMTP id 2adb3069b0e04-58984c363ceso4083463e87.0
-        for <wireless-regdb@lists.infradead.org>; Sat, 04 Oct 2025 08:57:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1759593437; x=1760198237; darn=lists.infradead.org;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:user-agent:mime-version:date:message-id:from:from:to
-         :cc:subject:date:message-id:reply-to;
-        bh=UkC3AELOpWV0/BiWqfTHXOtItCby386HiwylDrzY5Xw=;
-        b=e5rC2wRZ/Qpp0Mx9+Tj4wh/DlQzuZ8Pz57Pu/Zh61/E/v8zhopVvVb+llB6snn2FnQ
-         pEM1WlkmkhXT6q1Uxi5eu69mAR34MvvBPc3ybT6tEc+ChvU0AHPQsQNVKWE+UrHhN0qo
-         +IUirab2fOpQf/ZITwqYmOiS8n3gEb5qP5u4/i/WV5IbYvtGiqNt4NTh9QBIac6LD2fB
-         N7g3N4u0rosFcG0VmJ61rXsUo0gVFFwVPq5id6guuKnhJERrQmsYy3lwdRK+1xr0afe9
-         CEhBaaHp56vQG7RSSZpyLnIhrrQO1XSYXkfJgqO1CIzVONHQeRnezN14GZQcdwTzydyD
-         xyoQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1759593437; x=1760198237;
-        h=content-transfer-encoding:in-reply-to:content-language:references
-         :cc:to:subject:user-agent:mime-version:date:message-id:from
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
-        bh=UkC3AELOpWV0/BiWqfTHXOtItCby386HiwylDrzY5Xw=;
-        b=CcVfz1+bHR4Z6Grzj6Vy3849nJTLHA0bhL155DH4TgQlvXA6CIrdWZnUXJKt7f+EbN
-         gZ5yfn9Z5itS7kQtXC2B+26HayzcDLMLFvzDiQZ+DBmncBRuuOeXnBo/QCOjAoMsPeOm
-         q2eh2u3fUADjhg7Eiak3AA5qTaRXHid0sXaXGfAtYYmGkdf6hZSomUY8kRWdGYyoovOi
-         rF/oroiHe+/XLoC4IewP/LutvkHd2jW9AQJF6bj36MLJIx+nXf7+gVaEohMzx82Q1BKf
-         YBeC5RmNPG5yluKRHokuRtUxu5D4YStNR6heq7W3Gz0xXlq5+SCbRWT9Bdjm9WctuNU6
-         QwWQ==
-X-Forwarded-Encrypted: i=1; AJvYcCWg+h6tpaWuhBJNEy2JvIhr5zLE3o6w+Qbcp4A7BXPV0jcx3yDDe15Kxh6MTiTnVwVkiJLiHWr6n5JquaPUuA==@lists.infradead.org
-X-Gm-Message-State: AOJu0YycpKcUgA0E2MjW3Mlbk8qBFg1rMppIrse0xKsRHipwmuho3hIT
-	ntKrMCKqzQlZcmggJLvYsK587Dh7JvDy8+2e+ejdFZGfaWX9KcNJD15g8q2tlO5QTFs=
-X-Gm-Gg: ASbGncs/LPQaqMwU90PaZPtvCv3wbF395SkBOFMWHd1Oxr+PgfmTylYC/Evi9KCr0LB
-	OmaBle0TohY2ZAuNyBEr9G4S5Zxws1DpqJrcBoExlC3LAw2WZ6D2YI1eJZM+CssScwC6umVjTcb
-	FhYq+aQU77+uLrsgu76+VoSh6Bxyew2YB+rA2AEYFcNpRqYdwwsU12Wuxn8IPfa6bIPpMzz4scs
-	FoYzoJZC33U2guILRK1P+KC3v7xYzT+CFxDnP940ltlBpmXQ0MYhCPnsj/7l58XH+kr7rkqB523
-	jtF8DOZCK+9ZCVMCAopY6B7LUKj0OT7w+kFetqSarc5bn6vo4XHMgNPG0b//+9BQq6/XJ/KBYOS
-	14fErT4gYU4FJysEiaPFh2y43CoZwBODYWPFuKeF0cae6h9qukY055M9S7xNnO0t/ZmxqEAHikd
-	FawRNvA03o
-X-Google-Smtp-Source: AGHT+IEW6ue7arntffLYPBvQdvDm4i/Rx9L7t7Ilj4bMr+VVLstc58I1e4MQn6+ygtjps1rUSjp9sA==
-X-Received: by 2002:a05:6512:138d:b0:58b:75:8fc6 with SMTP id 2adb3069b0e04-58b00b9fcb4mr3307530e87.19.1759593436920;
-        Sat, 04 Oct 2025 08:57:16 -0700 (PDT)
-Received: from troynas (host-176-37-53-238.b025.la.net.ua. [176.37.53.238])
-        by smtp.gmail.com with ESMTPSA id 2adb3069b0e04-58b0118dd2esm2963313e87.80.2025.10.04.08.57.16
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 04 Oct 2025 08:57:16 -0700 (PDT)
-From: Dmitry Geurkov <d.geurkov@gmail.com>
-X-Google-Original-From: Dmitry Geurkov <d.geurkov@gmai.com>
-Received: from [192.168.1.116] ([192.168.1.1])
-	by troynas with ESMTPSA
-	id wuF0AtxD4WieDQAAVAQQrQ
-	(envelope-from <d.geurkov@gmai.com>); Sat, 04 Oct 2025 15:57:16 +0000
-Message-ID: <252f428e-8903-4d3f-8337-d42e6a2ad4a4@gmai.com>
-Date: Sat, 4 Oct 2025 18:57:15 +0300
+	Tue, 07 Oct 2025 04:30:22 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id 0D7444451B
+	for <wireless-regdb@lists.infradead.org>; Tue,  7 Oct 2025 04:30:20 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id E2C02C4CEFF
+	for <wireless-regdb@lists.infradead.org>; Tue,  7 Oct 2025 04:30:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1759811419;
+	bh=33ewjYkb4qoFkkq0fX8pWFVAxvzax+lpS2Yg53heRLg=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=fIdPjC1uBAeGidI3TdvLjGBaFrrjdrDFqgN3yAnIORJkHDjR0uGsJEa7Z2SFuzIPU
+	 /IRZtQP+IMqkFdYJrZl8qxxwTVqUhon8OK0s/IBHf3NWi8CGWZCFU0Ka45Zmvml5Xg
+	 FxG0RuuqKbjE/4vgQFP0hC2IL4Pfrbz0l2bZ6RqjCRgFCT66zT1vHFmJbwIrPc+ZKv
+	 1Q8Q+Tr5PairLe/60oc6i7Kf7HbjNCQqOQ5j63VR1T335lQojcF5x/vor18lEKezgg
+	 6W0I2aMdG5r6w8iN3RzmSEzs5MAoxXPkvWSClYsvg97BRfjzTb/PWLW+gkC9iQ5OQA
+	 bd6EffE3lRjJg==
+Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-371e4858f74so64691841fa.1
+        for <wireless-regdb@lists.infradead.org>; Mon, 06 Oct 2025 21:30:19 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCU3oEZvgggOa8AUBJ9gSNy3jq1nPlLYDMY8WeDooE6KKr2QFodh+bc4iFBFW8VANq7SeZnygQOiec4ZTzJETw==@lists.infradead.org
+X-Gm-Message-State: AOJu0YwWnXMIpJcOftjWTzcDZkyzJp/fcGwZRJOpCd6QxfxWDGTJ/tf2
+	bv5A6W4EsJb4jRvxvLeahf0cQRtKH3YWYsps3ITm/mu3YudVCNFr8LP3JUNfFuOZQ4vNhUYHWy+
+	b2nOywiyd8BwDN6kJ5wdL5XGVpbokhnw=
+X-Google-Smtp-Source: AGHT+IHYg3D7tiGpbxNGeGRo6iabMU4brCVrPZKp3O/2A56FdjfE/684Z/RFeDpLQX+bS8W1L3whBaHxHRFXKtRMl5Q=
+X-Received: by 2002:a05:651c:25db:10b0:337:f57a:6851 with SMTP id
+ 38308e7fff4ca-375f525765bmr4408111fa.14.1759811418233; Mon, 06 Oct 2025
+ 21:30:18 -0700 (PDT)
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: wireless-regdb: Update regulatory rules for Ukraine (UA) on 6GHz
-To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 References: <d2e09391-d2fd-4456-ae45-103239dbac74@gmai.com>
- <CAGb2v66VXhx0ymHGOdS33W2QxUMxew1xW--+hrs+jy48u6MfoA@mail.gmail.com>
-Content-Language: en-US
-In-Reply-To: <CAGb2v66VXhx0ymHGOdS33W2QxUMxew1xW--+hrs+jy48u6MfoA@mail.gmail.com>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
+ <CAGb2v66VXhx0ymHGOdS33W2QxUMxew1xW--+hrs+jy48u6MfoA@mail.gmail.com> <252f428e-8903-4d3f-8337-d42e6a2ad4a4@gmai.com>
+In-Reply-To: <252f428e-8903-4d3f-8337-d42e6a2ad4a4@gmai.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 7 Oct 2025 12:30:05 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66iOCSm6ST4Bw4ioRjjnNvHCxSaGWcNS0SLWOk=ELy+5w@mail.gmail.com>
+X-Gm-Features: AS18NWBZ9y8hGD18GPcXmgFcqXiLhk4F0H2Z81m6IicqdpApkT5ncP5KiOug_eU
+Message-ID: <CAGb2v66iOCSm6ST4Bw4ioRjjnNvHCxSaGWcNS0SLWOk=ELy+5w@mail.gmail.com>
+Subject: Re: wireless-regdb: Update regulatory rules for Ukraine (UA) on 6GHz
+To: Dmitry Geurkov <d.geurkov@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251004_085720_032264_099A3931 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20251006_213021_246398_52BC20C9 
+X-CRM114-Status: GOOD (  23.64  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -103,54 +80,79 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi ChenYu,
+Hi,
 
-Here is official website with text of amendment that was approved and 
-became a law as of 13 August 2025
+So actually it is already enabled in the latest release of the database:
 
-https://zakon.rada.gov.ua/laws/show/976-2025-%D0%BF#Text
+https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git/tre=
+e/db.txt?h=3Dmaster-2025-07-10#n1984
 
-The text is in Ukrainian language but you can use google translate and 
-translation is pretty much accurate
+23 dBm is 200 mW.
 
-If you have any questions feel free to ask, thanks in advance
+So if it doesn't work for you yet, perhaps check the database version
+on your system?
 
 
-On 10/4/2025 5:38 PM, Chen-Yu Tsai wrote:
-> Hi,
+Thanks
+ChenYu
+
+On Sat, Oct 4, 2025 at 11:57=E2=80=AFPM Dmitry Geurkov <d.geurkov@gmail.com=
+> wrote:
 >
-> On Sat, Oct 4, 2025 at 10:36 PM Dmitry Geurkov <d.geurkov@gmail.com> wrote:
->> Hi,
->>
->> 6GHz wireless band was recently allowed by Ukraine government for WiFi
->> 6e standard indoor use.
->>
->> Could you please add the appropriate setting to wireless-regdb
->>
->> I'm not familiar with wireless-regdb format nor an expert on wireless
->> technology to create PR myself
->>
->> You can find all needed information here
->>
->> https://eba.com.ua/en/v-ukrayini-dozvoleno-vykorystannya-novitnoyi-radiotehnologiyi-wi-fi-6e/
->> <https://eba.com.ua/en/v-ukrayini-dozvoleno-vykorystannya-novitnoyi-radiotehnologiyi-wi-fi-6e/>
->>
->>
->> https://mrt-cert.com/en/gjxw/4323.html
->> <https://mrt-cert.com/en/gjxw/4323.html>
->>
->>
->> Best regards from Ukraine
-> Thank you for the notice.
+> Hi ChenYu,
 >
-> Would it be possible to provide a link to an official document or web page
-> that describes the change? Something from a government ministry or office.
-> We prefer those as reference over second hand sources.
+> Here is official website with text of amendment that was approved and
+> became a law as of 13 August 2025
+>
+> https://zakon.rada.gov.ua/laws/show/976-2025-%D0%BF#Text
+>
+> The text is in Ukrainian language but you can use google translate and
+> translation is pretty much accurate
+>
+> If you have any questions feel free to ask, thanks in advance
 >
 >
-> Thanks
-> ChenYu
+> On 10/4/2025 5:38 PM, Chen-Yu Tsai wrote:
+> > Hi,
+> >
+> > On Sat, Oct 4, 2025 at 10:36=E2=80=AFPM Dmitry Geurkov <d.geurkov@gmail=
+.com> wrote:
+> >> Hi,
+> >>
+> >> 6GHz wireless band was recently allowed by Ukraine government for WiFi
+> >> 6e standard indoor use.
+> >>
+> >> Could you please add the appropriate setting to wireless-regdb
+> >>
+> >> I'm not familiar with wireless-regdb format nor an expert on wireless
+> >> technology to create PR myself
+> >>
+> >> You can find all needed information here
+> >>
+> >> https://eba.com.ua/en/v-ukrayini-dozvoleno-vykorystannya-novitnoyi-rad=
+iotehnologiyi-wi-fi-6e/
+> >> <https://eba.com.ua/en/v-ukrayini-dozvoleno-vykorystannya-novitnoyi-ra=
+diotehnologiyi-wi-fi-6e/>
+> >>
+> >>
+> >> https://mrt-cert.com/en/gjxw/4323.html
+> >> <https://mrt-cert.com/en/gjxw/4323.html>
+> >>
+> >>
+> >> Best regards from Ukraine
+> > Thank you for the notice.
+> >
+> > Would it be possible to provide a link to an official document or web p=
+age
+> > that describes the change? Something from a government ministry or offi=
+ce.
+> > We prefer those as reference over second hand sources.
+> >
+> >
+> > Thanks
+> > ChenYu
 
