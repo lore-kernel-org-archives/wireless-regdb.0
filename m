@@ -4,68 +4,59 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2F49CCCA470
-	for <wireless-regdb@archiver.kernel.org>; Tue,  7 Oct 2025 07:02:43 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 2CE69CCD184
+	for <wireless-regdb@archiver.kernel.org>; Tue,  7 Oct 2025 07:20:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=73lkDNOWFr6wrRGrrv70afVGUD5ixRWysb6RA3aS7ok=; b=E8WaMuCUbHlvqd
-	fZMTY3JoTnGp2CiWKx64Ds5gCKz9/vKnOX8qR4X/oMNAL3aOyN7Bg7Fqcs/JbZCMEmdtGUgwyAjwP
-	V6UsL3Xl7tiLzJ14fLWnhwHKROAJCZHZGsreCQ6GHB30xAWXtEGPxSWd2+L3Meef7UaRu3o/+EDgc
-	agyfZbE2EgNI63BfF62BRzCJnW2ZRvqG0iJYcId8GZvxNi5RyyY7yx2T9S0py+q/jhZMf/7fGZWCk
-	FKbBvVPRJ2xareM/dAgB40tAhqsi0Xp+SA4llJqt8vVJz0RuBpUcZoQv1bORJ+IXY2dWwNhTfSJSy
-	/AhRvbfqK07ADf+5hG8Q==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=wFrz8acKU4wofj4EfFDU7s5V9OM0TBB5MxYR5HCR8GY=; b=H6K8PO8N9RmT4+4MGffBhlEpGM
+	SpfiaLUz30ak9mLS+bkw8qkJwPRLjS6MoSoYhob9R5CyIRpR7BsSJh58Gan4ID6WCE2lRGqakMkHj
+	8QTzuhyBqYXZfAcFkOKXOMW6M9iAIHjZ18vuMuakBHyo0ZTQvBKrYG777P2BXj+JFYUD0ttn4IRQz
+	QI3Mu7f9tRJgNI3/7scgM5lOOIPV4kjgcdOujjtJgrJFtK3S6xBuEC2IixuZ8uskv3fyiGOcxrOHd
+	/857apw3on+yWV33ipp8mDofxYHiZzCpI35D0ficPGG/6hGhxmGtfo+l9TCHCu1G226xW0E2YakbF
+	txKLpgmg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v61ic-00000001QKt-2WZm;
-	Tue, 07 Oct 2025 07:02:42 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1v61zg-00000001RMC-1zvM;
+	Tue, 07 Oct 2025 07:20:20 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v61ib-00000001QJz-0iVb
+	id 1v61ze-00000001RLp-24b5
 	for wireless-regdb@lists.infradead.org;
-	Tue, 07 Oct 2025 07:02:41 +0000
+	Tue, 07 Oct 2025 07:20:19 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 52EA261240
-	for <wireless-regdb@lists.infradead.org>; Tue,  7 Oct 2025 07:02:40 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id F2A8AC4CEF1
-	for <wireless-regdb@lists.infradead.org>; Tue,  7 Oct 2025 07:02:39 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id CEDA848200
+	for <wireless-regdb@lists.infradead.org>; Tue,  7 Oct 2025 07:20:16 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 93799C113D0;
+	Tue,  7 Oct 2025 07:20:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759820560;
-	bh=UrN3vx1XY+v1dt7JieobaD7W+sJkHyMsFeNF/yrJ5cI=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=MldDXylu3Fxj1wqihMMEBKYW9R5dAQ5iJ2UXVmj02psJjCdMrPZRUVaA8vcghG0MQ
-	 AM4a+b+1LhLkM8v9k+BLP/fZz6k48ioDEkhiTWwuw//mzNGtFrqhorkDoalk4bitS0
-	 YH8n95C0QEEJukXE3FbajxIbzmvwHv5EaBluhg6leNItg2F0DhR7rmiuzVTapIS4dl
-	 jnhi7zmo52wqZ7o7s7mx53qBBZ/dxYMh/QdyCTHob5S/YmFudxsH8GXJ5EngednxvG
-	 Y7O1pHVAZj0Sm9+MaOw156hC5Mv0khTonWLK8IdnJ95q2L1edJhGAtZ3ZQviB5grjH
-	 XYsEIfYeinz/Q==
-Received: by mail-lj1-f181.google.com with SMTP id 38308e7fff4ca-373a56498b9so75001361fa.1
-        for <wireless-regdb@lists.infradead.org>; Tue, 07 Oct 2025 00:02:39 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCX9v01fumEBCO3r4wAhxmSbUQ+E54WktUjuzHwnJS+hwDLSG9BKmBVncpKYR+rTCcluMfV6GgGV9tBqTkhcpg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YxHk8ZwMnpWb5Fv1CUcV+iiiunjvUIfS6l25AQ5dhYkJBdGONBh
-	VdSv/hbASSpeMThYSXpxNoL8DfUZ8dOm4hfc0CENninMFYRMJVTeXJC6B0tc2Bwqqh+vb5zcd+R
-	oq5rfjGB4gM0NJD4X0RkvFmYZaHLrlWc=
-X-Google-Smtp-Source: AGHT+IEE7sDyrARuMhRAXHauI3ei2K1FS+oIheb0yE3+D6pkAMxXyAFZ02jdknoXnfH3wq1Unm0ri/1aRI0mBJHP+oY=
-X-Received: by 2002:a2e:a9a4:0:b0:372:91d2:f659 with SMTP id
- 38308e7fff4ca-375f50dcaa9mr7854911fa.3.1759820558298; Tue, 07 Oct 2025
- 00:02:38 -0700 (PDT)
-MIME-Version: 1.0
-References: <20250924022156.8435-1-pkshih@gmail.com>
-In-Reply-To: <20250924022156.8435-1-pkshih@gmail.com>
+	s=k20201202; t=1759821616;
+	bh=ANg0JlzvM8aqpGXDQUgx61IIZukUkjaqnEBViP3JT3s=;
+	h=Date:From:To:Subject:From;
+	b=K4wHZ37WRQ6+QPRd4wKllLdoQK+uiU0csBjZB1UT/MIgbdQ4nYVSyaWV7zmRfD8oE
+	 d1LpCRMVT2wIUMuQgSf5ru3PPwUkkG13GidRnzsTLeLtfarHTsRdYStHdGg7Hj5CGL
+	 vSJ1qU6v5hRm7H7zjxelEDTmRznkO9t0yJ4fNDFRWjq50E1M5Q5yu6m/m9HNSWXOZV
+	 T+DeN0Ynz7OyM1tivH/CF3ugLsvAMhiRxQXKvyStSHai+6RDvpWWgZViomRGP9OoRw
+	 w0Nd2YIkMPufofPk9zgN+FzH4s01OvnlVCPvzTE3lGMTersqZdjPLKcOCmEkkzuIwG
+	 K+Gwn/hGkR53g==
+Received: by wens.tw (Postfix, from userid 1000)
+	id 3AB095F755; Tue, 07 Oct 2025 15:20:14 +0800 (CST)
+Date: Tue, 7 Oct 2025 15:20:14 +0800
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 7 Oct 2025 15:02:25 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66MZpd8QWYptLrh5O5qf-DWAnqxf3d692JWZoF3jCRj0g@mail.gmail.com>
-X-Gm-Features: AS18NWDMdV6VxFUtJ_wtaE4Bei6WwIca5zSi-uM_HMLDfwtnx1zXZm-fjY0kkMg
-Message-ID: <CAGb2v66MZpd8QWYptLrh5O5qf-DWAnqxf3d692JWZoF3jCRj0g@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info including
- bandwidth for Trinidad and Tobago (TT) for 2025
-To: Ping-Ke Shih <pkshih@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Subject: [ANN] wireless-regdb: master-2025-10-07
+Message-ID: <aOS_LlZy1h4CqkBl@wens.tw>
+MIME-Version: 1.0
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="cwttxwilbA3n93td"
+Content-Disposition: inline
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20251007_002018_553014_F5524242 
+X-CRM114-Status: UNSURE (   5.67  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -77,98 +68,51 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi,
 
-On Wed, Sep 24, 2025 at 10:22=E2=80=AFAM Ping-Ke Shih <pkshih@gmail.com> wr=
-ote:
->
-> From: Ping-Ke Shih <pkshih@realtek.com>
->
-> The Telecommunications Authority of Trinidad and Tobago [1] provides
-> Schedule of Devices Eligible for Use under a Class Licence [2]. The
-> type 1 (End-user devices or customer premise equipment) with Schedule B.1
-> and B.2 shows
->
->  - 2400 - 2483.5 MHz
->    * 30 dBm
->  - 5150 - 5250 MHz
->    * 24 dBm
->  - 5250 - 5350 MHz
->    * 24 dBm
->  - 5470 - 5725 MHz
->    * 24 dBm
+--cwttxwilbA3n93td
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-For these bands, the rules specify ERP, or effective radiated power.
-However it states "Maximum Effective Radiated Power ERP (from RF
-transmitter)", so I think it is meant to "maximum conducted output
-power" as seen in FCC rules?
+A new release of wireless-regdb (master-2025-10-07) is available at:
 
-This is not the same as EIRP, or effective isotropic radiated power.
-AFAIK the latter is what is supposed to be used in the database. This
-discrepancy is found in many rules originating from the FCC rules. The
-FCC rules specify maximum conducted power (TX power) plus max antenna
-gain in dBi.
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2025.10.07.tar.xz
 
-So there is some conversion involved. I think the values should be
-"max conducted power" + "max gain in dBi". This assumes no cable loss.
+The short log of changes since the master-2025-07-10 release is below.
 
-I think we would also need to revisit the US rules.
+--
 
->    * extend 5 MHz to 5730 MHz for channel 144
->  - 5725 - 5850 MHz
->    * 30 dBm
->  - 5925 - 6425 MHz
->    * 24 dBm
+Chen-Yu Tsai (2):
+      wireless-regdb: Permit lower 6 GHz band for Kazakhstan (KZ)
+      wireless-regdb: update regulatory database based on preceding changes
 
-These two bands have 0 dBi for max antenna gain, so max TX power =3D=3D
-max EIRP.
+Ping-Ke Shih (3):
+      wireless-regdb: update regulatory rules for Botswana (BW) for 2022
+      wireless-regdb: update regulatory rules for Sint Marteen (SX) for 2018
+      wireless-regdb: Update regulatory info including bandwidth for Costa Rica (CR) for 2023
 
 
-ChenYu
+--cwttxwilbA3n93td
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> [1] https://tatt.org.tt/licensing/class-license/
-> [2] https://tatt.org.tt/wp-content/uploads/2025/07/Schedule-B_Schedule-of=
--Devices-Eligible-for-Use-under-a-Class-Licence-25th-July-2025.pdf
->
-> Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
-> ---
-> Hints to find these entries: by searching "Wi-Fi" with type 1 in [2].
-> ---
->  db.txt | 13 ++++++++-----
->  1 file changed, 8 insertions(+), 5 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index 6e1ad30222a4..90ffa4e0d5d7 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -1946,12 +1946,15 @@ country TR: DFS-ETSI
->         # 60 GHz band channels 1-4, ref: Etsi En 302 567
->         (57000 - 66000 @ 2160), (40)
->
-> +# Source:
-> +# https://tatt.org.tt/wp-content/uploads/2025/07/Schedule-B_Schedule-of-=
-Devices-Eligible-for-Use-under-a-Class-Licence-25th-July-2025.pdf
->  country TT: DFS-FCC
-> -       (2402 - 2482 @ 40), (20)
-> -       (5170 - 5250 @ 80), (17), AUTO-BW
-> -       (5250 - 5330 @ 80), (24), DFS, AUTO-BW
-> -       (5490 - 5730 @ 160), (24), DFS
-> -       (5735 - 5835 @ 80), (30)
-> +       (2400 - 2483.5 @ 40), (30)
-> +       (5150 - 5250 @ 80), (24), AUTO-BW
-> +       (5250 - 5350 @ 80), (24), DFS, AUTO-BW
-> +       (5470 - 5730 @ 160), (24), DFS
-> +       (5730 - 5850 @ 80), (30)
-> +       (5925 - 6425 @ 320), (24)
->
->  # Source:
->  # Table of Frequency Allocations of Republic of China (Taiwan) / Feb 201=
-7:
-> --
-> 2.25.1
->
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEE2nN1m/hhnkhOWjtHOJpUIZwPJDAFAmjkvysACgkQOJpUIZwP
+JDB+FA/9GT8D1vgALZJ8did8nSnmhJh8EfkuyFIxspX52ZpKyYJxa80mVzMb61pA
+UPW3GEZvL7tEUAAHTlzlNiG9WQwyg4W3mgXyZUCLG5FUbkL9t+uWiuGekoom62kF
+YdKWblkBlsKTo/Q7z+ITagr11xdlCO5zwcxO60r+v0+AATCMbbszwJI+cPq2Zbbz
+asF5gJQhpkQSv3wgCb0qeD+aDbqhsnFXrAAav34ItaNC6LlaorGb8JnQSf5sZGZG
+cobwxUe54cXQLJOsemMaMGGagYVPKD6nRGzUtpXxUYYKfMmLjzzCiXTrR3mXzCTv
+ihCSqJDEXVkbSzZ3yWyPpzFprhIVV4xNxkYgirtaDSzcUd0lMIXhNQuHubS5btiK
+a6UjtTjgCJkHwPUmiiRb8vvZXD/qwDqgH3+az10i745QtN3bBnve+BG6g7E0IjjM
+Tt/bJb9q/UgzpL3peFxo/e17/G2ISBDxo63SE/NWVL40VO8FI7auxhGYuPj8XaBy
+xkATEPiWVipUoiFubHaMz/b3Al9+uVy3AquJKrmvxUiPDMvXnzvPflfrE5xp8psV
+3S010wrzeRVbxFg153L49vY248f+ApHkXOYYk1MMBrgb4DTwDQXWb9EibqiLqCT0
+t4k1nw/u0rvPwMubzleSdkFTBp56oA7E4saJLPZn9OoEANp1nFY=
+=eKmU
+-----END PGP SIGNATURE-----
+
+--cwttxwilbA3n93td--
 
