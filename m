@@ -4,63 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6EAD8CCA470
-	for <wireless-regdb@archiver.kernel.org>; Thu,  9 Oct 2025 06:42:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C63E1CCF9E3
+	for <wireless-regdb@archiver.kernel.org>; Sat, 25 Oct 2025 07:53:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=iIm3gvGPVkBp2NkHI2YouXrb0sCefsw4WSZ9YpMblQ4=; b=qjPJ/5QoPm702wkSlHa375JzrR
-	/H2mnMzr1FJnly9ZfNL6LNwZwe0/vMKWPazgwCImj23JPCutnJ/xSoT9B9LiP8KlU/f615xC0WNGz
-	C6MadrtqXEZAd4U1GHmXp/qV7YbivVA2zFrNjNuq9lHMuTqpQVf/7PXDtPM29zn3WtVkyeZ2s4Z/T
-	EU3lUugVPJn71qV3xjSOOPsYBbeCINJdR6hrvAqWp2+1BukXvBd4PZNIYeyAJIgdoOiwtHyU70zWZ
-	YXsy4JG3Hx6RplmNNvGZzqvUTCaztjr7islewMe960gRUpYkvuDz0FzYWK1wUx7z0U3jhFHOWJakP
-	vRcxkSYw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:From:Date:Message-ID:Cc:To:
+	Content-Transfer-Encoding:MIME-Version:Subject:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=7aeFWucAJ5b1P9eHusXCkS37rYsvW2nu12CFLMSqyV8=; b=3Lr/kvX3eUhS6Yl/TiaLBi2+Lv
+	OscLhrMDdKJBDUWsT4gjLHRGB/IVcJJTp443q4F0cUndFgcxvH6FTqz8rJuLELjSFovi2bhdZjub6
+	qyQV1KYygCZBFEZOjGhTQHjxqnTEVdV2uFaLh8Q7xlAQg6f8BWl9Yfzu8K9JgdJemtHEJQkXstZuh
+	4N3sJROqeJE/VaZUgRJF0V2xUkQafqy/5QgorrCxNk72VI0XLwSjdDuuQrQo537CGr6sWm921IrRe
+	x6ILJIeuwiL0kHkv22ZWpTh7iXYyk2ZihVfRZaq5z/0bzyRCpUddk+YX/ScHbjKN2fcpGM28kdJ9c
+	PRtzij3Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6kLe-00000005I8a-36op;
-	Thu, 09 Oct 2025 06:41:58 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vCZ5b-0000000B6II-0536;
+	Sat, 25 Oct 2025 07:53:27 +0000
+Received: from smtpa-outbound1.duck.com ([20.13.235.194])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1v6kLb-00000005I7x-3iDQ
+	id 1vCZ5Z-0000000B6Ho-0CPD
 	for wireless-regdb@lists.infradead.org;
-	Thu, 09 Oct 2025 06:41:57 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 36E8043DF9;
-	Thu,  9 Oct 2025 06:41:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id E1D2FC4CEF9;
-	Thu,  9 Oct 2025 06:41:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1759992115;
-	bh=VjSj1Jr+SsT//LVbQP7nMBmN14oJpVgPCAz/81xcof0=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Kha4SIp2ZKeJi3l+qsawBgZQ/eiDLNghybLRGZJcZweXM4TqDqeRA1w49UF1zFJBt
-	 YEKiqTpONfnPDZuSE5PVEQ2Ivv4WSJ5gAUN89QTwuczprW5myN4RPDggUjZk3B7eB4
-	 epGjNrXTJIunfcHKhVgosqzdQwRjs0QX9HIHOVeBHx03tefklb8jI1+I3j+t6nVT03
-	 rEjbqKz984nmER8+oyD4yVIBH2sC3UysXQFAs/tS67/oyUzhxf7avjncGtHUFErAYC
-	 +igpQ/BsTg/Ayg8KKfPoiJ/zZo550aswHv5mtPfheDlEIOkNH5HmU3SLs6Y1vDc2dx
-	 00Xba7SbuxZtw==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 33A415FAC2;
-	Thu, 09 Oct 2025 14:41:52 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: linux-wireless@vger.kernel.org, Richard Huynh <voxlympha@gmail.com>
-Cc: wireless-regdb@lists.infradead.org
-In-Reply-To: <20251008112104.8558-1-voxlympha@gmail.com>
-References: <20251008112104.8558-1-voxlympha@gmail.com>
-Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for
- Australia (AU) for 2025
-Message-Id: <175999211217.3194772.10317350496194840605.b4-ty@kernel.org>
-Date: Thu, 09 Oct 2025 14:41:52 +0800
+	Sat, 25 Oct 2025 07:53:26 +0000
+Subject: [PATCH] wireless-regdb: Update regulatory info for Brunei Darussalam (BN) for 2022
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.2
+Content-Transfer-Encoding: 8bit
+X-Rspamd-Bar: /
+X-Rspamd-Report: R_MISSING_CHARSET(0.5) DMARC_POLICY_ALLOW(-0.5) R_DKIM_ALLOW(-0.2) MIME_GOOD(-0.1) R_SPF_ALLOW(-0.2) MID_RHS_MATCH_TO(1)
+X-Rspamd-Score: 0.5
+X-Rspamd-Action: no action
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org,
+ Hafiz Zafran <hfzz7@duck.com>
+Received: by smtp-inbound1.duck.com; Sat, 25 Oct 2025 03:53:22 -0400
+Message-ID: <CB87FEAB-DAEC-49D6-83C2-8B8D59025164.1@smtp-inbound1.duck.com>
+Date: Sat, 25 Oct 2025 03:53:22 -0400
+From: hfzz7@duck.com
+Feedback-ID: :isSendReply:isDirect:duckcom
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=duck.com;
+ h=Feedback-ID: From: Date: Message-ID: Cc: To: Content-Transfer-Encoding:
+ MIME-Version: Subject; q=dns/txt; s=postal-KpyQVw; t=1761378803;
+ bh=7aeFWucAJ5b1P9eHusXCkS37rYsvW2nu12CFLMSqyV8=;
+ b=l3MTGA8LR1ncxpisl9HdV48W6MP8HtcSX6amCXaCWacp7298vMaO/Goit/21QstqFFHlNcn+C
+ ksPrBRtwQNpB3SiQI64BqvWwrKKWG5m5pxqr5+2ua/oUfhLsZ6bX4+PO4U4nc1N2KY1dN2gQlnY
+ c2mPbrFiF48KRN7GYfAbMEY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251008_234155_944681_50DE07EE 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20251025_005325_378409_8B467BAC 
+X-CRM114-Status: UNSURE (   4.33  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -76,25 +67,63 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, 08 Oct 2025 22:21:04 +1100, Richard Huynh wrote:
-> As of October 1 2025, a new class licence is in effect[1]
-> Update the link and references in the comments to it
-> 
-> Also align the 915-928mhz block with the document
-> 
-> Additionally for the lower part of 6Ghz spectrum:
-> - Allow for EHT-320 as it complies with PSD limits
-> - Expand the upper range up to 6585 as permitted in new licence
-> 
-> [...]
+In 2022, Authority for Info-communications Technology Industry of Brunei Darussalam (AITI) updates The Brunei Darussalam Radio Spectrum Plan. [1]
 
-Applied to master in wens/wireless-regdb.git, thanks!
+* 2400-2483.5 MHz
+	- 200 mW
 
-[1/1] wireless-regdb: Update regulatory info for Australia (AU) for 2025
-      https://git.kernel.org/wens/wireless-regdb/c/75bedc589589
+* 5150-5350 MHz
+	- 1000 mW
+	(For 5250-5.350 MHz, DFS and TPC are required)
 
-Best regards,
+* 5470-5725 MHz
+	- 1000 mW
+	- DFS
+	- TPC
+
+* 5725-5850 MHz
+	- 4000 mW
+
+Also, add regulatory info for WiGig/60 GHz
+* 57000-66000 MHz
+	- 10 W / 10000 mW
+
+Note: According to the Telecommunications (Radio-communication) Regulations, 2013 of the Telecommunications Order, 2001 (S 38/2001), "non-localised use" refers to the operations of specified radio-communication equipment or network at a specific frequency or in any specified frequency within the whole of Brunei Darussalam. [2]
+
+[1] https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
+[2] https://www.agc.gov.bn/AGC%20Images/LAWS/Gazette_PDF/2013/EN/s086.pdf
+
+Signed-off-by: Hafiz Zafran <hfzz7@duck.com>
+---
+ db.txt | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index 1d17271..8e5cbb5 100644
+--- a/db.txt
++++ b/db.txt
+@@ -326,11 +326,15 @@ country BM: DFS-FCC
+ 	(5490 - 5730 @ 160), (24), DFS
+ 	(5735 - 5835 @ 80), (30)
+ 
+-country BN: DFS-JP
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (20), AUTO-BW
+-	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+-	(5735 - 5835 @ 80), (20)
++# https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
++# Section 7.5, Page 244-251
++country BN: DFS-FCC
++	(2400 - 2483.5 @ 40), (200 mW)
++	(5150 - 5250 @ 80), (1000 mW), AUTO-BW
++	(5250 - 5350 @ 80), (1000 mW), DFS, AUTO-BW	
++	(5470 - 5730 @ 160), (1000 mW), DFS
++	(5725 - 5850 @ 80), (4000 mW), AUTO-BW
++	(57000 - 66000 @ 2160), (10000 mW)
+ 
+ country BO: DFS-JP
+ 	(2402 - 2482 @ 40), (20)
 -- 
-Chen-Yu Tsai <wens@kernel.org>
+2.51.1
 
 
