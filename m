@@ -4,54 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C63E1CCF9E3
-	for <wireless-regdb@archiver.kernel.org>; Sat, 25 Oct 2025 07:53:29 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id EE4AFCCF9E5
+	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Oct 2025 02:09:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:From:Date:Message-ID:Cc:To:
-	Content-Transfer-Encoding:MIME-Version:Subject:Reply-To:Content-Type:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=7aeFWucAJ5b1P9eHusXCkS37rYsvW2nu12CFLMSqyV8=; b=3Lr/kvX3eUhS6Yl/TiaLBi2+Lv
-	OscLhrMDdKJBDUWsT4gjLHRGB/IVcJJTp443q4F0cUndFgcxvH6FTqz8rJuLELjSFovi2bhdZjub6
-	qyQV1KYygCZBFEZOjGhTQHjxqnTEVdV2uFaLh8Q7xlAQg6f8BWl9Yfzu8K9JgdJemtHEJQkXstZuh
-	4N3sJROqeJE/VaZUgRJF0V2xUkQafqy/5QgorrCxNk72VI0XLwSjdDuuQrQo537CGr6sWm921IrRe
-	x6ILJIeuwiL0kHkv22ZWpTh7iXYyk2ZihVfRZaq5z/0bzyRCpUddk+YX/ScHbjKN2fcpGM28kdJ9c
-	PRtzij3Q==;
+	bh=BDPjYGcXz413BMEtPr/eFLPA6/i78BGY36YiaTonr58=; b=hLjAqJkme6lL46bLkGvXlcsm4h
+	Lny7iTZ7CBgesA9vXJ2WSgj7Z2Hw8u/bi472rvKBCMR6RgQPPrzT3+QnrHGwx3ZRTafCfl6tcYofC
+	ExWFynTB8sSkLYKBtkT+JnUeK9HiCO00J6xTGbnA/Iuyk8aG/s2AfBXLmuEhqjuQ3FFIfYHwpO8VS
+	7mSk9GSNzkieGttW8Z0BYZ3aXiN+5tL0MxpKzfZFA46/fK3v1Uzn1mx57NqfshBE2k+EfSpZY49En
+	Vu/gjdkGHIXLmjra0YiJ2NdEBVjI5hzZWvvLGzB1QR4sGrA4IFjeXWhl2cF1IGSUg7AQ6nQ4NhdPA
+	MjfIGSPg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCZ5b-0000000B6II-0536;
-	Sat, 25 Oct 2025 07:53:27 +0000
-Received: from smtpa-outbound1.duck.com ([20.13.235.194])
+	id 1vDZ96-0000000F6kl-2xDC;
+	Tue, 28 Oct 2025 02:09:12 +0000
+Received: from mail-pg1-x535.google.com ([2607:f8b0:4864:20::535])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vCZ5Z-0000000B6Ho-0CPD
+	id 1vDZ94-0000000F6kA-0Rq3
 	for wireless-regdb@lists.infradead.org;
-	Sat, 25 Oct 2025 07:53:26 +0000
-Subject: [PATCH] wireless-regdb: Update regulatory info for Brunei Darussalam (BN) for 2022
-MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Rspamd-Bar: /
-X-Rspamd-Report: R_MISSING_CHARSET(0.5) DMARC_POLICY_ALLOW(-0.5) R_DKIM_ALLOW(-0.2) MIME_GOOD(-0.1) R_SPF_ALLOW(-0.2) MID_RHS_MATCH_TO(1)
-X-Rspamd-Score: 0.5
-X-Rspamd-Action: no action
+	Tue, 28 Oct 2025 02:09:11 +0000
+Received: by mail-pg1-x535.google.com with SMTP id 41be03b00d2f7-b47174b335bso500563a12.2
+        for <wireless-regdb@lists.infradead.org>; Mon, 27 Oct 2025 19:09:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ndoo.sg; s=google; t=1761617349; x=1762222149; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=BDPjYGcXz413BMEtPr/eFLPA6/i78BGY36YiaTonr58=;
+        b=K+MiI/TojlbQr/kgaUba6jZagLDpy+ptVkSU6bUX3xtafW/EwrbFe5zLESqtbbFCTO
+         FW/xrc4Q5uxM7oGgmPZThew67rzbIGO7+5X/vO7DwQjSadIbp7vmWV3dNNsvyDvspkzn
+         FoJ42FLuZ20DDimj8VIgk1uwNEgGMYZ/wGvEo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1761617349; x=1762222149;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=BDPjYGcXz413BMEtPr/eFLPA6/i78BGY36YiaTonr58=;
+        b=ujQozPsWoCd5pXJq64XRvSyTXFtrpiWliZip4ZvGfQeVyv/Ev9uYUjliHoXdOKRi0Y
+         wx/5qp4b3YzJ0PEYevXx4MZ6llGWYVWR2ERjB9hNKuU9qpLYyHFvStZGstIc7r2EgD2/
+         BxIiec0M8AwI/CLQQJpPgT/ZSLJ7SF2ZUCAQv3bHw104xttgZj/OwEhVa7CQwFR4lwKc
+         /kAZS0bOUP1nb//XyhKc5ZS0vrjhDNoyKtY0qNJQyuiXPSwyj0w8UG7OwzqMNipTdWJ2
+         y4xFvQoq3+K4WXm4TYKKyz0k8YbzFAoo3MmK3YbCC4Kaxts9S+jYRSzGAYRKSTOBZMWL
+         SQ8A==
+X-Gm-Message-State: AOJu0YzHycE8q6LEq+zGEzkADQH40Sy7kD2C8O4597iXqLTck4WEOtPi
+	re8qGPDXinDX40AP/8SN1AWbGpLwn8OQb4WTlflUM0duZDzbGPi8Mln/AmvPoxiMG5vhm7dXX2b
+	a1l0=
+X-Gm-Gg: ASbGncvxcDqXhHIjHuK8sGjh3y+EbjKKLhx98q9o0boR1/+//MADAI4chE5KxM7v1FS
+	v770HJfQRSyu7qmkwG2CCSNrz8u9R1b/A2hMrSNcrDcKPtNlaNbXxjAMpKykqj9KCjVe/ihNbUs
+	RUXaUaYFxUui//7RzXzMxPQl4FtNmgavg708uJgGmiBFpcjKXvmIabWgMBPVpMDWOYfFJoGQf8v
+	comTlIgGKuHLOQq9ku64qFpaY+O+nQnnSFluEivnSf2ilhOFyXrJBxznLDMz/vfQ/3yaaMlMmby
+	NdA46hhhRynJmRXVzuLoChrNP5Fn21XOoMFoqpp2USeoLBNZ3EKagg2XS4W0ktHN4pdQ6Ov0dEP
+	PAt/motJwtqc0GPnGnALTgQV1dnxmGQbFZjMVqkddtoluz50EzDhpr/VfBrfyLbJw8M+/Gkypeb
+	DONszq7OKh2gYi+nlVieHsVXidR/kehQqx/SBZxkBHagsvncNbr6Twyn1fVNPed0IcwH/6lUxQB
+	DKT5g==
+X-Google-Smtp-Source: AGHT+IEESyFigmifFi+Rj8ugy24JBYOUq7NzGTqrrb9m5CTGP8BtwuDdoO+2b5FtujpZEayf74JllA==
+X-Received: by 2002:a05:6a00:39a6:b0:7a2:6f23:91e1 with SMTP id d2e1a72fcca58-7a441b79347mr1164507b3a.1.1761617348773;
+        Mon, 27 Oct 2025 19:09:08 -0700 (PDT)
+Received: from localhost.localdomain ([121.120.74.142])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a414068cdcsm9865142b3a.47.2025.10.27.19.09.07
+        (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
+        Mon, 27 Oct 2025 19:09:08 -0700 (PDT)
+From: Andrew Yong <me@ndoo.sg>
 To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org,
- Hafiz Zafran <hfzz7@duck.com>
-Received: by smtp-inbound1.duck.com; Sat, 25 Oct 2025 03:53:22 -0400
-Message-ID: <CB87FEAB-DAEC-49D6-83C2-8B8D59025164.1@smtp-inbound1.duck.com>
-Date: Sat, 25 Oct 2025 03:53:22 -0400
-From: hfzz7@duck.com
-Feedback-ID: :isSendReply:isDirect:duckcom
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=duck.com;
- h=Feedback-ID: From: Date: Message-ID: Cc: To: Content-Transfer-Encoding:
- MIME-Version: Subject; q=dns/txt; s=postal-KpyQVw; t=1761378803;
- bh=7aeFWucAJ5b1P9eHusXCkS37rYsvW2nu12CFLMSqyV8=;
- b=l3MTGA8LR1ncxpisl9HdV48W6MP8HtcSX6amCXaCWacp7298vMaO/Goit/21QstqFFHlNcn+C
- ksPrBRtwQNpB3SiQI64BqvWwrKKWG5m5pxqr5+2ua/oUfhLsZ6bX4+PO4U4nc1N2KY1dN2gQlnY
- c2mPbrFiF48KRN7GYfAbMEY=
+	Andrew Yong <me@ndoo.sg>
+Subject: [PATCH] wireless-regdb: Update regulatory info for Malaysia (MY) for 2024
+Date: Tue, 28 Oct 2025 10:09:01 +0800
+Message-ID: <20251028020901.44906-1-me@ndoo.sg>
+X-Mailer: git-send-email 2.50.1
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251025_005325_378409_8B467BAC 
-X-CRM114-Status: UNSURE (   4.33  )
+X-CRM114-CacheID: sfid-20251027_190910_192795_4796453A 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -67,63 +95,46 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-In 2022, Authority for Info-communications Technology Industry of Brunei Darussalam (AITI) updates The Brunei Darussalam Radio Spectrum Plan. [1]
+Malaysia Communications and Multimedia Commission announced CLASS ASSIGNMENT NO. 1 OF 2024[1], with the following changes to wireless SRD frequency class assignment(s):
 
-* 2400-2483.5 MHz
-	- 200 mW
+5925-6425 MHz EIRP has increased from 2022 assignment[2] of 200 mW, to 250 mW; refer to page 10.
+5150-5250 MHz EIRP of 1 W has changed from 2022 assignment[2] of indoor & outdoor, to indoor-only at 1 W; refer to page 20.
+5250-5350 MHz EIRP of 1 W has changed from 2022 assignment[2] of indoor & outdoor, to indoor-only at 1 W; refer to page 20.
 
-* 5150-5350 MHz
-	- 1000 mW
-	(For 5250-5.350 MHz, DFS and TPC are required)
+Update limits of existing entries accordingly.
 
-* 5470-5725 MHz
-	- 1000 mW
-	- DFS
-	- TPC
+[1] https://www.mcmc.gov.my/skmmgovmy/media/General/pdf2/Class-Assignment-No-1-of-2024.pdf
+[2] https://www.mcmc.gov.my/skmmgovmy/media/General/CA-No-1-of-2022_-signed_19012022.pdf
 
-* 5725-5850 MHz
-	- 4000 mW
-
-Also, add regulatory info for WiGig/60 GHz
-* 57000-66000 MHz
-	- 10 W / 10000 mW
-
-Note: According to the Telecommunications (Radio-communication) Regulations, 2013 of the Telecommunications Order, 2001 (S 38/2001), "non-localised use" refers to the operations of specified radio-communication equipment or network at a specific frequency or in any specified frequency within the whole of Brunei Darussalam. [2]
-
-[1] https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
-[2] https://www.agc.gov.bn/AGC%20Images/LAWS/Gazette_PDF/2013/EN/s086.pdf
-
-Signed-off-by: Hafiz Zafran <hfzz7@duck.com>
+Signed-off-by: Andrew Yong <me@ndoo.sg>
 ---
- db.txt | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ db.txt | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/db.txt b/db.txt
-index 1d17271..8e5cbb5 100644
+index 1d17271..a65910a 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -326,11 +326,15 @@ country BM: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
+@@ -1450,14 +1450,14 @@ country MX: DFS-FCC
+ 	(5925 - 6425 @ 320), (12), NO-OUTDOOR
  
--country BN: DFS-JP
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
--	(5735 - 5835 @ 80), (20)
-+# https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
-+# Section 7.5, Page 244-251
-+country BN: DFS-FCC
-+	(2400 - 2483.5 @ 40), (200 mW)
-+	(5150 - 5250 @ 80), (1000 mW), AUTO-BW
-+	(5250 - 5350 @ 80), (1000 mW), DFS, AUTO-BW	
-+	(5470 - 5730 @ 160), (1000 mW), DFS
-+	(5725 - 5850 @ 80), (4000 mW), AUTO-BW
-+	(57000 - 66000 @ 2160), (10000 mW)
+ # Source:
+-# https://www.mcmc.gov.my/skmmgovmy/media/General/CA-No-1-of-2022_-signed_19012022.pdf
++# https://www.mcmc.gov.my/skmmgovmy/media/General/pdf2/Class-Assignment-No-1-of-2024.pdf
+ country MY: DFS-FCC
+ 	(2402 - 2482 @ 40), (500 mW)
+-	(5170 - 5250 @ 80), (1000 mW), AUTO-BW
+-	(5250 - 5330 @ 80), (1000 mW), DFS, AUTO-BW
++	(5170 - 5250 @ 80), (1000 mW), AUTO-BW, NO-OUTDOOR
++	(5250 - 5330 @ 80), (1000 mW), DFS, AUTO-BW, NO-OUTDOOR
+ 	(5490 - 5650 @ 160), (1000 mW), DFS
+ 	(5735 - 5835 @ 80), (1000 mW)
+-	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
++	(5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
  
- country BO: DFS-JP
- 	(2402 - 2482 @ 40), (20)
+ # Source:
+ # https://www.cran.na/yglilidy/2023/04/GG-8060-dated-3-April-2023.pdf
 -- 
-2.51.1
+2.50.1 (Apple Git-155)
 
 
