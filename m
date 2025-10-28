@@ -4,81 +4,84 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id EB3B4CCF9EA
-	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Oct 2025 06:29:07 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 48397CCF9E0
+	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Oct 2025 06:29:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=ir73evyIRDVF112L404qeqtUBiO/cfljmivHcH0fmV0=; b=eNB0xeYLJeH+YUmgZhwSpOkL78
-	3oE2ExwS0FZ+IQn/CYS18WVlDhJX3L4TP5vn8dYX8qLRg+yzPVlKEu6Q7YbUZWtyhBJBcgv6R/cwI
-	Oa2GIuxIB8DYSXUlz/MGn+ze0bUgC6GDLCvZ39WLzSplMNgnhs3ifn9OH88wOL2ZPuGr5Z/wc4LJb
-	3WoQ0/vfA+C+HsJzq0yBvjqJLrdR1a1/z+srq3jPcEZ9spMBwC0WP7fEqCpXGGTz0y0j5EAyA92cd
-	icVJmPN0p56cKp2U9ihduT0IWDERu6gesTpj2HNvyH4WDcJV5MbMU5UgdDBg+DlIc6aMSdym/EaDx
-	WfJVPNQg==;
+	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	bh=ir73evyIRDVF112L404qeqtUBiO/cfljmivHcH0fmV0=; b=XcmmwwEzj/GQOagTnMomtaCu09
+	BP1l6QbCAvMhJcqgFp1yfie7P98/fAaL7ABST7VxuRgWXXgcaK+RLv+Tkq4v1225jTt6K6B2GJ49l
+	r3G+SjzmGt29s18FX/BZiGoGMuIMyxFv9RxR0XsJ/TRVFWfhBFqvREsY219rYdBJJdF4DFI7h/Uw2
+	UE8dL7VdB2sCxEactPDnNIWjpCwLdhXZG6LM1QMjoMuZzuZfz+UOHNUqmYee7yN/wQW/zeMj7Fm+3
+	o32gjKaPd6mqzcaHPsaRRl37cD3uAM1bdgYFtUWhh/V9k6ygCs/kSSbzv9ga340X8n99PT7WAWKL9
+	Xpl8bXFA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDdCb-0000000FLYS-2oDb;
-	Tue, 28 Oct 2025 06:29:06 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1vDdCk-0000000FLfY-16ka;
+	Tue, 28 Oct 2025 06:29:14 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vDdCJ-0000000FLID-1Qoa
+	id 1vDdCO-0000000FLO6-3ZMU
 	for wireless-regdb@lists.infradead.org;
-	Tue, 28 Oct 2025 06:28:48 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id d2e1a72fcca58-781254d146eso458852b3a.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 27 Oct 2025 23:28:47 -0700 (PDT)
+	Tue, 28 Oct 2025 06:28:54 +0000
+Received: by mail-pg1-x531.google.com with SMTP id 41be03b00d2f7-b87171370b5so25095a12.1
+        for <wireless-regdb@lists.infradead.org>; Mon, 27 Oct 2025 23:28:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=ndoo.sg; s=google; t=1761632926; x=1762237726; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        d=ndoo.sg; s=google; t=1761632932; x=1762237732; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+         :message-id:reply-to;
         bh=ir73evyIRDVF112L404qeqtUBiO/cfljmivHcH0fmV0=;
-        b=cRHLh5ggzLDpDPp/eTd1sFydjWuD+QFSfgraQI/twd0t/h/TUFy9QExzcWusrFmDMB
-         8zMGTM/ps6yVT1VIx06SEW7X75ABybYoS9W91St/8VeUVlcfnYgcXxA57NxaNblHvvVc
-         lBgaiq7X+yLr0rFnH3Y7IydTGmcnaf64xe0jg=
+        b=NhwMLprHeguVq0XCNOr8wfOGfyQl6E2k17JxG59mKNOt3DE+SmDbAIVYt5DYe1zq5h
+         smHHxbrIodaunFCwZr4NFTsWWKpgZ+cD+E/079+CtnLtFHt+Ic3Mo/xZCUPxxfNXT9uv
+         UHTJvdJx64kVm6DvN6cekM+OB/FQdLTOWbhmo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1761632926; x=1762237726;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to;
+        d=1e100.net; s=20230601; t=1761632932; x=1762237732;
+        h=content-transfer-encoding:mime-version:references:in-reply-to
+         :message-id:date:subject:cc:to:from:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
         bh=ir73evyIRDVF112L404qeqtUBiO/cfljmivHcH0fmV0=;
-        b=RHPo9/AO/eZ8Pi5F8d0NCJYOlA1a/n8yVikqvBzvu5Wl5hLTWzbfJRyechvcy+HmjN
-         u2z6mZv0aBOMZwaNXqeU8WS+eYxkklMP6kzXu5St8CxqPhka5fYPDox7FAhVgNHZVXtP
-         oXW7JCLB0QZdNoL2kYraft68pb7CbELWa0Nm10dNhCeSl+qMGS9uKORuiHsLDhZtrPpA
-         O4vSkeGztLPKJIT/LRNVkxpe7jQT0UtQXpNq0GZ2+YFbIb77vT7xD+QSQf6L8OGwM+95
-         pMNshv761XtTwAuud2fdHdL8bVD1262ybokBDX+RmkICkQf6/dtYPLob0Q6rIjcs5r+F
-         x1Gg==
-X-Gm-Message-State: AOJu0Yziq1ZdUJHocWlu82Z1GvZmtVGulDdw1+mL2N8fP4FEeLncKr6a
-	pMyLCR0u0CjcqnNTKFCQr7NG5FjiQS7tnPNYS61pPfhzTQoLfRZq6m+Qs15W2ckMPw==
-X-Gm-Gg: ASbGnct51BUHGo2eZRZXU7+cY+X1hxCSy6jGlcXrgKWU1LFXKz/oQdWhM24fJAQB/qT
-	TxV/X7BIwwHO8vIy+PQuirvqxV3qhDW8EWsHmJKz8w7T6TDLcV8zxW6W1ECxNwA0TGlkrjn4W4b
-	VRsGI7k1i2lYnBqH6vVO7oenVQsn4NhaPEpT5SnLKl/LNw8cH69pb/HL3JiTMDld/oEAePrjKbD
-	KMOTiDqUn0WOsE6kJhQp4xsz4+nTzzaqUPVLqNaQ0TQzHI19eZc3PqKSowGVTSR238XWE4rPyIg
-	c6PA7xBSx+BlFjaPbkQX8QXcjAsb7o8BVBguO3IXcXvMFdRpWx98bDRD2UkwGJ8rdNU7owUfsxY
-	QJVyKiyxEiSg8ihXga3fuHhfFEJnKxs34IcGr8DHlu97hedrttTDXglU4RXeEgDv6hmV+DQEDRH
-	RDd9m7QjeMc+jPhYmbgZO4SEFcDuQQuNB9GWQS+eYcEW+31AFpeRMkNZWPcrI3NRhlChH6hQd5E
-	Z06mg==
-X-Google-Smtp-Source: AGHT+IFFeA3qpztAaG/RGooLaSJ+Yx7ATRVfl20wYEUuwleA0W9QGBSiaRvJg1lDAC7uQwfNpZujIA==
-X-Received: by 2002:a05:6a00:2d8a:b0:7a2:855f:f88b with SMTP id d2e1a72fcca58-7a441c208edmr1702138b3a.3.1761632926412;
-        Mon, 27 Oct 2025 23:28:46 -0700 (PDT)
+        b=tJ8QVa/Qv8AYJpA73Moh9k8iV9slYPg1U2qdZzvi8R3FRlKW63hDLVM6+pzPUIElgq
+         ta/jSkpgmVyQcKGi8f35XTeC5tkkYB3bml/ngEBvAX1zKP6dQTkk4pCwZ8tfk4VccV1c
+         bc6MO5yXBCRWCQcy9+U5FVNdenpw1Lb7ZclPzCCK1/JdIonhTaBXkD7BgV0SHotLwD5P
+         ZNpJ04GK0OyETE3pPe2arL4NdOHCxrm0+Zelm58UQCwGM/YFuxCPNrIiqNR3MNFbz6Lk
+         rJ4cLdMusvgtz6rdxljmIFVkG9YACvuf1yBAmpCQLjz0EwFeARXWL3fIMxLGT/Q089r3
+         Ip9g==
+X-Gm-Message-State: AOJu0Yx0Rx/UKs45yrXz7JHCziJDG1Tf4JSSe0P9/H4gPsvVSTpdaISN
+	nqTIMUAOVnwXD3OxJVIQuF2lJo4TH1IKy4CPMBvnMxW7e+WsmNBPLf/OT6wzKw+WCQ==
+X-Gm-Gg: ASbGncvy2B5o+WofYvOJKkFRAMnWexv3C/Lt15ZZ0hZ4NMe46yzMTZm/XsSGZ20z8Td
+	F0VT5+51kCE4LPbnui77XEmA3+TIDBBWHg5lMybjzENfo2odgQZ7gICcKGY94Fos0x6IEx6uEF+
+	1gZaaPZsrwtPM6/ALT2VAF0ULad5xK4rxmNnjI6KOw2FrbXdnE80GlgmkWiWBMB5bu8X835iB6s
+	tO4s/tL2jgNyYl5EGAs/32sAw39cF5gkyZ26cJo4oREA4xlmyV5ViV4AB1GS7Udljwdct0ZJLWu
+	i95Nj3Jiw7T8HKt1/ApBNcipTsUHfSSwUu2UWKX6BwWQ0mCUpjgYsVp6LC36OsOQNFYspsNAS2a
+	RoJrV2fYsVWnI698IryeO4aQTYYrixy830UVkcbRiCoyap/Loa6dpS9PbVG+rLLqQ37nlSsRoh9
+	P0kbFMT7BEqONr2+YZjbD2aHCyqp4yJOFYrlqI7hs83zUiZt19lz3d2R88tQ+ObcJxelSw1RFQZ
+	c+YOejqld/YpcEm
+X-Google-Smtp-Source: AGHT+IGKPUZcH3wpBBQ4WcYbADX7gLEdRxi1mFofpl7lids9ns5f4RVp7JNyeHDMn8AquBZTDloDbA==
+X-Received: by 2002:a05:6a00:1385:b0:7a2:861d:bfb with SMTP id d2e1a72fcca58-7a441c3be6bmr1656542b3a.7.1761632931968;
+        Mon, 27 Oct 2025 23:28:51 -0700 (PDT)
 Received: from localhost.localdomain ([121.120.74.142])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a414015724sm10360781b3a.14.2025.10.27.23.28.45
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-7a414015724sm10360781b3a.14.2025.10.27.23.28.50
         (version=TLS1_3 cipher=TLS_CHACHA20_POLY1305_SHA256 bits=256/256);
-        Mon, 27 Oct 2025 23:28:46 -0700 (PDT)
+        Mon, 27 Oct 2025 23:28:51 -0700 (PDT)
 From: Andrew Yong <me@ndoo.sg>
 To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org,
 	Andrew Yong <me@ndoo.sg>
-Subject: [PATCH] wireless-regdb: Update regulatory info for Malaysia (MY) for 2024
-Date: Tue, 28 Oct 2025 14:28:40 +0800
-Message-ID: <20251028062841.49216-1-me@ndoo.sg>
+Subject: [PATCH v2] wireless-regdb: Update regulatory info for Malaysia (MY) for 2024
+Date: Tue, 28 Oct 2025 14:28:41 +0800
+Message-ID: <20251028062841.49216-2-me@ndoo.sg>
 X-Mailer: git-send-email 2.50.1
+In-Reply-To: <20251028062841.49216-1-me@ndoo.sg>
+References: <20251028062841.49216-1-me@ndoo.sg>
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20251027_232847_382242_F92C07A1 
-X-CRM114-Status: UNSURE (   7.00  )
+X-CRM114-CacheID: sfid-20251027_232852_890759_C6D1632C 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
