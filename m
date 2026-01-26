@@ -4,58 +4,53 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0A045E63CA4
-	for <wireless-regdb@archiver.kernel.org>; Sun, 25 Jan 2026 21:26:40 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3FBED13C2A
+	for <wireless-regdb@archiver.kernel.org>; Mon, 26 Jan 2026 14:54:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-Type:MIME-Version:Message-ID:Subject:From:To:Date:Reply-To:Cc:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=SshLZhQzifZiuzEz2HIJWPdY47YZPx5r4Q79+b43iVk=; b=Hjf2WbIeisHNc7HisJYrHmb92O
-	lvS9fUVyRDZWebBCqFzc0a9KOHucdUUW/8AfYJY3gapjSG2uP1FDhgpCu1F7DO+qA4lu2zBPM3uUs
-	zTSJ236wAw3mh3QV11xXJ+JD+JYC5K8XkOiUZomdfvigggMNGWD5pWNM8wIrG+YmRCN9svImLb+PO
-	WlS8L2vjJjRhkC5rx538AxMbrnYkT14ftSC2DFvpGk6jbTV1f9bWGUdrzEDKen+/MLR23gzyq1A7j
-	l8TScrqN5hH8BvSMOHhCTD35Juix5HX7KJ6Sb+1ZAOY4vnXJoZJerHKGJi9rYeccXpvsSgN4zGdvs
-	PBL9ynxw==;
+	bh=gNWrv6g1q8JcYuightOxARe9DuqzTKNXj4XW8Of2H2I=; b=V6tPD9hN1/zX7bvfOlvA1s77R4
+	ElrsV4XcLQBE8p9uwk7JfJ19QlLqenMjlXSCDjSVtR+Yx1i1MFZCyxL3DKnUUaAH7kNMjGkC+WKbT
+	ZHqe0QcUQmcyItRw/PqsY4FXrcB6ikTJD/fzlQIim0iO10eL2AqVjFiD/6m/8BY19oKbdcqQ/qQP0
+	9OmQcJrTLNIM/2jc/XUsg6okFQr/Fcr5jeJ+pLTztaJsf/WOQYWLs2LdtasW+RzA/QXJldGJixI9y
+	WwE+HWN0+renNrS4lkzLO/v4oFgUGUJeHxLYbqS2S0KlWBMhoCB2ZzlgycRye0XHeNxvOwUzAc6sg
+	INUVJfUw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vk7cy-0000000BWpy-0MLl;
-	Sun, 25 Jan 2026 21:26:36 +0000
-Received: from stravinsky.debian.org ([2001:41b8:202:deb::311:108])
+	id 1vkNyy-0000000Cj5v-1eyc;
+	Mon, 26 Jan 2026 14:54:24 +0000
+Received: from mail-4319.protonmail.ch ([185.70.43.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vk7cv-0000000BWpf-2gyx
+	id 1vkNyv-0000000Cj5X-2k2K
 	for wireless-regdb@lists.infradead.org;
-	Sun, 25 Jan 2026 21:26:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=debian.org;
-	s=smtpauto.stravinsky; h=X-Debian-User:Content-Transfer-Encoding:MIME-Version
-	:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=SshLZhQzifZiuzEz2HIJWPdY47YZPx5r4Q79+b43iVk=; b=Tjq6YAupEKmjpf98+i7mA36mCE
-	0Wvm2qYz5bjZb+okn10w80sMLG5DACggBmC5mTr5Rg+a1L5UvnYIonOul7hySSa9g842ZUhz4HiCd
-	scUyj7n6J13Zx8+veRja8WVC6yYluN2lVDu1EsPqiP+JgeoAy/Gju5jPbot28qbdgDUvyX2BKl2Vw
-	CWM8ZvpI2+WJ2EPaTCdq+VCBA4nks61ZvYH0eFaTD3VOa8AZ1/XVvjz1nEgdZY93hBRPgtik/gOOD
-	BERu1+fTr33zDTOiw7ZRovsXf8w/iOI9aRpN9InjMkylll6fazsqdyMEassO0sS/a7a//1xf5e5Yr
-	HEY8+P6g==;
-Received: from authenticated user
-	by stravinsky.debian.org with esmtpsa (TLS1.3:ECDHE_SECP256R1__RSA_PSS_RSAE_SHA256__AES_256_GCM:256)
-	(Exim 4.94.2)
-	(envelope-from <bage@debian.org>)
-	id 1vk7ct-00FgtB-9k; Sun, 25 Jan 2026 21:26:31 +0000
-From: Bastian Germann <bage@debian.org>
-To: linux-wireless@vger.kernel.org
-Cc: Bastian Germann <bage@debian.org>,
-	wireless-regdb@lists.infradead.org
-Subject: [PATCH] wireless-regdb: Port RSA signing to cryptography lib
-Date: Sun, 25 Jan 2026 22:26:19 +0100
-Message-ID: <20260125212622.28370-1-bage@debian.org>
-X-Mailer: git-send-email 2.51.0
+	Mon, 26 Jan 2026 14:54:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
+	s=protonmail; t=1769439258; x=1769698458;
+	bh=gNWrv6g1q8JcYuightOxARe9DuqzTKNXj4XW8Of2H2I=;
+	h=Date:To:From:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
+	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
+	b=ajPz+s6+H4/v6DOW1HyKJLnAEqFjfYvmk9KrXOYtTPsA6arI2FyslpAziUp9nW12j
+	 ahIh/jph/GkDCUImwUWXDks5OkMW/uuGEbvDOMPZEI7UNMDK1goc3tQAb+xUaxnyMb
+	 ni9LnTh4C/eITTwjhfS2I5ty03FrVTHl5HNO2oIks6z7X3z9QnOVZo8G+lbQyQrvtA
+	 KTknyiOGhKOGaRmB+SJJMhfH4ipBpHTY/fUXlB+BbFMTiZneRpF1yu6iKLjSHKcvVq
+	 EEH5O/P7BiaC3aQ1D0RA/9RlCQYWGCHyA6f4OPfwkVbbtmf1ZuUKCoK36YhHRKQiX+
+	 uVhpZxhFkZ93Q==
+Date: Mon, 26 Jan 2026 14:54:14 +0000
+To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+From: srl100 <srl100@proton.me>
+Subject: NO-OUTDOOR operation
+Message-ID: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
+Feedback-ID: 178115481:user:proton
+X-Pm-Message-ID: 9af3967c76a4b01f29a2af119051cdb9b14eb771
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
-X-Debian-User: bage
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260125_132633_683151_7CF1C166 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20260126_065422_282707_CB62CB0E 
+X-CRM114-Status: UNSURE (   2.70  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -71,65 +66,15 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Port the RSA signing from the deprecated M2Crypto library to the
-cryptography library.
+Am I right in thinking that the following entry in the regulatory database =
+means that it is not legal to use WiFi on the 2.4 or 5 GHz bands in Indones=
+ia?
 
-M2Crypto is no longer actively maintained. The cryptography library is
-the recommended replacement, offering better maintenance.
+country ID:
+=09(2400 - 2483.5 @ 40), (500 mW), NO-OUTDOOR
+=09(5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
+=09(5725 - 5825 @ 80), (200 mW), NO-OUTDOOR
+=09(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+=09(57000 - 64000 @ 2160), (10000 mW), NO-OUTDOOR
 
-Remove unused hashlib import.
-
-Signed-off-by: Bastian Germann <bage@debian.org>
----
- db2bin.py | 25 ++++++++++++++++---------
- 1 file changed, 16 insertions(+), 9 deletions(-)
-
-diff --git a/db2bin.py b/db2bin.py
-index 29ae313..a4fa3e5 100755
---- a/db2bin.py
-+++ b/db2bin.py
-@@ -2,7 +2,6 @@
- 
- from io import BytesIO, open
- import struct
--import hashlib
- from dbparse import DBParser
- import sys
- 
-@@ -125,19 +124,27 @@ if len(sys.argv) > 3:
-     # Load RSA only now so people can use this script
-     # without having those libraries installed to verify
-     # their SQL changes
--    from M2Crypto import RSA
-+    from cryptography.hazmat.primitives import hashes, serialization
-+    from cryptography.hazmat.primitives.asymmetric import padding
-+
-+    # load the private key
-+    with open(sys.argv[3], 'rb') as key_file:
-+        key = serialization.load_pem_private_key(key_file.read(), password=None)
- 
-     # determine signature length
--    key = RSA.load_key(sys.argv[3])
--    hash = hashlib.sha1()
--    hash.update(output.getvalue())
--    sig = key.sign(hash.digest())
-+    sig = key.sign(
-+        output.getvalue(),
-+        padding.PKCS1v15(),
-+        hashes.SHA1()
-+    )
-     # write it to file
-     siglen.set(len(sig))
-     # sign again
--    hash = hashlib.sha1()
--    hash.update(output.getvalue())
--    sig = key.sign(hash.digest())
-+    sig = key.sign(
-+        output.getvalue(),
-+        padding.PKCS1v15(),
-+        hashes.SHA1()
-+    )
- 
-     output.write(sig)
- else:
 
