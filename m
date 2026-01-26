@@ -4,54 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id E3FBED13C2A
-	for <wireless-regdb@archiver.kernel.org>; Mon, 26 Jan 2026 14:54:26 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B38D19501
+	for <wireless-regdb@archiver.kernel.org>; Mon, 26 Jan 2026 16:27:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:Subject:From:To:Date:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=gNWrv6g1q8JcYuightOxARe9DuqzTKNXj4XW8Of2H2I=; b=V6tPD9hN1/zX7bvfOlvA1s77R4
-	ElrsV4XcLQBE8p9uwk7JfJ19QlLqenMjlXSCDjSVtR+Yx1i1MFZCyxL3DKnUUaAH7kNMjGkC+WKbT
-	ZHqe0QcUQmcyItRw/PqsY4FXrcB6ikTJD/fzlQIim0iO10eL2AqVjFiD/6m/8BY19oKbdcqQ/qQP0
-	9OmQcJrTLNIM/2jc/XUsg6okFQr/Fcr5jeJ+pLTztaJsf/WOQYWLs2LdtasW+RzA/QXJldGJixI9y
-	WwE+HWN0+renNrS4lkzLO/v4oFgUGUJeHxLYbqS2S0KlWBMhoCB2ZzlgycRye0XHeNxvOwUzAc6sg
-	INUVJfUw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R0hEcAwD15dAFDpHiJsFrYCQxgDoNTEey+4kspjVoHg=; b=Rvr4ZzN/kUf0fD
+	xkraBXB7UUJv105Cqvx75OCr9ZZDZstph4jodJbpT5llncA5Kl4vyHBBCWXkNH0f+KzNwfFJRrDVy
+	JvJu3GW+Z72hSYTL5zTXW9c7R6WQzlWbAWkSH8WAAOh/rCGa7Tmrc4lJ9qQASsLI8I5tdRqgyGfUa
+	fJvUdlA+sj06FgGT9+EF63wjLgSl/yoGBtpiE9mo+Saqc6OAsZHfRGW2q9EE1wwQ7dJ4cpRfAz4EO
+	fJu4IsqxLyZvAeD3xwVG8hHuFbadDnKhMEG3NuZZ+nW6hU0etkIUEfiIF6gkXa5MO6iGY4Pid8Nm/
+	2jbua7XUPPf65WNhtGkA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkNyy-0000000Cj5v-1eyc;
-	Mon, 26 Jan 2026 14:54:24 +0000
-Received: from mail-4319.protonmail.ch ([185.70.43.19])
+	id 1vkPRU-0000000Cric-3gqJ;
+	Mon, 26 Jan 2026 16:27:56 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkNyv-0000000Cj5X-2k2K
+	id 1vkPRU-0000000CriN-12gg
 	for wireless-regdb@lists.infradead.org;
-	Mon, 26 Jan 2026 14:54:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=proton.me;
-	s=protonmail; t=1769439258; x=1769698458;
-	bh=gNWrv6g1q8JcYuightOxARe9DuqzTKNXj4XW8Of2H2I=;
-	h=Date:To:From:Subject:Message-ID:Feedback-ID:From:To:Cc:Date:
-	 Subject:Reply-To:Feedback-ID:Message-ID:BIMI-Selector;
-	b=ajPz+s6+H4/v6DOW1HyKJLnAEqFjfYvmk9KrXOYtTPsA6arI2FyslpAziUp9nW12j
-	 ahIh/jph/GkDCUImwUWXDks5OkMW/uuGEbvDOMPZEI7UNMDK1goc3tQAb+xUaxnyMb
-	 ni9LnTh4C/eITTwjhfS2I5ty03FrVTHl5HNO2oIks6z7X3z9QnOVZo8G+lbQyQrvtA
-	 KTknyiOGhKOGaRmB+SJJMhfH4ipBpHTY/fUXlB+BbFMTiZneRpF1yu6iKLjSHKcvVq
-	 EEH5O/P7BiaC3aQ1D0RA/9RlCQYWGCHyA6f4OPfwkVbbtmf1ZuUKCoK36YhHRKQiX+
-	 uVhpZxhFkZ93Q==
-Date: Mon, 26 Jan 2026 14:54:14 +0000
-To: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
-From: srl100 <srl100@proton.me>
-Subject: NO-OUTDOOR operation
-Message-ID: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
-Feedback-ID: 178115481:user:proton
-X-Pm-Message-ID: 9af3967c76a4b01f29a2af119051cdb9b14eb771
+	Mon, 26 Jan 2026 16:27:56 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 1F42B60130
+	for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 16:27:55 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9F6BC16AAE
+	for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 16:27:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1769444874;
+	bh=v6xqP4YBm6WGUxGEZnZIxK1wlGkNktq+EEbB6siMeGU=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=L2Ja1RphVmTWcIbriIH/gVPH/HNbnlvcCP20W8QMldVIhKATDbU0cht+SDELdm3Mp
+	 5dI4n3ZyYtwWiCB23TTUzv2ybfB2doUkGsxch1jNkC8BzBuAElEm4OsfIUOxJp52y2
+	 EOZTw/6lGfY4LjKVOfbywcNtdhaGdA2Kpba1bv96CvuE2LOR1LXxZGa914Gyxk6FLx
+	 67HogaPX6LxFI3UBEwpBcRrZuqKyk0gkp3j8t4qoO0PiI0s2h1WfkoulC320u8FQ2C
+	 10yNnYIz9wccQA1W/b4ypf2G3iMBuQ2bQW2BglRiZPSngarueBKgOXx4UdB3o6Xm+V
+	 WNgVn/X3dd4Cw==
+Received: by mail-lj1-f169.google.com with SMTP id 38308e7fff4ca-382fd45a1feso48676771fa.0
+        for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 08:27:54 -0800 (PST)
+X-Gm-Message-State: AOJu0Yz4cgllcfVNIqPP5asXVMNl9PZ5itcZa080P+0pjgIi7/3TFFOX
+	8AX+S/2nXHgNImeqNk17a5gGJmIOIrz7EUGdZebpirYkT42qopaLp4CBLfftnwQcR5OsGx56My7
+	GChERIwAgc7mYhd6jZ7B9IOYe+vSW4L8=
+X-Received: by 2002:a2e:bd0b:0:b0:383:6f5f:3322 with SMTP id
+ 38308e7fff4ca-385fae9de34mr17716041fa.20.1769444873174; Mon, 26 Jan 2026
+ 08:27:53 -0800 (PST)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+References: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
+In-Reply-To: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 27 Jan 2026 00:27:39 +0800
+X-Gmail-Original-Message-ID: <CAGb2v65DKxNt3Zg4PjCSi-spV_TuK=rDw9t0VMvafnXO-nDhxA@mail.gmail.com>
+X-Gm-Features: AZwV_QgNMv7lSRc5G9a0c7F2yoViORtjtOFC2NBV0_ABeiYrcMFkkyeAM2XClAY
+Message-ID: <CAGb2v65DKxNt3Zg4PjCSi-spV_TuK=rDw9t0VMvafnXO-nDhxA@mail.gmail.com>
+Subject: Re: NO-OUTDOOR operation
+To: srl100 <srl100@proton.me>
+Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260126_065422_282707_CB62CB0E 
-X-CRM114-Status: UNSURE (   2.70  )
-X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -63,18 +74,25 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Am I right in thinking that the following entry in the regulatory database =
-means that it is not legal to use WiFi on the 2.4 or 5 GHz bands in Indones=
-ia?
+On Mon, Jan 26, 2026 at 10:54=E2=80=AFPM srl100 <srl100@proton.me> wrote:
+>
+> Am I right in thinking that the following entry in the regulatory databas=
+e means that it is not legal to use WiFi on the 2.4 or 5 GHz bands in Indon=
+esia?
 
-country ID:
-=09(2400 - 2483.5 @ 40), (500 mW), NO-OUTDOOR
-=09(5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
-=09(5725 - 5825 @ 80), (200 mW), NO-OUTDOOR
-=09(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
-=09(57000 - 64000 @ 2160), (10000 mW), NO-OUTDOOR
+That's what the database currently says. If you have information to the
+contrary, please send a patch to update the rules.
 
+> country ID:
+>         (2400 - 2483.5 @ 40), (500 mW), NO-OUTDOOR
+>         (5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
+>         (5725 - 5825 @ 80), (200 mW), NO-OUTDOOR
+>         (5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+>         (57000 - 64000 @ 2160), (10000 mW), NO-OUTDOOR
+>
+>
 
