@@ -4,83 +4,82 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id AC215D35698
-	for <wireless-regdb@archiver.kernel.org>; Wed, 28 Jan 2026 09:17:28 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1A393D35697
+	for <wireless-regdb@archiver.kernel.org>; Wed, 28 Jan 2026 10:25:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=hPzz6Fs5J73M9AfzdnFQjFqLwU/A9pwIaV7/8cV24RY=; b=MYQb/H4TPaNKt3HgmGh+laYy5q
-	vak2m+miu66XLH+7KtNQLhWcJJYtyMw5MOroV6gH5oVKln25QomAcs12pI67s3YAFz8wzO0INHDw5
-	f1L3uboCrmVNk9x4yqsUnplwKZDhMGLAxMtX2oWvmrsRuM0G1sJcPlh2aNxNsXVSJZU1RIQdnrw+3
-	T5dI+v+oWt/OzEtqU+2reWy2wuLK2O4rWH+rEytt08oq8OMZ+hMvhmVKc/bcWeAAR4ICV8dTR+zYc
-	So/jWyG1d9K6fPZX0rBEa8qHOmpmWyEdwTTDJyWVkHGDogM9/N7M/tTuEuDbbVD9yLhjmQAr5cQRB
-	AQhVgMgg==;
+	bh=oMa+ftwzu5Zxyl8tszsEemLVa3VTrTazl/Cz2Z7s67E=; b=YQ++WmbGsM0tVcm52qcYeR5VbA
+	r/trFhWoqPklIVr8sKxX0HaRK+YGOBJ9WKTp1kT05ypAyk7DOe6RpZDxEcJaLy8gCderHfTtOyPto
+	nvw1LCNfaWzKmqw165sTM6r8elS4JTBr0v81YC0RYV+yUSNNyFURaVkZtyHbxd0ot+qIzJFRRYC7y
+	RqyJkZQ20vO+5t3stqgUCwJJaMT+TWbGpX6vAn9K1cl9a1y7WT8p3Ec7EONXwHrZPhJD2+Kea9SbQ
+	ajR145liI6NTkAyVKBSvLOR6OjLSUJoPa4MvFYPpfjAvTqV+UOe9gTQHrswjzO5MDY6mfra5lCDMz
+	yyhDV+Ig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vl1fx-0000000FjZI-1PNh;
-	Wed, 28 Jan 2026 09:17:25 +0000
-Received: from mail-pl1-x635.google.com ([2607:f8b0:4864:20::635])
+	id 1vl2kC-0000000FpXi-3usZ;
+	Wed, 28 Jan 2026 10:25:52 +0000
+Received: from relayout18.nic.in ([164.100.14.114])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vl1ft-0000000FjYX-15Vw
+	id 1vl2k6-0000000FpX1-1vv8
 	for wireless-regdb@lists.infradead.org;
-	Wed, 28 Jan 2026 09:17:24 +0000
-Received: by mail-pl1-x635.google.com with SMTP id d9443c01a7336-2a102494058so3422485ad.0
-        for <wireless-regdb@lists.infradead.org>; Wed, 28 Jan 2026 01:17:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1769591840; x=1770196640; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=hPzz6Fs5J73M9AfzdnFQjFqLwU/A9pwIaV7/8cV24RY=;
-        b=WxgSi7jou6ROpkwPrVr4oZ+5jY+VHbVZ4xRAK3d7H+px7KGMxBurD3v8778wYQRMNJ
-         SdWkkW03Faj7990h8oA8xnkTGJ7DLMr4uN6A6fBep7KXtHdWNXqfHkNhIRso/toErhdi
-         FvOCzTTIY4k4IODibHm+LoreT/grDo5PwFCaROD9kxhmGGg0Tb4dMsNTtH2+HifqNnic
-         YH3ruJUcvxsxXnLOXbAOZcm2fN9OPu0gb6Q/XzIIyEL/XJ7/JFn7KmMmjUKUBjBmpp58
-         2Nl0dcGi36hK4SZJyelbeF7uGuXO0IKBGZLIbI4rCSIuxP1q4j7Q7hei/RbJNcGOmgSP
-         zj2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20230601; t=1769591840; x=1770196640;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=hPzz6Fs5J73M9AfzdnFQjFqLwU/A9pwIaV7/8cV24RY=;
-        b=LIiKqOhJRfXp0ltcVsc+qYHIueTNEIqilZB+4LUAhr/SPyQKS5FWj8u30PyPHmtcnG
-         5aIvqXhbaZ1z5JooGoslL1ixx6sV5B/7Ik2I6fLJXkjcgLnIaHCgD7Nrq1FjA0/fd9u6
-         rG/3djG/hUjcsjU5HpZnm4hraFKzLe6QObjNrqODvzOFz97WlNLXm+4TTkR+5PpuJyK0
-         V2v2CYR7WGk+mdMUSC4vLtxhTNqWPKn1FZFTyrScSmrOQeibnOOrEFvLfry0DMqOZ8GJ
-         XQs17I9tFHeePNnkwXUQy764ZKsNU0BAJgqkCq1ELYdO9HIH4CqX6wspyZnK9JxBbfms
-         INcA==
-X-Forwarded-Encrypted: i=1; AJvYcCW6/d+oSMRDWVjKyo+kwnJccjofZKeTptIj5sRtXcKFnev9NWNKejMb9Qco7FTFAN+PFQ3Rpxr8w526gomxDg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YzvDZdzuRlyQFM+ckbU9cqkxFdxPAK0CS4wSJxkrmOQETe59wh2
-	SpuKFPeZJBVEmlAVk6/Q9St28slp1igU5agenWTRVN2AKfIHuFRv8mwF
-X-Gm-Gg: AZuq6aLVwCnEwRtwV7G2h8EftDdgQvQxM5yK7M8wg1y2uV28HQJEhEcoVeS6dqKrlEX
-	iU+q7Ea84DoiYxrmcVk+ID089kutw/hZSByIEom7Q8opysbPh3RURi+pUlF3bdyVYD9as8f0mep
-	4XTWyordwKGAB/2U929ZPtS145xk58RLQl3uZfmKbB7zwsudivd3E5UTsqJrPgVRKYh5fEUQL7K
-	Um45RhJwREMfuWkrwNEV/Y7BwhfXJfMWT4Otu6VqH1BxmbOOEPte7bExW3Do+KQvosZFy4NvNxi
-	4BuOk4jGdyHliqNLOxbSZV5xozvNtQESHeY8IDrxvhEgIgFTbMuRQv5RjzFIzLyjf8Em49A8lss
-	p7ucnE6BOP5M8AK/DONRgPMyWZ4Zp7itgRjqB/tEJAVe41pVJYMPmUO4LByGqkfpfeqVBollr0M
-	20YySh3A6qOrVJJc7JzDlXRMrtBY9YcerIYS212y5kays1dZhlfR13gg==
-X-Received: by 2002:a17:903:190:b0:2a7:a9f4:9fb6 with SMTP id d9443c01a7336-2a87132b446mr40781315ad.24.1769591839568;
-        Wed, 28 Jan 2026 01:17:19 -0800 (PST)
-Received: from localhost.localdomain (59-124-166-19.hinet-ip.hinet.net. [59.124.166.19])
-        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2a88b4c3d2bsm17106345ad.53.2026.01.28.01.17.18
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 28 Jan 2026 01:17:19 -0800 (PST)
-From: Ping-Ke Shih <pkshih@gmail.com>
+	Wed, 28 Jan 2026 10:25:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+  d=nic.in; i=@nic.in; q=dns/txt; s=NIC; t=1769595946;
+  x=1801131946;
+  h=from:to:cc:subject:date:message-id:mime-version:
+   content-transfer-encoding;
+  bh=3NDOijO22Tft7cIxE6M7OHKY8F0iaf8RKCkERV1nsbA=;
+  b=xZdFlT3ik5qoF5gbcjS3GNuU1Gch9kZ25Ys7HkHHaJZDs2BPpMhm5J/N
+   N8TKlXc/L5mFvDS9Ywt5jS35bdp+6CUW1FEgBRV3+z0zLMPqHT+3gaZCF
+   hGoifwaOcsDh6JcvcUjCW4eH+mXpt1xIlLu6HBViGcf0j2yw/e/RB3Gc3
+   E=;
+X-IPAS-Result: =?us-ascii?q?A2AkAADkiuNo/yh6KAo+HBwBAQEBAQEHAQESAQEEBAEBQ?=
+ =?us-ascii?q?AmBNgcBAQsBg0GBZYRUg1iERIlVnh2Bfw8BAQEBAQEBAQE9HQQBAYRBRoxJJ?=
+ =?us-ascii?q?zQJDgECBAEBAQEDAgMBAQEBAQEQAQEGAQEBAQEBBgWBIYYJRg2GXQIlDwFGK?=
+ =?us-ascii?q?AgFAiYCaQiDAgGCchQGQat5gTIaAmU7gx8DBAcBBg8KCxraI4FQBoEbLgGBa?=
+ =?us-ascii?q?YZnAYR8cIJIgi+CT4EUAYNogVABgRABAQEBAReBKDsJJ4MOgmkEgiKBFoQOg?=
+ =?us-ascii?q?iiJe4F6jgFIgQIcA1ksAVUTDQoLBwWBYwM1DAsuFW4yDg+BJ4ULhB4rT4UCg?=
+ =?us-ascii?q?RiDUyJrDwaBFYNaBolmD4ImAwsYDUgRLDcUGwY9AW4HmFSDSmEDKioClVETk?=
+ =?us-ascii?q?jmhEQeQPZU5TZd9A5JqAZkGjFqBLoh6jH1ZhlGBZBwCAwkHgR+DCFIZlQYRg?=
+ =?us-ascii?q?iyrCnACOgIHAQoBAQMJk2cBAQ?=
+IronPort-Data: A9a23:zS7MT6JSnIf7zu7TFE+RmJQlxSXFcZb7ZxGr2PjKsXjdYENS1mZTn
+ 2JJUG+OOvmPamKnc41+PYSw/U1X68PVyIU2SFAd+CA2RRqmi+KcXo3BcR2Y0wB+jyHnZBg6h
+ ynLQoCYdKjYdleF+lH3dOGJQUBUjcmgXqD7BPPPJhd/TAplTDZJoR94kobVuKYx6TSEK1rlV
+ e3a8pW31GCNhmYc3lI8s8qrtB5ptfLujzIU1nRWiSdj5QK2e9E9VfrzFInpR5fKatA88t2SG
+ 44v+IqEElbxpH/BPD8KfoHTKSXmSpaKVeSHZ+E/t6KK2nCurQRquko32WZ1hUp/0120c95NJ
+ NpltIGbVx0jMKP2pfkGWQUCEXFXPZ9oweqSSZS/mZT7I0zub3/3x/xkFwcwPIZd8ettHSdI9
+ PdeKTZlghKr3rrwnOr9E7M2wJh7RCXoFNp3VnVIwjjEF/84B5PKRb7D4fde3Tx2h8Ym8fP2P
+ pFCOGAxMkueC/FJEktKMa0Tnb2Vv2e8c2ZUjxHJmrAx+HeGmWSd15CoarI5YOeiQcRTg1bdu
+ WPc8mD0GQoyKtOS03yG/2iqi+uJmjn0MKoNFae18vNxmxiJy2MfAjUSVECnur+4jECkUt5SI
+ kBS/TAhxYAt+UqwZtrwRRu1pDiDpBF0ZjZLO7Rirl3VjPOOuUDFXgDoUwJ8VTDvj+duLRRC6
+ 7NDt4mB6eBH2FFNdU+gyw==
+IronPort-HdrOrdr: A9a23:fgurGK6YPgVHIZu7JQPXwNfXdLJyesId70hD6qm+c3Fom6uj5q
+ KTdZUgpHzJYVkqN03I9erqBEDiexPhHPxOj7X5VI3KNDUO01HFEGgN1+HfKkXbehHDyg==
+X-Talos-CUID: 9a23:QtFYBWxGQ2fhRP0mrkdiBgUVB+s7aHfTwk3tPlSyFTxrGJSVe3GprfY=
+X-Talos-MUID: =?us-ascii?q?9a23=3AhjWu1w04jOLDm2XVCT+huXmuAzUj//mXN20My6g?=
+ =?us-ascii?q?/pYqEbiBXeGuiljKsXdpy?=
+X-IronPort-Anti-Spam-Filtered: true
+Received: from unknown (HELO tlslabs.nic-cert.nic.in) ([10.40.122.40])
+  by relayin.nic.in with ESMTP; 28 Jan 2026 15:55:30 +0530
+From: gaurav.kansal@nic.in
 To: wens@kernel.org
 Cc: linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org
-Subject: [PATCH] wireless-regdb: Update regulatory info for Tunisia (TN) on 6GHz for 2025
-Date: Wed, 28 Jan 2026 17:16:34 +0800
-Message-Id: <20260128091634.28983-1-pkshih@gmail.com>
-X-Mailer: git-send-email 2.25.1
+	wireless-regdb@lists.infradead.org,
+	Gaurav Kansal <gaurav.kansal@nic.in>
+Subject: [PATCH] wireless-regdb: add IN rules for lower 6 GHz (5925-6425 MHz) LPI and VLP
+Date: Wed, 28 Jan 2026 15:55:24 +0530
+Message-ID: <20260128102525.872517-1-gaurav.kansal@nic.in>
+X-Mailer: git-send-email 2.47.3
 MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260128_011722_987251_99C85264 
-X-CRM114-Status: UNSURE (   6.66  )
+X-CRM114-CacheID: sfid-20260128_022548_313755_6E0A18D0 
+X-CRM114-Status: UNSURE (   5.26  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -96,38 +95,50 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-From: Ping-Ke Shih <pkshih@realtek.com>
+From: Gaurav Kansal <gaurav.kansal@nic.in>
 
-By decree no. 2024-641 of December 11, 2024 [1], which applies to
-frequency band 5925-6425 MHz, with power limits 200 mW, for use inside
-buildings, in compliance with EN 303 687.
+    DoT / Gazette notification (20 Jan 2026) delicensed lower 6 GHz (5925-6425 MHz).
+    Add rules for:
+     - Low Power Indoor (LPI) 5925-6425 MHz, up to 1000 mW (30 dBm) EIRP, NO-OUTDOOR
+     - Very Low Power (VLP) 5925-6425 MHz, up to 25 mW (14 dBm) EIRP
 
-[1] https://www.anf.tn/sites/default/files/2025-01/Arr%C3%AAt%C3%A92024_4611.pdf
-
-Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
+    References:
+     - DoT / Gazette notification (Jan 20, 2026)
+       https://blog.gauravkansal.in/2026/01/Gazette%20on%20the%20Use%20of%20Low%20Power%20and%20Very%20Low%20Power%20Wireless%20Access%20System%20in%20Lower%206%20GHz%20band%20-%202026.pdf
+       https://blog.gauravkansal.in/2026/01/Opening-India-Lower-6-GHz-Band-for-Wireless-Use:-A-Strategic-Regulatory-Landmark.html
+       https://en.wikipedia.org/w/index.php?title=List_of_WLAN_channels#India_2
+     - Linux wireless-regdb db.txt format docs
+    Signed-off-by: Gaurav Kansal gaurav.kansal@nic.in
 ---
- db.txt | 3 +++
- 1 file changed, 3 insertions(+)
+ db.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/db.txt b/db.txt
-index dc72989b5b40..7abbe3f1341a 100644
+index dc72989..0f90f6e 100644
 --- a/db.txt
 +++ b/db.txt
-@@ -1929,10 +1929,13 @@ country TH: DFS-FCC
- 	(5735 - 5835 @ 80), (30)
- 	(5925 - 6425 @ 320), (250 mW), NO-OUTDOOR
- 
-+# Source:
-+# https://www.anf.tn/sites/default/files/2025-01/Arr%C3%AAt%C3%A92024_4611.pdf
- country TN: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
-+	(5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
+@@ -974,12 +974,20 @@ country IL: DFS-ETSI
+ # Source:
+ # https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
+ # https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
++# Info about 6 GHz added by Gaurav Kansal (gaurav.kansal@nic.in)
++# Lower 6 GHz delicensed for India: 5925-6425 MHz (on 21.Jan.2026)
++# LPI: Low Power Indoor (indoor only) — 1000 mW = 30 dBm EIRP
++# VLP: Very Low Power (outdoor allowed at very low EIRP) — 25 mW = 14 dBm EIRP
++# https://blog.gauravkansal.in/2026/01/Opening-India-Lower-6-GHz-Band-for-Wireless-Use:-A-Strategic-Regulatory-Landmark.html
++# https://blog.gauravkansal.in/2026/01/Gazette%20on%20the%20Use%20of%20Low%20Power%20and%20Very%20Low%20Power%20Wireless%20Access%20System%20in%20Lower%206%20GHz%20band%20-%202026.pdf 
+ country IN:
+ 	(2402 - 2482 @ 40), (30)
+ 	(5150 - 5250 @ 80), (30)
+ 	(5250 - 5350 @ 80), (24), DFS
+ 	(5470 - 5725 @ 160), (24), DFS
+ 	(5725 - 5875 @ 80), (30)
++	(5925 - 6425 @ 320), (1000 mW), NO-OUTDOOR, AUTO-BW
++        (5925 - 6425 @ 320), (25 mW), AUTO-BW
  
  # Source:
- # Technical Criteria for Radio Devices and Systems Excluded from Frequency Allocation, Sept 9, 2022
+ # https://asnad.cra.ir/fa/Public/Documents/Details/73af8590-f065-eb11-968f-0050569b0899
 -- 
-2.25.1
+2.47.3
 
 
