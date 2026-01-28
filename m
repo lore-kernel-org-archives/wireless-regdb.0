@@ -4,65 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 88B38D19501
-	for <wireless-regdb@archiver.kernel.org>; Mon, 26 Jan 2026 16:27:58 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 0330DD35687
+	for <wireless-regdb@archiver.kernel.org>; Wed, 28 Jan 2026 07:43:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R0hEcAwD15dAFDpHiJsFrYCQxgDoNTEey+4kspjVoHg=; b=Rvr4ZzN/kUf0fD
-	xkraBXB7UUJv105Cqvx75OCr9ZZDZstph4jodJbpT5llncA5Kl4vyHBBCWXkNH0f+KzNwfFJRrDVy
-	JvJu3GW+Z72hSYTL5zTXW9c7R6WQzlWbAWkSH8WAAOh/rCGa7Tmrc4lJ9qQASsLI8I5tdRqgyGfUa
-	fJvUdlA+sj06FgGT9+EF63wjLgSl/yoGBtpiE9mo+Saqc6OAsZHfRGW2q9EE1wwQ7dJ4cpRfAz4EO
-	fJu4IsqxLyZvAeD3xwVG8hHuFbadDnKhMEG3NuZZ+nW6hU0etkIUEfiIF6gkXa5MO6iGY4Pid8Nm/
-	2jbua7XUPPf65WNhtGkA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=lvEF7zYkZKFSi3VO3yT0+mOYgl4BKcdxFX2CSjrNHNw=; b=Hm0tmCglnJaLfBbAxBe52xrvLj
+	9AL6Yn8FPsljVoaibxFmJXpdM7wHGhMg7JJWM14fVrt1zM5zKJ3HFW9Yr4itzvm0B8tE61Al0z7I1
+	JbjnwMBm9Fx/S2ujkJRT4cQ/ot+Wb/Q89C4Fag8nxmITP9/MJngQkQ+MX2kh5a5EeY6jIvFoWlVM8
+	Lf0rjFInbb1fraZ767TwXKvucxECKYn0ne2Y1ChGJSwYhUobagIukoI8wQmEWkjNyWYvF+dpebSuV
+	UTjAO/UyHqw9SdIoijCE/ytyR3vlMH9l28DEjjIc43qVCvKDTAC5w6d4CMh5DXtpTIPXdQQof1OcO
+	U0osHrig==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkPRU-0000000Cric-3gqJ;
-	Mon, 26 Jan 2026 16:27:56 +0000
-Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
+	id 1vl0Ca-0000000Fbfb-2C2L;
+	Wed, 28 Jan 2026 07:43:00 +0000
+Received: from mirror2.csie.ntu.edu.tw ([140.112.30.76] helo=wens.tw)
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vkPRU-0000000CriN-12gg
+	id 1vl0CX-0000000Fbdy-395C
 	for wireless-regdb@lists.infradead.org;
-	Mon, 26 Jan 2026 16:27:56 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1F42B60130
-	for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 16:27:55 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id C9F6BC16AAE
-	for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 16:27:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1769444874;
-	bh=v6xqP4YBm6WGUxGEZnZIxK1wlGkNktq+EEbB6siMeGU=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=L2Ja1RphVmTWcIbriIH/gVPH/HNbnlvcCP20W8QMldVIhKATDbU0cht+SDELdm3Mp
-	 5dI4n3ZyYtwWiCB23TTUzv2ybfB2doUkGsxch1jNkC8BzBuAElEm4OsfIUOxJp52y2
-	 EOZTw/6lGfY4LjKVOfbywcNtdhaGdA2Kpba1bv96CvuE2LOR1LXxZGa914Gyxk6FLx
-	 67HogaPX6LxFI3UBEwpBcRrZuqKyk0gkp3j8t4qoO0PiI0s2h1WfkoulC320u8FQ2C
-	 10yNnYIz9wccQA1W/b4ypf2G3iMBuQ2bQW2BglRiZPSngarueBKgOXx4UdB3o6Xm+V
-	 WNgVn/X3dd4Cw==
-Received: by mail-lj1-f169.google.com with SMTP id 38308e7fff4ca-382fd45a1feso48676771fa.0
-        for <wireless-regdb@lists.infradead.org>; Mon, 26 Jan 2026 08:27:54 -0800 (PST)
-X-Gm-Message-State: AOJu0Yz4cgllcfVNIqPP5asXVMNl9PZ5itcZa080P+0pjgIi7/3TFFOX
-	8AX+S/2nXHgNImeqNk17a5gGJmIOIrz7EUGdZebpirYkT42qopaLp4CBLfftnwQcR5OsGx56My7
-	GChERIwAgc7mYhd6jZ7B9IOYe+vSW4L8=
-X-Received: by 2002:a2e:bd0b:0:b0:383:6f5f:3322 with SMTP id
- 38308e7fff4ca-385fae9de34mr17716041fa.20.1769444873174; Mon, 26 Jan 2026
- 08:27:53 -0800 (PST)
-MIME-Version: 1.0
-References: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
-In-Reply-To: <gJk9K2NbSv84IW0dpE3w6ug7lbvQvz-uWkaxUH2igF7fcvblPCi-xchnclVDvO_cGtP34C08PKj2VQTxonbQ3Gm6M7Vy5PlyhrylOoJcMPo=@proton.me>
+	Wed, 28 Jan 2026 07:42:59 +0000
+Received: by wens.tw (Postfix, from userid 1000)
+	id B02405FD53; Wed, 28 Jan 2026 15:42:44 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 27 Jan 2026 00:27:39 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65DKxNt3Zg4PjCSi-spV_TuK=rDw9t0VMvafnXO-nDhxA@mail.gmail.com>
-X-Gm-Features: AZwV_QgNMv7lSRc5G9a0c7F2yoViORtjtOFC2NBV0_ABeiYrcMFkkyeAM2XClAY
-Message-ID: <CAGb2v65DKxNt3Zg4PjCSi-spV_TuK=rDw9t0VMvafnXO-nDhxA@mail.gmail.com>
-Subject: Re: NO-OUTDOOR operation
-To: srl100 <srl100@proton.me>
-Cc: "wireless-regdb@lists.infradead.org" <wireless-regdb@lists.infradead.org>
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: Chen-Yu Tsai <wens@kernel.org>,
+	druth@google.com,
+	Ping-Ke Shih <pkshih@realtek.com>
+Cc: wireless-regdb@lists.infradead.org,
+	linux-wireless@vger.kernel.org,
+	Johannes Berg <johannes@sipsolutions.net>
+Subject: [PATCH] wireless-regdb: Update regulatory info for Canada (CA) for 2025
+Date: Wed, 28 Jan 2026 15:42:34 +0800
+Message-ID: <20260128074236.965019-1-wens@kernel.org>
+X-Mailer: git-send-email 2.47.3
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260127_234257_916512_E0016D31 
+X-CRM114-Status: GOOD (  10.46  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -74,25 +56,103 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, Jan 26, 2026 at 10:54=E2=80=AFPM srl100 <srl100@proton.me> wrote:
->
-> Am I right in thinking that the following entry in the regulatory databas=
-e means that it is not legal to use WiFi on the 2.4 or 5 GHz bands in Indon=
-esia?
+Canada issued a new revision of its regulatory standards for 2.4 GHz
+and 5 GHz license-exempt local area network devices - RSS-247.
 
-That's what the database currently says. If you have information to the
-contrary, please send a patch to update the rules.
+Update the rules to match the new version. Fix up band boundaries and
+power limit values and units to match the text.
 
-> country ID:
->         (2400 - 2483.5 @ 40), (500 mW), NO-OUTDOOR
->         (5150 - 5350 @ 160), (200 mW), NO-OUTDOOR
->         (5725 - 5825 @ 80), (200 mW), NO-OUTDOOR
->         (5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
->         (57000 - 64000 @ 2160), (10000 mW), NO-OUTDOOR
->
->
+Note: the database is supposed to have values for e.i.r.p.. Most
+regulatory documents specify e.i.r.p. as well, except for FCC ones and
+any regions that have rules based on FCC ones.
+
+Details about the changes and justification for them are as follows.
+
+- 2.4 GHz band boundary aligned to actual text instead of WiFi channels
+
+- 2.4 GHz band changed from 30 dBm (1W) to 4 W
+  section 6.3.2 explicitly states e.i.r.p. limit at 4 W.
+
+- 5.15 ~ 5.25 GHz band power limit unit changed to mW
+  section 7.3.1.2 explicitly states e.i.r.p. limit at 200 mW.
+
+- 5.25 ~ 5.35 GHz band power limit changed to 500 mW
+  section 7.3.2.2 states e.i.r.p. limit at 1 W, but requires TPC for
+  e.i.r.p. above 500 mW. As the database nor Linux implements TPC,
+  the 500 mW limit is chosen.
+
+- 5.4 ~ 5.725 GHz band combined and power limit unit changed to mW
+  the new revision removed the restriction 5.6 ~ 5.65 GHz usage.
+  the two existing rules are combined to cover the whole band,
+  and the upper boundary has been increased to 5.73 GHz to cover
+  the whole WiFi channel and make it easier to write the rule,
+  like how the US rules are written.
+
+  section 7.3.3.2 states e.i.r.p. limit at 1 W, but requires TPC for
+  e.i.r.p. above 500 mW. As the database nor Linux implements TPC,
+  the 500 mW limit is chosen.
+
+- 5.725 ~ 5.85 GHz boundaries aligned and limit changed from 30 dBm (1W)
+  to 4 W; AUTO-BW added for combined usage with next band.
+
+  section 7.3.4.3 states maximum conducted power limit at 1 W, but no
+  explicit e.i.r.p. limit is given.
+
+  apply "e.i.r.p. = max conducted power + 6 dBi" conversion, arriving
+  at roughly 4 W. This aligns with the ratio for the 2.4 GHz band.
+
+- 5.85 ~ 5.895 GHz band newly opened in this revision
+  section 7.3.5.3 states maximum e.i.r.p. for indoor clients at 1 W or
+  30 dBm, with maximum e.i.r.p. spectral density at 14 dBm / MHz.
+
+  Apply spectral density limit at 20 MHz channel width, arriving at
+  roughly 27 dBm e.i.r.p. limit.
+
+  While the limit comes from the "indoor clients" rule, it is the lowest
+  limit of all the types, hence it should be applicable without any
+  restrictions.
+
+Signed-off-by: Chen-Yu Tsai <wens@kernel.org>
+---
+ db.txt | 19 ++++++++++++-------
+ 1 file changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/db.txt b/db.txt
+index dc72989..64bc853 100644
+--- a/db.txt
++++ b/db.txt
+@@ -388,15 +388,20 @@ country BZ: DFS-JP
+ 	(5735 - 5835 @ 80), (30)
+ 
+ # Sources:
+-# https://www.ic.gc.ca/eic/site/smt-gst.nsf/vwapj/rss-247-i2-e.pdf/$file/rss-247-i2-e.pdf
++# RSS-247 Issue 4
++# https://ised-isde.canada.ca/site/spectrum-management-telecommunications/en/devices-and-equipment/radio-equipment-standards/radio-standards-specifications-rss/rss-247-digital-transmission-systems-dtss-frequency-hopping-systems-fhss-and-licence-exempt-local
+ # https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf11750.html (6 GHz operation)
+ country CA: DFS-FCC
+-	(2402 - 2472 @ 40), (30)
+-	(5150 - 5250 @ 80), (23), NO-OUTDOOR, AUTO-BW
+-	(5250 - 5350 @ 80), (24), DFS, AUTO-BW
+-	(5470 - 5600 @ 80), (24), DFS
+-	(5650 - 5730 @ 80), (24), DFS
+-	(5735 - 5835 @ 80), (30)
++	(2400 - 2483.5 @ 40), (4000 mW)
++	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
++	(5250 - 5350 @ 80), (500 mW), DFS, AUTO-BW
++	# This range ends at 5725 MHz, but channel 144 extends to 5730 MHz.
++	# Since 5725 ~ 5730 MHz belongs to the next range which has looser
++	# requirements, we can extend the range by 5 MHz to make the kernel
++	# happy and be able to use channel 144.
++	(5470 - 5730 @ 160), (500 mW), DFS
++	(5730 - 5850 @ 80), (4000 mW), AUTO-BW
++	(5850 - 5895 @ 40), (27), AUTO-BW
+ 	(5925 - 7125 @ 320), (12), NO-OUTDOOR
+ 
+ # Source:
+-- 
+2.47.3
+
 
