@@ -4,66 +4,54 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7CB9CE8B396
-	for <wireless-regdb@archiver.kernel.org>; Wed,  4 Feb 2026 03:43:32 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26CD7E83EE9
+	for <wireless-regdb@archiver.kernel.org>; Wed,  4 Feb 2026 08:00:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6PUsJ3oHffAew2peFjRJXXg+SXN3S/y27O7OZ1c0rbM=; b=X1eEeEJvFZ+abi7T8fbjyB3tUb
-	mwdVsjx/wmk9eJ5Ve9l+FMOmqIGJMCUl3ySLPF6es+xdRPshhFTnuSSb5nrLo85drDVPO+vyOJxCA
-	bb0Yj8YIHkAXAC1veq4tMa3IhgryZTCFd8klTDKpQysJ+n9jmmNIMBup9DpygHVZqYls30Z0s/cWg
-	X4NIIJxL50+8wd34cY/Vch4bAB9cmVHpMGWUzYKUVoa66yEWyZ9vd81HBIxjK0jDKtKwv7c5ozB+X
-	kKrAR4qRCPJbLshZCg6bv0YeeqbdY2dqMmVM9LvSzlnZ2bCv3guqTdkeWepe6XfYrRcHLe90QXFTm
-	p87JCD0g==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=r5Db1GKC3YkLaa83CuEgkM2ITa8IrLFjPaaZtyxWabg=; b=nYbQuQSTq9i4QUxi26K/oraIiG
+	k6H5v2BhnOevLIf77trIj7nwudApDE5iLYbXIHp04FsI3JwV1G1FvXIgoNCHkI+Df7VBkt5UCAvOJ
+	a2qBGdfE+MJln2UbkIWaInuAEN+b+a8ZIFynfNHwBcrdgiLX6jKu5eXyt2Cfh/74jwHQrN2a6VmFd
+	rmkJJFzFZcfyVs5uZ/rfvYXq2Kde/Uh8yV0WsYLQLOr/wF3pHO41FVTCDqluhZCox7afPi3n7M2qy
+	c4SZrlLVJpmQsCn2MKiwRpAM3gars5drXaEikyaNOMpW+dEKCQ5Yp5cj2DVFpovRZM7p6zvokkEVs
+	aSltPPkw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnTnd-00000007qqb-0pCc;
-	Wed, 04 Feb 2026 03:43:29 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1vnXo2-000000084sF-1uhq;
+	Wed, 04 Feb 2026 08:00:10 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnTna-00000007qpa-0FSU
+	id 1vnXo1-000000084s8-0pEu
 	for wireless-regdb@lists.infradead.org;
-	Wed, 04 Feb 2026 03:43:27 +0000
+	Wed, 04 Feb 2026 08:00:09 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id C772740973;
-	Wed,  4 Feb 2026 03:43:24 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 83A96C4CEF7;
-	Wed,  4 Feb 2026 03:43:24 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id 31259600C4
+	for <wireless-regdb@lists.infradead.org>; Wed,  4 Feb 2026 08:00:08 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id BDC64C19422;
+	Wed,  4 Feb 2026 08:00:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770176604;
-	bh=kQ/ERtPP7p9PZXpGbCbXhbGlyWanAWjvnU7Wnyr2Fjs=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
-	b=Dnr9Sa6I1SUxLgBQa5j+Qb7oXB72eZlbYwNZznfLPFmGMSsNwbGeh6Ewhyyh7Z843
-	 b9PQ+7jemQRbPsTaPzVoAQizKq4VFuGJfuUFWxksrauFiRcGrRELcvcO3Hq7zXBQTA
-	 Tazny8xvODg2j5N6Sk92VLIEfbZe7KQhwQr74CbHYF34Bqnc3YvsNG+AZ+CVKOXHjb
-	 gLQk6t5n/T0+nMmgbIcCtWa7NexI+BVQTMqnbTn+A4STwOAh7hT8HO31+YEadASuTH
-	 bAAiLdMbYwpHZ8cxkwyBE0H8FoDQhBm/H2Epfr/UPASbyq16ostUcKxAPWQjYX10yi
-	 LLZh4Y9G/tEhg==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id D3FD65FBBD;
-	Wed, 04 Feb 2026 11:43:21 +0800 (CST)
+	s=k20201202; t=1770192007;
+	bh=vTiQTdd9vDrV9zXzcEUrf2+RxihH/o9Y2WUHdTQeDIU=;
+	h=Date:From:To:Subject:From;
+	b=OKjcJ3qT9mOy9FlicxRUZ5yfGUU5cpYk4lfFXHCmy/qSBxJoTnOJvett7ZpRESYFc
+	 ibkPXiCbklu1yFDtdlzMzx/IkSxGXJEEXzpr42/72PbTb0J+kE8UXjIIQI/z8Qt9vX
+	 wRo/8uVmyVskNGPbWnrgD1gKjsS5RcrFIVfEyJqVsOYGMKrFbJiCrcmEHUpqXiK1j3
+	 vfGT1BV9b7WafMSgy1FQOznSvYbpiRH8Hc9bU/iXdznI2AVrJGtvvQz1nhPnaRZCis
+	 eFW82tFTy/cNkP7r1jOfJamqget4jmtxAhUUOw73QEaKQw1PjFLgIwoZGaLEf1lHlr
+	 xR0J+u/rNTJfQ==
+Received: by wens.tw (Postfix, from userid 1000)
+	id 70E885FD85; Wed, 04 Feb 2026 16:00:05 +0800 (CST)
+Date: Wed, 4 Feb 2026 16:00:05 +0800
 From: Chen-Yu Tsai <wens@kernel.org>
-To: druth@google.com, Ping-Ke Shih <pkshih@realtek.com>, 
- Chen-Yu Tsai <wens@kernel.org>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, 
- Johannes Berg <johannes@sipsolutions.net>
-In-Reply-To: <20260128074236.965019-1-wens@kernel.org>
-References: <20260128074236.965019-1-wens@kernel.org>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Canada (CA)
- for 2025
-Message-Id: <177017660183.3007562.5582386138915193564.b4-ty@kernel.org>
-Date: Wed, 04 Feb 2026 11:43:21 +0800
+To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Subject: [ANN] wireless-regdb: master-2026-02-04
+Message-ID: <aYL8hbqyYUSaF9vn@wens.tw>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.14.3
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260203_194326_119572_D67DCA7D 
-X-CRM114-Status: UNSURE (   6.07  )
-X-CRM114-Notice: Please train this message.
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -78,26 +66,26 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, 28 Jan 2026 15:42:34 +0800, Chen-Yu Tsai wrote:
-> Canada issued a new revision of its regulatory standards for 2.4 GHz
-> and 5 GHz license-exempt local area network devices - RSS-247.
-> 
-> Update the rules to match the new version. Fix up band boundaries and
-> power limit values and units to match the text.
-> 
-> Note: the database is supposed to have values for e.i.r.p.. Most
-> regulatory documents specify e.i.r.p. as well, except for FCC ones and
-> any regions that have rules based on FCC ones.
-> 
-> [...]
+A new release of wireless-regdb (master-2025-10-07) is available at:
 
-Applied to master in wens/wireless-regdb.git, thanks!
+https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2025.10.07.tar.xz
 
-[1/1] wireless-regdb: Update regulatory info for Canada (CA) for 2025
-      https://git.kernel.org/wens/wireless-regdb/c/1a729aef1a0d
+The short log of changes since the master-2025-07-10 release is below.
 
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
+--
 
+Andrew Yong (3):
+      wireless-regdb: Update broken link in regulatory.bin(5) manpage
+      wireless-regdb: Update regulatory info for Malaysia (MY) for 2024
+      wireless-regdb: Update regulatory info for Malaysia (MY) for 2025
+
+Chen-Yu Tsai (2):
+      wireless-regdb: Update regulatory info for Canada (CA) for 2025
+      wireless-regdb: update regulatory database based on preceding changes
+
+Ping-Ke Shih (1):
+      wireless-regdb: Update regulatory info for Tunisia (TN) on 6GHz for 2025
+
+Richard Huynh (1):
+      wireless-regdb: Update regulatory info for Australia (AU) for 2025
 
