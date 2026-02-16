@@ -4,57 +4,55 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49D80E83EED
-	for <wireless-regdb@archiver.kernel.org>; Wed,  4 Feb 2026 08:13:25 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id B2CC8E8382E
+	for <wireless-regdb@archiver.kernel.org>; Mon, 16 Feb 2026 19:59:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:MIME-Version:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
+	Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=zLenAfCsCGLlhmHlNPHCSXBf+sL0Q1rB3C8t/l55x/I=; b=GwGxwmTAEGLHKgfk0Mb0KD/rlm
-	Z7C+Ow09rW+i/0NOsfG551TnY/tqw9Oq16OrcYOHCFS4JCOeyCAvkbTe0FpN9FGM3YRJ8rbAASX0v
-	dxUFXxl5wQMgZJoh6I1/UzhIXUjn+vdXNXenokGNS/8STdRklXxfvqx3iphiYS0Xu0g7dntL0Vsmv
-	N4CarE11bt2DS1680xG/6OGfvWY7xj3BCiK+0ivbQPuZYqPGIicMnVrclxhoja5jR6U5wuEjVTJpA
-	7K/S56/z394uIMa7deH5nUSKJLgrY4ftugKq3YHH8wTE50YExPe/+ssHigXc6UW3GiIegTO7WL741
-	7+Wo6d7A==;
+	bh=DSN7PiLtx+ANcreT/HRfr1QMbigDkFx5l4kRCDWolDs=; b=Cufaa920ZzDzuqpxBKbVgU5mGD
+	tHwxfkh/O10y09mZPnXQh1/X8rAZdQX9zZmV67lHhiFKbhp5WyGW+hB5z9K2VxdkMdUgoj5LOOCOw
+	X8tEReEj/+lKW/0xrVELEh9EKQytPaypPq15/Q33DELbtri55eqyFTl0kV278jJHxot9mbtvPbRmt
+	AFC/vGehAiwKMlTKLuKD4z5GARXEG/I4aqAX8spgogLONJJxuExQRzkqP7CTLBEBwVamlAOb8/1+D
+	c30n/tPVSePXa9UgZX8U3lUWZLuCdnu5HjoJmZTMAI0cz+xLeLcHeJxAPGKCHJxb7IYII3wqcaY3I
+	pQPzZ3KA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnY0q-000000085mZ-0qHN;
-	Wed, 04 Feb 2026 08:13:24 +0000
-Received: from sea.source.kernel.org ([172.234.252.31])
+	id 1vs4kC-00000007Dsm-34wP;
+	Mon, 16 Feb 2026 19:58:56 +0000
+Received: from maynard.decadent.org.uk ([65.21.191.19])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1vnY0o-000000085m1-0XKt
+	id 1vs4kA-00000007DsM-0K0O
 	for wireless-regdb@lists.infradead.org;
-	Wed, 04 Feb 2026 08:13:23 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 5707D40E1F
-	for <wireless-regdb@lists.infradead.org>; Wed,  4 Feb 2026 08:13:21 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 169EBC4CEF7;
-	Wed,  4 Feb 2026 08:13:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1770192801;
-	bh=IZOarF8CokO3Ex+jOx9HTEBKwfpWKUVfKkWgNHPto8w=;
-	h=Date:From:To:Subject:From;
-	b=KXqLtwZPHx4aUw11ygDi2OjFAa3PdOVE85t2JB4FwXPr5MXRUneT3m9qVusYX0gzb
-	 Sg1ewX9g6QT2nZN4+BviI9SyZGVCJsc4cjDwfFOQ5ztWx1PZ+36Rbt0BhWF7dLGAk4
-	 /2Op6/yIwvmieenK8nzJTknyDgG6AxUKQFJ7hhTVpQ54fEYwwQFky7saB/I+edaU1K
-	 nDo28QITLiCC95T0mQXzIF24YfAyyCdBt+W/lfLulSnUL5Jw6cpJ9UgEEvQgkjEeg3
-	 x3OFH8SEbkvC2eg1LvopT7zXrCKkCy3AUdmPcIqp5rhcvyj869CxPDiSkS14W7NY4M
-	 pmO/lPO1kPVQw==
-Received: by wens.tw (Postfix, from userid 1000)
-	id E36155FD85; Wed, 04 Feb 2026 16:13:18 +0800 (CST)
-Date: Wed, 4 Feb 2026 16:13:18 +0800
-From: Chen-Yu Tsai <wens@kernel.org>
-To: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
-Subject: [ANN] wireless-regdb: master-2026-02-04
-Message-ID: <aYL_nqHUidmUCDOe@wens.tw>
+	Mon, 16 Feb 2026 19:58:55 +0000
+Received: from [2a02:578:851f:1502:391e:c5f5:10e2:b9a3] (helo=deadeye)
+	by maynard with esmtps  (TLS1.3) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <ben@decadent.org.uk>)
+	id 1vs4k5-001HC7-2d;
+	Mon, 16 Feb 2026 19:58:48 +0000
+Received: from ben by deadeye with local (Exim 4.99.1)
+	(envelope-from <ben@decadent.org.uk>)
+	id 1vs4k3-00000003Q0C-20nf;
+	Mon, 16 Feb 2026 20:58:47 +0100
+Date: Mon, 16 Feb 2026 20:58:47 +0100
+From: Ben Hutchings <benh@debian.org>
+To: linux-wireless@vger.kernel.org
+Cc: wireless-regdb@lists.infradead.org
+Subject: wireless-regdb: Fix regulatory.bin signing with new M2Crypto
+Message-ID: <aZN29_ghakDPwhFG@decadent.org.uk>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="uNzBFFrzIRlQrca1"
 Content-Disposition: inline
+X-SA-Exim-Connect-IP: 2a02:578:851f:1502:391e:c5f5:10e2:b9a3
+X-SA-Exim-Mail-From: ben@decadent.org.uk
+X-SA-Exim-Scanned: No (on maynard); SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260204_001322_186971_E538FC11 
-X-CRM114-Status: UNSURE (   3.77  )
+X-CRM114-CacheID: sfid-20260216_115854_138178_D2BA1290 
+X-CRM114-Status: UNSURE (   7.77  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -70,26 +68,65 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-A new release of wireless-regdb (master-2026-02-04) is available at:
 
-https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2026.02.04.tar.xz
+--uNzBFFrzIRlQrca1
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-The short log of changes since the master-2025-10-07 release is below.
+In M2Crypto version 0.45.1, the default hash algorithm for
+M2Crypto.RSA.sign() changed from SHA-1 to SHA-256.  Since the
+signature on regulatory.bin uses a SHA-1 hash, db2bin.py generates
+invalid signatures for regulatory.bin if a recent version of M2Crypto
+is installed.
 
---
+I reported this incompatible change as
+<https://todo.sr.ht/~mcepl/m2crypto/389>.
 
-Andrew Yong (3):
-      wireless-regdb: Update broken link in regulatory.bin(5) manpage
-      wireless-regdb: Update regulatory info for Malaysia (MY) for 2024
-      wireless-regdb: Update regulatory info for Malaysia (MY) for 2025
+There is an obvious workaround, which is to add an explicit
+algo=3D'sha1' parameter.  This works with old and new versions of
+M2Crypto.
 
-Chen-Yu Tsai (2):
-      wireless-regdb: Update regulatory info for Canada (CA) for 2025
-      wireless-regdb: update regulatory database based on preceding changes
+Signed-off-by: Ben Hutchings <benh@debian.org>
+---
+--- a/db2bin.py
++++ b/db2bin.py
+@@ -131,13 +131,13 @@ if len(sys.argv) > 3:
+     key =3D RSA.load_key(sys.argv[3])
+     hash =3D hashlib.sha1()
+     hash.update(output.getvalue())
+-    sig =3D key.sign(hash.digest())
++    sig =3D key.sign(hash.digest(), algo=3D'sha1')
+     # write it to file
+     siglen.set(len(sig))
+     # sign again
+     hash =3D hashlib.sha1()
+     hash.update(output.getvalue())
+-    sig =3D key.sign(hash.digest())
++    sig =3D key.sign(hash.digest(), algo=3D'sha1')
+=20
+     output.write(sig)
+ else:
 
-Ping-Ke Shih (1):
-      wireless-regdb: Update regulatory info for Tunisia (TN) on 6GHz for 2025
+--uNzBFFrzIRlQrca1
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Richard Huynh (1):
-      wireless-regdb: Update regulatory info for Australia (AU) for 2025
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEErCspvTSmr92z9o8157/I7JWGEQkFAmmTdvIACgkQ57/I7JWG
+EQkZyA/9FkM2E1/bNCioIRzrNJn2krbNJADmYPYVC/VOVMUgaksQr9YTBmx8amMf
+fsZlIP3vLH5OTNylhy4DowK4jgsoJrH8lexnE6qfjJ6PjfKKhmZpXn0tnb1JAcD2
+owEDoFy5zaLhbsF+1zNXaxAgh288ZDo8OQbcpAr/KelPltvu0WcwVlT5QmM8PNT0
+iFBb8OVbsZxVnQdMG6yax6q0OnzyrNDeZJvXnWJQwv0WfLHahO4Yhv29d1IfVZJ/
+prWOQFjFZSi9k7exOYK5So35jlw0xKAsTE5Je4j6DD6kWNLfsXXDD5eelMWSF0T9
+e7cFE3+oenS6YrMoxCTrbwSkIUaDBspGH8DE6jpQ5YgpsUgX2t2xuBpwBrMK1GKa
+NokpapAHa91Lj8t4ZyqeXagVQlbIeSNgZNOC6NCvP3hJnPm/9fh6C1WD6WlUa7Ag
+XtVh23sQUpbFxpD57R1vSRGoGN35OseW4c5L2i9dB9O9Gn90bCmGNWhx02G9C/QI
+JE4lHrRidAAY+NVHn21wCymr+ucCyW/Q9WRTrAd+GzVgusGCJQfeyfg0vbDSHJQ1
+Urq+yLBa82FAiElmf/aMPKru6lUfYrW2BT/rn3LfeTjQQZk+iFfGb3torxiPOGMY
+HWimOkEmqUcKvIBsqPv8X5mUFrJeNwI0dMFBSFQqFH1gsqqXA9c=
+=+UIr
+-----END PGP SIGNATURE-----
+
+--uNzBFFrzIRlQrca1--
 
