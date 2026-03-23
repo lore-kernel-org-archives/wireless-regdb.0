@@ -4,53 +4,60 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 633D4D58CD3
-	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Mar 2026 05:13:09 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34CF8D58CD1
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Mar 2026 05:13:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
 	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=Mk4KhCwvPLJIgjSWM84BWyhnx25J5sLHhMgbtunZjAw=; b=vcNxchvB19o/nbWyd6QaFlaxkP
-	a8GKO/mdC965Bnk5L/zMcpSAzViXIUalbUdqZzgluw++5NXOHKhBpKpen+K23gE2BH5xDJMd4aYzw
-	ocv8kwOsQxsIE69dzTg/EXcXgqXBgkM3ndSlfXM/HXJzXEvo3GfO30r6Pn/O0JXpJOILNaY1HYkcQ
-	fPzY0uUBWiTufzKAkbQmM8+OhS4fboClzuT7OPTHPyPErumoyMSCS/QlciW/84RF074nLZtK+QrNj
-	6a69oorGN0259/5tnGfwuum+4Y8I6kotZTsiyM6RVf2YXF/BgNu9BGQGCcgq4A4i76eBzS4r+lyeF
-	0Q73HJZQ==;
+	bh=Vt+u9EYCpPu2fR8hgidrbMnNnl6klsZ7sj9T1g3p4UY=; b=L2xeOrMx0o0Eli76NWov9N96sU
+	asLlrK6QjF/bROXtrktx/MwQMGzOjDe907sowIsloOHzxRjg8yMIam0fh3k5VP1OcPV2UWPIFS6IA
+	fUCbt+njacSkBnC8rzMi+AhMAMEUNBdgtc/WN/kNlU2NcfdN7UaPycB0g4huAKCUcDjTgB4/lT7d4
+	pnDDp5fNxnDnfZq5f1PwWIuQ7i/QAP+5ZBAT8q2qCZrT8sbXsgn2AVU3yr84G0g1UGZPgjnYcd5tS
+	/4W0SCRLBfKx/QS2gPxbmt2aG/XBcRogczrXnTNAClInXz3dY4cEw0tQBWYLcSzClmvGyRGTC855c
+	9fNkSzwA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4XbA-0000000G34F-2iVN;
-	Mon, 23 Mar 2026 05:13:08 +0000
-Received: from mirror2.csie.ntu.edu.tw ([140.112.30.76] helo=wens.tw)
+	id 1w4Xbt-0000000G37r-3wwK;
+	Mon, 23 Mar 2026 05:13:53 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4Xb6-0000000G33j-0q1O
+	id 1w4Xbs-0000000G37l-3yTh
 	for wireless-regdb@lists.infradead.org;
-	Mon, 23 Mar 2026 05:13:07 +0000
-Received: by wens.tw (Postfix, from userid 1000)
-	id 486865FBB2; Mon, 23 Mar 2026 13:12:44 +0800 (CST)
+	Mon, 23 Mar 2026 05:13:53 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id AD47560051;
+	Mon, 23 Mar 2026 05:13:51 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 40AEFC4CEF7;
+	Mon, 23 Mar 2026 05:13:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774242831;
+	bh=n8xTohlnci96Oepuq8kcoqGBK5qDG9Vzur+/7V2FVpY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date:From;
+	b=b3c2eCbAd7ljBkT4V6MwASehoc/Ro+ELm6D5iPZGmPutSynvrnN43dwGFO6sU2hAp
+	 dh/5cFoeow6gjncbrmUMQ05YXZxsEnAJjPoir0AlD/lOTTO9vtyjOGovSnNWLxXeGH
+	 CNvwJRULWKub4CvjELznYEMFly7KRMbgOh6TpkT7Ui5pV+eZoFpROcq7s7fqpBJ3fX
+	 GHRI1SkykEKmiFyzUo8a0qP2xSO+Ll8EvxwEJWHUvagEDrLGNoaDtvysZhCmR2+q0J
+	 7rq6+vqnnEOh/kjMNP9yHCZ3OfEe3cbRFwsyDte78FGZSw26PHI3llbnW2LlMJ21Kt
+	 +x9W3gVzU90Bg==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 6009F5F82A;
+	Mon, 23 Mar 2026 13:13:48 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>
-Cc: druth@google.com,
-	Ping-Ke Shih <pkshih@realtek.com>,
-	wireless-regdb@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	Johannes Berg <johannes@sipsolutions.net>,
-	Gaurav Kansal <gaurav.kansal@nic.gov.in>,
-	Degrader Snehil <degradersnehil@gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory rules for India (IN) on 6GHz
-Date: Mon, 23 Mar 2026 13:12:40 +0800
-Message-ID: <177424269386.1094638.13596680362967400436.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.47.3
-In-Reply-To: <20260311085141.1634383-1-wens@kernel.org>
-References: <20260311085141.1634383-1-wens@kernel.org>
+To: Ping-Ke Shih <pkshih@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+In-Reply-To: <20260319023538.7707-1-pkshih@gmail.com>
+References: <20260319023538.7707-1-pkshih@gmail.com>
+Subject: Re: [PATCH v2] wireless-regdb: Add regulatory info for CEPT
+ countries FO, GI, IM, SM and VA listed by WiFi Alliance
+Message-Id: <177424282838.1096404.2213827406738511152.b4-ty@kernel.org>
+Date: Mon, 23 Mar 2026 13:13:48 +0800
 MIME-Version: 1.0
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_221304_401073_F7F2DB6E 
-X-CRM114-Status: UNSURE (   5.52  )
-X-CRM114-Notice: Please train this message.
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.14.3
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -65,32 +72,26 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Wed, 11 Mar 2026 16:51:40 +0800, Chen-Yu Tsai wrote:
-> The Government of India has officially opened this band for licence-exempt
-> use via Gazette Notification G.S.R. 47(E), dated January 20, 2026,
-> published January 21, 2026, issued by the Ministry of Communications
-> under the Indian Telegraph Act, 1885 and the Indian Wireless Telegraphy
-> Act, 1933.
+On Thu, 19 Mar 2026 10:35:38 +0800, Ping-Ke Shih wrote:
+> In commit 5a8ced5ad313 ("wireless-regdb: Update regulatory info for CEPT
+> countries for 6GHz listed by WiFi Alliance"), the following are skipped as
+> they do not have corresponding entries in the database yet.
 > 
-> Gazette details:
->   Title   : Use of Low Power and Very Low Power Wireless Access System
->             including Radio Local Area Network in Lower 6 GHz Band
->             (Exemption from Licensing Requirement) Rules, 2026
->   File No : 24-04/2025-UBB
->   Gazette : No. 47, CG-DL-E-21012026-269488
->   Signed  : Devendra Kumar Rai, Joint Secretary, Ministry of Communications
->   URL : https://www.dot.gov.in/static/uploads/2026/02/88f0ac8c74eb6f6907934d17d0015ab5.pdf
+>      - Faroe Islands (FO)
+>      - Gibraltar (GI)
+>      - Isle of Man (IM)
+>      - San Marino (SM)
+>      - Holy See (Vatican City State) (VA)
 > 
 > [...]
 
-Late notification.
-
 Applied to master in wens/wireless-regdb.git, thanks!
 
-[1/1] wireless-regdb: Update regulatory rules for India (IN) on 6GHz
-      https://git.kernel.org/wens/wireless-regdb/c/5db6ce73e616
+[1/1] wireless-regdb: Add regulatory info for CEPT countries FO, GI, IM, SM and VA listed by WiFi Alliance
+      https://git.kernel.org/wens/wireless-regdb/c/3ceaf3bc0a3d
 
 Best regards,
 -- 
 Chen-Yu Tsai <wens@kernel.org>
+
 
