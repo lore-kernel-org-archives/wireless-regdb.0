@@ -4,69 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 943F5D58CD1
-	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Mar 2026 05:07:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 3F001D58CD1
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Mar 2026 05:08:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u17ucUDWyHoz12eiqNuGcSe43UvJhvtRW9UHDTt8vC8=; b=FJxh0MQyUmoTL5
-	a9scvklBbRR9TD1nOc6WuUX+ggFTLr614U53eRz2Ccxs6Xld5GDrO9TbvQQg4zEAHicXTpparUCOR
-	5b0/FV+Yv6d5LR7vWf1Hh6GTAk6tPF9UJ5wm7K3zVCgjP94ChkdgQt5H9CGLF/ZUmnEYUplKaUZ8A
-	JE2BOlXX1fcsFz2dbViVhlxYKheNWBmoClhHTYtoIOF0F5NHoRbPrYMTKPPlwbBHgbYz7q0oM1Xsr
-	m2bQIv+TFrBU9C92lwt/8cN8yO3f1zyNJUR0BX5zvL/R9blt5JIYwfPh6EQqkwEMsrewQwjphKzRP
-	vpwUYtCZWr7Mh5e2kwHw==;
+	List-Owner; bh=urdlVe/lcU6z4GV9IglqEB1t0rmhmEATtHSfcd3O1iE=; b=cryNARoRDioVBy
+	H7+eGGB4+wM7MrUgi5gA8SgEJgDtyO+N+s6AX/5X/YGDvhgeOWTkHmO2sFa+pyoLnrgIuW01iHR+G
+	FBWMytFJnM2j6reWYhBEXboGmwmvh10AECEWhVCvLlYDwYwT1JuM3kfs6klBpScZYQsj5BASxvl9U
+	RVusx/Q0axlcnkpwyiQ+CU4CTIFlBCAYb81I6rY7/tZIHOnZRHCysdRyVe1IrhD9Gv/M9WwE6qJre
+	+vJquSMNgdXxFQKjAATR/lCpUHCPh0LKf88XO29JPDX8HX8TVjop6XGiYCH/519/LzCey6qnOPtP2
+	p1sdo/LKSllBGJF6hnmA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4XVd-0000000G2rf-2l0k;
-	Mon, 23 Mar 2026 05:07:25 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1w4XWO-0000000G2uo-42I5;
+	Mon, 23 Mar 2026 05:08:12 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w4XVa-0000000G2rF-2FNY
+	id 1w4XWM-0000000G2uR-0RAD
 	for wireless-regdb@lists.infradead.org;
-	Mon, 23 Mar 2026 05:07:24 +0000
+	Mon, 23 Mar 2026 05:08:12 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id CB2DC43D1D
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:07:18 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC15AC4CEF7
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:07:18 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 66362402D7
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:08:09 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 4625BC4CEF7
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:08:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1774242438;
-	bh=sLcVd4BfxLbz51Qpm3+Zxr/F9Yo3nuTokM6mB+pQSQo=;
+	s=k20201202; t=1774242489;
+	bh=3M/qa2j2XtSav5vEQ9cbpA94fhQS57if053QslqBV7E=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=JlxGCfCIDj7636DN2MbKZpxZhyJkhh0IwUmFgBkfucTfAXSlNf9aHt/0EYOgjfv1M
-	 YG5zvmKWd/Rq7f7+E/NfHU+Gjel6RegcEie6ljBNK0FeAdXchjOjnBGCyK9FSD1aTI
-	 5mbZ4JaiXyreoKi6p+np13zbzC0ZzJ11rvwZUVRtfRsu0ypsDwtE0e15nhg87HNEcM
-	 B9uQ1hoHaWQzZiOGL5KUp0AF6F8ZNjrNaAaSBdBr6wtzJ9fmdoJJZFQcTVnQsbCH+1
-	 U5P6fE7RB0uIUygJn/zBre3lrYzIDxp9VQJzjb/5zvFHl2LadtcCFEk/8bYoy6XDIF
-	 ijhh7XgamcO7g==
-Received: by mail-lj1-f178.google.com with SMTP id 38308e7fff4ca-38be66a9fc0so24240961fa.1
-        for <wireless-regdb@lists.infradead.org>; Sun, 22 Mar 2026 22:07:18 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AJvYcCUYP6QhK5IvoymhruyqTPUeLhe5YFRVXTYJ3qnNlpYJ1R/5P1/jyn6UF15da3quH9DoTqD1Vn8eAaZrW0dy5Q==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwWRXtfcDz/2na8nN9XMPlrWKynKro7kwS2wD+mBsZSZk4ZWZym
-	k0i3wW61pm7nvAew/x1yNFcNaiqkwI0PI0Q/xUJ5Z3zxt6ddYLD4OU4cH591BZ1yIEx9Bielshv
-	bdR9CLB1FMFvkJIhJrLxfFGNRSo3ezgs=
-X-Received: by 2002:a2e:3514:0:b0:38a:55b7:dfa8 with SMTP id
- 38308e7fff4ca-38bf962906bmr24897971fa.13.1774242436867; Sun, 22 Mar 2026
- 22:07:16 -0700 (PDT)
+	b=eyTR2j6WMeQDnZ13+rZfQkANPKQSgcg4IN92FSdrU2ffWJvgfcSaw5jeWw4+pOS0G
+	 XcIIg+0AunhYGl02HrI3/ptDdPcL9S+/vQgEZNArlyos9tJlTjGjewR55vKrBhElG7
+	 +ZxUqLcIyuJhgT4CJJnidj/ay1+rzxGlhNQZn3tZgfYhIHVJUTmP5RvCLzwt6w0znR
+	 8Wy8OtTJBM5MssIfuIzsWzYxNAD8SB6O6PV3rLEmRKoHvmmzP0EniNchPOzdSp3hZx
+	 S0Ya1BkbjgoLkjmuXUYv7F9FOy21pZFpjgLXwWMtnBzO8jKbVmSZJ4AU0fpWbxtNhd
+	 ttEAPcqFBbTeg==
+Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-38a32d36396so34403951fa.0
+        for <wireless-regdb@lists.infradead.org>; Sun, 22 Mar 2026 22:08:09 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCWJNiq3B2s729kTjYtlnUWoJyDbs8CDwL9quaKlE34rasgcHXbkdySQBG9PGqqFpdkrPvDOipuOuTFR+F8rCw==@lists.infradead.org
+X-Gm-Message-State: AOJu0YxIWqG+X7Po/I9TKrM8mgz3hsWuZ3bpYbQDyD/hP7ZNJBSKSyII
+	n2k2mSoTXA8eaYQ6VFp4nueRNAf0k24Q8gNRCshiI1GYF8EYOOB3koXRBVWWfm2cR4fZwORsudt
+	UJcJ5PPi5iABsRNcfyWaAaPVpXTbvLQE=
+X-Received: by 2002:a05:651c:1a1e:b0:38b:d126:8ff2 with SMTP id
+ 38308e7fff4ca-38bf9d13c28mr32429411fa.8.1774242487659; Sun, 22 Mar 2026
+ 22:08:07 -0700 (PDT)
 MIME-Version: 1.0
-References: <C9C14F68-BFFF-4BF6-A8AA-60E5EB445F4E@fitzsimons.org>
-In-Reply-To: <C9C14F68-BFFF-4BF6-A8AA-60E5EB445F4E@fitzsimons.org>
+References: <20260125212622.28370-1-bage@debian.org>
+In-Reply-To: <20260125212622.28370-1-bage@debian.org>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 23 Mar 2026 13:07:03 +0800
-X-Gmail-Original-Message-ID: <CAGb2v662bq4Edw_wW07fc=dNkv8OErReOMycMZwhwQucgj-jtA@mail.gmail.com>
-X-Gm-Features: AQROBzD_wEg_4B9BhQMFl0knBEArpYxmf5LvwMWuAnqAm8Usmu9ngi9umE1JeBA
-Message-ID: <CAGb2v662bq4Edw_wW07fc=dNkv8OErReOMycMZwhwQucgj-jtA@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update Australia (AU) 6 GHz band to 6585 MHz
-To: bruce@fitzsimons.org
+Date: Mon, 23 Mar 2026 13:07:55 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64KgRdrSAbCXDh4nuqQa3Gftmdk8Nt7AmC4RFU28NoY6w@mail.gmail.com>
+X-Gm-Features: AQROBzDfDB9RDuBpgX5Kwyrvb0UbEjorp9OJFk0F63qxs0y5IMAIcFNsoN7bvHw
+Message-ID: <CAGb2v64KgRdrSAbCXDh4nuqQa3Gftmdk8Nt7AmC4RFU28NoY6w@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Port RSA signing to cryptography lib
+To: Bastian Germann <bage@debian.org>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260322_220722_603237_0B67AD12 
-X-CRM114-Status: GOOD (  16.14  )
+X-CRM114-CacheID: sfid-20260322_220810_818879_8F006B65 
+X-CRM114-Status: GOOD (  15.77  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -82,45 +82,78 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Sun, Dec 7, 2025 at 5:06=E2=80=AFPM <bruce@fitzsimons.org> wrote:
+On Mon, Jan 26, 2026 at 5:26=E2=80=AFAM Bastian Germann <bage@debian.org> w=
+rote:
 >
+> Port the RSA signing from the deprecated M2Crypto library to the
+> cryptography library.
 >
-> Extend the 6 GHz band allocation for Australia from 5925-6425 MHz
-> to 5925-6585 MHz, adding 160 MHz of additional spectrum.
+> M2Crypto is no longer actively maintained. The cryptography library is
+> the recommended replacement, offering better maintenance.
 >
-> This change reflects the Australian Radiofrequency Spectrum Plan
-> Variation 2025 (No. 1), which took effect on 1 October 2025.
+> Remove unused hashlib import.
 >
-> References:
-> - ACMA Outcomes Paper: Future use of the upper 6 GHz band (December 2024)
->   https://www.acma.gov.au/sites/default/files/2024-12/Outcomes%20paper%20=
--%20Future%20use%20of%20the%20upper%206%20GHz%20band_0.pdf
->
-> Signed-off-by: Bruce Fitzsimons <bruce@fitzsimons.org>
+> Signed-off-by: Bastian Germann <bage@debian.org>
 
-Sorry for getting to this just now. I somehow accidentally archived it.
+Sorry for getting to this just now. I somehow accidentally archived it,
+so I ended up taking Ben Hutching's patch instead.
 
-Thanks for the patch. I believe it was already covered by a previous
-change updating all the rules for AU.
+
+Thanks
+ChenYu
 
 > ---
-> db.txt | 3 ++-
-> 1 file changed, 2 insertions(+), 1 deletion(-)
+>  db2bin.py | 25 ++++++++++++++++---------
+>  1 file changed, 16 insertions(+), 9 deletions(-)
 >
-> diff --git a/db.txt b/db.txt
-> index fdc2c13..7eac515 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -159,7 +159,8 @@ country AU: DFS-ETSI
-> (5850 - 5875 @ 20), (25 mW), AUTO-BW
+> diff --git a/db2bin.py b/db2bin.py
+> index 29ae313..a4fa3e5 100755
+> --- a/db2bin.py
+> +++ b/db2bin.py
+> @@ -2,7 +2,6 @@
 >
-> # Item 63AA (25 mW if outdoors)
-> - (5925 - 6425 @ 160), (250 mW), NO-OUTDOOR
-> + # Extended to 6585 MHz as of 1 October 2025
-> + (5925 - 6585 @ 160), (250 mW), NO-OUTDOOR
+>  from io import BytesIO, open
+>  import struct
+> -import hashlib
+>  from dbparse import DBParser
+>  import sys
 >
-> # Item 65
-> (57000 - 71000 @ 2160), (20000 mW), NO-OUTDOOR
-> --
-> 2.43.0
+> @@ -125,19 +124,27 @@ if len(sys.argv) > 3:
+>      # Load RSA only now so people can use this script
+>      # without having those libraries installed to verify
+>      # their SQL changes
+> -    from M2Crypto import RSA
+> +    from cryptography.hazmat.primitives import hashes, serialization
+> +    from cryptography.hazmat.primitives.asymmetric import padding
+> +
+> +    # load the private key
+> +    with open(sys.argv[3], 'rb') as key_file:
+> +        key =3D serialization.load_pem_private_key(key_file.read(), pass=
+word=3DNone)
+>
+>      # determine signature length
+> -    key =3D RSA.load_key(sys.argv[3])
+> -    hash =3D hashlib.sha1()
+> -    hash.update(output.getvalue())
+> -    sig =3D key.sign(hash.digest())
+> +    sig =3D key.sign(
+> +        output.getvalue(),
+> +        padding.PKCS1v15(),
+> +        hashes.SHA1()
+> +    )
+>      # write it to file
+>      siglen.set(len(sig))
+>      # sign again
+> -    hash =3D hashlib.sha1()
+> -    hash.update(output.getvalue())
+> -    sig =3D key.sign(hash.digest())
+> +    sig =3D key.sign(
+> +        output.getvalue(),
+> +        padding.PKCS1v15(),
+> +        hashes.SHA1()
+> +    )
+>
+>      output.write(sig)
+>  else:
+>
 
