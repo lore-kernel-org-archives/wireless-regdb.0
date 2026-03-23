@@ -4,99 +4,69 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 7815B1088E65
-	for <wireless-regdb@archiver.kernel.org>; Thu, 19 Mar 2026 02:36:33 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 943F5D58CD1
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Mar 2026 05:07:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-Id:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=c7UzL6QGLhGmKpQzbDFFkiRj8Hy4paFdOUTt9ZLsBz4=; b=jKy2S8F1SzgCJZH26JNteHv7e7
-	OVLx1Snsg0muq3jRMJv14UN4OiF3tftwHLnmRUcclvMCob5gp+MIpd7+9C14hOLzp8aaOHSL98m5V
-	H9xB36ufErnv8YgKIj7d26Bvbr373BTfqyUWVvmRD3lL+wEWocpXcOQTHR+JoaN+PbwkiYhQsvNq4
-	PfFYilmevg2junBADlhEac9VYWchXkWkKdMubTwg+29n5eF795IcFL/LmiGjX9q66cRX4ipDjQR7F
-	N35A80VV3Cj4PYn1u9AV5NM89c1Bzp2fZGZ/vQWUSVMODehYOrs4uEYfibdpt3FH36j5IQ3kXT8v6
-	CDKKIKgQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u17ucUDWyHoz12eiqNuGcSe43UvJhvtRW9UHDTt8vC8=; b=FJxh0MQyUmoTL5
+	a9scvklBbRR9TD1nOc6WuUX+ggFTLr614U53eRz2Ccxs6Xld5GDrO9TbvQQg4zEAHicXTpparUCOR
+	5b0/FV+Yv6d5LR7vWf1Hh6GTAk6tPF9UJ5wm7K3zVCgjP94ChkdgQt5H9CGLF/ZUmnEYUplKaUZ8A
+	JE2BOlXX1fcsFz2dbViVhlxYKheNWBmoClhHTYtoIOF0F5NHoRbPrYMTKPPlwbBHgbYz7q0oM1Xsr
+	m2bQIv+TFrBU9C92lwt/8cN8yO3f1zyNJUR0BX5zvL/R9blt5JIYwfPh6EQqkwEMsrewQwjphKzRP
+	vpwUYtCZWr7Mh5e2kwHw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w33FR-00000009lb6-0rOS;
-	Thu, 19 Mar 2026 02:36:33 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1w4XVd-0000000G2rf-2l0k;
+	Mon, 23 Mar 2026 05:07:25 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w33FP-00000009laT-1D5X
-	for wireless-regdb@bombadil.infradead.org;
-	Thu, 19 Mar 2026 02:36:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=c7UzL6QGLhGmKpQzbDFFkiRj8Hy4paFdOUTt9ZLsBz4=; b=lZGsn5V9xooSfJgrLMV/eml8OQ
-	XeVjmRpHYxrTOQCog/sL3xYaMpzCoPg7Etvpx9aAn2NZja/Z0L0oh1z6vGgKvX43HwDRK6Tlj6Jn5
-	TMMmK2HzX5lo5KfLv9A58qUKHbjfJFA1293FI3aaMC0EKkySDHlqUFzNpUfpWYJJYrudtqNKg6suR
-	h/fLpP/38phimEl/fpkbKiWGpbT88hCGiObNBNRI9W9gIqXLhn00/jgl1DdTP/gGdQ/cBXqmVNoZm
-	oFFD5A+G2+/fC0dd5iiOCGubuVzoZAPxK4Ez4CkcqcoUP1tmhO7ikU/xlTGw0TMzVty5A61cAj+O5
-	9eV2DxWA==;
-Received: from mail-pl1-x62e.google.com ([2607:f8b0:4864:20::62e])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1w33Es-0000000CaCM-2nlS
+	id 1w4XVa-0000000G2rF-2FNY
 	for wireless-regdb@lists.infradead.org;
-	Thu, 19 Mar 2026 02:36:26 +0000
-Received: by mail-pl1-x62e.google.com with SMTP id d9443c01a7336-2aecefc7503so1350455ad.1
-        for <wireless-regdb@lists.infradead.org>; Wed, 18 Mar 2026 19:35:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20230601; t=1773887756; x=1774492556; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=c7UzL6QGLhGmKpQzbDFFkiRj8Hy4paFdOUTt9ZLsBz4=;
-        b=DRqI5r08emW/ufnOa686m9t1of/jsnq3dY7fbR3TrlRcEdEleCCBQcrgQltpvQJ2v/
-         L5mo4zbmFIUo1/O115EtvC43RToh2VzymyZgXdEi1RCoOqvuczbLeGtE5A+vcn9oV6HG
-         qBXVCUM6LgO3R/O0TJV+z9UldHkhIlJ4Bru7A7UQ0Lf8bdhyMV4XGiXYmPk7OMtDi8Iy
-         +omGPnqTka1xe4h6yOJqiyXqDwzJuKt4/C+pQexBUJ8SymCrEzJNRxHOGuy147Aiwtps
-         7iMk0pFAN8l1ZYeEKKovP1vnJldFZ/4hg4HMGddFCzjL0wvPB8c3O+l+KrEUu38BG1Yb
-         jfDQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1773887756; x=1774492556;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=c7UzL6QGLhGmKpQzbDFFkiRj8Hy4paFdOUTt9ZLsBz4=;
-        b=CiTxBHfsRo6iK7V1vTrkOJEyTw+uffUPqAi02C2DnTYJeXG+GPaGeFhxsdkLyb1HOU
-         I25DsJKYLYsmvIy3Abxbs/p1ZkIh54cnjo+8u83RnHEPnuAfWGSOR0KSBz94OsEhxSpn
-         tCkG5yX6tRRAinYwXHE8RrijqlRkjzy7VweJjQEYrR3u+LBb/wfpJaf8QI2JC1jEtZ80
-         2OITTRFVMx2lnBnGRKLNrMQAPjlZA9zmAJaUCDCBYBl98qatjuoJjQJK6+iCkibMPPq/
-         ENtzolAEcSU3XMH1eZm78GXrQTQvmxiU9dFtjOqkiDC8J++5UVcWGBJUTJVKpijpRHnb
-         gAbQ==
-X-Forwarded-Encrypted: i=1; AJvYcCXDsC+1tzJYe6t7HTSWjCEcnRQkIfdd/FingnJnJKPSBL8pX3S/E1L/eQHYjSekr+7Xh7GFTI0bHgWrnEqyqA==@lists.infradead.org
-X-Gm-Message-State: AOJu0YzsLIIuGbQn2gF1C5MVZus2L6YEGuRGaQViaDcTTfmOO3gp2nGo
-	NpTeP01fnDqVeqTdxi/nZxmDfJ866T8Cjv4Smhlj2TFp/T+63N0C5iJu
-X-Gm-Gg: ATEYQzxjMkXKOVvv5EYwG/ulPHBP13mOxpcf2T2FP1SVupwKq2FHUem0G7XaMuxRxw2
-	YN2plGk753LhXEYZ7RO/H884VJ3TF2x4Vb/ua8bTISG0XjUd1zSm+peaJhhzSYTypQAIgnRmPOq
-	2U11avHPSJxZ69s05WMGlO/bVMlMvrAGcD1HmrPlYftblA8qvJ0+Szq1Qp3HXXwPWSlX0tyCd30
-	om5dnOI4kXg10trvp0c3yAT5JfhJjFsVMO3JrN4l3mhIm9Wcf7ky5FBKvKH8l1+9J7yokds7+AK
-	LPyRe7DVUlae5CogUGH6VJoGAijv5ruPb55zpHN7z12nteUotCNwOpwF4+QMl8NqDNeKl3fIH2d
-	U5jzNHaKEdaZ8yeBhKDjwBB8GPSVuzW/C0dsnk1GIp9A3J/2nTh4HFjP2GJJhccvD+ES3UHYL5q
-	Ha/EhlK6iXMI3lkknte3i92XeaWErCci4sy13SJxQ+T46I838RURGs+vxOUgMlDuk=
-X-Received: by 2002:a17:903:37c6:b0:2ab:2633:d981 with SMTP id d9443c01a7336-2b06e3e0441mr54309415ad.32.1773887755691;
-        Wed, 18 Mar 2026 19:35:55 -0700 (PDT)
-Received: from localhost.localdomain (61-216-20-61.hinet-ip.hinet.net. [61.216.20.61])
-        by smtp.googlemail.com with ESMTPSA id d9443c01a7336-2b06e5f0e8dsm38596595ad.51.2026.03.18.19.35.54
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 18 Mar 2026 19:35:55 -0700 (PDT)
-From: Ping-Ke Shih <pkshih@gmail.com>
-To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org,
-	wireless-regdb@lists.infradead.org
-Subject: [PATCH v2] wireless-regdb: Add regulatory info for CEPT countries FO, GI, IM, SM and VA listed by WiFi Alliance
-Date: Thu, 19 Mar 2026 10:35:38 +0800
-Message-Id: <20260319023538.7707-1-pkshih@gmail.com>
-X-Mailer: git-send-email 2.25.1
+	Mon, 23 Mar 2026 05:07:24 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id CB2DC43D1D
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:07:18 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id AC15AC4CEF7
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Mar 2026 05:07:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1774242438;
+	bh=sLcVd4BfxLbz51Qpm3+Zxr/F9Yo3nuTokM6mB+pQSQo=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=JlxGCfCIDj7636DN2MbKZpxZhyJkhh0IwUmFgBkfucTfAXSlNf9aHt/0EYOgjfv1M
+	 YG5zvmKWd/Rq7f7+E/NfHU+Gjel6RegcEie6ljBNK0FeAdXchjOjnBGCyK9FSD1aTI
+	 5mbZ4JaiXyreoKi6p+np13zbzC0ZzJ11rvwZUVRtfRsu0ypsDwtE0e15nhg87HNEcM
+	 B9uQ1hoHaWQzZiOGL5KUp0AF6F8ZNjrNaAaSBdBr6wtzJ9fmdoJJZFQcTVnQsbCH+1
+	 U5P6fE7RB0uIUygJn/zBre3lrYzIDxp9VQJzjb/5zvFHl2LadtcCFEk/8bYoy6XDIF
+	 ijhh7XgamcO7g==
+Received: by mail-lj1-f178.google.com with SMTP id 38308e7fff4ca-38be66a9fc0so24240961fa.1
+        for <wireless-regdb@lists.infradead.org>; Sun, 22 Mar 2026 22:07:18 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AJvYcCUYP6QhK5IvoymhruyqTPUeLhe5YFRVXTYJ3qnNlpYJ1R/5P1/jyn6UF15da3quH9DoTqD1Vn8eAaZrW0dy5Q==@lists.infradead.org
+X-Gm-Message-State: AOJu0YwWRXtfcDz/2na8nN9XMPlrWKynKro7kwS2wD+mBsZSZk4ZWZym
+	k0i3wW61pm7nvAew/x1yNFcNaiqkwI0PI0Q/xUJ5Z3zxt6ddYLD4OU4cH591BZ1yIEx9Bielshv
+	bdR9CLB1FMFvkJIhJrLxfFGNRSo3ezgs=
+X-Received: by 2002:a2e:3514:0:b0:38a:55b7:dfa8 with SMTP id
+ 38308e7fff4ca-38bf962906bmr24897971fa.13.1774242436867; Sun, 22 Mar 2026
+ 22:07:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+References: <C9C14F68-BFFF-4BF6-A8AA-60E5EB445F4E@fitzsimons.org>
+In-Reply-To: <C9C14F68-BFFF-4BF6-A8AA-60E5EB445F4E@fitzsimons.org>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Mon, 23 Mar 2026 13:07:03 +0800
+X-Gmail-Original-Message-ID: <CAGb2v662bq4Edw_wW07fc=dNkv8OErReOMycMZwhwQucgj-jtA@mail.gmail.com>
+X-Gm-Features: AQROBzD_wEg_4B9BhQMFl0knBEArpYxmf5LvwMWuAnqAm8Usmu9ngi9umE1JeBA
+Message-ID: <CAGb2v662bq4Edw_wW07fc=dNkv8OErReOMycMZwhwQucgj-jtA@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update Australia (AU) 6 GHz band to 6585 MHz
+To: bruce@fitzsimons.org
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260319_023620_430866_B1563E10 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20260322_220722_603237_0B67AD12 
+X-CRM114-Status: GOOD (  16.14  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -108,151 +78,49 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-From: Ping-Ke Shih <pkshih@realtek.com>
+On Sun, Dec 7, 2025 at 5:06=E2=80=AFPM <bruce@fitzsimons.org> wrote:
+>
+>
+> Extend the 6 GHz band allocation for Australia from 5925-6425 MHz
+> to 5925-6585 MHz, adding 160 MHz of additional spectrum.
+>
+> This change reflects the Australian Radiofrequency Spectrum Plan
+> Variation 2025 (No. 1), which took effect on 1 October 2025.
+>
+> References:
+> - ACMA Outcomes Paper: Future use of the upper 6 GHz band (December 2024)
+>   https://www.acma.gov.au/sites/default/files/2024-12/Outcomes%20paper%20=
+-%20Future%20use%20of%20the%20upper%206%20GHz%20band_0.pdf
+>
+> Signed-off-by: Bruce Fitzsimons <bruce@fitzsimons.org>
 
-In commit 5a8ced5ad313 ("wireless-regdb: Update regulatory info for CEPT
-countries for 6GHz listed by WiFi Alliance"), the following are skipped as
-they do not have corresponding entries in the database yet.
+Sorry for getting to this just now. I somehow accidentally archived it.
 
-     - Faroe Islands (FO)
-     - Gibraltar (GI)
-     - Isle of Man (IM)
-     - San Marino (SM)
-     - Holy See (Vatican City State) (VA)
+Thanks for the patch. I believe it was already covered by a previous
+change updating all the rules for AU.
 
-Look up the CEPT decisions [2], and add entries along with decisions [3],
-[4] and [5] for 2/5/6 GHz regulations.
-
-The 2 GHz band is now governed by ERC Recommendation 70-03 [6] with the
-withdrawal of ERC Decision ERC/DEC/(01)07 by ECC Decision (11)05 [3].
-By ERC Recommendation 70-03 annex 3 (WIDEBAND DATA TRANSMISSION SYSTEMS):
-
- * 2400-2483.5 MHz
-   - 100 mW
-
-The 5 GHz band by ECC Decision (04)08 [4]:
-
- * 5150-5250 MHz
-   - 200 mW
-   - Indoor use
- * 5250-5350 MHz
-   - 200 mW (due to TPC required, -3dBm, 100 mW is adopted)
-   - DFS, TPC
-   - Indoor use
- * 5470-5725 MHz
-   - 1 W (due to TPC required, -3dBm, 500 mW is adopted)
-   - DFS, TPC
-   - Indoor and outdoor use
-
-The 6 GHz band by ECC Decision (20)01 [5]:
-
- * LPI devices (adopted)
-   - 5945-6425 MHz
-   - Restricted to indoor use only
-   - Maximum mean e.i.r.p.: 23 dBm
-   - Maximum mean e.i.r.p. density: 10 dBm/MHz
- * VLP devices
-   - 5945-6425 MHz
-   - Indoors and outdoors
-   - Maximum mean e.i.r.p.: 14 dBm
-   - Maximum mean e.i.r.p. density: 1 dBm/MHz
-
-[1] https://www.wi-fi.org/regulations-enabling-6-ghz-wi-fi
-[2] https://docdb.cept.org/document/category/ECC_Decisions?status=ACTIVE
-[3] https://docdb.cept.org/download/1535
-[4] https://docdb.cept.org/download/4501
-[5] https://docdb.cept.org/download/4685
-[6] https://docdb.cept.org/download/4916
-
-Signed-off-by: Ping-Ke Shih <pkshih@realtek.com>
----
-v2: 
- - rephrase commit message of 2GHz part
- - update ERC Recommendation 70-03 [6] link to the latest
-   https://docdb.cept.org/download/4916
- - fix 2GHz freqnecy range starting from 2400MHz
----
- db.txt | 35 +++++++++++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
-
-diff --git a/db.txt b/db.txt
-index d54ef78e0da8..343b256063a9 100644
---- a/db.txt
-+++ b/db.txt
-@@ -731,6 +731,13 @@ country FM: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+country FO: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
-+
- # FR as part of EU/CEPT accepted decisions 2005/513/EC (5GHz RLAN, EN 301 893)
- # and 2006/771/EC (amended by 2008/432/EC, Short-Range Devices, EN 300 440)
- #  EU decision 2005/513/EC: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02005D0513-20070213
-@@ -801,6 +808,13 @@ country GH: DFS-FCC
- 	(5490 - 5730 @ 160), (24), DFS
- 	(5735 - 5835 @ 80), (30)
- 
-+country GI: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
-+
- country GL: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
- 	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
-@@ -976,6 +990,13 @@ country IL: DFS-ETSI
- 	(5725 - 5875 @ 80), (25 mW), AUTO-BW
- 	(5945 - 6425 @ 320), (200 mW), NO-OUTDOOR
- 
-+country IM: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
-+
- # Source:
- # https://dot.gov.in/spectrummanagement/delicensing-24-24835-ghz-band-gsr-45-e-5150-5350-ghz-gsr-46-e-and-5725-5875-ghz
- # https://dot.gov.in/spectrummanagement/license-exemption-5-ghz-gsr-1048e-dated-22102018
-@@ -1855,6 +1876,13 @@ country SK: DFS-ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
-+country SM: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
-+
- # Source:
- # Regulation N° 2004-005 ART/DG/DRC/D.Rég
- country SN: DFS-FCC
-@@ -2072,6 +2100,13 @@ country UZ: DFS-ETSI
- 	(5170 - 5250 @ 80), (20), AUTO-BW
- 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
- 
-+country VA: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-+	(5250 - 5350 @ 80), (100 mW), DFS, NO-OUTDOOR, AUTO-BW
-+	(5470 - 5725 @ 160), (500 mW), DFS
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR
-+
- # Source:
- # http://www.ntrc.vc/regulations/Jun_2006_Spectrum_Managment_Regulations.pdf
- country VC: DFS-ETSI
--- 
-2.25.1
-
+> ---
+> db.txt | 3 ++-
+> 1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/db.txt b/db.txt
+> index fdc2c13..7eac515 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -159,7 +159,8 @@ country AU: DFS-ETSI
+> (5850 - 5875 @ 20), (25 mW), AUTO-BW
+>
+> # Item 63AA (25 mW if outdoors)
+> - (5925 - 6425 @ 160), (250 mW), NO-OUTDOOR
+> + # Extended to 6585 MHz as of 1 October 2025
+> + (5925 - 6585 @ 160), (250 mW), NO-OUTDOOR
+>
+> # Item 65
+> (57000 - 71000 @ 2160), (20000 mW), NO-OUTDOOR
+> --
+> 2.43.0
 
