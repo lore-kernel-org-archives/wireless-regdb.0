@@ -4,85 +4,102 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 470A4F3ED5C
-	for <wireless-regdb@archiver.kernel.org>; Sat, 11 Apr 2026 22:22:23 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id BC7EFF3ED6A
+	for <wireless-regdb@archiver.kernel.org>; Sat, 11 Apr 2026 22:38:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=E+Sv2UQ3YUpGVp+eQz19LAg/WgPGXdrGw9ZUPqToKF0=; b=Cetwx3zYAM8ywg36VefXviZfWz
-	ari8+vyPGeyYj1snu5jqaJDtTP18310RsQ149B8EEankvJE1EkkapbdZfWOR7Yo0xJlgOHWxfynji
-	+iry4ENlB0MQVZWH72Z6pBLEV9hy06hWy5Cksig1MRiYHSEL8+dCPhtqmbSn8qj4/+Fitl4/yhsbn
-	tNk9anOM22rKOBFFiWz6EzacvHzyiDzvU9Vqkx1GOh4sPRb7yr5NYA3IpnJituIVefHNbTFzvw9c5
-	j2AC031OKWrUAix2uxxkxjEgMJG6rcXP4A9nnnuXnz1cm1cQhlbXCVPlZeHzVWYcvssYPTDt0Y1k9
-	fg81R3PA==;
+	bh=3uMD9+IKPeAJqpuvErKlWwpJ7W6XguU1pzR+pgq3EMg=; b=irohd6fxZFhAHXFOr/0+qikgOE
+	rg3/1oTFG1vzy49KyIw0AonvbBhFn6Sdw9fOd7E0q5swZ8sPnSg4ExCNO6RG4pd1u1ch9wXYiNHDr
+	V/vddlgJZ47tzxERavAIEAv5C+7JQhzCwJ0ukyRaaMZxkzRN89EctvjpsNHISwK41BzMInaLEL+MD
+	/6s5OnvJq+8ZNuCrZ3W22CqMNERveDfu3PMueq3vXy0N3JqkGrapwxO32b899uofMqRv62jFkjr9O
+	57KWMeVFkfwikBCZa6XTgHC7UQ7Ct6q8sqaWJRWjEmPg8ZIyAkmOcThugk4RjnTXusNOJucFeeiC5
+	4lloSOww==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBgic-0000000Dq1b-4Bb4;
-	Sat, 11 Apr 2026 22:22:23 +0000
-Received: from mail-wm1-x32d.google.com ([2a00:1450:4864:20::32d])
+	id 1wBgyg-0000000DqbJ-26et;
+	Sat, 11 Apr 2026 22:38:58 +0000
+Received: from mail-yx1-xb12e.google.com ([2607:f8b0:4864:20::b12e])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wBgiY-0000000Dpy8-1UU7
+	id 1wBgye-0000000Dqaz-1mS4
 	for wireless-regdb@lists.infradead.org;
-	Sat, 11 Apr 2026 22:22:22 +0000
-Received: by mail-wm1-x32d.google.com with SMTP id 5b1f17b1804b1-488b8efed61so29299685e9.1
-        for <wireless-regdb@lists.infradead.org>; Sat, 11 Apr 2026 15:22:17 -0700 (PDT)
+	Sat, 11 Apr 2026 22:38:57 +0000
+Received: by mail-yx1-xb12e.google.com with SMTP id 956f58d0204a3-64eb84d1e37so2446622d50.2
+        for <wireless-regdb@lists.infradead.org>; Sat, 11 Apr 2026 15:38:55 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1775947135; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Fpw9kEoxwIvQnmf/tLAzA7AyTpwZ8i7wmXdh8XT2h5eR/wg19JIzsiaFt/O95uHL5y
+         sdZCmKyYCsnTHSsTRfwK/8DDwNFG3Smg8bJQaGrGlNy2buPG5kGqUCMabFCpSIkyTUw2
+         E4sZORj/hBj3L3ROxDqED1YtT7kk9s3lGeSBseFHhsZ5UFtPNSbrYR3DpP1ct2s/heuc
+         Psz74B83plb7aspuJOfjQePdiLYcv8tW1l7HQ0Tn17W4ZeB+9G9L6hSm/DzdfCecNrYC
+         o6wwzIP9HaL17Y6gJ36KN6OxqaBGQpR8joG9lfqmn6f0Lkmyh44Vi5IxRaD2N8h8/fAQ
+         2B0Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:dkim-signature;
+        bh=3uMD9+IKPeAJqpuvErKlWwpJ7W6XguU1pzR+pgq3EMg=;
+        fh=PPKQIUTjC7lK7+J3GthuV0w1yR5vkNQdfuv7BwbfMjo=;
+        b=jiC7FqSDm6znoHC8l7vDPyLFPLa2+uVnf37Ih9k6lIHg1bFbna+tZA4oGwpFrVgaJ5
+         1B47toiQiRz8TKiQ0lQV6gctAeGxV9pxzNb0KZ53xP2AxbLyrMaRNjA2zg1SfTvziD61
+         87K5VxpsgNVlYartdWaC914Z5m4mhPDai40+kjwS7m/ltlVYjLwGsWG7qaFuTlpYzoO6
+         a9KNZct+OdaMgsyyCwZUlai/HXdgSGUxb99WkTzaxLoh8GP1kS6sK05ryQo5DmwgG2e8
+         AVlH7bLY6MdrrwmlKhuV3qEYQB/P3CickqSS5UGEYPRTYS7Qa/7zR69x5abmB0Sh3sXd
+         //VQ==;
+        darn=lists.infradead.org
+ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1775946136; x=1776550936; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
+        d=gmail.com; s=20251104; t=1775947135; x=1776551935; darn=lists.infradead.org;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:from:to:cc:subject:date
          :message-id:reply-to;
-        bh=E+Sv2UQ3YUpGVp+eQz19LAg/WgPGXdrGw9ZUPqToKF0=;
-        b=pTNR/WsWorDx+GKCssQT0zIUDqoYnbbtCKrdfYh600SvOfBUNxOKy8KvmzOpUtMwvr
-         Ch1ZyWZSUBhAmorBxXToiWtfGvgz5NGK663ycP5e3QXR582Dn2ako7DW2B47BDxTGjFB
-         SVfDxWkw/GIIRwzzbsAI8etVCJopsgkOLA/MOCserGfsr+fbMoHfzOpLdnvn2GkiRxy7
-         CHmegK0NfJHiN8IS8A8/7c+AI8EmWSpOhZXrdphq54EceLaFj2lDxS9+8gAotFrskdqS
-         wR1fzbWgLtFCFxipSvVPTpppRNvEQ/sJv19EnuVlSDBlYKHcpIugGy8szHZx0dGteAts
-         5HJA==
+        bh=3uMD9+IKPeAJqpuvErKlWwpJ7W6XguU1pzR+pgq3EMg=;
+        b=Mbz4b0rM9r7Y2luf5LDzU/YjkBd2B9eZ5OZSqrU+ZUDugYwaRfyHxKZLfZI2LTAQ6X
+         K4S/4NxRXyplAg9W2og6TQloyFyPtpFGvqJapXjfQ/zWbQLf9C4oUJx6tTk6Wa+LnV9e
+         Z3T0KzhRVBd56gDU8juyIIHaLuA6TGBZk9hd96nqn6BrCSr+IpIb5CQiT+8LhIbkoKhp
+         umzv1esyQU4O1vC9CHQMuzylBrx/Cby5aOJh0dugwcIS7lJlb4qtAui4h1Df3DwFnX6N
+         PhN5N60t33GvYXLDxL5GwHKVGIK6uJZ5CAVIsUpgXJoJz3WKZ9YPaoMuGDKGT9QmFUzb
+         yKJw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1775946136; x=1776550936;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
+        d=1e100.net; s=20251104; t=1775947135; x=1776551935;
+        h=content-transfer-encoding:cc:to:subject:message-id:date:from
+         :in-reply-to:references:mime-version:x-gm-gg:x-gm-message-state:from
          :to:cc:subject:date:message-id:reply-to;
-        bh=E+Sv2UQ3YUpGVp+eQz19LAg/WgPGXdrGw9ZUPqToKF0=;
-        b=p1yAa0WNarTHZMsTg2Dm5++JuG+kfmq/zMBfLoaDLy1W00eEFuMXp5xXYzi/L6qXGH
-         mWSXzqvw+FDYI9k+9IsiWp26NBBpPcYo0fgRXzno0R3huhuAFw8ZwLQCZYRP6oW5JILn
-         4fghCOA68ZxbewSQmtkGS4cAZ8ygFtNC3AJ7YPK0HDuHb2NNVrXB93eMJFdzQSipzhjK
-         EtX5XLl8g4XpcFV1YgV0pwduFjG8cLsGUHFvJG3bVDCDzzbiBf1kxAB3SXj+KMVXkATe
-         OnYvO2afRO8hxM8SbWselpncvU+p2EFMkmSMjq3F1CwQSJrqp8Vytac85wrnYqXCTqY2
-         99cg==
-X-Gm-Message-State: AOJu0YzxSYX3Uzgm6qjFPkPm7c5uEt1rdF5uxB5WPDdFMAFjtvzWSDiO
-	QJ0lrcwz/Ahx5uSUs7qUHE1FdQ1JcGziR9tZitVz8r/O7IzFFOmCobb5nrtWegUx
-X-Gm-Gg: AeBDies4Rq+wZ0mzqznWp3etGfOgTnTQGtZAAYhzBU/aLdYoZEwN+O2GcojkN16r3UZ
-	yaZcbZXNGmmSszaO/+64LZLeaoEOX2to2DIcy9+g1nmqw9NCCs4Hx6WX6XGrODa+KF9GG77T4GR
-	osp9I/VfzVPVNcP5iOm9Nk0BqLwaJ29mx+Qy/Jfx4jVGYU0YwyhuRTGpMltjYbiBv2FJUGjob8k
-	19zrWoryZszKGxVOKKGVmza6WVQxy0rdwFKH6iO4vfwJkdqcLApOTCFJFy5dHXIpIhfmrevgq5d
-	ake9AgCy7ZrMm+/h/ZtaU92hbJxcHZlz+P0IE3UKPJVAouxJcQE2XRkMuLMeBd/0JXcTUamnbz6
-	brHm6G/5wixCoQyYNRx24xr6PMBLirBTzK8ZXQH9AtkkNp/uEoOnwKCIVzqJ40xGmDMWGEEdEsZ
-	7CDlX5A0djMkL9NSFLQRFRjf5UDA==
-X-Received: by 2002:a05:600d:a:b0:485:3428:774c with SMTP id 5b1f17b1804b1-488d682bb48mr80970465e9.4.1775946136280;
-        Sat, 11 Apr 2026 15:22:16 -0700 (PDT)
-Received: from bazzite ([102.128.175.252])
-        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-488d689110asm56935965e9.35.2026.04.11.15.22.13
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 11 Apr 2026 15:22:14 -0700 (PDT)
-From: Louis Kotze <loukot@gmail.com>
-To: wireless-regdb@lists.infradead.org
-Cc: wens@kernel.org,
-	Louis Kotze <loukot@gmail.com>
-Subject: [PATCH 4/5] wireless-regdb: Remove incorrect DFS flags for Togo (TG)
-Date: Sun, 12 Apr 2026 00:21:54 +0200
-Message-ID: <20260411222155.299441-5-loukot@gmail.com>
-X-Mailer: git-send-email 2.53.0
-In-Reply-To: <20260411222155.299441-1-loukot@gmail.com>
-References: <20260411222155.299441-1-loukot@gmail.com>
+        bh=3uMD9+IKPeAJqpuvErKlWwpJ7W6XguU1pzR+pgq3EMg=;
+        b=FMbosfs41bs4KvrlWPOMskkUCz2F9Gi16ioshBrvP2liAi5Z5ZGtzzQKWbe9KNzNrR
+         L7LAVtgLMToShJeQqNEhJrvOhupLpicvXm8ZIqK5aGP9T/GlvhNL6bBuULOUWQ2tVY/D
+         lIv3pVPRi4j5rW/YOaewh1L2J7tLwkalK6vq0u8Nf8a7ZeMfSxDEl+WtLvREsfs2Mcrk
+         KO7RbdvSYWjaz46OhIccfGtq+5BxdhyTTVolIPlAa/bxueCH9Jr1Yqw9i6kPYaVTOFsY
+         tSyFXtDrySxYDw/iErJPuqmExLjPRUziq1paOFdIXHGluM7hhb88BbAOzr09ITeJzBLF
+         Fc/w==
+X-Gm-Message-State: AOJu0Yzo9DsRxZ2/oIzV1yZpy9WQni8NaWJYt3TLEgfzi5C6umohTXQu
+	enCO9dlnak199ascJ0cTxEMz/FrLqykZ6tE/Wb23X1Kd50hchEtQJ8zKMlwlwip0isnAOrir/5/
+	3x/YsF29b9KWlrpHyM+QnP9+CeTGilC01yZtx
+X-Gm-Gg: AeBDiev8yuxm62QzJBn2nenVgFPLqeA9zlmik78/+B59sj2AL4JUdNTXWGzZoYJ4Teu
+	7f9i7DJ9eyt9GDplWjZ5uQU/FTLJbramaBoleHgZKENScWqySpAmaq0co+xRpxHdezV8t0ODyE2
+	lO6IsOMj15W/2TQUgoIVwdO+eElyvsItqqug2n9K7hne3TMpNjwt51VNdYKbPZnXYqtxA04J9Dq
+	5/IlHRYhjL1aU4UFHBxX4XiFJ1m+bWQf2E7T1YnnKMlIPyCz4VHeSIzhPJ+t4esSIttChop6k8X
+	GecHOvygT9wpR84Siki44IUBAGkgwk5RPHyPmLnD2g==
+X-Received: by 2002:a05:690e:160f:b0:650:895a:19c6 with SMTP id
+ 956f58d0204a3-65198b87eafmr5124798d50.33.1775947134860; Sat, 11 Apr 2026
+ 15:38:54 -0700 (PDT)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <CAMcSec+mFSUDm+M=0YaNDe26Z2nup2VzzJqz9psxh2-wkT=7Zw@mail.gmail.com>
+In-Reply-To: <CAMcSec+mFSUDm+M=0YaNDe26Z2nup2VzzJqz9psxh2-wkT=7Zw@mail.gmail.com>
+From: Louis Kotze <loukot@gmail.com>
+Date: Sun, 12 Apr 2026 00:38:42 +0200
+X-Gm-Features: AQROBzADaxiYZ3hX76MspTw26BNZ7Mfq6skHSTTaKJL2yW-8xXLeFp5D6gSTtgA
+Message-ID: <CAMcSecKaRR1_cqHneKGDOnD9o=CJgqdGXnPeaRM3QjCEn6Lykg@mail.gmail.com>
+Subject: Re: Question: Should FCC-region 6 GHz entries use the India PSD methodology?
+To: wireless-regdb@lists.infradead.org
+Cc: wens@kernel.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260411_152218_402411_71F4C0A4 
-X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-CacheID: sfid-20260411_153856_496646_F85329CB 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -98,42 +115,45 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Commit aad0c26 (2024-07-19) added DFS flags to all bands for Togo,
-including 2.4 GHz, 6 GHz, and 60 GHz. DFS is only applicable to
-5 GHz bands where radar avoidance is required.
+Hi Chen-Yu,
 
-The source regulation (ARCEP Decision N 226/ARCEP/DG/22) does not
-require DFS on 2.4 GHz, 6 GHz, or 60 GHz. Remove the incorrect
-DFS flags from these bands while keeping DFS on the 5 GHz entries
-where it is correct.
+Following the patch series I just submitted, I have a question about
+the FCC-region 6 GHz entries.
 
-Reference:
-  ARCEP Decision N 226/ARCEP/DG/22
-Signed-off-by: Louis Kotze <loukot@gmail.com>
----
- db.txt | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+Currently 12 countries (US, CA, BR, AR, CO, PE, SV, MX, CL, KY, HN,
+PY) use 12 dBm for 6 GHz LPI. I understand this was chosen as the
+absolute minimum across all device types and channel widths.
 
-diff --git a/db.txt b/db.txt
-index 777d323..15b80ee 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1945,11 +1945,11 @@ country TD: DFS-ETSI
- # Source:
- # https://arcep.tg/wp-content/uploads/2022/12/Decision-226-22-Determinant-les-categories-et-conditions-techniques-dexploitation-des-appareils-de-faible-puissance-et-de-faible-portee.pdf
- country TG: DFS-ETSI
--	(2400 - 2483.5 @ 40), (100 mW), DFS
-+	(2400 - 2483.5 @ 40), (100 mW)
- 	(5150 - 5350 @ 80), (20), DFS
- 	(5470 - 5850 @ 160), (27), DFS
--	(5925 - 6425 @ 320), (23), DFS, NO-OUTDOOR
--	(57000 - 66000 @2160), (40), DFS
-+	(5925 - 6425 @ 320), (23), NO-OUTDOOR
-+	(57000 - 66000 @ 2160), (40)
- 
- # Source:
- # https://ratchakitcha.soc.go.th/documents/140D100S0000000004000.pdf
--- 
-2.53.0
+However, the India (IN) entry (commit 5db6ce73) uses a different
+methodology =E2=80=94 PSD at 20 MHz minimum channel width:
 
+  India: 11 dBm/MHz =C3=97 20 MHz =3D 24 dBm
+
+Applying the same approach to FCC (5 dBm/MHz PSD):
+
+  FCC: 5 dBm/MHz =C3=97 20 MHz =3D 18 dBm
+
+18 dBm is compliant at every standard WiFi channel width (>=3D20 MHz)
+for both AP and client devices:
+
+  Width   PSD limit   FCC client max   18 dBm   Legal?
+  20 MHz    18 dBm       24 dBm        18 dBm   Yes
+  40 MHz    21 dBm       24 dBm        18 dBm   Yes
+  80 MHz    24 dBm       24 dBm        18 dBm   Yes
+  160 MHz   27 dBm       24 dBm        18 dBm   Yes
+  320 MHz   30 dBm       24 dBm        18 dBm   Yes
+
+The reason I ask: during my work on the South Africa (ZA) fix, the
+9 dBm gap between the regdb (14 dBm) and the AP's advertised power
+(23 dBm) caused repeated "regulatory prevented using AP config,
+downgraded" errors and complete 6 GHz association failure. The FCC
+gap is 18 dBm (12 vs 30), which would cause the same or worse
+symptoms for any Linux user connecting to a standard FCC LPI access
+point on 6 GHz.
+
+Would the India PSD-at-20-MHz methodology be appropriate for FCC
+countries as well?
+
+Thanks,
+Louis
 
