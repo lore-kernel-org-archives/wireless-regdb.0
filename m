@@ -4,68 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99F13E93813
-	for <wireless-regdb@archiver.kernel.org>; Mon, 13 Apr 2026 04:56:39 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 49D72E93815
+	for <wireless-regdb@archiver.kernel.org>; Mon, 13 Apr 2026 05:03:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GJuG7X3mTxvX+kye6sq9+85E1jGZCK8aG15DvCqB/+M=; b=cy1lM52k3JtKiA
-	6PNhz5yMhmmWV7/Mf1USHnbXjZfVSRFfu2+s13HRs9nF8jVNf74Hy/Y/l30qdfdzOjSP9DcnJjCDy
-	zp9Zezhwno3cWdqt6ExStVZque4hCvlOv4pHVxoD4ptQxVGLA/I8einm3wCDWE8BM+tNk0rQpaIS3
-	MsGwHz3u3zrXxOYQlwbWPuKrBoEPRkaVfbcYjxy36lzsHoImUJ92Xknj6boIMjW8xH0JQeIjURWsh
-	DOf8CazjtJCRdQxx4rXGxmRyb4KX452gg8RThpIWd5qfHjnZF8AdwiaJU3BpIcWoPmfi3SBTx+Wzi
-	nxwwdCr7cxKi6EvGHnrA==;
+	List-Owner; bh=ShryAWnL+9i84pCRuxLEnyLO0mKaVF4mGsTeKEXD3P0=; b=KQ5dGDTFQfB/LI
+	MN+fVYUELgDl5EPczWnzpjtFP8cnsJXy+RHbrFsOz9Ugm76NOxaL5AiAPfIfobJDhefugdcz9NEhM
+	ED/xFX3plEQTDBgkKsqQnJSl71XB/QmQiwuLU7/2E1q4mn2tL+itu7MmU2LbD0UkaQJkZpGZjLZJg
+	i6qE7Z/vWJINiASWmfbsZ0mhHM3yQK+zzl8EeSuc2HX4OF9tpv4BM/1w5z2UY0HnspG7EDsOI5MTW
+	mcW+/t5wqFm2ZoDY0eD/7w0ZwopJquew0No+nPCgQMVVzGzONmM/07AuLO3iJpfzezLnB+zhany/o
+	QIXbV9T+/pO9iKp4BPMQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC9Li-0000000EzT9-0xkP;
-	Mon, 13 Apr 2026 04:56:38 +0000
+	id 1wC9Sm-0000000Ezg8-29uE;
+	Mon, 13 Apr 2026 05:03:56 +0000
 Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wC9Lb-0000000EzSc-0ngX
+	id 1wC9Sj-0000000EzfZ-2Isz
 	for wireless-regdb@lists.infradead.org;
-	Mon, 13 Apr 2026 04:56:35 +0000
+	Mon, 13 Apr 2026 05:03:55 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 6E48D43F4B
-	for <wireless-regdb@lists.infradead.org>; Mon, 13 Apr 2026 04:56:30 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 50519C2BCB0
-	for <wireless-regdb@lists.infradead.org>; Mon, 13 Apr 2026 04:56:30 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id D6B91440BD
+	for <wireless-regdb@lists.infradead.org>; Mon, 13 Apr 2026 05:03:52 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3C2FC2BCB1
+	for <wireless-regdb@lists.infradead.org>; Mon, 13 Apr 2026 05:03:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1776056190;
-	bh=KvRPjZM/U19tdeO0PnNAngRoIUaPNf7BWARLAT5o2f0=;
+	s=k20201202; t=1776056632;
+	bh=+g8XS2oHnOyByBbtbMfLhB++JZithFmYIqfV0nWfxOA=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=G0bkIc0ht7Ks/3oXAanyrSunJ/DjrvMCp6fUDt7kMKFzhtq5iAffRHMbdttGBAq77
-	 IMM4ErcfOtbfrWYjhYN8dw92HV1GzvgSXKRgQTSMQr4n5cWhMgnQoLJGwYoETs29DS
-	 PXtrRS151b3Xbbdj0PXSgJ14Borwz8zUYvMzi/BXEOBXNFeCRizd7/Ji2C6OwnilYy
-	 3E8xpCQLAKcnm02SA+moV4SyDYo1iGD89cRyO5ZLb3afz0ymqxUHFwPOuinJa+Mbmc
-	 yI0UXqXnw8HAdvmOqH6PrLk1Q47Mdmq1tAFZzF/RZlFqHjYH1oYHmQ8s5SYUh7U7eE
-	 L7KxVkhOQM8+g==
-Received: by mail-lj1-f169.google.com with SMTP id 38308e7fff4ca-386b553c70eso35658401fa.0
-        for <wireless-regdb@lists.infradead.org>; Sun, 12 Apr 2026 21:56:30 -0700 (PDT)
-X-Gm-Message-State: AOJu0YztE8z9/9Z3d+dTpb8oDHC7y/mMZFJ4SFXu+NyGxPOcpPbXsg6o
-	PlrqHeJH7MzTgeeZE2OAt6Bju1hW97QpOEX9VdrgVca84WOcPbGSVe8Ybja0wZ7iQZFY5OjP2u8
-	mJhijWq6uNR1EqjsS4/XjL/9DReKsomw=
-X-Received: by 2002:a2e:8a98:0:b0:38e:81e9:bf11 with SMTP id
- 38308e7fff4ca-38e81e9c581mr2691661fa.9.1776056188605; Sun, 12 Apr 2026
- 21:56:28 -0700 (PDT)
+	b=fI+RthLJ2GR8Lfig+725IqNVWnfFsNgEMkw0ebzHdNQVtMFqdQqVjU5hZ5U5I3Y7V
+	 OgTDIZPEW6E6SBiL2YcMp7GmZ5HCM+khKxmlXN1j1QPz7Tvy8rpx7EV8xG3n9o5dpu
+	 0xkwP5M4B7KlPHwm0+MMjWap6GlA2GD9K1houAm2aQl0KO6Bt7e6H2Ydg7/G5iSMX0
+	 dhbE609ylsYdvmxyQtgJwm8O4IsL53NdXyOS08WpOyFWpbhy68zfavpmznG7BjHOxF
+	 lRn8HzECNVqyPsXD98dz3Z6f5MVqu9flfnPZ1LTtN643ICm3OtAIB2nsirbcm2yZ6Q
+	 gjgQjHdxkl5Ig==
+Received: by mail-lj1-f182.google.com with SMTP id 38308e7fff4ca-38dd575bcf3so41463211fa.3
+        for <wireless-regdb@lists.infradead.org>; Sun, 12 Apr 2026 22:03:52 -0700 (PDT)
+X-Gm-Message-State: AOJu0YyPkl28rh7+onnvpXhaSBorrnhC7FAEGNDwQNjpEd5rqtAdkLEw
+	1TWkatKsu16c78kxm2ZZEfoenPBXPxrFTFe/vGeS2tnwVD+UwsdrNiujZxSvPeWokHwi1b0jHQ4
+	7GsDsreFDVqZjGoQVJj7JjDFcQz0rYNU=
+X-Received: by 2002:a05:651c:b21:b0:38b:be3e:b73a with SMTP id
+ 38308e7fff4ca-38e4bef9041mr34841161fa.16.1776056631037; Sun, 12 Apr 2026
+ 22:03:51 -0700 (PDT)
 MIME-Version: 1.0
-References: <20260411222155.299441-1-loukot@gmail.com> <20260411222155.299441-5-loukot@gmail.com>
-In-Reply-To: <20260411222155.299441-5-loukot@gmail.com>
+References: <20260411222155.299441-1-loukot@gmail.com> <20260411222155.299441-4-loukot@gmail.com>
+In-Reply-To: <20260411222155.299441-4-loukot@gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 13 Apr 2026 12:56:14 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64MBR5tJraW2xJX762csY7vG-hstUp1ES4dPpCARN6f_A@mail.gmail.com>
-X-Gm-Features: AQROBzDJQQ8BKv1LWQPFnXE5Z5rfYwvfvAINA3Bo84m2F8uKrA0BM-p1Mup4fAQ
-Message-ID: <CAGb2v64MBR5tJraW2xJX762csY7vG-hstUp1ES4dPpCARN6f_A@mail.gmail.com>
-Subject: Re: [PATCH 4/5] wireless-regdb: Remove incorrect DFS flags for Togo (TG)
+Date: Mon, 13 Apr 2026 13:03:38 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67DTq4tRgaPqG3WU6d+6mHdxdhcCvdX1QKd5ByKoF+=Xg@mail.gmail.com>
+X-Gm-Features: AQROBzCBAM16bjtnoPHzkcoAlP0yZI13w2qrT7yT2JF6G0Ez_22dct86RJR34V4
+Message-ID: <CAGb2v67DTq4tRgaPqG3WU6d+6mHdxdhcCvdX1QKd5ByKoF+=Xg@mail.gmail.com>
+Subject: Re: [PATCH 3/5] wireless-regdb: Fix 6 GHz LPI power for Russia (RU)
 To: Louis Kotze <loukot@gmail.com>
 Cc: wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260412_215631_765294_0FA78CBE 
-X-CRM114-Status: GOOD (  14.53  )
+X-CRM114-CacheID: sfid-20260412_220353_642657_CE2578BD 
+X-CRM114-Status: GOOD (  15.64  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -81,58 +81,51 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi,
-
 On Sun, Apr 12, 2026 at 6:22=E2=80=AFAM Louis Kotze <loukot@gmail.com> wrot=
 e:
 >
-> Commit aad0c26 (2024-07-19) added DFS flags to all bands for Togo,
-> including 2.4 GHz, 6 GHz, and 60 GHz. DFS is only applicable to
-> 5 GHz bands where radar avoidance is required.
+> The State Commission for Radio Frequencies (GKRCH) Decision No. 22-65
+> (December 23, 2022) authorized 6 GHz LPI at 200 mW (23 dBm) EIRP
+> with 10 mW/MHz PSD. The current entry incorrectly uses 100 mW.
 >
-> The source regulation (ARCEP Decision N 226/ARCEP/DG/22) does not
-> require DFS on 2.4 GHz, 6 GHz, or 60 GHz. Remove the incorrect
-> DFS flags from these bands while keeping DFS on the 5 GHz entries
-> where it is correct.
+> Reference:
+>   GKRCH Decision No. 22-65 (2022-12-23)
+>   https://www.eleoscompliance.com/en/article/russia-the-federal-communica=
+tion-agency-fac-of-russia-allows-6ghz-wifi
 
-I don't read French, but my translation app says that DFS is required
-for all bands except the 60 GHz band. I am looking at table 9 -
-broadband data transmission devices (pages 20-21).
+This page doesn't actually contain any useful information.
 
-If you're looking at table 3 - non-specific SRDs, then you get a much
-lower power limit.
+I can't seem to access the reference from the original submission.
+I'll try again later.
+
+I did find https://www.gccorp.com.tw/en/?p=3D2173 using the document name
+you gave, but that also mentions that "automatic power control system"
+is required. I assume that is TPC, which Linux basically doesn't have.
+So we still have a problem here. If the rules were based on FCC or EU
+regulations, then we sort of adopt a 3 dBm reduction in the limit.
 
 
 ChenYu
 
-> Reference:
->   ARCEP Decision N 226/ARCEP/DG/22
 > Signed-off-by: Louis Kotze <loukot@gmail.com>
 > ---
->  db.txt | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
+>  db.txt | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 >
 > diff --git a/db.txt b/db.txt
-> index 777d323..15b80ee 100644
+> index 9938089..777d323 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -1945,11 +1945,11 @@ country TD: DFS-ETSI
->  # Source:
->  # https://arcep.tg/wp-content/uploads/2022/12/Decision-226-22-Determinan=
-t-les-categories-et-conditions-techniques-dexploitation-des-appareils-de-fa=
-ible-puissance-et-de-faible-portee.pdf
->  country TG: DFS-ETSI
-> -       (2400 - 2483.5 @ 40), (100 mW), DFS
-> +       (2400 - 2483.5 @ 40), (100 mW)
->         (5150 - 5350 @ 80), (20), DFS
->         (5470 - 5850 @ 160), (27), DFS
-> -       (5925 - 6425 @ 320), (23), DFS, NO-OUTDOOR
-> -       (57000 - 66000 @2160), (40), DFS
-> +       (5925 - 6425 @ 320), (23), NO-OUTDOOR
-> +       (57000 - 66000 @ 2160), (40)
+> @@ -1772,7 +1772,7 @@ country RU:
+>         (2400 - 2483.5 @ 40), (100mW)
+>         (5150 - 5350 @ 160), (100 mW), NO-OUTDOOR
+>         (5650 - 5850 @ 160), (100 mW), NO-OUTDOOR
+> -       (5925 - 6425 @ 160), (100 mW), NO-OUTDOOR
+> +       (5925 - 6425 @ 160), (200 mW), NO-OUTDOOR
+>         # 60 GHz band channels 1-4, ref: Changes to NLA 124_Order =E2=84=
+=96129_22042015.pdf
+>         (57000 - 66000 @ 2160), (40), NO-OUTDOOR
 >
->  # Source:
->  # https://ratchakitcha.soc.go.th/documents/140D100S0000000004000.pdf
 > --
 > 2.53.0
 >
