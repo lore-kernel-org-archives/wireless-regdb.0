@@ -4,98 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 708D4FF886D
-	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Apr 2026 09:01:36 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id AA49CFF8868
+	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Apr 2026 09:23:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:
-	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
-	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=7FDZoluOs6g6dKUIiUeyLauygOAGQcN5yRL8mPNHrXA=; b=Q5iHwr8XYOTwkJWHCtClu5QhGt
-	vJuWL6CI563ePNWycHNkUy+BaUwymzVW5RG7iudGP0z7OOv4Ez3+6osff2CugSYYriVPkb5Lfsa1l
-	qTW1i8HkSPmL9TUQis+8e+RAsJ0omYEYrfGcPyvZRkHbh1RHo7/xrDS5MaM/aNa6lorsDbgBcaH8p
-	PXPLQMxz9FgfWerKhKcaOa8GCoBbRTwJWgLiQxVp+z+9UrVYBhlcqE0QM346yf14O9wQnsYkW8K0Y
-	ZcuTVOmCTWMTcjTDBJ9O/dOowojfyr9rMApNHAVtxRx16FeOBCm6tvm9JdtVFRZw/SZ3x2dfaRazs
-	XxWjnLbA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9pkZ6oxnoncKr7jqUvyDrIdS2cxfpXEDf6Td11rH+FU=; b=EA18sEF7HWGgUr
+	yVvjRN73hAVYNt42vYP/dFDGm8OyVtkeL2w5r7n1hbnBtKmyesMQyoS3zu26QtoBZYAazKGiQB+qB
+	NE6KwXATSH1eYA3xZ8Hnhc8A1dCw1ZB+6j0dXVJsqn3QGL94i1/MoEW7qXm5rrUzwDbiVLQJltwtx
+	11bL9EZb2aJHaKX8rByXYPVPzjg7PlaIgtD0Zpf6wVqM4G7S0v1EiXjJwqYc6l5CpN24SqPI4Kqda
+	25lOI3YIAx++Ritio6jUTO+13bNi2QjU8ZM5w/ms4T46+9HaflqhX8Dvat5C2ces8duUWOkRjzPeC
+	mKqj0+JFwdMrFjAW/s/A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHeJx-00000000xrW-2AM4;
-	Tue, 28 Apr 2026 09:01:33 +0000
-Received: from desiato.infradead.org ([2001:8b0:10b:1:d65d:64ff:fe57:4e05])
+	id 1wHefc-0000000151n-1so9;
+	Tue, 28 Apr 2026 09:23:56 +0000
+Received: from tor.source.kernel.org ([2600:3c04:e001:324:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHeJt-00000000xlF-24wp
-	for wireless-regdb@bombadil.infradead.org;
-	Tue, 28 Apr 2026 09:01:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=infradead.org; s=desiato.20200630; h=Content-Transfer-Encoding:Content-Type
-	:MIME-Version:Message-ID:Date:Subject:Cc:To:From:Sender:Reply-To:Content-ID:
-	Content-Description:In-Reply-To:References;
-	bh=7FDZoluOs6g6dKUIiUeyLauygOAGQcN5yRL8mPNHrXA=; b=WchMyBh7GFLAMXee1i9pykB/GY
-	SbdVobRFd/+tyDiKbr//ZhfqwFVrLXcU5jIptpqXwV27TdiG+1XvIclAfXHPPBPjN/OZPHhkla2Ci
-	mdls/Bld10rYe7oKNRhlzHIElNexf4Y4SBJP2zxsnh51eJC9JUv0P6YPnqbHaDEpkAJppOfsHuGcX
-	SkW3W0rdbk4XXT1YeDOzaw1gOpex8riJI0dyykBA+UU09JotNC89U5XYM9SCQy5FjT0Ajrw/R89Qf
-	h+hEttM8rilr795qKR/EVF2NHFmbqqYMpsJGmBJVX/eUUag2EZp6KRPJXf6Aryl2su+IL9786rSbM
-	gzYHq8qQ==;
-Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
-	by desiato.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHeJo-00000002VSA-0AHV
+	id 1wHefb-0000000151X-258O
 	for wireless-regdb@lists.infradead.org;
-	Tue, 28 Apr 2026 09:01:28 +0000
-Received: by mail-wm1-x332.google.com with SMTP id 5b1f17b1804b1-488a8ca4aadso154491085e9.3
-        for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 02:01:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1777366881; x=1777971681; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:from:to:cc:subject:date:message-id:reply-to;
-        bh=7FDZoluOs6g6dKUIiUeyLauygOAGQcN5yRL8mPNHrXA=;
-        b=pq2KIMoaXqGB0NYdOpRyErNFMEqTdxj3fA/uUUsU3YM7SIJtBx9jBlX9P11tBdYiIC
-         j3RrWZVnlz5WJFUH2vV07RDcmkGOu8YjgTqVU8sp6GoF1F8mw7Z3SKbgCUAlNfQ1RzK8
-         TLPIh7hvj+nOt3rVc+YWGVK0m89uxJc3fQjjl5W/ylNAN5uduzcxQRoCwF6Q15gCSr9v
-         vtvp0lty2xoSA/e1XstSRQDu28BDNfKPGaVmrJo3cQKacVsMpPPPf0MNuwtcvjcssB1j
-         34I1EMSFTxRntoxBvBn/qLOaFCqYMBLDyMgG8lfCcXhQ5RaMWsC6MD/uqPIjJMQtvd0Y
-         TerQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1777366881; x=1777971681;
-        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
-         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=7FDZoluOs6g6dKUIiUeyLauygOAGQcN5yRL8mPNHrXA=;
-        b=mP8K3fs+Bb7FjqJ4Nu6sjPoywokAxbZ1/96+u6DEgzJwsYxHnjr1tqFDt+ZjqRK0Y6
-         nynggymj9v3OKUDYMYD0I+lP7FZnROVqfJsSrvV9LU4Zm/4/OMd42eOV8D3GixH/sU99
-         EfyUh6/yrEZIWg4W325GcLTc7OEIOunE8QCyyCz/UetE8SHBCbHz0Cl2P1zNO0HxGlEU
-         vn1KWnqujlCs9HHn9ccnLtzhWU2VK6Pb4Hz6+3JJlXiCG2TjcJc9WmipbUb7pKiLrafY
-         QTMdseCfzWwsk+qu7IYmqkoS4q1gmH0fziCliCtNeDZWIOnrPCm7YbQ/dnDAbIHzbxDJ
-         qxDg==
-X-Gm-Message-State: AOJu0Yxg/dyzxrip/+WhBMTh/lPikbRTMuh1EYA8JpL330J4z6js4jnb
-	vhiWavN6W1sv4KnZ3oRTX0MbMnBVRAmNdA0ihraqiZke76QaklpdVcAOX1jhkOico44=
-X-Gm-Gg: AeBDietxG96zD97orSI3Mw3RadXjrss/CHPBnsItXlEpSDPhoDEyNRFATQErJN3vHTf
-	e9r3Hgi408MbP/qcHpadrYYs6IhcFuADOIU74bC6/0XGBxJrmB2oPHVtNW9h84gO8ZJ7r+gwJTW
-	OVub8hRsO7f6r9ZaEbTeWlxfCKTAeFm5D2d7Wv6Yh6gRo0cJtGQIs94W+E5U0tfv2yATVKKZ/my
-	tKx4bLwp3M2HA68OfU0KJhHj8R6v1sKhIEEncNhgrD05uSp50SuKIBFL1auTX3V4B5sLDlpmZ4R
-	Bt32F7oiCfBEjN3w1NAfdc5GVk8TbfFyRrNQXw1+aXIRe0O0mSIkVLP2p3LZHDUL7xcchNhp6XW
-	/b/sX5/4EaLhPU1gkDdPssZGOSbeigZdYGGRgZfZuwEEXb+stXKjB+CdClfRn+OOcwrILK72xHv
-	8K4lZm0fbBQDxOJrJxp5MEl78FbcwmaQVQu+HoLwpiFdBMmaT6Eusbm0njwF8s
-X-Received: by 2002:a05:6000:2887:b0:441:36b7:725e with SMTP id ffacd0b85a97d-44647be3a20mr4083354f8f.7.1777366880992;
-        Tue, 28 Apr 2026 02:01:20 -0700 (PDT)
-Received: from localhost ([102.128.175.252])
-        by smtp.gmail.com with ESMTPSA id ffacd0b85a97d-4463f994a3fsm4762676f8f.25.2026.04.28.02.01.19
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Tue, 28 Apr 2026 02:01:20 -0700 (PDT)
-From: Louis Kotze <loukot@gmail.com>
-To: wireless-regdb@lists.infradead.org
-Cc: wens@kernel.org,
-	pkshih@realtek.com
-Subject: [PATCH v3] wireless-regdb: Update 6 GHz rules for South Korea (KR)
-Date: Tue, 28 Apr 2026 11:01:16 +0200
-Message-ID: <20260428090116.536275-1-loukot@gmail.com>
-X-Mailer: git-send-email 2.54.0
+	Tue, 28 Apr 2026 09:23:55 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by tor.source.kernel.org (Postfix) with ESMTP id 7EB316014C
+	for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 09:23:54 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 360A0C2BCB5
+	for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 09:23:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1777368234;
+	bh=9pkZ6oxnoncKr7jqUvyDrIdS2cxfpXEDf6Td11rH+FU=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=si4DzF2uqzT/VXlkmg6UQCU6fvWCLW0kNYoxT5kigUVg5+aztNt2nK+k6sFhE4Fg3
+	 ua53wAvDK33QOrnh8IcK1OX62JeSfAj5oQst4HGk+XkgCNdtCcfeRkLuKP9hN5s3YO
+	 YcUfYT1NQ6oyPM2WpqhJluttPOkf1x/C6t6c8DQZ3k1N3nxxULtPQy9tLYiIRS0WYp
+	 YpfWC8A9ULmcRyEiC53dgdRVhgQUPolxO7/kpEo1rZVfKVZ6UW04ddDBaeIcl7txWG
+	 k1NiCmjh97duvZnfMaSoUw2nrjPnODCJK8gY3yzdYmTTiR2k1TQ2BQcFOlD+FEk9nW
+	 FFaQPinWRlPSQ==
+Received: by mail-lj1-f177.google.com with SMTP id 38308e7fff4ca-38dd9f11a09so99620401fa.2
+        for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 02:23:54 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AFNElJ+mC+Ln0v0kQTd3rCzl/9BgmFGbclVyS5bNpWmbyRX7YOeLhZKLi4Ob8uN03NgfqTFWwMhdpWptwLmC3qE/EA==@lists.infradead.org
+X-Gm-Message-State: AOJu0Yw54M9KEcMaNFvrJCni6mUJhkP7+5mLxwWPdp3ekjjFdA63hHPd
+	xLhMhDGD9kqnHTp45PcCLjVXeN2m9JlttxplTf1lUQ2xTUI1Uy0v5XGE2tCJkjVHSRu4FHPgGGf
+	3lUsBs/rpCGKw0sVOtiyPCo3xfC/61Mk=
+X-Received: by 2002:a05:651c:4191:b0:38e:9eb1:6940 with SMTP id
+ 38308e7fff4ca-39240f694d5mr6737951fa.10.1777368232579; Tue, 28 Apr 2026
+ 02:23:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260428_100124_290213_5AE25AD5 
-X-CRM114-Status: GOOD (  12.13  )
+References: <20250708-russia-320-v1-1-53641e8dd417@0upti.me>
+ <20260428074500.ru-320-review-resend@gmail.com> <b9d9d6e1-91c4-487f-82af-e53d4148c11b@0upti.me>
+In-Reply-To: <b9d9d6e1-91c4-487f-82af-e53d4148c11b@0upti.me>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 28 Apr 2026 18:23:38 +0900
+X-Gmail-Original-Message-ID: <CAGb2v66SDbn7KV+ehT9qpEZa1RRYXSXCM_3O-0qgqayks8igqg@mail.gmail.com>
+X-Gm-Features: AVHnY4IY33HCwe-Lx3cMh6T9rTZtboswfbohryCVPxTEjpmsxN1GBvAQmwk1AqM
+Message-ID: <CAGb2v66SDbn7KV+ehT9qpEZa1RRYXSXCM_3O-0qgqayks8igqg@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: allow 320MHz channel width for Russia
+To: Ilya K <me@0upti.me>
+Cc: Louis Kotze <loukot@gmail.com>, Valeriy Kosikhin <vkosikhin@gmail.com>, 
+	wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -107,85 +77,24 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-MSIT Notification No. 2026-10 (10 February 2026), the technical
-standards for wireless equipment that may be opened without
-notification, amended the 6 GHz indoor rules for Korea.
+On Tue, Apr 28, 2026 at 5:17=E2=80=AFPM Ilya K <me@0upti.me> wrote:
+>
+> On 2026-04-28 10:44, Louis Kotze wrote:
+> >
+> > Note that the patch base predates the recent RU power update (commit
+> > 6873bfe in wens/wireless-regdb), which changed 5925-6425 from 100 mW
+> > to 200 mW, so this needs a rebase on current HEAD before it can be
+> > applied.
+> >
+> I can resend a rebased version if necessary.
 
-Indoor (clause 2.나) PSD limits, including antenna absolute gain
-(EIRP-PSD):
+Yes, please send a new version for the record.
 
-  5925-6425 MHz: 5 dBm/MHz, 320 MHz max occupied bandwidth
-  6425-7125 MHz: 2 dBm/MHz, 320 MHz max occupied bandwidth
 
-Both ranges are indoor only, restricted to equipment connected to
-building power, with mobile use prohibited. The previous combined
-entry from MSIT 2024-22 used a single 2 dBm/MHz PSD across the full
-5925-7125 MHz range; 2026-10 split the bands and raised the lower
-band PSD from 2 to 5 dBm/MHz.
-
-The regdb has no PSD encoding, so the EIRP value is derived from the
-PSD limit at the smallest channel width permitted by the regulation
-(20 MHz), which is the most restrictive interpretation:
-
-  5925-6425: 5 dBm/MHz × 20 MHz = 18 dBm
-  6425-7125: 2 dBm/MHz × 20 MHz = 15 dBm
-
-Split the existing combined rule into two ranges to reflect the
-per-band PSD difference, and add AUTO-BW so adjacent ranges combine
-at the lower limit. Raise the maximum bandwidth from 160 to 320 MHz
-per the explicit "320 MHz 이하" in the regulation.
-
-Reference:
-  MSIT Notification No. 2026-10 (10 February 2026)
-  Partial amendment to the technical standards for wireless equipment
-  for radio stations that may be opened without notification
-  https://www.msit.go.kr/bbs/view.do?sCode=user&mId=108&mPid=103&bbsSeqNo=83&nttSeqNo=3186356
-
-Signed-off-by: Louis Kotze <loukot@gmail.com>
----
-Changes since v2:
-  - Cite the correct source: MSIT 2026-10 (technical standards
-    amendment), not 2026-9 (device classification amendment).
-  - Replace the v2 power values (30 / 27 dBm) with PSD-derived limits
-    at the smallest permitted channel width (20 MHz): 18 / 15 dBm.
-    The v2 values were the PSD limit × 320 MHz, which would over-
-    radiate narrow channels by up to 12 dB versus the regulation's
-    PSD cap. Encoding at the narrowest channel ensures the regdb
-    value is PSD-compliant at all permitted widths.
-  - Acknowledge the 2024-22 → 2026-10 PSD change explicitly: lower
-    band raised from 2 to 5 dBm/MHz, upper band unchanged at 2
-    dBm/MHz, indoor only.
-  - Use the regulation's wording "PSD including antenna absolute
-    gain" (effectively EIRP-PSD) rather than bare "EIRP".
-
-v1: https://lore.kernel.org/wireless-regdb/20260411222155.299441-3-loukot@gmail.com/
-v2: https://lore.kernel.org/wireless-regdb/20260416120001.979135-1-loukot@gmail.com/
-
- db.txt | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index c310b7f..92cf9cc 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1135,8 +1135,9 @@ country KR: DFS-JP
- 	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
- 	(5470 - 5725 @ 160), (20), DFS
- 	(5725 - 5850 @ 80), (23)
--	# 6 GHz band
--	(5925 - 7125 @ 160), (15), NO-OUTDOOR
-+	# 6 GHz band - per MSIT Notice 2026-10
-+	(5925 - 6425 @ 320), (18), NO-OUTDOOR, AUTO-BW
-+	(6425 - 7125 @ 320), (15), NO-OUTDOOR, AUTO-BW
- 	# 60 GHz band channels 1-4
- 	(57000 - 66000 @ 2160), (43)
- 
-
-base-commit: 0bfb3d418a27cccf313ae64b0ed909f3ad95fea6
--- 
-2.54.0
-
+Thanks
+ChenYu
 
