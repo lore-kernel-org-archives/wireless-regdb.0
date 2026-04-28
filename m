@@ -4,67 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id C3F54FF885A
-	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Apr 2026 06:57:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id CDA84FF885D
+	for <wireless-regdb@archiver.kernel.org>; Tue, 28 Apr 2026 07:28:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zUe4QteJGepwAdo2gMgtKn+ymjQ8icIqRemfv0NWsYE=; b=bG0G4zK07SRpiz
-	JXpDFjv1SuIRIvyHzwbxGVghbHuHHHFQ/yZmhJUz6YD1lA+GtMdn+WJ2SoPHl/GBCjqFmDeYUZJn8
-	QFtvPRhPFy/KPzGywV9o6t3evRsdVvd1LfKfzLTzaAm66ruvuCVnRRFHKUB+XRcnLm6y+C3bUk6vV
-	jKHGELBHOTAAGovo0xeJcl4ZrhjvuBl9USCAUl5fhHIRtyozUdMwkBJgyE0hEtTAVKKTZ/4n4drA3
-	LV1z6I0gehYKNBQJb2Foo+dJoMPidSDvFmmG+dvBOVVFhUcNpXo1VIhyyg6svj4X9W8vCkZo/4xjt
-	yBtx03wVLQpgcFTA3Ygw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=u2PSbXHzeVtVSXRwe8v8WibwLNyvsUoiZuwywYL3Uug=; b=wqgFX+h/yGJa2q8FexKKr4Fepa
+	qlY9euwTnQKCgMxuPwrTaFrmJqLBHaghZSztplnam4hJqvQ7uE1M7jK2xEY93NQ+OYluMK5RyNQPP
+	DjMRXWW71IV64tJEGJNnDA2aMWF3i+QJZaHYLA76rT7mSUTUm5xO6BXBMmH4kdST7keAIdqoYChxR
+	H83+0cwOs0jHG3b2Jxh1cPKAsxOhEJ87/kVmBzVuNeCKslvwv9cGy8CmQtcIqyYBkkIFn+EsIsto2
+	caJJSFGy+fgTrPRfE3b3Tpc2MFHg3G5imqfVEEYsw6TzFZiY4wDUY1NpiiasDwSFbo8dK8Xp9HhET
+	uN0yXcZA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHcNi-00000000esK-1NqN;
-	Tue, 28 Apr 2026 06:57:18 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wHcsH-00000000mAp-2QKR;
+	Tue, 28 Apr 2026 07:28:53 +0000
+Received: from mail-wm1-x333.google.com ([2a00:1450:4864:20::333])
 	by bombadil.infradead.org with esmtps (Exim 4.98.2 #2 (Red Hat Linux))
-	id 1wHcNg-00000000esE-2xtp
+	id 1wHcsE-00000000m9l-3G5V
 	for wireless-regdb@lists.infradead.org;
-	Tue, 28 Apr 2026 06:57:16 +0000
-Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by tor.source.kernel.org (Postfix) with ESMTP id 1329360133
-	for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 06:57:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id BD8C2C2BCAF
-	for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 06:57:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1777359435;
-	bh=lWrdM2SjRzIwrZ4CHDBSQc3n/YiBy7qNIwxSUU9W/PA=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=qvJZ5Ugn4eiJdKpQAaPrqStEje6niMZvq3q1MkzXN09jugnP/Q30n5NRI9tm93yxJ
-	 v9EHYxViMIPRHK+Vv0pjBio4WBrhswPM+J0TD8L89VsBsfHwbg5M/ROjSv9I60BvW3
-	 hUQRVgcaoa016dqJjoTIa/670nqVCSfiN5bxYEXKB8BxtVGEaj/l/ODpli5yBwJh7V
-	 G5dX84d/jypfbJoFw/rviWSaeDWdNQmbB6j4IGEtn3iZQJ3F+zK4fhyiEBLAF2ajJk
-	 shV/UDhwTa57bD+m46hGZmA5WA8PsZ4Lc271C5c99LqraOoiMY2qBrGqAVJGCx0kQl
-	 rluMuC9uDlt8g==
-Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-38e91b06006so91106171fa.2
-        for <wireless-regdb@lists.infradead.org>; Mon, 27 Apr 2026 23:57:15 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AFNElJ86gk0drI46+jZ3lWC8OpqNPE+Ijv+NSgQn48s8HBgjwc30rum7CDn5+MxpYXiSEGmg6LXVaT8KWeNS1f4U+w==@lists.infradead.org
-X-Gm-Message-State: AOJu0YxVBpIeyNP4h4YInH5kVg2kcc2f3ND8GZ8XbNiA5aTflnttf86W
-	Qj1IrdrnAT+MrGibbyElZbhuTdIp+KofLSJACnEYp1XU9DCn2NU6oeNE+dOzVaq6Rq5VQc7/bKV
-	Sd/lA7EQoIZRY0iJkvjqWByq4rzI9wpQ=
-X-Received: by 2002:a05:651c:212a:b0:38a:5102:9190 with SMTP id
- 38308e7fff4ca-39240fca0c2mr5687421fa.28.1777359434160; Mon, 27 Apr 2026
- 23:57:14 -0700 (PDT)
+	Tue, 28 Apr 2026 07:28:52 +0000
+Received: by mail-wm1-x333.google.com with SMTP id 5b1f17b1804b1-488b0046078so100209645e9.1
+        for <wireless-regdb@lists.infradead.org>; Tue, 28 Apr 2026 00:28:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1777361328; x=1777966128; darn=lists.infradead.org;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:from:to:cc:subject:date:message-id:reply-to;
+        bh=u2PSbXHzeVtVSXRwe8v8WibwLNyvsUoiZuwywYL3Uug=;
+        b=dul7F44kjiWgLinp3qqfuCz6lTE1n+1nHXTNg9cSaV7E/BQyUqjtPaoYHMfsuf5uF1
+         Dqi9O5htSriCTVXge9Gh2EFMeWVRi+UTqeyKQ163V5KTQJgNtIsf/72QkjvRmuo8PAuI
+         nHKVwEeCvsFLPsDDImHpaisAwm8aIVx0/J6SJMG1dISWL4ZGUNK1ieE6Q3eyRQ1HYBmn
+         Px1uK0OyYSlxYsoi3MACwP1VsqjKPqIKU10Rz3VLzQQZmRyPwQxqdb/keC2Z4i4EETvj
+         y3mMhbVC5mA58bqJCB4BZSXjgDC6lWgxnS1CXAUb09KkyaHzoHHnR3BghksB3QWc3paK
+         sdwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20251104; t=1777361328; x=1777966128;
+        h=content-transfer-encoding:mime-version:message-id:date:subject:cc
+         :to:from:x-gm-gg:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=u2PSbXHzeVtVSXRwe8v8WibwLNyvsUoiZuwywYL3Uug=;
+        b=Y10CxG+jMnohzQHocX/LJCfzYjGtH+GKC1000hJXJTo5ag/7olrhlDXpRI6aRf0zli
+         1PD+1oXC5059QONcPmNQA7vdLZ7As4kiGMf+qaofYNG3IlmZFtv2rGOtpHDeuK0LivM/
+         gZiJwusfJFhzbka4Q9jxvmBoL8LSFDonrPK+fcrJjK08CvumxUTtC+gg6xSm4IiOdvq8
+         Kt6r7cbzNv0MsF2gYg+6bOgtqwMHa0VJs/up+zmCcIWEMulN4Z93izH1479uFTHvPKPC
+         F6qoiXXQauP1zVB9DfRynBK04/nn1fcS6CX9pwWaIakqZEz/LOXu+wHolq9e9buSBhjW
+         Vfww==
+X-Gm-Message-State: AOJu0Yx7sOdKUTujHf/VFVmKlsgDpUeH0jOwI9WbqmTDgEnwysIa/ZYD
+	MXY/FORVa4k0JwP/sTgR3Q8qkEzp9vPo5QNc5Ngdusk8iV9KGKeq40jYPk2+EtTT
+X-Gm-Gg: AeBDievAm5bQ5M16N0w/aAehFYAaPBJr6DeZBEgGydvOuI9plc+hzkDy79O2HiQXe8/
+	b/jbVKQVTVEyLVrK6dl0CePwUnlTJ5OpaO/2HuJaqmFQS3OrFoD77VCEeUzGayKQJb0hfppSOaT
+	aC9SmxM9Gz73jsnYiOsKol9HBeM0VQuxfrBFzz+gyuSuZyp42/LApgkcu91HagtUUm7Z4b2807D
+	udLEP7sljg+TSiZZljDQotZ1PNuie8igzBKchvAa7pLChn6R2pFQExiKVXyK65QChBT3E8VAauG
+	mtsUU4vQgtepR4W0tnXF9y1CT7vo3NrOgvlgiLWZ/UFohRPbmNmnmxwj+0xsiMogncmmcx4f/5C
+	6kUeoVtH1U1eso/ttlZ4kxnlb36h06c/ZyKHZt6S/uXa8KcwEGcTmCXUgoFinkPRo2IGDBISnEm
+	/WEDClw65c9uVwNONSGUHigPJp6+gUTC4j8RErtrCjpUagZRZvj4IZxxTNnpFz
+X-Received: by 2002:a05:600c:83c5:b0:488:c744:49b with SMTP id 5b1f17b1804b1-48a77aed600mr29560005e9.7.1777361328249;
+        Tue, 28 Apr 2026 00:28:48 -0700 (PDT)
+Received: from localhost ([102.128.175.252])
+        by smtp.gmail.com with ESMTPSA id 5b1f17b1804b1-48a77aeb223sm31096105e9.3.2026.04.28.00.28.47
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 28 Apr 2026 00:28:47 -0700 (PDT)
+From: Louis Kotze <loukot@gmail.com>
+To: wireless-regdb@lists.infradead.org
+Cc: wens@kernel.org
+Subject: [PATCH v2] wireless-regdb: Update 6 GHz rules for South Africa (ZA)
+Date: Tue, 28 Apr 2026 09:28:44 +0200
+Message-ID: <20260428072844.482991-1-loukot@gmail.com>
+X-Mailer: git-send-email 2.54.0
 MIME-Version: 1.0
-References: <CB87FEAB-DAEC-49D6-83C2-8B8D59025164.1@smtp-inbound1.duck.com>
-In-Reply-To: <CB87FEAB-DAEC-49D6-83C2-8B8D59025164.1@smtp-inbound1.duck.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 28 Apr 2026 15:57:00 +0900
-X-Gmail-Original-Message-ID: <CAGb2v650r=2+=Z4VBMdX4+55p2XLpG0dvHUGPZBrgp473NJn8Q@mail.gmail.com>
-X-Gm-Features: AVHnY4K2vtNCI2r-eTOCxzr9M1KJJ6LNCzcPowlkx0LxaXshA-fzFUH6lsfT4pY
-Message-ID: <CAGb2v650r=2+=Z4VBMdX4+55p2XLpG0dvHUGPZBrgp473NJn8Q@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Brunei
- Darussalam (BN) for 2022
-To: hfzz7@duck.com
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260428_002850_828007_6C9C0C7F 
+X-CRM114-Status: GOOD (  10.74  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -76,103 +90,66 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi,
+ICASA Notice 1822 of 2023 (23 May 2023) amended Annexure B of the
+Radio Frequency Spectrum Regulations, 2015, to allow licence-exempt
+use of 5925-6425 MHz for WAS/RLAN.
 
-Thank you for the patch and sorry for taking so long to get to it.
+The notice references ETSI EN 303 687 and defines two device
+categories:
 
-On Sat, Oct 25, 2025 at 4:53=E2=80=AFPM <hfzz7@duck.com> wrote:
->
-> In 2022, Authority for Info-communications Technology Industry of Brunei =
-Darussalam (AITI) updates The Brunei Darussalam Radio Spectrum Plan. [1]
->
-> * 2400-2483.5 MHz
->         - 200 mW
->
-> * 5150-5350 MHz
->         - 1000 mW
->         (For 5250-5.350 MHz, DFS and TPC are required)
->
-> * 5470-5725 MHz
->         - 1000 mW
->         - DFS
->         - TPC
+  LPI (Low Power Indoor): 23 dBm EIRP, indoor only
+  VLP (Very Low Power):   14 dBm EIRP, no restriction
 
-The database nor Linux supports TPC. Here we can follow FCC 15.407 and
-limit the power to under 500mW:
+The current entry uses VLP power (14 dBm) with no indoor flag.
+Update to LPI with the NO-OUTDOOR flag.
 
-    Transmit power control (TPC). U-NII devices operating in the
-    5.25-5.35 GHz band and the 5.47-5.725 GHz band shall employ
-    a TPC mechanism. The U-NII device is required to have the
-    capability to operate at least 6 dB below the mean EIRP value
-    of 30 dBm. A TPC mechanism is not required for systems with
-    an e.i.r.p. of less than 500 mW.
+LPI is the appropriate choice because indoor WiFi is the primary
+use case for 6 GHz. The VLP limit of 14 dBm is too low for
+practical network operation with standard access points advertising
+LPI power levels, causing repeated regulatory mismatch errors that
+on MLO (Multi-Link Operation) setups disrupt the 6 GHz link.
 
-> * 5725-5850 MHz
->         - 4000 mW
->
-> Also, add regulatory info for WiGig/60 GHz
-> * 57000-66000 MHz
->         - 10 W / 10000 mW
+Per maintainer guidance, only one rule per band is allowed, so this
+replaces the VLP rule rather than adding the LPI rule alongside it.
 
-This limit is for indoor use only.  The remark column says
+Reference:
+  ICASA Notice 1822 of 2023, Government Gazette No. 48643 (23 May 2023)
+  Amendment to Annexure B, Radio Frequency Spectrum Regulations, 2015
+  https://www.icasa.org.za/uploads/files/Notice-to-amend-Annexure-B-of-the-Radio-Frequency-Spectrum.pdf
 
-    outdoor use is restricted to maximum EIRP of 25 dBm and maximum
-    EIRP power spectral density of -2 dBm / MHz
+Signed-off-by: Louis Kotze <loukot@gmail.com>
+---
+Changes since v1:
+  - Replace VLP rule with LPI rule per "one rule per band" guidance
+    (Chen-Yu Tsai), rather than adding both.
+  - Resend as standalone top-level patch. The previous v2 was sent
+    inline as a reply on 2026-04-10, which the b4-ty tooling cannot
+    extract. No content change from that v2.
 
-So please add the INDOOR-ONLY flag.
+v1: https://lore.kernel.org/wireless-regdb/CAMcSecJ7nDo+-JqGri80m8yn_cp9UfajHqLQDPYup7Zh7QVj7Q@mail.gmail.com/
 
-> Note: According to the Telecommunications (Radio-communication) Regulatio=
-ns, 2013 of the Telecommunications Order, 2001 (S 38/2001), "non-localised =
-use" refers to the operations of specified radio-communication equipment or=
- network at a specific frequency or in any specified frequency within the w=
-hole of Brunei Darussalam. [2]
+ db.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Please wrap the commit message to 80 characters per line. This however
-doesn't apply to URLs.
+diff --git a/db.txt b/db.txt
+index e019bd0..c310b7f 100644
+--- a/db.txt
++++ b/db.txt
+@@ -2180,7 +2180,7 @@ country ZA: DFS-ETSI
+ 	(5170 - 5250 @ 80), (20), AUTO-BW
+ 	(5250 - 5330 @ 80), (20), DFS, AUTO-BW
+ 	(5490 - 5710 @ 160), (30)
+-	(5925 - 6425 @ 320), (14)
++	(5925 - 6425 @ 320), (23), NO-OUTDOOR
+ 
+ country ZW: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
 
+base-commit: d0781152c3349d64faffaaa28d1221eafe389346
+-- 
+2.54.0
 
-Thanks
-ChenYu
-
-> [1] https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
-> [2] https://www.agc.gov.bn/AGC%20Images/LAWS/Gazette_PDF/2013/EN/s086.pdf
->
-> Signed-off-by: Hafiz Zafran <hfzz7@duck.com>
-> ---
->  db.txt | 14 +++++++++-----
->  1 file changed, 9 insertions(+), 5 deletions(-)
->
-> diff --git a/db.txt b/db.txt
-> index 1d17271..8e5cbb5 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -326,11 +326,15 @@ country BM: DFS-FCC
->         (5490 - 5730 @ 160), (24), DFS
->         (5735 - 5835 @ 80), (30)
->
-> -country BN: DFS-JP
-> -       (2402 - 2482 @ 40), (20)
-> -       (5170 - 5250 @ 80), (20), AUTO-BW
-> -       (5250 - 5330 @ 80), (20), DFS, AUTO-BW
-> -       (5735 - 5835 @ 80), (20)
-> +# https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
-> +# Section 7.5, Page 244-251
-> +country BN: DFS-FCC
-> +       (2400 - 2483.5 @ 40), (200 mW)
-> +       (5150 - 5250 @ 80), (1000 mW), AUTO-BW
-> +       (5250 - 5350 @ 80), (1000 mW), DFS, AUTO-BW
-> +       (5470 - 5730 @ 160), (1000 mW), DFS
-> +       (5725 - 5850 @ 80), (4000 mW), AUTO-BW
-> +       (57000 - 66000 @ 2160), (10000 mW)
->
->  country BO: DFS-JP
->         (2402 - 2482 @ 40), (20)
-> --
-> 2.51.1
->
->
 
