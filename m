@@ -4,87 +4,70 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id BD27FCD4F25
-	for <wireless-regdb@archiver.kernel.org>; Sat, 16 May 2026 10:02:30 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 6AAF7CD4F21
+	for <wireless-regdb@archiver.kernel.org>; Sun, 17 May 2026 09:54:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
-	Reply-To:Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=6CDTu0uMmnhCUoH+aSiyceKxfV77uqNspzafxvvFlRg=; b=0Pk+ZcatdgKTbhXJZPvnPgZHI6
-	dXygyvYBKfkY214EkmfNOEaaFEPzsI6NJk9ByDGryYd6cJRdH6LeiNitEXNSUtnnBaEzWJoe9Aygv
-	zvfLCQH/Oy6O1aOLL94PSdCr45Ln3mwrO36MJrKY7UQ1iJkC8HABoYy4GFTaWpxE+pqxig5poSFV2
-	C9WSbTOV2bVjORFgFyLG90smKv2KgmC1bN4X3gzSQYET3ZPV34GSdXCBfWJZRp46h7PHOB2h+fsPk
-	Qz+ikIvtvRNBmBVX9kzM2CBUeNugpMX+HJJvzrOfIJ8VLUsYU+ZmGDg/ZnOoB+T1idFAwS/5OLRzN
-	Tqr2J+aw==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h3YbFt3TDgTuQ8eiMSWH4nFYiIWstBJcVS/pcFuLX1U=; b=t9pZTPY2vu/CXa
+	sb0Hof2f376QiOigj8v83YgATX+m7LzVj7f4Ui7Ddp+ESXtAHpGyR6TCst4iYwlDtt63OnKsLOD0e
+	0GL95eW5uGI5/h1C1TdBrQgQr4bJdqoUqF2Y0cvTfi0TErS7KUDc9Sjh+JGfwBc/i/pdyx+DYFwaJ
+	NtPUTTFD6xCIwZGVUbcVNlBOw2QDHzWVK7+eq6TPozxzo6BThOJq1j54eQjuoTLp057N+jPLL3C/m
+	AzxK4c9+CZ3Vo3Az/b6r2nOk86V6Do2G8Aor7HQbpinWWKL92OpAEBtCltpN/wyzQmZlCLEVh5P+X
+	tuN0uTaRJT+1zdjFdvHA==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOBqk-0000000AXLY-0puh;
-	Sat, 16 May 2026 10:02:26 +0000
-Received: from mail-pl1-x634.google.com ([2607:f8b0:4864:20::634])
+	id 1wOYC8-0000000CU0J-3xkt;
+	Sun, 17 May 2026 09:54:00 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wOBqe-0000000AXKq-3tNq
+	id 1wOYC5-0000000CTze-2CnF
 	for wireless-regdb@lists.infradead.org;
-	Sat, 16 May 2026 10:02:24 +0000
-Received: by mail-pl1-x634.google.com with SMTP id d9443c01a7336-2ba928852a5so5268265ad.1
-        for <wireless-regdb@lists.infradead.org>; Sat, 16 May 2026 03:02:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1778925740; x=1779530540; darn=lists.infradead.org;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:from:to:cc:subject:date
-         :message-id:reply-to;
-        bh=6CDTu0uMmnhCUoH+aSiyceKxfV77uqNspzafxvvFlRg=;
-        b=i4qvUzWmGQk49fCP82ZRF5/vxMpjOwq0hrwHPUltCibnqtg+7sQe4cNYRe6kpGBNlY
-         v5NR01lz2x/eES534zycrlITUuKkIFK0PAoUEKZiCoeS+wzrGN2e7cyP6TewQ19fgqdJ
-         0hI4Fr2bTBST5nuzKsRrB9/Dr7SnNeeNBiElxGLAcrfaKOblCNz1P2U6yfDXefBeYm2i
-         pD0/V2F1XiWWVgH9N+3gjT24uaoRKkXQU2//dgsrV5qnDofmmg74oE1cu7SbNp6kfO46
-         JUnO/6Up0eh8W/ZkiWRYEjdk4Iu4/M9FOQogpdhBPfLM2JQusUXMa3bEbgEEhcCyeexI
-         f+Uw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1778925740; x=1779530540;
-        h=content-transfer-encoding:mime-version:references:in-reply-to
-         :message-id:date:subject:cc:to:from:x-gm-gg:x-gm-message-state:from
-         :to:cc:subject:date:message-id:reply-to;
-        bh=6CDTu0uMmnhCUoH+aSiyceKxfV77uqNspzafxvvFlRg=;
-        b=qgpwkREdo/T+91kZjdounW9PKL9DWfcz5NOlwjbEYF7Bv4MmVP9M1OhW+edx6wshtv
-         e9kvOvR8YPV4bm8p9EuxFhwry1ORxI3ECp6+UhQ5mrOV7MGSz6QH4iy/HGeaBh5HzCcU
-         Ll7aUI2yuVe5cDghN8Q8RhDT4RxvIhwcfpzGBL3Ibhfsesi5I+3KmEpu6qDDotMx4DzK
-         ZzcPiQo9RsS69Hq5jERmFO0rw5AHzaTMDWPlbSZWp8u6vKzeZO1wG0TsGUJEY2Ku1jYT
-         sf3SdA2osIKbkc1p/a96NYiBOLhwdE72XcIu7n3UIIpPN7+h+oF2AoUH4cAdgLBryNWk
-         aEdw==
-X-Gm-Message-State: AOJu0YzyYhGvw1HJfKY5cnB3nyYdRmL4cqaf10kWgWmkSoaWjUcQj3FR
-	6QVI0fSrVFcEi1og//6jPqMyW74sISTifpxMEdxtCd2F6B4Xe9+KU2LB
-X-Gm-Gg: Acq92OHQDXFj8qQX/yuuLxk07AaZusTcyfslYapfSvH40y94YwG/PhnPWNCYFSWJDCc
-	eW4a5lSPlJde6PncrZX7/XY/+AuBUCNNpYfQgdW0Vyttnom85/8qmsp0IfaFDwL5JKVfOQE4Tld
-	JWIffwURZLPIzVVSbLyIx0fsh2/nu0uOqZ+hrLvqxsCPCUCCp4xk50I2HMPkuV6SI70FT2WkR1f
-	zSdppTNE6caDQ6yCIvINAYcBVTEYgW32TkFccXzbL4w5MzRncdD0LOuzVyi4Yvvo1yQZtjNC0go
-	2BDoKiOcYmmIhBkh5BzyWwCbOmqKCPQhMki1D3jCQbo9bakFwUdfgYTxEqrLOOQnsfFCs+3gn5L
-	yGo5OQeveKWgyJu4AMqCeDxJ9zByE8H/7W/Zc7mDKOPCJd0lwTE3m8Ojd9yUxMi6bvZbVkFuvYa
-	e0MjR33+GWtRv0s/0S5hDBJbkZmOIds4DhiQw+FniblTht/w==
-X-Received: by 2002:a17:903:fa5:b0:2b4:5cb8:99eb with SMTP id d9443c01a7336-2bd7e8bd34fmr89152795ad.27.1778925739604;
-        Sat, 16 May 2026 03:02:19 -0700 (PDT)
-Received: from adsl-dynamic-ipv6.slt.lk ([2402:d000:813c:1db1:d202:27df:3833:73d0])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2bd5d235c18sm81015995ad.81.2026.05.16.03.02.17
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 16 May 2026 03:02:19 -0700 (PDT)
-From: Mohamed Aashif <maashif011@gmail.com>
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org,
-	pkshih@gmail.com,
-	Mohamed Aashif <maashif011@gmail.com>
-Subject: [PATCH v2] wireless-regdb: Update regulatory rules for Sri Lanka (LK)
-Date: Sat, 16 May 2026 15:30:24 +0530
-Message-ID: <20260516100024.103241-1-maashif011@gmail.com>
-X-Mailer: git-send-email 2.54.0
-In-Reply-To: <CAHrRpu=Ku=cK2Hd8xzJr82iPkj4Jzp57ch9wEE1KsoCiExbhbA@mail.gmail.com>
-References: <CAHrRpu=Ku=cK2Hd8xzJr82iPkj4Jzp57ch9wEE1KsoCiExbhbA@mail.gmail.com>
+	Sun, 17 May 2026 09:53:59 +0000
+Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
+	by sea.source.kernel.org (Postfix) with ESMTP id A6DAA43F2F
+	for <wireless-regdb@lists.infradead.org>; Sun, 17 May 2026 09:53:53 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8A403C2BCF5
+	for <wireless-regdb@lists.infradead.org>; Sun, 17 May 2026 09:53:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+	s=k20201202; t=1779011633;
+	bh=w24E2PS0OWfP/lsPmj/aM3/EL4WwXOkwHb7K9h6rhIo=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
+	b=nVin/Aof1/EexC6WgfxE8FEQY9Gjgsdw3/KRyzIngZrd6mDQZIjcOspZXfT9GiXwi
+	 Y46aYwgA98cpllFEmuohU+9FemBnFSY6kp9+rLpZfNH30Gt7/DaGJ2+WnB8MyNOR3A
+	 3SVrqXu/6tlcmELF3+uKZCrbxVTDEx5xiroCIa9EyjJBntJfEda1f/EFTtAlVrOk6t
+	 QZ/sBLZMBfZZ+5TJj8y6kWFjPRtm0rXHzonMoVg2Z5SS2L9xbB5cT8ourDoh/IzBf3
+	 JfQyJ0QEho7h0gk7cDQjoZXHeGHeno33bstxhPhv2L255HjPkIQrOZmRopvAwPb6xY
+	 mUjJ0kO+szYqg==
+Received: by mail-lf1-f47.google.com with SMTP id 2adb3069b0e04-5aa1b2327c8so636416e87.0
+        for <wireless-regdb@lists.infradead.org>; Sun, 17 May 2026 02:53:53 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AFNElJ/otXYkfOgmHjuViMGcH8ItrQ4I3/MQbbeNCqVFXOe3TdyYpiTGAMzP4gV9NqWDi14DvaS4GRdeR0mlmqlRzw==@lists.infradead.org
+X-Gm-Message-State: AOJu0YzhNQNMSCBsgSuLxuYRaVwKNzexH8HY9KbYdMFF1NlWdA6tDylW
+	rXccSaubPn38eX2cqwHl9NosLHf7pGFvm6EI21gkZ8v4RbZjLuXXTyICax00ArAi4XVVp8roqiU
+	nKox/trneUYstBS4lSvnIzjcbPIASvx8=
+X-Received: by 2002:ac2:5b4e:0:b0:5aa:128d:9104 with SMTP id
+ 2adb3069b0e04-5aa128d9186mr2074170e87.13.1779011631921; Sun, 17 May 2026
+ 02:53:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+References: <20260501153303.8521-1-hfzz7@duck.com> <BFBA868E-9B63-48A6-9B73-E749857BD106.1@smtp-inbound1.duck.com>
+In-Reply-To: <BFBA868E-9B63-48A6-9B73-E749857BD106.1@smtp-inbound1.duck.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Sun, 17 May 2026 17:53:40 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67NMBPs5bbNfoPNjK1mum-y5FsqAa_HVTq_P3e48Dnh3A@mail.gmail.com>
+X-Gm-Features: AVHnY4LHa6jKozd8dHzbv_dzE_-1r086s8QbVV2ux_NMViqm1CfKbcfn9hTUID0
+Message-ID: <CAGb2v67NMBPs5bbNfoPNjK1mum-y5FsqAa_HVTq_P3e48Dnh3A@mail.gmail.com>
+Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for Brunei
+ Darussalam (BN) for 2022
+To: hfzz7@duck.com
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260516_030220_970036_62C29CC1 
-X-CRM114-Status: UNSURE (   8.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20260517_025357_607948_92BE6B24 
+X-CRM114-Status: GOOD (  15.86  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -96,71 +79,93 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Update Sri Lanka regulatory domain based on the RTTE Type Approval
-Rules 2020 from the Telecommunications Regulatory Commission of
-Sri Lanka (TRC).
+On Fri, May 1, 2026 at 11:41=E2=80=AFPM <hfzz7@duck.com> wrote:
+>
+> In 2022, Authority for Info-communications Technology Industry of Brunei
+> Darussalam (AITI) updated The Brunei Darussalam Radio Spectrum Plan. [1]
+>
+> * 2400-2483.5 MHz
+>         - 200 mW
+>
+> * 5150-5350 MHz
+>         - 1000 mW
+>         (For 5250-5.350 MHz, DFS and TPC are required)
+>
+> * 5470-5725 MHz
+>         - 1000 mW
+>         - DFS
+>         - TPC
+>
+> * 5725-5850 MHz
+>         - 4000 mW
+>
+> Also, add regulatory info for WiGig/60 GHz
+> * 57000-66000 MHz
+>         - 10 W / 10000 mW
+>
+> Note: According to the Telecommunications (Radio-communication) Regulatio=
+ns,
+> 2013 of the Telecommunications Order, 2001 (S 38/2001), "non-localised us=
+e"
+> refers to the operations of specified radio-communication equipment or ne=
+twork
+> at a specific frequency or in any specified frequency within the whole of
+> Brunei Darussalam. [2]
+>
+> [1] https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
+> [2] https://www.agc.gov.bn/AGC%20Images/LAWS/Gazette_PDF/2013/EN/s086.pdf
+>
+> Signed-off-by: Hafiz Zafran <hfzz7@duck.com>
 
-Source: https://www.trc.gov.lk/content/files/licensing/RTTE_GAZETTE-English.pdf
+So the author (the email's From: header) only has your email. With
+your permission, I will add use name from your Signed-off-by as
+the commit's author.
 
-Key changes:
-- Change DFS region from FCC to ETSI (document references ETSI
-  standards EN 300 328 and EN 301 893 as the applicable radio
-  interface standards)
-- 2.4 GHz: expand to 2400-2483.5 MHz at 23 dBm
-- 5150-5250 MHz: 23 dBm with DFS
-- 5250-5350 MHz: 20 dBm with DFS (no TPC, 3 dB reduction per EN 301 893)
-- 5470-5725 MHz: 27 dBm with DFS (no TPC, per EN 301 893)
-- 5725-5875 MHz: 24 dBm with DFS (per ETSI EN 302 502)
 
-Note: The TRC gazette conflicts internally by allowing 30 dBm for
-5725-5875 MHz while citing EN 301 893 (which doesn't cover this band).
-Lacking TRC clarification, we conservatively default to the ETSI
-EN 302 502 limits (24 dBm).
+ChenYu
 
-Signed-off-by: Mohamed Aashif <maashif011@gmail.com>
----
-Thanks for the review and catching the TPC and ETSI standard details!
-
-Changes in v2:
-- Split 5150-5350 MHz into 5150-5250 MHz (23 dBm) and 5250-5350 MHz
-  (20 dBm), adding AUTO-BW to both.
-- Applied a 3 dB reduction to 5250-5350 MHz and 5470-5725 MHz (now
-  27 dBm) to comply with ETSI limits since TPC is unsupported.
-- Capped 5725-5875 MHz at 24 dBm per ETSI EN 302 502.
-
- db.txt | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index fdc2c13..12cdafd 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1058,12 +1058,15 @@ country LI: DFS-ETSI
- 	# 60 GHz band channels 1-4 (ETSI EN 302 567)
- 	(57000 - 66000 @ 2160), (40)
- 
--country LK: DFS-FCC
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 20), (17)
--	(5250 - 5330 @ 20), (24), DFS
--	(5490 - 5730 @ 20), (24), DFS
--	(5735 - 5835 @ 20), (30)
-+# Source:
-+# https://www.trc.gov.lk/content/files/licensing/RTTE_GAZETTE-English.pdf
-+# Sri Lanka RTTE Type Approval Rules 2020, Table 2 - Wideband Data Transmission
-+country LK: DFS-ETSI
-+	(2400 - 2483.5 @ 40), (23)
-+	(5150 - 5250 @ 80), (23), DFS, AUTO-BW
-+	(5250 - 5350 @ 80), (20), DFS, AUTO-BW
-+	(5470 - 5725 @ 160), (27), DFS
-+	(5725 - 5875 @ 80), (24), DFS
- 
- # Source:
- # http://lca.org.ls/images/documents/lesotho_national_frequency_allocation_plan.pdf
--- 
-2.54.0
-
+> ---
+> Changes since v1:
+>         - fix grammar issues on the commit message
+>         - adjust transmit power limit to 500 mW for frequencies that
+>           require TPC
+>         - add INDOOR-ONLY flag to WiGig, as per review
+> ---
+>  db.txt | 15 ++++++++++-----
+>  1 file changed, 10 insertions(+), 5 deletions(-)
+>
+> diff --git a/db.txt b/db.txt
+> index 3252521..2de3281 100644
+> --- a/db.txt
+> +++ b/db.txt
+> @@ -326,11 +326,16 @@ country BM: DFS-FCC
+>         (5490 - 5730 @ 160), (24), DFS
+>         (5735 - 5835 @ 80), (30)
+>
+> -country BN: DFS-JP
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 80), (20), AUTO-BW
+> -       (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> -       (5735 - 5835 @ 80), (20)
+> +# Source:
+> +# https://aiti.gov.bn/media/planjc1p/bd-radio-spectrum-plan-2019.pdf
+> +# Section 7.5, Page 244-251
+> +country BN: DFS-FCC
+> +       (2400 - 2483.5 @ 40), (200 mW)
+> +       (5150 - 5250 @ 80), (1000 mW), AUTO-BW
+> +       (5250 - 5350 @ 80), (500 mW), DFS, AUTO-BW
+> +       (5470 - 5730 @ 160), (500 mW), DFS
+> +       (5725 - 5850 @ 80), (4000 mW), AUTO-BW
+> +       (57000 - 66000 @ 2160), (10000 mW), INDOOR-ONLY
+>
+>  country BO: DFS-JP
+>         (2402 - 2482 @ 40), (20)
+> --
+> 2.54.0
+>
+>
 
