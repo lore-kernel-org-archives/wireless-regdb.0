@@ -4,71 +4,71 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 34CEBCD4F3C
-	for <wireless-regdb@archiver.kernel.org>; Tue, 19 May 2026 06:52:13 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 06C4CCD4F50
+	for <wireless-regdb@archiver.kernel.org>; Tue, 19 May 2026 07:15:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HNAyPjzpSp3cuBgZs82o3keQuS7UVqRa6p7gqQncaqU=; b=SQO4CHUxSo+xiN
-	ZS2nqHzZ4mfdNmrvIu+B/Xx7fwZ7LJHVKMXFkC7B3Hz6YbjtJ04Sv/VNEw9I63MjJyydXBy0oOKum
-	wXgWLtEFOP5Zv8GNJNW/ROD+eWlv0+Rd+suZee/i+sE2LIFKUWdGvnYzWAKKGHcZSY/UXtgqqFmVw
-	uAr63yLHpQParQX7P9C2b2JTyLDa0yveHyzRM9lb/Q9zBpa/b/O9oCdeeX2m+3qMV24FRftGfH6dM
-	BtLk5nvkz5GhsJL6uHEgzbBUpqCn6Jkva/R3UeUWSq03Wc2iG5lmoeEtqBnpS7U8GftwUHqRbzDLW
-	2shPTCxTJFuBul46jprw==;
+	List-Owner; bh=xle0a7JggwlD1dJ6Kbruuf74DRS5bm6y0tsRphC6x/Q=; b=QVGtaPjzsFig7h
+	x0W1G3DP9UdsSlbHhMVdd0vYOtfbR7MWF3pbWTQrE0SsDH24o9WvJZGN/SsvQBQtaa89ENCWzkhhU
+	A5VronLXXFZ5CRokNH5KlriSVZJo6daofCXot4rY2DTc3ZylUNl6K5W6OBBsh96KMS+Zib+IjB9WJ
+	zqQVSq7DOm07nzZjsBuimenBVv+nvVe6ldHXsHcCmDccGVnuRw8SjFuydWfeiTBsUsuqD8Sl80Zf9
+	4XW2yLgZynZgu7XAVKxqrcovTV6wmvURVDaOqz9UpD12J/vOZJ7YV4F3/OrjMymtXcPxmo9Byatp9
+	oHau32vBOnb+MUWJx6nQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPEJH-00000000PVv-3m2I;
-	Tue, 19 May 2026 06:52:11 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1wPEfb-00000000SKL-16xO;
+	Tue, 19 May 2026 07:15:15 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wPEJD-00000000PUi-3inz
+	id 1wPEfY-00000000SJ1-2aQU
 	for wireless-regdb@lists.infradead.org;
-	Tue, 19 May 2026 06:52:10 +0000
+	Tue, 19 May 2026 07:15:14 +0000
 Received: from smtp.kernel.org (transwarp.subspace.kernel.org [100.75.92.58])
-	by sea.source.kernel.org (Postfix) with ESMTP id 40C47434E6
-	for <wireless-regdb@lists.infradead.org>; Tue, 19 May 2026 06:52:07 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 23908C2BCC9
-	for <wireless-regdb@lists.infradead.org>; Tue, 19 May 2026 06:52:07 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 0565444090
+	for <wireless-regdb@lists.infradead.org>; Tue, 19 May 2026 07:15:12 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id D6FCCC2BCFC
+	for <wireless-regdb@lists.infradead.org>; Tue, 19 May 2026 07:15:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
-	s=k20201202; t=1779173527;
-	bh=d+jkC9HbWWu+r9ZJREbh6okGKMKsoQ8P/ug5XNjSXbY=;
+	s=k20201202; t=1779174911;
+	bh=e37XJBBu2ZOJo9b97UuDxrWTjD1hFvbR54jEfbTYFVg=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc:From;
-	b=Q5ISkx0i4i++qoaqhB9NFaZ5tEOFNUVRQ8VEldFFfu7fhXacj9wyWQeqKN0gl7/X4
-	 XdI9rHMdknCZj0JVabtddaCcD6ex2vFa8mBlXt80rlcpAT9gTkwj86T11i595V1Usx
-	 Abcg38exak+4KYqJl9XRxLnyNL0eptGqs+m+WGKAhEk1eqqGBBvs3iEeiDmg9DJO2c
-	 eGQin/q3qm54NGWplujQl/nG/1CKXbYSVhPotFAi0j6G0+TakdtBEwK4s9FHKfKJwE
-	 FIe2Twecgso2q9PbLf7Wy8TecvpoZjv2z7WZXdxDXoftL28ovH9LUaD4jNO49Io+12
-	 +xxXa+kV4YruA==
-Received: by mail-lf1-f46.google.com with SMTP id 2adb3069b0e04-5a8c6fc5fd3so4305304e87.0
-        for <wireless-regdb@lists.infradead.org>; Mon, 18 May 2026 23:52:07 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AFNElJ+dgcgQ1wd5ZIXFh89/sIiiRhA0ZgMc8TvB91zNNeXui72yunHK5VOLKo1FfR0KK2QC7MrcMyWVVIvjuUORpg==@lists.infradead.org
-X-Gm-Message-State: AOJu0YwRQCbU29DwALpnFjaqRczOKflxH+5EvxyzSDSUZnpgEqBXsq25
-	laYzT1skLisxEwD7siU9egKh3l3e+mplDCPquq9uHc8TklDeTi7tg+v/oHG5x6WgBvKdErnVEQS
-	VT3yJMNPsjPM8tYxCJ3lFT2/qDnsD/TU=
-X-Received: by 2002:a05:6512:1095:b0:5a7:4912:1a50 with SMTP id
- 2adb3069b0e04-5a8ffc8a076mr5928382e87.20.1779173525534; Mon, 18 May 2026
- 23:52:05 -0700 (PDT)
+	b=cr2z5Nofp+ku5w4GOvFZx/3HFxB32ye8O7ajX3IMe15DiDvxw9Hf7YeIt0seU7i/p
+	 bSSP0sN6PTLEBV7aGvmVK3kBuQq1kJWmSliwock6Uz2T1agijsGtMnRBoarm2o0d02
+	 g8JNnYxRP5fuIte06t5wMmbgWa89YzBMm0VfrxNRbWGZnvY5Cl1LW9eldSz4WjGBx4
+	 3iru6QI3LXh/wdSK7zlXN/6EbB5SlZJA23UbU0Pi73U5a4/UB98cyhOlcoSdkUuVyp
+	 nOLXfyMu6T0d1zAcOfV95XBLMtLTXdiQO4GJm9mYnV/FDei0oZmbkI6D035HCHp0PC
+	 CSRyU7kgFnADg==
+Received: by mail-lj1-f170.google.com with SMTP id 38308e7fff4ca-39378db197aso36184901fa.3
+        for <wireless-regdb@lists.infradead.org>; Tue, 19 May 2026 00:15:11 -0700 (PDT)
+X-Gm-Message-State: AOJu0Yxgyl8bzQMZp0SrDleYPtQCAwEi64i2HBUtCSVen16tvgQzfhoQ
+	FFEwpsYapQlPYGSAa3FT0ecmnIJ/RKeRvT4CJoWnEHFAJv4EGocns0SgDaOl1GXQ2pZp+095s9n
+	uJ7P7c5gIaYAOlUHQusor80cCC5e74bs=
+X-Received: by 2002:a2e:8812:0:b0:38e:83a6:d4c with SMTP id
+ 38308e7fff4ca-39561c3628dmr37868651fa.7.1779174910180; Tue, 19 May 2026
+ 00:15:10 -0700 (PDT)
 MIME-Version: 1.0
-References: <CAHrRpu=-ngPpe2MsmWz0gQq1VVxbr9L0+jUos3o62wPUY-wXqQ@mail.gmail.com>
- <20260518074743.179402-1-maashif011@gmail.com>
-In-Reply-To: <20260518074743.179402-1-maashif011@gmail.com>
+References: <1886262646.6291779.1777997531793.ref@mail.yahoo.com>
+ <1886262646.6291779.1777997531793@mail.yahoo.com> <dc91809a60874f87a5e9d67f0c4696e5@badraproject.com>
+In-Reply-To: <dc91809a60874f87a5e9d67f0c4696e5@badraproject.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 19 May 2026 14:51:53 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67qTxBwOrpgBV6+hm1=h7ZAz0oVmR4uPuMw6otfHAWw0Q@mail.gmail.com>
-X-Gm-Features: AVHnY4J4Qoe4rQjlKzSCEocD1spDtInRhG4NAVo-Coua9DC4afuAWbxB-fTgtjY
-Message-ID: <CAGb2v67qTxBwOrpgBV6+hm1=h7ZAz0oVmR4uPuMw6otfHAWw0Q@mail.gmail.com>
-Subject: Re: [PATCH v3] wireless-regdb: Update regulatory rules for Sri Lanka (LK)
-To: Mohamed Aashif <maashif011@gmail.com>
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org, 
-	pkshih@gmail.com
+Date: Tue, 19 May 2026 15:14:57 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66mCBP8KiMF3nRTix_zYDhsb_o4KNj-7-enB0+ULvh0_A@mail.gmail.com>
+X-Gm-Features: AVHnY4LZNdH-hLJyed2ewHsAuE9f5bxzyNY9_0GWdZxDjJDt6NAxN0w5acgcI6A
+Message-ID: <CAGb2v66mCBP8KiMF3nRTix_zYDhsb_o4KNj-7-enB0+ULvh0_A@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: add regulatory rules for Iraq (IQ)
+To: Mohammed.Al-Obaidi@badraproject.com, 
+	Johannes Berg <johannes@sipsolutions.net>
+Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org, 
+	mnewiraq2000@gmail.com, mnew_iraq@yahoo.com
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260518_235207_967104_4D3F010A 
-X-CRM114-Status: GOOD (  17.68  )
+X-CRM114-CacheID: sfid-20260519_001512_712984_EB6A01CD 
+X-CRM114-Status: GOOD (  42.42  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -84,92 +84,237 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, May 18, 2026 at 3:48=E2=80=AFPM Mohamed Aashif <maashif011@gmail.co=
+Hi,
+
+On Sat, May 16, 2026 at 3:43=E2=80=AFPM <Mohammed.Al-Obaidi@badraproject.co=
 m> wrote:
 >
-> Update Sri Lanka regulatory domain based on the RTTE Type Approval
-> Rules 2020 from the Telecommunications Regulatory Commission of
-> Sri Lanka (TRC).
->
-> Source: https://www.trc.gov.lk/content/files/licensing/RTTE_GAZETTE-Engli=
-sh.pdf
->
-> Key changes:
-> - Change DFS region from FCC to ETSI (document references ETSI
->   standards EN 300 328 and EN 301 893 as the applicable radio
->   interface standards)
-> - 2.4 GHz: expand to 2400-2483.5 MHz at 23 dBm
-> - 5150-5250 MHz: 23 dBm
-> - 5250-5350 MHz: 20 dBm with DFS (no TPC, 3 dB reduction per EN 301 893)
-> - 5470-5725 MHz: 27 dBm with DFS (no TPC, per EN 301 893)
-> - 5725-5875 MHz: 24 dBm with DFS (per ETSI EN 302 502)
+> Kind reminder, any update on the subject?
 
-The numbers and units should match the official regulations.
+Please send the patch directly to the mailing list, not as an attachment.
+Otherwise there is no way to review the patch on the mailing list.
 
-The official document you provided uses mW, so please use mW throughout,
-unless there are dBm calculations like for the reduction due to no TPC
-or adoption of dBm numbers from ETSI rules.
+`git send-email` should do that for you.
 
-> Note: The TRC gazette conflicts internally by allowing 30 dBm for
-> 5725-5875 MHz while citing EN 301 893 (which doesn't cover this band).
-> Lacking TRC clarification, we conservatively default to the ETSI
-> EN 302 502 limits (24 dBm).
+About the commit message:
 
-             ^ TPC
+The section "Notes on the encoding chosen below" is really not needed,
+unless something is not a direct translation from text to the standard
+rules for wireless-regdb, or if other materials were referenced.
 
-Will fix up when applying.
+So talking about "Indoor" encoded as "NO-OUTDOOR" is redundant. Mentioning
+DFS is also not needed, since it is obvious from the table you provided.
+AUTO-BW for 5150-5350 MHz is also quite standard.
 
+Things that are worth mentioning:
+
+1. TPC requirements in the regulation and what was done to make the rule
+   compliant (as we don't support TPC)
+2. Choice between indoor-only and indoor+outdoor rules when both exist
+   but with different requirements (database and Linux support only one
+   rule per band)
+3. unique 5.8 GHz figure as you gave
+
+
+Also:
+
+* 5725-5875 MHz uses the higher of the two stated EIRP figures
+  (4000 mW for 20 MHz channels) since wireless-regdb expresses a
+  per-band ceiling, not a per-channel-width ceiling.
+
+This is slightly wrong. wireless-regdb expresses a ceiling that makes
+devices compliant with all regulations in all configurations. So if
+there is a power spectral density that allows the maximum EIRP at
+a wider channel, but a reduced EIRP at 20 MHz, we will use the reduced
+number.
+
+As for 10 MHz, I don't think it is supported, so we don't really consider
+that case. I could be wrong though.
+
+Johannes, could you shed some light on 10 MHz channel width support?
+
+
+Thanks
+ChenYu
+
+> Mohammed
 >
-> Signed-off-by: Mohamed Aashif <maashif011@gmail.com>
-> ---
-> Great, thanks. Removed DFS from 5150-5250 MHz.
+> From: Mohammed Abdalla [mailto:mnew_iraq@yahoo.com]
+> Sent: Tuesday, May 5, 2026 7:12 PM
+> To: wireless-regdb@lists.infradead.org; linux-wireless@vger.kernel.org
+> Cc: Mohammed Abdullah Ali Al-Obaidi <Mohammed.Al-Obaidi@badraproject.com>
+> Subject: [PATCH] wireless-regdb: add regulatory rules for Iraq (IQ)
 >
-> Changes in v3:
-> - Corrected the table caption in the source comment to "Table 2 - Applica=
-ble Standards- Wireless"
-> - Removed DFS flag from 5150-5250 MHz
+> ## 1. Why this patch exists
 >
-> Changes in v2:
-> - Split 5150-5350 MHz into 5150-5250 MHz (23 dBm) and 5250-5350 MHz
->   (20 dBm), adding AUTO-BW to both.
-> - Applied a 3 dB reduction to 5250-5350 MHz and 5470-5725 MHz (now
->   27 dBm) to comply with ETSI limits since TPC is unsupported.
-> - Capped 5725-5875 MHz at 24 dBm per ETSI EN 302 502.
+> Iraq is currently absent from `wireless-regdb/db.txt`. As a
+> consequence, every OpenWrt and Linux device set to `country=3DIQ`
+> falls back to the world domain (`00`), which marks most of the
+> 5 GHz spectrum as `no IR` and limits 2.4 GHz EIRP to 20 dBm. A
+> public OpenWrt forum thread on the Archer AX23 in Iraq concluded
+> with the maintainers' standard answer:
 >
->  db.txt | 15 +++++++++------
->  1 file changed, 9 insertions(+), 6 deletions(-)
+> > *"IQ is the correct code for the place; once an engineer shares
+> > the local radio laws with regdb maintainers it will be added."*
 >
-> diff --git a/db.txt b/db.txt
-> index fdc2c13..8038f5a 100644
-> --- a/db.txt
-> +++ b/db.txt
-> @@ -1058,12 +1058,15 @@ country LI: DFS-ETSI
->         # 60 GHz band channels 1-4 (ETSI EN 302 567)
->         (57000 - 66000 @ 2160), (40)
+> This patch is that contribution.
 >
-> -country LK: DFS-FCC
-> -       (2402 - 2482 @ 40), (20)
-> -       (5170 - 5250 @ 20), (17)
-> -       (5250 - 5330 @ 20), (24), DFS
-> -       (5490 - 5730 @ 20), (24), DFS
-> -       (5735 - 5835 @ 20), (30)
-> +# Source:
-> +# https://www.trc.gov.lk/content/files/licensing/RTTE_GAZETTE-English.pd=
-f
-> +# Sri Lanka RTTE Type Approval Rules 2020, Table 2 - Applicable Standard=
-s- Wireless
-> +country LK: DFS-ETSI
-> +       (2400 - 2483.5 @ 40), (23)
-> +       (5150 - 5250 @ 80), (23), AUTO-BW
-> +       (5250 - 5350 @ 80), (20), DFS, AUTO-BW
-> +       (5470 - 5725 @ 160), (27), DFS
-> +       (5725 - 5875 @ 80), (24), DFS
+> ## 2. The primary source
 >
->  # Source:
->  # http://lca.org.ls/images/documents/lesotho_national_frequency_allocati=
-on_plan.pdf
-> --
-> 2.54.0
+> The Iraqi Communications and Media Commission (CMC), the national
+> regulator, has issued a numerical regulation specifically governing
+> unlicensed Wi-Fi, SRD, and UWB devices:
+>
+> - **Title:** Regulation on short-range radio communication devices
+>   (SRD) and devices using ultra-broadband (UWB) technology
+> - **Issuer:** Republic of Iraq, CMC, Telecommunications Regulatory
+>   Department, International Relations Section
+> - **Decree:** Council of Commissioners decision No. 122/q-2025
+> - **In force from:** 2025-09-22
+> - **Edition:** First edition, 2025; 26 pages
+> - **Direct PDF:**
+>   <https://cmc.iq/wp-content/uploads/2025/09/Regulation-on-short-range-ra=
+dio-communication-devices-SRD-and-devices-using-ultra-broadband-UWB-technol=
+ogy.pdf>
+>
+> Article 4-1-13 of that regulation, titled "Wireless Access Systems
+> (WAS)", contains a full numerical table for every Wi-Fi band. This
+> patch reproduces that table directly. Nothing in the proposed
+> `country IQ:` block is inferred or extrapolated.
+>
+> ## 3. The Article 4-1-13 table, verbatim
+>
+> | Band | Use | Max EIRP | Required mitigations | Cited standard |
+> |---|---|---|---|---|
+> | 2400 =E2=80=93 2483.5 MHz | Indoor and outdoor | 100 mW | LBT and DAA |=
+ EN 300 328, ERC/REC 70-03 |
+> | 5150 =E2=80=93 5250 MHz | Indoor | 200 mW | =E2=80=94 | EN 301 893, ITU=
+ Res. 229 (Rev. WRC-19) |
+> | 5250 =E2=80=93 5350 MHz | Indoor | 200 mW | =E2=80=94 (DFS implied via =
+EN 301 893) | EN 301 893 |
+> | 5470 =E2=80=93 5725 MHz | Indoor | 1000 mW | DFS and TPC (stated explic=
+itly) | EN 301 893 |
+> | 5725 =E2=80=93 5875 MHz | Indoor and outdoor | 2000 mW (10 MHz ch) / 40=
+00 mW (20 MHz ch) | =E2=80=94 | EN 302 502 |
+> | 5945 =E2=80=93 6425 MHz | Indoor | 200 mW | =E2=80=94 | EN 303 687, ECC=
+ Report 75 |
+> | 57000 =E2=80=93 66000 MHz | Indoor | 10000 mW | LBT and DAA | EN 302 56=
+7 |
+>
+> The proposed `country IQ:` block encodes this table line for line.
+>
+> ## 4. The Iraqi regulation also defines its own glossary terms
+>
+> For the avoidance of doubt, the regulation's Annex A explicitly
+> defines `Wi-Fi` as *"802.11 Local Area Networking in 2.4 and 5 GHz
+> ISM bands"*. So when the maintainers ask whether this regulation
+> in fact covers Wi-Fi, the answer from the regulator is yes,
+> in writing, in the regulation itself.
+>
+> The same annex defines DFS, TPC, LBT, DAA, EIRP and AFA in the
+> exact wireless-regdb sense.
+>
+> ## 5. Encoding choices and where they came from
+>
+> A few wireless-regdb encoding details require explanation, because
+> they are interpretations of the regulation's wording rather than
+> direct copies of numerical limits:
+>
+> 1. **NO-OUTDOOR on 5150=E2=80=935725 MHz.** The regulation labels these
+>    rows simply as "Indoor". The wireless-regdb idiom for that is
+>    the `NO-OUTDOOR` flag.
+>
+> 2. **No NO-OUTDOOR on 5725=E2=80=935875 MHz.** The regulation explicitly
+>    labels this row "Indoor and outdoor".
+>
+> 3. **DFS on 5250=E2=80=935350 MHz.** The regulation's own column for this
+>    row is empty for mitigations, but the cited standard
+>    (EN 301 893) requires DFS in this sub-band, and the corresponding
+>    row for 5470=E2=80=935725 in the same table does state DFS+TPC. Readin=
+g
+>    the regulation as a whole, DFS for 5250=E2=80=935350 is required by th=
+e
+>    incorporated standard.
+>
+> 4. **Single EIRP figure for 5725=E2=80=935875 MHz.** The regulation gives
+>    two figures (2000 mW for 10 MHz channels, 4000 mW for 20 MHz
+>    channels). The wireless-regdb format expresses one ceiling per
+>    band; the 4000 mW figure is used because it is the higher value
+>    that the regulation explicitly permits.
+>
+> 5. **6 GHz channel width set to 80 MHz.** The regulation does not
+>    explicitly distinguish standard-power from low-power indoor
+>    (LPI) operation, nor does it mention AFC. The conservative
+>    choice is to encode the 6 GHz block at 80 MHz (the widest
+>    non-AFC option in current practice) and leave a follow-up patch
+>    for a wider channelisation once CMC clarifies AFC requirements.
+>
+> 6. **AUTO-BW on the 5 GHz RLAN rows.** Standard practice for
+>    EN 301 893=E2=80=93compliant entries; no AUTO-BW is set on the 6 GHz
+>    row pending the AFC question above.
+>
+> If the maintainers prefer a different encoding for any of these
+> six points, please push back; the underlying regulatory text is
+> clear and any of these can be re-encoded without changing what is
+> actually permitted under Iraqi law.
+>
+> ## 6. The 5.8 GHz figure looks unusually high =E2=80=94 it is intentional
+>
+> `(5725 - 5875 @ 80), (4000 mW)` with no NO-OUTDOOR is not a typo.
+> This is what Iraq's own regulation states for this sub-band, citing
+> EN 302 502. It is the BFWA value, not the Non-Specific SRD value.
+> This choice puts Iraq at the high end of the regional spectrum
+> policy for the 5.8 GHz band. It is included verbatim because the
+> purpose of wireless-regdb is to reflect what each country's
+> regulator actually permits.
+>
+> ## 7. What is not in the patch
+>
+> - **5850=E2=80=935925 MHz ITS / V2X bands.** Article 4-1-8 of the same
+>   regulation covers ITS at 5855=E2=80=935925 MHz with 2 W EIRP, but this
+>   is a non-Wi-Fi RLAN application and is outside the scope of
+>   what wireless-regdb usually encodes for `country` blocks.
+>
+> - **All non-Wi-Fi SRD bands.** The regulation also covers RFID,
+>   inductive applications, alarms, model control, automotive radar,
+>   level probing radar, hearing aids, active medical implants, and
+>   the full UWB regime (Articles 4-2-1 through 4-2-6). None of these
+>   is a wireless-regdb concern.
+>
+> - **6 GHz beyond 6425 MHz.** The Iraqi regulation only addresses
+>   5945=E2=80=936425 MHz at 6 GHz; the 6425=E2=80=937125 MHz upper portion=
+ is not
+>   covered, and the patch therefore does not include it.
+>
+> ## 8. Submission checklist
+>
+> - [ ] Verify the patch applies cleanly against the current
+>       `wireless-regdb` master; the IQ block must be inserted in
+>       alphabetical order, between `IN` and `IR`.
+> - [ ] Build `regulatory.db` locally and confirm with
+>       `regdbdump regulatory.db | grep -A8 'country IQ'` that the
+>       output matches the proposed table exactly.
+> - [ ] Post the cover letter and patch on the OpenWrt forum thread
+>       (231380) for community review by Iraqi engineers before
+>       sending upstream.
+> - [ ] Send to `linux-wireless@vger.kernel.org` with cc to
+>       `wireless-regdb@lists.infradead.org`.
+>
+> ## 9. A note on responsibility
+>
+> The numerical content of this patch is taken verbatim from a public
+> Iraqi government regulation. The encoding choices listed in =C2=A75 are
+> the patch author's, and they are reversible.
+>
+> Author: Mohammed Abdullah Ali Al-Obaidi (mnew_iraq@yahoo.com),
+> OpenWrt forum handle `mnewiraq`. Any objection to the encoding
+> choices should be raised to that author or in the upstream review
+> thread, not to the CMC.
 >
 >
+> CONFIDENTIALITY. This communication is intended exclusively for use by th=
+e addressee and may contain confidential and/or privileged information. If =
+you receive this communication unintentionally please inform the sender by =
+reply immediately and permanently delete it from your system; you should no=
+t copy this communication or disclose its contents to anyone.
 
