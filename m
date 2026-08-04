@@ -4,104 +4,67 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 1CE1FC55838
-	for <wireless-regdb@archiver.kernel.org>; Tue,  4 Aug 2026 12:13:45 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 99C80C55184
+	for <wireless-regdb@archiver.kernel.org>; Tue,  4 Aug 2026 12:48:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=MpnNxPs2kvssObanVQDUh/m4GaswozFxnPICO3pxlak=; b=fbMbcsZw5areYPYZVlzCSrECXe
-	vH/SBwx161GRlqv9Y0uSLXpClZcgZlNIORYxmtA2vrjdkdT8WFjZbwV6pdmWEoLVj8srk6m5z3PZI
-	ijAHCW71SQg0Y9QIg5maLcTyMqpgOuJ3gIOB7gLtruNb6vzJMxlQf8eNyO9A44d/nHErwQIaeij2j
-	1BevHVFk3oz3tl4/yzh5M/jkEDHG7v9+Qi7GtdSGmXMWIGo5lI8X4vvys4ecRhK6Zzy2nFigEgJyw
-	qx0X17rNFePtWlvRqBSanuLPzA2WaYJDgZYNJ3BwbGBEPn1qNctCeMLdwnzKyNPCp4E8XI6VeniHn
-	2+W55znA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=emjsfCqiib1hqYDWIUXBBTRh/PpUBt6NWcDAEa8ZQVI=; b=YAinNcsM0XkOjM
+	UVdPfRZ1w/MjMDzdsisF53Gx2+K4xp0KIsRENo4M9qQFpxFff9Fk4LyRol4ZnWCCDfjAscZYn/qMN
+	02SyhPZ/vO9FpYrDbSlxe6N3DihhewcqrwSFslj+lRKL74BRskRl7Inakc/LRIr47SSPih+2UXTgd
+	Qe5oH/XHZGhFDYzDeFcapXTMQAKmvZwLBzWqI0Pc/VUZLvCTQbtxvZiPEtN4Kv6tGTwYN0Q23lV7e
+	UGazRPlgaxmA8hrkYFEjtlsYWKmtAvPO0xPGELnxA16EwNQbOCNXs29bs5xQz9jhSL3qwwXgFhynA
+	/lhh7wmJzeh0V8Axnrrg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrE1d-00000001mkS-15Tv;
-	Tue, 04 Aug 2026 12:13:41 +0000
-Received: from mail-qk1-x729.google.com ([2607:f8b0:4864:20::729])
+	id 1wrEZc-00000001qjL-0UYa;
+	Tue, 04 Aug 2026 12:48:48 +0000
+Received: from sea.source.kernel.org ([172.234.252.31])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wrE1Z-00000001mj3-0KbI
+	id 1wrEZa-00000001qjE-1t5A
 	for wireless-regdb@lists.infradead.org;
-	Tue, 04 Aug 2026 12:13:39 +0000
-Received: by mail-qk1-x729.google.com with SMTP id af79cd13be357-930fad20240so213703085a.0
-        for <wireless-regdb@lists.infradead.org>; Tue, 04 Aug 2026 05:13:36 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1785845615; cv=none;
-        d=google.com; s=arc-20260327;
-        b=g2xUW89hA1eEQopZwuv5WkIaR/0S/UEduJg7p3n5ooVluWsUNbvOGccI0JikNrFJRH
-         8/4Qe61e+NEO5wegOCPR/3GPJAu7J/m8zgw0VGpqrq/gIXIr2P2vmvUZzWznPKwjVn8R
-         tLb3xtaSHVTkRmkyNOvlGaVoFUvhJhzleAVa8YfiffOT7DoIh6Cqxhdl1FAZ1CcBMYsl
-         eyDKtGNLs5oIWChRwApR0V8J7TOggHNkO5dUKeOGSSpDQcK85tcoF0PPUEXkVpN3I0KB
-         onCYCv2Kr3bmHifxa/LcV2heCrv/qKqTMsr+qZ4UCMWae5LFkoiZbPUAfHm1I2xdN/C6
-         DyBA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=MpnNxPs2kvssObanVQDUh/m4GaswozFxnPICO3pxlak=;
-        fh=BzVcj3AOSjt+4oCebDOU6fO0kGZQwBEUFf03l6Edbvw=;
-        b=T5KyXBRXjr0SyKr9nGnNT3EQb+c8ScgjdTxWwEyl7yqjfVSF9J82XaepAy+xGDEBNH
-         XBiwx76Fz2H7Sm+LymxXYCpcDHptJSsH24BdPXrvQ0C3IJ3Nhli2l3j9jDCyQGMGWq/8
-         /jwvK9HgEylAJq6qS+U5KQi3HAxFgosDh1Ra0ns1QIVyvBoqPL/o9k5Cu0yIcL9MDIJU
-         Thj4sRT48aDbJnGteMFioT2v9fl2m60dXXyz1RiFuqRK9G3iHS+tvhWE1m7PX26LHbI0
-         SiOAE4dKEI0Gw9fx++DwBOemm9fYJ2pHwBBSJho7IR+j9utkAosTAMNMhGfdsL4k1Xxe
-         oKfg==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1785845615; x=1786450415; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=MpnNxPs2kvssObanVQDUh/m4GaswozFxnPICO3pxlak=;
-        b=meIwC6mhgvqbTQ631IPhHzV2CVrphRH1Am5s0EtiCTHy6Ty0JjvuED/FTcRjUum6zF
-         2gQMxPFph3taB6+5udEOnotj9xZZMS54VuXvN1UF7eFCJzkWOiQfjuadu+aI7OLkt+bP
-         0auUDvUGgiwVNF/JN7BEXoXaM4mZKMPLC2o9qxd83xs2H2qKD7Pi078LAkd5ew3nBiiC
-         0/ilrrv6DUzRQhnm9C6isP4iIH/pg+abRToz7hi6+XuqYsK83G8Ip9Sk5UUhkRgYnfwb
-         guKKNQWSfYMGE1XP1r/DqohPV/Y/dFvTMdr2m60JW69HrOisdchLqttZeNvIoLdIBiwH
-         alFg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1785845615; x=1786450415;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=MpnNxPs2kvssObanVQDUh/m4GaswozFxnPICO3pxlak=;
-        b=JNF2RJJ4/NeN68chwEkZp/3wFfmeAJnj7CG6YURbDTbenwCpsTid0Nfml4rlQ3zfA6
-         F3UKt0oYAqYxEuvGuz8QklWOthu4KAZppiK7f3iEpz5GaLJrm1CVJfUlJqSrlUNurz90
-         zju2qYUsZquQd4YVtyY1xW2+svl424p1ppji0zkB/cnVE089zesUUUlh7x44/4RiTV7f
-         FVHwO0mLe/XsW7Xlr4wNK6kknCdB+8sFLXgWLohimuIhJ9+noG4DJByLwGQLCQD9aR+v
-         sj137R8QzHJ8plnE2L4+d/J1o4hofx+0q/ncih+ZfWmU9NiKuWu2b7h6f3eEpawCDhBE
-         3YfA==
-X-Gm-Message-State: AOJu0YwCglWCJIehczH6LuAAhCVsNsFVoAJznLhd4x+M5QBTgLs77njF
-	o9ffZZVhrUMZbczc0GUUhhLTXLW0c8V5upAEmVCxPOv59DP2YppDmV7X5VeeITLGTu3lbXTA4pX
-	nPL8uQnGgLTE6nfJZqrwMkYX13CeUsTU=
-X-Gm-Gg: AR+sD10I7mXriiMzyQ5q/dmNHF6NAEg/UrwHFciDa2sT1TTYK3RT3t2YLA5yOtKvCqK
-	IcmIc1XPWyWmSSvFUOH1bhsebU6KkHgkkelPJbO5aP6nxpPnd9w8D5Z/b0rxiUpC0CpFmXX036m
-	AP7aXcAcMmDlJ3vFrrOjSxfqLQOemsyCsWaIAtZ0U2OSs0AQVEryM1bd7kYv2d3Rx2P7K2Zi3p7
-	XjidPEUDCY/BszD2lv1S/oIPwOf6EjaPs5dQij2e7xkOzLUvYLrxLFp28+nfQ6QS0mvT210fWc6
-	9Z88IEmyukD/8RvGWuMcuD4GfAgsOLZrd2iPPWzbYkXGMA==
-X-Received: by 2002:a05:620a:230a:20b0:932:fce7:dc66 with SMTP id
- af79cd13be357-934a0ac3160mr2111014985a.45.1785845615013; Tue, 04 Aug 2026
- 05:13:35 -0700 (PDT)
+	Tue, 04 Aug 2026 12:48:46 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 24FEB408B5
+	for <wireless-regdb@lists.infradead.org>; Tue,  4 Aug 2026 12:48:46 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 09D111F00A3D
+	for <wireless-regdb@lists.infradead.org>; Tue,  4 Aug 2026 12:48:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1785847726;
+	bh=emjsfCqiib1hqYDWIUXBBTRh/PpUBt6NWcDAEa8ZQVI=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
+	b=IrwvovdHJLbYPVkHEL6jgnXGkQtjcTPw8YPeAByJg6sfUt27wvJHkrKjCRYr1Pgfn
+	 Yf+j2ShBsd3us2jByXlf8tzB6mCrHapXA60G4HtFrBQYB7AgLATu3zL9chZCCLK+mi
+	 y+05Dy2KN5knwsjeWaPWlGYX014jlj0X9f+DxsikQW4yChGE2QWdx6ifn6DZ+exCIy
+	 Zffdn0qXsfU1F7FfWqP7hF7iNpjMe0iWrC+RSo9gSjWYyHINV8tBflpc6FqgT1VV4u
+	 xf/ONFt0t6VEtlw7YTcY5Va1v6Nn2//S4GIApaLznt3WjAJNXn3f/ZLLnoNRiRFDn5
+	 k1PmrzWePmGew==
+Received: by mail-lj1-f181.google.com with SMTP id 38308e7fff4ca-39c74722e27so12391401fa.0
+        for <wireless-regdb@lists.infradead.org>; Tue, 04 Aug 2026 05:48:45 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AHgh+RofZXY0lWFxnJZLp4qmtdzp0PvNO4bwFhuxZPsVVPBp2a4to1JJn0cT3OjURQ+gbEg5Jwd+hblbK4wyOtrVwQ==@lists.infradead.org
+X-Gm-Message-State: AOJu0Ywk51MNDUsQRJ8KG6pplzuxUQ26RQCk7T8xWUD3vc5qHh/+iMcx
+	+W8hitOB6umfNBrI/pHG4CIeCmnHlW6tdcpEPdz+p5xRSfTFDsPiZ/S8Z6mhCnHd3e9gyKjDK2B
+	LRZMUnFj9FZ+GpJLFLwy7dpPDCMJapzE=
+X-Received: by 2002:a2e:964a:0:b0:39c:7ed7:8565 with SMTP id
+ 38308e7fff4ca-39fae65bfe0mr6223841fa.7.1785847724445; Tue, 04 Aug 2026
+ 05:48:44 -0700 (PDT)
 MIME-Version: 1.0
 References: <CABzKGg0YEm5PfW9YtEM0G1SYY6RD80DmFpu_Jpb9hoioK+tH-w@mail.gmail.com>
 In-Reply-To: <CABzKGg0YEm5PfW9YtEM0G1SYY6RD80DmFpu_Jpb9hoioK+tH-w@mail.gmail.com>
-From: Morgan Wong <pbodq2@gmail.com>
-Date: Tue, 4 Aug 2026 20:13:23 +0800
-X-Gm-Features: AUfX_mx15RRG_NO1G4syHthtl5Uhx9IY1aVX7haBwNh8VQCuAueAVLc-QZI1P5M
-Message-ID: <CABzKGg3SeW+vUzyZ5Bq1cUoN2YGHo2vuBY3vuqLoa2dc9buMGQ@mail.gmail.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 4 Aug 2026 20:48:33 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66RnAr_yPhZuuandeoE=wSh9tJMdfqkLLudWKpDmDKc4Q@mail.gmail.com>
+X-Gm-Features: AUfX_mzqhAFU6N5eXfgE9kEzE3qPSJT4BQo_IW7i366UzdM4ls3Oq_MSoMI1MkI
+Message-ID: <CAGb2v66RnAr_yPhZuuandeoE=wSh9tJMdfqkLLudWKpDmDKc4Q@mail.gmail.com>
 Subject: Re: wireless-regdb: Update regulatory rules for Hong Kong (HK) on
  5GHz and 6GHz
-To: linux-wireless@vger.kernel.org
-Cc: wireless-regdb@lists.infradead.org
+To: Morgan Wong <pbodq2@gmail.com>
+Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260804_051337_128979_4B6FD878 
-X-CRM114-Status: GOOD (  12.18  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -113,21 +76,12 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Dear all,
-
-Please keep the original value 24dbm instead of 23 in 6GHz.
-
-I overlooked there was a small footnote at the bottom of document HKCA
-1081. The government allows +1dmb on top of ETSI's 23dmb =3D 24dbm
-
-https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git/com=
-mit/?id=3D756d784aa2ee2810ded0dd314d9764c80660a75b
-
-Morgan Wong <pbodq2@gmail.com> =E6=96=BC 2026=E5=B9=B48=E6=9C=883=E6=97=A5=
-=E9=80=B1=E4=B8=80 =E4=B8=8B=E5=8D=889:37=E5=AF=AB=E9=81=93=EF=BC=9A
+On Mon, Aug 3, 2026 at 9:38=E2=80=AFPM Morgan Wong <pbodq2@gmail.com> wrote=
+:
 >
 > Dear all,
 >
@@ -171,7 +125,11 @@ n_303687v010000a.pdf
 > (5470 - 5730 @ 160), (30), DFS
 > (5730 - 5850 @ 80), (36)
 > (5945 - 6425 @ 320), (23), NO-OUTDOOR
->
+
+Please do a proper patch or at least diff. This is hard to spot differences=
+.
+And if it's not a patch it's more work.
+
 > Reason for change in 5470-5730 :
 > The HK department, OFCA has its own requirement, 30dbm in addition to
 > EITHER fulfilling FCC OR ETSI requirement. The rationale behind is
@@ -192,8 +150,9 @@ n_301893v020007a.pdf
 > A TPC (30dbm), 802.11h edition should be taken instead of 27dbm as I sugg=
 est.
 > Or a TPC regulation flag may be a good idea to bind with 30dbm together.
->
->
+
+There is no TPC flag, hence the limit is set at 27 dBm.
+
 > Reason for change in  5945 - 6425 :
 > The HK department, OFCA requires to have its own EIPR limit, 24dbm in
 > addition to ETSI 23dbm.
@@ -205,17 +164,12 @@ est.
 > # https://www.etsi.org/deliver/etsi_en/303600_303699/303687/01.00.00_20/e=
 n_303687v010000a.pdf
 > (page 17)
->
->
-> --
-> Regards,
->
-> Morgan Wong
+
+You mentioned in your reply that this change is invalid.
 
 
+So to summarize, I don't see any change at all.
 
---=20
-Regards,
 
-Morgan Wong
+ChenYu
 
