@@ -4,108 +4,98 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 12034C5DF7D
-	for <wireless-regdb@archiver.kernel.org>; Tue, 18 Aug 2026 13:11:00 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 50E00C5DF81
+	for <wireless-regdb@archiver.kernel.org>; Thu, 20 Aug 2026 21:08:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=1kLtpbFR5SYSksD0nL4IXXu9FNfott2NZaHxkpQa/Nc=; b=VVEHDb/FHxn7iy3G62G1EXa//S
-	2t1VBy9HdlXdVJxcdDxHe0SHjeHR+dkNlXU6sOB4KoXYBMM40zBbB+F8uxC0dhcGUHqkD6Wo2CLFj
-	LgVjuKznOrf6FTZyYdFpPPSAApkUnAmfsCLpZu21ZX1+bFbqdXtyBv9vBqVMbwWKagjbMC8/TUuXF
-	UEJZZte14tIfkJkSOUZtMaOvoCE+GPw+F+ZtBdBoSpr+T+ikeJZAJHe2sQ6+k9eDBs52/oZOMxBnU
-	zO9ikm9RIguWrtxfC6kMLdvFM/R1hQzxCh3kj3wP7TfLuFvKsAIpFpICan6MvkN5SYKI8bkE+yx6h
-	OPuEr9nw==;
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:Subject:
+	Message-ID:Date:From:MIME-Version:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=Md7Ohm8q+KS+t9CsvSVQtn/fUQQjLUK4uPrrCZpnjjQ=; b=TDHEsASSBI72Cvly3GkgTG4BbA
+	YGCIQ6niQls4F4ThmOeJAZpGDDTHBbj9XSh9pNN3v62ZrNrN5+/V19uZ8mjeO+V0GmRzDQjQm6IAM
+	naKpH+4YiC52TFvSaYxrqEXaBCKN4h98H6mMEycVKg/KnlUoK1wNeCzLfWrmcr9GvjdCpuweB9nwL
+	MI1W7Q/rAnzDymr/ucH7sEoKQfCk7eU0kPRmCVsInInqPC41WNE8R5hh+wFjldSsfSM9PJckJUfDH
+	CNeo7RV/LeQxkDOvw604RTQmIcWOF+6sPMyHFK29x7WhjX5Eu7lPXPH41vkcKwUuVNn61snqUZD4O
+	7VkHx0vQ==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwJai-000000080rg-2Tel;
-	Tue, 18 Aug 2026 13:10:56 +0000
-Received: from mail-qv1-xf2a.google.com ([2607:f8b0:4864:20::f2a])
+	id 1wx9zv-0000000CC4N-1ZGD;
+	Thu, 20 Aug 2026 21:08:27 +0000
+Received: from mail-pj1-x102f.google.com ([2607:f8b0:4864:20::102f])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wwJae-000000080qM-1bAJ
+	id 1wx9zq-0000000CC3p-10sK
 	for wireless-regdb@lists.infradead.org;
-	Tue, 18 Aug 2026 13:10:55 +0000
-Received: by mail-qv1-xf2a.google.com with SMTP id 6a1803df08f44-8efcfdb2b43so31513336d6.3
-        for <wireless-regdb@lists.infradead.org>; Tue, 18 Aug 2026 06:10:51 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1787058650; cv=none;
+	Thu, 20 Aug 2026 21:08:25 +0000
+Received: by mail-pj1-x102f.google.com with SMTP id 98e67ed59e1d1-38dfe7eb825so225330a91.0
+        for <wireless-regdb@lists.infradead.org>; Thu, 20 Aug 2026 14:08:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1787260101; cv=none;
         d=google.com; s=arc-20260327;
-        b=ourT1Lt8pIokPm7S4pOC1mvaoKg7rdghjAKKwKEmNCvdtUlTUH5w7yQlsIbC1ikQia
-         2rKAv+l1jYhDDHGjzQWHpaLXLJmBJV0fecpfojCWFvikEsMO9i9OUmqwP7nFhP5VwLpr
-         iNE0DoBDcuJ9Ei/UJVuoXvVZToH2PtCtOWtyxpwkVtCrvBKOlYK8KxQrpNnTAFVOYBNx
-         NnRJ85d+bTsz4IJ4YIRb8zzZX/p3lQOa8MascW0t/ikYh/oDg38x014iL+tv3gZzn5dB
-         R26Hf8V6n+hxhjl0CMVsvlXnjqr0UoUX6m4Gv7h57DnBZHGgENdnK0n2Zb1Wz5rroTI0
-         eJOw==
+        b=IqtyULSI5CFQj4oHVVIQFcvRIT63QdJvozN5phhUlrexgd71FrvAbSQ7uJPa450MOd
+         PCiN+Eo1g+qwnljxHHkaLFyDuL/x5PnC0otLvULT/tIdOwJxus10UvWVYNyFhvBNUsU3
+         qxoI0J/7ztybyECgnWLOGBFqEWZbN7FZcqdnclhxMiyrlxebuGOXUMnyMHsNJYZENtG7
+         xxyOzswnGsCg/0ZzzK9K91gKiiL+SIPy9iHNXhwMCujlbdnjtKiJ4gtH6WRWNKJ//FYP
+         3JVK86C15sky2YX2DGFK5Slt240QsBAatm5xBRdCleTy8uSddcT8f7+9SqcdXPwfKZIB
+         3GKg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=1kLtpbFR5SYSksD0nL4IXXu9FNfott2NZaHxkpQa/Nc=;
-        fh=yPDhAu6X/fUm+UpVDlh1nHyf4VCzdHLDFMHvYN+W6NE=;
-        b=GBGnOuzm/5CJKmgunVcnmN7KvdD2gj9T+NJPnL5OrnQAWwKJEbKiITWgonX7NmftPi
-         AXQjp68bqaOeqa9wPOCx9WxEAArwwxzuOJ2n6wAOBWaACH3wo/QvJtDsMaf3kdUQcPyJ
-         9WAzwCWR5OIdsF0rJInekgkklPENfUdtMMPbakVE+xGyifPx/XOuJ6tU/6D7A9zqjxzk
-         chv8yHi9/yjg4mYTm3lTLjPhujpK7z8Ft0YnOhXJ1tD/waL6/Evjs7mIHRihjDwYPLy/
-         JO6F6JDSjOkLRutVGFuBXLoUJAgADp7kwGUY1iHJ2e86B2GTtj9B1Juw+A9nsuxDA/1a
-         qREA==;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Md7Ohm8q+KS+t9CsvSVQtn/fUQQjLUK4uPrrCZpnjjQ=;
+        fh=YQcdSoS2gNAjSMDMKZXDavKcJlSMWh2KqatN77wl8b8=;
+        b=WDxTavP7j++XQyvwe3uyzCXy34SbXj/k3FATHQNxR4NxOglM3arW8ym36MRRUKRHG8
+         Lx+DMdW7E9wlsT6NpfDeKyRgFuCMfX+JaQprQUtafa6WHYrIhNQwWeVCLtfh5YNmq0fP
+         6ZGstBe7kWJvtDiSiFdhtbwTtq9FVFhe67UQFQG5hkF7bAsyWtLL6BSUOmnEAaw/KCmi
+         dMs73r23BAC5V6H6JjLSViePLhwdCDBgdRyu6MkPuQ3PaC38/4Q7NhAFnGIUqiYlFSxh
+         N6vGurC85kjsdZERJAkqmPRbKun871+Y1oEwo/4Ta3wCbMErlQMEuYvTHbaNJn8qmC8I
+         abLg==;
         darn=lists.infradead.org
 ARC-Authentication-Results: i=1; mx.google.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1787058650; x=1787663450; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=1kLtpbFR5SYSksD0nL4IXXu9FNfott2NZaHxkpQa/Nc=;
-        b=qTH1jWPD5dv/N/2/WMwbd9A1PA2Fw6CboQ4KCLTm43fcyKlLXlBKfaCZyWE5j0bHEK
-         NpRna85W5T+41HiLEU+pgUALuxJWko8vy3mbLWaTb2F4nen3RNWBtRqUV79D/HKLjv4q
-         ib/g4FIcdtmXGSQvdlWiekXPEmZ2UJX/U1KpkEK/YYq5JK6d9VTPuXb6tq2VnbAI7UdP
-         kumpXuu0aYsY/ssXgIk0Gj9/aXvMrpt3qZ0XIujPGZXLud79St6d8Yws2GEZoOj5Dxme
-         gnbahbhApf7WjFB3AbrRZjQ28XftwO/CfUCqsMkPdLiUw3663axd7WlDg4KJ9po2Z+jU
-         Z55g==
+        d=gmail.com; s=20251104; t=1787260101; x=1787864901; darn=lists.infradead.org;
+        h=content-type:to:subject:message-id:date:from:mime-version:from:to
+         :cc:subject:date:message-id:reply-to:content-type;
+        bh=Md7Ohm8q+KS+t9CsvSVQtn/fUQQjLUK4uPrrCZpnjjQ=;
+        b=jo67nVLE45Gk569YDcedYIxciI+G2Eh7QIjm6GG9WYO4/HY2ExYUdVw0ruvpX/c1V/
+         Wx0cAdRS0/yZzeBTxBs6V/JV8LaUMdEgWhGfp4sjO7+DnK/QPQM+E+7lzLv54UBtEi0U
+         OfLRSXiqwMOAueV+/byeiGZ3IlzrFhk162vkzDn/FqyFNwfVdQESBMIh31N4EgFkOw2z
+         qbQzKImvFZpDNkzuBqFcZhj/LVlxCFhiVKtbHsTlpnK792gJXlMmZpp70tK9CguP1N5M
+         39YlIcGl6vM84zM2rjy9xWrYRIRDgDt7XgCyFvaRFCZZTyAJ4Q8la9q3guNFAGipOdb+
+         aaqw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787058650; x=1787663450;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
+        d=1e100.net; s=20251104; t=1787260101; x=1787864901;
+        h=content-type:to:subject:message-id:date:from:mime-version:x-gm-gg
          :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
          :content-type;
-        bh=1kLtpbFR5SYSksD0nL4IXXu9FNfott2NZaHxkpQa/Nc=;
-        b=GQk68qvQGULYJhkDClm3FVdOh0dLXs5hvWfQ0vvkb+/lZ0yrCK+t4VK9hP3OFGs/TE
-         iL0LcffErVQzhdCxsawEsreP9oPFoDPEuPKN44MWfRB8FFSltPTkeWhzhueHKf3HTvPU
-         ZS6lJkXuzL27fhMxMCx3K5R4qUMokh2zUTyskRvJCzdrmcagDLidEYBlZyE/TxSP7bxd
-         IKu7VF0HA/zFw3GLDWqcvhd3CVX9JmqKSpPaMb6lweMUzCAkvnNT5aBnWm6y22zXqFyw
-         NMTz2RXS3ETxSGcYzFx9v7ozGet6Vdc3jYaX2C+tZIbLnheUFQf0Fqc7FerUVxpiQdCS
-         hoyQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rr8B3gfI1OIvkVtx8u7zf4REJGpV6nLfi7bdnXOfpiCmtGVJB+BaT/7E9D4F9IRglVDiaMjKz02udJB7zKSdA==@lists.infradead.org
-X-Gm-Message-State: AOJu0Yw2VsPZNoM/qIZdcNgj+tLlMeI+tMU93E+w6jIqL5KjcvAyO3d/
-	UemQNotKV6WQeqsqdPxlO+qPxFjb7Vxcohde0lGx9XURT9wfzGdt6y6eaSkqAId2EzYq67XkDNl
-	2E6nB6+Rgtg3sAkr4mnyjfnhjW5GF3as=
-X-Gm-Gg: AR+sD13fBwqPWXjU0G6JGGLkNLm2pJAWhMIFCKA9F1GMkXwKXnuQlrUmLaIQo7GrHX7
-	Zb92igntwSzXaa1yqMVwh5qzECwFhaljujSmQS1lq/NySW5rg/PBUA4QYRj3ZsAvs+VrrJdqJHq
-	uzUSyZBaCwoZ+OuZQJxhH53CWaQtDSP7M/ztk1KSZ+lu433c846zBs7QWV/FpZD3552/BUpzm1a
-	7VQI0qsWgJBmAy5DZWUDOvKi/bA1knCsIJi0n3vpfkyhjw8H5aOCPWQWJytSWSOdcGI4NebN8ot
-	IhGkVoNRbZLYmgGRVMVA4+0R0zzZiicEliFe4rY/UVjKMunglUsSNf00
-X-Received: by 2002:a05:6214:130b:b0:8fe:40a0:7cbb with SMTP id
- 6a1803df08f44-90a91d481cfmr367261746d6.15.1787058649864; Tue, 18 Aug 2026
- 06:10:49 -0700 (PDT)
+        bh=Md7Ohm8q+KS+t9CsvSVQtn/fUQQjLUK4uPrrCZpnjjQ=;
+        b=by10uz+bj4R/jLdEYzG2mpotpMPopmtrouyl0H5HuR0N205BzndN3WQ53lJu/OwQsX
+         0Tg12Zwd7MlGcIqGxFzIdiyzl9+b5byrzGlSpxjhKYXeff9hxXPmDmKLKFZwsZ6vH7Qp
+         DsS4yXvHx20i3KWpaMFi6cr/eMvBKqH61waD3GSvbHPlB/ZLKd3jYC09HDZ8UNGJhgNO
+         Zb0R5NPB3R7CKFzsK34vKKjk5PpIlVGJGdjeodQ5qO7iOSmaNY5Dah0/YJL6AP+h2yfV
+         +vb31v94YitTbKYUcalOpOLn6xAKLIL3/cs8dZBEzIEbUiEriLSrHlAV/cZqlvZ7kgVQ
+         DRfw==
+X-Gm-Message-State: AFuF++mJb2JpkyXMLU4NobTpXgBkfpJ9gDKCFTC6uSjldJJqRu9r0fR3
+	3jjKVgQv2L47u2wgyBAwooFTlBdrCfvaH08AdUMUcH7EZKx0Qt3WxkEyzGpxycOjhnloKZ7qknk
+	Tf/O8rb6lXh++u97vhLbWEbd6W1FPsbOX2WQMKmE=
+X-Gm-Gg: AR+sD11EpEK6cw1sWD3DxKTpLQOrJO30pLIYlEWwqKYiFsvAxBh0XiGgUCNLmaovBSF
+	FDsNFgWhkc3SbFVcAeYj36Kui5kEOkNSLO0M3WlR8nYCex7PXdGHVgjZDjMUfj4u9cTixr2Q+Ii
+	VlG+VOzx3Fp5VBxI1d67wtbDc+EJduD9DDAD/EjZyWhhLzQsJ50MPs5CQbVzAvLzgm+XsTziTS1
+	toxfJ1YBQclWWu8GufMYktPa8giYGN9e69S1899hDrWg8OpzN85ojV3KJz+n+h1c+X9cfvQbYq4
+	d3kUOBHDB/JHt++j5EsBa5EXxKbnaM5vKKPIRJUGFHhzpBBMJmq+kw==
+X-Received: by 2002:a17:90b:5646:b0:381:28e0:6259 with SMTP id
+ 98e67ed59e1d1-395c36fb278mr2399078a91.9.1787260100795; Thu, 20 Aug 2026
+ 14:08:20 -0700 (PDT)
 MIME-Version: 1.0
-References: <CABzKGg0YEm5PfW9YtEM0G1SYY6RD80DmFpu_Jpb9hoioK+tH-w@mail.gmail.com>
- <CAGb2v66RnAr_yPhZuuandeoE=wSh9tJMdfqkLLudWKpDmDKc4Q@mail.gmail.com>
- <CABzKGg2C-kb673u4o9Nk28-bp9ONuQAaDA39x47bJOpq6RrNHg@mail.gmail.com>
- <CABzKGg3-5yE19-_fiBuvaM9CBUnyJ7UYmt6M6w3BrEqu+3Unbw@mail.gmail.com> <CAGb2v6592_Tp7UbAKcXm3FZGMWCfxNriH3VJWDm5yZA-atYN0g@mail.gmail.com>
-In-Reply-To: <CAGb2v6592_Tp7UbAKcXm3FZGMWCfxNriH3VJWDm5yZA-atYN0g@mail.gmail.com>
-From: Morgan Wong <pbodq2@gmail.com>
-Date: Tue, 18 Aug 2026 21:10:35 +0800
-X-Gm-Features: AcwNN1WRpw_IiFjKGWtUde7Em2CGw78XjtwYZfIg6_z69NRkehqPU2QhCCj0PKw
-Message-ID: <CABzKGg0knPnFARuf_+yZjpVhFV_O2ihCRTAEZqcDJ=S6JN3NZw@mail.gmail.com>
-Subject: Re: wireless-regdb: Update regulatory rules for Hong Kong (HK) on
- 5GHz and 6GHz
-To: wens@kernel.org
-Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
+From: Nahid Hasan <nahidhasan12391@gmail.com>
+Date: Fri, 21 Aug 2026 03:07:43 +0600
+X-Gm-Features: AcwNN1UaqXr6PZP10FgXlXXnDeTy2LDiSgrI1gkxPtSW4DuxERhtsfEHxOOZpkY
+Message-ID: <CAPsebg5EyxQjqQVm0KQHtx=0f8-mvhPSdsvJFOGEPCFU3H=Y0g@mail.gmail.com>
+Subject: country BD (Bangladesh) entry: update to current BTRC allocations
+ (2.4/5/6 GHz)
+To: wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260818_061052_442179_6A1AEB3E 
-X-CRM114-Status: GOOD (  29.85  )
+X-CRM114-CacheID: sfid-20260820_140822_290798_945FC12F 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -120,179 +110,89 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Dear Tsai,
+Hello,
 
-Sorry about overlooking the second paragraph.
+I would like to propose an update to the "country BD" entry in the
+wireless-regdb database. The current entry only allows 2.4 GHz and a
+narrow slice of the 5.7 GHz band, while the regulator (BTRC, Bangladesh
+Telecommunication Regulatory Commission) has since approved much wider
+allocations. This outdated entry means that smartphones sold in
+Bangladesh (SIM MCC 470) cannot see or use 5 GHz channels 36-144 or any
+6 GHz channel, even though these are officially permitted.
 
+Current entry (db.txt, line 224 as of wireless-regdb 2026-xx-xx):
 
-1. About the TPC issue, you are right, please ignore this part of request.
+country BD: DFS-JP
+(2402 - 2482 @ 40), (20)
+(5735 - 5835 @ 80), (30)
 
-2. About 6GHz 320MHz bandwidth, I am grateful if you could generate the fil=
-e.
+Proposed replacement, based on the regulator's National Frequency
+Allocation Plan and the BTRC circular dated 15 September 2024 which
+approved 5925-6425 MHz for unlicensed Wi-Fi/IoT/WLAN use:
 
-Take your time. Thanks for your help. Have a good day.
+country BD: DFS-JP
+(2402 - 2482 @ 40), (20)
+(5150 - 5350 @ 80), (20), NO-OUTDOOR, AUTO-BW
+(5470 - 5725 @ 160), (20), DFS, AUTO-BW
+(5725 - 5850 @ 80), (30)
+(5925 - 6425 @ 160), (23)
 
-Chen-Yu Tsai <wens@kernel.org> =E6=96=BC 2026=E5=B9=B48=E6=9C=8817=E6=97=A5=
-=E9=80=B1=E4=B8=80 =E4=B8=8B=E5=8D=882:54=E5=AF=AB=E9=81=93=EF=BC=9A
->
-> On Mon, Aug 17, 2026 at 2:17=E2=80=AFPM Morgan Wong <pbodq2@gmail.com> wr=
-ote:
-> >
-> > Dear all,
-> >
-> > Is there any problem about the patch and the reason? Any regulative
-> > restriction conflict ?
->
-> Sorry I haven't gotten around to it.
->
-> > Morgan Wong <pbodq2@gmail.com> =E6=96=BC 2026=E5=B9=B48=E6=9C=884=E6=97=
-=A5=E9=80=B1=E4=BA=8C =E4=B8=8B=E5=8D=8810:01=E5=AF=AB=E9=81=93=EF=BC=9A
-> > >
-> > > Dear Tsai,
-> > >
-> > > The patch from git diff is now attached.
-> > >
-> > > I summarize again the changes, please decide.
-> > >
-> > > 1. 30dbm (1W) of TPC condition is applied on 5470-5730.
->
-> As previously mentioned, Linux does not support TPC, so any power limits
-> that require TPC do not apply. So the option is to use the "without TPC"
-> option that normally halves the power limit.
->
-> > > 2. Now, 320MHz bandwidth can be applied in 6GHz as WIFI 7 rolled out.
->
-> This is fine.
->
-> Do you want to do a proper Git patch? Or I will do the patch and list you
-> as the issue reporter.
->
->
-> Thanks
-> ChenYu
->
-> > > Chen-Yu Tsai <wens@kernel.org> =E6=96=BC 2026=E5=B9=B48=E6=9C=884=E6=
-=97=A5=E9=80=B1=E4=BA=8C =E4=B8=8B=E5=8D=888:48=E5=AF=AB=E9=81=93=EF=BC=9A
-> > > >
-> > > > On Mon, Aug 3, 2026 at 9:38=E2=80=AFPM Morgan Wong <pbodq2@gmail.co=
-m> wrote:
-> > > > >
-> > > > > Dear all,
-> > > > >
-> > > > > Currently:
-> > > > >
-> > > > > # Source:
-> > > > > # https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca103=
-9.pdf
-> > > > > (2.4 GHz and 5 GHz)
-> > > > > # https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca108=
-1.pdf (6 GHz)
-> > > > > country HK: DFS-ETSI
-> > > > > (2400 - 2483.5 @ 40), (36)
-> > > > > (5150 - 5250 @ 80), (23), AUTO-BW, NO-OUTDOOR
-> > > > > (5250 - 5350 @ 80), (23), DFS, AUTO-BW, NO-OUTDOOR
-> > > > > (5470 - 5730 @ 160), (27), DFS
-> > > > > (5730 - 5850 @ 80), (36)
-> > > > > (5945 - 6425 @ 160), (24), NO-OUTDOOR
-> > > > >
-> > > > >
-> > > > >
-> > > > > Update :
-> > > > >
-> > > > > # Source:
-> > > > > # https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca103=
-9.pdf
-> > > > > (2.4 GHz and 5 GHz)
-> > > > > # https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/pa=
-rt-15/subpart-E
-> > > > > (2.4 GHz and 5 GHz)
-> > > > > # https://www.etsi.org/deliver/etsi_en/301800_301899/301893/02.00=
-.07_20/en_301893v020007a.pdf
-> > > > > (2.4 GHz and 5 GHz)
-> > > > > # https://www.ofca.gov.hk/filemanager/ofca/en/content_401/hkca108=
-1.pdf (6 GHz)
-> > > > > # https://www.etsi.org/deliver/etsi_en/303600_303699/303687/01.00=
-.00_20/en_303687v010000a.pdf
-> > > > > (6GHz)
-> > > > > country HK: DFS-ETSI
-> > > > > (2400 - 2483.5 @ 40), (36)
-> > > > > (5150 - 5250 @ 80), (23), AUTO-BW, NO-OUTDOOR
-> > > > > (5250 - 5350 @ 80), (23), DFS, AUTO-BW, NO-OUTDOOR
-> > > > > (5470 - 5730 @ 160), (30), DFS
-> > > > > (5730 - 5850 @ 80), (36)
-> > > > > (5945 - 6425 @ 320), (23), NO-OUTDOOR
-> > > >
-> > > > Please do a proper patch or at least diff. This is hard to spot dif=
-ferences.
-> > > > And if it's not a patch it's more work.
-> > > >
-> > > > > Reason for change in 5470-5730 :
-> > > > > The HK department, OFCA has its own requirement, 30dbm in additio=
-n to
-> > > > > EITHER fulfilling FCC OR ETSI requirement. The rationale behind i=
-s
-> > > > > having the biggest tolerance among major world standards to be an
-> > > > > international city. The OFCA, 30dbm is the baseline value to be
-> > > > > fulfilled in the highest priority.
-> > > > >
-> > > > > About FCC
-> > > > > 27dbm (500mW) without TPC, 30dbm (1W) with TPC
-> > > > > # https://www.ecfr.gov/current/title-47/part-15/subpart-E#p-15.40=
-7(h)(1)
-> > > > >
-> > > > > About UTSI (same as FCC)
-> > > > > 27dbm (500mW) without TPC, 30dbm (1W) with TPC
-> > > > > # https://www.etsi.org/deliver/etsi_en/301800_301899/301893/02.00=
-.07_20/en_301893v020007a.pdf
-> > > > > (page 17)
-> > > > >
-> > > > > A TPC (30dbm), 802.11h edition should be taken instead of 27dbm a=
-s I suggest.
-> > > > > Or a TPC regulation flag may be a good idea to bind with 30dbm to=
-gether.
-> > > >
-> > > > There is no TPC flag, hence the limit is set at 27 dBm.
-> > > >
-> > > > > Reason for change in  5945 - 6425 :
-> > > > > The HK department, OFCA requires to have its own EIPR limit, 24db=
-m in
-> > > > > addition to ETSI 23dbm.
-> > > > > Therefore, the smaller value should be taken.
-> > > > > (6GHz in HK requires no reference to FCC standards, unlike 5GHz s=
-ituation)
-> > > > > WIFI 7 allows 320MHz, the previous value, 160MHz was in wifi 6E e=
-ra.
-> > > > >
-> > > > > # https://www.etsi.org/deliver/etsi_en/303600_303699/303687/01.00=
-.00_20/en_303687v010000a.pdf
-> > > > > (page 17)
-> > > >
-> > > > You mentioned in your reply that this change is invalid.
-> > > >
-> > > >
-> > > > So to summarize, I don't see any change at all.
-> > > >
-> > > >
-> > > > ChenYu
-> > >
-> > >
-> > >
-> > > --
-> > > Regards,
-> > >
-> > > Morgan Wong
-> >
-> >
-> >
-> > --
-> > Regards,
-> >
-> > Morgan Wong
+Justification for each block:
 
+1) 2.4 GHz (2402 - 2482 @ 40), (20)
+No change; matches the long-standing SRD/ISM allocation of 2400-2483.5
+MHz.
 
+2) 5150 - 5350 MHz (channels 36-64), (20) dBm, NO-OUTDOOR, AUTO-BW
+Allocated in the Bangladesh NFAP. Indoor-only with 20 dBm EIRP follows
+the ETSI-style practice already used in the region (as in DFS-JP).
 
---=20
-Regards,
+3) 5470 - 5725 MHz (channels 100-144), (20) dBm, DFS, AUTO-BW
+Allocated in the NFAP with radar-detection (DFS) requirement. A 60
+second CAC (Japan-style DFS, already selected for BD) is consistent.
 
-Morgan Wong
+4) 5725 - 5850 MHz (channels 149-165), (30) dBm
+No change to the current entry, only extended from 5835 to 5850 MHz to
+match the NFAP allocation of 5725-5875 MHz (the upper part, 5850-5875,
+is omitted conservatively since it requires pre-authorization for
+commercial equipment; can be added once the regulator clarifies).
+
+5) 5925 - 6425 MHz (6 GHz channels 1-97, up to 160 MHz), (23) dBm
+BTRC circular dated 15 September 2024 approved 5925-6425 MHz for
+Wi-Fi/IoT/WLAN on a shared basis. (23) dBm EIRP follows the conservative
+indoor-oriented approach used by neighboring regulators. 320 MHz
+(802.11be) is NOT included since the circular does not explicitly
+authorize the 320 MHz channel width.
+
+References:
+
+- BTRC circular approving 5925-6425 MHz for Wi-Fi/IoT/WLAN (15 Sep 2024):
+  https://btrc.gov.bd/site/notices/939916e8-a89a-4e3b-aa75-35a0a2172f59/
+- Bangladesh National Frequency Allocation Plan (ITU-published
+  Spectrum Master Plan):
+  https://www.itu.int/en/ITU-D/Regional-Presence/AsiaPacific/Documents/Publications-Reports/Spectrum%20Master-plans/Bangladesh%20Spectrum%20master%20plan%20-%20Published.pdf
+- Wi-Fi Alliance, regulations enabling 6 GHz Wi-Fi (BD entry):
+  https://www.wi-fi.org/regulations-enabling-6-ghz-wi-fi
+- Current BD entry in db.txt (kernel.org):
+  https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb.git/plain/db.txt
+
+Practical impact: With SIM MCC 470, Android and iOS devices apply the
+BD regulatory domain. The current narrow entry hides all 6 GHz
+channels and 5 GHz channels 36-144 from these devices in Bangladesh,
+even on Wi-Fi 6/6E/7 routers, forcing fallback to 802.11ac on
+5 GHz. Updating this entry would restore access to the channels the
+regulator already permits.
+
+I am not a BTRC official; the regulator has not submitted this update
+itself, so I am proposing it on behalf of affected users, citing the
+regulator's published circular and allocation plan above. Please let me
+know if an official letter from BTRC is required before merging, and I
+will forward this request to the commission.
+
+Thank you for your time and work on this database.
+
+Best regards,
+Nahid Hasan
+Dhaka, Bangladesh
+nahidhasan12391@gmail.com
 
