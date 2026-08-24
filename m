@@ -4,107 +4,68 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 26FD6C61CE2
-	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 07:23:15 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 56469C5DF94
+	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 07:39:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:Cc:To:Subject:Message-ID:Date:From:In-Reply-To:References:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	bh=w9HQsIs34F9CkFfEOrlbBQvrjXnhasrgbQZNTVtnk84=; b=1oJ1PgIHynhiEOn6jLY0uujs6o
-	xeYNjXHwpkSATXgrqF6TbuGE9QihZRR/a2335QLRb2e/DkD5ekUSvioj63buKqe9IIOxW4aKvcdhh
-	lMr1/5uBI45PUr5KCX8siyv+E+9NbwbONH0eFgQPu5zabCfKqy3BCP1zgRwDR6Lh2YxLZqPf9RGA+
-	ja7oORy/f1RltEa4ArtjIpISO7uPlbXLpKocbBrAMr/XSfaRMICtspoMJGcOQDIs/FYNcYkcgja+x
-	Yihhr2N2VnyXoB0GxbwyAespyhuYGxGJd4cWK5pklDYkUtK67MlhlcyIC/l2cPLqTQoaJX1330XNa
-	fS5hK/EA==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FQETx+twl973G4FbIh3mQc++j4px3UTMu1k/gnA07m4=; b=VqnjIyl3kW66hn
+	QE2jv5L/7+1whY80cgzjhkWecb+qe6j3Y/JhUBO4CiAhYHL8TWYBmUFxeoqJwLJWe7/0stHWx5mXw
+	eYkDcpZa2aBEEQOPcGlDTLNtx+T2hdWpBx/4HzXDS5L+y32NrUwFFhONBnEiUjhAtbaBMGqvpcV5T
+	uHonAa2sA0EFB4q35F0/w+dRpSYXbASeVNJKkFT3W50IPc26vxqFx+et+FhDCD7GvmpQfzwo+oZ0g
+	fxvtKQ6IGTOVkDrCkauyEBEO4Q64FIL8jbrZg0G3LRkisG24BDwKTNZPoMg4hAsvL2jNxUnEr7Je/
+	kyxeRNeP9uMu92cByPuw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyP1V-0000000G43I-1pKs;
-	Mon, 24 Aug 2026 07:23:13 +0000
-Received: from mail-yx2-x09.google.com ([2607:f8b0:4864:41::9])
+	id 1wyPHT-0000000G6mF-00br;
+	Mon, 24 Aug 2026 07:39:43 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyP1R-0000000G42o-1BkG
+	id 1wyPHR-0000000G6lg-45wG
 	for wireless-regdb@lists.infradead.org;
-	Mon, 24 Aug 2026 07:23:10 +0000
-Received: by mail-yx2-x09.google.com with SMTP id 956f58d0204a3-66c8744245dso1222294d50.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 00:23:08 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1787556188; cv=none;
-        d=google.com; s=arc-20260327;
-        b=WUtQuQycN06i9ZZe9Z92z96aK75ON77YnrJRpp+OlBNslnGIrLOI0CvquNJ5dZW3wi
-         Lynh7+HyhEhaJuJ40NhdLx2GwieLtxThXw7UUExNepn037AN2uJSFbnfCzniGv+TdQdM
-         q+4fQLGD3WrvF2fdL1UMVeIdATzyKven9qlAvv5vpU7Q5Xm8WHZbahf0rjskhjwVuCtY
-         cOjx/T4sJlPKDdFEusMobYScNeGD+V546Kp8h+WgXvDWKwUBKRXpYBQZolIkqFsOmqWO
-         AkjKdPENQM98GqtOx9ysyUkVF3AuXcnyqLPJXktUBIBzbSLi+ANMKgJ5hMQ4Zz4G+KGX
-         Sr0A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=content-transfer-encoding:cc:to:subject:message-id:date:from
-         :in-reply-to:references:mime-version:dkim-signature;
-        bh=w9HQsIs34F9CkFfEOrlbBQvrjXnhasrgbQZNTVtnk84=;
-        fh=X2ihyQg0/cU9tScyupCN7gFkiGJBrKPqsFBD43His3g=;
-        b=MJ0noiroDWlv5MmLbpskQpVqOtexK7DKWeMUo838n1XpwEAMwTUIpVGCFPIVfEd33j
-         6c9c/5WsFEO6Mt0dQJUPkZsC7ROdl2hFNBvMdPaBEWlZLwybFjrv772/UmUWFJCZEPBv
-         RUCd+T7ApeLJ+Wj00qucwtQR0l46P8nZ4QIPR3ef/JEbvGvHn7tnRyaV8M6p2VOfbXKp
-         e24ifruAwvn77suYiujBkt/f3icZCo88Ucd2/Vp10Y8MpXZFKoFGSTCeHhQxqD4tyuet
-         9vG/XzKJq37Sw0o5IGr6IThPVyLJ0j+JEkhJZ79WvfMCC2y5W5+DgGcFIPg75e5i7Ep9
-         bKzw==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1787556188; x=1788160988; darn=lists.infradead.org;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:from:to:cc:subject
-         :date:message-id:reply-to:content-type;
-        bh=w9HQsIs34F9CkFfEOrlbBQvrjXnhasrgbQZNTVtnk84=;
-        b=R6DGoXxreCB9sLp0FMQQyDjxmiFLh2zXgckpn/gSoPALA3Z1M2Bfr4i53hlbLaxt+E
-         ZrSG5tcKHMYtLxGVVjZB+f/GO90/cwjKaXGzzR/r9kjSQJhle91LntEjdpH5Mf0K6ReD
-         GX1Zjs4mYY44WZiF83319QC/4iGvgtuzVEwZMzOK8xW1hCO3A6gTpgBcqTsbzIxsN+tl
-         +Bed/aZj6gRbdEZexLG9KR11rI3QtRyg7dV5GH9dqkcCChpubBCNpvx0VC0QtQSts4/j
-         jXePH9tN9bKU13FtUukwvOf7FF5Bu9XIxSBsS6hScygkqwDoJA7wYxhOsBJDopGgKlOa
-         1Ujg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1787556188; x=1788160988;
-        h=content-transfer-encoding:content-type:cc:to:subject:message-id
-         :date:from:in-reply-to:references:mime-version:x-gm-gg
-         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
-         :content-type;
-        bh=w9HQsIs34F9CkFfEOrlbBQvrjXnhasrgbQZNTVtnk84=;
-        b=rB9HsP5kH2vwZAUJ07dgPXsjMicq33mM5t9STBAhRz4AezJeXjssLGp32Ye3DHLgWW
-         n7CaVTOHN8MkdNjeeknGc0UA3thm3iHFGp0MCcMvwCKIqXojIeSb6JU0waTCk/7KWFNM
-         /OxRhncAHRDE6t0NaOAO4cKJgMs9BLpRH2h8bT9VvLrJ08sFLabs4231AXhpzkDa9aIx
-         3vYE8nklJF3CvR6FNukTu7AqyjdV01qaUPU5efsLLpNYw6BwHmUaDpJ0PxF8bQV/aUtl
-         kTTKJhgHnSdKScTLdKwPQ7SoLsrtQ0qwbGkKpxyTsf5v6Ix319BF1ETjxYjVbCl/7Oou
-         MoJQ==
-X-Forwarded-Encrypted: i=1; AHgh+Rook4lufkb5gmLDUmcBuPTIdk1R5rL4cvCIypIddHVhKLqKRaCIEsqVPRX01yzgjwBin4QlKe9YXYn5LGNMLg==@lists.infradead.org
-X-Gm-Message-State: AFuF++lvepXn8b7IGIM5e6RalLOTIsjhdi5Xresvnio9TZZj0CNZ9rdl
-	VQAzGqCLS9aZOLy6PxvlLQcx4UHWtbq+qerg7WdyhL2t5dCv1lt1FfLdkAZH1rmwSqIIscftY6s
-	u4cf2AHI4YbBHr/9EjK/BHNwwo3N1nhs=
-X-Gm-Gg: AR+sD131e2YJ30+BomxyUQDmHqsKBC8qWToKQiRUdLXjXh+3xPcxgRFZ2gbgkKkIBap
-	000XDDBvVx2NWwf33Zbx5W1nexuUr/1IieZsLwO3gU7MeoIl7KzfHa2ajGGDb7cpPHkKIzP0Ztc
-	13ItueTzKC8STOmHYsWpZJpLNLQiFV20vsHPI/ts5My4RGZin6n6DV3Y0vm03FIJS0LRHrKO+09
-	pQZD7mUKXSMkLTiHmU2119Vn0pqsSV7HiQPGVxTuVg1TuhXZosAocpsdR83TqoYiwiABfnfEh5B
-	qMhyoOzZ7eW5D2jx40RyO2zWxIo6VxYERxB+fHNe64QGT7ez2wTTuSs39V4IoMt84E1+bwcRbPh
-	tC76yjXFZQVr5pVxPyzzwB6h62ZDJRzj9W+KkjDi3ES9/MZe5TrOcgfQ=
-X-Received: by 2002:a05:690e:4104:b0:66a:b622:5974 with SMTP id
- 956f58d0204a3-66ce4a87ee9mr7426309d50.22.1787556187879; Mon, 24 Aug 2026
- 00:23:07 -0700 (PDT)
+	Mon, 24 Aug 2026 07:39:42 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 519EC402F4
+	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 07:39:41 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 369531F00A3A
+	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 07:39:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1787557181;
+	bh=FQETx+twl973G4FbIh3mQc++j4px3UTMu1k/gnA07m4=;
+	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
+	b=OumuAoZiYC2LdrP5CuLMMByZR7Ai+g3h9Ma6iSjQgG3DMHQf3aMSNA+NTiywS8y9r
+	 RHbxUSZXNygo9WSNlAhK+V22HrpycHSfC91PAZ9HZlB0bsP4Es747tO7ubnco5mDb0
+	 ClHri30/TAeA03Ivhqhv22LotgaypWxrLKh37aVQDUeyMuVLkv2MPRU39H/wbO7uYc
+	 kiQg3pqy1Jl63A7zYJSsB+4yf944884MEJYGYsOFYdqhBfp9Ln0zw5WMZqzzBC2ju2
+	 MmxW/ETVBhLNlDhz2k3Uuf8aM/f0yJSP8lnF3ScRJTjgIloQwa9WdZdei2x/Z4xu4A
+	 9sbXv62rA19Pw==
+Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-3a1585728b5so24443641fa.0
+        for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 00:39:41 -0700 (PDT)
+X-Forwarded-Encrypted: i=1; AHgh+RphNWsJxSyQhCPWSh1lmtQLj9+CY4TVqhjt7Yu4+06hdp+P0MNq00Pma7eTLs1eiKcqjRbSnv1+09eOBXzm+A==@lists.infradead.org
+X-Gm-Message-State: AFuF++m7dMMkKbkV5xAeAgsJouqvx80awcFpe+MySJvmbHQTF/jYJOIE
+	Z212K1sDa2PApAGwmoKH3+EktWuFi3t1W/yCrYwN5uUYg8wSGgMJrMEZsCfPEdZfSFHWdFibBE/
+	TXH625EZ+S66gH9QCpxceiXzStGoIYfw=
+X-Received: by 2002:a05:651c:b29:b0:39b:2757:c1d3 with SMTP id
+ 38308e7fff4ca-3a1aec08881mr57239121fa.9.1787557179643; Mon, 24 Aug 2026
+ 00:39:39 -0700 (PDT)
 MIME-Version: 1.0
 References: <CAJF5HCtEvb-aiusJuzmCvu-db4orDwsSnG+mOfCbLXXYRCbtvg@mail.gmail.com>
- <CAGb2v66bvMC9wU9gYknRdM+0oG7UcGquHCu5KYiwJjWZDRtk1g@mail.gmail.com>
-In-Reply-To: <CAGb2v66bvMC9wU9gYknRdM+0oG7UcGquHCu5KYiwJjWZDRtk1g@mail.gmail.com>
-From: Ibrahim Hossain Abir <xbowpc@gmail.com>
-Date: Mon, 24 Aug 2026 13:22:54 +0600
-X-Gm-Features: AcwNN1VFBmOib0Kf5woET0ol44OGtNb-WbcFiLSb0pKfxwJ_FsR1Bnxdtun4z50
-Message-ID: <CAJF5HCtAVMbarNYDkrKWE97Lib+YJk8ZE+5eWsEZ4fKVTp8tOw@mail.gmail.com>
+ <CAGb2v66bvMC9wU9gYknRdM+0oG7UcGquHCu5KYiwJjWZDRtk1g@mail.gmail.com> <CAJF5HCtAVMbarNYDkrKWE97Lib+YJk8ZE+5eWsEZ4fKVTp8tOw@mail.gmail.com>
+In-Reply-To: <CAJF5HCtAVMbarNYDkrKWE97Lib+YJk8ZE+5eWsEZ4fKVTp8tOw@mail.gmail.com>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Mon, 24 Aug 2026 15:39:25 +0800
+X-Gmail-Original-Message-ID: <CAGb2v66-ee1n9E2-GmFZu02HRmFFWPQ1KB-L9uPQcq1i5HSpEw@mail.gmail.com>
+X-Gm-Features: AcwNN1W17ZcnTDpUslucQDZqrt3n9VNZpNg1C04tJ1jHKInO7qgADqCWGd4vEtQ
+Message-ID: <CAGb2v66-ee1n9E2-GmFZu02HRmFFWPQ1KB-L9uPQcq1i5HSpEw@mail.gmail.com>
 Subject: Re: [PATCH] wireless-regdb: update regulatory rules for Bangladesh (BD)
-To: wens@kernel.org
+To: Ibrahim Hossain Abir <xbowpc@gmail.com>
 Cc: linux-wireless@vger.kernel.org, sforshee@kernel.org, 
 	wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260824_002309_332119_CF3F91F2 
-X-CRM114-Status: GOOD (  18.08  )
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -116,80 +77,99 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi ChenYu,
-
-Thank you for the review.
-
-Regarding the reference:
-The official BTRC circular (dated Sept 15, 2024) specifically
-authorizes the 5925=E2=80=936425 MHz frequency range for Wi-Fi/WLAN/IoT sha=
-red
-usage in Bangladesh. However, this notice does not define explicit
-EIRP power limits, TPC, or DFS requirements.
-
-In the initial patch, standard conservative limits (such as 23 dBm for
-6 GHz LPI) were derived from standard Wi-Fi 6E/7 spectrum norms.
-
-Could you advise on how wireless-regdb prefers to handle cases where
-the regulatory body approves the band without listing explicit EIRP
-limits in their notice? Would setting a conservative default (like 20
-dBm / 100 mW EIRP) for 5925=E2=80=936425 MHz be acceptable for Patch v2?
-
-Thanks,
-Ibrahim Hossain Abir
-
-
-On Mon, Aug 24, 2026 at 10:38=E2=80=AFAM Chen-Yu Tsai <wens@kernel.org> wro=
-te:
+On Mon, Aug 24, 2026 at 3:23=E2=80=AFPM Ibrahim Hossain Abir <xbowpc@gmail.=
+com> wrote:
 >
-> On Mon, Aug 24, 2026 at 4:26=E2=80=AFAM Ibrahim Hossain Abir <xbowpc@gmai=
-l.com> wrote:
-> >
-> > wireless-regdb: update regulatory rules for Bangladesh (BD)
-> >
-> > Update regulatory rules for Bangladesh (BD) based on the official BTRC
-> > (Bangladesh Telecommunication Regulatory Commission) directive dated
-> > September 15, 2024.
-> >
-> > Enables U-NII-1/2A, U-NII-2C (DFS), U-NII-3/4, and lower 6 GHz (5925-64=
-25 MHz).
-> >
-> > Official BTRC Notice:
-> > https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d
+> Hi ChenYu,
 >
-> This only says that the lower 6 GHz range is allowed. It does not say
-> what the power limits are, or if there are any other restrictions.
+> Thank you for the review.
 >
-> > User Impact Reference:
-> > https://community.intel.com/t5/Wireless/6-GHz-Wi-Fi-6E-Not-Detected-on-=
-Intel-AX211-in-Bangladesh/m-p/1740885
-> >
-> > Signed-off-by: Ibrahim Hossain Abir <xbowpc@gmail.com>
-> > ---
-> >  db.txt | 8 +++++---
-> >  1 file changed, 5 insertions(+), 3 deletions(-)
-> >
-> > diff --git a/db.txt b/db.txt
-> > index 0000000..1111111 100644
-> > --- a/db.txt
-> > +++ b/db.txt
-> > @@ -223,5 +223,7 @@ country BD: DFS-JP
-> >   (2402 - 2482 @ 40), (20)
-> > - (5735 - 5835 @ 80), (30)
-> > + (5150 - 5350 @ 80), (20), NO-OUTDOOR, AUTO-BW
-> > + (5470 - 5725 @ 160), (20), DFS, AUTO-BW
-> > + (5725 - 5850 @ 80), (30)
-> > + (5925 - 6425 @ 320), (23), NO-OUTDOOR
+> Regarding the reference:
+> The official BTRC circular (dated Sept 15, 2024) specifically
+> authorizes the 5925=E2=80=936425 MHz frequency range for Wi-Fi/WLAN/IoT s=
+hared
+> usage in Bangladesh. However, this notice does not define explicit
+> EIRP power limits, TPC, or DFS requirements.
 >
-> A reference with the band and power limits, as well as any other
-> restrictions like DFS or TPC (andif TPC is required, what is the
-> limit if TPC is not implemented) needs to be provided. We cannot
-> put random numbers into the database without justification.
+> In the initial patch, standard conservative limits (such as 23 dBm for
+> 6 GHz LPI) were derived from standard Wi-Fi 6E/7 spectrum norms.
+>
+> Could you advise on how wireless-regdb prefers to handle cases where
+> the regulatory body approves the band without listing explicit EIRP
+> limits in their notice? Would setting a conservative default (like 20
+> dBm / 100 mW EIRP) for 5925=E2=80=936425 MHz be acceptable for Patch v2?
+
+As previously mentioned we cannot accept random limits without justificatio=
+n.
+The regulatory body needs to specify limits, or outright state they defer
+to some other standard.
+
+Please help reach out to the regulatory body for clarification. They should
+provide the information, otherwise folks doing the certification have nothi=
+ng
+to base it off of.
+
+
+Thanks
+ChenYu
+
+> Thanks,
+> Ibrahim Hossain Abir
 >
 >
-> Thanks
-> ChenYu
+> On Mon, Aug 24, 2026 at 10:38=E2=80=AFAM Chen-Yu Tsai <wens@kernel.org> w=
+rote:
+> >
+> > On Mon, Aug 24, 2026 at 4:26=E2=80=AFAM Ibrahim Hossain Abir <xbowpc@gm=
+ail.com> wrote:
+> > >
+> > > wireless-regdb: update regulatory rules for Bangladesh (BD)
+> > >
+> > > Update regulatory rules for Bangladesh (BD) based on the official BTR=
+C
+> > > (Bangladesh Telecommunication Regulatory Commission) directive dated
+> > > September 15, 2024.
+> > >
+> > > Enables U-NII-1/2A, U-NII-2C (DFS), U-NII-3/4, and lower 6 GHz (5925-=
+6425 MHz).
+> > >
+> > > Official BTRC Notice:
+> > > https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d
+> >
+> > This only says that the lower 6 GHz range is allowed. It does not say
+> > what the power limits are, or if there are any other restrictions.
+> >
+> > > User Impact Reference:
+> > > https://community.intel.com/t5/Wireless/6-GHz-Wi-Fi-6E-Not-Detected-o=
+n-Intel-AX211-in-Bangladesh/m-p/1740885
+> > >
+> > > Signed-off-by: Ibrahim Hossain Abir <xbowpc@gmail.com>
+> > > ---
+> > >  db.txt | 8 +++++---
+> > >  1 file changed, 5 insertions(+), 3 deletions(-)
+> > >
+> > > diff --git a/db.txt b/db.txt
+> > > index 0000000..1111111 100644
+> > > --- a/db.txt
+> > > +++ b/db.txt
+> > > @@ -223,5 +223,7 @@ country BD: DFS-JP
+> > >   (2402 - 2482 @ 40), (20)
+> > > - (5735 - 5835 @ 80), (30)
+> > > + (5150 - 5350 @ 80), (20), NO-OUTDOOR, AUTO-BW
+> > > + (5470 - 5725 @ 160), (20), DFS, AUTO-BW
+> > > + (5725 - 5850 @ 80), (30)
+> > > + (5925 - 6425 @ 320), (23), NO-OUTDOOR
+> >
+> > A reference with the band and power limits, as well as any other
+> > restrictions like DFS or TPC (andif TPC is required, what is the
+> > limit if TPC is not implemented) needs to be provided. We cannot
+> > put random numbers into the database without justification.
+> >
+> >
+> > Thanks
+> > ChenYu
 
