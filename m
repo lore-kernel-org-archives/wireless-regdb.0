@@ -4,68 +4,65 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 513E0C5DF94
-	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 08:18:19 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id 42208C5DF94
+	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 08:56:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5LiJ6TZO52m4OOCLiCd71T+aefYjNDmhG2YJrXqJqxc=; b=QPBpksifYtcsWl
-	aoq5Jyu0LmssB79OYG0fIonvHxEERz7bi57l7NYroYquz560tUIMNmpcB42JzGPkyUkrjM4tDeB65
-	q7VIZpc/cGr4oIGhWx0mQ5nWWp8ArwWHtOagnCtY/QBoL52u/PlsxKkGNvOUMAcS+S6XZMeR0nMS8
-	6RNLA0RVsqGneW8UhI8v6oaLNgjGjBawaaGSG6pgjqRI48iYNbPDGMLU8BaupxUQl3T2Jd3+yj5mQ
-	PLrRdv5odPqQbq5lCx6V1mqkWIjQCjRJvQAc3cTRWF8+emsPapzHlfR0wo1eGMi7hlgceG8QVNdv2
-	7VhLPC8CGx+R/5H+YMCg==;
+	List-Owner; bh=MqwGY+V7K81y+i0o18HClP4KAp+voz4wHKZ4AUKZkWw=; b=t5q5PZHbwxSi7c
+	SBxFXmaSW/SiFyVFDsnmAOpkXj8Fv1bweZaUgQtpouPUWlxCW71yHc2iv/z4zCsQkcVSWkFvEfNKF
+	AMSPWv4WAg3RE8S++mH9hNQtheih3XcG9zJ6WNQUOVktneZOdgZ6MR1cn903PqKkXxvwZtj2DRN+L
+	rmrjE79TBcQeVFycSylWadZnm7qvYlziiWmaHpGr3RJGIbMZbFj1gdOR360a6cEsu+WAF3TbSfI6k
+	t+uw4qXzwSTTq5JUUUzXX6ep1rvwsL2u6apGQg7paa1uwbmTuUrsG+tlvgORoahREfiFtKrWMv21g
+	jA3icejrC5gS38QKWb5w==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyPso-0000000GBtF-31t0;
-	Mon, 24 Aug 2026 08:18:18 +0000
+	id 1wyQTK-0000000GEon-2JeA;
+	Mon, 24 Aug 2026 08:56:02 +0000
 Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyPso-0000000GBt9-0Lxc
+	id 1wyQTH-0000000GEoG-2zmp
 	for wireless-regdb@lists.infradead.org;
-	Mon, 24 Aug 2026 08:18:18 +0000
+	Mon, 24 Aug 2026 08:56:00 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id 72FBA43B7E
-	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 08:18:17 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 578E21F000E9
-	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 08:18:17 +0000 (UTC)
+	by sea.source.kernel.org (Postfix) with ESMTP id 7885D40F3A
+	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 08:55:59 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 5CE841F000E9
+	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 08:55:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787559497;
-	bh=5LiJ6TZO52m4OOCLiCd71T+aefYjNDmhG2YJrXqJqxc=;
+	s=k20260515; t=1787561759;
+	bh=MqwGY+V7K81y+i0o18HClP4KAp+voz4wHKZ4AUKZkWw=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=bexmzRqtF9JdHrYVsyp2yLgJhXylIfXLpXcS/tvkzZZ/HHNuqjnJqv0NRkPsXlK1p
-	 p9h0CDYOyO3l0jF5s6s/arPLS4No2GOl1HwNZY5zQ2JRSQhGFa/9orzitZri9NewcD
-	 FRjEN+YFrJIPmUx+9SNaRTyY7fETG6KPVlMEnMkOEASwbhFYlSFbt9C0HZqfDATDzz
-	 j6w+0AE9BenW9gKp+U7vZWK8Dglmv8zHZlMnM6YfWa3Qu+1h7BPOZ0v/mix3R1l0KU
-	 9vA66OuOHxNQ76wL/TJYGqXq35CBlmocgAdQ9xXHTbttsSTH09dR1e1IkmP0wDYD1r
-	 p8WEzJcZczbjQ==
-Received: by mail-lj1-f172.google.com with SMTP id 38308e7fff4ca-39f91ba1ef7so23159031fa.3
-        for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 01:18:17 -0700 (PDT)
-X-Forwarded-Encrypted: i=1; AHgh+RrH+5gZnMISUf0uWA2g49C93mB+2XXhSmk6KQhnAXrjEFKC1OwxGIvRwaVUQquqGF1+c3Mm9FBH1dE8xfu3qQ==@lists.infradead.org
-X-Gm-Message-State: AFuF++nkCI5wgwBAp2uNnj7ilWxBjWbLOUG1uqBBIdTm0ds0gCx9Kbpc
-	/vrYhePnV89l3+XeyB/frKgxuyJo1oiIjXLUq1Y0s/Xe+zWNUh4hqD+hmUjwsjwHI86OOyxkC84
-	MycuRliNlRGTaK5KvjOJXe6ocHmrVako=
-X-Received: by 2002:a05:651c:41d3:b0:39b:695:32a3 with SMTP id
- 38308e7fff4ca-3a1c1ea8683mr34487621fa.13.1787559495827; Mon, 24 Aug 2026
- 01:18:15 -0700 (PDT)
+	b=dC9IeoCt2piHU5YbnYT1YNy5Pe52n8Hzy43Gq278mUGBtu32wXDkiK4iPdS28eFVU
+	 mwryT3uQXf8zclUgQvFSdAjVa5lBnbwUzDzsV5ORFMkNPHzurBcl/fsqwSQLxHGERh
+	 vuOOxn7NKHcNHc1sNzEaueZl69l5maErscf0apSf0Grf+jupXCY2zqyBKhryVLQHD5
+	 fbT+5uwRBpy535Ko3MIgLhHvbTC/wvwu1OosOJLxSxVWabN3H6XgkbSiMMe9qd04sT
+	 fPtajXNgjrFzTN9h5du8DQg6AVFZkWQ5MygELSmm20Wo3UubFs6gV1ZvXNXtu4uKen
+	 d+2Te72Pdv7Vw==
+Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-39c95395230so28741531fa.2
+        for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 01:55:59 -0700 (PDT)
+X-Gm-Message-State: AFuF++ncYosXrRKtX9k77++YBTWVl1+J9w7jbDJ+jj3y3iKlnaoI3KU9
+	haSpIK+pY4mrz3zXOgQrtgT23aw29j8MalYEdp/AQrMs7k1E8N+qsbzLqh/FLix/Wfe6ZHCP6a3
+	+nVd9X4nVAsXicLQIcDYzQGRzy+9wHD4=
+X-Received: by 2002:a05:651c:222c:b0:3a1:ab57:ea1e with SMTP id
+ 38308e7fff4ca-3a1aee6dff2mr55577751fa.13.1787561757786; Mon, 24 Aug 2026
+ 01:55:57 -0700 (PDT)
 MIME-Version: 1.0
-References: <CAJF5HCtEvb-aiusJuzmCvu-db4orDwsSnG+mOfCbLXXYRCbtvg@mail.gmail.com>
- <CAGb2v66bvMC9wU9gYknRdM+0oG7UcGquHCu5KYiwJjWZDRtk1g@mail.gmail.com>
- <CAJF5HCtAVMbarNYDkrKWE97Lib+YJk8ZE+5eWsEZ4fKVTp8tOw@mail.gmail.com>
- <CAGb2v66-ee1n9E2-GmFZu02HRmFFWPQ1KB-L9uPQcq1i5HSpEw@mail.gmail.com> <CAJF5HCsYhv-JTMvXRHLesuOFsVFnySqEKWYzK6_B-bWEoAEW0g@mail.gmail.com>
-In-Reply-To: <CAJF5HCsYhv-JTMvXRHLesuOFsVFnySqEKWYzK6_B-bWEoAEW0g@mail.gmail.com>
+References: <CAPsebg5EyxQjqQVm0KQHtx=0f8-mvhPSdsvJFOGEPCFU3H=Y0g@mail.gmail.com>
+ <CAGb2v67O-WqXdA9W-YTV-q9mKz23G3-eFNRJSoVGn07TSXF-hQ@mail.gmail.com> <CAPsebg7j14Znh2EMOKE2WDRpHNOCpTrcmLCY0j6diNVZymMA_w@mail.gmail.com>
+In-Reply-To: <CAPsebg7j14Znh2EMOKE2WDRpHNOCpTrcmLCY0j6diNVZymMA_w@mail.gmail.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 24 Aug 2026 16:18:03 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65qs7NkSEL8Zg3x8a8aytV47uauNo6gj2XMi7_FfADz0Q@mail.gmail.com>
-X-Gm-Features: AcwNN1XDB_opVvJUZeDD4_gg9MMwroqOpuME4HWa5-J3xyPciLYF7H2EolzrP88
-Message-ID: <CAGb2v65qs7NkSEL8Zg3x8a8aytV47uauNo6gj2XMi7_FfADz0Q@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: update regulatory rules for Bangladesh (BD)
-To: Ibrahim Hossain Abir <xbowpc@gmail.com>
-Cc: linux-wireless@vger.kernel.org, sforshee@kernel.org, 
-	wireless-regdb@lists.infradead.org
+Date: Mon, 24 Aug 2026 16:55:42 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67VNZoTMq=PBhAZi_t-NiK_2Pi-pG6dRQrM+=ohRHLM_w@mail.gmail.com>
+X-Gm-Features: AcwNN1Wrp1NFzn7XpSZbQkxgJnH94OL0D9He13_jYZw4HFaaXA-af8IY1G3zXms
+Message-ID: <CAGb2v67VNZoTMq=PBhAZi_t-NiK_2Pi-pG6dRQrM+=ohRHLM_w@mail.gmail.com>
+Subject: Re: country BD (Bangladesh) entry: update to current BTRC allocations
+ (2.4/5/6 GHz)
+To: Nahid Hasan <nahidhasan12391@gmail.com>
+Cc: wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 X-BeenThere: wireless-regdb@lists.infradead.org
@@ -83,123 +80,213 @@ Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-On Mon, Aug 24, 2026 at 4:16=E2=80=AFPM Ibrahim Hossain Abir <xbowpc@gmail.=
+Hi,
+
+On Mon, Aug 24, 2026 at 4:42=E2=80=AFPM Nahid Hasan <nahidhasan12391@gmail.=
 com> wrote:
 >
-> Hi ChenYu,
+> Hi,
+> Thank you for the feedback. To clarify, the proposed update covers the
+> full range of 5 GHz and 6 GHz bands as authorized by the BTRC. Below
+> are the specific power limit (EIRP) references for each segment,
+> including the lower 5 GHz bands.
 >
-> Understood. I have reached out directly to the Spectrum Division of
-> BTRC (sohel@btrc.gov.bd) requesting technical clarification on
-> explicit EIRP limits and standards for 5925=E2=80=936425 MHz.
+> 1) 5150 - 5350 MHz (channels 36-64)The lower 5 GHz band is authorized
+> for indoor use in Bangladesh. The technical parameters align with
+> ITU-R M.1450-5, as formally adopted in the national spectrum
+> framework.=E2=80=A2Reference: ITU Bangladesh Spectrum Master Plan (Publis=
+hed
+> 2021), Section 5.3.3, Table 5.2 "Technical Parameters for
+> WLAN/RLAN".=E2=80=A2Limit: 200 mW (23 dBm) EIRP.=E2=80=A2Source URL:
+> https://www.itu.int/en/ITU-D/Regional-Presence/AsiaPacific/Documents/Publ=
+ications-Reports/Spectrum%20Master-plans/Bangladesh%20Spectrum%20master%20p=
+lan%20-%20Published.pdf
+> (Page 42)
 
-If possible, could you ask for status updates on the 5 GHz bands
-as well? You intended to add them in your patch.
+There is no section 5 in the master plan reference you provided.
 
-> I will update this thread as soon as I receive an official response from =
-them.
+> 2) 5470 - 5725 MHz (channels 100-144) and 5725 - 5850 MHz (channels
+> 149-165)These bands are allocated for both indoor and outdoor use with
+> higher power limits under DFS requirements for the
+> mid-band.=E2=80=A2Reference: ITU Bangladesh Spectrum Master Plan (2021), =
+Table
+> 5.2.=E2=80=A2Limits:=E2=80=A25470 - 5725 MHz: 1 W (30 dBm) EIRP (DFS requ=
+ired).=E2=80=A25725 -
+> 5875 MHz: 1 W (30 dBm) EIRP.=E2=80=A2Source URL:
+> https://www.itu.int/en/ITU-D/Regional-Presence/AsiaPacific/Documents/Publ=
+ications-Reports/Spectrum%20Master-plans/Bangladesh%20Spectrum%20master%20p=
+lan%20-%20Published.pdf
+> (Page 42)
+
+Same here.
+
+> 3) 5925 - 6425 MHz (6 GHz channels 1-97)Approved for "shared use" in
+> September 2024. Technical specifications follow the APT (Asia-Pacific
+> Telecommunity) framework.=E2=80=A2Reference: BTRC Circular No.
+> 14.32.0000.402.45.231.24.116 (15 September 2024).=E2=80=A2Limit: 23 dBm E=
+IRP
+> (Low Power Indoor - LPI).=E2=80=A2Source URL:
+> https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d=E2=80=A2Direct=
+ PDF:
+> https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b=
+/V2Ministry/o/office-btrc/2024/12/18337854ab6c487fa749464c7672c8a8.pdfUpdat=
+ed
+
+This document does not say anything beyond the band is approved.
+Any official reference needs to say what the limitations are.
+
+
+ChenYu
+
+> Proposed Entry for BD:country
+> BD: DFS-JP
+>  (2402 - 2482 @ 40), (20)
+>  (5150 - 5350 @ 80), (23), DFS
+>  (5470 - 5725 @ 160), (30), DFS
+>  (5725 - 5850 @ 80), (30)
+>  (5925 - 6425 @ 160), (23)
 >
-> Thanks,
-> Ibrahim Hossain Abir
+> These values are consistent with official BTRC notices and the
+> ITU-published National Spectrum Master Plan for Bangladesh.
+>
+> Best Regards
+> Nahid Hasan
 >
 >
-> On Mon, Aug 24, 2026 at 1:39=E2=80=AFPM Chen-Yu Tsai <wens@kernel.org> wr=
-ote:
+>
+> On Mon, Aug 24, 2026 at 10:37=E2=80=AFAM Chen-Yu Tsai <wens@kernel.org> w=
+rote:
 > >
-> > On Mon, Aug 24, 2026 at 3:23=E2=80=AFPM Ibrahim Hossain Abir <xbowpc@gm=
+> > Hi,
+> >
+> > On Fri, Aug 21, 2026 at 5:08=E2=80=AFAM Nahid Hasan <nahidhasan12391@gm=
 ail.com> wrote:
 > > >
-> > > Hi ChenYu,
+> > > Hello,
 > > >
-> > > Thank you for the review.
-> > >
-> > > Regarding the reference:
-> > > The official BTRC circular (dated Sept 15, 2024) specifically
-> > > authorizes the 5925=E2=80=936425 MHz frequency range for Wi-Fi/WLAN/I=
-oT shared
-> > > usage in Bangladesh. However, this notice does not define explicit
-> > > EIRP power limits, TPC, or DFS requirements.
-> > >
-> > > In the initial patch, standard conservative limits (such as 23 dBm fo=
+> > > I would like to propose an update to the "country BD" entry in the
+> > > wireless-regdb database. The current entry only allows 2.4 GHz and a
+> > > narrow slice of the 5.7 GHz band, while the regulator (BTRC, Banglade=
+sh
+> > > Telecommunication Regulatory Commission) has since approved much wide=
 r
-> > > 6 GHz LPI) were derived from standard Wi-Fi 6E/7 spectrum norms.
+> > > allocations. This outdated entry means that smartphones sold in
+> > > Bangladesh (SIM MCC 470) cannot see or use 5 GHz channels 36-144 or a=
+ny
+> > > 6 GHz channel, even though these are officially permitted.
 > > >
-> > > Could you advise on how wireless-regdb prefers to handle cases where
-> > > the regulatory body approves the band without listing explicit EIRP
-> > > limits in their notice? Would setting a conservative default (like 20
-> > > dBm / 100 mW EIRP) for 5925=E2=80=936425 MHz be acceptable for Patch =
-v2?
+> > > Current entry (db.txt, line 224 as of wireless-regdb 2026-xx-xx):
+> > >
+> > > country BD: DFS-JP
+> > > (2402 - 2482 @ 40), (20)
+> > > (5735 - 5835 @ 80), (30)
+> > >
+> > > Proposed replacement, based on the regulator's National Frequency
+> > > Allocation Plan and the BTRC circular dated 15 September 2024 which
+> > > approved 5925-6425 MHz for unlicensed Wi-Fi/IoT/WLAN use:
+> > >
+> > > country BD: DFS-JP
+> > > (2402 - 2482 @ 40), (20)
+> > > (5150 - 5350 @ 80), (20), NO-OUTDOOR, AUTO-BW
+> > > (5470 - 5725 @ 160), (20), DFS, AUTO-BW
+> > > (5725 - 5850 @ 80), (30)
+> > > (5925 - 6425 @ 160), (23)
+> > >
+> > > Justification for each block:
+> > >
+> > > 1) 2.4 GHz (2402 - 2482 @ 40), (20)
+> > > No change; matches the long-standing SRD/ISM allocation of 2400-2483.=
+5
+> > > MHz.
+> > >
+> > > 2) 5150 - 5350 MHz (channels 36-64), (20) dBm, NO-OUTDOOR, AUTO-BW
+> > > Allocated in the Bangladesh NFAP. Indoor-only with 20 dBm EIRP follow=
+s
+> > > the ETSI-style practice already used in the region (as in DFS-JP).
 > >
-> > As previously mentioned we cannot accept random limits without justific=
-ation.
-> > The regulatory body needs to specify limits, or outright state they def=
-er
-> > to some other standard.
+> > Please provide reference with power limit numbers.
 > >
-> > Please help reach out to the regulatory body for clarification. They sh=
-ould
-> > provide the information, otherwise folks doing the certification have n=
-othing
-> > to base it off of.
+> > > 3) 5470 - 5725 MHz (channels 100-144), (20) dBm, DFS, AUTO-BW
+> > > Allocated in the NFAP with radar-detection (DFS) requirement. A 60
+> > > second CAC (Japan-style DFS, already selected for BD) is consistent.
+> >
+> > Please provide reference with power limit numbers.
+> >
+> > > 4) 5725 - 5850 MHz (channels 149-165), (30) dBm
+> > > No change to the current entry, only extended from 5835 to 5850 MHz t=
+o
+> > > match the NFAP allocation of 5725-5875 MHz (the upper part, 5850-5875=
+,
+> > > is omitted conservatively since it requires pre-authorization for
+> > > commercial equipment; can be added once the regulator clarifies).
+> > >
+> > > 5) 5925 - 6425 MHz (6 GHz channels 1-97, up to 160 MHz), (23) dBm
+> > > BTRC circular dated 15 September 2024 approved 5925-6425 MHz for
+> > > Wi-Fi/IoT/WLAN on a shared basis. (23) dBm EIRP follows the conservat=
+ive
+> > > indoor-oriented approach used by neighboring regulators. 320 MHz
+> > > (802.11be) is NOT included since the circular does not explicitly
+> > > authorize the 320 MHz channel width.
+> >
+> > You need to provide power limit references for Bangladesh, not neighbou=
+ring
+> > regions.
+> >
+> > > References:
+> > >
+> > > - BTRC circular approving 5925-6425 MHz for Wi-Fi/IoT/WLAN (15 Sep 20=
+24):
+> > >   https://btrc.gov.bd/site/notices/939916e8-a89a-4e3b-aa75-35a0a2172f=
+59/
+> > > - Bangladesh National Frequency Allocation Plan (ITU-published
+> > >   Spectrum Master Plan):
+> > >   https://www.itu.int/en/ITU-D/Regional-Presence/AsiaPacific/Document=
+s/Publications-Reports/Spectrum%20Master-plans/Bangladesh%20Spectrum%20mast=
+er%20plan%20-%20Published.pdf
+> > > - Wi-Fi Alliance, regulations enabling 6 GHz Wi-Fi (BD entry):
+> > >   https://www.wi-fi.org/regulations-enabling-6-ghz-wi-fi
+> > > - Current BD entry in db.txt (kernel.org):
+> > >   https://git.kernel.org/pub/scm/linux/kernel/git/wens/wireless-regdb=
+.git/plain/db.txt
+> > >
+> > > Practical impact: With SIM MCC 470, Android and iOS devices apply the
+> > > BD regulatory domain. The current narrow entry hides all 6 GHz
+> > > channels and 5 GHz channels 36-144 from these devices in Bangladesh,
+> > > even on Wi-Fi 6/6E/7 routers, forcing fallback to 802.11ac on
+> > > 5 GHz. Updating this entry would restore access to the channels the
+> > > regulator already permits.
+> > >
+> > > I am not a BTRC official; the regulator has not submitted this update
+> > > itself, so I am proposing it on behalf of affected users, citing the
+> > > regulator's published circular and allocation plan above. Please let =
+me
+> > > know if an official letter from BTRC is required before merging, and =
+I
+> > > will forward this request to the commission.
+> >
+> > A reference with the band and power limits, as well as any other
+> > restrictions like DFS or TPC (andif TPC is required, what is the limit
+> > if TPC is not implemented) needs to be provided. We cannot put random
+> > numbers into the database without justification.
+> >
+> > The BRTC circular only says that the band is allowed. It does not provi=
+de
+> > power limits.
+> >
+> > The allocation plan only gives bands, and they are quite coarse. And fo=
+r
+> > 5GHz, it says they are currently allocated to ISPs. It is implied that
+> > a license is required.
 > >
 > >
 > > Thanks
 > > ChenYu
 > >
-> > > Thanks,
-> > > Ibrahim Hossain Abir
+> > > Thank you for your time and work on this database.
 > > >
+> > > Best regards,
+> > > Nahid Hasan
+> > > Dhaka, Bangladesh
+> > > nahidhasan12391@gmail.com
 > > >
-> > > On Mon, Aug 24, 2026 at 10:38=E2=80=AFAM Chen-Yu Tsai <wens@kernel.or=
-g> wrote:
-> > > >
-> > > > On Mon, Aug 24, 2026 at 4:26=E2=80=AFAM Ibrahim Hossain Abir <xbowp=
-c@gmail.com> wrote:
-> > > > >
-> > > > > wireless-regdb: update regulatory rules for Bangladesh (BD)
-> > > > >
-> > > > > Update regulatory rules for Bangladesh (BD) based on the official=
- BTRC
-> > > > > (Bangladesh Telecommunication Regulatory Commission) directive da=
-ted
-> > > > > September 15, 2024.
-> > > > >
-> > > > > Enables U-NII-1/2A, U-NII-2C (DFS), U-NII-3/4, and lower 6 GHz (5=
-925-6425 MHz).
-> > > > >
-> > > > > Official BTRC Notice:
-> > > > > https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d
-> > > >
-> > > > This only says that the lower 6 GHz range is allowed. It does not s=
-ay
-> > > > what the power limits are, or if there are any other restrictions.
-> > > >
-> > > > > User Impact Reference:
-> > > > > https://community.intel.com/t5/Wireless/6-GHz-Wi-Fi-6E-Not-Detect=
-ed-on-Intel-AX211-in-Bangladesh/m-p/1740885
-> > > > >
-> > > > > Signed-off-by: Ibrahim Hossain Abir <xbowpc@gmail.com>
-> > > > > ---
-> > > > >  db.txt | 8 +++++---
-> > > > >  1 file changed, 5 insertions(+), 3 deletions(-)
-> > > > >
-> > > > > diff --git a/db.txt b/db.txt
-> > > > > index 0000000..1111111 100644
-> > > > > --- a/db.txt
-> > > > > +++ b/db.txt
-> > > > > @@ -223,5 +223,7 @@ country BD: DFS-JP
-> > > > >   (2402 - 2482 @ 40), (20)
-> > > > > - (5735 - 5835 @ 80), (30)
-> > > > > + (5150 - 5350 @ 80), (20), NO-OUTDOOR, AUTO-BW
-> > > > > + (5470 - 5725 @ 160), (20), DFS, AUTO-BW
-> > > > > + (5725 - 5850 @ 80), (30)
-> > > > > + (5925 - 6425 @ 320), (23), NO-OUTDOOR
-> > > >
-> > > > A reference with the band and power limits, as well as any other
-> > > > restrictions like DFS or TPC (andif TPC is required, what is the
-> > > > limit if TPC is not implemented) needs to be provided. We cannot
-> > > > put random numbers into the database without justification.
-> > > >
-> > > >
-> > > > Thanks
-> > > > ChenYu
 
