@@ -4,66 +4,47 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id D944AC5DF8C
-	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 04:39:55 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id D9250C5DF94
+	for <wireless-regdb@archiver.kernel.org>; Mon, 24 Aug 2026 07:07:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bamvOZ5tUCgdaqL7D0Y/4JjSmYGsOedivVLNrTZcQ6U=; b=mA24AO0J/CAdpe
-	nFs5efeF1fBZo7wuOjjyIhenSDEy+E+MItXFf4pcjI5HcitQf/tFYVlnAR6ialEIMdicsTTyOZz36
-	T4ny9UZsAlW5arKUstS6uxqz09e91twGf0s7VyBeJqoo3Ds4NMim3PgNAqTqWkVP03uWzytcMxzN3
-	0bKcGcZDfSJX7PhvTTmliCNcrx4rARvjm2YNgAyhvFlr8knGqCY8ZFix9oD9ZU1a+BKskyzl7f9gl
-	nissMi+0WT9KeroKbb9wMz+crnyo+ctCFjmwHSMouEOhgqMPwtCJqH279Z3TuDuxsWOSqfuZjcO1P
-	YSFc+kJekIFxv7sCseFg==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=XZsvmuwAgTW2BW/+cc8a/kwDkmTk56cEOsPA8xXJxn8=; b=sf0dvp/My7hgQqK8GXadj768sB
+	Sdw9rf65CzBo3ZayrV1yx5rgu+x4RCBQhKH/hJf8nD+avzAjGuHEEECaF+V6dJRyIDFIxNRpS4ImP
+	YdwKk292Fkg8E7A3f80MLHTWgoWfNdvVa4ouZJSzccDyKHWxoRKh/rs4CISWd4ROxroan9/PRak0q
+	Qkyi7H9aaZsD8ylhBZmYgDhytNPh9SlILH9K7aqzc0vGJwteIQ6t9wYW3e+P6FlPU4EG7lRyZVCJr
+	yvpz5GsD1+aIiOMD7hUI+/PzP2SZE07VV3HD8JYBwWSjIqScfucHSPqUXvevYSZzjVqnyQ7xUBvxj
+	AnYKQYjw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyMTT-0000000Fumh-0I35;
-	Mon, 24 Aug 2026 04:39:55 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1wyOmb-0000000G2tV-0u9E;
+	Mon, 24 Aug 2026 07:07:49 +0000
+Received: from mirror2.csie.ntu.edu.tw ([140.112.30.76] helo=wens.tw)
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1wyMTS-0000000FumX-15GO
+	id 1wyOmY-0000000G2sn-3SuF
 	for wireless-regdb@lists.infradead.org;
-	Mon, 24 Aug 2026 04:39:54 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 4EABC600AD
-	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 04:39:53 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 064451F000E9
-	for <wireless-regdb@lists.infradead.org>; Mon, 24 Aug 2026 04:39:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1787546393;
-	bh=bamvOZ5tUCgdaqL7D0Y/4JjSmYGsOedivVLNrTZcQ6U=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=G9TpU+IK2J5ouDaTwB5Qa7BPgw9uKp10IUHnobQ5bD2NgR9dhDvp+P6L3PtjpyQ3k
-	 4ozB1mtBei7uPrdOuy+vBPo4Rfe3wPLyWs1fkrCvbpONhKVNoDfuFTuQxksBgGblub
-	 A99k8RMQsppIgemXcJkfKqvccv96Ky9w0VoeNHPmiC6XQIRTdukeq2+clcw+ZjFq8W
-	 ce2Yi2zzZ2r2zXgjT1eUjP/Imx8nPNVzxcEyYfOIwmnqOmlAfdCWcSOMhdh4xFFcA4
-	 f6HzAC/kslCr7/CtJ+WP2gB2rVcawEm5D9ovXQceOTyyteUBHfNa37PtpGmuEbNFCo
-	 ucRdkE+8IcZyg==
-Received: by mail-lj1-f173.google.com with SMTP id 38308e7fff4ca-3a14f6613fdso34132801fa.0
-        for <wireless-regdb@lists.infradead.org>; Sun, 23 Aug 2026 21:39:52 -0700 (PDT)
-X-Gm-Message-State: AFuF++krtXDm6qLn86BOsN1jv2R3kW+YUmNKEk/qQrdLbIS/4DksR8rA
-	LF7nuVwdlmQTvEaCybyAhbTHi/pSK/r6cxA/DAeAAc0YqQMoj+3qNPUcyhK3LolMZyYknf44//d
-	3o1PP8lTed4OrRuWFLnmJynIw49mWtB0=
-X-Received: by 2002:a2e:bea6:0:b0:394:3b62:b6aa with SMTP id
- 38308e7fff4ca-3a1aec678fbmr51224111fa.12.1787546391501; Sun, 23 Aug 2026
- 21:39:51 -0700 (PDT)
-MIME-Version: 1.0
-References: <CACeKqZC+RCVtvGMaWmNYLnyA0OKsKM3YmaMxNk_KZqr3Ekji3Q@mail.gmail.com>
-In-Reply-To: <CACeKqZC+RCVtvGMaWmNYLnyA0OKsKM3YmaMxNk_KZqr3Ekji3Q@mail.gmail.com>
+	Mon, 24 Aug 2026 07:07:48 +0000
+Received: by wens.tw (Postfix, from userid 1000)
+	id 6ACF9600C6; Mon, 24 Aug 2026 15:07:39 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 24 Aug 2026 12:39:39 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64zk4y4PBE6q6vendj_Rfnh8tZfk_sqoJJWghZEj5gOow@mail.gmail.com>
-X-Gm-Features: AcwNN1XH3otKghPwxmWqDEXTHV3SQNRzM0wewEl9BEaMb8A9id6-g_EuCy3q6gc
-Message-ID: <CAGb2v64zk4y4PBE6q6vendj_Rfnh8tZfk_sqoJJWghZEj5gOow@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory rules for Bangladesh
- (BD) for 6GHz
-To: Tahsinul Mohsin 2524687642 <tahsinul.mohsin.252@northsouth.edu>
-Cc: wireless-regdb@lists.infradead.org, linux-wireless@vger.kernel.org
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+To: linux-wireless@vger.kernel.org
+Cc: Chen-Yu Tsai <wens@kernel.org>,
+	wireless-regdb@lists.infradead.org,
+	Ping-Ke Shih <pkshih@realtek.com>,
+	Morgan Wong <pbodq2@gmail.com>
+Subject: [PATCH] wireless-regdb: allow 320MHz channel width for Hong Kong (HK)
+Date: Mon, 24 Aug 2026 15:07:28 +0800
+Message-ID: <20260824070730.2089862-1-wens@kernel.org>
+X-Mailer: git-send-email 2.47.3
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20260824_000747_016571_F4D9F02C 
+X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,54 +56,33 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
 Errors-To: wireless-regdb-bounces+wireless-regdb=archiver.kernel.org@lists.infradead.org
 
-Hi,
+There are no restrictions on channel width. Allow 320 MHz channels on
+the 6 GHz band for WiFi 7.
 
-On Mon, Aug 24, 2026 at 4:19=E2=80=AFAM Tahsinul Mohsin 2524687642
-<tahsinul.mohsin.252@northsouth.edu> wrote:
->
-> Dear concern,
->
-> The Bangladesh Telecommunication Regulatory Commission (BTRC) has officia=
-lly approved the 5925=E2=80=936425 MHz frequency band for shared use in Wi-=
-Fi, IoT, and WLAN devices.
->
-> Here is the official BTRC circular (published
-> September 15, 2024):
->
-> https://btrc.gov.bd/pages/notices/6922ee00dbfbab28ce0c438d
->
->
-> Could we please get the db.txt file updated for country BD to allow the 5=
-925-6425 MHz range?
+Reported-by: Morgan Wong <pbodq2@gmail.com>
+Link: https://lore.kernel.org/wireless-regdb/CABzKGg0YEm5PfW9YtEM0G1SYY6RD80DmFpu_Jpb9hoioK+tH-w@mail.gmail.com/
+Signed-off-by: Chen-Yu Tsai <wens@kernel.org>
+---
+ db.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-A reference with the band and power limits, as well as any other
-restrictions like DFS or TPC (andif TPC is required, what is the limit
-if TPC is not implemented) needs to be provided. We cannot put random
-numbers into the database without justification.
+diff --git a/db.txt b/db.txt
+index eb63ff6..7aff3fb 100644
+--- a/db.txt
++++ b/db.txt
+@@ -892,7 +892,7 @@ country HK: DFS-ETSI
+ 	(5250 - 5350 @ 80), (23), DFS, AUTO-BW, NO-OUTDOOR
+ 	(5470 - 5730 @ 160), (27), DFS
+ 	(5730 - 5850 @ 80), (36)
+-	(5945 - 6425 @ 160), (24), NO-OUTDOOR
++	(5945 - 6425 @ 320), (24), NO-OUTDOOR
+ 
+ # Source:
+ # https://www.conatel.gob.hn/doc/Regulacion/resoluciones/2023/NR05-23.pdf
+-- 
+2.47.3
 
-The BRTC circular only says that the band is allowed. It does not provide
-power limits.
-
-
-Thanks
-ChenYu
-
-> Thank you.
->
->
-> Regards
->
->
-> Tahsinul Mohsin
-> Undergraduate student
-> Department of Electronic and Computer Engineering,
-> North South University
-> Plot - 15, Block B,
-> Bashundhara Residential Area, Dhaka 1229
-> Bangladesh
->
 
