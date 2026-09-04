@@ -4,99 +4,81 @@ X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by smtp.lore.kernel.org (Postfix) with ESMTPS id 68271C79F82
-	for <wireless-regdb@archiver.kernel.org>; Fri,  4 Sep 2026 18:10:03 +0000 (UTC)
+	by smtp.lore.kernel.org (Postfix) with ESMTPS id C4F65C79F82
+	for <wireless-regdb@archiver.kernel.org>; Fri,  4 Sep 2026 18:30:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Cc:To:Subject:
-	Message-ID:Date:From:MIME-Version:Reply-To:Content-Transfer-Encoding:
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:Subject:Cc:To:
+	From:Message-ID:Date:Reply-To:MIME-Version:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=e59T5f6DjuSD0sM5+7ad5x1p262o0W4iAoz/V04rVIw=; b=NYUeu7rRSYns2C+1k8ufttuSkO
-	zM+bOc3Qxvl3HPBE/FPaXGQpOB47FRqw73NCyZ07V0+VUDTMZHs4NEJz4nVMWmK2T4KLbz/HNUpsU
-	toCU1XqVpoXBihsHtwj50S2TJr/OornUI4VFXSnkZK+QuMD+ovrl8JV9hl6Idi5GYnpdU3z3FqEYn
-	N90e2sd7Glzx3QPbiXXNtFp4qcTSLMUPKeoFf3e4gkXCbZlaD6XQ6MUQmOAtJCREvZbo3MuvB+zay
-	wyoIkXbCKzmQ2QsJxLRBux0Egcu67qa8NHS6T3bnp/psU/YPis2ynxL9hd7U7yPPoUydpFJqwocp2
-	T0fw7ArQ==;
+	bh=+FVQDqwY4yOK1b7Ca/fCnzSAexkd6ZecfuH5u7/amtQ=; b=ZxUdM6/wcwe0dxHsqsIvCU5IPd
+	1A/1hatqXn1f62SgNRr8MkCHZmprnwA6zppjHtHvKdgGoWgVKe71EEsimg+1JxVjWf9ju975tr037
+	W78WeQRy2F3UyLCRLfcBIgSs0JM6N0e6VsYV254GKCM6Mc6cYguyRcg/bDugXEH9lAWf7gdv26WlY
+	lToAaI+D4BFzcwDZG3N+RkkYPOSFZId5nRKA3IX3Rc9QV1XVffRotaCGvkDNMOsn8i2UAgbvsID33
+	Bwu7xTkjy76yrDTUq+Svl+w8/YbgihaDSAL8nwSHlUlzNBSQHqLaAOMTXfLlCGX3MNN2aV6yo8LtZ
+	5y4Mv31Q==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2YMR-00000002zcu-26Yv;
-	Fri, 04 Sep 2026 18:09:59 +0000
-Received: from mail-ej1-x62e.google.com ([2a00:1450:4864:20::62e])
+	id 1x2Yg4-000000034gF-00uo;
+	Fri, 04 Sep 2026 18:30:16 +0000
+Received: from mail-pj1-x1032.google.com ([2607:f8b0:4864:20::1032])
 	by bombadil.infradead.org with esmtps (Exim 4.99.1 #2 (Red Hat Linux))
-	id 1x2YMP-00000002zap-0CPe
+	id 1x2Yfz-000000034fR-3xuc
 	for wireless-regdb@lists.infradead.org;
-	Fri, 04 Sep 2026 18:09:58 +0000
-Received: by mail-ej1-x62e.google.com with SMTP id a640c23a62f3a-c250a2bc3b3so163326866b.2
-        for <wireless-regdb@lists.infradead.org>; Fri, 04 Sep 2026 11:09:56 -0700 (PDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1788545395; cv=none;
-        d=google.com; s=arc-20260327;
-        b=H8bIAUhIJjJk5m1FyjQiEm2nIlbUc5BlVeeNW9Nyvs2SzIThasJdvlSxTBNLR3RV5c
-         LCA4Nv0qxiu46jPgvxMN1ULuqWudRJJgLeLtX8iExE0N4i0WbmwhJDiVmnCfpdFzzIEt
-         6YWXQXbHrGS+0Cg775uhUGWCJIONRJghNUE/l+/lsviRym7Z8kT0f4gey0124o90/aXg
-         lsPMiLowq+pElWsXZkP3yOEopwIoXMvYNAtV1j0nTVYx6HeTNzoWrr96HSfKSDs9TJJC
-         PE7dkdqYKMY6l7cjgne+N7r1xYqHSnX6F/Lu1dvvlwLr3f58g3VEdzhS3BOTjOICTASQ
-         rz4w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
-        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
-        bh=e59T5f6DjuSD0sM5+7ad5x1p262o0W4iAoz/V04rVIw=;
-        fh=BzVcj3AOSjt+4oCebDOU6fO0kGZQwBEUFf03l6Edbvw=;
-        b=ajmJWy72rQz5PIBCfNBrBXlBgy9GMsxoaCoQ5ueKxNvy3EzgOIccmTfitLSknuzavG
-         PPw3IwelJS6ztXzaJePUrzr3qU7Ce4iWsWialSiYFPq7hAT3zD2kgPOv7kjoQSHCeVYI
-         TF2XByy749e+EAu5s5sMI5sc/eu5l2jYpVNqwZIt9uzOk+qmKdgzIjBPaDRK3bxy0MdR
-         AR86lSS6xfa6ucG5k+HQObcPpWMuhn+vUIq3kUZSgfSBVedvvYhlemJuaP+3yH8Z+heO
-         tbe+23mn7036Rzs39ZyLRfRRrZw3jkAh4cRw2puyloQGEedXY2VDM9VH6uBIkyYYJ03o
-         UeJA==;
-        darn=lists.infradead.org
-ARC-Authentication-Results: i=1; mx.google.com; arc=none
+	Fri, 04 Sep 2026 18:30:14 +0000
+Received: by mail-pj1-x1032.google.com with SMTP id 98e67ed59e1d1-39682983a0fso1402898a91.3
+        for <wireless-regdb@lists.infradead.org>; Fri, 04 Sep 2026 11:30:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20251104; t=1788545395; x=1789150195; darn=lists.infradead.org;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version:from
-         :to:cc:subject:date:message-id:reply-to:content-type;
-        bh=e59T5f6DjuSD0sM5+7ad5x1p262o0W4iAoz/V04rVIw=;
-        b=KHdwVBVmkif9VKcUceQB1o8LBtRes8dtXq9JXG0GjKtc4j78Vu82qa67l2ItjS5j80
-         xE4gwhfZGjTwO4bcgXsZhG2YE0KIcSl920NvGql2a3HcMKzTjvJlxKm4nVK+CInJoGoA
-         EsKOd8OmsJJW3QIwoVTyOmXSExF81b6KUKvc7ADij6WUtwENqpwrdN5mj8wFZNHwymWU
-         dqSEYcGevyIc8dthVTEhTPNg7gJS4BIXHFJn0PETgfZJr1SjJo+NpB6aF1ic6dxUpDrf
-         iOiDSvSKKWpx5Im3XKqjOQTCpM/09rClzRbRa025Hu1zqQLsPFrQ5bSezA2kStppCS0X
-         oslg==
+        d=gmail.com; s=20251104; t=1788546611; x=1789151411; darn=lists.infradead.org;
+        h=content-type:subject:cc:to:from:message-id:date:from:to:cc:subject
+         :date:message-id:reply-to:content-type;
+        bh=+FVQDqwY4yOK1b7Ca/fCnzSAexkd6ZecfuH5u7/amtQ=;
+        b=QEf1nbBaXcxqCsMArYTgPNNq7/vsfSFprGkzu/tXBWD8be08yvwqV8IapN36n9bh97
+         xWWI5mMMcM4dTX4sba7z0lWkoa00fFn5cPvdGE+ZgGtYSjsly/c1HZ+K+rv0IePdKbTS
+         4kZaOGWLNIe213qHQxELZHJSc9A0raMpavuieZqiJCHUFJCgo8iZEfyOY0JiUf7ac+B0
+         TXUgtll2U/LxxXfSdgd0lLeg0QYoz5JLi3yIfMa9LE90mIXhW3cR0QSMAh6NzCDm/Rq4
+         uBpX6VzKeU1d5urcvfRCVUyJGaau6TPy4PGPaxuEJzZ4wW/868PMorx7syVNiX0JshBq
+         IlZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20251104; t=1788545395; x=1789150195;
-        h=content-type:cc:to:subject:message-id:date:from:mime-version
-         :x-gm-gg:x-gm-message-state:from:to:cc:subject:date:message-id
-         :reply-to:content-type;
-        bh=e59T5f6DjuSD0sM5+7ad5x1p262o0W4iAoz/V04rVIw=;
-        b=SD3ucGiGD77/1F6El2/OwnBBkar7VMZH5gOyeb+mRzL8bi4NK1ihk6EXUchSzTT2dN
-         w2OkasuNUIVTGRIBz/4r7glTWV5OuIXuyzTCq3kQGqUiwrtDCyD+AHSbLo7JCDvHxr7r
-         MrBz2Ju8rahLbB2A34Gv9rHtW0LfGuzMHNNWho/HcB2Z2eff7wUWEceDrAX/HwmaIwHQ
-         TmTnDLzx96JfnbtF/oscR43gOXUVHY7frd17DO99ikJkg5Vbah/tH5HuvNw+6gGKHUlx
-         QnhqBJKwdR2h5gQnMeCga9zo318dPFz5uW4tO6/QooqFnne+cPKpcF+XXEJixqgOLJEt
-         hZCw==
-X-Gm-Message-State: AFuF++k467VGGY3s9S7LMuPRtMe0ehIVypSH5k5c3gQ/3ZWRUlX6NpXY
-	LYsBGMkC39rqEdX7xEmsuKflqiCdmABdXHr18liFFB2t9hsnNViTtuvriKtp/vEx9+g3051DNh+
-	FPgU+gZFn/8KM0kjQmg+oPB/hDoVkpdacLDyF
-X-Gm-Gg: AYBFou0ctD3jRzp5E3YZEe9z+xrC3B+MyvoOOCoLgVAJKIPSSqDQ8KNx43+je4lxKde
-	VADcbl1qfJDy6f5QiYlOGAvLKfS45sY2vd9edExKZQfU77SAhhfaMFOR0xOgz6zsDxdPWkEf2pA
-	IF+89l1XZoZXeCQbF12/URaa7bWbmI07T9CWciJVQLeEs7huhKjCVCruU2WzLWnWKtDxovfajQI
-	fDCa+EZQaoEODE8A5aSSpyXDSXBowQGIlrEE66f7/ZE3kCAYy+sflQ5fgcCB8ecX3hIjARJX5l5
-	TyOAYJJhkBTt9PIGrdMEM4CHUqWkmD65Cq+9pHQb8mbPYRNXFogJSdCEZOnhO6VtyOw0wUsOWKr
-	jd1ZeZul55NIePWqgO9FhD6fzjCklM0DMkK0PcfdC1/wHGKRPKAn1dLZsTroOU0WsCmFWJcgzVG
-	ezJQ==
-X-Received: by 2002:a17:907:3f98:b0:c26:19e3:e988 with SMTP id
- a640c23a62f3a-c2619e3ef32mr190660966b.40.1788545394779; Fri, 04 Sep 2026
- 11:09:54 -0700 (PDT)
-MIME-Version: 1.0
+        d=1e100.net; s=20251104; t=1788546611; x=1789151411;
+        h=content-type:subject:cc:to:from:message-id:date:x-gm-gg
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=+FVQDqwY4yOK1b7Ca/fCnzSAexkd6ZecfuH5u7/amtQ=;
+        b=BUve+bKasX9QlFeefs7boU8kytCMtTXQdLCcbhvuNekW6zrI8J0I035/A8EUfv7ZiP
+         J+1QEg1YU6i8b9Tw5J9CCRlfOoZcTzRbXcHAsNNjZvlXCClN4HQ3VaEtbMKqSYgEj7yk
+         wTb4qn5w1VfJOCYxGr6iAeeL/3rLimjyWsrIZOFDTgYrDMg5ik8i4rIdSTsUnu5R+IVO
+         xMP5uWBgwY2paisj3wb2Qc8cdofKRVk3bLgF/WubyozFEp4HLGOQOIcC28EZGMjZQXlh
+         E466nHnh7kJhZPUQVyL7+zkTl/9Ahhc+8W6V8Awqt+eltf/O2jNNJq1X5OpCBOhtk3N+
+         nqRA==
+X-Gm-Message-State: AFuF++mvsAlFW32XR35QlHUqatcwgetcx2RQPYIBJ7CGL6FZpf01ACvt
+	xiHxwmYb/C/vz3bl+6ewCagRbAsiutgGa/DT+NFVzs20uNETRLpVE5le
+X-Gm-Gg: AYBFou3AmvFMBVRWjw2ZdKtBFeU2c7PwkzG05VxSq8GGLWhcNZMZAqr7opsf9/0lMxX
+	zD8bKhlp9IVZ2eP26FpuAZ18pjay4DwT5uJlxofZOinDSltFYvC6B0Ixe4ebjGPVBRvXN2sfpE5
+	cmjaM4OcNO4Uau1YIG9yKTbZjiGtyCyhaHdEq446S2LkPkYF7Vy8hOMho9FG9bUsA1rdRN/YoX8
+	JCeBEZHdCzWBJ2F0ociDKUggGFEecafDfjWmKOrahPp+JJaN0gI22pyuWdkrc8SdMxC2u4Of1Ci
+	HA4CPoSFablfDvztmKa4/7LyKWUG5NeyWWYoRrj7w11+S2KNW9aqM2c4VLFfICzcMVkNPW2F+5L
+	+seZAoU0Dw4SKyaulRJSsHTRZap/DnQvxm1qvSUzTpZdWE+z4PVdiCKw/chvicugx5CW5zshN12
+	cViloe3uvEWbv8mBgliLS40iEQw5Ku/MLIWvqgnswsZMOSAcpVdOsbPpmXIyp9qnb2fZhO6paLD
+	6epiqNUWIuSNIQnVjX/ATi0fui1E1vN7ZgwpnrlMRWpQlYjF5a3V1d3i2JvaznfN14fHzfwqWRy
+	ofbmzv//errsCf7eixMKSA==
+X-Received: by 2002:a17:90b:582d:b0:399:e97:8d5a with SMTP id 98e67ed59e1d1-39b2627fe18mr11352035a91.25.1788546610758;
+        Fri, 04 Sep 2026 11:30:10 -0700 (PDT)
+Received: from localhost ([122.179.130.175])
+        by smtp.gmail.com with ESMTPSA id 5a478bee46e88-333959d5f69sm8000538eec.0.2026.09.04.11.30.09
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 04 Sep 2026 11:30:09 -0700 (PDT)
+Date: Sat, 05 Sep 2026 00:00:06 +0530
+Message-ID: <cab32383bff0af2e4b31a86422d20d71.ankitdange37@gmail.com>
 From: Ankit Dange <ankitdange37@gmail.com>
-Date: Fri, 4 Sep 2026 23:39:42 +0530
-X-Gm-Features: AcwNN1XpRrOS7DkTO7IJPrREexmDOLcloLYcUmK-ZhlOdXvM-UE8dIh9FZ1wa_g
-Message-ID: <CAJ+EMqqfT5-Wm+YY9XUUoqVTe01VHN7U++GbYosYTHS1jxH4rg@mail.gmail.com>
-Subject: wireless-regdb: IN DFS ranges result in DFS_UNSET and prevent mt76 CAC
 To: linux-wireless@vger.kernel.org
 Cc: wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
+Subject: wireless-regdb: IN DFS ranges result in DFS_UNSET and prevent mt76 CAC
+Content-Type: text/plain; charset=UTF-8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20260904_110957_131603_A0F553D8 
-X-CRM114-Status: UNSURE (   5.93  )
+X-CRM114-CacheID: sfid-20260904_113011_988258_C1F75787 
+X-CRM114-Status: UNSURE (   8.22  )
 X-CRM114-Notice: Please train this message.
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
@@ -149,6 +131,7 @@ reports:
 
 When I configure channel 100, hostapd reports:
 
+  phy1-ap0: interface state COUNTRY_UPDATE->DFS
   phy1-ap0: DFS-CAC-START freq=5500 chan=100 sec_chan=0,
              width=0, seg0=0, seg1=0, cac_time=60s
   DFS start_dfs_cac() failed, -1
@@ -157,11 +140,12 @@ When I configure channel 100, hostapd reports:
 
 The failure is immediate; CAC does not run for 60 seconds.
 
-I instrumented mt76 and during the channel change I see:
+I added temporary instrumentation in mt76. During a transition from
+working non-DFS channel 157 to DFS channel 100, I see:
 
   DFSDBG: region=0 dfs_state=1 prev_state=0
 
-The mt76 enum is:
+The relevant mt76 enum is:
 
   enum mt76_dfs_state {
       MT_DFS_STATE_UNKNOWN,
@@ -170,27 +154,54 @@ The mt76 enum is:
       MT_DFS_STATE_ACTIVE,
   };
 
-So the runtime values correspond to:
+Therefore the runtime values correspond to:
 
-  prev_state = MT_DFS_STATE_UNKNOWN
-  dfs_state  = MT_DFS_STATE_DISABLED
+  prev_state = 0 = MT_DFS_STATE_UNKNOWN
+  dfs_state  = 1 = MT_DFS_STATE_DISABLED
 
-The relevant mt76 code is:
+The relevant mt76 function is:
 
-  if (dev->region == NL80211_DFS_UNSET ||
-      test_bit(MT76_SCANNING, &phy->state))
-      return MT_DFS_STATE_DISABLED;
+  enum mt76_dfs_state mt76_phy_dfs_state(struct mt76_phy *phy)
+  {
+      struct ieee80211_hw *hw = phy->hw;
+      struct mt76_dev *dev = phy->dev;
 
-Therefore the observed path is:
+      if (dev->region == NL80211_DFS_UNSET ||
+          test_bit(MT76_SCANNING, &phy->state))
+          return MT_DFS_STATE_DISABLED;
+
+      if (!phy->radar_enabled) {
+          if ((hw->conf.flags & IEEE80211_CONF_MONITOR) &&
+              (phy->chandef.chan->flags & IEEE80211_CHAN_RADAR))
+              return MT_DFS_STATE_ACTIVE;
+
+          return MT_DFS_STATE_DISABLED;
+      }
+
+      if (!cfg80211_reg_can_beacon(hw->wiphy, &phy->chandef,
+                                   NL80211_IFTYPE_AP))
+          return MT_DFS_STATE_CAC;
+
+      return MT_DFS_STATE_ACTIVE;
+  }
+
+Since the regulatory state is NL80211_DFS_UNSET, mt76 returns
+MT_DFS_STATE_DISABLED before CAC handling.
+
+I also instrumented the later MT7915 radar initialization functions:
+
+  mt7915_dfs_init_radar_specs()
+  mt7915_dfs_start_radar_detector()
+
+These were not reached during the failing CAC attempt.
+
+The observed flow is therefore:
 
   country IN
-    -> DFS_UNSET
+    -> DFS-UNSET
     -> mt76 returns MT_DFS_STATE_DISABLED
     -> radar detector/CAC is not started
     -> hostapd start_dfs_cac() fails
-
-I also instrumented the later MT7915 radar initialization functions, but
-they are not reached during the failing CAC attempt.
 
 I reproduced this with:
 
@@ -202,24 +213,27 @@ Non-DFS channel 157 works normally.
 
 There is also an existing OpenWrt report with the same symptom:
 
-  openwrt/openwrt#20699
+  https://github.com/openwrt/openwrt/issues/20699
 
 My questions are:
 
 1. Is it intentional that India has DFS-required ranges but no
-   DFS-FCC/DFS-ETSI/DFS-JP region?
+   DFS-FCC, DFS-ETSI, or DFS-JP region?
 
-2. If DFS_UNSET is intentional, how are drivers such as mt76 expected to
-   perform DFS CAC?
+2. If NL80211_DFS_UNSET is intentional, how are drivers such as mt76
+   expected to perform DFS CAC?
 
 3. Is mt76 expected to disable DFS when the regulatory region is
    NL80211_DFS_UNSET?
 
+4. Should the India regulatory entry be updated, or is there another
+   intended mechanism for selecting the appropriate DFS radar profile?
+
 I have not forced DFS-FCC, DFS-ETSI, or DFS-JP locally because I do not
 want to select a radar profile without regulatory justification.
 
-I can provide complete iw reg output, iw phy output, hostapd logs, and
-the temporary mt76 instrumentation patch if useful.
+I can provide complete "iw reg get" output, "iw phy" output, hostapd
+logs, and the temporary mt76 instrumentation patch if useful.
 
 Thanks,
 Ankit Dange
