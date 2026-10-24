@@ -2,66 +2,77 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 73E9B606A324
-	for <wireless-regdb@archiver.kernel.org>; Thu, 22 Oct 2026 16:39:38 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A0813606A31A
+	for <wireless-regdb@archiver.kernel.org>; Sat, 24 Oct 2026 06:25:30 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=w5Bt12zR;
-	dkim=pass (2048-bit key, unprotected) header.d=lizardsystems.com header.i=@lizardsystems.com header.a=rsa-sha256 header.s=dkim2 header.b=m3YJH8/V
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=tdaGroBL;
+	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20251104 header.b=P1EtdSXV
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	MIME-Version:Message-ID:Date:Subject:Cc:To:From:Reply-To:Content-Type:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	From:Subject:Date:Message-ID:MIME-Version:Cc:Content-Transfer-Encoding:
 	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
 	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=Xa0r/DQ/s0JYCk88RUqPkqF/7q6ZRxVmUPUbBNZ5zmc=; b=w5Bt12zRsj34dnVqoV3xLIkigA
-	kpJHOUNUuDsPnco2/9yA3ZiwewmgEYi7JNI3llGI1T6V3rs5kwdQnbummPlHnrI8QM56EybD08TYh
-	bupvlWxua4h2bgqEuq5Eb4viwQtgSedaivUaau9AMwmGWOXVo6B2R+4Pd/zoUtRZrGxHPkS796GhS
-	n97YD+hXtYubTdUJXM4MGozCx9VsaUUc0pQn+G/+CJtAHxMzCdtQ3uYdnkvefQ154SLaM8ZEYVF9s
-	CjDTVN7pbJnihr+xVhWzSzykkzOKzWz1f+NI8Km55apx1UsCmahrWFgLoI3ZRS7lCHqV0gl5jQSoR
-	aMqjfMLA==;
+	bh=Veg291ePBmQUKy4IbiBvxeGF8v2l/WBkp99aovd9Zmo=; b=tdaGroBLWaBZylnsrCUZMWqkoL
+	9SHR60EXPgUAk1ahEL57p61KylrbYTuLAkPn6pLM4+Oj36inpyy0mHrP8CtikPNwPnuLZRLAB3ax6
+	WX3C1X/pMb3MtffhMSyWHf5rzCauneOi9fH7KerT7SaGSwrNKNzAPii/JDRcJ/eSphNKer4vvrKe4
+	kZK9sBdy+XjDzfLpZHTgJ8ZEBlfxqyf3aSSYhuER6z3Y5uv+QN01a9qNoNRUXgnBbAFDr48p4UK90
+	ChlAUG9yGS0sEPU63JJEqcrsqkfZtHl0POjzSoFVuTDvaf055Qhp1nGJeFCQVARbuYbjyXaizpeF/
+	goCWyWCg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xJvp7-0000000EW78-3EZn;
-	Thu, 22 Oct 2026 16:39:25 +0000
-Received: from mail.lizardsystems.com ([54.186.4.18])
+	id 1xKVC2-0000000HUft-1xfM;
+	Sat, 24 Oct 2026 06:25:26 +0000
+Received: from mail-yx1-xb145.google.com ([2607:f8b0:4864:20::b145])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xJvp3-0000000EW4P-1bN7
+	id 1xKVC0-0000000HUfW-0Biz
 	for wireless-regdb@lists.infradead.org;
-	Thu, 22 Oct 2026 16:39:24 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lizardsystems.com;
-	s=dkim2; t=1792687160;
-	bh=Xa0r/DQ/s0JYCk88RUqPkqF/7q6ZRxVmUPUbBNZ5zmc=;
-	h=From:To:Subject:Date:Message-ID:MIME-Version:From;
-	b=m3YJH8/V0KUhOkaIUnA8twSbUKXpiqiej4tHlRWdfm7Z9tc4N96q2dh1sHh4cfG18
-	 8+X4jWTxFIkhp4Z1ZB1lRJJwEUmOXx+hERyqqZXtsKbxgX5WqE+aDrAgshzAdsx+oL
-	 Bb8O6oCoabslPsOoVp4z2SY52FccGyLY5/BkKa0vVhkzob7DaMWpLfdCuEs7MJGmDq
-	 SZvPsKvwvK1FUe0KliDX9mQI53pe+0bUWz9iI4hBChjOhAdUET8SFrm+Ad0/T6uyqB
-	 83H2FKHTwDm8P1/V0MMMTkuxIU1KxdzYPWJAz70C3Gt0BaqQRUXFLKN9X2VYah3VO5
-	 nchXmhPTqGDDQ==
-Received: from viza (unknown [109.248.199.18])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mail.lizardsystems.com (Postfix) with ESMTPSA id BFFBE427CC;
-	Thu, 22 Oct 2026 16:39:18 +0000 (UTC)
-From: Vitalii Zagorovskii <support@lizardsystems.com>
-To: wens@kernel.org
-Cc: wireless-regdb@lists.infradead.org,
-	linux-wireless@vger.kernel.org,
-	Vitalii Zagorovskii <support@lizardsystems.com>
-Subject: [RFC PATCH] wireless-regdb: Apply the FR rules to French Polynesia (PF) and Wallis and Futuna (WF)
-Date: Thu, 22 Oct 2026 21:39:10 +0500
-Message-ID: <20261022163910.1292-1-support@lizardsystems.com>
-X-Mailer: git-send-email 2.56.0.windows.1
+	Sat, 24 Oct 2026 06:25:25 +0000
+Received: by mail-yx1-xb145.google.com with SMTP id 956f58d0204a3-675706e468dso2860923d50.3
+        for <wireless-regdb@lists.infradead.org>; Fri, 23 Oct 2026 23:25:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20251104; t=1792823122; x=1793427922; darn=lists.infradead.org;
+        h=content-type:to:from:subject:date:message-id:reply-to:mime-version
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=Veg291ePBmQUKy4IbiBvxeGF8v2l/WBkp99aovd9Zmo=;
+        b=P1EtdSXVOrm9o3WayXXVahVUzNEbQO+YpkDjYlm8jaZuCC5SH8IZT3NuUebEJBnX7n
+         yMKVuIsAS4Cx0eg2BOeWwdWHZURK/OBGZ/QeDKI1NZsONQa9EATOC7hqJiINANDVTaFy
+         //d1EUXAL+A2PZ1r6QOHPY2AF1JM2EM7Zb73vouXgZuzrrjIBYKtjRx2DzoYA2le6B3H
+         P+w5GCXwZ0eS4U+VN9WBF7qgr8f61c8YiPMvpfvZSeQmhBNxDdUNVyCaR9u55n4IMgaN
+         WMReFxDSG/RP9NgCzOX9liEHWLy/YAYxcD5oQ0BN6lfJ4fW3RTzfMoz7BArx95IT2t6p
+         w4Sg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1792823122; x=1793427922;
+        h=content-type:to:from:subject:date:message-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=Veg291ePBmQUKy4IbiBvxeGF8v2l/WBkp99aovd9Zmo=;
+        b=RO0rL2s7xb8eymsi00nXGBwAPopnBmg5/ythtbS4OfyHXx5Pti+2G7u8x7s/RP2TMl
+         E64XvIfWMx7nSI+jClEruAoI4BUDQUjPZ6vEU3THC6TvXWPTAxZtq79LVUo/uv3kHwrO
+         z/GZNc7YS4mJIcEQvoSaONY4t3rcp6oe4hLjo/38/zYa7XTCSt8F0XMxsGPXdlu3FBz+
+         F1absZtw1nKt9t0pvbeRkzFR0EyeqbPQi2spTqu4gWrs3Wa8EYyKk+4ahKHF+ba1xk1v
+         uw0URctRf5CdA2BsMvK4WN1pWpIsdlzSu214/MfZpRcD2DDvd3xbmpurI3kQCIO04Mx0
+         clPw==
+X-Gm-Message-State: AFq9FYKpHsrLfzquSg5NZ5mFD4nsE50BEG4BefR3j0BdWaT6b+VSjeCn
+	MdYK345BnZhFAEFPKoDRVhcPMQJJQhDYO7ynx7bZfyyiYdRG5zYpANPhbUZtLuhYlkzCSV4Xj60
+	9FOk=
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+X-Received: by 2002:a05:690e:150d:b0:679:b96a:767 with SMTP id
+ 956f58d0204a3-67a4519b1e4mr621269d50.5.1792823122264; Fri, 23 Oct 2026
+ 23:25:22 -0700 (PDT)
+Message-ID: <autogen-java-df64361e-c4a2-4ce2-a012-b50203700cfb@google.com>
+Date: Sat, 24 Oct 2026 06:25:22 +0000
+Subject: Submission portal open: Engineering papers
+From: mounishabuddhi89@gmail.com
+To: wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261022_093921_465092_51D26CFA 
-X-CRM114-Status: UNSURE (   8.53  )
+X-CRM114-CacheID: sfid-20261023_232524_112773_3B489DD3 
+X-CRM114-Status: UNSURE (   0.89  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-Spam-Score: 4.5 (++++)
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -71,96 +82,29 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: editorgkxjournal@gmail.com
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-18.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,INCLUDES_CR_TRAILER,INCLUDES_PATCH,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham
+X-Spam-Status: No, score=1.1 required=3.0 tests=BAYES_20,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,HK_RANDOM_REPLYTO,
+	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
 	autolearn_force=no version=4.0.1
+X-Spam-Level: *
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-PF and WF carry the same block, which matches neither FR nor TNRBF
-Annex 7: 2402-2482, 5170-5250, 5250-5330 and 5490-5710 MHz, with no
-5725-5875 MHz, 6 GHz or 60 GHz rule. I could not trace those values to
-the TNRBF or to a local decision.
+Dear Wireless Regdb,
 
-Annex 7 of the TNRBF (consolidated edition of 26 May 2026) says that the
-use of its bands by short-range devices is subject, in Region 3, to
-decisions of the TTOM assignee, and that in the absence of such
-decisions the conditions in its tables apply:
+Consider publishing your next research article or review paper with our  
+open-access platform.
 
-  en Region 3, a des decisions de l'affectataire TTOM; en l'absence de
-  telles decisions, les conditions d'utilisation de ces bandes de
-  frequences par les AFP sont celles mentionnees dans les tableaux
-  ci-dessous.
+We provide constructive editorial feedback and clear author guidelines.
 
-PF and WF are in Region 3. The TTOM assignee is the government of
-French Polynesia (DGEN) for PF and the Service des postes et
-telecommunications (SPT) for WF. I found no Wi-Fi decision from either,
-so the Annex 7 tables apply.
+Submit Here:
 
-FR is the closest block db.txt has to those tables, so use it for both
-countries. The FR block cites the 2021-12-14 edition of the TNRBF and may
-not equal the current Annex 7 rows in every detail; if FR is brought up
-to date, PF and WF should follow it.
+https://kexuexuebao.org/
 
-Source:
-https://www.anfr.fr/fileadmin/mediatheque/documents/tnrbf/TNRBF_2026-05-26c.pdf
-(Annexe 7, A7-1, and the WAS/RLAN tables 3.a to 3.c)
+Best regards,
 
-Signed-off-by: Vitalii Zagorovskii <support@lizardsystems.com>
----
- db.txt | 28 ++++++++++++++++++++--------
- 1 file changed, 20 insertions(+), 8 deletions(-)
-
-diff --git a/db.txt b/db.txt
-index 7aff3fb..6a83fff 100644
---- a/db.txt
-+++ b/db.txt
-@@ -1617,10 +1617,16 @@ country PE: DFS-FCC
- 	(5925 - 7125 @ 320), (12), NO-OUTDOOR
- 
- country PF: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
--	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
-+	# short range devices (ETSI EN 300 440-1)
-+	(5725 - 5875 @ 80), (25 mW)
-+	# WiFi 6E low power indoor
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR, wmmrule=ETSI
-+	# 60 GHz band channels 1-6 (ETSI EN 302 567 v2.2.1)
-+	(57000 - 71000 @ 2160), (40)
- 
- country PG: DFS-FCC
- 	(2402 - 2482 @ 40), (20)
-@@ -2167,10 +2173,16 @@ country VU: DFS-FCC
- 	(5735 - 5835 @ 80), (30)
- 
- country WF: DFS-ETSI
--	(2402 - 2482 @ 40), (20)
--	(5170 - 5250 @ 80), (20), AUTO-BW, wmmrule=ETSI
--	(5250 - 5330 @ 80), (20), DFS, AUTO-BW, wmmrule=ETSI
--	(5490 - 5710 @ 160), (27), DFS, wmmrule=ETSI
-+	(2400 - 2483.5 @ 40), (100 mW)
-+	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW, wmmrule=ETSI
-+	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW, wmmrule=ETSI
-+	(5470 - 5725 @ 160), (500 mW), DFS, wmmrule=ETSI
-+	# short range devices (ETSI EN 300 440-1)
-+	(5725 - 5875 @ 80), (25 mW)
-+	# WiFi 6E low power indoor
-+	(5945 - 6425 @ 320), (23), NO-OUTDOOR, wmmrule=ETSI
-+	# 60 GHz band channels 1-6 (ETSI EN 302 567 v2.2.1)
-+	(57000 - 71000 @ 2160), (40)
- 
- country WS: DFS-ETSI
- 	(2402 - 2482 @ 40), (20)
--- 
-2.56.0.windows.1
-
+Editorial Office
 
