@@ -2,64 +2,77 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id B7D74606A31F
-	for <wireless-regdb@archiver.kernel.org>; Tue, 27 Oct 2026 10:00:20 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 34DC9606A31A
+	for <wireless-regdb@archiver.kernel.org>; Fri, 30 Oct 2026 15:29:26 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=qp6/T5Zi;
-	dkim=pass (2048-bit key, unprotected) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=mB/sKI+C
+	dkim=pass (2048-bit key, unprotected) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=XJbB8UNj;
+	dkim=pass (2048-bit key, unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20260707 header.b=Xht9abiU
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
-	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
-	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=1l4k9+Kt62tGtjW1zLlNxrOSLYSV+PreaSFmwiC/Pqc=; b=qp6/T5ZiOK3F0R
-	6rdQl8b+Ti3YHSsIVuSXB/zcTTjkByTTy111PqFugCmhBmGjhSaCN+dj2OaED+PGHotpQWYwG4q6f
-	erE48dkaav3CiAkbgWurfJXKF2voh6PKI4QRF6kXRHd438JW3NcXBhO7OeBfmPBG10Dc0QDgZKst3
-	o1R4+dIZoXFFaqTf6UQs0KBiAx2MC7zrXzNgeIE9RaTPZzuC3p9xIm/B0XjbdcWEIdAG7yEPMmdVD
-	M06nlyYejfBu2roKqEtK4QOjWo4EBHbAF3CJ/f/sEnUyd1Ti9sDQyCkhG5ODp0RWtoAgFLoj8z0Zv
-	eXYPTIKO7rqWU1tpczhQ==;
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	From:Subject:Date:Message-ID:MIME-Version:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Unsubscribe-Post:List-Owner;
+	bh=eirrarCzyY1fvXOQtDdXSc2O7dNCTGtO7dobtw5kZpA=; b=XJbB8UNjp4z/P0okmy9OdDT5lS
+	Fhmob+o32GZJAexQay8bI3sfddtUBSsuDkCVWzcOB8C2AB/ezdkPxtVlg/88z10jLd+awXdOntss+
+	96U8jgHqpmaUZhu09rAYd7rSM0/WZwcCByvZvJLeadSdsJKQhbPthSga+Ivxz7bnmXb7RJ5v+w28j
+	jypILCWC6qn3AHjXR4rz1vpwd5LeshDLEmxynJCmFI+9eSPOky1lAqhuqpzLCKkg9Tn0Hopv0cgUL
+	KIzHACWjg+HTE3wbP0+IEstblUaH0nSc+jQI0OhwKQmO8EOpAkP7xgDeJZzArYfF0YSZTfQ0uYf+X
+	pot0xpKg==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLdyb-00000004Eu9-459q;
-	Tue, 27 Oct 2026 10:00:17 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
+	id 1xMoXj-0000000C0nX-3iST;
+	Fri, 30 Oct 2026 15:29:23 +0000
+Received: from mail-yw1-x1146.google.com ([2607:f8b0:4864:20::1146])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xLdya-00000004Eu2-3t6b
+	id 1xMoXg-0000000C0mg-2hKF
 	for wireless-regdb@lists.infradead.org;
-	Tue, 27 Oct 2026 10:00:16 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 15C746020C;
-	Tue, 27 Oct 2026 10:00:16 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id A2ADA1F031E3;
-	Tue, 27 Oct 2026 10:00:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1793095215;
-	bh=1l4k9+Kt62tGtjW1zLlNxrOSLYSV+PreaSFmwiC/Pqc=;
-	h=From:To:Cc:In-Reply-To:References:Subject:Date;
-	b=mB/sKI+CNyt+O5eJ195w65aWdXKDxl0GbrPdV8oATr3JmrDizwrCa+r6AHx8Od9yq
-	 gW8+R3+LxWgVXM/9QFzjV3JzItqiKSHqhjU+aKTqU9Uvsn4i4fEeSro8ALbDQ14Dtz
-	 ChtEAM7AHXaojCIFD7PpHcBWCqcNjGNZ0Xgd4gKOUM3zWhrTYiu4DgpLdf5zwNq5ix
-	 oFojIuvUq7NhTwOqOw7es6CZ4PGAd7ttQCHYVE14zfZn3IdVaJ1h3hEf4XoRGerNXl
-	 tsi0iAXlWB3MEIrcoHGDp+rMdNb0u00xTa/6BvywoaKX6r7IXXaONsY1xRJZKGNKb3
-	 nIYzt5twxl+gg==
-Received: from wens.tw (localhost [127.0.0.1])
-	by wens.tw (Postfix) with ESMTP id 212235FCD7;
-	Tue, 27 Oct 2026 18:00:13 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: wireless-regdb@lists.infradead.org, 
- Mohammed Abdullah Ali Al-Obaidi <mnew_iraq@yahoo.com>
-Cc: linux-wireless@vger.kernel.org
-In-Reply-To: <20261025125400.799-1-mnew_iraq@yahoo.com>
-References: <20261025125400.799-1-mnew_iraq@yahoo.com>
-Subject: Re: [PATCH v3] wireless-regdb: add regulatory rules for Iraq (IQ)
-Message-Id: <179309521311.1724500.1361909024866117572.b4-ty@b4>
-Date: Tue, 27 Oct 2026 18:00:13 +0800
+	Fri, 30 Oct 2026 15:29:22 +0000
+Received: by mail-yw1-x1146.google.com with SMTP id 00721157ae682-8b12b209c4dso9515457b3.2
+        for <wireless-regdb@lists.infradead.org>; Fri, 30 Oct 2026 08:29:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20260707; t=1793374158; x=1793978958; darn=lists.infradead.org;
+        h=content-type:to:from:subject:date:message-id:reply-to:mime-version
+         :from:to:cc:subject:date:message-id:reply-to:content-type;
+        bh=eirrarCzyY1fvXOQtDdXSc2O7dNCTGtO7dobtw5kZpA=;
+        b=Xht9abiUCcufAKVyyDxcFV3TGah8z63z4TSVBd3UA0giQjk6unYNJBzgeaowIN/QUZ
+         SEQwZD9ZherErtxW5JrHQL7AyzTprpM76q+qyq8ZZSe8bckWCndIiARQn66x09WdtJ/X
+         TZ6jQrJR2HN7Hakcfb7jy+HI0yLmX/bJp1L1M/ojyCCGumXVGhADfnjwCwHDOrjwcgXY
+         R7yKvW65kSlNCuUrT9oUuNGBp88xQR8sm0yH3ZStMzWdCBuL8zL3Ma3drdA2Y2dg5VHF
+         o+tqC4rxBlIxIQ76mFzHhyCyeSTyAFOOmNB6HOMucWR4QRBxSz/pOsFGViC5qzLITRZu
+         Kq9A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20260707; t=1793374158; x=1793978958;
+        h=content-type:to:from:subject:date:message-id:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to
+         :content-type;
+        bh=eirrarCzyY1fvXOQtDdXSc2O7dNCTGtO7dobtw5kZpA=;
+        b=Es3dbdyxGFEUJOo2mgqR47+PPPjlmrR/NBZdtaTGlxGLbEVJPiO23P2zpIwYxE849n
+         HjuTE2SNuBoKVC3otRvqi11Zcc7h2eqy4qRfNrUzSkcm+NjRU2jh4INNbyS56I13WO/o
+         55PX7Ro+3vOUEJVS/EjxH0Ac6s+Hv1OYX76zI6RQI6XtYbZlLrIWzoo4bgGDteR5BHQR
+         eUggBPXjAFRBHSqW5yuKF1c3bEFiS5mwj9ONdCXzWTcK0y88TXd25b/eYLtOyzza1rZP
+         7rSuaunjvIE7N8yb9cJ8jXLxxAq9J8pH1m8EJ1LzL8ITWxqRrcSWrrE1OgIYbEKvRDxT
+         32rA==
+X-Gm-Message-State: AFq9FYIFouqRSI2ukqYqOrap3TLc+Erlzl3VqHjCIGwQiBGOcmURJzKU
+	VrEuv2FP+juxp4H5p+9pBZxspW0uALS2uPmRQ5v9lR50winon6UbhpOJf2UzVJYimmE5jo2YTIW
+	MG2I=
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
-X-Mailer: b4 0.15.2
+X-Received: by 2002:a05:690c:e0c4:10b0:8b0:bf45:9622 with SMTP id
+ 00721157ae682-8b2b670a609mr10348517b3.30.1793374158262; Fri, 30 Oct 2026
+ 08:29:18 -0700 (PDT)
+Message-ID: <autogen-java-2cf8e779-4a1e-4a50-91cf-ca5d380c992f@google.com>
+Date: Fri, 30 Oct 2026 15:29:18 +0000
+Subject: Journal Information for Researchers
+From: publicationpathway74@gmail.com
+To: wireless-regdb@lists.infradead.org
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261030_082920_690950_FCC96B10 
+X-CRM114-Status: UNSURE (   1.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -69,32 +82,21 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
+Reply-To: editorstrad@gmail.com
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-14.2 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
-	version=4.0.1
+X-Spam-Status: No, score=2.7 required=3.0 tests=BAYES_50,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,
+	SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no version=4.0.1
+X-Spam-Level: **
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Sun, 25 Oct 2026 15:54:00 +0300, Mohammed Abdullah Ali Al-Obaidi wrote:
-> Add a regulatory entry for Iraq (ISO 3166-1 alpha-2: IQ).
-> 
-> Iraq is currently absent from the database, so devices set to
-> country=IQ fall back to the world domain (00). The Iraqi
-> Communications and Media Commission (CMC) has published a numerical
-> national regulation covering Wi-Fi.
-> 
-> [...]
-
-Applied to master in wens/wireless-regdb.git, thanks!
-
-[1/1] wireless-regdb: add regulatory rules for Iraq (IQ)
-      https://git.kernel.org/wens/wireless-regdb/c/40095bd16e53
-
-Best regards,
--- 
-Chen-Yu Tsai <wens@kernel.org>
-
+Dear Researcher,
+We are pleased to introduce Strad Research to researchers preparing their  
+next manuscript. The journal is Web of Science approved and accepts  
+multidisciplinary scope in all subject areas. You can review the journal at  
+https://stradresearch.com/. Would you be interested in taking a brief look?
+Journal Team
+Reply "Opt Out" if you prefer not to receive future emails.
 
