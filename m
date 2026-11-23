@@ -2,70 +2,60 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 64626606A31E
-	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 10:40:00 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DFDFD606A31F
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 20:04:45 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oLoLJ5gk;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=WUbP+2Jy
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=3ONQboln
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Content-Transfer-Encoding:Content-Type:Cc:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
+	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:Subject:CC:To:From:Date:Reply-To:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
 	List-Unsubscribe-Post:List-Owner;
-	bh=6Gj0XCFh8VHVjmg8Aa1L87ToNBEQ6zjjIOAqZjyYcDQ=; b=oLoLJ5gkGxjT21OLEnM1HuiFcF
-	jm/6zUEUd0EPBlPNBEr3kfxzflFs3rAkEV/ggcUMpVcdZAZsg19WD/38WxO5IyoCWDe94nTOnpwMV
-	WJfmueqJQKPxnhK3spmbC6Hb5h4y496tOxcPhLSGz/h53JNmxOz6jE24yQnDX92tkJIJJqLUcIciR
-	PNT0OHPmNOoyqTSux5rx0O16owfPk1G52z5DTcqz5w00dHMAHrvsdTowm3HE1r65e6eVchn/gmoMt
-	FNE9A7DWGMUQsNIE3YqP67wvI/M+APPhD4GK08WNbNpGYQ5i8JR1kpkcrfxdgpwHUIQzFCRQplx/J
-	bWe4XjPA==;
+	bh=/AQj7AzfV6SoS+vYzvPhpxO75RyAaQNmq2a9bV5+1WM=; b=3ONQbolnv1Ewwx/iffQk2mQfUt
+	C0Vs67lu4zc9/+ctz6kZZzXahAVTWsSv1PsGb49GXizik2X50yD+si0TCOc/RPR7PQVu8P5p77D+L
+	NbuYdFBtYwRhdOVm6q+C+tdME/ADvbpP1f2c1TUIM4vy0y+4OGZTZSiGVSCihRifSUjegnGnQI5bs
+	xWoePHKVFBCj0Au1L76BRhcrdHVdvwgrvugtaCnHpLmmAfdYW9d+eJeTchgHaTxxwTCnGEMseNojk
+	qN6L5o6gtcw2cudf+c14dqLP7TBo5ZrBXq4oxicNLB4+XU4vd+YyJtohwGD2PEwA74q/3f5WWg1s0
+	Xl8Lbpug==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVRSp-00000002zkO-3JKI;
-	Mon, 23 Nov 2026 10:39:59 +0000
-Received: from tor.source.kernel.org ([172.105.4.254])
-	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVRSo-00000002zjY-09kk
+	id 1xVaHL-00000004msI-2dYG;
+	Mon, 23 Nov 2026 20:04:43 +0000
+Received: from s24fifth.in-solve.ru ([81.177.160.4])
+	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xVaHH-00000004mrp-26Pk
 	for wireless-regdb@lists.infradead.org;
-	Mon, 23 Nov 2026 10:39:58 +0000
-Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by tor.source.kernel.org (Postfix) with ESMTP id 7BE53613FB
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 10:39:57 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id 06EA61F000D4
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 10:39:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795430397;
-	bh=6Gj0XCFh8VHVjmg8Aa1L87ToNBEQ6zjjIOAqZjyYcDQ=;
-	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=WUbP+2JypP6O3pqoB3C48/ThFZDbcumjTKzk7UcQpjc9aom9Jfu60vxCy7k6pX2FC
-	 ckIuWpLgQtSPiUCdHcjJHYd9pGmdbnP5qe43Z4EhBhRW/irt10Fs87cwGtdq5sGqhR
-	 OJjjgSa9NaJ4Y6UZxEnNTVyZPOwctNF7O5x9pDm3DvjnXTncFJ2o0swh3h5QUqPdcB
-	 K40mw7uXBebgXbyktAYf/DznvU0hBaCcPV2B+ttkUCViBsXRPfzG0HC2cpPFPfT5CC
-	 nbiThpgPuJctGSri/RK3zcj2H3vPT/H9bQ/5tDwy4tIVssKp56VClwIwDK1E30YFPh
-	 Vk+egT9SVJLeg==
-Received: by mail-lf1-f45.google.com with SMTP id 2adb3069b0e04-5c158c4c15fso3869473e87.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 02:39:56 -0800 (PST)
-X-Gm-Message-State: APuU4Z9TZe4lIhJl80AWfdpGimEupLoT6DCep0NGxq/V1NRHcRuNhdiv
-	BQNKARytlxvoZV7zFmmd0YqUjyP5sO3bmcyEgH/lRl00ewwxVxmKu1taelWstBWNbK09bMHrYgT
-	zdbtbaUwoMbB17RwinmrvewuVTA+/kLs=
-X-Received: by 2002:a05:6512:114a:b0:5c1:4f6f:5656 with SMTP id
- 2adb3069b0e04-5c1b7cc1abdmr3306555e87.44.1795430395471; Mon, 23 Nov 2026
- 02:39:55 -0800 (PST)
+	Mon, 23 Nov 2026 20:04:42 +0000
+Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO0016CE;
+    23 Nov 2026 23:04:40 +0300
+Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 23:04:07 +0300
+Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG0016CD;
+   23 Nov 2026 23:04:05 +0300
+Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO0000E1;
+  23 Nov 2026 23:04:03 +0300
+Received: from spooler by mail-s22-aux2.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 23:04:01 +0300
+Received: from ehlo.thunderbird.net (128.204.79.160) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG0000E0;
+   23 Nov 2026 23:03:59 +0300
+Date: Mon, 23 Nov 2026 23:04:00 +0300
+From: RFAREAS Support <support@rfareas.com>
+To: linux-wireless@vger.kernel.org
+CC: wireless-regdb@lists.infradead.org, wens@kernel.org
+Subject: [PATCH] wireless-regdb: Update regulatory info for Georgia (GE)
+User-Agent: K-9 Mail for Android
+Message-ID: <C1FB55C5-D453-4358-856A-54D0097561C8@rfareas.com>
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-References: <8BB6488B-D0B9-4ECB-9740-E892DDA3F4C1@rfareas.com> <179543030763.976281.10810918160433779862.b4-ty@b4>
-In-Reply-To: <179543030763.976281.10810918160433779862.b4-ty@b4>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 23 Nov 2026 18:39:41 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65HE56ckquBS39ouzg=q+nRKoVg2rVes7AOYQ29vmrEHw@mail.gmail.com>
-X-Gm-Features: Aa3M54rSzoYJUfqn32b-xaM1ODFo8Nn-Nn2mvK5uMX6we8c9_ajhgUxk6WM-tDc
-Message-ID: <CAGb2v65HE56ckquBS39ouzg=q+nRKoVg2rVes7AOYQ29vmrEHw@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] wireless-regdb: Allow channel 144 for Kazakhstan (KZ)
-To: linux-wireless@vger.kernel.org, RFAREAS Support <support@rfareas.com>
-Cc: wireless-regdb@lists.infradead.org
-Content-Type: text/plain; charset="UTF-8"
+Content-Type: text/plain;
+ charset=utf-8
 Content-Transfer-Encoding: quoted-printable
+X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20261123_120439_999650_0C4DA20D 
+X-CRM114-Status: UNSURE (   7.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.9 (-)
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -75,41 +65,103 @@ List-Post: <mailto:wireless-regdb@lists.infradead.org>
 List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
-Reply-To: wens@kernel.org
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-10.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
-	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
-	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
+	INCLUDES_CR_TRAILER,INCLUDES_PATCH,MAILING_LIST_MULTI,SPF_HELO_NONE,
+	SPF_PASS autolearn=ham autolearn_force=no version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 23, 2026 at 6:38=E2=80=AFPM Chen-Yu Tsai <wens@kernel.org> wrot=
-e:
->
-> On Mon, 23 Nov 2026 13:22:29 +0300, RFAREAS Support wrote:
-> > Channel 144 (5710-5730 MHz) straddles the 5725 MHz boundary between
-> > the 5470-5725 MHz and 5725-5850 MHz rules, so it cannot be used.
-> >
-> > Both ranges have the same limits in item 24 of Annex 1 to the Rules
-> > (100 mW e.i.r.p., indoor use only); 5725-5850 MHz has no DFS flag and
-> > is the less restrictive one. Extend the lower range to 5730 MHz and
-> > start the upper one there, as done for the US. 5725-5730 MHz then
-> > requires DFS, which is more restrictive than before.
-> >
-> > [...]
->
-> Applied to master in wens/wireless-regdb.git, thanks!
->
-> [2/2] wireless-regdb: Allow channel 144 for Kazakhstan (KZ)
->       https://git.kernel.org/wens/wireless-regdb/c/c0b2d4b1b27a
+From: Valery Belousov <support@rfareas=2Ecom>
 
-Email threading was broken on this series, which is why you only see [2/2]
-here.
+The GE entry has no source for the 2=2E4 and 5 GHz rules and does not
+allow 5470-5725 MHz, which is permitted for licence-exempt use in
+Georgia=2E
 
-> Best regards,
-> --
-> Chen-Yu Tsai <wens@kernel.org>
->
->
+Licence-exempt WAS/RLAN is set out in Table 3 of Annex 1 to the
+National Radio Frequency Spectrum Allocation Plan (GNCC Resolution
+No=2E 6 of 30 June 2006), as amended by GNCC Resolution No=2E 9 of
+25 July 2024, published on the official legislative portal matsne=2Egov=2E=
+ge=2E
+
+Limits as stated in Table 3 (all e=2Ei=2Er=2Ep=2E):
+  2400-2483=2E5 MHz: 100 mW, 10 mW/MHz for wideband modulations
+  5150-5350 MHz:   200 mW mean, 10 mW/MHz, indoor use only
+  5470-5725 MHz:   1 W mean, 50 mW/MHz
+  5945-6425 MHz:   200 mW mean
+  57-71 GHz:       40 dBm mean, 23 dBm/MHz, fixed outdoor excluded
+Note 3=2E2 requires DFS (as in EN 301 893) in 5250-5350 MHz and
+5470-5725 MHz=2E Note 3=2E3 requires TPC in the same bands and lowers the
+e=2Ei=2Er=2Ep=2E limits by 3 dB if TPC is not used=2E
+
+Changes:
+ * 2=2E4 GHz: 2400-2483=2E5 MHz, 100 mW=2E
+ * 5150-5250 MHz: 200 mW (was 18 dBm), NO-OUTDOOR=2E
+ * 5250-5350 MHz: 100 mW (was 18 dBm, 5250-5330 MHz), NO-OUTDOOR, DFS
+   (200 mW with TPC)=2E
+ * Add 5470-5725 MHz, 500 mW, DFS (1 W with TPC)=2E
+ * 60 GHz: extend to 71 GHz as in the table=2E
+ * Add the source and the TPC note=2E
+
+5725-5875 MHz is listed in the table only for EN 302 502 (fixed
+broadband data transmission systems), not for WAS/RLAN under
+EN 301 893, so it is not added=2E The 6 GHz rule already matches=2E
+
+Signed-off-by: Valery Belousov <support@rfareas=2Ecom>
+---
+Found while cross-checking wireless-regdb against the national acts for th=
+e
+RFAREAS Wi-Fi regulatory map (https://rfareas=2Ecom/blog/tools/wifimap/)=
+=2E
+
+ db=2Etxt | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+diff --git a/db=2Etxt b/db=2Etxt
+index f5b7cc1=2E=2Eac9aad5 100644
+--- a/db=2Etxt
++++ b/db=2Etxt
+@@ -808,16 +808,26 @@ country GD: DFS-FCC
+ 	(5735 - 5835 @ 80), (30)
+=20
+ # Source:
++# National Radio Frequency Spectrum Allocation Plan (GNCC Resolution No=
+=2E 6
++# of 30 June 2006), Annex 1, Table 3 (wideband data transmission systems,
++# including WAS/RLAN), as amended by GNCC Resolution No=2E 9 of 25 July 2=
+024:
++#  https://matsne=2Egov=2Ege/ka/document/view/6234066
++# Note 3=2E3 of the table requires TPC in 5250-5350 MHz and 5470-5725 MHz=
+ and
++# lowers the limits by 3 dB without it=2E 5725-5875 MHz is listed only fo=
+r
++# EN 302 502 (fixed broadband data transmission), not for WAS/RLAN=2E
+ # Harmonized CEPT countries for 6 GHz (ECC Decision (20)01)
+ #  https://docdb=2Ecept=2Eorg/implementation/16737
+ #  https://docdb=2Ecept=2Eorg/download/4685
+ country GE: DFS-ETSI
+-	(2402 - 2482 @ 40), (20)
+-	(5170 - 5250 @ 80), (18), AUTO-BW
+-	(5250 - 5330 @ 80), (18), DFS, AUTO-BW
++	(2400 - 2483=2E5 @ 40), (100 mW)
++	(5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
++	# 200 mW with TPC (note 3=2E3); Linux has no TPC, so 3 dB less
++	(5250 - 5350 @ 80), (100 mW), NO-OUTDOOR, DFS, AUTO-BW
++	# 1 W with TPC (note 3=2E3); Linux has no TPC, so 3 dB less
++	(5470 - 5725 @ 160), (500 mW), DFS
+ 	(5945 - 6425 @ 320), (23), NO-OUTDOOR
+-	# 60 GHz band channels 1-4, ref: Etsi En 302 567
+-	(57000 - 66000 @ 2160), (40)
++	# 60 GHz band channels 1-6, ref: ETSI EN 302 567
++	(57000 - 71000 @ 2160), (40)
+=20
+ country GF: DFS-ETSI
+ 	(2402 - 2482 @ 40), (20)
+--=20
+2=2E43=2E0
+
+
+--=20
+RFAREAS Support
 
