@@ -2,61 +2,64 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id DB960606A31E
-	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 10:28:33 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 54AFE606A31F
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 10:38:34 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=IyzuLGb4
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=LSuZ0C/h;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=flakoFA+
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:List-Subscribe:List-Help
 	:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Transfer-Encoding:
-	Content-Type:MIME-Version:Message-ID:References:In-Reply-To:Subject:CC:To:
-	From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Type:MIME-Version:Date:Message-Id:Subject:References:In-Reply-To:Cc:
+	To:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Unsubscribe-Post:
-	List-Owner; bh=aeKw/J26hi2DKZFvEjSv0cLHoXYPF29pHxkKYbPDdaY=; b=IyzuLGb4j/p97p
-	1zk6xiFBysueGKL0L2/jq9rRr98JbrKxobb6gSuIRiePCg2KQ0uzVzhva9Tdkp7IdIPN9WvPKJemT
-	GNNrnouC4v6SByLEvqdtlDj2myiKY4LoKiUhqlap8+eIEup87G/9JfOPhX7no6itjmb6aAhPyK8q6
-	4X0sg59mOPDr2E3Ak3P5W28ehUjIuwD2ELOF9C0ja+bnnSJuCycfU91BGIqWdq6lLU9j8EmzUiIxB
-	FodxopgxQxrh/+gLSSItVbG5hIeuh0PWTPfeBS6f2ntuuChGaYORrEVElNI5SNZYSnVj3vUYNJvNJ
-	+3IciiGwwDX/fehQoGUQ==;
+	List-Owner; bh=RAnEO8/Qdhkb1cmdMFzU3CHoAJo95PrugKm4CPHlkHY=; b=LSuZ0C/hMKvszl
+	kCq7iTL4IZGmlfvqY6XKu4fIPdfPjqyk9fST3a5Zkk+xSF7rM955qP8CFBJGU3LhK/R1oI6KNpjuN
+	eNGjMHHqjSsLrCzyATf0ThA4ABEQXp/nXhyDgf4U5Ary/3le1B46ve7cb4eu4kwTw1Knn9oTZrA/x
+	KWAaSsIZ+27n4ZhhT/U8BlGJYj1i86+8Nbdh5Dc/JcEHBeSZdQDRdLqVtR5WT0uen/igJr0lgwc9U
+	YNeJLB4LY20SAN7fqiAP7uiU3Mxm1gKFXPV6FUgI7rbqvbfsPh8LLrkK/VEE22TBYDPjHTbFs7m7d
+	rHdLpmfvR3x/8n+Lbgzw==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVRHk-00000002wtT-3Zkb;
-	Mon, 23 Nov 2026 10:28:32 +0000
-Received: from s24fifth.in-solve.ru ([81.177.160.4])
-	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVRHh-00000002wr4-30wd
+	id 1xVRRP-00000002zDW-3wGn;
+	Mon, 23 Nov 2026 10:38:31 +0000
+Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
+	id 1xVRRO-00000002zCo-3Dti
 	for wireless-regdb@lists.infradead.org;
-	Mon, 23 Nov 2026 10:28:31 +0000
-Received: from Spooler by s24fifth.in-solve.ru (Mercury/32 v4.52) ID MO000C37;
-    23 Nov 2026 13:28:31 +0300
-Received: from spooler by mail-aux1.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:28:11 +0300
-Received: from mail-s22 (10.0.1.22) by mail-s24-t.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000C36;
-   23 Nov 2026 13:28:10 +0300
-Received: from Spooler by mail-s22 (Mercury/32 v4.52) ID MO000CE7;
-  23 Nov 2026 13:28:04 +0300
-Received: from spooler by mail-s22.in-solve.hidden (Mercury/32 v4.52); 23 Nov 2026 13:28:01 +0300
-Received: from ehlo.thunderbird.net (128.204.79.23) by mail-s22.1gb.ru (Mercury/32 v4.52) with ESMTP ID MG000CE6;
-   23 Nov 2026 13:27:59 +0300
-Date: Mon, 23 Nov 2026 13:28:02 +0300
-From: RFAREAS Support <support@rfareas.com>
-To: wens@kernel.org, Chen-Yu Tsai <wens@kernel.org>
-CC: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Belarus (BY)
-User-Agent: K-9 Mail for Android
-In-Reply-To: <CAGb2v64WJg8hR8eoqqbV=n-0qPVE5ARBG3mKU3+sR4nDmp_btw@mail.gmail.com>
-References: <5DB6FB38-A5F9-4CD4-8AAE-7A3FCFF90520@rfareas.com> <CAGb2v64WJg8hR8eoqqbV=n-0qPVE5ARBG3mKU3+sR4nDmp_btw@mail.gmail.com>
-Message-ID: <DDC0D3B5-F31E-47E3-B556-FA1AAB5EB023@rfareas.com>
+	Mon, 23 Nov 2026 10:38:30 +0000
+Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
+	by sea.source.kernel.org (Postfix) with ESMTP id 372A243683;
+	Mon, 23 Nov 2026 10:38:30 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 8D48F1F000D1;
+	Mon, 23 Nov 2026 10:38:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
+	s=k20260515; t=1795430309;
+	bh=RAnEO8/Qdhkb1cmdMFzU3CHoAJo95PrugKm4CPHlkHY=;
+	h=From:To:Cc:In-Reply-To:References:Subject:Date;
+	b=flakoFA+bU7yWX/F/IOCGMS7LruQd4puGwMDHj2KejOyhltzXHW3lMKavGxA++zL6
+	 dW3q315fSC/3Lqf8Wo8GbnrevIokLM8HxftgddfhEG6Vz58nK3rKHluM2q71ZSWLGo
+	 R/IvJ2ocITqUf+YtuNEjuOmxiqCIk23AQdDRMPHJxv2vNqunjIf1U7zdQ1eQhSZC53
+	 2ulsRZXczB57XFtfcCjfH1jUwuXLFZfrBuoRvi+Rn+Lgu55nub1OdqwFXV6asm1y4H
+	 Uix3L4ooyw/Dj9W1Y+w1AV80eSIvN+/ZdlBDx0cKrBjwmAwy8dxVpXCJcJ8ZznDs7H
+	 dudEtyTY8WSWA==
+Received: from wens.tw (localhost [127.0.0.1])
+	by wens.tw (Postfix) with ESMTP id 88B965FED9;
+	Mon, 23 Nov 2026 18:38:27 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: linux-wireless@vger.kernel.org, RFAREAS Support <support@rfareas.com>
+Cc: wireless-regdb@lists.infradead.org
+In-Reply-To: <78DCED16-8799-423B-BC5D-91690821B766@rfareas.com>
+References: <78DCED16-8799-423B-BC5D-91690821B766@rfareas.com>
+Subject: Re: [PATCH v2] wireless-regdb: Update regulatory info for Belarus
+ (BY)
+Message-Id: <179543030755.976281.3457870716585281409.b4-ty@b4>
+Date: Mon, 23 Nov 2026 18:38:27 +0800
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
- charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-X-CC-Diagnostic: Header RECEIVED matches "*([0-9]+.[0-9]+.[0-9]+.[0-9]+)*" (0)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.9.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20261123_022830_114212_FF1D34B5 
-X-CRM114-Status: UNSURE (   5.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.9 (-)
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Mailer: b4 0.15.2
 X-BeenThere: wireless-regdb@lists.infradead.org
 X-Mailman-Version: 2.1.34
 Precedence: list
@@ -67,32 +70,35 @@ List-Help: <mailto:wireless-regdb-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/wireless-regdb>,
  <mailto:wireless-regdb-request@lists.infradead.org?subject=subscribe>
 Sender: "wireless-regdb" <wireless-regdb-bounces@lists.infradead.org>
-X-Spam-Status: No, score=-3.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
-	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_EF,HEADER_FROM_DIFFERENT_DOMAINS,
-	MAILING_LIST_MULTI,SPF_HELO_NONE,SPF_PASS autolearn=no
-	autolearn_force=no version=4.0.1
+X-Spam-Status: No, score=-13.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,
+	HEADER_FROM_DIFFERENT_DOMAINS,MAILING_LIST_MULTI,MENTIONS_GIT_HOSTING,
+	SPF_HELO_NONE,SPF_PASS,USER_AGENT_GIT autolearn=ham autolearn_force=no
+	version=4.0.1
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-> Assuming the DFS requirement comes from ITU-R Resolution 229 /
-> ETSI EN 301 893, then the TPC requirement also applies, and since
-> Linux does not support TPC, the -3 dBm reduction should be applied
-> for 5250-5350 MHz=2E
->
-> Could you check?
+On Mon, 23 Nov 2026 13:24:12 +0300, RFAREAS Support wrote:
+> The BY entry has no source and allows 5490-5710 MHz at 27 dBm, which
+> is not permitted for licence-exempt use in Belarus.
+> 
+> Licence-exempt Wi-Fi is set out in Resolution No. 9 of the Ministry
+> of Communications and Informatization of 1 July 2013, the list of radio
+> equipment operated without a frequency assignment permit. Items 7 and 8
+> were replaced by Resolution No. 13 of 29 August 2016; Resolution No. 1
+> of 10 January 2018 changed "output power" in item 7 to "e.i.r.p.".
+> All three acts are published on the National Legal Internet Portal
+> pravo.by.
+> 
+> [...]
 
-Checked: the Belarus table of frequency allocations (Council of
-Ministers Resolution No=2E 620 of 9 August 2016) has footnote 5=2E446A,
-which refers to ITU-R Resolution 229 for 5150-5350 MHz and 5470-5725
-MHz=2E v2 sets 5250-5350 MHz to 100 mW=2E 5650-5725 MHz stays at 200 mW,
-which is already below the Resolution 229 limit without TPC=2E
+Applied to master in wens/wireless-regdb.git, thanks!
 
-  [PATCH v2] wireless-regdb: Update regulatory info for Belarus (BY)
+[1/1] wireless-regdb: Update regulatory info for Belarus (BY)
+      https://git.kernel.org/wens/wireless-regdb/c/5ead4f45c79a
 
-Thanks,
-Valery
+Best regards,
+-- 
+Chen-Yu Tsai <wens@kernel.org>
 
-
---=20
-RFAREAS Support
 
