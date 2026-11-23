@@ -2,11 +2,11 @@ Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by smtp.subspace.kernel.org (Postfix) with ESMTPS id A4A7F606A31A
-	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 08:33:14 +0000 (UTC)
+	by smtp.subspace.kernel.org (Postfix) with ESMTPS id 469BA606A31E
+	for <wireless-regdb@archiver.kernel.org>; Mon, 23 Nov 2026 08:38:29 +0000 (UTC)
 Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=oLGJkvNx;
-	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=B6XJpRpJ
+	dkim=pass (2048-bit key) header.d=lists.infradead.org header.i=@lists.infradead.org header.a=rsa-sha256 header.s=bombadil.20210309 header.b=hcsSQYYd;
+	dkim=pass (2048-bit key) header.d=kernel.org header.i=@kernel.org header.a=rsa-sha256 header.s=k20260515 header.b=jNsRHqFr
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20210309; h=Sender:Reply-To:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
@@ -14,55 +14,55 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
 	List-Unsubscribe-Post:List-Owner;
-	bh=10mVHKBcg/+Uaagqs4hy6NfKuaxlv+YYpd7i/JHosR4=; b=oLGJkvNxJUfU7wqmUIAnpheYHO
-	mp/JqPhJZJkfTW4CsOGwR6x8ABqwv0mq0nPftCcgHDZ0fSQ5a5KvSb1Ow7HxyD36vN1kKqs9Ugqdj
-	31PtoBH5mzmaNzrPtATB6Z1IUKV3Wu6syAVxHbhSC810OVaaB+/Eo+2FPdS1Q8xtfE8ktVeO9D+2o
-	tLsBbXkiITI0TouxBhx9zHf2dzthXEv3BMjCuriQYPjLfDrgNsS7l4TSJ0ccfeOW48znTQxrNZdgf
-	lBN8+keWgFgjJ3BUkjJjYb7/JROp54TO7chQhdfBSD1VMrpaz5GUJz+4gUqGB0075pDlMNFZ3+BGm
-	DsVI6oyA==;
+	bh=olsXRWb2mJ7alyZvuOZMo0SuIvMzdv85vW212okoksM=; b=hcsSQYYdlCnfo5qj2pt3jPtmX5
+	8qGWjU5ewQ4OqtF4zhTs0BA+ilO+p9CpUORisxE48TEb12aPosHLb1LIpQfbHS7L81MGWsejAvhBP
+	HAOOhCRTRQe9cjr2G74xngK50l+7fdTSOnNvnhIWIfRSGgtRHlffLsLKdNGL3YzLoZZb0HjYtZ+qT
+	G67ktIxhgwxm/NKoUyclvE+Ne7XHawkcVSSKfQYjvcWVpY6ZBCrFCUh2u8reBqBhiSQoUD+s8oZhp
+	s1kgbKh/+IfEPOOwp/ElZI1uzOIXzDQvLf5qlfVle1/O4prOJVUxkrNtTC7XZt+38Gwufi/UpVpl0
+	wmgWMp5A==;
 Received: from localhost ([::1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVPU6-00000002ZtH-1U2m;
-	Mon, 23 Nov 2026 08:33:11 +0000
-Received: from sea.source.kernel.org ([2600:3c0a:e001:78e:0:1991:8:25])
+	id 1xVPZE-00000002aUR-1u3u;
+	Mon, 23 Nov 2026 08:38:28 +0000
+Received: from tor.source.kernel.org ([172.105.4.254])
 	by bombadil.infradead.org with esmtps (Exim 4.100.1 #2 (Red Hat Linux))
-	id 1xVPU0-00000002Zri-0sLS
+	id 1xVPZB-00000002aTw-2tfF
 	for wireless-regdb@lists.infradead.org;
-	Mon, 23 Nov 2026 08:33:08 +0000
+	Mon, 23 Nov 2026 08:38:26 +0000
 Received: from smtp.kernel.org (quasi.space.kernel.org [100.103.45.18])
-	by sea.source.kernel.org (Postfix) with ESMTP id DE4764474F
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 08:33:03 +0000 (UTC)
-Received: by smtp.kernel.org (Postfix) with ESMTPSA id B3B101F000D8
-	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 08:33:03 +0000 (UTC)
+	by tor.source.kernel.org (Postfix) with ESMTP id C5A086022B
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 08:38:24 +0000 (UTC)
+Received: by smtp.kernel.org (Postfix) with ESMTPSA id 7FFB31F000CF
+	for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 08:38:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kernel.org;
-	s=k20260515; t=1795422783;
-	bh=10mVHKBcg/+Uaagqs4hy6NfKuaxlv+YYpd7i/JHosR4=;
+	s=k20260515; t=1795423104;
+	bh=olsXRWb2mJ7alyZvuOZMo0SuIvMzdv85vW212okoksM=;
 	h=References:In-Reply-To:Reply-To:From:Date:Subject:To:Cc;
-	b=B6XJpRpJoybHwEeOLzF8DQMchMN9vQrEGPNQObXqA+IoaNx1dSY8N83hqONpBOVE9
-	 ned1CadoJXIUXngvQafhSMCyWUHb+LW6yDw3GNjAu4mul3r12CAI/mbghpVB3aGx1E
-	 zCCHziRiVb4jzoiUvCa3aeOfq2vnbKgsO+6v9Eafi+DJ68Yu4Dv4NNI5hTOzzAucKK
-	 XuYRJ9oeFU257CzPZxRGqvJn3AZQ+znOTvvWz84de1UpFfymtZMuXPi/Ng1BLheNeY
-	 PGUymdPdervh6O1qNxLXNG0XHelzdj2dLI9+ROVqb/MoOCp5QRZgVvm6HrmVtb0qKJ
-	 6aK1V0S0PSKeA==
-Received: by mail-lf1-f53.google.com with SMTP id 2adb3069b0e04-5c102ad8420so1492330e87.1
-        for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 00:33:03 -0800 (PST)
-X-Forwarded-Encrypted: i=1; AL+hErHg75Ax+phuazkjUfgOci0/rBsCW6sqQIEi9gJL5s1LIBvi1jhMprU5JcFt3rLcskF0Ycl4a0Dg7/2ZFCU0ZA==@lists.infradead.org
-X-Gm-Message-State: APuU4Z+vcNb37S7MWLTujak3E4Tsw7dShHwUWaQrRctKYkfq6YZXK3as
-	LzamG2IKW9fltPaj4+oYmetzZNmGYT9mcQUX8ug6Picu0SDx/Z3Ig5ixXgII/qKmLY0bW1T8U8K
-	oSapy2/k2I/T+pHBBBJ1rebeTTIU3q/g=
-X-Received: by 2002:ac2:4bd2:0:b0:5c0:a67:e7d1 with SMTP id
- 2adb3069b0e04-5c1bc7bda01mr3040959e87.12.1795422782139; Mon, 23 Nov 2026
- 00:33:02 -0800 (PST)
+	b=jNsRHqFrwpVJ5pa0h+vkOLJCrJd3VzNadiI5uMKOD+UJoUzByZlneH1ozBfPQjEJr
+	 nF4uuxQevHqZ1O0jK63Q3XS7STMtYeGbqk6ZLmYnkQdCV/CNyfkCnuRQuRavo8CCg8
+	 2Tq37Um1pshYzVbF3FGG0zDjIm7I88Yubsm0pNCo4XS6/22N5ZKjmG13yMgtIF1xP1
+	 +TazNqN8iEfxCgjX6pjyCVZ3t2KI9MGC4rkRvlk8/W7F4FKUziLHwLyhCOLyCPnipS
+	 nlWl+2IYpVDK1DRfOdTvGCkS4phMhbFR53BpL1QirTKfdGQ2pJzyWTgpVfgbVagHM5
+	 Hqjm4IqO2IWnA==
+Received: by mail-lj1-f175.google.com with SMTP id 38308e7fff4ca-3acd239776cso25114011fa.0
+        for <wireless-regdb@lists.infradead.org>; Mon, 23 Nov 2026 00:38:24 -0800 (PST)
+X-Forwarded-Encrypted: i=1; AL+hErE+dFdk3M/XAl7syrfZbLqo6Aw8+2PcQg3tmvf6uKHXaWfzckdR2Vgz51XXC5u4XUX8sPfR2MK6qUrCftjSfw==@lists.infradead.org
+X-Gm-Message-State: APuU4Z9xc59lon0UwnLihklJU5+g8SK4RqT7Y+FsLTLMe+pGsSJ7FaPP
+	2kYVaq22tZ5XS3tOHin8tcHLuO93cho1OiZbhzZ+k5+lyAIqr12lneEWI9b7+Gz/fieUd9UfXPT
+	mEL9yRiQ6nAL8WAwR6MFAzqTwTVc2EsQ=
+X-Received: by 2002:a2e:a98b:0:b0:3ac:dd62:754d with SMTP id
+ 38308e7fff4ca-3ae7fa550a8mr26835181fa.17.1795423102935; Mon, 23 Nov 2026
+ 00:38:22 -0800 (PST)
 X-Archived-By: <archiver.kernel.org>
 MIME-Version: 1.0
-References: <7C3E3534-43A6-4D85-BAA7-9BC337438EEB@rfareas.com>
-In-Reply-To: <7C3E3534-43A6-4D85-BAA7-9BC337438EEB@rfareas.com>
+References: <5DB6FB38-A5F9-4CD4-8AAE-7A3FCFF90520@rfareas.com>
+In-Reply-To: <5DB6FB38-A5F9-4CD4-8AAE-7A3FCFF90520@rfareas.com>
 From: Chen-Yu Tsai <wens@kernel.org>
-Date: Mon, 23 Nov 2026 16:32:48 +0800
-X-Gmail-Original-Message-ID: <CAGb2v656LkoRqbzSLP9=JvWHjW1tpjwMUy=_zmKHCLAx4xDsgQ@mail.gmail.com>
-X-Gm-Features: Aa3M54p_mbWN-4hEeJdayzUjU65l1M7XxkGc4ondbhtJ3C1dEwToX82b_cD-hC8
-Message-ID: <CAGb2v656LkoRqbzSLP9=JvWHjW1tpjwMUy=_zmKHCLAx4xDsgQ@mail.gmail.com>
-Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Kazakhstan (KZ)
+Date: Mon, 23 Nov 2026 16:38:09 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64WJg8hR8eoqqbV=n-0qPVE5ARBG3mKU3+sR4nDmp_btw@mail.gmail.com>
+X-Gm-Features: Aa3M54rw8DU2heO0ApwbPBuztkO0RFtLTwf07gI6P_fCHDM9IZ-pHgQkG53m6j0
+Message-ID: <CAGb2v64WJg8hR8eoqqbV=n-0qPVE5ARBG3mKU3+sR4nDmp_btw@mail.gmail.com>
+Subject: Re: [PATCH] wireless-regdb: Update regulatory info for Belarus (BY)
 To: RFAREAS Support <support@rfareas.com>
 Cc: linux-wireless@vger.kernel.org, wireless-regdb@lists.infradead.org
 Content-Type: text/plain; charset="UTF-8"
@@ -86,39 +86,51 @@ X-Spam-Status: No, score=-15.9 required=3.0 tests=BAYES_00,DKIMWL_WL_HIGH,
 X-Spam-Checker-Version: SpamAssassin 4.0.1 (2024-03-26) on
 	aws-us-west-2-korg-listserv-alma10-1
 
-On Mon, Nov 23, 2026 at 2:13=E2=80=AFAM RFAREAS Support <support@rfareas.co=
+On Mon, Nov 23, 2026 at 2:14=E2=80=AFAM RFAREAS Support <support@rfareas.co=
 m> wrote:
 >
 > From: Valery Belousov <support@rfareas.com>
 >
-> The KZ entry cites the 2015 versions of the Rules for the assignment
-> of frequency bands (Order No. 34 of 21 January 2015). Item 24 "WAS/RLAN"
-> of Annex 1 to these Rules, the list of radio equipment that may be
-> operated without a permit, was replaced by Order No. 564/NK of the
-> Ministry of Digital Development, Innovation and Aerospace Industry of
-> 19 September 2024 (registered with the Ministry of Justice under
-> No. 35100 on 23 September 2024, in force ten days after its first
-> official publication). The consolidated text of the Rules on the
-> official legal portal adilet.zan.kz contains the same item.
+> The BY entry has no source and allows 5490-5710 MHz at 27 dBm, which
+> is not permitted for licence-exempt use in Belarus.
 >
-> Limits as stated in item 24 (all e.i.r.p.):
->   2400-2483.5 MHz: 100 mW, 10 mW/MHz for wideband modulations
->   5150-5350 MHz:   200 mW, 10 mW/MHz, indoor use only
->   5470-5725 MHz:   100 mW, 10 mW/MHz, indoor use only
->   5725-5850 MHz:   100 mW, 10 mW/MHz, indoor use only
->   5925-6425 MHz:   200 mW, 10 mW/MHz, indoor use only
->   57-66 GHz:       40 dBm, 13 dBm/MHz mean, indoor use only
+> Licence-exempt Wi-Fi is set out in Resolution No. 9 of the Ministry
+> of Communications and Informatization of 1 July 2013, the list of radio
+> equipment operated without a frequency assignment permit. Items 7 and 8
+> were replaced by Resolution No. 13 of 29 August 2016; Resolution No. 1
+> of 10 January 2018 changed "output power" in item 7 to "e.i.r.p.".
+> All three acts are published on the National Legal Internet Portal
+> pravo.by.
+>
+> Limits as stated in the resolution:
+>   item 7, 2400-2483.5 MHz: 100 mW e.i.r.p.
+>   item 8, 5150-5350 MHz and 5650-5725 MHz: 200 mW e.i.r.p.
+> Both items: IEEE 802.11 equipment installed inside buildings,
+> structures and vehicles, not using antennas installed outside them.
 >
 > Changes:
->  * 5250-5350 MHz: raise the limit from 20 dBm (100 mW) to 200 mW;
->    the item gives 200 mW for the whole 5150-5350 MHz range.
->  * 57-66 GHz: add NO-OUTDOOR ("only for use inside a building").
->  * Update the source links to the current consolidated Rules and the
->    amending order, using https.
+>  * 2.4 GHz: 2400-2483.5 MHz, 100 mW, NO-OUTDOOR.
+>  * 5150-5350 MHz: 200 mW (was 20 dBm), NO-OUTDOOR; DFS is kept for
+>    5250-5350 MHz.
+
+Assuming the DFS requirement comes from ITU-R Resolution 229 /
+ETSI EN 301 893, then the TPC requirement also applies, and since
+Linux does not support TPC, the -3 dBm reduction should be applied
+for 5250-5350 MHz.
+
+Could you check?
+
+
+Thanks
+ChenYu
+
+>  * Replace 5490-5710 MHz with 5650-5725 MHz, 200 mW, NO-OUTDOOR, DFS.
+>    The band is 75 MHz wide, so the maximum bandwidth is 40 MHz.
+>  * Add the sources.
 >
-> The other rules already match the item. The item does not mention
-> DFS; the existing DFS flags are kept. The power spectral density
-> limits cannot be expressed in db.txt.
+> Item 18, added by Resolution No. 2 of 24 January 2019, also lists
+> 5785-5875 MHz, but only for use in Minsk during the II European Games
+> 2019, so it is not included.
 >
 > Signed-off-by: Valery Belousov <support@rfareas.com>
 > ---
@@ -126,49 +138,41 @@ m> wrote:
 he
 > RFAREAS Wi-Fi regulatory map (https://rfareas.com/blog/tools/wifimap/).
 >
->  db.txt | 13 +++++++++----
->  1 file changed, 9 insertions(+), 4 deletions(-)
+>  db.txt | 18 ++++++++++++++----
+>  1 file changed, 14 insertions(+), 4 deletions(-)
 >
 > diff --git a/db.txt b/db.txt
-> index 43dc0b3..3eb02d2 100644
+> index 43dc0b3..e416c54 100644
 > --- a/db.txt
 > +++ b/db.txt
-> @@ -1194,16 +1194,21 @@ country KY: DFS-FCC
->         (57000 - 71000 @ 2160), (40)
+> @@ -386,11 +386,21 @@ country BW: DFS-ETSI
+>         (5470 - 5725 @ 160), (250 mW), DFS
+>         (5725 - 5850 @ 80), (24), DFS
 >
->  # Source:
-> -# http://adilet.zan.kz/rus/docs/V1500010730
-> -# http://adilet.zan.kz/rus/docs/V1500010375
-> +# Rules for the assignment of frequency bands ... (Order No. 34 of
-> +# 21 January 2015), Annex 1 (radio equipment that needs no permit),
-> +# item 24 "WAS/RLAN", as amended by Order No. 564/NK of 19 September 202=
-4:
-> +# https://adilet.zan.kz/rus/docs/V1500010730
-> +# https://adilet.zan.kz/rus/docs/V2400035100
-> +# Table of frequency band allocations (Order No. 22 of 20 January 2015):
-> +# https://adilet.zan.kz/rus/docs/V1500010375
->  country KZ: DFS-ETSI
->         (2400 - 2483.5 @ 40), (100 mW)
->         (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
-> -       (5250 - 5350 @ 80), (20), NO-OUTDOOR, DFS, AUTO-BW
+> +# Source:
+> +# Resolution of the Ministry of Communications and Informatization No. 9
+> +# of 1 July 2013 (radio equipment operated without a frequency assignmen=
+t
+> +# permit), items 7 and 8, as amended by Resolution No. 13 of 29 August 2=
+016
+> +# and Resolution No. 1 of 10 January 2018:
+> +# https://pravo.by/document/?guid=3D3961&p0=3DW21327720
+> +# https://pravo.by/document/?guid=3D3961&p0=3DW21631260
+> +# https://pravo.by/document/?guid=3D3961&p0=3DW21832737
+> +# Both items allow use only inside buildings, structures and vehicles,
+> +# without antennas outside them.
+>  country BY: DFS-ETSI
+> -       (2402 - 2482 @ 40), (20)
+> -       (5170 - 5250 @ 80), (20), AUTO-BW
+> -       (5250 - 5330 @ 80), (20), DFS, AUTO-BW
+> -       (5490 - 5710 @ 160), (27), DFS
+> +       (2400 - 2483.5 @ 40), (100 mW), NO-OUTDOOR
+> +       (5150 - 5250 @ 80), (200 mW), NO-OUTDOOR, AUTO-BW
 > +       (5250 - 5350 @ 80), (200 mW), NO-OUTDOOR, DFS, AUTO-BW
->         (5470 - 5725 @ 160), (100 mW), NO-OUTDOOR, DFS
->         (5725 - 5850 @ 80), (100 mW), NO-OUTDOOR
-
-Not related to this patch, but this boundary setting makes the wifi
-channel straddling 5725 MHz unusable. Could you send a follow-up
-patch to move the boundary? See the US rules for an example.
-
-
-Thanks
-ChenYu
-
->         (5925 - 6425 @ 320), (200 mW), NO-OUTDOOR
-> -       (57000 - 66000 @ 2160), (40)
-> +       (57000 - 66000 @ 2160), (40), NO-OUTDOOR
+> +       (5650 - 5725 @ 40), (200 mW), NO-OUTDOOR, DFS
 >
->  country LB: DFS-FCC
->         (2402 - 2482 @ 40), (20)
+>  country BZ: DFS-JP
+>         (2402 - 2482 @ 40), (30)
 > --
 > 2.43.0
 >
